@@ -1,0 +1,5 @@
+record(longout,"$(P)$(H)$(SIG)") {
+	field(PINI, "YES")
+	field(DTYP,"asynUInt32Digital")
+	field(OUT,"@asynMask($(PORT),$(ADDR),0xffffffff)REG32")
+}

@@ -1,0 +1,738 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>1080</x>
+            <y>248</y>
+            <width>120</width>
+            <height>220</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(218, 218, 218, 255);}
+QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Gates</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>AND 1;AND 2;AND 3;AND 4;OR 1;OR 2;OR 3;OR 4;XOR 1;XOR 2;BUFFER 1;BUFFER 2;BUFFER 3;BUFFER 4</string>
+            </property>
+            <property name="files">
+                <string>softGlue_AND.adl;softGlue_AND.adl;softGlue_AND.adl;softGlue_AND.adl;softGlue_OR.adl;softGlue_OR.adl;softGlue_OR.adl;softGlue_OR.adl;softGlue_XOR.adl;softGlue_XOR.adl;softGlue_BUFFER.adl;softGlue_BUFFER.adl;softGlue_BUFFER.adl;softGlue_BUFFER.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>50</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Counters</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>UpCounter 1;UpCounter 2;UpCounter 3;UpCounter 4;DownCounter 1;DownCounter 2;DownCounter 3;DownCounter 4;UpDown Counter 1;UpDown Counter 2</string>
+            </property>
+            <property name="files">
+                <string>softGlue_UpCntr.adl;softGlue_UpCntr.adl;softGlue_UpCntr.adl;softGlue_UpCntr.adl;softGlue_DnCntr.adl;softGlue_DnCntr.adl;softGlue_DnCntr.adl;softGlue_DnCntr.adl;softGlue_UpDnCntr.adl;softGlue_UpDnCntr.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_2">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>90</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Field I/O 201</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Field I/O All;Field I/O 1-16;Field I/O 17-32;Field I/O 33-48</string>
+            </property>
+            <property name="files">
+                <string>softGlueFieldIO.adl;softGlueFieldIOxx.adl;softGlueFieldIOxx.adl;softGlueFieldIOxx.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),H=$(H);P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32;P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_3">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>70</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Other</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>8 MHZ Internal Clock;2-input multiplexer;2-input multiplexer;2-output demultiplexer;2-output demultiplexer;D FlipFlop 1;D FlipFlop 2;D FlipFlop 3;D FlipFlop 4;Divide By N 1;Divide By N 2;Divide By N 3;Divide By N 4;Quadrature Decoder 1;Quadrature Decoder 2</string>
+            </property>
+            <property name="files">
+                <string>softGlue_8MHZ_CK_bare.adl;softGlue_MUX2.adl;softGlue_MUX2.adl;softGlue_DEMUX2.adl;softGlue_DEMUX2.adl;softGlue_DFF.adl;softGlue_DFF.adl;softGlue_DFF.adl;softGlue_DFF.adl;softGlue_DivByN.adl;softGlue_DivByN.adl;softGlue_DivByN.adl;softGlue_DivByN.adl;softGlue_QuadDec.adl;softGlue_QuadDec.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_4">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>110</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Field I/O 202</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>Field I/O All;Field I/O 1-16;Field I/O 17-32;Field I/O 33-48</string>
+            </property>
+            <property name="files">
+                <string>softGlueFieldIO_EP202.adl;softGlueFieldIOxx_EP202.adl;softGlueFieldIOxx_EP202.adl;softGlueFieldIOxx_EP202.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),H=$(H);P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32;P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_0">
+            <property name="geometry">
+                <rect>
+                    <x>50</x>
+                    <y>195</y>
+                    <width>30</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)numSignalsInUse</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignRight|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_0">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>#SIGS</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>195</y>
+                    <width>40</width>
+                    <height>10</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_1">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>IN USE</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>205</y>
+                    <width>40</width>
+                    <height>10</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_2">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>/15</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>85</x>
+                    <y>195</y>
+                    <width>36</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_5">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>130</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>40</red>
+                    <green>147</green>
+                    <blue>21</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Collections</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>all softGlue;all but I/O;convenience;------------;octupole;velocity gate;encoder;encoderTimeAverage;4demux4</string>
+            </property>
+            <property name="files">
+                <string>softGlueAll.adl;softGlueAllButIO.adl;softGlueConvenience.adl;softGlueConvenience.adl;softGlueOctupole.adl;softGlueVgate.adl;softGlueEncoder.adl;softGlueEncoderAvg.adl;softGlue4DEMUX4.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H)</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false;false;false;false</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_3">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>READ PERIOD</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>160</y>
+                    <width>100</width>
+                    <height>10</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="caMenu" name="caMenu_0">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>170</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)ReadRate.SCAN</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="colorMode">
+                <enum>caMenu::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_4">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>VERSION: </string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>20</y>
+                    <width>54</width>
+                    <height>10</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_1">
+            <property name="geometry">
+                <rect>
+                    <x>60</x>
+                    <y>20</y>
+                    <width>30</width>
+                    <height>10</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)version</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caFrame" name="caFrame_0">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>122</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <widget class="caFrame" name="caFrame_1">
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>122</width>
+                        <height>16</height>
+                    </rect>
+                </property>
+                <widget class="caGraphics" name="caRectangle_0">
+                    <property name="form">
+                        <enum>caGraphics::Rectangle</enum>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>0</x>
+                            <y>0</y>
+                            <width>120</width>
+                            <height>14</height>
+                        </rect>
+                    </property>
+                    <property name="foreground">
+                        <color alpha="255">
+                            <red>255</red>
+                            <green>255</green>
+                            <blue>255</blue>
+                        </color>
+                    </property>
+                    <property name="fillstyle">
+                        <enum>Filled</enum>
+                    </property>
+                    <property name="lineColor">
+                        <color alpha="255">
+                            <red>255</red>
+                            <green>255</green>
+                            <blue>255</blue>
+                        </color>
+                    </property>
+                    <property name="linestyle">
+                        <enum>Solid</enum>
+                    </property>
+                </widget>
+                <widget class="caLabel" name="caLabel_5">
+                    <property name="frameShape">
+                        <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <property name="foreground">
+                        <color alpha="255">
+                            <red>0</red>
+                            <green>0</green>
+                            <blue>0</blue>
+                        </color>
+                    </property>
+                    <property name="background">
+                        <color alpha="0">
+                            <red>0</red>
+                            <green>0</green>
+                            <blue>0</blue>
+                        </color>
+                    </property>
+                    <property name="text">
+                        <string>$(P)$(H) </string>
+                    </property>
+                    <property name="fontScaleMode">
+                        <enum>ESimpleLabel::WidthAndHeight</enum>
+                    </property>
+                    <property name="alignment">
+                        <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>0</x>
+                            <y>0</y>
+                            <width>120</width>
+                            <height>14</height>
+                        </rect>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="caPolyLine" name="caPolyLine_0">
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>15</y>
+                        <width>119</width>
+                        <height>3</height>
+                    </rect>
+                </property>
+                <property name="lineSize">
+                    <number>3</number>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="fillstyle">
+                    <enum>Filled</enum>
+                </property>
+                <property name="lineColor">
+                    <color alpha="255">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="linestyle">
+                    <enum>Solid</enum>
+                </property>
+                <property name="xyPairs">
+                    <string>1,1;117,1;</string>
+                </property>
+            </widget>
+        </widget>
+        <zorder>caLabel_0</zorder>
+        <zorder>caLabel_1</zorder>
+        <zorder>caLabel_2</zorder>
+        <zorder>caLabel_3</zorder>
+        <zorder>caLabel_4</zorder>
+        <zorder>caRectangle_0</zorder>
+        <zorder>caLabel_5</zorder>
+        <zorder>caFrame_1</zorder>
+        <zorder>caPolyLine_0</zorder>
+        <zorder>caFrame_0</zorder>
+        <zorder>caRelatedDisplay_0</zorder>
+        <zorder>caRelatedDisplay_1</zorder>
+        <zorder>caRelatedDisplay_2</zorder>
+        <zorder>caRelatedDisplay_3</zorder>
+        <zorder>caRelatedDisplay_4</zorder>
+        <zorder>caLineEdit_0</zorder>
+        <zorder>caRelatedDisplay_5</zorder>
+        <zorder>caMenu_0</zorder>
+        <zorder>caLineEdit_1</zorder>
+    </widget>
+</widget>
+</ui>

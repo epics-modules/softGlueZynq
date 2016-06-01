@@ -1,0 +1,104 @@
+This circuit implements four counter channels, a time base to control counting
+time, an overall gate, and additional circuitry to control starting, 
+stopping, and processing of the count-value records.
+
+Requirements
+------------
+
+This circuit uses a busy record (from the busy module) and a sseq record (from
+the std module), which are loaded by softGlue_convenience.db.  If these records
+are not available, the circuit will still function, but the counters will not be
+read immediately after the count time has elapsed, and it will not be useful to
+drive the counter with a ca_put_callback(), because the callback will come
+immediately, instead of coming after counting has finished.
+
+Usage
+-----
+
+0) Connect field inputs to the counters by giving names to four field input
+   bits, and writing those names also to the clock inputs for up counters 1-4.
+   (As delivered, all counters count the signal named "Clock_8MHz", which is the
+   name this circuit gives to the 8 MHz clock.)
+
+1) Set the count time by writing a number, to the "N" input of DivByN-1.  The
+   the timebase clock is 8 MHz, so the actual count time will be N/8e6 seconds.
+
+2) Start the counter by writing 1 to $(P)$(H)busy1 (one of the busy records
+   in the EPICS database, softGlue_convenience.db, which is loaded by the
+   standard softGlue.cmd file).
+
+3) Either wait for the count time to elapse, or abort the count by writing
+   0 to $(P)$(H)busy1.
+
+4) Read the accumulated counts from UpCntr-<n>_COUNTS, where <n> is in [1-4].
+
+5) Gating can be done either by EPICS, or by a field input.
+
+   To gate with EPICS, write '1' to the second input of AND-1 to enable
+   counting, or '0' to disable counting.
+
+   To gate from a field input, give the field input a signal name, and write
+   that same name to the second input of AND-1.
+
+   The time-base counter also is gated, though you can have only the counter
+   channels gated by changing the "EN" input of DivByN-1 from "gatedStart" to
+   "start".
+
+Theory of operation
+-------------------
+
+Execution begins when the user writes 1 to $(P)$(H)busy1.  This record declares
+itself to be busy (for the purpose of ca_put_callback()), and starts the counter
+circuit by writing the value 1 to the input of BUF-1.  BUF-1 fans the signal
+out, as the signal named "count", to the clock inputs of flip flops DFF2 and
+DFF-4.  "count" will stay at 1 until the counters are finished counting.
+
+	DFF-4 makes an extremely short pulse (named "clear") from the rising edge of
+	"count".
+
+	DFF-2 makes an extremely short pulse (named "abort") from the falling edge
+	of "count".
+
+"clear" zeroes the counters (UpCntr-<n>), loads the count time (i.e., the number
+of clock pulses) into the time base DivByN-1, and sets DFF-1 to 1, producing the
+signal named "counting".  "clear*" sets the output of DFF-3 to 1, producing the
+signal "counting", which stays at 1 until it's time for the counters to stop
+counting.
+
+"counting" is sent to field output bit 17, which must actually be configured as
+an output, and which will generate an interrupt on the falling edge of
+"counting" (when pulse counting has finished).  The interrupt processes the
+record $(P)$(H)sseq1, which causes EPICS records for all four counters to
+process, reading their values so that a client can acquire them.
+
+	You can, of course, use any field output bit for this purpose, as long as
+	you configure it correctly.
+	
+	The only reason for using an output bit is to generate an interrupt when the
+	counting is finished.
+	
+	The counter doesn't actually rely on the interrupt.  It's only needed to get
+	the counter values read from hardware promptly.  The counters will
+	eventually be read in any case, by the periodic update $(P)$(H)ReadRate. 
+	But a fast client (such as the sscan record) will not want to wait for this
+	periodic read, nor will it know when the read has occurred.
+
+"counting" is sent to AND-1 to be ANDed with the user's gate signal (the second
+input of AND-1), producing the signal "gatedCounting".  As delivered, the gate
+signal is simply 1.  The user can gate counting off by writing 0 to the gate
+signal, or the user can implement a hardware gate as described above in "Usage".
+
+"gatedCounting" enables the counters and the time base, DivByN-1.  When the
+specified number of clock pulses have been received by DivByN-1, its output,
+"stopTime", goes to 1 for one clock pulse.
+
+"stopTime" is delivered to OR-1, to be ORed with the "abort" signal mentioned
+earlier.  When either "stopTime" or "abort" goes to 1, DFF-3 is cleared,
+rescinding "counting", which causes all counters and the time base to cease
+counting.
+
+When "counting' goes to 0, an interrupt is generated.  The interrupt causes the
+string-sequence record to process the counter-value records
+($(P)$(H)UpCntr-<n>_COUNTS, where <n> is in [1-4]) so their values will be
+available to be read by an EPICS client.  The string-sequence record also sets
+$(P)$(H)busy1 to 0, signalling completion to EPICS.

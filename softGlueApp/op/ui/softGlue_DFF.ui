@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>597</x>
+            <y>420</y>
+            <width>440</width>
+            <height>145</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(218, 218, 218, 255);}
+QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caGraphics" name="caRectangle_0">
+            <property name="form">
+                <enum>caGraphics::Rectangle</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>443</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="fillstyle">
+                <enum>Filled</enum>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_0">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>D FlipFlop $(N)</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>0</y>
+                    <width>225</width>
+                    <height>25</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="caPolyLine" name="caPolyLine_0">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>25</y>
+                    <width>444</width>
+                    <height>3</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>3</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="fillstyle">
+                <enum>Filled</enum>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+            <property name="xyPairs">
+                <string>1,1;442,1;</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_0">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>422</width>
+                    <height>113</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>30</y>
+                    <width>420</width>
+                    <height>111</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_DFF_bare_label.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_1">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>$(P)$(H)</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>210</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <zorder>caRectangle_0</zorder>
+        <zorder>caLabel_0</zorder>
+        <zorder>caPolyLine_0</zorder>
+        <zorder>caInclude_0</zorder>
+        <zorder>caLabel_1</zorder>
+    </widget>
+</widget>
+</ui>

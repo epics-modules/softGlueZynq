@@ -1,0 +1,3 @@
+$(P)$(H)$(GATE)_IN1_Signal
+$(P)$(H)$(GATE)_IN2_Signal
+$(P)$(H)$(GATE)_OUT_Signal

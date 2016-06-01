@@ -1,0 +1,201 @@
+# components
+file gate_settings.req P=$(P),H=$(H),GATE=AND-1
+file gate_settings.req P=$(P),H=$(H),GATE=AND-2
+file gate_settings.req P=$(P),H=$(H),GATE=AND-3
+file gate_settings.req P=$(P),H=$(H),GATE=AND-4
+file gate_settings.req P=$(P),H=$(H),GATE=OR-1
+file gate_settings.req P=$(P),H=$(H),GATE=OR-2
+file gate_settings.req P=$(P),H=$(H),GATE=OR-3
+file gate_settings.req P=$(P),H=$(H),GATE=OR-4
+file gate_settings.req P=$(P),H=$(H),GATE=XOR-1
+file gate_settings.req P=$(P),H=$(H),GATE=XOR-2
+file BUFFER_settings.req P=$(P),H=$(H),N=1
+file BUFFER_settings.req P=$(P),H=$(H),N=2
+file BUFFER_settings.req P=$(P),H=$(H),N=3
+file BUFFER_settings.req P=$(P),H=$(H),N=4
+file DEMUX2_settings.req P=$(P),H=$(H),N=1
+file DEMUX2_settings.req P=$(P),H=$(H),N=2
+file DFF_settings.req P=$(P),H=$(H),N=1
+file DFF_settings.req P=$(P),H=$(H),N=2
+file DFF_settings.req P=$(P),H=$(H),N=3
+file DFF_settings.req P=$(P),H=$(H),N=4
+file DivByN_settings.req P=$(P),H=$(H),N=1
+file DivByN_settings.req P=$(P),H=$(H),N=2
+file DivByN_settings.req P=$(P),H=$(H),N=3
+file DivByN_settings.req P=$(P),H=$(H),N=4
+file DnCntr_settings.req P=$(P),H=$(H),N=1
+file DnCntr_settings.req P=$(P),H=$(H),N=2
+file DnCntr_settings.req P=$(P),H=$(H),N=3
+file DnCntr_settings.req P=$(P),H=$(H),N=4
+file MUX2_settings.req P=$(P),H=$(H),N=1
+file MUX2_settings.req P=$(P),H=$(H),N=2
+file UpCntr_settings.req P=$(P),H=$(H),N=1
+file UpCntr_settings.req P=$(P),H=$(H),N=2
+file UpCntr_settings.req P=$(P),H=$(H),N=3
+file UpCntr_settings.req P=$(P),H=$(H),N=4
+
+file UpDnCntr_settings.req P=$(P),H=$(H),N=1
+file UpDnCntr_settings.req P=$(P),H=$(H),N=2
+file UpDnCntr_settings.req P=$(P),H=$(H),N=3
+file UpDnCntr_settings.req P=$(P),H=$(H),N=4
+#file UpDnCntr8_settings.req P=$(P),H=$(H),N=5
+file QuadDec_settings.req P=$(P),H=$(H),N=1
+file QuadDec_settings.req P=$(P),H=$(H),N=2
+#file MagCmp_settings.req P=$(P),H=$(H),N=1
+file GateDly_settings.req P=$(P),H=$(H),N=1
+file GateDly_settings.req P=$(P),H=$(H),N=2
+file GateDly_settings.req P=$(P),H=$(H),N=3
+file GateDly_settings.req P=$(P),H=$(H),N=4
+file HistScal_settings.req P=$(P),H=$(H),N=1
+
+# clock
+$(P)$(H)10MHZ_CLOCK_Signal
+$(P)$(H)100MHZ_CLOCK_Signal
+$(P)$(H)800MHZ_CLOCK_Signal
+
+# field I/O
+$(P)$(H)FI1_Signal
+$(P)$(H)FI2_Signal
+$(P)$(H)FI3_Signal
+$(P)$(H)FI4_Signal
+$(P)$(H)FI5_Signal
+$(P)$(H)FI6_Signal
+$(P)$(H)FI7_Signal
+$(P)$(H)FI8_Signal
+$(P)$(H)FI9_Signal
+$(P)$(H)FI10_Signal
+$(P)$(H)FI11_Signal
+$(P)$(H)FI12_Signal
+$(P)$(H)FI13_Signal
+$(P)$(H)FI14_Signal
+$(P)$(H)FI15_Signal
+$(P)$(H)FI16_Signal
+$(P)$(H)FI17_Signal
+$(P)$(H)FI18_Signal
+$(P)$(H)FI19_Signal
+$(P)$(H)FI20_Signal
+$(P)$(H)FI21_Signal
+$(P)$(H)FI22_Signal
+$(P)$(H)FI23_Signal
+$(P)$(H)FI24_Signal
+$(P)$(H)FI25_Signal
+$(P)$(H)FI26_Signal
+$(P)$(H)FI27_Signal
+$(P)$(H)FI28_Signal
+$(P)$(H)FI29_Signal
+$(P)$(H)FI30_Signal
+$(P)$(H)FI31_Signal
+$(P)$(H)FI32_Signal
+$(P)$(H)FI33_Signal
+$(P)$(H)FI34_Signal
+$(P)$(H)FI35_Signal
+$(P)$(H)FI36_Signal
+$(P)$(H)FI37_Signal
+$(P)$(H)FI38_Signal
+$(P)$(H)FI39_Signal
+$(P)$(H)FI40_Signal
+$(P)$(H)FI41_Signal
+$(P)$(H)FI42_Signal
+$(P)$(H)FI43_Signal
+$(P)$(H)FI44_Signal
+$(P)$(H)FI45_Signal
+$(P)$(H)FI46_Signal
+$(P)$(H)FI47_Signal
+$(P)$(H)FI48_Signal
+
+$(P)$(H)FO1_Signal
+$(P)$(H)FO2_Signal
+$(P)$(H)FO3_Signal
+$(P)$(H)FO4_Signal
+$(P)$(H)FO5_Signal
+$(P)$(H)FO6_Signal
+$(P)$(H)FO7_Signal
+$(P)$(H)FO8_Signal
+$(P)$(H)FO9_Signal
+$(P)$(H)FO10_Signal
+$(P)$(H)FO11_Signal
+$(P)$(H)FO12_Signal
+$(P)$(H)FO13_Signal
+$(P)$(H)FO14_Signal
+$(P)$(H)FO15_Signal
+$(P)$(H)FO16_Signal
+$(P)$(H)FO17_Signal
+$(P)$(H)FO18_Signal
+$(P)$(H)FO19_Signal
+$(P)$(H)FO20_Signal
+$(P)$(H)FO21_Signal
+$(P)$(H)FO22_Signal
+$(P)$(H)FO23_Signal
+$(P)$(H)FO24_Signal
+$(P)$(H)FO25_Signal
+$(P)$(H)FO26_Signal
+$(P)$(H)FO27_Signal
+$(P)$(H)FO28_Signal
+$(P)$(H)FO29_Signal
+$(P)$(H)FO30_Signal
+$(P)$(H)FO31_Signal
+$(P)$(H)FO32_Signal
+$(P)$(H)FO33_Signal
+$(P)$(H)FO34_Signal
+$(P)$(H)FO35_Signal
+$(P)$(H)FO36_Signal
+$(P)$(H)FO37_Signal
+$(P)$(H)FO38_Signal
+$(P)$(H)FO39_Signal
+$(P)$(H)FO40_Signal
+$(P)$(H)FO41_Signal
+$(P)$(H)FO42_Signal
+$(P)$(H)FO43_Signal
+$(P)$(H)FO44_Signal
+$(P)$(H)FO45_Signal
+$(P)$(H)FO46_Signal
+$(P)$(H)FO47_Signal
+$(P)$(H)FO48_Signal
+
+# circuit and element descriptions
+$(P)$(H)circuit_desc
+$(P)$(H)8MHZ_CLOCK_desc
+$(P)$(H)AND-1_desc
+$(P)$(H)AND-2_desc
+$(P)$(H)AND-3_desc
+$(P)$(H)AND-4_desc
+$(P)$(H)BUFFER-1_desc
+$(P)$(H)BUFFER-2_desc
+$(P)$(H)BUFFER-3_desc
+$(P)$(H)BUFFER-4_desc
+$(P)$(H)DEMUX2-1_desc
+$(P)$(H)DEMUX2-2_desc
+$(P)$(H)DFF-1_desc
+$(P)$(H)DFF-2_desc
+$(P)$(H)DFF-3_desc
+$(P)$(H)DFF-4_desc
+$(P)$(H)DivByN-1_desc
+$(P)$(H)DivByN-2_desc
+$(P)$(H)DivByN-3_desc
+$(P)$(H)DivByN-4_desc
+$(P)$(H)DnCntr-1_desc
+$(P)$(H)DnCntr-2_desc
+$(P)$(H)DnCntr-3_desc
+$(P)$(H)DnCntr-4_desc
+$(P)$(H)MUX2-1_desc
+$(P)$(H)MUX2-2_desc
+$(P)$(H)OR-1_desc
+$(P)$(H)OR-2_desc
+$(P)$(H)OR-3_desc
+$(P)$(H)OR-4_desc
+$(P)$(H)UpCntr-1_desc
+$(P)$(H)UpCntr-2_desc
+$(P)$(H)UpCntr-3_desc
+$(P)$(H)UpCntr-4_desc
+$(P)$(H)XOR-1_desc
+$(P)$(H)XOR-2_desc
+
+$(P)$(H)UpDnCntr-1_desc
+$(P)$(H)UpDnCntr-2_desc
+$(P)$(H)UpDnCntr-3_desc
+$(P)$(H)UpDnCntr-4_desc
+#$(P)$(H)UpDnCntr-5_desc
+$(P)$(H)QuadDec-1_desc
+$(P)$(H)QuadDec-2_desc
+#$(P)$(H)MagCmp-1_desc
+#$(P)$(H)HistScal-1_desc

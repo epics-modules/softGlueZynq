@@ -1,0 +1,4 @@
+$(P)$(H)MUX2-$(N)_IN0_Signal
+$(P)$(H)MUX2-$(N)_IN1_Signal
+$(P)$(H)MUX2-$(N)_OUT_Signal
+$(P)$(H)MUX2-$(N)_SEL_Signal

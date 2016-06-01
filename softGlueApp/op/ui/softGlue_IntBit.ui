@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>900</x>
+            <y>200</y>
+            <width>257</width>
+            <height>50</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(218, 218, 218, 255);}
+QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caLabel" name="caLabel_0">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>Interrupt $(NAM)</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>257</width>
+                    <height>20</height>
+                </rect>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_0">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>20</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>20</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=$(NAM)</string>
+            </property>
+        </widget>
+        <zorder>caLabel_0</zorder>
+        <zorder>caInclude_0</zorder>
+    </widget>
+</widget>
+</ui>

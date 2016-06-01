@@ -1,0 +1,66 @@
+# This record controls which edge of a signal causes an interrupt.
+# This is a kludge implemented by softGlue's drvIP_EP201's readUInt32D() and
+# writeUInt32D() to interpret the behavior of the mbbo record, and of
+# asyn asynUInt32Digital support to implement a two-bit menu for the user,
+# and have that menu control one bit of drvIP_EP201's risingIntEnable and
+# fallingIntEnable registers.  The mask $(MASK) must have two adjacent bits
+# set, the lower of which tells drvIP_EP201 which bit actually to read/write.
+# PINI="YES" because we want autosave to be able to restore the user's
+# rising/falling edge selections.
+record(mbbo,"$(P)$(H)$(NAM)IntEdge") {
+	field(PINI,"YES")
+	field(DTYP,"asynUInt32Digital")
+	field(OUT,"@asynMask($(PORT),$(ADDR),$(MASK))INTEDGE")
+	field(NOBT,"2")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(TWVL,"2")
+	field(THVL,"3")
+	field(ZRST,"None")
+	field(ONST,"Rising")
+	field(TWST,"Falling")
+	field(THST,"Both")
+	field(FLNK,"$(P)$(H)$(NAM)IntEdgeClearThrottled")
+}
+
+# This record's purpose is to be executed when drvIP-EP201's intFunc disables
+# an interrupt bit because it was generating more interrupts than pollerThread
+# was able to handle.  When executed, the record will get the disabledIntMask,
+# and attempt to execute IntEdgeClear. If disabledIntMask is nonzero, the
+# attempt will succeed.
+record(longin,"$(P)$(H)$(NAM)IntEdgeReset") {
+	field(DTYP,"asynUInt32Digital")
+	field(INP,"@asynMask($(PORT),$(ADDR),$(MASK))INT_EDGE_RESET")
+	field(FLNK,"$(P)$(H)$(NAM)IntEdgeClear")
+	field(SCAN,"I/O Intr")
+}
+
+# Clear an interrupt bit.
+record(longout,"$(P)$(H)$(NAM)IntEdgeClear") {
+	field(SDIS,"$(P)$(H)$(NAM)IntEdgeReset")
+	field(DISV,"0")
+	field(DOL,"0")
+	field(OUT,"$(P)$(H)$(NAM)IntEdge PP")
+	field(FLNK,"$(P)$(H)$(NAM)IntEdgeSetThrottled")
+}
+
+# Show user when IntEdge has been set to "None" by throttle
+record(bo,"$(P)$(H)$(NAM)IntEdgeSetThrottled") {
+	field(DOL,"1")
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(OUT,"$(P)$(H)$(NAM)IntEdgeThrottled PP")
+}
+record(bo,"$(P)$(H)$(NAM)IntEdgeClearThrottled") {
+	field(SDIS,"$(P)$(H)$(NAM)IntEdgeReset.PACT")
+	field(DISV,"1")
+	field(DOL,"0")
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(OUT,"$(P)$(H)$(NAM)IntEdgeThrottled PP")
+}
+record(bo,"$(P)$(H)$(NAM)IntEdgeThrottled") {
+	field(DOL,"0")
+	field(ZNAM,"0")
+	field(ONAM,"1")
+}

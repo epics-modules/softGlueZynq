@@ -1,0 +1,330 @@
+
+file {
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_QuadDec_bare.adl"
+	version=030107
+}
+display {
+	object {
+		x=770
+		y=47
+		width=460
+		height=95
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+composite {
+	object {
+		x=10
+		y=55
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_CLOCK"
+}
+composite {
+	object {
+		x=10
+		y=32
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_B"
+}
+composite {
+	object {
+		x=10
+		y=9
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_A"
+}
+polyline {
+	object {
+		x=164
+		y=68
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(176,69)
+		(165,69)
+	}
+}
+polyline {
+	object {
+		x=164
+		y=45
+		width=12
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(175,46)
+		(165,46)
+	}
+}
+rectangle {
+	object {
+		x=175
+		y=15
+		width=102
+		height=64
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+polyline {
+	object {
+		x=174
+		y=61
+		width=11
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(175,62)
+		(184,69)
+		(175,76)
+	}
+}
+text {
+	object {
+		x=179
+		y=40
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="B"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=164
+		y=22
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(176,23)
+		(165,23)
+	}
+}
+text {
+	object {
+		x=199
+		y=44
+		width=70
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="QuadDec-$(N)"
+}
+rectangle {
+	object {
+		x=192
+		y=41
+		width=80
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=179
+		y=17
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=276
+		y=31
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,32)
+		(277,32)
+	}
+}
+text {
+	object {
+		x=246
+		y=26
+		width=25
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="STEP"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=18
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_STEP"
+}
+polyline {
+	object {
+		x=276
+		y=64
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,65)
+		(277,65)
+	}
+}
+text {
+	object {
+		x=251
+		y=59
+		width=20
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DIR"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=51
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_DIR"
+}

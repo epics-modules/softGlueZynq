@@ -1,0 +1,52 @@
+# This database is for automated testing of softGlue interrupt support.
+# Trigger an EPICS link on the rising edge of a specified softGlue I/O signal.
+# dbLoadRecords("softgluelocation/softGlueApp/Db/triggerAction.db", "P=xxx:,Q=trigaction1:")
+record(stringout, "$(P)$(Q)softGlueInstance") {
+	field(DOL, "$(P)softGlue:")
+}
+record(longout, "$(P)$(Q)fieldIOSigNum") {
+	field(DOL, "18")
+}
+record(scalcout, "$(P)$(Q)IntLinkPV") {
+	field(INAA, "$(P)$(Q)softGlueInstance CP")
+	field(INPA, "$(P)$(Q)fieldIOSigNum CP")
+	field(CALC, "AA+$P('In_%dDo.OUT CA',A)")
+	field(OUT, "$(P)$(Q)armSseq.LNK1 CA")
+}
+record(scalcout, "$(P)$(Q)IntEnablePV") {
+	field(INAA, "$(P)$(Q)softGlueInstance CP")
+	field(INPA, "$(P)$(Q)fieldIOSigNum CP")
+	field(CALC, "AA+$P('In_%dIntEdge PP',A)")
+	field(OUT, "$(P)$(Q)armSseq.LNK2 CA")
+	field(FLNK, "$(P)$(Q)copyIntEnablePV")
+}
+record(stringout, "$(P)$(Q)copyIntEnablePV") {
+	field(DOL, "$(P)$(Q)IntEnablePV.SVAL")
+	field(OUT, "$(P)$(Q)trigSseq.LNK2 CA")
+	field(OMSL, "closed_loop")
+}
+record(bo, "$(P)$(Q)arm") {
+	field(ZNAM, "Disarmed")
+	field(ONAM, "Arm")
+	field(OUT, "$(P)$(Q)doArm PP")
+}
+record(bo, "$(P)$(Q)doArm") {
+	field(SDIS, "$(P)$(Q)arm")
+	field(DISV, "0")
+	field(OUT, "$(P)$(Q)armSseq PP")
+}
+record(sseq, "$(P)$(Q)armSseq") {
+	field(STR1, "$(P)$(Q)trigCalc.A PP")
+	field(STR2, "Rising")
+}
+record(calcout, "$(P)$(Q)trigCalc") {
+	field(CALC, "A")
+	field(OOPT, "Transition To Non-zero")
+	field(OUT, "$(P)$(Q)trigSseq.DO1 PP")
+}
+record(sseq, "$(P)$(Q)trigSseq") {
+	field(LNK1, "$(P)userCalcOut1.A PP")
+	field(STR2, "None")
+	field(LNK3, "$(P)$(Q)arm PP")
+	field(LNK4, "$(P)$(Q)trigCalc.A PP")
+}

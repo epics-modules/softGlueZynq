@@ -1,0 +1,12 @@
+$(P)$(H)busy1.OUT
+$(P)$(H)busy1.FLNK
+$(P)$(H)busy2.OUT
+$(P)$(H)busy2.FLNK
+$(P)$(H)pulseOut.OUT
+$(P)$(H)npulseOut.OUT
+$(P)$(H)clock1.OUT
+$(P)$(H)clock1.SCAN
+$(P)$(H)clock2.OUT
+$(P)$(H)clock2.SCAN
+file sseq_settings.req P=$(P),S=$(H)sseq1
+file sseq_settings.req P=$(P),S=$(H)sseq2

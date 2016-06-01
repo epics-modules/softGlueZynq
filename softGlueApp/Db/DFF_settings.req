@@ -1,0 +1,5 @@
+$(P)$(H)DFF-$(N)_CLEAR_Signal
+$(P)$(H)DFF-$(N)_CLOCK_Signal
+$(P)$(H)DFF-$(N)_D_Signal
+$(P)$(H)DFF-$(N)_OUT_Signal
+$(P)$(H)DFF-$(N)_SET_Signal

@@ -1,0 +1,566 @@
+
+file {
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_Shift32_bare.adl"
+	version=030107
+}
+display {
+	object {
+		x=996
+		y=543
+		width=475
+		height=97
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+composite {
+	object {
+		x=190
+		y=1
+		width=106
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=190
+				y=1
+				width=106
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(191,24)
+				(191,2)
+				(295,2)
+			}
+		}
+		polyline {
+			object {
+				x=190
+				y=1
+				width=106
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(295,2)
+				(295,24)
+				(191,24)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=0
+		y=70
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=Shift-$(N)_LOAD"
+}
+composite {
+	object {
+		x=0
+		y=24
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=Shift-$(N)_D"
+}
+composite {
+	object {
+		x=0
+		y=47
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=Shift-$(N)_CLOCK"
+}
+polyline {
+	object {
+		x=153
+		y=60
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,61)
+		(154,61)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=37
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,38)
+		(154,38)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=83
+		width=49
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(201,84)
+		(154,84)
+	}
+}
+rectangle {
+	object {
+		x=163
+		y=27
+		width=132
+		height=47
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+polyline {
+	object {
+		x=162
+		y=53
+		width=11
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(163,54)
+		(172,61)
+		(163,68)
+	}
+}
+text {
+	object {
+		x=169
+		y=31
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="D"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=203
+		y=31
+		width=50
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="READVAL"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=185
+		y=62
+		width=30
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LOAD"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=199
+		y=72
+		width=2
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(200,73)
+		(200,85)
+	}
+}
+rectangle {
+	object {
+		x=186
+		y=42
+		width=89
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=206
+		y=45
+		width=50
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="Shift-$(N)"
+}
+text {
+	object {
+		x=223
+		y=62
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LOADVAL"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=242
+		y=72
+		width=2
+		height=7
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(243,73)
+		(243,78)
+	}
+}
+"text entry" {
+	object {
+		x=210
+		y=77
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)$(H)Shift-$(N)_LOADVAL"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=280
+		y=36
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Q"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=184
+		y=3
+		width=100
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL"
+		clr=54
+		bclr=2
+	}
+	limits {
+	}
+}
+polyline {
+	object {
+		x=294
+		y=42
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(312,43)
+		(295,43)
+	}
+}
+composite {
+	object {
+		x=311
+		y=29
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=Shift-$(N)_Q"
+}
+polyline {
+	object {
+		x=229
+		y=22
+		width=2
+		height=7
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(230,23)
+		(230,28)
+	}
+}
+byte {
+	object {
+		x=295
+		y=4
+		width=180
+		height=13
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL"
+		clr=14
+		bclr=2
+	}
+	sbit=31
+}
+byte {
+	object {
+		x=295
+		y=81
+		width=180
+		height=13
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_LOADVAL"
+		clr=14
+		bclr=2
+	}
+	sbit=31
+}
+polyline {
+	object {
+		x=298
+		y=14
+		width=13
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(298,14)
+		(298,22)
+		(311,35)
+	}
+}
+polyline {
+	object {
+		x=306
+		y=30
+		width=5
+		height=5
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(306,35)
+		(310,35)
+		(311,35)
+		(311,30)
+	}
+}
+text {
+	object {
+		x=434
+		y=17
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LSBIT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=434
+		y=69
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LSBIT"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=78
+		y=1
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL_LSW"
+		clr=54
+		bclr=1
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=3
+		y=0
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL_MSW"
+		clr=54
+		bclr=1
+	}
+	format="hexadecimal"
+	limits {
+	}
+}

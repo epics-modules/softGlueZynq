@@ -1,0 +1,6 @@
+record(stringout, "$(P)$(H)$(SIG)_desc") {
+}
+# In 3.15, we'll be able to use long strings
+#record(lso, "$(P)$(H)$(SIG)_desc") {
+#	field(SIZV, "$(N)")
+#}

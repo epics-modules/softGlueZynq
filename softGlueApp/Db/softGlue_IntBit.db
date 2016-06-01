@@ -1,0 +1,16 @@
+record(bi,"$(P)$(H)$(NAM)") {
+	field(DTYP,"asynUInt32Digital")
+	field(INP,"@asynMask($(PORT),$(ADDR),$(MASK))")
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(SCAN,"I/O Intr")
+	field(FLNK,"$(P)$(H)$(NAM)Do")
+}
+
+record(bo,"$(P)$(H)$(NAM)Do") {
+	field(DOL,"$(P)$(H)$(NAM)")
+	field(OMSL,"closed_loop")
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	info(FIFO,"$(FIF0=10)")
+}

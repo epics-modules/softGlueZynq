@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>34</x>
+            <y>186</y>
+            <width>970</width>
+            <height>560</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(218, 218, 218, 255);}
+QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caInclude" name="caInclude_0">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>35</y>
+                    <width>377</width>
+                    <height>52</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>35</y>
+                    <width>375</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_AND_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_1">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>102</y>
+                    <width>377</width>
+                    <height>52</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>102</y>
+                    <width>375</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_OR_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_2">
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>35</y>
+                    <width>470</width>
+                    <height>74</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>35</y>
+                    <width>468</width>
+                    <height>72</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_DnCntr_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_3">
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>124</y>
+                    <width>420</width>
+                    <height>97</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>124</y>
+                    <width>418</width>
+                    <height>95</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_DFF_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_4">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>167</y>
+                    <width>382</width>
+                    <height>52</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>167</y>
+                    <width>380</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_XOR_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_5">
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>241</y>
+                    <width>471</width>
+                    <height>74</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>241</y>
+                    <width>469</width>
+                    <height>72</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_DivByN_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_6">
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>331</y>
+                    <width>413</width>
+                    <height>74</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>331</y>
+                    <width>411</width>
+                    <height>72</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_MUX2_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_7">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>232</y>
+                    <width>414</width>
+                    <height>54</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>232</y>
+                    <width>412</width>
+                    <height>52</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_DEMUX2_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_8">
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>419</y>
+                    <width>416</width>
+                    <height>74</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>470</x>
+                    <y>419</y>
+                    <width>414</width>
+                    <height>72</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_UpCntr_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
+            </property>
+        </widget>
+        <widget class="caFrame" name="caFrame_9">
+            <property name="geometry">
+                <rect>
+                    <x>20</x>
+                    <y>331</y>
+                    <width>382</width>
+                    <height>17</height>
+                </rect>
+            </property>
+            <widget class="caLabel" name="caLabel_0">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>Field Output Bits</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>200</x>
+                        <y>0</y>
+                        <width>180</width>
+                        <height>15</height>
+                    </rect>
+                </property>
+            </widget>
+            <widget class="caLabel" name="caLabel_1">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>Field Input Bits</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>180</width>
+                        <height>15</height>
+                    </rect>
+                </property>
+            </widget>
+        </widget>
+        <widget class="caFrame" name="caFrame_10">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>551</y>
+                    <width>412</width>
+                    <height>12</height>
+                </rect>
+            </property>
+            <widget class="caLabel" name="caLabel_2">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>253</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>253</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>CONNECTOR #</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>340</x>
+                        <y>0</y>
+                        <width>70</width>
+                        <height>10</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+            <widget class="caLabel" name="caLabel_3">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>253</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>253</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>CONNECTOR #</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>80</width>
+                        <height>10</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+        </widget>
+        <widget class="caInclude" name="caInclude_11">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>345</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>345</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N1)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_12">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>370</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>370</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N2)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_13">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>395</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>395</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N3)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_14">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>420</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>420</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N4)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_15">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>445</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>445</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N5)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_16">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>470</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>470</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N6)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_17">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>495</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>495</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N7)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_18">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>520</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>520</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldInput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N8)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_19">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>345</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>345</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N1)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_20">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>370</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>370</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N2)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_21">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>395</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>395</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N3)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_22">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>420</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>420</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N4)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_23">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>445</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>445</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N5)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_24">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>470</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>470</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N6)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_25">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>495</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>495</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N7)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_26">
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>520</y>
+                    <width>197</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>220</x>
+                    <y>520</y>
+                    <width>195</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_FieldOutput_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N8)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_27">
+            <property name="geometry">
+                <rect>
+                    <x>471</x>
+                    <y>522</y>
+                    <width>287</width>
+                    <height>28</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>471</x>
+                    <y>522</y>
+                    <width>285</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_8MHZ_CK_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H)</string>
+            </property>
+        </widget>
+        <widget class="caFrame" name="caFrame_28">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>972</width>
+                    <height>25</height>
+                </rect>
+            </property>
+            <widget class="caFrame" name="caFrame_29">
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>972</width>
+                        <height>22</height>
+                    </rect>
+                </property>
+                <widget class="caGraphics" name="caRectangle_0">
+                    <property name="form">
+                        <enum>caGraphics::Rectangle</enum>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>0</x>
+                            <y>0</y>
+                            <width>970</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                    <property name="foreground">
+                        <color alpha="255">
+                            <red>255</red>
+                            <green>255</green>
+                            <blue>255</blue>
+                        </color>
+                    </property>
+                    <property name="fillstyle">
+                        <enum>Filled</enum>
+                    </property>
+                    <property name="lineColor">
+                        <color alpha="255">
+                            <red>255</red>
+                            <green>255</green>
+                            <blue>255</blue>
+                        </color>
+                    </property>
+                    <property name="linestyle">
+                        <enum>Solid</enum>
+                    </property>
+                </widget>
+                <widget class="caLabel" name="caLabel_4">
+                    <property name="frameShape">
+                        <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <property name="foreground">
+                        <color alpha="255">
+                            <red>0</red>
+                            <green>0</green>
+                            <blue>0</blue>
+                        </color>
+                    </property>
+                    <property name="background">
+                        <color alpha="0">
+                            <red>0</red>
+                            <green>0</green>
+                            <blue>0</blue>
+                        </color>
+                    </property>
+                    <property name="text">
+                        <string>$(P)$(H) </string>
+                    </property>
+                    <property name="fontScaleMode">
+                        <enum>ESimpleLabel::WidthAndHeight</enum>
+                    </property>
+                    <property name="alignment">
+                        <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+                    </property>
+                    <property name="geometry">
+                        <rect>
+                            <x>0</x>
+                            <y>0</y>
+                            <width>970</width>
+                            <height>20</height>
+                        </rect>
+                    </property>
+                </widget>
+            </widget>
+            <widget class="caPolyLine" name="caPolyLine_0">
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>20</y>
+                        <width>968</width>
+                        <height>3</height>
+                    </rect>
+                </property>
+                <property name="lineSize">
+                    <number>3</number>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="fillstyle">
+                    <enum>Filled</enum>
+                </property>
+                <property name="lineColor">
+                    <color alpha="255">
+                        <red>10</red>
+                        <green>0</green>
+                        <blue>184</blue>
+                    </color>
+                </property>
+                <property name="linestyle">
+                    <enum>Solid</enum>
+                </property>
+                <property name="xyPairs">
+                    <string>1,1;966,1;</string>
+                </property>
+            </widget>
+        </widget>
+        <zorder>caInclude_0</zorder>
+        <zorder>caInclude_1</zorder>
+        <zorder>caInclude_2</zorder>
+        <zorder>caInclude_3</zorder>
+        <zorder>caInclude_4</zorder>
+        <zorder>caInclude_5</zorder>
+        <zorder>caInclude_6</zorder>
+        <zorder>caInclude_7</zorder>
+        <zorder>caInclude_8</zorder>
+        <zorder>caLabel_0</zorder>
+        <zorder>caLabel_1</zorder>
+        <zorder>caFrame_9</zorder>
+        <zorder>caLabel_2</zorder>
+        <zorder>caLabel_3</zorder>
+        <zorder>caFrame_10</zorder>
+        <zorder>caInclude_11</zorder>
+        <zorder>caInclude_12</zorder>
+        <zorder>caInclude_13</zorder>
+        <zorder>caInclude_14</zorder>
+        <zorder>caInclude_15</zorder>
+        <zorder>caInclude_16</zorder>
+        <zorder>caInclude_17</zorder>
+        <zorder>caInclude_18</zorder>
+        <zorder>caInclude_19</zorder>
+        <zorder>caInclude_20</zorder>
+        <zorder>caInclude_21</zorder>
+        <zorder>caInclude_22</zorder>
+        <zorder>caInclude_23</zorder>
+        <zorder>caInclude_24</zorder>
+        <zorder>caInclude_25</zorder>
+        <zorder>caInclude_26</zorder>
+        <zorder>caInclude_27</zorder>
+        <zorder>caRectangle_0</zorder>
+        <zorder>caLabel_4</zorder>
+        <zorder>caFrame_29</zorder>
+        <zorder>caPolyLine_0</zorder>
+        <zorder>caFrame_28</zorder>
+    </widget>
+</widget>
+</ui>

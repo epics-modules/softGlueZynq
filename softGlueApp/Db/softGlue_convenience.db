@@ -1,0 +1,65 @@
+record(busy,"$(P)$(H)busy1") {
+}
+record(busy,"$(P)$(H)busy2") {
+}
+record(sseq,"$(P)$(H)sseq1") {
+}
+record(sseq,"$(P)$(H)sseq2") {
+}
+# positive going pulse
+record(bo,"$(P)$(H)pulse") {
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(DOL,"1")
+	field(OMSL,"closed_loop")
+	field(OUT,"$(P)$(H)pulseOut PP")
+	field(FLNK,"$(P)$(H)pulse0")
+}
+record(bo,"$(P)$(H)pulse0") {
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(DOL,"0")
+	field(OMSL,"closed_loop")
+	field(OUT,"$(P)$(H)pulseOut PP")
+}
+
+record(bo,"$(P)$(H)pulseOut") {
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(DOL,"0")
+}
+
+# negative going pulse
+record(bo,"$(P)$(H)npulse") {
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(DOL,"0")
+	field(OMSL,"closed_loop")
+	field(OUT,"$(P)$(H)npulseOut PP")
+	field(FLNK,"$(P)$(H)npulse1")
+}
+record(bo,"$(P)$(H)npulse1") {
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(DOL,"1")
+	field(OMSL,"closed_loop")
+	field(OUT,"$(P)$(H)npulseOut PP")
+}
+
+record(bo,"$(P)$(H)npulseOut") {
+	field(ZNAM,"0")
+	field(ONAM,"1")
+	field(DOL,"1")
+}
+
+# clock
+record(calcout,"$(P)$(H)clock1") {
+	field(INPA,"$(P)$(H)clock1.VAL")
+	field(CALC,"a?0:1")
+}
+
+# clock
+record(calcout,"$(P)$(H)clock2") {
+	field(INPA,"$(P)$(H)clock2.VAL")
+	field(CALC,"a?0:1")
+}

@@ -1,0 +1,5 @@
+$(P)$(H)QuadDec-$(N)_A_Signal
+$(P)$(H)QuadDec-$(N)_B_Signal
+$(P)$(H)QuadDec-$(N)_CLOCK_Signal
+$(P)$(H)QuadDec-$(N)_STEP_Signal
+$(P)$(H)QuadDec-$(N)_DIR_Signal

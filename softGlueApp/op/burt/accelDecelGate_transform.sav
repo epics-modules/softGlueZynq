@@ -1,0 +1,84 @@
+xxx:userTran1.DESC motor accel gate
+xxx:userTran1.SCAN 0
+xxx:userTran1.PREC 3
+xxx:userTran1.COPT 0
+xxx:userTran1.A 0.1
+xxx:userTran1.B 1
+xxx:userTran1.C 0.5
+xxx:userTran1.D 0.025
+xxx:userTran1.E 0.275
+xxx:userTran1.F 11
+xxx:userTran1.G 3
+xxx:userTran1.H 3.5
+xxx:userTran1.I 31
+xxx:userTran1.J 2.725
+xxx:userTran1.K 3.775
+xxx:userTran1.L 1.05
+xxx:userTran1.M 0
+xxx:userTran1.N 0
+xxx:userTran1.O 0
+xxx:userTran1.P 0
+xxx:userTran1.CMTA a
+xxx:userTran1.CMTB b
+xxx:userTran1.CMTC c
+xxx:userTran1.CMTD d
+xxx:userTran1.CMTE accel dist
+xxx:userTran1.CMTF accel steps
+xxx:userTran1.CMTG dataStart
+xxx:userTran1.CMTH dataEnd
+xxx:userTran1.CMTI data+accel steps
+xxx:userTran1.CMTJ motor start
+xxx:userTran1.CMTK motor end
+xxx:userTran1.CMTL motor dist
+xxx:userTran1.CMTM m
+xxx:userTran1.CMTN n
+xxx:userTran1.CMTO o
+xxx:userTran1.CMTP p
+xxx:userTran1.CLCA 
+xxx:userTran1.CLCB 
+xxx:userTran1.CLCC 
+xxx:userTran1.CLCD 
+xxx:userTran1.CLCE ((a+b)/2)*c
+xxx:userTran1.CLCF e/d
+xxx:userTran1.CLCG 
+xxx:userTran1.CLCH 
+xxx:userTran1.CLCI f+(h-g)/d
+xxx:userTran1.CLCJ g-e
+xxx:userTran1.CLCK h+e
+xxx:userTran1.CLCL k-j
+xxx:userTran1.CLCM 
+xxx:userTran1.CLCN 
+xxx:userTran1.CLCO 
+xxx:userTran1.CLCP 
+xxx:userTran1.INPA xxx:m9.VBAS CP NMS
+xxx:userTran1.INPB xxx:m9.VELO CP NMS
+xxx:userTran1.INPC xxx:m9.ACCL CP NMS
+xxx:userTran1.INPD xxx:m9.MRES CP NMS
+xxx:userTran1.INPE 
+xxx:userTran1.INPF 
+xxx:userTran1.INPG 
+xxx:userTran1.INPH 
+xxx:userTran1.INPI 
+xxx:userTran1.INPJ 
+xxx:userTran1.INPK 
+xxx:userTran1.INPL 
+xxx:userTran1.INPM 
+xxx:userTran1.INPN 
+xxx:userTran1.INPO 
+xxx:userTran1.INPP 
+xxx:userTran1.OUTA 
+xxx:userTran1.OUTB 
+xxx:userTran1.OUTC 
+xxx:userTran1.OUTD 
+xxx:userTran1.OUTE 
+xxx:userTran1.OUTF xxx:softGlue:DnCntr-1_PRESET PP NMS
+xxx:userTran1.OUTG 
+xxx:userTran1.OUTH 
+xxx:userTran1.OUTI xxx:softGlue:DnCntr-2_PRESET PP NMS
+xxx:userTran1.OUTJ 
+xxx:userTran1.OUTK 
+xxx:userTran1.OUTL 
+xxx:userTran1.OUTM 
+xxx:userTran1.OUTN 
+xxx:userTran1.OUTO 
+xxx:userTran1.OUTP 

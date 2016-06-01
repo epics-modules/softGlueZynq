@@ -1,0 +1,26 @@
+record(stringout,"$(P)$(H)$(SIG)_Signal") {
+	field(DESC,"$(IOPIN)")
+	field(PINI,"YES")
+	field(DTYP,"softGlue")
+	field(OUT,"@asynMask($(PORT),$(ADDR),0x2f)")
+	info(softGlueIO,"OUT")
+}
+record(bi,"$(P)$(H)$(SIG)_BI") {
+	field(DTYP,"asynUInt32Digital")
+	field(INP,"@asynMask($(PORT),$(ADDR),0x10)")
+	field(ZNAM,"0")
+	field(ONAM,"1")
+}
+record(bo,"$(P)$(H)$(SIG)_SCAN") {
+	field(SCAN,"Event")
+	field(EVNT,"$(READEVENT)")
+	field(FLNK,"$(P)$(H)$(SIG)_BI")
+}
+record(bo,"$(P)$(H)$(SIG)_SigShow") {
+	field(DTYP,"softGlueShow")
+	field(OUT,"@MATCH $(P)$(H)$(SIG)_Signal")
+}
+record(bo,"$(P)$(H)$(SIG)_Show") {
+	field(DTYP,"softGlueShow")
+	field(OUT,"@SHOW $(P)$(H)$(SIG)_Signal")
+}

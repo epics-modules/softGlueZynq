@@ -1,0 +1,7 @@
+$(P)$(H)DEMUX4-$(N)_IN_Signal
+$(P)$(H)DEMUX4-$(N)_OUT0_Signal
+$(P)$(H)DEMUX4-$(N)_OUT1_Signal
+$(P)$(H)DEMUX4-$(N)_OUT2_Signal
+$(P)$(H)DEMUX4-$(N)_OUT3_Signal
+$(P)$(H)DEMUX4-$(N)_SEL0_Signal
+$(P)$(H)DEMUX4-$(N)_SEL1_Signal

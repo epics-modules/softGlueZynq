@@ -1,0 +1,8 @@
+$(P)$(H)UpDnCntr-$(N)_CLOCK_Signal
+$(P)$(H)UpDnCntr-$(N)_UPDOWN_Signal
+$(P)$(H)UpDnCntr-$(N)_ENABLE_Signal
+$(P)$(H)UpDnCntr-$(N)_CLEAR_Signal
+$(P)$(H)UpDnCntr-$(N)_LOAD_Signal
+$(P)$(H)UpDnCntr-$(N)_Q8_Signal
+$(P)$(H)UpDnCntr-$(N)_PRESET
+$(P)$(H)UpDnCntr-$(N)_C8_Signal

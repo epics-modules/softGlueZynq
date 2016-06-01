@@ -1,0 +1,366 @@
+
+file {
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_DivByN_bare_label.adl"
+	version=030107
+}
+display {
+	object {
+		x=601
+		y=260
+		width=470
+		height=89
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+composite {
+	object {
+		x=0
+		y=17
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=DivByN-$(N)_ENABLE"
+}
+composite {
+	object {
+		x=0
+		y=63
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=DivByN-$(N)_RESET"
+}
+composite {
+	object {
+		x=0
+		y=40
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=DivByN-$(N)_CLOCK"
+}
+polyline {
+	object {
+		x=154
+		y=53
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(166,54)
+		(155,54)
+	}
+}
+polyline {
+	object {
+		x=154
+		y=30
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(166,31)
+		(155,31)
+	}
+}
+polyline {
+	object {
+		x=154
+		y=76
+		width=54
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(207,77)
+		(155,77)
+	}
+}
+rectangle {
+	object {
+		x=164
+		y=25
+		width=132
+		height=37
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+polyline {
+	object {
+		x=163
+		y=46
+		width=11
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(164,47)
+		(173,54)
+		(164,61)
+	}
+}
+polyline {
+	object {
+		x=295
+		y=31
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(313,32)
+		(296,32)
+	}
+}
+text {
+	object {
+		x=281
+		y=28
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Q"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=170
+		y=28
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="EN"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=231
+		y=50
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="N"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=250
+		y=60
+		width=2
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(251,61)
+		(251,74)
+	}
+}
+"text entry" {
+	object {
+		x=226
+		y=68
+		width=50
+		height=20
+	}
+	control {
+		chan="$(P)$(H)DivByN-$(N)_N"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=186
+		y=50
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="RESET"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=205
+		y=60
+		width=2
+		height=19
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(206,61)
+		(206,78)
+	}
+}
+rectangle {
+	object {
+		x=187
+		y=30
+		width=89
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+composite {
+	object {
+		x=312
+		y=18
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=DivByN-$(N)_OUT"
+}
+text {
+	object {
+		x=206
+		y=33
+		width=50
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="DivByN-$(N)"
+}
+"text entry" {
+	object {
+		x=0
+		y=0
+		width=470
+		height=16
+	}
+	control {
+		chan="$(P)$(H)DivByN-$(N)_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
+}
