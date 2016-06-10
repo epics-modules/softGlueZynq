@@ -8,7 +8,7 @@ display {
 		x=1080
 		y=248
 		width=120
-		height=240
+		height=220
 	}
 	clr=14
 	bclr=2
@@ -363,90 +363,6 @@ display {
 		width=100
 		height=20
 	}
-	display[1] {
-		label="Field I/O All"
-		name="softGlueFieldIO_EP202.adl"
-		args="P=$(P),H=$(H)"
-	}
-	display[2] {
-		label="Field I/O 1-16"
-		name="softGlueFieldIOxx_EP202.adl"
-		args="P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16"
-	}
-	display[3] {
-		label="Field I/O 17-32"
-		name="softGlueFieldIOxx_EP202.adl"
-		args="P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
-	}
-	display[4] {
-		label="Field I/O 33-48"
-		name="softGlueFieldIOxx_EP202.adl"
-		args="P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48"
-	}
-	clr=0
-	bclr=63
-	label="-Field I/O 202"
-}
-"text update" {
-	object {
-		x=50
-		y=215
-		width=30
-		height=20
-	}
-	monitor {
-		chan="$(P)$(H)numSignalsInUse"
-		clr=54
-		bclr=2
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-text {
-	object {
-		x=10
-		y=215
-		width=40
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="#SIGS"
-}
-text {
-	object {
-		x=10
-		y=225
-		width=40
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="IN USE"
-}
-text {
-	object {
-		x=85
-		y=215
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="/15"
-	align="horiz. centered"
-}
-"related display" {
-	object {
-		x=10
-		y=150
-		width=100
-		height=20
-	}
 	display[0] {
 		label="all softGlue"
 		name="softGlueAll.adl"
@@ -471,54 +387,13 @@ text {
 		args="P=$(P),H=$(H)"
 	}
 	display[6] {
-		label="octupole"
-		name="softGlueOctupole.adl"
-		args="P=$(P),H=$(H)"
-	}
-	display[8] {
-		label="encoder"
-		name="softGlueEncoder.adl"
-		args="P=$(P),H=$(H)"
-	}
-	display[9] {
-		label="encoderTimeAverage"
-		name="softGlueEncoderAvg.adl"
-		args="P=$(P),H=$(H)"
-	}
-	display[10] {
-		label="4demux4"
-		name="softGlue4DEMUX4.adl"
+		label="softGlue_analogProcTest"
+		name="softGlue_analogProcTest.adl"
 		args="P=$(P),H=$(H)"
 	}
 	clr=0
 	bclr=63
 	label="-Collections"
-}
-text {
-	object {
-		x=10
-		y=180
-		width=100
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="READ PERIOD"
-	align="horiz. centered"
-}
-menu {
-	object {
-		x=10
-		y=190
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P)$(H)ReadRate.SCAN"
-		clr=14
-		bclr=51
-	}
 }
 text {
 	object {
@@ -619,12 +494,12 @@ composite {
 	}
 	display[0] {
 		label="10 MHZ Internal Clock"
-		name="softGlue_10MHZ_CK_bare.adl"
+		name="softGlue_10MHZ_CK_bare_label.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[1] {
-		label="100 MHZ Internal Clock"
-		name="softGlue_100MHZ_CK_bare.adl"
+		label="40 MHZ Internal Clock"
+		name="softGlue_40MHZ_CK_bare_label.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[2] {
@@ -654,5 +529,95 @@ composite {
 	}
 	clr=0
 	bclr=63
-	label="-Cly,G&D,HS"
+	label="-Clk,G&D,HS"
+}
+composite {
+	object {
+		x=10
+		y=160
+		width=100
+		height=55
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=50
+				y=195
+				width=30
+				height=20
+			}
+			monitor {
+				chan="$(P)$(H)numSignalsInUse"
+				clr=54
+				bclr=2
+			}
+			align="horiz. right"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=10
+				y=195
+				width=40
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="#SIGS"
+		}
+		text {
+			object {
+				x=10
+				y=205
+				width=40
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="IN USE"
+		}
+		text {
+			object {
+				x=85
+				y=195
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="/15"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=10
+				y=160
+				width=100
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="READ PERIOD"
+			align="horiz. centered"
+		}
+		menu {
+			object {
+				x=10
+				y=170
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)$(H)ReadRate.SCAN"
+				clr=14
+				bclr=51
+			}
+		}
+	}
 }

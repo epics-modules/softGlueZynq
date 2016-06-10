@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_DnCntr_bare_label.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_DnCntr_bare_label.adl"
 	version=030107
 }
 display {
@@ -274,7 +274,7 @@ polyline {
 	object {
 		x=225
 		y=70
-		width=50
+		width=80
 		height=20
 	}
 	control {

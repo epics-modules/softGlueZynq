@@ -8,7 +8,7 @@ display {
 		x=433
 		y=25
 		width=980
-		height=1070
+		height=770
 	}
 	clr=14
 	bclr=2
@@ -174,110 +174,6 @@ rectangle {
 }
 composite {
 	object {
-		x=11
-		y=370
-		width=468
-		height=140
-	}
-	"composite name"=""
-	"composite file"="softGlue_MagCmp_bare_label.adl;P=$(P),H=$(H),N=1"
-}
-rectangle {
-	object {
-		x=5
-		y=365
-		width=480
-		height=150
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-}
-composite {
-	object {
-		x=495
-		y=370
-		width=477
-		height=198
-	}
-	"composite name"=""
-	"composite file"="softGlue_UpDnCntr8_bare_label.adl;P=$(P),H=$(H),N=5"
-}
-rectangle {
-	object {
-		x=490
-		y=365
-		width=482
-		height=210
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-}
-text {
-	object {
-		x=224
-		y=391
-		width=12
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="A"
-}
-text {
-	object {
-		x=244
-		y=391
-		width=12
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="B"
-}
-polyline {
-	object {
-		x=228
-		y=338
-		width=4
-		height=29
-	}
-	"basic attribute" {
-		clr=14
-		width=4
-	}
-	points {
-		(230,340)
-		(230,365)
-	}
-}
-polyline {
-	object {
-		x=246
-		y=336
-		width=483
-		height=31
-	}
-	"basic attribute" {
-		clr=14
-		width=4
-	}
-	points {
-		(727,338)
-		(727,351)
-		(248,351)
-		(248,365)
-	}
-}
-composite {
-	object {
 		x=5
 		y=150
 		width=967
@@ -360,7 +256,7 @@ composite {
 composite {
 	object {
 		x=10
-		y=585
+		y=355
 		width=472
 		height=178
 	}
@@ -370,7 +266,7 @@ composite {
 composite {
 	object {
 		x=495
-		y=585
+		y=355
 		width=472
 		height=178
 	}
@@ -380,7 +276,7 @@ composite {
 rectangle {
 	object {
 		x=5
-		y=580
+		y=350
 		width=482
 		height=190
 	}
@@ -393,7 +289,7 @@ rectangle {
 rectangle {
 	object {
 		x=490
-		y=580
+		y=350
 		width=482
 		height=190
 	}
@@ -406,7 +302,7 @@ rectangle {
 composite {
 	object {
 		x=11
-		y=781
+		y=561
 		width=470
 		height=88
 	}
@@ -416,7 +312,7 @@ composite {
 rectangle {
 	object {
 		x=5
-		y=775
+		y=555
 		width=482
 		height=99
 	}
@@ -429,7 +325,7 @@ rectangle {
 composite {
 	object {
 		x=11
-		y=886
+		y=666
 		width=470
 		height=88
 	}
@@ -439,7 +335,7 @@ composite {
 rectangle {
 	object {
 		x=5
-		y=880
+		y=660
 		width=482
 		height=99
 	}
@@ -452,7 +348,7 @@ rectangle {
 composite {
 	object {
 		x=496
-		y=781
+		y=561
 		width=470
 		height=88
 	}
@@ -462,7 +358,7 @@ composite {
 rectangle {
 	object {
 		x=490
-		y=775
+		y=555
 		width=482
 		height=99
 	}
@@ -475,7 +371,7 @@ rectangle {
 composite {
 	object {
 		x=496
-		y=886
+		y=666
 		width=470
 		height=88
 	}
@@ -485,7 +381,7 @@ composite {
 rectangle {
 	object {
 		x=490
-		y=880
+		y=660
 		width=482
 		height=99
 	}

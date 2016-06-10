@@ -658,5 +658,5 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_100MHZ_CK_bare.adl;P=$(P),H=$(H)"
+	"composite file"="softGlue_40MHZ_CK_bare.adl;P=$(P),H=$(H)"
 }
