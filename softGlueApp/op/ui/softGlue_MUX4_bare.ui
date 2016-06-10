@@ -259,7 +259,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <rect>
                         <x>21</x>
                         <y>3</y>
-                        <width>25</width>
+                        <width>10</width>
                         <height>14</height>
                     </rect>
                 </property>
@@ -447,7 +447,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <rect>
                         <x>21</x>
                         <y>22</y>
-                        <width>25</width>
+                        <width>10</width>
                         <height>14</height>
                     </rect>
                 </property>
@@ -523,7 +523,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <rect>
                         <x>21</x>
                         <y>45</y>
-                        <width>25</width>
+                        <width>10</width>
                         <height>14</height>
                     </rect>
                 </property>
@@ -599,7 +599,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <rect>
                         <x>21</x>
                         <y>67</y>
-                        <width>25</width>
+                        <width>10</width>
                         <height>14</height>
                     </rect>
                 </property>
@@ -684,7 +684,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                         <rect>
                             <x>0</x>
                             <y>8</y>
-                            <width>25</width>
+                            <width>15</width>
                             <height>14</height>
                         </rect>
                     </property>

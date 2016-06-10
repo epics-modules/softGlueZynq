@@ -191,7 +191,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>268</x>
                     <y>30</y>
-                    <width>192</width>
+                    <width>180</width>
                     <height>20</height>
                 </rect>
             </property>

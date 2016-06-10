@@ -496,7 +496,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>206</x>
                     <y>65</y>
-                    <width>60</width>
+                    <width>50</width>
                     <height>10</height>
                 </rect>
             </property>
@@ -535,7 +535,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>223</x>
                     <y>82</y>
-                    <width>42</width>
+                    <width>40</width>
                     <height>10</height>
                 </rect>
             </property>
@@ -946,13 +946,13 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caByte::Static</enum>
             </property>
             <property name="startBit">
-                <enum>0</enum>
+                <number>0</number>
             </property>
             <property name="endBit">
-                <enum>15</enum>
+                <number>31</number>
             </property>
             <property name="direction">
-                <enum>Down</enum>
+                <enum>Left</enum>
             </property>
         </widget>
         <widget class="caByte" name="caByte_1">
@@ -988,13 +988,13 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caByte::Static</enum>
             </property>
             <property name="startBit">
-                <enum>0</enum>
+                <number>0</number>
             </property>
             <property name="endBit">
-                <enum>15</enum>
+                <number>31</number>
             </property>
             <property name="direction">
-                <enum>Down</enum>
+                <enum>Left</enum>
             </property>
         </widget>
         <widget class="caPolyLine" name="caPolyLine_10">
