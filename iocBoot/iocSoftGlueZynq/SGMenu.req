@@ -1,0 +1,2 @@
+file configMenu.req P=$(P),CONFIG=$(CONFIG)
+file softGlue_settings.req  P=$(P),H=$(H)
