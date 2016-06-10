@@ -510,7 +510,7 @@ int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
  /* initZynqIP() doesn't work yet. */
 #define BUF_SIZE 1000
 #include "macLib.h"
-/* #include "xdevcfg.h" */
+/*#include "xdevcfg.h"*/
 int initZynqIP(char *filepath)
 {
 	int i, maxwait, total_bytes, intLevel=0;
