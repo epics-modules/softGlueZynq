@@ -1,60 +1,60 @@
-Adding a new SOPC component to softGlue is a two-part process: adding the
-component in Quartus and producing a .hex file, and writing support for the
-component in EPICS.  I don't know how the Quartus stuff works, so I'm just
-going to describe the EPICS side.
+Adding a new FPGA component to softGlue is a two-part process: adding the
+component in Vivado and producing a .bin file, and writing support for the
+component in EPICS.  For the moment, I'll just describe the EPICS side.
 
-To add a new SOPC component, you need the SOPC addresses of the inputs, outputs,
+To add a new FPGA component, you need the address offsets of the inputs, outputs,
 and registers in the component.  I'll work the example of an add-on package
 that contains two up/down counters:
 
-1) Make database and .req files, arrange for database and .hex file to be
+1) Make database and .req files, arrange for database and .bin file to be
    installed in the softGlue/db directory
 
-1.1) Write a file "softGlue_FPGAContent_s1ID_Vgate.substitutions" with the
-     following content:
+1.1) Write a file "softGlue_FPGAContent_withNewStuff.substitutions",
+	 beginning with softGlue_FPGAContent.substitutions and adding the
+	 following lines:
 
 	file "softGlue_Input.db"
 	{
 	pattern {SIG   ADDR}
-	{UpDnCntr-1_CLOCK		0x802000}
-	{UpDnCntr-1_UPDOWN		0x802008}
-	{UpDnCntr-1_ENABLE		0x802010}
-	{UpDnCntr-1_CLEAR		0x802018}
-	{UpDnCntr-1_LOAD		0x802020}
-	{UpDnCntr-2_CLOCK		0x802050}
-	{UpDnCntr-2_UPDOWN		0x802058}
-	{UpDnCntr-2_ENABLE		0x802060}
-	{UpDnCntr-2_CLEAR		0x802068}
-	{UpDnCntr-2_LOAD		0x802070}
+	{UpDnCntr-1_CLOCK		100}
+	{UpDnCntr-1_UPDOWN		101}
+	{UpDnCntr-1_ENABLE		102}
+	{UpDnCntr-1_CLEAR		103}
+	{UpDnCntr-1_LOAD		104}
+	{UpDnCntr-2_CLOCK		105}
+	{UpDnCntr-2_UPDOWN		106}
+	{UpDnCntr-2_ENABLE		107}
+	{UpDnCntr-2_CLEAR		108}
+	{UpDnCntr-2_LOAD		109}
 	}
 	
 	
 	file "softGlue_Output.db"
 	{
 	pattern {SIG   ADDR}
-	{UpDnCntr-1_OUT			0x802028}
-	{UpDnCntr-2_OUT			0x802078}
+	{UpDnCntr-1_OUT			43}
+	{UpDnCntr-2_OUT			44}
 	}
 	
 	
 	file "softGlue_Register32.db"
 	{
-	pattern {SIG		ADDR_MSW	ADDR_LSW 	CALC}
-	{UpDnCntr-1_PRESET	0x802038	0x802030	A}
-	{UpDnCntr-2_PRESET	0x802088	0x802080	A}
+	pattern {SIG		ADDR}
+	{UpDnCntr-1_PRESET	63}
+	{UpDnCntr-2_PRESET	64}
 	}
 	
 	file "softGlue_InRegister32.db"
 	{
-	pattern {SIG     	ADDR_MSW	ADDR_LSW}
-	{UpDnCntr-1_COUNTS    0x802048    0x802040}
-	{UpDnCntr-2_COUNTS    0x802098    0x802090}
+	pattern {SIG     	ADDR}
+	{UpDnCntr-1_COUNTS    27}
+	{UpDnCntr-2_COUNTS    28}
 	}
 
 1.2) Add the following lines to softGlue/softGlueApp/Db/Makefile:
 
-	DB_INSTALLS += ../SoftGlue_2_2_1ID_Vgate_0_1.hex
-	DB += softGlue_FPGAContent_s1ID_Vgate.db
+	DB_INSTALLS += ../SoftGlue_withMyNewStuff.bin
+	DB += softGlue_FPGAContent_withNewStuff.db
 
 1.3) Make the file UpDnCntr_settings.req with the following content:
 	$(P)$(H)UpDnCntr-$(N)_CLOCK_Signal
@@ -92,6 +92,3 @@ that contains two up/down counters:
 2.2) Make softGlue_UpDnCntr.adl, which includes softGlue_UpDnCntr_bare.adl as a
 	 composite, and adds a header showing the component type and number, if
 	 there are more than one.
-
-2.3 Make a display that shows everything in the add-on package.  In this case,
-	softGlueVgate.adl, which includes two copies of softGlue_UpDnCntr.adl.
