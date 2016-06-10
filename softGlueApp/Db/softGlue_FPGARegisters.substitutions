@@ -22,6 +22,7 @@ pattern {SIG		ADDR}
 {GateDly-3_WIDTH	50}
 {GateDly-4_DLY		51}
 {GateDly-4_WIDTH	52}
+{AISO_AIN			53}
 }
 
 file "softGlue_InRegister.db"
@@ -36,6 +37,7 @@ pattern {SIG     	ADDR}
 {UpDnCntr-3_COUNTS	6}
 {UpDnCntr-4_COUNTS	7}
 #{UpDnCntr-5_COUNTS	8}
+{SIAO_AOUT			8}
 {HistScal-1_S00		9}
 {HistScal-1_S01		10}
 {HistScal-1_S02		11}
