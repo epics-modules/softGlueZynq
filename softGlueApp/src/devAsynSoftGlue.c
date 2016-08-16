@@ -51,6 +51,7 @@
 #include <epicsExport.h>
 
 volatile int devAsynSoftGlueDebug = 0;
+epicsExportAddress(int, devAsynSoftGlueDebug);
 
 void *freeListPvt = NULL;
 
