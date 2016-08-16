@@ -1,6 +1,16 @@
 record(longin,"$(P)$(H)$(SIG)") {
 	field(DTYP,"asynUInt32Digital")
 	field(INP,"@asynMask($(PORT),$(ADDR),0xffffffff)REG32")
+	field(FLNK,"$(P)$(H)$(SIG)_s")
+}
+record(calc,"$(P)$(H)$(SIG)_s") {
+	field(INPA,"$(P)$(H)$(SIG)")
+	field(CALC,"a>2147483647.?a-4294967296.:a")
+	field(FLNK,"$(P)$(H)$(SIG)_8")
+}
+record(calc,"$(P)$(H)$(SIG)_8") {
+	field(INPA,"$(P)$(H)$(SIG)_LSW")
+	field(CALC,"a&255")
 }
 record(bo,"$(P)$(H)$(SIG)_SCAN") {
 	field(SCAN,"Event")

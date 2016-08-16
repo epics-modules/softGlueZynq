@@ -48,9 +48,14 @@ file GateDly_settings.req P=$(P),H=$(H),N=3
 file GateDly_settings.req P=$(P),H=$(H),N=4
 #file HistScal_settings.req P=$(P),H=$(H),N=1
 
+# hard-wired OR gates
+$(P)$(H)HW_OR-1_OUT_Signal
+$(P)$(H)HW_OR-2_OUT_Signal
+
 # clock
 $(P)$(H)10MHZ_CLOCK_Signal
-$(P)$(H)40MHZ_CLOCK_Signal
+$(P)$(H)20MHZ_CLOCK_Signal
+$(P)$(H)50MHZ_CLOCK_Signal
 
 # field I/O
 $(P)$(H)FI1_Signal
@@ -153,7 +158,8 @@ $(P)$(H)FO8_Signal
 
 # circuit and element descriptions
 $(P)$(H)circuit_desc
-$(P)$(H)40MHZ_CLOCK_desc
+$(P)$(H)50MHZ_CLOCK_desc
+$(P)$(H)20MHZ_CLOCK_desc
 $(P)$(H)10MHZ_CLOCK_desc
 $(P)$(H)AND-1_desc
 $(P)$(H)AND-2_desc
@@ -199,3 +205,6 @@ $(P)$(H)QuadDec-1_desc
 $(P)$(H)QuadDec-2_desc
 #$(P)$(H)MagCmp-1_desc
 #$(P)$(H)HistScal-1_desc
+
+$(P)$(H)HW_OR-1_desc
+$(P)$(H)HW_OR-2_desc
