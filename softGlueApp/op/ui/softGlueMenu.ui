@@ -217,16 +217,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>all softGlue;all but I/O;convenience;------------;Extra;softGlue_analogProcTest</string>
+                <string>all softGlue;all but I/O;convenience;------------;Extra</string>
             </property>
             <property name="files">
-                <string>softGlueAll.adl;softGlueAllButIO.adl;softGlueConvenience.adl;softGlueConvenience.adl;softGlueExtra.adl;softGlue_analogProcTest.adl</string>
+                <string>softGlueAll.adl;softGlueAllButIO.adl;softGlueConvenience.adl;softGlueConvenience.adl;softGlueExtra.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H);P=$(P),H=$(H)</string>
+                <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H)</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false</string>
+                <string>false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caLabel" name="caLabel_0">
@@ -474,16 +474,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>10 MHZ Internal Clock;40 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1</string>
+                <string>10 MHZ Internal Clock;40 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;80 MHZ Internal Clock</string>
             </property>
             <property name="files">
-                <string>softGlue_10MHZ_CK_bare_label.adl;softGlue_40MHZ_CK_bare_label.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_HistScal.adl</string>
+                <string>softGlue_10MHZ_CK_bare_label.adl;softGlue_40MHZ_CK_bare_label.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_HistScal.adl;softGlue_100MHZ_CK_bare_label.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1</string>
+                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H)</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false;false</string>
+                <string>false;false;false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caFrame" name="caFrame_2">

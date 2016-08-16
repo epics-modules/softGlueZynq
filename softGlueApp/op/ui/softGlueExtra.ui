@@ -4,10 +4,10 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>433</x>
-            <y>25</y>
-            <width>980</width>
-            <height>770</height>
+            <x>243</x>
+            <y>165</y>
+            <width>1000</width>
+            <height>890</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -27,7 +27,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>980</width>
+                    <width>1000</width>
                     <height>25</height>
                 </rect>
             </property>
@@ -57,7 +57,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>0</x>
                     <y>25</y>
-                    <width>979</width>
+                    <width>999</width>
                     <height>3</height>
                 </rect>
             </property>
@@ -85,7 +85,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>1,1;977,1;</string>
+                <string>1,1;997,1;</string>
             </property>
         </widget>
         <widget class="caInclude" name="caInclude_0">
@@ -94,7 +94,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <x>25</x>
                     <y>35</y>
                     <width>462</width>
-                    <height>112</height>
+                    <height>127</height>
                 </rect>
             </property>
             <property name="geometry">
@@ -102,7 +102,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <x>25</x>
                     <y>35</y>
                     <width>460</width>
-                    <height>110</height>
+                    <height>125</height>
                 </rect>
             </property>
             <property name="filename">
@@ -157,7 +157,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <x>17</x>
                     <y>30</y>
                     <width>456</width>
-                    <height>100</height>
+                    <height>122</height>
                 </rect>
             </property>
             <property name="lineSize">
@@ -165,23 +165,23 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="foreground">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="background">
                 <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="lineColor">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="linestyle">
@@ -191,18 +191,18 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <widget class="caInclude" name="caInclude_1">
             <property name="geometry">
                 <rect>
-                    <x>510</x>
+                    <x>520</x>
                     <y>35</y>
                     <width>462</width>
-                    <height>112</height>
+                    <height>127</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>510</x>
+                    <x>520</x>
                     <y>35</y>
                     <width>460</width>
-                    <height>110</height>
+                    <height>125</height>
                 </rect>
             </property>
             <property name="filename">
@@ -218,14 +218,171 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="geometry">
                 <rect>
-                    <x>502</x>
+                    <x>512</x>
                     <y>30</y>
                     <width>456</width>
-                    <height>100</height>
+                    <height>122</height>
                 </rect>
             </property>
             <property name="lineSize">
                 <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_2">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>175</y>
+                    <width>479</width>
+                    <height>180</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>175</y>
+                    <width>477</width>
+                    <height>178</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_UpDnCntr_bare_label.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=1</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_3">
+            <property name="geometry">
+                <rect>
+                    <x>505</x>
+                    <y>175</y>
+                    <width>479</width>
+                    <height>180</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>505</x>
+                    <y>175</y>
+                    <width>477</width>
+                    <height>178</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_UpDnCntr_bare_label.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=2</string>
+            </property>
+        </widget>
+        <widget class="caGraphics" name="caRectangle_3">
+            <property name="form">
+                <enum>caGraphics::Rectangle</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>5</x>
+                    <y>170</y>
+                    <width>482</width>
+                    <height>190</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+        </widget>
+        <widget class="caGraphics" name="caRectangle_4">
+            <property name="form">
+                <enum>caGraphics::Rectangle</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>500</x>
+                    <y>170</y>
+                    <width>482</width>
+                    <height>190</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_1">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -241,232 +398,65 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <blue>0</blue>
                 </color>
             </property>
-            <property name="lineColor">
+            <property name="text">
+                <string>A</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>235</x>
+                    <y>245</y>
+                    <width>12</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_2">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
                 <color alpha="255">
                     <red>0</red>
                     <green>0</green>
                     <blue>0</blue>
                 </color>
             </property>
-            <property name="linestyle">
-                <enum>Solid</enum>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
             </property>
-        </widget>
-        <widget class="caFrame" name="caFrame_2">
+            <property name="text">
+                <string>B</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
             <property name="geometry">
                 <rect>
-                    <x>5</x>
-                    <y>150</y>
-                    <width>969</width>
-                    <height>192</height>
+                    <x>730</x>
+                    <y>245</y>
+                    <width>12</width>
+                    <height>20</height>
                 </rect>
             </property>
-            <widget class="caInclude" name="caInclude_3">
-                <property name="geometry">
-                    <rect>
-                        <x>5</x>
-                        <y>5</y>
-                        <width>479</width>
-                        <height>180</height>
-                    </rect>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>5</x>
-                        <y>5</y>
-                        <width>477</width>
-                        <height>178</height>
-                    </rect>
-                </property>
-                <property name="filename">
-                    <string>softGlue_UpDnCntr_bare_label.adl</string>
-                </property>
-                <property name="macro">
-                    <string>P=$(P),H=$(H),N=1</string>
-                </property>
-            </widget>
-            <widget class="caInclude" name="caInclude_4">
-                <property name="geometry">
-                    <rect>
-                        <x>490</x>
-                        <y>5</y>
-                        <width>479</width>
-                        <height>180</height>
-                    </rect>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>490</x>
-                        <y>5</y>
-                        <width>477</width>
-                        <height>178</height>
-                    </rect>
-                </property>
-                <property name="filename">
-                    <string>softGlue_UpDnCntr_bare_label.adl</string>
-                </property>
-                <property name="macro">
-                    <string>P=$(P),H=$(H),N=2</string>
-                </property>
-            </widget>
-            <widget class="caGraphics" name="caRectangle_3">
-                <property name="form">
-                    <enum>caGraphics::Rectangle</enum>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>482</width>
-                        <height>190</height>
-                    </rect>
-                </property>
-                <property name="lineSize">
-                    <number>2</number>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="0">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="lineColor">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="linestyle">
-                    <enum>Solid</enum>
-                </property>
-            </widget>
-            <widget class="caGraphics" name="caRectangle_4">
-                <property name="form">
-                    <enum>caGraphics::Rectangle</enum>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>485</x>
-                        <y>0</y>
-                        <width>482</width>
-                        <height>190</height>
-                    </rect>
-                </property>
-                <property name="lineSize">
-                    <number>2</number>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="0">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="lineColor">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="linestyle">
-                    <enum>Solid</enum>
-                </property>
-            </widget>
-            <widget class="caLabel" name="caLabel_1">
-                <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="0">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="text">
-                    <string>A</string>
-                </property>
-                <property name="fontScaleMode">
-                    <enum>ESimpleLabel::WidthAndHeight</enum>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>230</x>
-                        <y>75</y>
-                        <width>12</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="alignment">
-                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-            </widget>
-            <widget class="caLabel" name="caLabel_2">
-                <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="0">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="text">
-                    <string>B</string>
-                </property>
-                <property name="fontScaleMode">
-                    <enum>ESimpleLabel::WidthAndHeight</enum>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>715</x>
-                        <y>75</y>
-                        <width>12</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="alignment">
-                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-            </widget>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
         </widget>
-        <widget class="caInclude" name="caInclude_5">
+        <widget class="caInclude" name="caInclude_4">
             <property name="geometry">
                 <rect>
                     <x>10</x>
-                    <y>355</y>
+                    <y>425</y>
                     <width>479</width>
                     <height>180</height>
                 </rect>
@@ -474,7 +464,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>10</x>
-                    <y>355</y>
+                    <y>425</y>
                     <width>477</width>
                     <height>178</height>
                 </rect>
@@ -486,19 +476,19 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>P=$(P),H=$(H),N=3</string>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_6">
+        <widget class="caInclude" name="caInclude_5">
             <property name="geometry">
                 <rect>
-                    <x>495</x>
-                    <y>355</y>
+                    <x>505</x>
+                    <y>425</y>
                     <width>479</width>
                     <height>180</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>495</x>
-                    <y>355</y>
+                    <x>505</x>
+                    <y>425</y>
                     <width>477</width>
                     <height>178</height>
                 </rect>
@@ -517,7 +507,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>5</x>
-                    <y>350</y>
+                    <y>420</y>
                     <width>482</width>
                     <height>190</height>
                 </rect>
@@ -527,23 +517,23 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="foreground">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="background">
                 <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="lineColor">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="linestyle">
@@ -556,8 +546,8 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="geometry">
                 <rect>
-                    <x>490</x>
-                    <y>350</y>
+                    <x>500</x>
+                    <y>420</y>
                     <width>482</width>
                     <height>190</height>
                 </rect>
@@ -567,34 +557,34 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="foreground">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="background">
                 <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="lineColor">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="linestyle">
                 <enum>Solid</enum>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_7">
+        <widget class="caInclude" name="caInclude_6">
             <property name="geometry">
                 <rect>
                     <x>11</x>
-                    <y>561</y>
+                    <y>681</y>
                     <width>472</width>
                     <height>91</height>
                 </rect>
@@ -602,7 +592,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>11</x>
-                    <y>561</y>
+                    <y>681</y>
                     <width>470</width>
                     <height>89</height>
                 </rect>
@@ -621,7 +611,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>5</x>
-                    <y>555</y>
+                    <y>675</y>
                     <width>482</width>
                     <height>99</height>
                 </rect>
@@ -631,34 +621,34 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="foreground">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="background">
                 <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="lineColor">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="linestyle">
                 <enum>Solid</enum>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_8">
+        <widget class="caInclude" name="caInclude_7">
             <property name="geometry">
                 <rect>
                     <x>11</x>
-                    <y>666</y>
+                    <y>786</y>
                     <width>472</width>
                     <height>91</height>
                 </rect>
@@ -666,7 +656,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>11</x>
-                    <y>666</y>
+                    <y>786</y>
                     <width>470</width>
                     <height>89</height>
                 </rect>
@@ -685,7 +675,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>5</x>
-                    <y>660</y>
+                    <y>780</y>
                     <width>482</width>
                     <height>99</height>
                 </rect>
@@ -695,42 +685,42 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="foreground">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="background">
                 <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="lineColor">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="linestyle">
                 <enum>Solid</enum>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_9">
+        <widget class="caInclude" name="caInclude_8">
             <property name="geometry">
                 <rect>
-                    <x>496</x>
-                    <y>561</y>
+                    <x>506</x>
+                    <y>681</y>
                     <width>472</width>
                     <height>91</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>496</x>
-                    <y>561</y>
+                    <x>506</x>
+                    <y>681</y>
                     <width>470</width>
                     <height>89</height>
                 </rect>
@@ -748,8 +738,8 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="geometry">
                 <rect>
-                    <x>490</x>
-                    <y>555</y>
+                    <x>500</x>
+                    <y>675</y>
                     <width>482</width>
                     <height>99</height>
                 </rect>
@@ -759,42 +749,42 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="foreground">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="background">
                 <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="lineColor">
                 <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
                 </color>
             </property>
             <property name="linestyle">
                 <enum>Solid</enum>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_10">
+        <widget class="caInclude" name="caInclude_9">
             <property name="geometry">
                 <rect>
-                    <x>496</x>
-                    <y>666</y>
+                    <x>506</x>
+                    <y>786</y>
                     <width>472</width>
                     <height>91</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>496</x>
-                    <y>666</y>
+                    <x>506</x>
+                    <y>786</y>
                     <width>470</width>
                     <height>89</height>
                 </rect>
@@ -812,10 +802,71 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="geometry">
                 <rect>
-                    <x>490</x>
-                    <y>660</y>
+                    <x>500</x>
+                    <y>780</y>
                     <width>482</width>
                     <height>99</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>145</red>
+                    <green>145</green>
+                    <blue>145</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_10">
+            <property name="geometry">
+                <rect>
+                    <x>514</x>
+                    <y>369</y>
+                    <width>242</width>
+                    <height>52</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>514</x>
+                    <y>369</y>
+                    <width>240</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_HardwiredOR_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=1</string>
+            </property>
+        </widget>
+        <widget class="caPolyLine" name="caPolyLine_1">
+            <property name="geometry">
+                <rect>
+                    <x>486</x>
+                    <y>220</y>
+                    <width>40</width>
+                    <height>186</height>
                 </rect>
             </property>
             <property name="lineSize">
@@ -845,6 +896,153 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="linestyle">
                 <enum>Solid</enum>
             </property>
+            <property name="xyPairs">
+                <string>1,1;8,1;8,185;39,185;</string>
+            </property>
+        </widget>
+        <widget class="caPolyLine" name="caPolyLine_2">
+            <property name="geometry">
+                <rect>
+                    <x>524</x>
+                    <y>219</y>
+                    <width>466</width>
+                    <height>164</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+            <property name="xyPairs">
+                <string>458,1;465,1;465,147;1,147;1,163;</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_11">
+            <property name="geometry">
+                <rect>
+                    <x>514</x>
+                    <y>620</y>
+                    <width>242</width>
+                    <height>52</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>514</x>
+                    <y>620</y>
+                    <width>240</width>
+                    <height>50</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_HardwiredOR_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=2</string>
+            </property>
+        </widget>
+        <widget class="caPolyLine" name="caPolyLine_3">
+            <property name="geometry">
+                <rect>
+                    <x>486</x>
+                    <y>471</y>
+                    <width>40</width>
+                    <height>186</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+            <property name="xyPairs">
+                <string>1,1;8,1;8,185;39,185;</string>
+            </property>
+        </widget>
+        <widget class="caPolyLine" name="caPolyLine_4">
+            <property name="geometry">
+                <rect>
+                    <x>524</x>
+                    <y>470</y>
+                    <width>466</width>
+                    <height>164</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+            <property name="xyPairs">
+                <string>458,1;465,1;465,147;1,147;1,163;</string>
+            </property>
         </widget>
         <zorder>caRectangle_0</zorder>
         <zorder>caPolyLine_0</zorder>
@@ -853,25 +1051,30 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caRectangle_1</zorder>
         <zorder>caInclude_1</zorder>
         <zorder>caRectangle_2</zorder>
+        <zorder>caInclude_2</zorder>
         <zorder>caInclude_3</zorder>
-        <zorder>caInclude_4</zorder>
         <zorder>caRectangle_3</zorder>
         <zorder>caRectangle_4</zorder>
         <zorder>caLabel_1</zorder>
         <zorder>caLabel_2</zorder>
-        <zorder>caFrame_2</zorder>
+        <zorder>caInclude_4</zorder>
         <zorder>caInclude_5</zorder>
-        <zorder>caInclude_6</zorder>
         <zorder>caRectangle_5</zorder>
         <zorder>caRectangle_6</zorder>
-        <zorder>caInclude_7</zorder>
+        <zorder>caInclude_6</zorder>
         <zorder>caRectangle_7</zorder>
-        <zorder>caInclude_8</zorder>
+        <zorder>caInclude_7</zorder>
         <zorder>caRectangle_8</zorder>
-        <zorder>caInclude_9</zorder>
+        <zorder>caInclude_8</zorder>
         <zorder>caRectangle_9</zorder>
-        <zorder>caInclude_10</zorder>
+        <zorder>caInclude_9</zorder>
         <zorder>caRectangle_10</zorder>
+        <zorder>caInclude_10</zorder>
+        <zorder>caPolyLine_1</zorder>
+        <zorder>caPolyLine_2</zorder>
+        <zorder>caInclude_11</zorder>
+        <zorder>caPolyLine_3</zorder>
+        <zorder>caPolyLine_4</zorder>
     </widget>
 </widget>
 </ui>

@@ -1399,7 +1399,31 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_40MHZ_CK_bare_label.adl</string>
+                <string>softGlue_20MHZ_CK_bare_label.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_42">
+            <property name="geometry">
+                <rect>
+                    <x>975</x>
+                    <y>995</y>
+                    <width>297</width>
+                    <height>48</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>975</x>
+                    <y>995</y>
+                    <width>295</width>
+                    <height>46</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_50MHZ_CK_bare_label.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H)</string>
@@ -1452,6 +1476,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caFrame_38</zorder>
         <zorder>caInclude_40</zorder>
         <zorder>caInclude_41</zorder>
+        <zorder>caInclude_42</zorder>
         <zorder>caRelatedDisplay_0</zorder>
         <zorder>caLineEdit_0</zorder>
         <zorder>caLineEdit_1</zorder>

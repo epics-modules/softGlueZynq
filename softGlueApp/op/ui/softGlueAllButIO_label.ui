@@ -1313,7 +1313,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>975</x>
-                    <y>944</y>
+                    <y>945</y>
                     <width>297</width>
                     <height>48</height>
                 </rect>
@@ -1321,13 +1321,37 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             <property name="geometry">
                 <rect>
                     <x>975</x>
-                    <y>944</y>
+                    <y>945</y>
                     <width>295</width>
                     <height>46</height>
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_40MHZ_CK_bare_label.adl</string>
+                <string>softGlue_20MHZ_CK_bare_label.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_39">
+            <property name="geometry">
+                <rect>
+                    <x>975</x>
+                    <y>995</y>
+                    <width>297</width>
+                    <height>48</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>975</x>
+                    <y>995</y>
+                    <width>295</width>
+                    <height>46</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_50MHZ_CK_bare_label.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H)</string>
@@ -1377,6 +1401,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caFrame_35</zorder>
         <zorder>caInclude_37</zorder>
         <zorder>caInclude_38</zorder>
+        <zorder>caInclude_39</zorder>
         <zorder>caLineEdit_0</zorder>
         <zorder>caLineEdit_1</zorder>
         <zorder>caTextEntry_0</zorder>
