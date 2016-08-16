@@ -1,5 +1,6 @@
 registrar(ZynqRegister)
 variable(drvZynqDebug, int)
+variable(devAsynSoftGlueDebug, int)
 device(stringout, INST_IO, asynSoftGlue, "softGlue")
 device(bo, INST_IO, softGlueShow, "softGlueShow")
 device(longout, INST_IO, softGlueSigNum, "softGlueSigNum")
