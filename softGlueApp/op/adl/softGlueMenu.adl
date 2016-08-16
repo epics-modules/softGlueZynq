@@ -386,11 +386,6 @@ display {
 		name="softGlueExtra.adl"
 		args="P=$(P),H=$(H)"
 	}
-	display[6] {
-		label="softGlue_analogProcTest"
-		name="softGlue_analogProcTest.adl"
-		args="P=$(P),H=$(H)"
-	}
 	clr=0
 	bclr=63
 	label="-Collections"
@@ -526,6 +521,11 @@ composite {
 		label="HistScal 1"
 		name="softGlue_HistScal.adl"
 		args="P=$(P),H=$(H),N=1"
+	}
+	display[7] {
+		label="80 MHZ Internal Clock"
+		name="softGlue_100MHZ_CK_bare_label.adl"
+		args="P=$(P),H=$(H)"
 	}
 	clr=0
 	bclr=63

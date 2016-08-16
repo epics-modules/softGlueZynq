@@ -1,14 +1,14 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_QuadDec.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_QuadDec.adl"
 	version=030107
 }
 display {
 	object {
-		x=635
-		y=500
+		x=684
+		y=370
 		width=460
-		height=125
+		height=145
 	}
 	clr=14
 	bclr=2

@@ -617,10 +617,20 @@ composite {
 composite {
 	object {
 		x=975
-		y=944
+		y=945
 		width=295
-		height=43
+		height=46
 	}
 	"composite name"=""
-	"composite file"="softGlue_40MHZ_CK_bare_label.adl;P=$(P),H=$(H)"
+	"composite file"="softGlue_20MHZ_CK_bare_label.adl;P=$(P),H=$(H)"
+}
+composite {
+	object {
+		x=975
+		y=995
+		width=295
+		height=46
+	}
+	"composite name"=""
+	"composite file"="softGlue_50MHZ_CK_bare_label.adl;P=$(P),H=$(H)"
 }

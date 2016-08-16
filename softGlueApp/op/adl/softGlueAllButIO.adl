@@ -606,5 +606,15 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_40MHZ_CK_bare.adl;P=$(P),H=$(H)"
+	"composite file"="softGlue_20MHZ_CK_bare.adl;P=$(P),H=$(H)"
+}
+composite {
+	object {
+		x=975
+		y=760
+		width=285
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_50MHZ_CK_bare.adl;P=$(P),H=$(H)"
 }

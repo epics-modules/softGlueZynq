@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=433
-		y=25
-		width=980
-		height=770
+		x=243
+		y=165
+		width=1000
+		height=890
 	}
 	clr=14
 	bclr=2
@@ -91,7 +91,7 @@ rectangle {
 	object {
 		x=0
 		y=0
-		width=980
+		width=1000
 		height=25
 	}
 	"basic attribute" {
@@ -102,7 +102,7 @@ polyline {
 	object {
 		x=0
 		y=25
-		width=979
+		width=999
 		height=3
 	}
 	"basic attribute" {
@@ -111,7 +111,7 @@ polyline {
 	}
 	points {
 		(1,26)
-		(977,26)
+		(997,26)
 	}
 }
 composite {
@@ -119,7 +119,7 @@ composite {
 		x=25
 		y=35
 		width=440
-		height=89
+		height=112
 	}
 	"composite name"=""
 	"composite file"="softGlue_QuadDec_bare_label.adl;P=$(P),H=$(H),N=1"
@@ -141,122 +141,111 @@ rectangle {
 		x=17
 		y=30
 		width=456
-		height=100
+		height=122
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
 }
 composite {
 	object {
-		x=510
+		x=520
 		y=35
 		width=440
-		height=89
+		height=112
 	}
 	"composite name"=""
 	"composite file"="softGlue_QuadDec_bare_label.adl;P=$(P),H=$(H),N=2"
 }
 rectangle {
 	object {
-		x=502
+		x=512
 		y=30
 		width=456
-		height=100
+		height=122
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
 }
 composite {
 	object {
-		x=5
-		y=150
-		width=967
-		height=190
+		x=10
+		y=175
+		width=472
+		height=178
 	}
 	"composite name"=""
-	children {
-		composite {
-			object {
-				x=10
-				y=155
-				width=472
-				height=178
-			}
-			"composite name"=""
-			"composite file"="softGlue_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=1"
-		}
-		composite {
-			object {
-				x=495
-				y=155
-				width=472
-				height=178
-			}
-			"composite name"=""
-			"composite file"="softGlue_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=2"
-		}
-		rectangle {
-			object {
-				x=5
-				y=150
-				width=482
-				height=190
-			}
-			"basic attribute" {
-				clr=14
-				fill="outline"
-				width=2
-			}
-		}
-		rectangle {
-			object {
-				x=490
-				y=150
-				width=482
-				height=190
-			}
-			"basic attribute" {
-				clr=14
-				fill="outline"
-				width=2
-			}
-		}
-		text {
-			object {
-				x=235
-				y=225
-				width=12
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="A"
-		}
-		text {
-			object {
-				x=720
-				y=225
-				width=12
-				height=20
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="B"
-		}
+	"composite file"="softGlue_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=1"
+}
+composite {
+	object {
+		x=505
+		y=175
+		width=472
+		height=178
 	}
+	"composite name"=""
+	"composite file"="softGlue_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=2"
+}
+rectangle {
+	object {
+		x=5
+		y=170
+		width=482
+		height=190
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=500
+		y=170
+		width=482
+		height=190
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+text {
+	object {
+		x=235
+		y=245
+		width=12
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A"
+}
+text {
+	object {
+		x=730
+		y=245
+		width=12
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="B"
 }
 composite {
 	object {
 		x=10
-		y=355
+		y=425
 		width=472
 		height=178
 	}
@@ -265,8 +254,8 @@ composite {
 }
 composite {
 	object {
-		x=495
-		y=355
+		x=505
+		y=425
 		width=472
 		height=178
 	}
@@ -276,25 +265,25 @@ composite {
 rectangle {
 	object {
 		x=5
-		y=350
+		y=420
 		width=482
 		height=190
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
 }
 rectangle {
 	object {
-		x=490
-		y=350
+		x=500
+		y=420
 		width=482
 		height=190
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
@@ -302,7 +291,7 @@ rectangle {
 composite {
 	object {
 		x=11
-		y=561
+		y=681
 		width=470
 		height=88
 	}
@@ -312,12 +301,12 @@ composite {
 rectangle {
 	object {
 		x=5
-		y=555
+		y=675
 		width=482
 		height=99
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
@@ -325,7 +314,7 @@ rectangle {
 composite {
 	object {
 		x=11
-		y=666
+		y=786
 		width=470
 		height=88
 	}
@@ -335,20 +324,20 @@ composite {
 rectangle {
 	object {
 		x=5
-		y=660
+		y=780
 		width=482
 		height=99
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
 }
 composite {
 	object {
-		x=496
-		y=561
+		x=506
+		y=681
 		width=470
 		height=88
 	}
@@ -357,21 +346,21 @@ composite {
 }
 rectangle {
 	object {
-		x=490
-		y=555
+		x=500
+		y=675
 		width=482
 		height=99
 	}
 	"basic attribute" {
-		clr=14
+		clr=7
 		fill="outline"
 		width=2
 	}
 }
 composite {
 	object {
-		x=496
-		y=666
+		x=506
+		y=786
 		width=470
 		height=88
 	}
@@ -380,14 +369,112 @@ composite {
 }
 rectangle {
 	object {
-		x=490
-		y=660
+		x=500
+		y=780
 		width=482
 		height=99
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+composite {
+	object {
+		x=514
+		y=369
+		width=239
+		height=48
+	}
+	"composite name"=""
+	"composite file"="softGlue_HardwiredOR_bare.adl;P=$(P),H=$(H),N=1"
+}
+polyline {
+	object {
+		x=486
+		y=220
+		width=40
+		height=186
 	}
 	"basic attribute" {
 		clr=14
 		fill="outline"
 		width=2
+	}
+	points {
+		(487,221)
+		(494,221)
+		(494,405)
+		(525,405)
+	}
+}
+polyline {
+	object {
+		x=524
+		y=219
+		width=466
+		height=164
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(982,220)
+		(989,220)
+		(989,366)
+		(525,366)
+		(525,382)
+	}
+}
+composite {
+	object {
+		x=514
+		y=620
+		width=239
+		height=48
+	}
+	"composite name"=""
+	"composite file"="softGlue_HardwiredOR_bare.adl;P=$(P),H=$(H),N=2"
+}
+polyline {
+	object {
+		x=486
+		y=471
+		width=40
+		height=186
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(487,472)
+		(494,472)
+		(494,656)
+		(525,656)
+	}
+}
+polyline {
+	object {
+		x=524
+		y=470
+		width=466
+		height=164
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(982,471)
+		(989,471)
+		(989,617)
+		(525,617)
+		(525,633)
 	}
 }
