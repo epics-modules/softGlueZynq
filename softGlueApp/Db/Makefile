@@ -18,6 +18,12 @@ include $(TOP)/configure/CONFIG
 DB += softGlue_FPGAContent.db
 DB += softGlue_FPGARegisters.db
 DB += softGlue_FPGAInt.db
+
+DB += analogProc_FPGAContent.db
+DB += analogProc_FPGARegisters.db
+
+DB += MCS.db
+
 DB_INSTALLS += ../softGlue_SignalShow.db  ../softGlue_convenience.db
 
 include $(TOP)/configure/RULES
