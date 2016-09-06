@@ -8,6 +8,7 @@ SUPPORT=/net/s100dserv/xorApps/zed/epics/synApps/support
 -include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
 
 ASYN=$(SUPPORT)/asyn-R4-29
+SNCSEQ=$(SUPPORT)/seq-2-2-2
 
 MSI=msi
 
