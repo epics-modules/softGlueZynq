@@ -1,0 +1,220 @@
+To run cross compiled EPICS and synApps on the MicroZed:
+--------------------------------------------------------
+
+0.	Connect a USB cable to the MicroZed and open a terminal to COM5 or COM6.
+	Login as root.  Set the MAC address by adding the following lines to
+	/etc/rc.local.  Also, 'chmod +x /etc/rc.local' so it will be used.
+
+		# set the MAC address
+		ifconfig br0 down
+		ifconfig br0 hw ether 00:19:B3:02:13:D7
+		ifconfig br0 up
+
+	Reboot, so that the new MAC address will be used, and the APS network
+	will accept the MicroZed as a known machine.  (This assumes you've
+	told IT that you need an IP address for the MAC address you used above.)
+
+1.	Do once: make directories and links we'll need for mounting:
+
+	mkdir /mnt/APSshare
+	mkdir /mnt/xorApps
+	mkdir /net
+	mkdir /net/s100dserv
+	cd /net/s100dserv
+	ln -s /mnt/APSshare ./APSshare
+	ln -s /mnt/xorApps ./xorApps
+	cd /
+	ln -s /mnt/APSshare ./APSshare
+
+2.	Set for automatic boot-time mount of APSshare and xorApps by adding the
+	following lines to /etc/rc.local:
+
+	mount s100dserv.xray.aps.anl.gov:/APSshare /mnt/APSshare/
+	mount s100dserv.xray.aps.anl.gov:/xorApps /mnt/xorApps/
+
+4.	In home directory, create .profile to set path, etc.:
+
+	export PATH=$PATH:/net/s100dserv/xorApps/zed/epics/base-3.15.3/bin/linux-arm:.
+	alias iocgo="cd /net/s100dserv/xorApps/zed/epics/ioc/ioczed/iocBoot/iocZed"
+
+It would be nice to have NTP, and it would be nice not to have to run as root. 
+(This takes some effort, because you need to be able to map memory to talk to
+softGlue registers in the FPGA, and you need to be able to write to /dev/xdevcfg
+to program the FPGA.  As the OS is delivered, only root has the priviledges
+needed to do these things.)
+
+
+Cross compiling from linux to linux-arm:
+---------------------------------------
+Xilinx Vivado comes with a software-development kit, called SDK.
+In that distribution is the directory EPICS needs to cross compile for Zynq.
+Here's the CONFIG_SITE file I used:
+
+	# CONFIG_SITE.linux-x86.linux-arm
+	#
+	# Site specific definitions for linux-x86 host - linux-arm target builds
+	#-------------------------------------------------------
+	
+	# Tools install path
+	GNU_DIR = /local/mooney/zynq/Xilinx/SDK/2015.4/gnu/arm/lin
+	
+	# GNU crosscompiler target name
+	GNU_TARGET = arm-xilinx-linux-gnueabi
+
+
+Running an ioc
+--------------
+This assumes the MicroZed is on the network, which it won't be until its
+MAC address has been set to the value we told IT we wanted to use for it.
+
+	linux% ssh root@microzed-j
+	root@microzed-j: iocgo
+	root@microzed-j: run
+
+
+Preparing and loading IP from Vivado into the MicroZed
+------------------------------------------------------
+
+1.	Do once: tell Vivado to write a .bin file whenever it does "Generate
+	Bitstream". In Vivado, select the menu item "Tools>>Project Settings".
+	Select "Bitstream". Check the "-bin_file" option.
+
+2.	Whenever Vivado generates a new .bin file, run the following command from
+	softGlueZynq/softGlueZynqApp/Db:
+
+	% setenv PROJECT /home/oxygen/MOONEY/zynq/VivadoProjects/softGlue_3_IO_7010
+	% setenv IMPL softGlue_3_IO_7010.runs/impl_1
+	flipBin.py $PROJECT/$IMPL/design_1_wrapper.bin softGlue_FPGAContent_7010.bin
+
+3.	When the IOC boots, softGlueZynq.iocsh loads the .bin file into the FPGA
+	with this command:
+
+	system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7010.bin >/dev/xdevcfg")
+
+
+Making a device tree blob, so that Linux will know about the interrupt source
+softGlue puts in the IP:
+-----------------------------------------------------------------------------
+
+	cd /home/oxygen/MOONEY/zynq
+	mkdir deviceTree
+	cd deviceTree
+	git clone git://github.com/Xilinx/device-tree-xlnx.git
+	# Run Vivado and open softGlue project.
+	#	File/"Export Hardware".
+	#	File/"Launch SDK"
+	#	SDK Menu: Xilinx Tools > Repositories > New...
+	#		add /home/oxygen/MOONEY/zynq/deviceTree/device-tree-xlnx
+	#	SDK Menu: File > New > Board Support Package
+	#	"Board Support Package OS" should now include the choice "device_tree".  Select it.
+	#	Click Finish
+	#	Click "OK" when "Board Support Package Settings" window comes up.
+	#	device tree is now in
+	#	/home/oxygen/MOONEY/zynq/VivadoProjects/softGlue_3_IO/softGlue_3_IO.sdk/device_tree_bsp_2:
+	#		pl.dtsi  skeleton.dtsi  system.dts  system.mss  zynq-7000.dtsi
+	#		pl.dtsi contains the interrupt stuff
+
+	# We're going to need the device tree compiler:
+	cd /home/oxygen/MOONEY/zynq/deviceTree
+		git clone https://git.kernel.org/pub/scm/utils/dtc/dtc.git
+		cd dtc
+		make
+	alias dtc /home/oxygen/MOONEY/zynq/deviceTree/dtc/dtc
+
+	# This should work, but doesn't:
+		mkdir /home/oxygen/MOONEY/zynq/deviceTree/dtbBuildDir
+		cd /home/oxygen/MOONEY/zynq/deviceTree/dtbBuildDir
+		cp /home/oxygen/MOONEY/zynq/VivadoProjects/softGlue_3_IO/softGlue_3_IO.sdk/device_tree_bsp_0/*.dt* .
+		dtc -I dts -O dtb -o softGlue.dtb system.dts
+
+	# This works, or at least appears to:
+		# Get the working device tree blob (file named "dtb") from the SD card.
+	
+		# Uncompile the working dtb file to make "works.dts", using the device tree compiler we just built in
+		# /home/oxygen/MOONEY/zynq/deviceTree/dtc:
+	
+			dtc -I dtb -O dts -o works.dts dtb
+
+		# Get pl.dtsi from Vivado:
+			# run Vivado, open softGlue_3_IO project
+			# File/Export/"Export Hardware..."
+			# File/Launch SDK"
+	
+			cp /home/oxygen/MOONEY/zynq/VivadoProjects/softGlue_3_IO/softGlue_3_IO.sdk/device_tree_bsp_0/pl.dtsi .
+
+		# Add softGlue stuff from pl.dtsi to works.dts to make worksPlusSoftGlue.dts.
+			# Add this just before the final "};"
+
+				amba_pl: amba_pl {
+					#address-cells = <1>;
+					#size-cells = <1>;
+					compatible = "simple-bus";
+					ranges ;
+					softGlueReg32_0: softGlueReg32@43c20000 {
+						compatible = "xlnx,softGlueReg32-1.0";
+						reg = <0x43c20000 0x10000>;
+						xlnx,s00-axi-addr-width = <0x8>;
+						xlnx,s00-axi-data-width = <0x20>;
+					};
+					softGlue_400IO_0: softGlue_400IO@43c00000 {
+						compatible = "xlnx,softGlue-400IO-1.0";
+						interrupt-parent = <&intc>;
+						interrupts = <0 29 4>;
+						reg = <0x43c00000 0x10000 0x43c10000 0x10000>;
+						xlnx,intr-active-state = <0xFFFFFFFF>;
+						xlnx,intr-sensitivity = <0xFFFFFFFF>;
+						xlnx,irq-active-state = <0x1>;
+						xlnx,irq-sensitivity = <0x1>;
+						xlnx,num-of-intr = <0x20>;
+						xlnx,s-axi-intr-addr-width = <0x5>;
+						xlnx,s-axi-intr-data-width = <0x20>;
+						xlnx,s00-axi-addr-width = <0x9>;
+						xlnx,s00-axi-data-width = <0x20>;
+					};
+				};
+
+			# Change this line:
+				ps7-scugic@f8f01000 {
+			# to this:
+				intc: ps7-scugic@f8f01000 {
+
+		# Compile worksPlusSoftGlue.dts to make worksPlusSoftGlue.dtb
+	
+			dtc -I dts -O dtb -o worksPlusSoftGlue.dtb worksPlusSoftGlue.dts
+
+Installing softGlue's device tree blob into a MicroZed
+------------------------------------------------------
+	# copy worksPlusSoftGlue.dtb to SD card, using an SD card reader/writer
+	# rename the old "dtb" file as "dtb_ORIG"
+	# rename "worksPlusSoftGlue.dtb" as "dtb" (because existing boot script already
+	# loads a file by this name).
+	# eject SD card from the SD reader/writer and put it in the MicroZed
+	# boot MicroZed
+
+
+Notes on zynq interrupts
+------------------------
+
+Open softGlue project, open block design, click on Zynq, select "Interrupts".
+Check "Fabric Interrupts, expand PL-PS Interrupt Ports, check IRQ_F2P[15:0], and
+note the interrupt "ID".  In my case, it's "[91:84], [68:61]", and the note says
+that "91" is for the MSB.  On the Zynq box in the block diagram, I have an input
+labelled "IRQ_F2P[0:0]", so I guess this means my interrupt ID is 84, or else 61.
+In the device tree, I see "interrupts = <0 29 4>;", which means my interrupt ID is
+29, which is 61-32.  On message boards, I've heard that the interrupt number is
+32 less than what Vivado says it is, so that makes at least a little bit of sense.
+
+Clicked on softGlue_400IO IP and selected the following:
+C NUM OF INTR		32
+C INTR SENSITIVITY	0X00000000 (EDGE SENSITIVE)
+C INTR ACTIVE STATE	0XFFFFFFFF (RISING EDGE)
+C IRQ SENSITIVITY	0 (EDGE SENSITIVE)
+C IRQ ACTIVE STATE	1 (RISING EDGE)
+
+From softGlue_400IO@43c00000, I see "reg = <0x43c00000 0x10000 0x43c10000 0x10000>;",
+which means that the INTR registers are at 0x43c10000
+
+
+Notes on making a loadable kernel module to register an interrupt service routine
+---------------------------------------------------------------------------------
+<Yeah, I wish I had notes on how to do this.>
