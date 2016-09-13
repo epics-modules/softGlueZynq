@@ -10,11 +10,13 @@ To run cross compiled EPICS and synApps on the MicroZed:
 		ifconfig br0 hw ether 00:19:B3:02:13:D7
 		ifconfig br0 up
 
-	Reboot, so that the new MAC address will be used, and the APS network
-	will accept the MicroZed as a known machine.  (This assumes you've
-	told IT that you need an IP address for the MAC address you used above.)
+	Reboot, so that the new MAC address will be used, and the APS network will
+	accept the MicroZed as a known machine.  (This assumes you've told IT that
+	you need an IP address for the MAC address you used above.) From now on, you
+	should be able to login either via USB, or with ssh from Linux.
 
-1.	Do once: make directories and links we'll need for mounting:
+1.	Login to the MicroZed as root.  Do the following once: make directories
+	and links we'll need for mounting:
 
 	mkdir /mnt/APSshare
 	mkdir /mnt/xorApps
@@ -32,11 +34,32 @@ To run cross compiled EPICS and synApps on the MicroZed:
 	mount s100dserv.xray.aps.anl.gov:/APSshare /mnt/APSshare/
 	mount s100dserv.xray.aps.anl.gov:/xorApps /mnt/xorApps/
 
-4.	In home directory, create .profile to set path, etc.:
+4.	In home directory (/root), create .profile to set path, etc.:
 
 	export PATH=$PATH:/net/s100dserv/xorApps/zed/epics/base-3.15.3/bin/linux-arm:.
 	alias iocgo="cd /net/s100dserv/xorApps/zed/epics/ioc/ioczed/iocBoot/iocZed"
 
+Running an ioc
+--------------
+
+This assumes the MicroZed named "microzed-j" is on the network (which it won't
+be until its MAC address has been set to the value we told IT we wanted to use
+for it, and IT has entered it into their system).
+
+	linux% ssh root@microzed-j
+	root@microzed-j: iocgo
+	root@microzed-j: run
+
+Run the MEDM display:
+
+	linux% cd /net/s100dserv/xorApps/zed/epics/ioc/ioczed
+	linux% start_epics_zzz
+
+Note that all the EPICS software - both server side and client side - is on the
+dserv, just as we would have for a VME ioc.
+
+To do
+-----
 It would be nice to have NTP, and it would be nice not to have to run as root. 
 (This takes some effort, because you need to be able to map memory to talk to
 softGlue registers in the FPGA, and you need to be able to write to /dev/xdevcfg
@@ -60,16 +83,6 @@ Here's the CONFIG_SITE file I used:
 	
 	# GNU crosscompiler target name
 	GNU_TARGET = arm-xilinx-linux-gnueabi
-
-
-Running an ioc
---------------
-This assumes the MicroZed is on the network, which it won't be until its
-MAC address has been set to the value we told IT we wanted to use for it.
-
-	linux% ssh root@microzed-j
-	root@microzed-j: iocgo
-	root@microzed-j: run
 
 
 Preparing and loading IP from Vivado into the MicroZed
