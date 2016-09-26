@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueMenu.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/analogProcMenu.adl"
 	version=030107
 }
 display {
@@ -176,73 +176,55 @@ display {
 		height=20
 	}
 	display[0] {
-		label="UpCounter 1"
-		name="softGlue_UpCntr.adl"
+		label="filter 1"
+		name="filter.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[1] {
-		label="UpCounter 2"
-		name="softGlue_UpCntr.adl"
+		label="filter 2"
+		name="filter.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[2] {
-		label="UpCounter 3"
-		name="softGlue_UpCntr.adl"
+		label="filter 3"
+		name="filter.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[3] {
-		label="UpCounter 4"
-		name="softGlue_UpCntr.adl"
+		label="filter 4"
+		name="filter.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[4] {
-		label="DownCounter 1"
-		name="softGlue_DnCntr.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[5] {
-		label="DownCounter 2"
-		name="softGlue_DnCntr.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[6] {
-		label="DownCounter 3"
-		name="softGlue_DnCntr.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[7] {
-		label="DownCounter 4"
-		name="softGlue_DnCntr.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[8] {
-		label="UpDown Counter 1"
-		name="softGlue_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[9] {
-		label="UpDown Counter 2"
-		name="softGlue_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[10] {
-		label="UpDown Counter 3"
-		name="softGlue_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[11] {
-		label="UpDown Counter 4"
-		name="softGlue_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[12] {
-		label="UpDown Counter 5"
-		name="softGlue_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=5"
 	}
 	clr=0
 	bclr=63
-	label="-Counters"
+	label="-Filters"
 }
 "related display" {
 	object {
@@ -364,13 +346,13 @@ display {
 		height=20
 	}
 	display[0] {
-		label="all softGlue"
-		name="softGlueAll.adl"
+		label="all analogProc"
+		name="analogProcAll.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[1] {
 		label="all but I/O"
-		name="softGlueAllButIO.adl"
+		name="analogProcAllButIO.adl"
 		args="P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8"
 	}
 	display[2] {
@@ -381,9 +363,9 @@ display {
 	display[3] {
 		label="------------"
 	}
-	display[4] {
-		label="Extra"
-		name="softGlueExtra.adl"
+	display[6] {
+		label="analogProcTest"
+		name="analogProcTest.adl"
 		args="P=$(P),H=$(H)"
 	}
 	clr=0
@@ -527,19 +509,9 @@ composite {
 		name="softGlue_100MHZ_CK_bare_label.adl"
 		args="P=$(P),H=$(H)"
 	}
-	display[8] {
-		label="PixelTrigger 1"
-		name="softGlue_PixelTrig.adl"
-		args="P=$(P),H=$(H),N=1"
-	}
-	display[9] {
-		label="PixelTrigger 2"
-		name="softGlue_PixelTrig.adl"
-		args="P=$(P),H=$(H),N=2"
-	}
 	clr=0
 	bclr=63
-	label="-Clk,G&D,HS,PT"
+	label="-Clk,G&D,HS"
 }
 composite {
 	object {

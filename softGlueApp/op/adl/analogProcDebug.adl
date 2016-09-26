@@ -1,0 +1,680 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/analogProcDebug.adl"
+	version=030107
+}
+display {
+	object {
+		x=564
+		y=345
+		width=490
+		height=310
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+polyline {
+	object {
+		x=153
+		y=17
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,18)
+		(154,18)
+	}
+}
+rectangle {
+	object {
+		x=163
+		y=0
+		width=150
+		height=274
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+text {
+	object {
+		x=169
+		y=12
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="shiftClk"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=0
+		y=4
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=shiftM_CLK"
+}
+polyline {
+	object {
+		x=153
+		y=181
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,182)
+		(154,182)
+	}
+}
+text {
+	object {
+		x=169
+		y=177
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SIAO-1_IN"
+}
+composite {
+	object {
+		x=0
+		y=168
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=SIAO-1_IN"
+}
+text {
+	object {
+		x=258
+		y=177
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SIAO-1_AOUT"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=311
+		y=181
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(327,182)
+		(312,182)
+	}
+}
+"text update" {
+	object {
+		x=330
+		y=173
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)SIAO-1_AOUT"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=325
+		y=171
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=325
+				y=171
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(326,194)
+				(326,172)
+				(459,172)
+			}
+		}
+		polyline {
+			object {
+				x=325
+				y=171
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(459,172)
+				(459,194)
+				(326,194)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=330
+		y=158
+		width=128
+		height=10
+	}
+	monitor {
+		chan="$(P)$(H)SIAO-1_AOUT"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+text {
+	object {
+		x=258
+		y=238
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SIAO-1_VAL"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=311
+		y=242
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(327,243)
+		(312,243)
+	}
+}
+"text update" {
+	object {
+		x=330
+		y=234
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)SIAO-1_VAL"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=325
+		y=232
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=325
+				y=232
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(326,255)
+				(326,233)
+				(459,233)
+			}
+		}
+		polyline {
+			object {
+				x=325
+				y=232
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(459,233)
+				(459,255)
+				(326,255)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=330
+		y=219
+		width=128
+		height=10
+	}
+	monitor {
+		chan="$(P)$(H)SIAO-1_VAL"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+byte {
+	object {
+		x=325
+		y=255
+		width=135
+		height=15
+	}
+	monitor {
+		chan="$(P)$(H)SIAO-1_VAL"
+		clr=14
+		bclr=2
+	}
+}
+byte {
+	object {
+		x=325
+		y=195
+		width=135
+		height=15
+	}
+	monitor {
+		chan="$(P)$(H)SIAO-1_AOUT"
+		clr=14
+		bclr=2
+	}
+}
+composite {
+	object {
+		x=25
+		y=40
+		width=460
+		height=49
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=311
+				y=56
+				width=19
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(329,57)
+				(312,57)
+			}
+		}
+		text {
+			object {
+				x=258
+				y=53
+				width=50
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="AISO-1_OUT"
+			align="horiz. centered"
+		}
+		composite {
+			object {
+				x=328
+				y=43
+				width=157
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=AISO-1_OUT"
+		}
+		text {
+			object {
+				x=170
+				y=53
+				width=50
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="AISO-1_AIN"
+			align="horiz. centered"
+		}
+		polyline {
+			object {
+				x=153
+				y=58
+				width=13
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(165,59)
+				(154,59)
+			}
+		}
+		"text entry" {
+			object {
+				x=54
+				y=53
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)$(H)AISO-1_AIN"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text update" {
+			object {
+				x=57
+				y=40
+				width=95
+				height=10
+			}
+			monitor {
+				chan="$(P)$(H)AISO-1_AIN"
+				clr=54
+				bclr=2
+			}
+			align="horiz. right"
+			format="hexadecimal"
+			limits {
+			}
+		}
+		byte {
+			object {
+				x=25
+				y=74
+				width=135
+				height=15
+			}
+			monitor {
+				chan="$(P)$(H)AISO-1_AIN"
+				clr=14
+				bclr=2
+			}
+		}
+	}
+}
+polyline {
+	object {
+		x=311
+		y=116
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(329,117)
+		(312,117)
+	}
+}
+text {
+	object {
+		x=258
+		y=113
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="AISO-2_OUT"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=328
+		y=103
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=AISO-2_OUT"
+}
+text {
+	object {
+		x=170
+		y=113
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="AISO-2_AIN"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=153
+		y=118
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,119)
+		(154,119)
+	}
+}
+"text entry" {
+	object {
+		x=54
+		y=113
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P)$(H)AISO-2_AIN"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=57
+		y=100
+		width=95
+		height=10
+	}
+	monitor {
+		chan="$(P)$(H)AISO-2_AIN"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+byte {
+	object {
+		x=25
+		y=134
+		width=135
+		height=15
+	}
+	monitor {
+		chan="$(P)$(H)AISO-2_AIN"
+		clr=14
+		bclr=2
+	}
+}

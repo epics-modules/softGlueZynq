@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=243
-		y=165
+		x=520
+		y=25
 		width=1000
 		height=890
 	}
@@ -477,4 +477,26 @@ polyline {
 		(525,617)
 		(525,633)
 	}
+}
+composite {
+	object {
+		x=15
+		y=630
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MCS-1_CHADV"
+}
+text {
+	object {
+		x=175
+		y=635
+		width=104
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MCS-1 ChanAdv"
 }
