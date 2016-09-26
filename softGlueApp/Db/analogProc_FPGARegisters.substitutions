@@ -1,0 +1,67 @@
+file "softGlue_Register.db"
+{
+pattern {SIG		ADDR}
+#{  32}// filter select value
+#{  33}
+#{  34}
+#{  35}
+{DivByN-1_N			36}
+{DivByN-2_N			37}
+{DivByN-3_N			38}
+{DivByN-4_N			39}
+#{  38}
+#{  39}
+#{  40}
+#{  41}
+#{  42}
+#{  43}
+#{  44}
+#{  45}
+#{  46}
+#{  47}
+#{  48}
+#{  49}
+#{  50}
+#{  51}
+#{  52}
+{AISO-1_AIN			53}
+{AISO-2_AIN			54}
+}
+
+#file "softGlue_InRegister.db"
+file "analogProc_InRegister.db"
+{
+pattern {SIG     	ADDR}
+{ADC_1 0}
+{ADC_2 1}
+{ADC_3 2}
+{ADC_4 3}
+#{ 4} shiftCtrl
+#{ 5} shift state
+#{ 6} 
+#{ 7}
+#{	8}
+{SIAO-1_VAL		7}
+{SIAO-1_AOUT			8}
+#{	  9}
+#{	  10}
+#{	  11} filter1 aIn
+#{	  12} filter1 aOut
+#{	  13} filter2 aIn
+#{	  14} filter2 aOut
+#{	  15} filter3 aIn
+#{	  16} filter3 aOut
+#{	  17} filter4 aIn
+#{	  18} filter4 aOut
+#{	  19} 
+#{	  20} 
+#{	  21}
+#{	  22}
+#{	  23}
+#{	  24}
+#{	  25}
+#{	  26}
+#{	  27}
+#{	  28}
+}
+

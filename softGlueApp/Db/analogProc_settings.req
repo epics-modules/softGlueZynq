@@ -1,0 +1,4 @@
+file softGlue_SignalShow_settings.req P=$(P) H=$(H)
+file analogProc_FPGAContent_settings.req P=$(P) H=$(H)
+#file analogProc_FPGAInt_settings.req P=$(P) H=$(H)
+file softGlue_convenience_settings.req P=$(P) H=$(H)

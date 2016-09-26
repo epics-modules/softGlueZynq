@@ -1,0 +1,46 @@
+record(longout, "$(P)$(Q)Debug") {
+}
+record(bo, "$(P)$(Q)start") {
+	field(ZNAM, "Done")
+	field(ONAM, "Start")
+}
+record(bo, "$(P)$(Q)stop") {
+	field(ZNAM, "Done")
+	field(ONAM, "Stop")
+}
+record(bo, "$(P)$(Q)continuous") {
+	field(ZNAM, "No")
+	field(ONAM, "Yes")
+}
+record(waveform, "$(P)$(Q)s0") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s1") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s2") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s3") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s4") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s5") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s6") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}
+record(waveform, "$(P)$(Q)s7") {
+	field(NELM, "$(N)")
+	field(FTVL,"LONG")
+}

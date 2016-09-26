@@ -1,0 +1,284 @@
+file "softGlue_Input.db"
+{
+pattern {SIG		ADDR}
+{AND-1_IN1			100}
+{AND-1_IN2			101}
+{AND-2_IN1			102}
+{AND-2_IN2			103}
+{AND-3_IN1			104}
+{AND-3_IN2			105}
+{AND-4_IN1			106}
+{AND-4_IN2			107}
+{OR-1_IN1			108}
+{OR-1_IN2			109}
+{OR-2_IN1			110}
+{OR-2_IN2			111}
+{OR-3_IN1			112}
+{OR-3_IN2			113}
+{OR-4_IN1			114}
+{OR-4_IN2			115}
+
+{BUFFER-1_IN		120}
+{BUFFER-2_IN		121}
+{BUFFER-3_IN		122}
+{BUFFER-4_IN		123}
+{DFF-1_D			124}
+{DFF-1_CLOCK		125}
+{DFF-1_SET			126}
+{DFF-1_CLEAR		127}
+{DFF-2_D			128}
+{DFF-2_CLOCK		129}
+{DFF-2_SET			130}
+{DFF-2_CLEAR		131}
+{DFF-3_D			132}
+{DFF-3_CLOCK		133}
+{DFF-3_SET			134}
+{DFF-3_CLEAR		135}
+{DFF-4_D			136}
+{DFF-4_CLOCK		137}
+{DFF-4_SET			138}
+{DFF-4_CLEAR		139}
+
+{LOWPASS128-1_IN	140}
+{LOWPASS128-2_IN	141}
+{SUM-1_IN1			142}
+{SUM-1_IN2			143}
+{SUM-2_IN1			144}
+{SUM-2_IN2			145}
+{DIFF-1_IN1			146}
+{DIFF-1_IN2			147}
+{DIFF-2_IN1			148}
+{DIFF-2_IN2			149}
+{DIV-1_IN1			150}
+{DIV-1_IN2			151}
+{DIV-2_IN1			152}
+{DIV-2_IN2			153}
+{MUL-1_IN1			154}
+{MUL-1_IN2			155}
+{MUL-2_IN1			156}
+{MUL-2_IN2			157}
+{nDIFF-1_IN1		158}
+{nDIFF-1_IN2		159}
+{nDIFF-2_IN1		160}
+{nDIFF-2_IN2		161}
+{XADC_CLOCK			162}
+
+{DEMUX2-1_IN		164}
+{DEMUX2-1_SEL		165}
+{DEMUX2-2_IN		166}
+{DEMUX2-2_SEL		167}
+{MUX2-1_IN0			168}
+{MUX2-1_IN1			169}
+{MUX2-1_SEL			170}
+{MUX2-2_IN0			171}
+{MUX2-2_IN1			172}
+{MUX2-2_SEL			173}
+
+{DivByN-1_ENABLE	174}
+{DivByN-1_CLOCK		175}
+{DivByN-1_RESET		176}
+{DivByN-2_ENABLE	177}
+{DivByN-2_CLOCK		178}
+{DivByN-2_RESET		179}
+{DivByN-3_ENABLE	180}
+{DivByN-3_CLOCK		181}
+{DivByN-3_RESET		182}
+{DivByN-4_ENABLE	183}
+{DivByN-4_CLOCK		184}
+{DivByN-4_RESET		185}
+
+{FILTER-1_IN		214}
+{FILTER-2_IN		215}
+{FILTER-3_IN		216}
+{FILTER-4_IN		217}
+
+{shiftM_CLK			226}
+{SIAO-1_IN			228}
+
+{FO1   				231}
+{FO2   				232}
+{FO3   				233}
+{FO4   				234}
+{FO5   				235}
+{FO6   				236}
+{FO7   				237}
+{FO8   				238}
+
+}
+
+file "softGlue_Output.db"
+{
+pattern {SIG   	ADDR}
+	
+{AND-1_OUT			0}
+{AND-2_OUT			1}
+{AND-3_OUT			2}
+{AND-4_OUT			3}
+{OR-1_OUT			4}
+{OR-2_OUT			5}
+{OR-3_OUT			6}
+{OR-4_OUT			7}
+{LOWPASS128-1_OUT	8}
+{LOWPASS128-2_OUT	9}
+{BUFFER-1_OUT		10}
+{BUFFER-2_OUT		11}
+{BUFFER-3_OUT		12}
+{BUFFER-4_OUT		13}
+{DFF-1_OUT			14}
+{DFF-2_OUT			15}
+{DFF-3_OUT			16}
+{DFF-4_OUT			17}
+{SUM-1_OUT			18}
+{SUM-2_OUT			19}
+{DIFF-1_OUT			20}
+{DIFF-2_OUT			21}
+{DEMUX2-1_OUT0		22}
+{DEMUX2-1_OUT1		23}
+{DEMUX2-2_OUT0		24}
+{DEMUX2-2_OUT1		25}
+{MUX2-1_OUT			26}
+{MUX2-2_OUT			27}
+{DivByN-1_OUT		28}
+{DivByN-2_OUT		29}
+{DivByN-3_OUT		30}
+{DivByN-4_OUT		31}
+
+{ADC-1_OUT			32}
+{ADC-2_OUT			33}
+{ADC-3_OUT			34}
+{ADC-4_OUT			35}
+
+{AISO-1_OUT			36}
+{AISO-2_OUT			37}
+{DIV-1_OUT			38}
+{DIV-2_OUT			39}
+
+{FILTER-1_OUT 		41}
+{FILTER-2_OUT 		42}
+{FILTER-3_OUT 		43}
+{FILTER-4_OUT 		44}
+
+# aNormDiv determines the softGlueRegisterClock frequency because its divide
+# takes so long.  Should find a way to tell Xilinx the divide doesn't have
+# to finish in a register-clock cycle.
+# clkwiz: 20/10/5 MHz
+# softGlueReg 30 MHz
+
+#10 MHz
+{40MHZ_CLOCK		46}
+#5 MHz
+{10MHZ_CLOCK		47}
+
+{MUL-1_OUT			48}
+{MUL-2_OUT			49}
+{nDIFF-1_OUT		50}
+{nDIFF-2_OUT		51}
+
+{FI1	   			52}
+{FI2	   			53}
+{FI3	   			54}
+{FI4	   			55}
+{FI5	   			56}
+{FI6	   			57}
+{FI7	   			58}
+{FI8	   			59}
+
+
+}
+
+
+file "softGlue_description.db"
+{
+pattern {SIG N}
+{circuit 300}
+{10MHZ_CLOCK 80}
+{40MHZ_CLOCK 80}
+{AND-1 80}
+{AND-2 80}
+{AND-3 80}
+{AND-4 80}
+{OR-1 80}
+{OR-2 80}
+{OR-3 80}
+{OR-4 80}
+{BUFFER-1 80}
+{BUFFER-2 80}
+{BUFFER-3 80}
+{BUFFER-4 80}
+{DEMUX2-1 80}
+{DEMUX2-2 80}
+{DFF-1 80}
+{DFF-2 80}
+{DFF-3 80}
+{DFF-4 80}
+{DivByN-1 80}
+{DivByN-2 80}
+{DivByN-3 80}
+{DivByN-4 80}
+{MUX2-1 80}
+{MUX2-2 80}
+{LOWPASS128-1 80}
+{LOWPASS128-2 80}
+{SUM-1 80}
+{SUM-2 80}
+{DIFF-1 80}
+{DIFF-2 80}
+}
+
+# pinout:
+# sig		zynqP	zynqN	mzedP	mzedN	bkoutP	bkoutN
+#				JX1	JX1	CON1	CON1
+#---------------------------------------------------------
+# FI1		T11	T10	11	13	5	7
+# FI2		T12	U12	12	14	6	8
+# FI3		U13	V13	17	19	9	11
+# FI4		V12	W13	18	20	10	12
+# FI5		T14	T15	23	25	13	15
+# FI6		P14	R14	24	26	14	16
+# FI7		Y16	Y17	29	31	19	21
+# FI8		W14	Y14	30	32	20	22
+# FI9		T16	U17	35	37	23	25
+# FI10		V15	W15	36	38	24	26
+# FI11		U14	U15	41	43	27	29
+# FI12		U18	U19	42	44	28	30
+#
+# FO1		N18	P19	47	49	31	33
+# FO2		N20	P20	48	50	32	34
+# FO3		T20	U20	53	55	35	37
+# FO4		V20	W20	54	56	36	38
+# FO5		Y18	Y19	61	63	41	43
+# FO6		V16	W16	62	64	42	44
+# FO7		R16	R17	67	69	45	47
+# FO8		T17	R18	68	70	46	48
+# FO9		V17	V18	73	75	49	51
+# FO10		W18	W19	74	76	50	52
+# FO11		N17	P18	81	83	55	57
+# FO12		P15	P16	82	84	56	58
+
+#				JX2	JX2
+# AI_aux0	C20	B20	17	19	
+# AI_aux1	B19	A20	18	20	
+# AI_aux2	E17	D18	23	25	
+# AI_aux3	D19	D20	24	26	
+# AI_aux4	E18	E19	29	31	
+# AI_aux5	F16	F17	30	32	
+# AI_aux6	L19	L20	35	37	
+# AI_aux7	M19	M20	36	38	
+# AI_aux8	M17	M18	41	43	
+# AI_aux9	K19	J19	42	44	
+# AI_aux10	L16	L17	47	49	
+# AI_aux11	K17	K18	48	50	
+# AI_aux12	H16	H17	53	55	
+# AI_aux13	J18	H18	54	56	
+# AI_aux14	G17	G18	61	63	
+# AI_aux15	F19	F20	62	64	
+
+# other pins on JX2
+# Fx16		G19	G20	67	69	
+# Fx17		J20	H20	68	70	
+# Fx18		K14	J14	73	75	
+# Fx19		H15	G15	74	76	
+# Fx20		N15	N16	81	83	
+# Fx21		L14	L15	82	84	
+# Fx22		M14	M15	87	89	
+# Fx23		K16	J16	88	90	

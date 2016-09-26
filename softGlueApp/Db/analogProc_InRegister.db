@@ -1,0 +1,20 @@
+# similar to softGlue_InRegister, but use only 12 bits
+record(longin,"$(P)$(H)$(SIG)") {
+	field(DTYP,"asynUInt32Digital")
+	field(INP,"@asynMask($(PORT),$(ADDR),0xffffffff)REG32")
+	field(FLNK,"$(P)$(H)$(SIG)_s")
+}
+record(calc,"$(P)$(H)$(SIG)_s") {
+	field(INPA,"$(P)$(H)$(SIG)")
+	field(CALC,"a>2047.?a-4096.:a")
+	field(FLNK,"$(P)$(H)$(SIG)_8")
+}
+record(calc,"$(P)$(H)$(SIG)_8") {
+	field(INPA,"$(P)$(H)$(SIG)_LSW")
+	field(CALC,"a&255")
+}
+record(bo,"$(P)$(H)$(SIG)_SCAN") {
+	field(SCAN,"Event")
+	field(EVNT,"$(READEVENT)")
+	field(FLNK,"$(P)$(H)$(SIG)")
+}
