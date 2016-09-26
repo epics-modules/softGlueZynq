@@ -22,7 +22,12 @@ pattern {SIG		ADDR}
 {GateDly-3_WIDTH	50}
 {GateDly-4_DLY		51}
 {GateDly-4_WIDTH	52}
-{AISO_AIN			53}
+{pixelTrig-1_PRETRIG	53}
+{pixelTrig-1_PRESET		54}
+{pixelTrig-2_PRETRIG	55}
+{pixelTrig-2_PRESET		56}
+{pixelTrig-1_ACQTIME	57}
+{pixelTrig-2_ACQTIME	58}
 }
 
 file "softGlue_InRegister.db"
@@ -42,25 +47,30 @@ pattern {SIG     	ADDR}
 {DnCntr-3_COUNTS	10}
 {DnCntr-4_COUNTS	11}
 
-#{HistScal-1_S00		9}
-#{HistScal-1_S01		10}
-#{HistScal-1_S02		11}
-#{HistScal-1_S03		12}
-#{HistScal-1_S04		13}
-#{HistScal-1_S05		14}
-#{HistScal-1_S06		15}
-#{HistScal-1_S07		16}
-#{HistScal-1_S08		17}
-#{HistScal-1_S09		18}
-#{HistScal-1_S10		19}
-#{HistScal-1_S11		20}
-#{HistScal-1_S12		21}
-#{HistScal-1_S13		22}
-#{HistScal-1_S14		23}
-#{HistScal-1_S15		24}
-#{HistScal-1_S16		25}
-#{HistScal-1_S17		26}
-#{HistScal-1_S18		27}
-#{HistScal-1_S19		28}
+#{HistScal-1_S00		12}
+#{HistScal-1_S01		13}
+#{HistScal-1_S02		14}
+#{HistScal-1_S03		15}
+#{HistScal-1_S04		16}
+#{HistScal-1_S05		17}
+#{HistScal-1_S06		18}
+#{HistScal-1_S07		19}
+#{HistScal-1_S08		20}
+#{HistScal-1_S09		21}
+#{HistScal-1_S10		22}
+#{HistScal-1_S11		23}
+#{HistScal-1_S12		24}
+#{HistScal-1_S13		25}
+#{HistScal-1_S14		26}
+#{HistScal-1_S15		27}
+#{HistScal-1_S16		28}
+#{HistScal-1_S17		29}
+#{HistScal-1_S18		30}
+#{HistScal-1_S19		31}
+
+{pixelTrig-1_PIXEL		28}
+{pixelTrig-1_COUNTS		29}
+{pixelTrig-2_PIXEL		30}
+{pixelTrig-2_COUNTS		31}
 }
 

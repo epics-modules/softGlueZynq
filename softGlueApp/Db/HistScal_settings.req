@@ -1,5 +1,5 @@
 $(P)$(H)HistScal-$(N)_EN_Signal
-$(P)$(H)HistScal-$(N)_SYNC_Signal
-$(P)$(H)HistScal-$(N)_CLK_Signal
-$(P)$(H)HistScal-$(N)_DET_Signal
+#$(P)$(H)HistScal-$(N)_SYNC_Signal
+#$(P)$(H)HistScal-$(N)_CLK_Signal
+#$(P)$(H)HistScal-$(N)_DET_Signal
 $(P)$(H)HistScal-$(N)_CLEAR_Signal

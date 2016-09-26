@@ -113,11 +113,11 @@ pattern {SIG		ADDR}
 #{UpDnCntr-5_CLEAR	209}
 #{UpDnCntr-5_UPDOWN	210}
 
-#{HistScal-1_EN		206}
-#{HistScal-1_CLK		207}
-#{HistScal-1_SYNC	208}
-#{HistScal-1_DET		209}
-#{HistScal-1_CLEAR	210}
+{HistScal-1_EN		206}
+{HistScal-1_CLEAR	207}
+#{HistScal-1_CLK	250 MHz hardwired}
+#{HistScal-1_SYNC	hardwired to gateDelay-4 Inp}
+#{HistScal-1_DET	hardwired to gateDelay-4 Q}
 
 {QuadDec-1_CLOCK	210}
 {QuadDec-1_A		211}
@@ -148,6 +148,41 @@ pattern {SIG		ADDR}
 {FO10				240}
 {FO11				241}
 {FO12				242}
+
+{FO13     		  243}
+{FO14     		  244}
+{FO15     		  245}
+{FO16     		  246}
+{FO17     		  247}
+{FO18     		  248}
+{FO19     		  249}
+{FO20     		  250}
+{FO21     		  251}
+{FO22 			  252}
+{FO23 			  253}
+{FO24 			  254}
+
+{pixelTrig-1_A1			255}
+{pixelTrig-1_B1			256}
+{pixelTrig-1_A2			257}
+{pixelTrig-1_B2			258}
+{pixelTrig-1_CLOCK		259}
+{pixelTrig-1_MISSCLR	260}
+{pixelTrig-1_EN			261}
+{pixelTrig-1_LOAD		262}
+{pixelTrig-1_CLEAR		263}
+
+{pixelTrig-2_A1			264}
+{pixelTrig-2_B1			265}
+{pixelTrig-2_A2			266}
+{pixelTrig-2_B2			267}
+{pixelTrig-2_CLOCK		268}
+{pixelTrig-2_MISSCLR	269}
+{pixelTrig-2_EN			270}
+{pixelTrig-2_LOAD		271}
+{pixelTrig-2_CLEAR		272}
+
+{MCS-1_CHADV			273}
 
 }
 
@@ -221,6 +256,23 @@ pattern {SIG   	ADDR}
 {FI11			62}
 {FI12			63}
 
+{FI13			64}
+{FI14			65}
+{FI15			66}
+{FI16			67}
+{FI17			68}
+{FI18			69}
+{FI19			70}
+{FI20			71}
+{FI21			72}
+{FI22			73}
+{FI23			74}
+{FI24			75}
+
+{pixelTrig-1_TRIG	76}
+{pixelTrig-1_MISS	77}
+{pixelTrig-2_TRIG	78}
+{pixelTrig-2_MISS	79}
 
 }
 
