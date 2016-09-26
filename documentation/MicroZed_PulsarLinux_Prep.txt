@@ -87,6 +87,9 @@ Here's the CONFIG_SITE file I used:
 
 Preparing and loading IP from Vivado into the MicroZed
 ------------------------------------------------------
+Note: You don't have to do this unless you have used Vivado to generate custom
+FPGA content.  softGlueZynq already has everything needed to load the FPGA with
+standard components.
 
 1.	Do once: tell Vivado to write a .bin file whenever it does "Generate
 	Bitstream". In Vivado, select the menu item "Tools>>Project Settings".
@@ -108,6 +111,8 @@ Preparing and loading IP from Vivado into the MicroZed
 Making a device tree blob, so that Linux will know about the interrupt source
 softGlue puts in the IP:
 -----------------------------------------------------------------------------
+This is part of an attempt to get interrupts working.  You don't need to do
+this.
 
 	cd /home/oxygen/MOONEY/zynq
 	mkdir deviceTree

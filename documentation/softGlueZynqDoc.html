@@ -47,7 +47,7 @@ they are dispatched to cause EPICS processing.  (Interrupts are not supported ye
 <blockquote> The name <em>softGlue</em> was intended to suggest <em>glue electronics</em> implemented
 by <em>soft</em>ware, where <em>glue electronics</em> means those little bits of digital circuitry needed to
 connect two or more larger pieces of digital electronics into a working whole.  <em>softGlueZynq</em>
-is a rendition of softGlue for the Xilinx Zynq device , which is the combination of an FPGA and
+is a rendition of softGlue for the Xilinx Zynq device, which is the combination of an FPGA and
 a processor running Linux.</blockquote>
 
 <P>softGlueZynq does this by loading the Zynq FPGA with a predefined collection of circuit
@@ -57,7 +57,7 @@ switches, allowing inputs and outputs to be marked with user-specified names, an
 driving inputs and outputs according to those names.
 
 <P>Here's the underlying idea, schematically:
-<P><center><img src="softGlueSchematically.jpg" name="softGlueZynq, schematically"></center>
+<P><center><img src="softGlueZynqSchematically.jpg" name="softGlueZynq, schematically"></center>
 
 
 <h3>Requirements</h3>
@@ -72,10 +72,10 @@ driving inputs and outputs according to those names.
 
 </ul>
 
-<blockquote> softGlueZynq is intended to be useable with any Zynq device, and will certainly be
-ported to the MicroZed 7020, and to one or more versions of the PicoZed, but the databases and
-MEDM displays supplied in this version are for the MicroZed 7010.  Other devices have not yet been
-tested.</blockquote>
+<blockquote> softGlueZynq is intended to be useable with any Zynq device, and will certainly
+be ported to one or more versions of the PicoZed, but the FPGA-load files, databases, and
+MEDM displays supplied in this version are for the MicroZed 7010 and 7020.  Other devices
+have not yet been tested.</blockquote>
 
 <li><h4>Software</h4>
 <ul>
@@ -88,16 +88,15 @@ tested.</blockquote>
 	
 	<blockquote>This tool is needed to build some softGlueZynq databases.</blockquote>
 
-<li>MEDM, or CSS-BOY, or caQtDM, or the ability to adapt some other display
-	manager or Channel Access client to implement softGlueZynq's user interface.
+<li>MEDM, or caQtDM, or CSS-BOY, or the ability to adapt some other display
+	manager, or Channel Access client, to implement softGlueZynq's user interface.
 
 </ul>
 </ul>
 
-	<blockquote>
-	Some of the softGlueZynq databases, displays, and examples presume the availability of
-	synApps modules such as calc, busy, and std, but these are not needed
-	for any essential feature of softGlueZynq.
+	<blockquote> Some of the softGlueZynq databases, displays, and examples presume the
+	availability of synApps modules such as calc and busy, but these are not needed for any
+	essential feature of softGlueZynq.
 
 	</blockquote>
 
@@ -118,32 +117,31 @@ though we don't yet have documentation on how it's done.
 <h3>Capabilities</h3>
 
 <P>Here are a few examples of the sorts of things that can be accomplished with
-softGlueZynq and EPICS: 
+softGlueZynq and EPICS:   <font color="blue">(Items in blue require interrupt support,
+which is planned, but not yet written.)</font>
 
 <ul>
 
-<li>With no programming at all, softGlueZynq functions simply as a 16-bit digital I/O module.
+<li>With no programming at all, softGlueZynq functions simply as a 48-bit digital I/O module.
 
 <li>Conditionally send a trigger signal to a detector after every N steps of a stepper motor.
 
-<li>Conditionally send a trigger signal to a detector after every N(i) steps of
-a stepper motor, where N(i) is an array of step-interval numbers.  (This requires
-interrupt support, which hasn't been written, or a custom FPGA component, which also
-hasn't been written.)
+<li><font color="blue">Conditionally send a trigger signal to a detector after every N(i) steps of
+a stepper motor, where N(i) is an array of step-interval numbers.</font>
 
 <li>Gate a detector off during the acceleration and deceleration portions of a
 steppermotor's motion.
 
 <li>Send a trigger to a detector precisely 23 ms after sending a trigger to a shutter.
 
-<li>Conditionally trigger the execution of an EPICS record on the change of state
-of an external signal.  (Requires interrupt support which has not yet been written.)
+<li><font color="blue">Conditionally trigger the execution of an EPICS record on the change of state
+of an external signal.</font>
 
 <li>Implement an extraordinarily smart trigger signal for an oscilloscope.
 
-<li>Implement efficiently a timer useable by EPICS software, with a time resolution that is
+<li><font color="blue">Implement efficiently a timer useable by EPICS software, with a time resolution that is
 much better than the system clock's resolution.  (With this, you can for example cause an
-EPICS database to wait for 0.7 ms.)   (Requires interrupt support which has not yet been written.)
+EPICS database to wait for 0.7 ms.)</font>
 
 </ul>
 
@@ -161,31 +159,51 @@ elements:
 <li>Four D flip-flops
 <li>Two 2-input/1-output multiplexers
 <li>Two 1-input/2-output demultiplexers
-<li>Four 32-bit counters
+<li>Four 32-bit up counters
 <li>Four 32-bit preset counters
 <li>Four 32-bit divide-by-N circuits
 <li>Four 32-bit up/down counters
 <li>Four gate&delay generators
 <li>Two quadrature decoders
-<li>8 field-input bits
-<li>8 field-output bits
+<li>One one-input, 20 channel histogramming scaler
+<li>One pixelTrigger circuit
+<li>One eight-input multichannel scaler
+<li>24 field-input bits
+<li>24 field-output bits
 <li>One 10MHz clock signal
-<li>One 40MHz clock signal
+<li>One 20MHz clock signal
+<li>One 50MHz clock signal
 </ul>
 
 <P>In addition to the above listed components, softGlueZynq includes the ability to handle
 analog values in much the same way as it handled digital values.  This is accomplished by
-encoding analog values as bit streams that can be put on the softGlueZync signal bus.  This
-capability is currently rudimentary: only proof-of-principle components have been written.
+encoding analog values as bit streams that can be put on the softGlue signal bus.  This is
+currently rudimentary: only proof-of-principle components have been written, and there is no
+input or output capability.  These circuit elements are in a separate FPGA-load file, which
+also includes an abbreviated version of the digital components in normal softGlue.
 
+<ul>
+<li>Two two-input sum circuits
+<li>Two two-input difference circuits
+<li>Two two-input normalized difference ((a-b)/(a+b)) circuits
+<li>Four low-pass filters
+<li>Two two-input multiply circuits
+<li>Two two-input divide circuits
+</ul>
 
 <hr>
 <a name="Installation and deployment"></a>
 <h2><center>Installation and deployment</center></h2>
 
-	The simplest way to deploy softGlueZynq is to download and build the module iocZed,
-	which builds much of synApps and softGlueZynq and runs it on the Zynq's ARM processor.
-	
+	The simplest way to deploy softGlueZynq is to download and build the module
+	iocZed, which uses softGlueZynq as a support module, and contains code to
+	load and run it on a MicroZed.  iocZed can also include as much or as little
+	of the rest of synApps as you want.  It's essentially a custom copy of the
+	synApps xxx module.  As delivered, iocZed expects all non-VME dependent
+	synApps modules to be available.  Even if you don't want to use the MicroZed
+	as a general purpose soft IOC, you're probably going to want modules like
+	autosave and calc.
+
 
 	<h3>How to get the software</h3>
 	softGlueZynq and iocZed are on on GitHub
@@ -193,6 +211,16 @@ capability is currently rudimentary: only proof-of-principle components have bee
 	(<a href="https://github.com/epics-modules/iocZed">iocZed</a>)
 
 	<h3>Building softGlueZynq</h3>
+	
+	The supported way to built SoftGlueZynq and iocZed is to cross compile.  You
+	will need a copy of the Xilinx Software Development Kit.  (You'll need to
+	get a license, but the license is free.)  The file <a
+	href="MicroZed_PulsarLinux_Prep.txt">MicroZed_PulsarLinux_Prep.txt</a> is a
+	detailed recipe explaining how to prepare a MicroZed for use as an EPICS
+	IOC, how to configure EPICS base to cross compile for the MicroZed's
+	linux-arm processor, and how to do some other stuff that you won't need to
+	do unless you write custom FPGA components.  Once you done all that, and
+	built EPICS base, you're ready to build softGlueZynq.
 
 	<ul>
 
