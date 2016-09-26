@@ -1,14 +1,3 @@
-registrar(ZynqRegister)
-variable(drvZynqDebug, int)
-variable(devAsynSoftGlueDebug, int)
-device(stringout, INST_IO, asynSoftGlue, "softGlue")
-device(bo, INST_IO, softGlueShow, "softGlueShow")
-device(longout, INST_IO, softGlueSigNum, "softGlueSigNum")
-#registrar(sampleCustomInterruptRegistrar)
-registrar(MCSRegistrar)
-registrar(DMARegistrar)
-
-# devA32Zed
 device(bo,VME_IO,devBoA32Zed,"Zed")
 device(bi,VME_IO,devBiA32Zed,"Zed")
 device(ai,VME_IO,devAiA32Zed,"Zed")
