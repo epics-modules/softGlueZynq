@@ -1,10 +1,11 @@
-Adding a new FPGA component to softGlue is a two-part process: adding the
+Adding a new FPGA component to softGlueZynq is a two-part process: adding the
 component in Vivado and producing a .bin file, and writing support for the
 component in EPICS.  For the moment, I'll just describe the EPICS side.
 
-To add a new FPGA component, you need the address offsets of the inputs, outputs,
-and registers in the component.  I'll work the example of an add-on package
-that contains two up/down counters:
+To add a new FPGA component, you need the address offsets (byte addresses
+relative to the base address of the Xilinx softGlue component) of the inputs ,
+outputs, and registers in the component.  I'll work the example of adding two
+up/down counters:
 
 1) Make database and .req files, arrange for database and .bin file to be
    installed in the softGlue/db directory
