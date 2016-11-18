@@ -85,16 +85,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </color>
             </property>
             <property name="label">
-                <string>-Counters</string>
+                <string>-Filters</string>
             </property>
             <property name="stackingMode">
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>UpCounter 1;UpCounter 2;UpCounter 3;UpCounter 4;DownCounter 1;DownCounter 2;DownCounter 3;DownCounter 4;UpDown Counter 1;UpDown Counter 2;UpDown Counter 3;UpDown Counter 4;UpDown Counter 5</string>
+                <string>filter 1;filter 2;filter 3;filter 4;filter 4;filter 4;filter 4;filter 4;filter 4;filter 4;filter 4;filter 4;filter 4</string>
             </property>
             <property name="files">
-                <string>softGlue_UpCntr.adl;softGlue_UpCntr.adl;softGlue_UpCntr.adl;softGlue_UpCntr.adl;softGlue_DnCntr.adl;softGlue_DnCntr.adl;softGlue_DnCntr.adl;softGlue_DnCntr.adl;softGlue_UpDnCntr.adl;softGlue_UpDnCntr.adl;softGlue_UpDnCntr.adl;softGlue_UpDnCntr.adl;softGlue_UpDnCntr.adl</string>
+                <string>filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl;filter.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=5</string>
@@ -217,10 +217,10 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>all softGlue;all but I/O;convenience;------------;Extra</string>
+                <string>all analogProc;all but I/O;convenience;------------;analogProcTest</string>
             </property>
             <property name="files">
-                <string>softGlueAll.adl;softGlueAllButIO.adl;softGlueConvenience.adl;softGlueConvenience.adl;softGlueExtra.adl</string>
+                <string>analogProcAll.adl;analogProcAllButIO.adl;softGlueConvenience.adl;softGlueConvenience.adl;analogProcTest.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H)</string>
@@ -468,22 +468,22 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </color>
             </property>
             <property name="label">
-                <string>-Clk,G&amp;D,HS,PT</string>
+                <string>-Clk,G&amp;D,HS</string>
             </property>
             <property name="stackingMode">
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>10 MHZ Internal Clock;40 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;80 MHZ Internal Clock;PixelTrigger 1;PixelTrigger 2</string>
+                <string>10 MHZ Internal Clock;40 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;80 MHZ Internal Clock</string>
             </property>
             <property name="files">
-                <string>softGlue_10MHZ_CK_bare_label.adl;softGlue_40MHZ_CK_bare_label.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_HistScal.adl;softGlue_100MHZ_CK_bare_label.adl;softGlue_PixelTrig.adl;softGlue_PixelTrig.adl</string>
+                <string>softGlue_10MHZ_CK_bare_label.adl;softGlue_40MHZ_CK_bare_label.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_HistScal.adl;softGlue_100MHZ_CK_bare_label.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
+                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H)</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false;false;false;false;false</string>
+                <string>false;false;false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caFrame" name="caFrame_2">

@@ -6,7 +6,7 @@
         <rect>
             <x>203</x>
             <y>283</y>
-            <width>687</width>
+            <width>955</width>
             <height>372</height>
         </rect>
     </property>
@@ -1210,6 +1210,390 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>P=$(P),H=$(H),NAM=In_$(N16)</string>
             </property>
         </widget>
+        <widget class="caInclude" name="caInclude_48">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>3</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>3</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N1)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_49">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>26</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>26</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N2)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_50">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>49</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>49</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N3)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_51">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>72</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>72</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N4)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_52">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>95</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>95</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N5)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_53">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>118</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>118</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N6)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_54">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>141</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>141</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N7)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_55">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>164</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>164</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N8)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_56">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>187</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>187</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N9)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_57">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>210</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>210</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N10)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_58">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>233</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>233</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N11)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_59">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>256</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>256</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N12)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_60">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>279</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>279</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N13)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_61">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>302</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>302</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N14)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_62">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>325</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>325</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N15)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_63">
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>348</y>
+                    <width>261</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>695</x>
+                    <y>348</y>
+                    <width>259</width>
+                    <height>24</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlue_IntBit_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),NAM=Out_$(N16)</string>
+            </property>
+        </widget>
         <zorder>caPolyLine_0</zorder>
         <zorder>caInclude_0</zorder>
         <zorder>caInclude_1</zorder>
@@ -1259,6 +1643,22 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caInclude_45</zorder>
         <zorder>caInclude_46</zorder>
         <zorder>caInclude_47</zorder>
+        <zorder>caInclude_48</zorder>
+        <zorder>caInclude_49</zorder>
+        <zorder>caInclude_50</zorder>
+        <zorder>caInclude_51</zorder>
+        <zorder>caInclude_52</zorder>
+        <zorder>caInclude_53</zorder>
+        <zorder>caInclude_54</zorder>
+        <zorder>caInclude_55</zorder>
+        <zorder>caInclude_56</zorder>
+        <zorder>caInclude_57</zorder>
+        <zorder>caInclude_58</zorder>
+        <zorder>caInclude_59</zorder>
+        <zorder>caInclude_60</zorder>
+        <zorder>caInclude_61</zorder>
+        <zorder>caInclude_62</zorder>
+        <zorder>caInclude_63</zorder>
     </widget>
 </widget>
 </ui>

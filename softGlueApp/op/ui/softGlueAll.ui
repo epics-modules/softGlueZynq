@@ -7,7 +7,7 @@
             <x>52</x>
             <y>27</y>
             <width>1355</width>
-            <height>1120</height>
+            <height>960</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -858,76 +858,28 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <widget class="caInclude" name="caInclude_36">
             <property name="geometry">
                 <rect>
-                    <x>870</x>
-                    <y>780</y>
-                    <width>409</width>
-                    <height>343</height>
-                </rect>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>870</x>
-                    <y>780</y>
-                    <width>407</width>
-                    <height>341</height>
-                </rect>
-            </property>
-            <property name="filename">
-                <string>softGlueFieldIOxx_small_bare.adl</string>
-            </property>
-            <property name="macro">
-                <string>P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48</string>
-            </property>
-        </widget>
-        <widget class="caInclude" name="caInclude_37">
-            <property name="geometry">
-                <rect>
-                    <x>440</x>
-                    <y>780</y>
-                    <width>409</width>
-                    <height>343</height>
-                </rect>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>440</x>
-                    <y>780</y>
-                    <width>407</width>
-                    <height>341</height>
-                </rect>
-            </property>
-            <property name="filename">
-                <string>softGlueFieldIOxx_small_bare.adl</string>
-            </property>
-            <property name="macro">
-                <string>P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32</string>
-            </property>
-        </widget>
-        <widget class="caInclude" name="caInclude_38">
-            <property name="geometry">
-                <rect>
                     <x>10</x>
-                    <y>780</y>
+                    <y>785</y>
                     <width>409</width>
-                    <height>343</height>
+                    <height>177</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
                     <x>10</x>
-                    <y>780</y>
+                    <y>785</y>
                     <width>407</width>
-                    <height>341</height>
+                    <height>175</height>
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlueFieldIOxx_small_bare.adl</string>
+                <string>softGlueFieldIOxx8_small_bare.adl</string>
             </property>
             <property name="macro">
-                <string>P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16</string>
+                <string>P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8</string>
             </property>
         </widget>
-        <widget class="caFrame" name="caFrame_39">
+        <widget class="caFrame" name="caFrame_37">
             <property name="geometry">
                 <rect>
                     <x>511</x>
@@ -1201,7 +1153,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>true</string>
             </property>
         </widget>
-        <widget class="caFrame" name="caFrame_40">
+        <widget class="caFrame" name="caFrame_38">
             <property name="geometry">
                 <rect>
                     <x>0</x>
@@ -1210,7 +1162,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <height>25</height>
                 </rect>
             </property>
-            <widget class="caFrame" name="caFrame_41">
+            <widget class="caFrame" name="caFrame_39">
                 <property name="geometry">
                     <rect>
                         <x>0</x>
@@ -1326,7 +1278,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </property>
             </widget>
         </widget>
-        <widget class="caInclude" name="caInclude_42">
+        <widget class="caInclude" name="caInclude_40">
             <property name="geometry">
                 <rect>
                     <x>975</x>
@@ -1350,7 +1302,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>P=$(P),H=$(H)</string>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_43">
+        <widget class="caInclude" name="caInclude_41">
             <property name="geometry">
                 <rect>
                     <x>975</x>
@@ -1374,7 +1326,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>P=$(P),H=$(H)</string>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_44">
+        <widget class="caInclude" name="caInclude_42">
             <property name="geometry">
                 <rect>
                     <x>975</x>
@@ -1396,6 +1348,54 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H)</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_43">
+            <property name="geometry">
+                <rect>
+                    <x>450</x>
+                    <y>785</y>
+                    <width>409</width>
+                    <height>177</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>450</x>
+                    <y>785</y>
+                    <width>407</width>
+                    <height>175</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlueFieldIOxx8_small_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N1=9,N2=10,N3=11,N4=12,N5=13,N6=14,N7=15,N8=16</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_44">
+            <property name="geometry">
+                <rect>
+                    <x>935</x>
+                    <y>785</y>
+                    <width>409</width>
+                    <height>177</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>935</x>
+                    <y>785</y>
+                    <width>407</width>
+                    <height>175</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlueFieldIOxx8_small_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24</string>
             </property>
         </widget>
         <zorder>caInclude_0</zorder>
@@ -1435,16 +1435,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caInclude_35</zorder>
         <zorder>caFrame_31</zorder>
         <zorder>caInclude_36</zorder>
-        <zorder>caInclude_37</zorder>
-        <zorder>caInclude_38</zorder>
         <zorder>caLabel_0</zorder>
         <zorder>caLabel_1</zorder>
-        <zorder>caFrame_39</zorder>
+        <zorder>caFrame_37</zorder>
         <zorder>caRectangle_0</zorder>
         <zorder>caLabel_2</zorder>
-        <zorder>caFrame_41</zorder>
+        <zorder>caFrame_39</zorder>
         <zorder>caPolyLine_0</zorder>
-        <zorder>caFrame_40</zorder>
+        <zorder>caFrame_38</zorder>
+        <zorder>caInclude_40</zorder>
+        <zorder>caInclude_41</zorder>
         <zorder>caInclude_42</zorder>
         <zorder>caInclude_43</zorder>
         <zorder>caInclude_44</zorder>
