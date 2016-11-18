@@ -161,7 +161,7 @@ $(P)$(H)UpDnCntr-4_desc
 $(P)$(H)QuadDec-1_desc
 $(P)$(H)QuadDec-2_desc
 #$(P)$(H)MagCmp-1_desc
-#$(P)$(H)HistScal-1_desc
+$(P)$(H)HistScal-1_desc
 
 $(P)$(H)HW_OR-1_desc
 $(P)$(H)HW_OR-2_desc

@@ -47,30 +47,30 @@ pattern {SIG     	ADDR}
 {DnCntr-3_COUNTS	10}
 {DnCntr-4_COUNTS	11}
 
-#{HistScal-1_S00		12}
-#{HistScal-1_S01		13}
-#{HistScal-1_S02		14}
-#{HistScal-1_S03		15}
-#{HistScal-1_S04		16}
-#{HistScal-1_S05		17}
-#{HistScal-1_S06		18}
-#{HistScal-1_S07		19}
-#{HistScal-1_S08		20}
-#{HistScal-1_S09		21}
-#{HistScal-1_S10		22}
-#{HistScal-1_S11		23}
-#{HistScal-1_S12		24}
-#{HistScal-1_S13		25}
-#{HistScal-1_S14		26}
-#{HistScal-1_S15		27}
-#{HistScal-1_S16		28}
-#{HistScal-1_S17		29}
-#{HistScal-1_S18		30}
-#{HistScal-1_S19		31}
+{HistScal-1_S00 	   12}
+{HistScal-1_S01 	   13}
+{HistScal-1_S02 	   14}
+{HistScal-1_S03 	   15}
+{HistScal-1_S04 	   16}
+{HistScal-1_S05 	   17}
+{HistScal-1_S06 	   18}
+{HistScal-1_S07 	   19}
+{HistScal-1_S08 	   20}
+{HistScal-1_S09 	   21}
+{HistScal-1_S10 	   22}
+{HistScal-1_S11 	   23}
+{HistScal-1_S12 	   24}
+{HistScal-1_S13 	   25}
+{HistScal-1_S14 	   26}
+{HistScal-1_S15 	   27}
+{HistScal-1_S16 	   28}
+{HistScal-1_S17 	   29}
+{HistScal-1_S18 	   30}
+{HistScal-1_S19 	   31}
 
-{pixelTrig-1_PIXEL		28}
-{pixelTrig-1_COUNTS		29}
-{pixelTrig-2_PIXEL		30}
-{pixelTrig-2_COUNTS		31}
+#{pixelTrig-1_PIXEL		28}
+#{pixelTrig-1_COUNTS		29}
+#{pixelTrig-2_PIXEL		30}
+#{pixelTrig-2_COUNTS		31}
 }
 

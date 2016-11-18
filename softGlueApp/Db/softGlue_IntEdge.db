@@ -7,19 +7,32 @@
 # set, the lower of which tells drvIP_EP201 which bit actually to read/write.
 # PINI="YES" because we want autosave to be able to restore the user's
 # rising/falling edge selections.
+
+# At present, the FPGA only supports rising edge interrupts
+#record(mbbo,"$(P)$(H)$(NAM)IntEdge") {
+#	field(PINI,"YES")
+#	field(DTYP,"asynUInt32Digital")
+#	field(OUT,"@asynMask($(IPORT),$(ADDR),$(MASK))INTEDGE")
+#	field(NOBT,"2")
+#	field(ZRVL,"0")
+#	field(ONVL,"1")
+#	field(TWVL,"2")
+#	field(THVL,"3")
+#	field(ZRST,"None")
+#	field(ONST,"Rising")
+#	field(TWST,"Falling")
+#	field(THST,"Both")
+#	field(FLNK,"$(P)$(H)$(NAM)IntEdgeClearThrottled")
+#}
 record(mbbo,"$(P)$(H)$(NAM)IntEdge") {
 	field(PINI,"YES")
 	field(DTYP,"asynUInt32Digital")
-	field(OUT,"@asynMask($(PORT),$(ADDR),$(MASK))INTEDGE")
-	field(NOBT,"2")
+	field(OUT,"@asynMask($(IPORT),$(ADDR),$(MASK))INTEDGE")
+	field(NOBT,"1")
 	field(ZRVL,"0")
 	field(ONVL,"1")
-	field(TWVL,"2")
-	field(THVL,"3")
 	field(ZRST,"None")
 	field(ONST,"Rising")
-	field(TWST,"Falling")
-	field(THST,"Both")
 	field(FLNK,"$(P)$(H)$(NAM)IntEdgeClearThrottled")
 }
 
@@ -28,9 +41,12 @@ record(mbbo,"$(P)$(H)$(NAM)IntEdge") {
 # was able to handle.  When executed, the record will get the disabledIntMask,
 # and attempt to execute IntEdgeClear. If disabledIntMask is nonzero, the
 # attempt will succeed.
+# NOTE: this doesn't apply to softGlueZynq, because it (user-space code)
+# doesn't reenable interrupts until it has handled the current interrupt.
+# I'm leaving the code in, however, in case some use is found for it.
 record(longin,"$(P)$(H)$(NAM)IntEdgeReset") {
 	field(DTYP,"asynUInt32Digital")
-	field(INP,"@asynMask($(PORT),$(ADDR),$(MASK))INT_EDGE_RESET")
+	field(INP,"@asynMask($(IPORT),$(ADDR),$(MASK))INT_EDGE_RESET")
 	field(FLNK,"$(P)$(H)$(NAM)IntEdgeClear")
 	field(SCAN,"I/O Intr")
 }

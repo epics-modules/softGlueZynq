@@ -115,11 +115,6 @@ pattern {SIG		ADDR}
 
 {HistScal-1_EN		206}
 {HistScal-1_CLEAR	207}
-{HistScal-1_CLK		208}
-{HistScal-1_SYNC	209}
-#{HistScal-1_DET	see 226}
-
-# 250 MHz histogramming scaler, with test inputs
 #{HistScal-1_CLK	250 MHz hardwired}
 #{HistScal-1_SYNC	hardwired to gateDelay-4 Inp}
 #{HistScal-1_DET	hardwired to gateDelay-4 Q}
@@ -140,8 +135,6 @@ pattern {SIG		ADDR}
 {GateDly-3_CLK		223}
 {GateDly-4_IN		224}
 {GateDly-4_CLK		225}
-
-{HistScal-1_DET		226}
 
 {FO1				231}
 {FO2				232}
@@ -443,7 +436,7 @@ pattern {SIG N}
 {QuadDec-1 80}
 {QuadDec-2 80}
 {MagCmp-1 80}
-{HistScal-1 80}
+#{HistScal-1 80}
 {HW_OR-1 80}
 {HW_OR-2 80}
 }
