@@ -285,7 +285,11 @@ int	      iLevel;
 	return(ERROR);
   }
 
-  cards[card].base = (unsigned int *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,fd,a32base);
+  /* accesses to clock wizard AXI component yielded a segfault, probably because I hadn't mapped
+   * a large enough section.
+   */
+  /*cards[card].base = (unsigned int *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,fd,a32base);*/
+  cards[card].base = (unsigned int *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,fd,a32base);
   if (cards[card].base == NULL) {
        epicsPrintf("devA32ZedConfig: mmap A32 Address map failed for Card %d\n",card);
   }

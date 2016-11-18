@@ -4,7 +4,8 @@ variable(devAsynSoftGlueDebug, int)
 device(stringout, INST_IO, asynSoftGlue, "softGlue")
 device(bo, INST_IO, softGlueShow, "softGlueShow")
 device(longout, INST_IO, softGlueSigNum, "softGlueSigNum")
-#registrar(sampleCustomInterruptRegistrar)
+# example of custom interrupt service routine
+registrar(sampleCustomInterruptRegistrar)
 registrar(MCSRegistrar)
 registrar(DMARegistrar)
 

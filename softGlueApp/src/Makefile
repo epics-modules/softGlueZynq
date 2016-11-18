@@ -9,7 +9,7 @@ INC += drvZynq.h
 
 LIBRARY_IOC = softGlueZynq
 LIB_SRCS += drvZynq.c devAsynSoftGlue.c MCS.st devA32Zed.c DMA.st
-#LIB_SRCS += sampleCustomInterruptHandler.c
+LIB_SRCS += sampleCustomInterruptHandler.c
 
 LIB_LIBS += asyn
 LIB_LIBS += seq pv

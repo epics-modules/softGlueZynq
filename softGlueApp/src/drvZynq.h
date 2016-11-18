@@ -4,21 +4,19 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#ifdef vxWorks
-extern int logMsg(char *fmt, ...);
-#endif
-
 /* EPICS includes */
 #include <epicsTypes.h>
 #include <epicsExport.h>
 #include <iocsh.h>
 
 typedef struct {
-	epicsUInt16 mask;
-	epicsUInt16 wentLow, wentHigh;
+	epicsUInt32 risingMask;
+	epicsUInt32 fallingMask;
+	epicsUInt32 wentLow, wentHigh;
 	void *userPvt;
 } softGlueIntRoutineData;
 
-int softGlueRegisterInterruptRoutine(epicsUInt16 carrier, epicsUInt16 slot, int sopcAddress, epicsUInt16 mask,
+int softGlueRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 fallingMask,
 	void (*routine)(softGlueIntRoutineData *IRData), void *userPvt);
-epicsUInt16 *softGlueCalcSpecifiedRegisterAddress(epicsUInt16 carrier, epicsUInt16 slot, int addr);
+
+epicsUInt32 *softGlueCalcSpecifiedRegisterAddress(int type, int addr);

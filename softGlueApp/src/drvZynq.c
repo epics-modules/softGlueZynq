@@ -7,47 +7,51 @@
 
     This is the driver for softGlue on Xilinx Zynq.
 
-	This driver cooperates with specific FPGA firmware loaded into the zynq IP.
-	The loaded FPGA firmware includes an AXI4 Lite peripheral, which makes
-	registers implemented in the PL look like memory locations. Additional
-	firmware connects those registers with custom components, such as AND gates,
-	flip flops, etc.
+	This driver cooperates with specific firmware loaded into the Zynq FPGA. The
+	firmware includes an AXI4 Lite peripheral, which makes registers implemented
+	in the FPGA look like memory locations. Additional firmware connects those
+	registers with custom components, such as AND gates, flip flops, etc.
 
-<<begin not done yet
-        1) fieldIO_registerSet component
+	Interrupt support: softGlue_300IO_v1_0_S_AXI_INTR.v
+	0:	Global interrupt enable register (LSB)
+	1:	Interrupt enable register
+	2:	Interrupt status register (read only)
+	3:	Interrupt acknowledgement register
+	4:	Interrupt pending register (read only)
+	
 
-           A set of seven 16-bit registers defined by 'fieldIO_registerSet'
-           below.  This register set provides bit-level I/O direction and
-           interrupt-generation support, and is intended primarily to
-           implement field I/O registers.
-<<end not done yet
+        1) interruptControlRegisterSet component
+
+           A set of registers defined by 'interruptControlRegisterSet'
+           below.  This register set provides interrupt support.
 
         2) single 8-bit register component
 
-		   a single 8-bit register, which has no interrupt service or bit-level
-		   I/O direction.  This is just a plain 8-bit or 32-bit register, which
-		   can be written to or read.  This driver doesn't know or care what the
-		   register might be connected to inside the FPGA.
+		   This is just a plain 8-bit or 32-bit register, which can be written
+		   to or read.  This driver doesn't know or care what the register might
+		   be connected to inside the FPGA.
 
-<<begin not done yet
-   Each fieldIO_registerSet component must be initialized by a separate call to
-    initIP_EP201(), because the component's sopc address must be specified at
-    init time, so that the interrupt-service routine associated with the
-    component can use the sopc address.  Currently, each call to initIP_EP201()
-    defines a new asyn port, connects an interrupt-service routine, creates a
-    message queue, and launches a thread.
-<<end not done yet
+	The interruptControlRegisterSet component is initialized by a call to
+    initZynqInterrupts().  This routine defines a new asyn port, connects an
+	interrupt-service routine, and launches a thread.
 
-	Single 8-bit register components need not have their addresses known at init
-	time, because they are not associated with an interrupt service routine.  As
-	a consequence, many such single-register components can be served by a
-	single asyn port.  Users of this port must indicate the  register they want
-	to read or write in their asynUser structure. Records do this by including
-	the address in the definition of the record's OUT or INP field.  For
-	example, the ADDR macro in the following field definition should be set to
-	indicate (via syntax that has yet to be determined) the register's address:
+	Single 8-bit register components are all served by a single asyn port. 
+	Users of this port must indicate the  register they want to read or write in
+	their asynUser structure. Records do this by including the address in the
+	definition of the record's OUT or INP field.  For example, the ADDR macro in
+	the following field definition should be set to indicate (via syntax that
+	has yet to be determined) the register's address:
 	field(OUT,"@asynMask($(PORT),$(ADDR),0x2f)")
 
+	Dynamic clock frequencies:
+	VCO Frequency = (Input Frequency) * (CLKFBOUT_MULT)/DIVCLK_DIVIDE
+	Input frequency is 50 MHz (FCLK_CLK3)
+	clock config registers:
+		0x43c50200	softGlue register clock (100 MHz)
+		0x43c50204	sg_in045	"50MHZ_CLOCK"
+		0x43c50208	sg_in046	"20MHZ_CLOCK"
+		0x43c5020c	sg_in047	"10MHZ_CLOCK"
+		0x43c50210	gateDelayFast, fHistoScaler	(250 MHz)
 */
 
 
@@ -58,18 +62,14 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include	<stddef.h>
-#include	<stdio.h>
-#include	<sys/types.h>
+#include <stddef.h>
+#include <stdio.h>
+#include <sys/types.h>
 
-#include	<unistd.h>
-#include	<sys/mman.h>
-#include	<fcntl.h>
-#include	<sys/stat.h>
-
-#ifdef vxWorks
-extern int logMsg(char *fmt, ...);
-#endif
+#include <unistd.h>
+#include <sys/mman.h>
+#include <fcntl.h>
+#include <sys/stat.h>
 
 /* EPICS includes */
 #include <errlog.h>
@@ -101,45 +101,37 @@ epicsExportAddress(int, drvZynqDebug);
 #define MAX_PORTS 10
 #define MAX_IRQ 5	/* max number of outstanding interrupt requests */
 
-
-#define COMPONENTTYPE_FIELD_IO 0
-#define COMPONENTTYPE_BARE_REG 1
-
 /* drvParams */
+#define REG8					0	/* drvParam <none> */
 #define INTERRUPT_EDGE			1	/* drvParam INTEDGE */
-#define POLL_TIME				2	/* drvParam POLLTIME */
-#define INTERRUPT_EDGE_RESET	3	/* drvParam INT_EDGE_RESET */
-#define REG32					4	/* drvParam REG32 */
+#define INTERRUPT_EDGE_RESET	2	/* drvParam INT_EDGE_RESET */
+#define REG32					3	/* drvParam REG32 */
 
 typedef struct {
-    epicsUInt16 controlRegister;    /* control register            */
-    epicsUInt16 writeDataRegister;  /* 16-bit data write/read      */
-    epicsUInt16 readDataRegister;   /* Input Data Read register    */
-    epicsUInt16 risingIntStatus;    /* Rising Int Status Register  */
-    epicsUInt16 risingIntEnable;    /* Rising Int Enable Reg       */
-    epicsUInt16 fallingIntStatus;   /* Falling Int Status Register */
-    epicsUInt16 fallingIntEnable;   /* Falling Int Enable Register */
-} fieldIO_registerSet;
-
+    epicsUInt32 globalEnable;
+    epicsUInt32 risingIntEnable;
+    epicsUInt32 risingIntStatus;
+    epicsUInt32 acknowledge;
+    epicsUInt32 pending;
+	/* These aren't in the Xilinx generated AXI component, but I might add them */
+    /* epicsUInt32 fallingIntStatus; */
+    /* epicsUInt32 fallingIntEnable; */
+} interruptControlRegisterSet;
 
 typedef struct {
-    epicsUInt16 bits;
-    epicsUInt16 interruptMask;
+    epicsUInt32 risingMask;
+    epicsUInt32 fallingMask;
 } interruptMessage;
 
 typedef struct {
 	volatile epicsUInt32 *mem;	/* AXI mapped address */
 	int AXI_Address;
-	int is_fieldIO_registerSet;
-    unsigned char manufacturer;
-    unsigned char model;
     char *portName;
     asynUser *pasynUser;
     epicsUInt32 oldBits;
     epicsUInt32 risingMask;
     epicsUInt32 fallingMask;
-    volatile fieldIO_registerSet *regs;
-    double pollTime;
+    volatile interruptControlRegisterSet *regs;
     epicsMessageQueueId msgQId;
     int messagesSent;
     int messagesFailed;
@@ -148,17 +140,14 @@ typedef struct {
     asynInterface uint32D;
     asynInterface int32;
     void *interruptPvt;
-    int intVector;
-	epicsUInt32 interruptCount;
     epicsUInt16 disabledIntMask;    /* int enable rescinded because too many interrupts received */
 } drvZynqPvt;
 
 /*
- * Pointers to up to 12 drvZynqPvt structures -- enough for four copies of softGlue.
- * This is needed to break up init into three function calls, all of which specify carrier and slot.
- * From carrier and slot, we can get the three drvZynqPvt pointers associated with an IP_EP200 module.
+ * Pointer to drvZynqPvt structure
  */
-#define MAX_DRVPVT 12
+#define MAX_DRVPVT 10
+int numDriverTables=0;
 drvZynqPvt *driverTable[MAX_DRVPVT] = {0};
 
 /*
@@ -200,8 +189,8 @@ STATIC struct asynUInt32Digital ZynqUInt32D = {
     setInterruptUInt32D,	/* setInterrupt (not used) */
     clearInterruptUInt32D,	/* clearInterrupt (not used) */
     NULL,         /* getInterrupt: default does nothing */
-    NULL,         /* registerInterruptUser: default adds user to pollerThread's clientList. */
-    NULL          /* cancelInterruptUser: default removes user from pollerThread's clientList. */
+    NULL,         /* registerInterruptUser: default adds user to dispatchThread's clientList. */
+    NULL          /* cancelInterruptUser: default removes user from dispatchThread's clientList. */
 };
 
 
@@ -222,11 +211,8 @@ STATIC struct asynInt32 ZynqInt32 = {
 };
 
 /* These are private functions */
-#if 0
-STATIC void pollerThread           	(drvZynqPvt *pPvt);
-STATIC void intFunc                	(void *); /* Interrupt function */
-#endif
-STATIC void rebootCallback         	(void *);
+STATIC void dispatchThread	(drvZynqPvt *pPvt);
+STATIC void rebootCallback	(void *);
 
 int devMemFd = 0;
 int initDevMem() {
@@ -240,39 +226,36 @@ int initDevMem() {
   return(0);
 }
 
-/* Init one field I/O register set (one AXI4 Lite peripheral) */
-int initZynqIO(const char *portName, 
-	int msecPoll, int dataDir, int AXI_Address, int interruptVector,
-	int risingMask, int fallingMask) {
+/* Init interrupt-control register set (contained in AXI4 Lite peripheral) */
+int initZynqInterrupts(const char *portName, int AXI_Address) {
 
 	drvZynqPvt *pPvt;
 	int status;
 	char threadName[80] = "";
 
-	pPvt = callocMustSucceed(1, sizeof(*pPvt), "initZynqIO");
-	pPvt->portName = epicsStrDup(portName);
-	pPvt->is_fieldIO_registerSet = 1;
+	if (AXI_Address==0) {
+		printf("initZynqInterrupts: using hard-coded AXI_Address\n");
+		AXI_Address = 0x43c10000;
+	}
 
-	/* Default of 100 msec */
-	if (msecPoll == 0) msecPoll = 100;
-	pPvt->pollTime = msecPoll / 1000.;
+	pPvt = callocMustSucceed(1, sizeof(*pPvt), "initZynqInterrupts");
+	pPvt->portName = epicsStrDup(portName);
+
 	pPvt->msgQId = epicsMessageQueueCreate(MAX_MESSAGES, sizeof(interruptMessage));
 
-	/* Set up ID and I/O space addresses for IP module */
+	/* open /dev/mem, in case it's not already open */
 	initDevMem();
 
 	pPvt->mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_Address);
 	if (pPvt->mem == NULL) {
-		printf("initZynqIO: mmap A32 Address map failed for address 0x%X\n", AXI_Address);
+		printf("initZynqInterrupts: mmap A32 Address map failed for address 0x%X\n", AXI_Address);
 	}
-	else printf("initZynqIO: mmap A32 Address map successful for address 0x%X\n", AXI_Address);
-	pPvt->regs = (fieldIO_registerSet *) ((char *)(pPvt->mem));
-
-	pPvt->intVector = interruptVector;
-
-	pPvt->manufacturer = 0;
-	pPvt->model = 0;
-
+	pPvt->regs = (interruptControlRegisterSet *) ((char *)(pPvt->mem));
+	if (drvZynqDebug>5) {
+		printf("drvZynq:initZynqInterrupts: pPvt = %p\n", pPvt);
+		printf("drvZynq:initZynqInterrupts: pPvt->regs = %p\n", pPvt->regs);
+		printf("drvZynq:initZynqInterrupts: &pPvt->regs->risingIntEnable = %p\n", &pPvt->regs->risingIntEnable);
+	}
 	/* Link with higher level routines */
 	pPvt->common.interfaceType = asynCommonType;
 	pPvt->common.pinterface  = (void *)&ZynqCommon;
@@ -296,22 +279,22 @@ int initZynqIO(const char *portName,
 	                                    0, /* medium priority */
 	                                    0);/* default stack size */
 	if (status != asynSuccess) {
-		printf("initZynqIO ERROR: Can't register port\n");
+		printf("initZynqInterrupts: ERROR: Can't register port\n");
 		return(-1);
 	}
 	status = pasynManager->registerInterface(pPvt->portName,&pPvt->common);
 	if (status != asynSuccess) {
-		printf("initZynqIO ERROR: Can't register common.\n");
+		printf("initZynqInterrupts: ERROR: Can't register common.\n");
 		return(-1);
 	}
 	status = pasynManager->registerInterface(pPvt->portName,&pPvt->asynDrvUser);
 	if (status != asynSuccess){
-		printf("initZynqIO ERROR: Can't register asynDrvUser.\n");
+		printf("initZynqInterrupts: ERROR: Can't register asynDrvUser.\n");
 		return(-1);
 	}
 	status = pasynUInt32DigitalBase->initialize(pPvt->portName, &pPvt->uint32D);
 	if (status != asynSuccess) {
-		printf("initZynqIO ERROR: Can't register UInt32Digital.\n");
+		printf("initZynqInterrupts: ERROR: Can't register UInt32Digital.\n");
 		return(-1);
 	}
 	pasynManager->registerInterruptSource(pPvt->portName, &pPvt->uint32D,
@@ -319,7 +302,7 @@ int initZynqIO(const char *portName,
 
 	status = pasynInt32Base->initialize(pPvt->portName,&pPvt->int32);
 	if (status != asynSuccess) {
-		printf("initZynqIO ERROR: Can't register Int32.\n");
+		printf("initZynqInterrupts: ERROR: Can't register Int32.\n");
 		return(-1);
 	}
 
@@ -330,52 +313,28 @@ int initZynqIO(const char *portName,
 	/* Connect to device */
 	status = pasynManager->connectDevice(pPvt->pasynUser, pPvt->portName, 0);
 	if (status != asynSuccess) {
-		printf("initZynqIO, connectDevice failed %s\n",
+		printf("initZynqInterrupts: connectDevice failed %s\n",
 			pPvt->pasynUser->errorMessage);
 		return(-1);
 	}
 
-	/* Set up the control register */
-	pPvt->regs->controlRegister = dataDir;	/* Set Data Direction Reg Zynq */ 
-	pPvt->regs->writeDataRegister = 0;		/* Clear direct-write to field I/O */  
-	pPvt->risingMask = risingMask;
-	pPvt->fallingMask = fallingMask;
-
-#if 0
-	/* Start the thread to poll and handle interrupt callbacks to device support */
+	/* Start the thread to handle interrupt callbacks to device support */
 	strcat(threadName, "Zynq");
 	strcat(threadName, portName);
 	epicsThreadCreate(threadName, epicsThreadPriorityHigh,
 		epicsThreadGetStackSize(epicsThreadStackBig),
-		(EPICSTHREADFUNC)pollerThread, pPvt);
+		(EPICSTHREADFUNC)dispatchThread, pPvt);
+
+#if 0
+	/* Associate interrupt service routine with intVector */
+	if (devConnectInterruptVME(pPvt->intVector, intFunc, (void *)pPvt)) {
+		printf("Zynq interrupt connect failure\n");
+		return(-1);
+	}
+	/* Enable interrupts and set module status. */
+	/* how do I do this? */
 #endif
 
-	/* Interrupt support
-	 * If risingMask, fallingMask, and intVector are zero, don't bother with interrupts, 
-	 * since the user probably didn't pass this parameter to initZynqIO()
-	 */
-	if (pPvt->intVector || pPvt->risingMask || pPvt->fallingMask) {
-	
-		pPvt->regs->risingIntStatus = risingMask;
-		pPvt->regs->fallingIntStatus = fallingMask;
-		
-		/* Enable interrupt generation in FPGA firmware */
-		if (pPvt->risingMask) { 
-			pPvt->regs->risingIntEnable = pPvt->risingMask;
-		}
-		if (pPvt->fallingMask) {  
-			pPvt->regs->fallingIntEnable = pPvt->fallingMask;
-		}
-#if 0
-		/* Associate interrupt service routine with intVector */
-		if (devConnectInterruptVME(pPvt->intVector, intFunc, (void *)pPvt)) {
-			printf("Zynq interrupt connect failure\n");
-			return(-1);
-		}
-		/* Enable interrupts and set module status. */
-		/* how do I do this? */
-#endif
-	}
 	epicsAtExit(rebootCallback, pPvt);
 	return(0);
 }
@@ -388,7 +347,6 @@ STATIC asynStatus create_asynDrvUser(void *drvPvt,asynUser *pasynUser,
 		pasynUser->reason = 0;
 	} else {
 		if (strcmp(drvInfo, "INTEDGE") == 0) pasynUser->reason = INTERRUPT_EDGE;
-		if (strcmp(drvInfo, "POLLTIME") == 0) pasynUser->reason = POLL_TIME;
 		if (strcmp(drvInfo, "INT_EDGE_RESET") == 0) pasynUser->reason = INTERRUPT_EDGE_RESET;
 		if (strcmp(drvInfo, "REG32") == 0) pasynUser->reason = REG32;
 	}
@@ -416,8 +374,8 @@ int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
 	int status;
 
 	pPvt = callocMustSucceed(1, sizeof(*pPvt), "drvZynqPvt");
+	driverTable[numDriverTables++] = pPvt;	/* save pointers for softGlueRegisterInterruptRoutine() */
 	pPvt->portName = epicsStrDup(portName);
-	pPvt->is_fieldIO_registerSet = 0;
 
 	/* Set up address */
 	initDevMem();
@@ -426,9 +384,6 @@ int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
 		printf("initZynqSingleRegisterPort: mmap A32 Address map failed for address 0x%X\n", AXI_BaseAddress);
 	}
 	else printf("initZynqSingleRegisterPort: mmap A32 Address map successful for address 0x%X\n", AXI_BaseAddress);
-
-	pPvt->manufacturer = 0;
-	pPvt->model = 0;
 
 	/* Link with higher level routines */
 	pPvt->common.interfaceType = asynCommonType;
@@ -463,7 +418,7 @@ int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
 	}
 	status = pasynManager->registerInterface(pPvt->portName,&pPvt->asynDrvUser);
 	if (status != asynSuccess){
-		printf("initZynqIO ERROR: Can't register asynDrvUser.\n");
+		printf("initZynqInterrupts: ERROR: Can't register asynDrvUser.\n");
 		return(-1);
 	}
 	status = pasynUInt32DigitalBase->initialize(pPvt->portName, &pPvt->uint32D);
@@ -496,6 +451,8 @@ int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
 	return(0);
 }
 
+#if 0 /*vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
+
 /* Initialize IP module's FPGA from file in .bin or .bit format (haven't decided yet).
  * In Vivado, select "write Bitstream".
  * Programming the FPGA can be done manually:
@@ -522,7 +479,7 @@ int initZynqIP(char *filepath)
 	unsigned long l;
 
 	bp = buffer;
-	sp = (short *)buffer;
+	sp = (unsigned short *)buffer;
 
 	/* Disable interrupt level for this module.  Otherwise we may get
 	 * interrupts while the FPGA is being loaded.
@@ -585,7 +542,7 @@ int initZynqIP(char *filepath)
 			for (i=0; i<l/4; i++) {
 				fread(bp, 1, 4, source_fd);	/* read 4 bytes */
 				l = (bp[3]<<24) + (bp[2]<<16) + (bp[1]<<8) + bp[0];
-				if (i<16) printf("...writing 0x%x, 0x%x, 0x%x, 0x%x (0x%x)\n", bp[3], bp[2], bp[1], bp[0], l);
+				if (i<16) printf("...writing 0x%x, 0x%x, 0x%x, 0x%x (0x%lx)\n", bp[3], bp[2], bp[1], bp[0], l);
 				fwrite(l, 1, 4, dest_fd);	/* write 4 bytes */
 			}
 			fclose(source_fd);
@@ -626,30 +583,40 @@ errReturn:
 	return(-1);
 }
 
+#endif /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
+
 /*
- * softGlueCalcSpecifiedRegister32Address - For access to a single-register component by
+ * softGlueCalcSpecifiedRegisterAddress - For access to a single-register component by
  * other than an EPICS record (for example, by an interrupt-service routine).
  * The AXI and word offset are specified as arguments, and we need
  * to translate that information into a memory mapped address, as calcRegister32Address()
  * would have done for an EPICS record.
  */
- #if 0
-epicsUInt16 *softGlueCalcSpecifiedRegister32Address(int AXI, int addr)
+epicsUInt32 *softGlueCalcSpecifiedRegisterAddress(int type, int addr)
 {
-	epicsUInt32 *mem;
-	mem = AXI_baseAddresses[AXI];
-	reg = (epicsUInt32 *) (mem+addr);
+	drvZynqPvt *pPvt;
+	epicsUInt8 *reg8;
+	epicsUInt32 *reg32;
+	epicsUInt32 *reg;
+
+	if (type==0) {
+		pPvt = driverTable[0];
+		reg8 = (epicsUInt8 *)pPvt->mem;
+		reg8 += addr;
+		reg = (epicsUInt32 *)reg8;
+	} else {
+		pPvt = driverTable[1];
+		reg32 = (epicsUInt32 *)pPvt->mem;
+		reg32 += addr;
+		reg = reg32;
+	}
 	return(reg);
 }
-#endif
 
 /*
  * readUInt32D
  * This method provides masked read access to the readDataRegister of a
- * fieldIO_registerSet component, or to the sopc address of a single register
- * component.  
- * Note that fieldIO_registerSet components have a control register that
- * may determine what data will be available for reading.
+ * single register component.  
  */
 STATIC asynStatus readUInt32D(void *drvPvt, asynUser *pasynUser,
 	epicsUInt32 *value, epicsUInt32 mask)
@@ -663,47 +630,19 @@ STATIC asynStatus readUInt32D(void *drvPvt, asynUser *pasynUser,
 		printf("drvZynq:readUInt32D: pasynUser->reason=%d\n", pasynUser->reason);
 	}
 	*value = 0;
-	if (pPvt->is_fieldIO_registerSet) {
-		if (pasynUser->reason == 0) {
-			/* read data */
-			if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: fieldIO reg address=%p\n", &(pPvt->regs->readDataRegister));
-			*value = (epicsUInt32) (pPvt->regs->readDataRegister & mask);
-		} else if (pasynUser->reason == INTERRUPT_EDGE) {
-			/* read interrupt-enable edge bits.  This is a kludge.  We need to specify one of 16 I/O
-			 * bits, and also to indicate which of four states applies to that bit.  To do this, we
-			 * use a two bit mask, the lower bit of which specifies the I/O bit.  The four states
-			 * indicate which signal edge is enabled to generate interrupts (00: no edge enabled,
-			 * 01: rising edge enabled, 10: falling edge enabled, 11: both edges enabled).
-			 */
-			epicsUInt16 rising, falling;
-			*value = 0;
-			rising = (epicsUInt16) (pPvt->regs->risingIntEnable & (mask&(mask>>1)) );
-			falling = (epicsUInt16) (pPvt->regs->fallingIntEnable & (mask&(mask>>1)) );
-			if (rising) *value |= 1;
-			if (falling) *value |= 2;
-			/* Left shift the (two-bit) value so it overlaps the mask that caller gave us. */
-			for (; mask && ((mask&1) == 0); mask>>=1, *value<<=1);
-		} else if (pasynUser->reason == POLL_TIME) {
-			*value = (epicsUInt32) pPvt->pollTime*1000;
-		} else if (pasynUser->reason == INTERRUPT_EDGE_RESET) {
-			*value = pPvt->disabledIntMask;
-		}
+	pasynManager->getAddr(pasynUser, &addr);
+	if (pasynUser->reason == REG32) {
+		/* 32-bit register (addr must be a word offset) */
+		reg32 = (epicsUInt32 *)pPvt->mem;
+		reg32 += addr;
+		if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg32 address=%p\n", reg32);
+		*value = (epicsUInt32) (*reg32 & mask);
 	} else {
-		/* Not field I/O */
-		pasynManager->getAddr(pasynUser, &addr);
-		if (pasynUser->reason == REG32) {
-			/* 32-bit register (addr must be a word offset) */
-			reg32 = (epicsUInt32 *)pPvt->mem;
-			reg32 += addr;
-			if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg32 address=%p\n", reg32);
-			*value = (epicsUInt32) (*reg32 & mask);
-		} else {
-			/* 8-bit register (addr must be a byte offset) */
-			reg8 = (epicsUInt8 *)pPvt->mem;
-			reg8 += addr;
-			if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg8 address=%p\n", reg8);
-			*value = (epicsUInt32) (*reg8 & mask);
-		}
+		/* 8-bit register (addr must be a byte offset) */
+		reg8 = (epicsUInt8 *)pPvt->mem;
+		reg8 += addr;
+		if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg8 address=%p\n", reg8);
+		*value = (epicsUInt32) (*reg8 & mask);
 	}
 	asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
 		"drvZynq::readUInt32D, value=0x%X, mask=0x%X\n", *value,mask);
@@ -713,12 +652,9 @@ STATIC asynStatus readUInt32D(void *drvPvt, asynUser *pasynUser,
 /*
  * writeUInt32D
  * This method provides bit level write access to the writeDataRegister of a
- * fieldIO_registerSet component, and to the sopc address of a single register
- * component.  Bits of 'value' that correspond to zero bits of 'mask' will
+ * single register component.  Bits of 'value' that correspond to zero bits of 'mask' will
  * be ignored -- corresponding bits of the destination register will be left
  * as they were before the write operation.  
- * Note that fieldIO_registerSet components have a control register that
- * may determine what use will be made of the data we write.
  */
 STATIC asynStatus writeUInt32D(void *drvPvt, asynUser *pasynUser, epicsUInt32 value,
 	epicsUInt32 mask)
@@ -727,82 +663,52 @@ STATIC asynStatus writeUInt32D(void *drvPvt, asynUser *pasynUser, epicsUInt32 va
 	volatile epicsUInt32 *reg32=0;
 	volatile epicsUInt8 *reg8=0;
 	int addr;
-	epicsUInt32 maskCopy;
 
 	if (drvZynqDebug >= 5) {
-		printf("drvZynq:writeUInt32D: pasynUser->reason=%d\n", pasynUser->reason);
+		printf("drvZynq:writeUInt32D: port='%s', reason=%d, pPvt=%p\n", pPvt->portName, pasynUser->reason, pPvt);
 	}
-	if (pPvt->is_fieldIO_registerSet) {
-		if (pasynUser->reason == 0) {
-			/* write data */
-			if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: fieldIO reg32 address=%p\n", &(pPvt->regs->writeDataRegister));
-			pPvt->regs->writeDataRegister = (pPvt->regs->writeDataRegister & ~mask) | (value & mask);
-		} else if (pasynUser->reason == INTERRUPT_EDGE) {
-			/* set interrupt-enable edge bits in the FPGA */
-			/* move value from shifted position to unshifted position */
-			for (maskCopy=mask; maskCopy && ((maskCopy&1) == 0); maskCopy>>=1, value>>=1);
-			maskCopy = mask & (mask>>1); /* use lower bit only of two-bit mask for register write */
-			pPvt->regs->risingIntEnable = (pPvt->regs->risingIntEnable & ~maskCopy);
-			pPvt->regs->fallingIntEnable = (pPvt->regs->fallingIntEnable & ~maskCopy);
-			switch (value) {
-			case 0: /* disable interrupt from this bit */
-				break;
-			case 1: /* rising-edge only */
-				pPvt->regs->risingIntEnable = (pPvt->regs->risingIntEnable & ~maskCopy) | maskCopy;
-				break;
-			case 2: /* falling-edge only */
-				pPvt->regs->fallingIntEnable = (pPvt->regs->fallingIntEnable & ~maskCopy) | maskCopy;
-				break;
-			case 3: /* rising-edge and falling-edge */
-				pPvt->regs->risingIntEnable = (pPvt->regs->risingIntEnable & ~maskCopy) | maskCopy;
-				pPvt->regs->fallingIntEnable = (pPvt->regs->fallingIntEnable & ~maskCopy) | maskCopy;
-				break;
-			}
-			pPvt->risingMask = pPvt->regs->risingIntEnable;
-			pPvt->fallingMask = pPvt->regs->fallingIntEnable;
-		} else if (pasynUser->reason == POLL_TIME) {
-			pPvt->pollTime = value/1000.;
-			if (pPvt->pollTime < .05) {
-				pPvt->pollTime = .05;
-				printf("drvZynq:writeUInt32D: pollTime lower limit = %d ms\n", (int)(pPvt->pollTime*1000));
-			}
-			if (drvZynqDebug) printf("drvZynq:writeUInt32D: pPvt->pollTime=%f s\n", pPvt->pollTime);
+	pasynManager->getAddr(pasynUser, &addr);
+	if (pasynUser->reason == REG32) {
+		/* 32-bit register (addr must be a word offset) */
+		reg32 = (epicsUInt32 *)pPvt->mem;
+		reg32 += addr;
+		if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg32 address=%p\n", reg32);
+		*reg32 = (*reg32 & ~mask) | (epicsUInt32) (value & mask);
+		asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
+			"drvZynq::writeUInt32D, addr=%p, value=0x%X, mask=0x%X, reason=%d\n",
+				reg32, value, mask, pasynUser->reason);
+	} else if (pasynUser->reason == REG8) {
+		/* 8-bit register (addr must be a byte offset) */
+		reg8 = (epicsUInt8 *)pPvt->mem;
+		reg8 += addr;
+		if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg8 address=%p\n", reg8);
+		*reg8 = (*reg8 & ~mask) | (epicsUInt8) (value & mask);
+		asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
+			"drvZynq::writeUInt32D, addr=%p, value=0x%X, mask=0x%X, reason=%d\n",
+				reg8, value, mask, pasynUser->reason);
+	} else if (pasynUser->reason == INTERRUPT_EDGE) {
+		if (drvZynqDebug>5) {
+			printf("drvZynq:writeUInt32D: for INTERRUPT_EDGE:  pPvt = %p\n", pPvt);
+			printf("drvZynq:writeUInt32D: for INTERRUPT_EDGE: pPvt->regs = %p\n", pPvt->regs);
+			printf("drvZynq:writeUInt32D: for INTERRUPT_EDGE: &pPvt->regs->risingIntEnable = %p\n", &pPvt->regs->risingIntEnable);
 		}
+		reg32 = (epicsUInt32 *)&pPvt->regs->risingIntEnable;
+		if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg32 address=%p\n", reg32);
+		*reg32 = (*reg32 & ~mask) | (value & mask);
 		asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
 			"drvZynq::writeUInt32D, addr=%p, value=0x%X, mask=0x%X, reason=%d\n",
 				reg32, value, mask, pasynUser->reason);
 	} else {
-		pasynManager->getAddr(pasynUser, &addr);
-		if (pasynUser->reason == REG32) {
-			/* 32-bit register (addr must be a word offset) */
-			reg32 = (epicsUInt32 *)pPvt->mem;
-			reg32 += addr;
-			if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg32 address=%p\n", reg32);
-			*reg32 = (*reg32 & ~mask) | (epicsUInt32) (value & mask);
-			asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
-				"drvZynq::writeUInt32D, addr=%p, value=0x%X, mask=0x%X, reason=%d\n",
-					reg32, value, mask, pasynUser->reason);
-		} else {
-			/* 8-bit register (addr must be a byte offset) */
-			reg8 = (epicsUInt8 *)pPvt->mem;
-			reg8 += addr;
-			if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg8 address=%p\n", reg8);
-			*reg8 = (*reg8 & ~mask) | (epicsUInt8) (value & mask);
-			asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
-				"drvZynq::writeUInt32D, addr=%p, value=0x%X, mask=0x%X, reason=%d\n",
-					reg8, value, mask, pasynUser->reason);
-		}
+		if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: no code for reason %d\n", pasynUser->reason);
 	}
+
 
 	return(asynSuccess);
 }
 
 /*
  * readInt32
- * This method reads from the readDataRegister of a fieldIO_registerSet
- * component, or from the sopc address of a single register component.  
- * Note that fieldIO_registerSet components have a control register that
- * may determine what data will be available for reading.
+ * This method reads from the readDataRegister of a single register component.  
  */
 STATIC asynStatus readInt32(void *drvPvt, asynUser *pasynUser, epicsInt32 *value)
 {
@@ -817,27 +723,19 @@ STATIC asynStatus readInt32(void *drvPvt, asynUser *pasynUser, epicsInt32 *value
 	*value = 0;
 
 	if (pasynUser->reason == 0) {
-		if (pPvt->is_fieldIO_registerSet) {
-			if (drvZynqDebug >= 5) printf("drvZynq:readInt32: fieldIO reg32 address=%p\n", &(pPvt->regs->readDataRegister));
-			*value = (epicsUInt32) pPvt->regs->readDataRegister;
+		pasynManager->getAddr(pasynUser, &addr);
+		if (pasynUser->reason == REG32) {
+			/* 32-bit register (addr must be a word address at a word boundary) */
+			reg32 = (epicsUInt32 *)pPvt->mem;
+			reg32 += addr;
+			if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg32 address=%p\n", reg32);
+			*value = (epicsUInt32) (*reg32);
 		} else {
-			/* Not field I/O */
-			pasynManager->getAddr(pasynUser, &addr);
-			if (pasynUser->reason == REG32) {
-				/* 32-bit register (addr must be a word address at a word boundary) */
-				reg32 = (epicsUInt32 *)pPvt->mem;
-				reg32 += addr;
-				if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg32 address=%p\n", reg32);
-				*value = (epicsUInt32) (*reg32);
-			} else {
-				reg8 = (epicsUInt8 *)pPvt->mem;
-				reg8 += addr;
-				if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg8 address=%p\n", reg8);
-				*value = (epicsUInt32) (*reg8);
-			}
+			reg8 = (epicsUInt8 *)pPvt->mem;
+			reg8 += addr;
+			if (drvZynqDebug >= 5) printf("drvZynq:readUInt32D: softGlue reg8 address=%p\n", reg8);
+			*value = (epicsUInt32) (*reg8);
 		}
-	} else if (pasynUser->reason == POLL_TIME) {
-		*value = (epicsUInt32) (pPvt->pollTime*1000);
 	} else if (pasynUser->reason == INTERRUPT_EDGE_RESET) {
 		*value = pPvt->disabledIntMask;
 	}
@@ -848,10 +746,7 @@ STATIC asynStatus readInt32(void *drvPvt, asynUser *pasynUser, epicsInt32 *value
 }
 
 /* writeInt32
- * This method writes to the writeDataRegister of a fieldIO_registerSet
- * component, and to the sopc address of a single register component.  
- * Note that fieldIO_registerSet components have a control register that
- * may determine what use will be made of the data we write.
+ * This method writes to the writeDataRegister of a single register component.  
  */
 STATIC asynStatus writeInt32(void *drvPvt, asynUser *pasynUser, epicsInt32 value)
 {
@@ -864,35 +759,27 @@ STATIC asynStatus writeInt32(void *drvPvt, asynUser *pasynUser, epicsInt32 value
 		printf("drvZynq:writeInt32: pasynUser->reason=%d\n", pasynUser->reason);
 	}
 	if (pasynUser->reason == 0) {
-		if (pPvt->is_fieldIO_registerSet) {
-			if (drvZynqDebug >= 5) printf("drvZynq:writeInt32: fieldIO reg32 address=%p\n", &(pPvt->regs->writeDataRegister));
-			pPvt->regs->writeDataRegister = (epicsUInt32) value;
+		pasynManager->getAddr(pasynUser, &addr);
+		if (pasynUser->reason == REG32) {
+			/* 32-bit register (addr must be a word offset) */
+			reg32 = (epicsUInt32 *)pPvt->mem;
+			reg32 += addr;
+			if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg32 address=%p\n", reg32);
+			*reg32 = (epicsUInt32) (value);
+			asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
+				"drvZynq::writeUInt32D, addr=%p, value=0x%X, reason=%d\n",
+					reg32, value, pasynUser->reason);
 		} else {
-			pasynManager->getAddr(pasynUser, &addr);
-			if (pasynUser->reason == REG32) {
-				/* 32-bit register (addr must be a word offset) */
-				reg32 = (epicsUInt32 *)pPvt->mem;
-				reg32 += addr;
-				if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg32 address=%p\n", reg32);
-				*reg32 = (epicsUInt32) (value);
-				asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
-					"drvZynq::writeUInt32D, addr=%p, value=0x%X, reason=%d\n",
-						reg32, value, pasynUser->reason);
-			} else {
-				/* 8-bit register (addr must be a byte offset) */
-				reg8 = (epicsUInt8 *)pPvt->mem;
-				reg8 += addr;
-				if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg8 address=%p\n", reg8);
-				reg8 = (epicsUInt8 *)pPvt->mem + addr;
-				asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
-					"drvZynq::writeUInt32D, addr=%p, value=0x%X, reason=%d\n",
-						reg8, value, pasynUser->reason);
-			}
+			/* 8-bit register (addr must be a byte offset) */
+			reg8 = (epicsUInt8 *)pPvt->mem;
+			reg8 += addr;
+			if (drvZynqDebug >= 5) printf("drvZynq:writeUInt32D: softGlue reg8 address=%p\n", reg8);
+			reg8 = (epicsUInt8 *)pPvt->mem + addr;
+			asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
+				"drvZynq::writeUInt32D, addr=%p, value=0x%X, reason=%d\n",
+					reg8, value, pasynUser->reason);
 		}
-	} else if (pasynUser->reason == POLL_TIME) {
-			pPvt->pollTime = value/1000;
 	}
-
 	asynPrint(pasynUser, ASYN_TRACEIO_DRIVER,
 		"drvZynq::writeInt32, value=0x%X, reason=%d\n",value, pasynUser->reason);
 	return(asynSuccess);
@@ -915,7 +802,6 @@ STATIC asynStatus getBounds(void *drvPvt, asynUser *pasynUser, epicsInt32 *low, 
 	return(asynSuccess);
 }
 
-#if 0
 /***********************************************************************
  * Manage a table of registered interrupt-service routines to be called
  * at interrupt level.  This is not the normal softGlue interrupt mechanism;
@@ -927,11 +813,8 @@ STATIC asynStatus getBounds(void *drvPvt, asynUser *pasynUser, epicsInt32 *low, 
 #define MAXROUTINES 10
 
 typedef struct {
-	epicsUInt16 carrier;
-	epicsUInt16 slot;
-	epicsUInt16 mask;
-	int sopcAddress;
-	volatile fieldIO_registerSet *regs;
+	epicsUInt32 risingMask;
+	epicsUInt32 fallingMask;
 	void (*routine)(softGlueIntRoutineData *IRData);
 	softGlueIntRoutineData IRData;
 } intRoutineEntry;
@@ -939,223 +822,163 @@ typedef struct {
 intRoutineEntry registeredIntRoutines[MAXROUTINES] = {{0}};
 int numRegisteredIntRoutines=0;
 
-/* Register a routine to be called at interrupt level when a specified
- * I/O bit (addr/mask) from a specified carrier/slot generates an interrupt.
+/* Register a routine to be called when a specified
+ * I/O bit (mask) generates an interrupt.
  * example invocation:
  *      void callMe(softGlueIntRoutineData *IRData);
  *		myDataType myData;
- *      softGlueRegisterInterruptRoutine(0, 0, 0x800000, 0x0, callMe, (void *)&myData);
+ *      softGlueRegisterInterruptRoutine(0x1, 0x0, callMe, (void *)&myData);
  */
-int softGlueRegisterInterruptRoutine(epicsUInt16 carrier, epicsUInt16 slot, int sopcAddress, epicsUInt16 mask,
+int softGlueRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 fallingMask,
 	void (*routine)(softGlueIntRoutineData *IRData), void *userPvt) {
-	int i;
-	drvZynqPvt *pPvt;
 
 	if (numRegisteredIntRoutines >= MAXROUTINES-1) return(-1);
-	registeredIntRoutines[numRegisteredIntRoutines].carrier = carrier;
-	registeredIntRoutines[numRegisteredIntRoutines].slot = slot;
-	registeredIntRoutines[numRegisteredIntRoutines].sopcAddress = sopcAddress;
-	registeredIntRoutines[numRegisteredIntRoutines].mask = mask;
+	registeredIntRoutines[numRegisteredIntRoutines].risingMask = risingMask;
+	registeredIntRoutines[numRegisteredIntRoutines].fallingMask = fallingMask;
 	registeredIntRoutines[numRegisteredIntRoutines].routine = routine;
 	registeredIntRoutines[numRegisteredIntRoutines].IRData.userPvt = userPvt;
 
-	/* Go through driverTable for all drvZynqPvt pointers assoc with this carrier/slot. */
-	for (i=0; i<MAX_DRVPVT; i++) {
-		pPvt = driverTable[i];
-		if (pPvt && (pPvt->carrier == carrier) && (pPvt->slot == slot) && (pPvt->sopcAddress == sopcAddress)) {
-			registeredIntRoutines[numRegisteredIntRoutines].regs = pPvt->regs;
-		}
-	}
-	if (drvZynqDebug>5) printf("softGlueRegisterInterruptRoutine: #%d, carrier=%d, slot=%d, sopcAddress=0x%x, mask=0x%x, regs=%p",
-		numRegisteredIntRoutines, carrier, slot, sopcAddress, mask, registeredIntRoutines[numRegisteredIntRoutines].regs);
+	if (drvZynqDebug>5) printf("softGlueRegisterInterruptRoutine: #%d, risingMask=0x%x, fallingMask=0x%x",
+	  numRegisteredIntRoutines, risingMask, fallingMask);
 	numRegisteredIntRoutines++;
 	return(0);
 }
 
-/***********************************************************************/
-/*
- * This is the interrupt-service routine associated with the interrupt
- * vector pPvt->intVector supplied in the drvPvt structure.
- * On interrupt, we check to see if the interrupt could have come from
- * the fieldIO_registerSet named in caller's drvPvt.  If so, we collect
- * information, and send a message to pollerThread().
- */
-STATIC void intFunc(void *drvPvt)
+/* This function runs in a separate thread.  It waits for an interrupt. */
+STATIC void dispatchThread(drvZynqPvt *pPvt)
 {
-	drvZynqPvt *pPvt = (drvZynqPvt *)drvPvt;
-	epicsUInt16 pendingLow, pendingHigh;
-	interruptMessage msg;
-	int i, handled;
+	epicsUInt32 risingMask=0, fallingMask=0;
+	ELLLIST *pclientList;
+	interruptNode *pnode;
+	asynUInt32DigitalInterrupt *pUInt32D;
+	int handled;
 
-	/* Make sure interrupt is from this hardware.  Otherwise just leave. */
-	if (pPvt->regs->risingIntStatus || pPvt->regs->fallingIntStatus) {
-#ifdef vxWorks
+	int pending = 0;
+	int reenable = 1;
+	int i, uio_fd;
+	FILE *uioName_fd;
+	char name[100];
+
+	/* initialize interrupt infrastructure */
+
+	/* enable interrupt generation in FPGA */
+	pPvt->regs->globalEnable = 1;
+	//pPvt->regs->risingIntEnable = 0xffffffff;
+
+	/* Make sure we have UIO */
+	uioName_fd = fopen("/sys/class/uio/uio0/name", "r");
+	if (uioName_fd==NULL) {
+		printf("drvZynq:dispatchThread: Failed to open /sys/class/uio/uio0/name\n");
+		return;
+	}
+	fgets(name, 100, uioName_fd);
+	if (drvZynqDebug) printf("drvZynq:dispatchThread: uio0.name='%s'\n", name);
+	fclose(uioName_fd);
+
+	uio_fd = open("/dev/uio0", O_RDWR);
+
+	while(1) {
+
+		/*  Enable interrupts */
+		if (drvZynqDebug) printf("drvZynq:dispatchThread: enabling interrupts\n");
+		write(uio_fd, (void *)&reenable, sizeof(int));
+
+		/*  Wait for an interrupt */
+		if (drvZynqDebug) printf("drvZynq:dispatchThread: calling read(uio_fd...)\n");
+		read(uio_fd, (void *)&pending,sizeof(int));
+		
+		/* Respond to interrupt */
 		if (drvZynqDebug) {
-			logMsg("fallingIntStatus=0x%x, risingIntStatus=0x%x\n", pPvt->regs->fallingIntStatus, pPvt->regs->risingIntStatus);
-			logMsg("fallingIntEnable=0x%x, risingIntEnable=0x%x\n", pPvt->regs->fallingIntEnable, pPvt->regs->risingIntEnable);
+			printf("drvZynq:dispatchThread: responding to interrupt\n");
+			printf("\trisingIntStatus=0x%x, risingIntEnable=0x%x\n", pPvt->regs->risingIntStatus, pPvt->regs->risingIntEnable);
+			// printf("\tfallingIntStatus=0x%x, fallingIntEnable=0x%x\n", pPvt->regs->fallingIntStatus, pPvt->regs->fallingIntEnable);
 		}
-#endif
-		pendingLow = pPvt->regs->fallingIntStatus;
-		pendingHigh = pPvt->regs->risingIntStatus;
-		msg.interruptMask = (pendingLow & pPvt->regs->fallingIntEnable);
-		msg.interruptMask |= (pendingHigh & pPvt->regs->risingIntEnable);
 
-		/* Read the current input */
-		msg.bits = pPvt->regs->readDataRegister;
-#ifdef vxWorks
-		if (drvZynqDebug) logMsg("interruptMask=0x%x\n", msg.interruptMask);
-#endif
+		risingMask = pPvt->regs->risingIntStatus & pPvt->regs->risingIntEnable;
+		//fallingMask = pPvt->regs->fallingIntStatus & pPvt->regs->fallingIntEnable;
+
+		asynPrint(pPvt->pasynUser, ASYN_TRACE_FLOW,
+			"drvZynq:dispatchThread, got interrupt for port %s\n", pPvt->portName);
+		asynPrint(pPvt->pasynUser, ASYN_TRACEIO_DRIVER,
+			"drvZynq:dispatchThread, risingMask=%x\n", risingMask);
+
 
 		/* Go through registeredIntRoutines[] for a registered interrupt-level service routine. If one is found,
 		 * call it and mark the interrupt as "handled", so we don't queue any EPICS processing that
 		 * might also be attached to the interrupt.  (The whole purpose of this mechanism is to
 		 * handle interrupts at intervals EPICS would not be able to meet.) */
 		for (i=0, handled=0; i<numRegisteredIntRoutines; i++) {
-			if ((registeredIntRoutines[i].regs == pPvt->regs) && (msg.interruptMask & registeredIntRoutines[i].mask)) {
-#ifdef vxWorks
-				if (drvZynqDebug>5) logMsg("intFunc: calling registered interrupt routine %p\n", registeredIntRoutines[i].routine);
-#endif
-				registeredIntRoutines[i].IRData.mask = msg.interruptMask;
-				registeredIntRoutines[i].IRData.wentLow = pendingLow & pPvt->regs->fallingIntEnable;
-				registeredIntRoutines[i].IRData.wentHigh = pendingHigh & pPvt->regs->risingIntEnable;
+			if ((risingMask & registeredIntRoutines[i].risingMask) || (fallingMask & registeredIntRoutines[i].fallingMask)) {
+				if (drvZynqDebug>5) printf("intFunc: calling registered interrupt routine %p\n", registeredIntRoutines[i].routine);
+				registeredIntRoutines[i].IRData.risingMask = risingMask;
+				//registeredIntRoutines[i].IRData.fallingMask = fallingMask;
+				//registeredIntRoutines[i].IRData.wentLow = pPvt->regs->fallingIntStatus & pPvt->regs->fallingIntEnable;
+				registeredIntRoutines[i].IRData.wentHigh = pPvt->regs->risingIntStatus & pPvt->regs->risingIntEnable;
 				registeredIntRoutines[i].routine(&(registeredIntRoutines[i].IRData));
 				handled = 1;
 			}
 		}
 
+
 		if (!handled) {
-			if (epicsMessageQueueTrySend(pPvt->msgQId, &msg, sizeof(msg)) == 0)
-				pPvt->messagesSent++;
-			else
-				pPvt->messagesFailed++;
-
-			/* If too many interrupts have been received, disable the offending bits. */
-			if (++(pPvt->interruptCount) > MAX_IRQ) {
-				pPvt->regs->risingIntEnable &= ~pendingHigh;
-				pPvt->regs->fallingIntEnable &= ~pendingLow;
-				pPvt->disabledIntMask = pendingHigh | pendingLow;
-#ifdef vxWorks
-				if (drvZynqDebug) logMsg("intFunc: disabledIntMask=0x%x\n", pPvt->disabledIntMask);
-#endif
-			}
-		}
-
-		/* Clear the interrupt bits we handled */
-		pPvt->regs->risingIntStatus = pendingHigh;
-		pPvt->regs->fallingIntStatus = pendingLow;
-
-		/* Generate dummy read cycle for PPC */
-		pendingHigh = pPvt->regs->risingIntStatus;
-
-	}
-}
-
-
-/* This function runs in a separate thread.  It waits for the poll
- * time, or an interrupt, whichever comes first.  If the bits read from
- * the Zynq have changed then it does callbacks to all clients that
- * have registered with registerInterruptUser
- */
-
-STATIC void pollerThread(drvZynqPvt *pPvt)
-{
-	epicsUInt32 newBits32=0;
-	epicsUInt16 newBits=0, changedBits=0, interruptMask=0;
-	interruptMessage msg;
-	ELLLIST *pclientList;
-	interruptNode *pnode;
-	asynUInt32DigitalInterrupt *pUInt32D;
-	int hardware = 0;
-
-	while(1) {
-		/*  Wait for an interrupt or for the poll time, whichever comes first */
-		if (epicsMessageQueueReceiveWithTimeout(pPvt->msgQId, 
-			                                    &msg, sizeof(msg), 
-			                                    pPvt->pollTime) == -1) {
-			/* The wait timed out, so there was no interrupt, so we need
-			 * to read the bits.  If there was an interrupt the bits got
-			 * set in the interrupt routine
-			 */
-			readUInt32D(pPvt, pPvt->pasynUser, &newBits32, 0xffff);
-			newBits = newBits32;
-			hardware = 0;
-			interruptMask = 0;
-		} else {
-			newBits = msg.bits;
-			interruptMask = msg.interruptMask;
-			pPvt->interruptCount--;
-			if (drvZynqDebug > 5)
-				printf("drvZynq:pollerThread: intCount=%d\n", pPvt->interruptCount);
-			asynPrint(pPvt->pasynUser, ASYN_TRACE_FLOW,
-				"drvZynq:pollerThread, got interrupt for port %s\n", pPvt->portName);
-			hardware = 1;
-		}
-		asynPrint(pPvt->pasynUser, ASYN_TRACEIO_DRIVER,
-			"drvZynq:pollerThread, bits=%x\n", newBits);
-
-		/* We detect change both from interruptMask (which only works for
-		 * hardware interrupts) and changedBits, which works for polling */
-		if (drvZynqDebug) printf("drvZynq:pollerThread: new=0x%x, old=0x%x\n", newBits, pPvt->oldBits);
-		if (hardware==0) {
-			changedBits = newBits ^ pPvt->oldBits;
-			interruptMask = interruptMask & changedBits;
-		}
-		if (drvZynqDebug)
-			printf("drvZynq:pollerThread: hardware=%d, IntMask=0x%x\n", hardware, interruptMask);
-		pPvt->oldBits = newBits;
-
-		/*
-		 * Process any records that (1) have registered with registerInterruptUser, and (2) that have a mask
-		 * value that includes this bit.
-		 */
-		if (interruptMask) {
-			pasynManager->interruptStart(pPvt->interruptPvt, &pclientList);
-			pnode = (interruptNode *)ellFirst(pclientList);
-			while (pnode) {
-				pUInt32D = pnode->drvPvt;
-				if ((pUInt32D->mask & interruptMask) && (pUInt32D->pasynUser->reason == 0)) {
-					asynPrint(pPvt->pasynUser, ASYN_TRACE_FLOW, "drvZynq:pollerThread, calling client %p"
-						" mask=%x, callback=%p\n", pUInt32D, pUInt32D->mask, pUInt32D->callback);
-					pUInt32D->callback(pUInt32D->userPvt, pUInt32D->pasynUser, pUInt32D->mask & newBits);
-					if (drvZynqDebug) {
-						printf("drvZynq:pollerThread: calling client %p\n", pUInt32D);
-					}
-				}
-				pnode = (interruptNode *)ellNext(&pnode->node);
-			}
-			pasynManager->interruptEnd(pPvt->interruptPvt);
-		}
-		/* If intFunc disabled any interrupt bits, cause them to show their new states. */
-		if (pPvt->disabledIntMask) {
-			epicsUInt32 maskBit;
 			if (drvZynqDebug)
-				printf("drvZynq:pollerThread: disabledIntMask=0x%x\n", pPvt->disabledIntMask);
-			pasynManager->interruptStart(pPvt->interruptPvt, &pclientList);
-			pnode = (interruptNode *)ellFirst(pclientList);
-			while (pnode) {
-				pUInt32D = pnode->drvPvt;
-				if (pUInt32D->pasynUser->reason == INTERRUPT_EDGE_RESET) {
-					if (drvZynqDebug>10) printf("drvZynq:pollerThread: reason == INTERRUPT_EDGE_RESET,mask=0x%x\n", pUInt32D->mask);
-					/* The lower bit of pUInt32D->mask is the bit we're actually controlling.  pUInt32D->mask has
-					 * the next higher bit also set as part of a kludge to represent states of both falling- and
-					 * rising-edge enables, while still indicating the controlled bit.
-					 */
-					maskBit = pUInt32D->mask & ((pUInt32D->mask)>>1);
-					if (maskBit & pPvt->disabledIntMask) {
-						asynPrint(pPvt->pasynUser, ASYN_TRACE_FLOW, "drvZynq:pollerThread, calling client %p"
+				printf("drvZynq:dispatchThread: IntMask=0x%x\n", risingMask);
+
+			/*
+			 * Process any records that (1) have registered with registerInterruptUser, and (2) that have a mask
+			 * value that includes this bit.
+			 */
+			if (risingMask) {
+				pasynManager->interruptStart(pPvt->interruptPvt, &pclientList);
+				pnode = (interruptNode *)ellFirst(pclientList);
+				while (pnode) {
+					pUInt32D = pnode->drvPvt;
+					if ((pUInt32D->mask & risingMask) && (pUInt32D->pasynUser->reason == 0)) {
+						asynPrint(pPvt->pasynUser, ASYN_TRACE_FLOW, "drvZynq:dispatchThread, calling client %p"
 							" mask=%x, callback=%p\n", pUInt32D, pUInt32D->mask, pUInt32D->callback);
-						/* Process the record that will show the user we disabled this bit's interrupt capability. */
-						pUInt32D->callback(pUInt32D->userPvt, pUInt32D->pasynUser, pUInt32D->mask);
+						pUInt32D->callback(pUInt32D->userPvt, pUInt32D->pasynUser, pUInt32D->mask & risingMask);
+						if (drvZynqDebug) {
+							printf("drvZynq:dispatchThread: calling client %p\n", pUInt32D);
+						}
 					}
+					pnode = (interruptNode *)ellNext(&pnode->node);
 				}
-				pnode = (interruptNode *)ellNext(&pnode->node);
+				pasynManager->interruptEnd(pPvt->interruptPvt);
 			}
-			pasynManager->interruptEnd(pPvt->interruptPvt);
-			pPvt->disabledIntMask = 0;
+			/* If intFunc disabled any interrupt bits, cause them to show their new states. */
+			if (pPvt->disabledIntMask) {
+				epicsUInt32 maskBit;
+				if (drvZynqDebug)
+					printf("drvZynq:dispatchThread: disabledIntMask=0x%x\n", pPvt->disabledIntMask);
+				pasynManager->interruptStart(pPvt->interruptPvt, &pclientList);
+				pnode = (interruptNode *)ellFirst(pclientList);
+				while (pnode) {
+					pUInt32D = pnode->drvPvt;
+					if (pUInt32D->pasynUser->reason == INTERRUPT_EDGE_RESET) {
+						if (drvZynqDebug>10) printf("drvZynq:dispatchThread: reason == INTERRUPT_EDGE_RESET,mask=0x%x\n", pUInt32D->mask);
+						/* The lower bit of pUInt32D->mask is the bit we're actually controlling.  pUInt32D->mask has
+						 * the next higher bit also set as part of a kludge to represent states of both falling- and
+						 * rising-edge enables, while still indicating the controlled bit.
+						 */
+						maskBit = pUInt32D->mask & ((pUInt32D->mask)>>1);
+						if (maskBit & pPvt->disabledIntMask) {
+							asynPrint(pPvt->pasynUser, ASYN_TRACE_FLOW, "drvZynq:dispatchThread, calling client %p"
+								" mask=%x, callback=%p\n", pUInt32D, pUInt32D->mask, pUInt32D->callback);
+							/* Process the record that will show the user we disabled this bit's interrupt capability. */
+							pUInt32D->callback(pUInt32D->userPvt, pUInt32D->pasynUser, pUInt32D->mask);
+						}
+					}
+					pnode = (interruptNode *)ellNext(&pnode->node);
+				}
+				pasynManager->interruptEnd(pPvt->interruptPvt);
+				pPvt->disabledIntMask = 0;
+			}
 		}
+
+		/* Clear the interrupt bits we handled (should handle more than one simultaneously asserted interrupt bit) */
+		pPvt->regs->acknowledge = pPvt->regs->risingIntStatus;
 	}
 }
-#endif /* 0 */
 
 /* I don't know what these two functions are for.  I'm just including them because an example did. */
 STATIC asynStatus setInterruptUInt32D(void *drvPvt, asynUser *pasynUser, epicsUInt32 mask,
@@ -1179,7 +1002,7 @@ STATIC void rebootCallback(void *drvPvt)
 	/* Disable interrupts first so no interrupts during reboot */
 	if (pPvt->regs) {
 		pPvt->regs->risingIntEnable = 0;
-		pPvt->regs->fallingIntEnable = 0;
+		/* pPvt->regs->fallingIntEnable = 0; */
 	}
 	epicsInterruptUnlock(key);
 }
@@ -1196,11 +1019,11 @@ STATIC void report(void *drvPvt, FILE *fp, int details)
 	fprintf(fp, "drvZynq %s: connected at base address %p\n",
 		pPvt->portName, pPvt->regs);
 	if (details >= 1) {
-		fprintf(fp, "  controlRegister=0x%x\n", pPvt->regs->controlRegister);
-		fprintf(fp, "  risingMask=0x%x\n", pPvt->risingMask);
+		fprintf(fp, "  controlRegister=0x%x\n", pPvt->regs->globalEnable);
 		fprintf(fp, "  risingIntEnable=0x%x\n", pPvt->regs->risingIntEnable);
-		fprintf(fp, "  fallingMask=0x%x\n", pPvt->fallingMask);
-		fprintf(fp, "  fallingIntEnable=0x%x\n", pPvt->regs->fallingIntEnable);
+		fprintf(fp, "  risingMask=0x%x\n", pPvt->risingMask);
+		/* fprintf(fp, "  fallingMask=0x%x\n", pPvt->fallingMask); */
+		/* fprintf(fp, "  fallingIntEnable=0x%x\n", pPvt->regs->fallingIntEnable); */
 		fprintf(fp, "  messages sent OK=%d; send failed (queue full)=%d\n",
 			pPvt->messagesSent, pPvt->messagesFailed);
 		pasynManager->interruptStart(pPvt->interruptPvt, &pclientList);
@@ -1229,25 +1052,115 @@ STATIC asynStatus disconnect(void *drvPvt, asynUser *pasynUser)
 	return(asynSuccess);
 }
 
-/*** iocsh functions ***/
+/* test speed of reading from FPGA register */
+int testReadSpeed(epicsUInt32 addr, int numReads) {
+	volatile epicsUInt32 *mem;
+	epicsUInt32 reg32=0, first, last;
+	int devMemFd=0, i;
+	epicsTimeStamp  timeStart, timeEnd;
 
-/* int initZynqIO(const char *portName, 
- *			int msecPoll, int dataDir, int sopcOffset, int interruptVector,
- *			int risingMask, int fallingMask)
+	devMemFd = open("/dev/mem",O_RDWR|O_SYNC);
+		if (devMemFd < 0) {
+		epicsPrintf("Can't Open /dev/mem\n");
+		return(-1);
+	}
+	mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,addr);
+	epicsTimeGetCurrent(&timeStart);
+	first = *mem;
+	for (i=0; i<numReads; i++) {
+		reg32 = *mem;
+	}
+	last = reg32;
+	epicsTimeGetCurrent(&timeEnd);
+	printf("elapsed time = %.5f s (%d, %d)\n\n",
+		epicsTimeDiffInSeconds(&timeEnd, &timeStart), first, last);
+	return(0);
+}
+
+/* test user I/O interrupt */
+int testUIO(epicsUInt32 AXI_Address, int numInts) {
+	int pending = 0;
+	int reenable = 1;
+	int i, uio_fd;
+	FILE *uioName_fd;
+	char name[100];
+	volatile epicsUInt32 *mem;
+	volatile epicsUInt32 *mem_enable, *m_status, *m_ack, *m_pending;
+
+	initDevMem();
+	if (AXI_Address==0) {AXI_Address = 0x43c10000;}
+	mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_Address);
+	if (mem==NULL) {
+	  printf("Can't map interrupt-control registers\n");
+	  return(0);
+	}
+	mem_enable = (epicsUInt32 *)mem;
+	mem_enable += 1;
+	*mem_enable = 0xffffffff;
+
+	m_status = (epicsUInt32 *)mem;
+	m_status += 2;	 /* interrupt-status register */
+	m_ack = (epicsUInt32 *)mem;
+	m_ack += 3;  /* address to write to to acknowledge interrupt */
+	m_pending = (epicsUInt32 *)mem;
+	m_pending += 4;	 /* interrupt-pending register */
+	/* printf("testUIO: mem=0x%x, m_status=0x%x, m_ack=0x%x\n", mem, m_status, m_ack); */
+
+	uioName_fd = fopen("/sys/class/uio/uio0/name", "r");
+	if (uioName_fd==NULL) {
+		printf("testUIO: Failed to open /sys/class/uio/uio0/name\n");
+		return(0);
+	}
+	fgets(name, 100, uioName_fd);
+	printf("testUIO: uio0.name='%s'\n", name);
+	fclose(uioName_fd);
+
+	uio_fd = open("/dev/uio0", O_RDWR);
+	printf("testUIO: enabling interrupts\n");
+	write(uio_fd, (void *)&reenable, sizeof(int));
+	for (i=0; i<numInts; i++) {
+		printf("testUIO: calling read(uio_fd...)\n");
+		read(uio_fd, (void *)&pending,sizeof(int));
+		printf("testUIO: read(uio_fd...) returned\n");
+		printf("testUIO: (before ack) *m_status=0x%x, *m_pending=0x%x\n", *m_status, *m_pending);
+		/* acknowledge interrupt (all of them, if more than one) */
+		*m_ack = *m_status; 
+		printf("testUIO: (after ack) *m_status=0x%x, *m_pending=0x%x\n", *m_status, *m_pending);
+
+		write(uio_fd, (void *)&reenable, sizeof(int));
+	}
+	return(0);
+}
+
+/*** iocsh functions ***/
+/* int testUIO(epicsUInt32 addr, int numReads) */
+STATIC const iocshArg testUIOArg0 = { "address", iocshArgInt};
+STATIC const iocshArg testUIOArg1 = { "numReads",	iocshArgInt};
+
+STATIC const iocshArg * const testUIOArgs[2] = {&testUIOArg0, &testUIOArg1};
+STATIC const iocshFuncDef testUIOFuncDef = {"testUIO",2,testUIOArgs};
+STATIC void testUIOCallFunc(const iocshArgBuf *args) {
+	testUIO(args[0].ival, args[1].ival);
+}
+
+/* int testReadSpeed(epicsUInt32 addr, int numReads) */
+STATIC const iocshArg testReadSpeedArg0 = { "address", iocshArgInt};
+STATIC const iocshArg testReadSpeedArg1 = { "numReads",	iocshArgInt};
+
+STATIC const iocshArg * const testReadSpeedArgs[2] = {&testReadSpeedArg0, &testReadSpeedArg1};
+STATIC const iocshFuncDef testReadSpeedFuncDef = {"testReadSpeed",2,testReadSpeedArgs};
+STATIC void testReadSpeedCallFunc(const iocshArgBuf *args) {
+	testReadSpeed(args[0].ival, args[1].ival);
+}
+
+/* int initZynqInterrupts(const char *portName, int AXI_Address)
  */
-STATIC const iocshArg initZynqIOArg0 = { "Port Name",				iocshArgString};
-STATIC const iocshArg initZynqIOArg1 = { "msecPoll",				iocshArgInt};
-STATIC const iocshArg initZynqIOArg2 = { "Data Dir Reg",			iocshArgInt};
-STATIC const iocshArg initZynqIOArg3 = { "AXI_Address",				iocshArgInt};
-STATIC const iocshArg initZynqIOArg4 = { "Interrupt Vector",		iocshArgInt};
-STATIC const iocshArg initZynqIOArg5 = { "Rising Edge Mask",		iocshArgInt};
-STATIC const iocshArg initZynqIOArg6 = { "Falling Edge Mask",	iocshArgInt};
-STATIC const iocshArg * const initZynqIOArgs[7] = {&initZynqIOArg0, &initZynqIOArg1, &initZynqIOArg2,
-	&initZynqIOArg3, &initZynqIOArg4, &initZynqIOArg5, &initZynqIOArg6};
-STATIC const iocshFuncDef initZynqIOFuncDef = {"initZynqIO",7,initZynqIOArgs};
-STATIC void initZynqIOCallFunc(const iocshArgBuf *args) {
-	initZynqIO(args[0].sval, args[1].ival, args[2].ival, args[3].ival, args[4].ival, args[5].ival,
-	            args[6].ival);
+STATIC const iocshArg initZynqInterruptsArg0 = { "Port Name",				iocshArgString};
+STATIC const iocshArg initZynqInterruptsArg1 = { "AXI_Address",				iocshArgInt};
+STATIC const iocshArg * const initZynqInterruptsArgs[2] = {&initZynqInterruptsArg0, &initZynqInterruptsArg1};
+STATIC const iocshFuncDef initZynqInterruptsFuncDef = {"initZynqInterrupts",2,initZynqInterruptsArgs};
+STATIC void initZynqInterruptsCallFunc(const iocshArgBuf *args) {
+	initZynqInterrupts(args[0].sval, args[1].ival);
 }
 
 /* int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress) */
@@ -1259,20 +1172,12 @@ STATIC void initSRCallFunc(const iocshArgBuf *args) {
 	initZynqSingleRegisterPort(args[0].sval, args[1].ival);
 }
 
-/* int initZynqIP(char filename) */
-STATIC const iocshArg initZynqIPArg1 = { "Filename",	iocshArgString};
-STATIC const iocshArg * const initZynqIPArgs[1] = {&initZynqIPArg1};
-STATIC const iocshFuncDef initZynqIPFuncDef = {"initZynqIP",1,initZynqIPArgs};
-STATIC void initZynqIPCallFunc(const iocshArgBuf *args) {
-	initZynqIP(args[0].sval);
-}
-
-
 void ZynqRegister(void)
 {
-	iocshRegister(&initZynqIOFuncDef,initZynqIOCallFunc);
+	iocshRegister(&initZynqInterruptsFuncDef,initZynqInterruptsCallFunc);
 	iocshRegister(&initSRFuncDef,initSRCallFunc);
-	iocshRegister(&initZynqIPFuncDef,initZynqIPCallFunc);
+	iocshRegister(&testReadSpeedFuncDef,testReadSpeedCallFunc);
+	iocshRegister(&testUIOFuncDef,testUIOCallFunc);
 }
 
 epicsExportRegistrar(ZynqRegister);
