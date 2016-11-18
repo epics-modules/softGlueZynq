@@ -1,0 +1,34 @@
+0.	Use petalinux-config to set the host name and MAC address
+
+	sudo rootsh
+	source /local/mooney/zynq/PetaLinux/petalinux-v2015.4-final/settings.sh
+	# cd to existing, working petalinux project.  This project has been customized to mount /APSshare and
+	# s100dserv, to load the libstd6++6 library, and to load a fixed ssh host key.
+	cd /local/mooney/zynq/PetaLinux/mz_7010_2015_4
+
+	petalinux-config
+	# Got linux system config screen
+	# Navigate to Subsystem AUTO Hardware Settings > Ethernet Settings > (xx:xx:xx:xx:xx:xx) Ethernet MAC address
+	# set MAC address to 00:19:B3:02:13:D7
+	# Navigate to Firmware Version Configuration > Host name
+	# set host name to microzed-j
+	# exit
+
+	petalinux-build
+
+	# as mooney on mooneylinux:
+	# copy boot files to a directory the PC can access via a mapped network drive
+	cd /home/oxygen/MOONEY/zynq/PetaLinux/myBuilds
+	cp /local/mooney/zynq/PetaLinux/mz_7010_2015_4/images/linux/BOOT.BIN .
+	cp /local/mooney/zynq/PetaLinux/mz_7010_2015_4/images/linux/image.ub .
+
+	# on PC:
+	# Put SD card into card writer (on PC).  Open SD card on PC and copy BOOT.BIN and image.ub, using PC's mapped network drive.
+	# Put SD card in MicroZed.
+	# Connect USB from PC to MicroZed, start Putty using serial (COM5 at 115200 baud).
+
+1.	Login to the MicroZed as root.  
+	cd /net/s100dserv/xorApps/zed/epics/ioc/ioczed/iocBoot/iocZed
+	./run
+
+	
