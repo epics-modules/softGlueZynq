@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueFieldIOxx.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueFieldIOxx.adl"
 	version=030107
 }
 display {
@@ -174,44 +174,6 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="softGlueFieldIOxx_small_bare_label.adl; P=$(P),H=$(H),N1=$(N1),N2=$(N2),N3=$(N3),N4=$(N4),N5=$(N5),N6=$(N6),N7=$(N7),N8=$(N8),N9=$(N9),N10=$(N10),N11=$(N11),N12=$(N12),N13=$(N13),N14=$(N14),N15=$(N15),N16=$(N16)"
-}
-composite {
-	object {
-		x=80
-		y=430
-		width=130
-		height=17
-	}
-	"composite name"=""
-	children {
-		"text entry" {
-			object {
-				x=170
-				y=430
-				width=40
-				height=17
-			}
-			control {
-				chan="$(P)$(H)pollTimeMS"
-				clr=14
-				bclr=51
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=80
-				y=433
-				width=90
-				height=10
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="POLL TIME (MS)"
-		}
-	}
 }
 composite {
 	object {

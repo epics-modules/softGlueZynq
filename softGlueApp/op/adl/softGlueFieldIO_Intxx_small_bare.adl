@@ -1,13 +1,13 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps_5_5/support/softGlue/softGlueApp/op/adl/softGlueFieldIO_Intxx_small_bare.adl"
-	version=030104
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueFieldIO_Intxx_small_bare.adl"
+	version=030107
 }
 display {
 	object {
-		x=824
-		y=493
-		width=682
+		x=245
+		y=645
+		width=950
 		height=340
 	}
 	clr=14
@@ -418,6 +418,25 @@ composite {
 		}
 	}
 }
+polyline {
+	object {
+		x=470
+		y=0
+		width=3
+		height=339
+	}
+	"basic attribute" {
+		clr=14
+		width=3
+	}
+	"dynamic attribute" {
+		chan="$(P)$(H)In_0.OUT"
+	}
+	points {
+		(471,1)
+		(471,337)
+	}
+}
 composite {
 	object {
 		x=205
@@ -518,25 +537,6 @@ composite {
 	"composite name"=""
 	"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=In_$(N16)"
 }
-polyline {
-	object {
-		x=470
-		y=0
-		width=3
-		height=339
-	}
-	"basic attribute" {
-		clr=14
-		width=3
-	}
-	"dynamic attribute" {
-		chan="$(P)$(H)In_0.OUT"
-	}
-	points {
-		(471,1)
-		(471,337)
-	}
-}
 composite {
 	object {
 		x=205
@@ -596,4 +596,175 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=In_$(N6)"
+}
+composite {
+	object {
+		x=685
+		y=0
+		width=257
+		height=337
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=685
+				y=126
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N7)"
+		}
+		composite {
+			object {
+				x=685
+				y=147
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N8)"
+		}
+		composite {
+			object {
+				x=685
+				y=168
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N9)"
+		}
+		composite {
+			object {
+				x=685
+				y=189
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N10)"
+		}
+		composite {
+			object {
+				x=685
+				y=210
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N11)"
+		}
+		composite {
+			object {
+				x=685
+				y=231
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N12)"
+		}
+		composite {
+			object {
+				x=685
+				y=252
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N13)"
+		}
+		composite {
+			object {
+				x=685
+				y=273
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N14)"
+		}
+		composite {
+			object {
+				x=685
+				y=294
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N15)"
+		}
+		composite {
+			object {
+				x=685
+				y=315
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N16)"
+		}
+		composite {
+			object {
+				x=685
+				y=0
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N1)"
+		}
+		composite {
+			object {
+				x=685
+				y=21
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N2)"
+		}
+		composite {
+			object {
+				x=685
+				y=42
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N3)"
+		}
+		composite {
+			object {
+				x=685
+				y=63
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N4)"
+		}
+		composite {
+			object {
+				x=685
+				y=84
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N5)"
+		}
+		composite {
+			object {
+				x=685
+				y=105
+				width=257
+				height=22
+			}
+			"composite name"=""
+			"composite file"="softGlue_IntBit_small_bare.adl;P=$(P),H=$(H),NAM=Out_$(N6)"
+		}
+	}
 }

@@ -1,14 +1,14 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueFieldIO_Int.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueFieldIO_Int.adl"
 	version=030107
 }
 display {
 	object {
 		x=387
-		y=25
+		y=22
 		width=800
-		height=1115
+		height=780
 	}
 	clr=14
 	bclr=2
@@ -179,8 +179,8 @@ text {
 }
 "related display" {
 	object {
-		x=356
-		y=1094
+		x=725
+		y=760
 		width=70
 		height=20
 	}
@@ -193,33 +193,6 @@ text {
 	clr=0
 	bclr=17
 	label="-Less"
-}
-"text entry" {
-	object {
-		x=170
-		y=1100
-		width=40
-		height=17
-	}
-	control {
-		chan="$(P)$(H)pollTimeMS"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-text {
-	object {
-		x=80
-		y=1103
-		width=90
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="POLL TIME (MS)"
 }
 text {
 	object {
@@ -337,7 +310,7 @@ composite {
 	object {
 		x=5
 		y=78
-		width=785
+		width=727
 		height=340
 	}
 	"composite name"=""
@@ -347,19 +320,9 @@ composite {
 	object {
 		x=5
 		y=418
-		width=785
+		width=727
 		height=340
 	}
 	"composite name"=""
 	"composite file"="softGlueFieldIO_Intxx_small_bare_label.adl;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
-}
-composite {
-	object {
-		x=7
-		y=758
-		width=785
-		height=340
-	}
-	"composite name"=""
-	"composite file"="softGlueFieldIO_Intxx_small_bare_label.adl;P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48"
 }

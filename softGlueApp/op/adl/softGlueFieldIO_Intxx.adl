@@ -1,13 +1,13 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueFieldIO_Intxx.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueFieldIO_Intxx.adl"
 	version=030107
 }
 display {
 	object {
-		x=203
-		y=283
-		width=800
+		x=168
+		y=599
+		width=1060
 		height=450
 	}
 	clr=14
@@ -91,7 +91,7 @@ composite {
 	object {
 		x=5
 		y=75
-		width=727
+		width=1042
 		height=340
 	}
 	"composite name"=""
@@ -138,57 +138,6 @@ text {
 	}
 	textix="CONNECTOR #"
 }
-composite {
-	object {
-		x=80
-		y=430
-		width=130
-		height=17
-	}
-	"composite name"=""
-	children {
-		"text entry" {
-			object {
-				x=170
-				y=430
-				width=40
-				height=17
-			}
-			control {
-				chan="$(P)$(H)pollTimeMS"
-				clr=14
-				bclr=51
-			}
-			limits {
-			}
-		}
-		text {
-			object {
-				x=80
-				y=433
-				width=90
-				height=10
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="POLL TIME (MS)"
-		}
-	}
-}
-text {
-	object {
-		x=265
-		y=35
-		width=275
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Interrupt-driven record"
-	align="horiz. centered"
-}
 text {
 	object {
 		x=545
@@ -215,61 +164,11 @@ text {
 	textix="Field Input Bit"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=260
-		y=55
-		width=70
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="INTERRUPT"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=260
-		y=66
-		width=70
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="ENABLE"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=335
-		y=55
-		width=180
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="ON INTERRUPT, WRITE SIGNAL"
-}
-text {
-	object {
-		x=335
-		y=66
-		width=180
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="VALUE VIA THIS LINK"
-}
 composite {
 	object {
 		x=0
 		y=0
-		width=800
+		width=1060
 		height=23
 	}
 	"composite name"=""
@@ -278,7 +177,7 @@ composite {
 			object {
 				x=0
 				y=0
-				width=800
+				width=1060
 				height=20
 			}
 			"composite name"=""
@@ -287,7 +186,7 @@ composite {
 					object {
 						x=0
 						y=0
-						width=800
+						width=1060
 						height=20
 					}
 					"basic attribute" {
@@ -298,7 +197,7 @@ composite {
 					object {
 						x=0
 						y=0
-						width=800
+						width=1060
 						height=20
 					}
 					"basic attribute" {
@@ -313,7 +212,7 @@ composite {
 			object {
 				x=0
 				y=20
-				width=798
+				width=1056
 				height=3
 			}
 			"basic attribute" {
@@ -322,8 +221,156 @@ composite {
 			}
 			points {
 				(1,21)
-				(796,21)
+				(1054,21)
 			}
+		}
+	}
+}
+composite {
+	object {
+		x=260
+		y=30
+		width=260
+		height=41
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=260
+				y=50
+				width=65
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="INTERRUPT"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=260
+				y=61
+				width=65
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ENABLE"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=330
+				y=50
+				width=167
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ON INTERRUPT, WRITE SIGNAL"
+		}
+		text {
+			object {
+				x=330
+				y=61
+				width=167
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="VALUE VIA THIS LINK"
+		}
+		text {
+			object {
+				x=265
+				y=30
+				width=255
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Interrupt-driven record"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=790
+		y=30
+		width=260
+		height=41
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=790
+				y=50
+				width=65
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="INTERRUPT"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=790
+				y=61
+				width=65
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ENABLE"
+			align="horiz. centered"
+		}
+		text {
+			object {
+				x=860
+				y=50
+				width=167
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="ON INTERRUPT, WRITE SIGNAL"
+		}
+		text {
+			object {
+				x=860
+				y=61
+				width=167
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="VALUE VIA THIS LINK"
+		}
+		text {
+			object {
+				x=795
+				y=30
+				width=255
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Interrupt-driven record"
+			align="horiz. centered"
 		}
 	}
 }
