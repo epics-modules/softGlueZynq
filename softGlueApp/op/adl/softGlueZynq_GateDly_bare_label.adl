@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_GateDly_bare_label.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_GateDly_bare_label.adl"
 	version=030107
 }
 display {
@@ -111,5 +111,5 @@ composite {
 		height=70
 	}
 	"composite name"=""
-	"composite file"="softGlue_GateDly_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_GateDly_bare.adl;P=$(P),H=$(H),N=$(N)"
 }

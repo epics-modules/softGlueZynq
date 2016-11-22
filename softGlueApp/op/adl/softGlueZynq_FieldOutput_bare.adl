@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_FieldOutput_bare.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_FieldOutput_bare.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=FO$(N)"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=FO$(N)"
 }
 text {
 	object {

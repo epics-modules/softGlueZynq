@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_HardwiredOR_bare.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_HardwiredOR_bare.adl"
 	version=030107
 }
 display {
@@ -183,7 +183,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=HW_OR-$(N)_OUT"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=HW_OR-$(N)_OUT"
 }
 text {
 	object {

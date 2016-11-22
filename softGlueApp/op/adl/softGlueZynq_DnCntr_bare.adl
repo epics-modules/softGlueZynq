@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_DnCntr_bare.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_DnCntr_bare.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_LOAD"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_LOAD"
 }
 composite {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_ENABLE"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_ENABLE"
 }
 composite {
 	object {
@@ -115,7 +115,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_CLOCK"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_CLOCK"
 }
 polyline {
 	object {
@@ -334,7 +334,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_OUT"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=DnCntr-$(N)_OUT"
 }
 text {
 	object {
