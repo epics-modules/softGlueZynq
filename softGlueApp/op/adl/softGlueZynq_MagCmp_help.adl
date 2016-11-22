@@ -1,0 +1,584 @@
+
+file {
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_MagCmp_help.adl"
+	version=030107
+}
+display {
+	object {
+		x=643
+		y=309
+		width=325
+		height=120
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+composite {
+	object {
+		x=112
+		y=43
+		width=69
+		height=48
+	}
+	"composite name"=""
+	children {
+		arc {
+			object {
+				x=112
+				y=43
+				width=25
+				height=48
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			begin=19520
+			path=7360
+		}
+		composite {
+			object {
+				x=131
+				y=47
+				width=50
+				height=40
+			}
+			"composite name"=""
+			children {
+				polyline {
+					object {
+						x=131
+						y=47
+						width=46
+						height=21
+					}
+					"basic attribute" {
+						clr=14
+						width=2
+					}
+					points {
+						(132,48)
+						(136,48)
+						(143,48)
+						(150,50)
+						(156,52)
+						(163,56)
+						(170,61)
+						(176,67)
+					}
+				}
+				polyline {
+					object {
+						x=132
+						y=66
+						width=46
+						height=21
+					}
+					"basic attribute" {
+						clr=14
+						width=2
+					}
+					points {
+						(133,86)
+						(137,86)
+						(144,86)
+						(151,84)
+						(157,82)
+						(164,78)
+						(171,73)
+						(177,67)
+					}
+				}
+			}
+		}
+	}
+}
+text {
+	object {
+		x=70
+		y=51
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A!=B"
+	align="horiz. right"
+}
+text {
+	object {
+		x=10
+		y=69
+		width=100
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="UpDnCntr8_5_Q8"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=114
+		y=56
+		width=22
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(135,57)
+		(115,57)
+	}
+}
+composite {
+	object {
+		x=207
+		y=10
+		width=42
+		height=41
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=207
+				y=10
+				width=42
+				height=41
+			}
+			"composite name"=""
+			children {
+				arc {
+					object {
+						x=207
+						y=10
+						width=42
+						height=41
+					}
+					"basic attribute" {
+						clr=14
+						fill="outline"
+						width=2
+					}
+					begin=17280
+					path=11520
+				}
+			}
+		}
+		polyline {
+			object {
+				x=208
+				y=10
+				width=22
+				height=41
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(229,11)
+				(209,11)
+				(209,50)
+				(228,50)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=260
+		y=24
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="BDIR"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=248
+		y=29
+		width=22
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(269,30)
+		(249,30)
+	}
+}
+polyline {
+	object {
+		x=125
+		y=38
+		width=2
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(126,39)
+		(126,57)
+	}
+}
+polyline {
+	object {
+		x=125
+		y=39
+		width=84
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(208,40)
+		(126,40)
+	}
+}
+polyline {
+	object {
+		x=115
+		y=19
+		width=96
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(210,20)
+		(116,20)
+	}
+}
+text {
+	object {
+		x=70
+		y=14
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="A>B"
+	align="horiz. right"
+}
+composite {
+	object {
+		x=207
+		y=58
+		width=42
+		height=41
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=207
+				y=58
+				width=42
+				height=41
+			}
+			"composite name"=""
+			children {
+				arc {
+					object {
+						x=207
+						y=58
+						width=42
+						height=41
+					}
+					"basic attribute" {
+						clr=14
+						fill="outline"
+						width=2
+					}
+					begin=17280
+					path=11520
+				}
+			}
+		}
+		polyline {
+			object {
+				x=208
+				y=58
+				width=22
+				height=41
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(229,59)
+				(209,59)
+				(209,98)
+				(228,98)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=275
+		y=72
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="BCLOCK"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=248
+		y=77
+		width=22
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(269,78)
+		(249,78)
+	}
+}
+polyline {
+	object {
+		x=186
+		y=86
+		width=2
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(187,87)
+		(187,105)
+	}
+}
+polyline {
+	object {
+		x=176
+		y=67
+		width=33
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(208,68)
+		(177,68)
+	}
+}
+text {
+	object {
+		x=70
+		y=97
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SAMPLE"
+	align="horiz. right"
+}
+composite {
+	object {
+		x=114
+		y=71
+		width=21
+		height=10
+	}
+	"composite name"=""
+	children {
+		oval {
+			object {
+				x=125
+				y=71
+				width=10
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+		}
+		polyline {
+			object {
+				x=114
+				y=75
+				width=13
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(126,76)
+				(115,76)
+			}
+		}
+	}
+}
+oval {
+	object {
+		x=198
+		y=83
+		width=10
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+polyline {
+	object {
+		x=186
+		y=87
+		width=14
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(199,88)
+		(187,88)
+	}
+}
+polyline {
+	object {
+		x=114
+		y=103
+		width=75
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(188,104)
+		(115,104)
+	}
+}

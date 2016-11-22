@@ -1,0 +1,582 @@
+
+file {
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_Shift32_bare_label.adl"
+	version=030107
+}
+display {
+	object {
+		x=923
+		y=285
+		width=480
+		height=117
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+composite {
+	object {
+		x=0
+		y=90
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=Shift-$(N)_LOAD"
+}
+composite {
+	object {
+		x=0
+		y=44
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=Shift-$(N)_D"
+}
+composite {
+	object {
+		x=0
+		y=67
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=Shift-$(N)_CLOCK"
+}
+polyline {
+	object {
+		x=153
+		y=80
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,81)
+		(154,81)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=57
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,58)
+		(154,58)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=103
+		width=49
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(201,104)
+		(154,104)
+	}
+}
+rectangle {
+	object {
+		x=163
+		y=47
+		width=132
+		height=47
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+polyline {
+	object {
+		x=162
+		y=73
+		width=11
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(163,74)
+		(172,81)
+		(163,88)
+	}
+}
+text {
+	object {
+		x=169
+		y=51
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="D"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=203
+		y=51
+		width=50
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="READVAL"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=185
+		y=82
+		width=30
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LOAD"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=199
+		y=92
+		width=2
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(200,93)
+		(200,105)
+	}
+}
+rectangle {
+	object {
+		x=186
+		y=62
+		width=89
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=206
+		y=65
+		width=50
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="Shift-$(N)"
+}
+text {
+	object {
+		x=223
+		y=82
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LOADVAL"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=242
+		y=92
+		width=2
+		height=7
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(243,93)
+		(243,98)
+	}
+}
+"text entry" {
+	object {
+		x=210
+		y=97
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)$(H)Shift-$(N)_LOADVAL"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=280
+		y=56
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Q"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=184
+		y=23
+		width=100
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL"
+		clr=54
+		bclr=2
+	}
+	limits {
+	}
+}
+composite {
+	object {
+		x=180
+		y=19
+		width=106
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=180
+				y=19
+				width=106
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(181,42)
+				(181,20)
+				(285,20)
+			}
+		}
+		polyline {
+			object {
+				x=180
+				y=19
+				width=106
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(285,20)
+				(285,42)
+				(181,42)
+			}
+		}
+	}
+}
+polyline {
+	object {
+		x=294
+		y=62
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(312,63)
+		(295,63)
+	}
+}
+composite {
+	object {
+		x=311
+		y=49
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=Shift-$(N)_Q"
+}
+polyline {
+	object {
+		x=229
+		y=42
+		width=2
+		height=7
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(230,43)
+		(230,48)
+	}
+}
+byte {
+	object {
+		x=295
+		y=24
+		width=180
+		height=13
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL"
+		clr=14
+		bclr=2
+	}
+	sbit=31
+}
+byte {
+	object {
+		x=295
+		y=101
+		width=180
+		height=13
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_LOADVAL"
+		clr=14
+		bclr=2
+	}
+	sbit=31
+}
+polyline {
+	object {
+		x=298
+		y=34
+		width=13
+		height=21
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(298,34)
+		(298,42)
+		(311,55)
+	}
+}
+polyline {
+	object {
+		x=306
+		y=50
+		width=5
+		height=5
+	}
+	"basic attribute" {
+		clr=14
+	}
+	points {
+		(306,55)
+		(310,55)
+		(311,55)
+		(311,50)
+	}
+}
+text {
+	object {
+		x=434
+		y=37
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LSBIT"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=434
+		y=89
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="LSBIT"
+	align="horiz. centered"
+}
+"text update" {
+	object {
+		x=78
+		y=21
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL_LSW"
+		clr=54
+		bclr=1
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=3
+		y=20
+		width=60
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)Shift-$(N)_READVAL_MSW"
+		clr=54
+		bclr=1
+	}
+	format="hexadecimal"
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=0
+		y=0
+		width=480
+		height=16
+	}
+	control {
+		chan="$(P)$(H)Shift-$(N)_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
+}
