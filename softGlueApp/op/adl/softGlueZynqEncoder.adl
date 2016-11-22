@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueEncoder.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqEncoder.adl"
 	version=030107
 }
 display {
@@ -135,7 +135,7 @@ composite {
 		height=89
 	}
 	"composite name"=""
-	"composite file"="softGlue_QuadDec_bare_label.adl;P=$(P),H=$(H),N=1"
+	"composite file"="softGlueZynq_QuadDec_bare_label.adl;P=$(P),H=$(H),N=1"
 }
 composite {
 	object {
@@ -145,7 +145,7 @@ composite {
 		height=179
 	}
 	"composite name"=""
-	"composite file"="softGlue_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=1"
+	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=1"
 }
 composite {
 	object {
@@ -155,7 +155,7 @@ composite {
 		height=89
 	}
 	"composite name"=""
-	"composite file"="softGlue_QuadDec_bare_label.adl;P=$(P),H=$(H),N=2"
+	"composite file"="softGlueZynq_QuadDec_bare_label.adl;P=$(P),H=$(H),N=2"
 }
 composite {
 	object {
@@ -165,7 +165,7 @@ composite {
 		height=179
 	}
 	"composite name"=""
-	"composite file"="softGlue_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=2"
+	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=2"
 }
 text {
 	object {

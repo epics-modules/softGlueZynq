@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueFieldIOxx_EP202.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqFieldIOxx_EP202.adl"
 	version=030107
 }
 display {
@@ -157,7 +157,7 @@ composite {
 	}
 	display[0] {
 		label="Interrupt support"
-		name="softGlueFieldIO_Intxx_EP202.adl"
+		name="softGlueZynqFieldIO_Intxx_EP202.adl"
 		args="P=$(P),H=$(H),N1=$(N1),N2=$(N2),N3=$(N3),N4=$(N4),N5=$(N5),N6=$(N6),N7=$(N7),N8=$(N8),N9=$(N9),N10=$(N10),N11=$(N11),N12=$(N12),N13=$(N13),N14=$(N14),N15=$(N15),N16=$(N16)"
 		policy="replace display"
 	}
@@ -173,7 +173,7 @@ composite {
 		height=319
 	}
 	"composite name"=""
-	"composite file"="softGlueFieldIOxx_EP202_small_bare_label.adl; P=$(P),H=$(H),N1=$(N1),N2=$(N2),N3=$(N3),N4=$(N4),N5=$(N5),N6=$(N6),N7=$(N7),N8=$(N8),N9=$(N9),N10=$(N10),N11=$(N11),N12=$(N12),N13=$(N13),N14=$(N14),N15=$(N15),N16=$(N16)"
+	"composite file"="softGlueZynqFieldIOxx_EP202_small_bare_label.adl; P=$(P),H=$(H),N1=$(N1),N2=$(N2),N3=$(N3),N4=$(N4),N5=$(N5),N6=$(N6),N7=$(N7),N8=$(N8),N9=$(N9),N10=$(N10),N11=$(N11),N12=$(N12),N13=$(N13),N14=$(N14),N15=$(N15),N16=$(N16)"
 }
 composite {
 	object {

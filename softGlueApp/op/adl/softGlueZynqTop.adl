@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen4/MOONEY/epics/synAppsSVN/support/softGlue/softGlueApp/op/opi/../adl/softGlueTop.adl"
+	name="/home/oxygen4/MOONEY/epics/synAppsSVN/support/softGlueZynq/softGlueZynqApp/op/opi/../adl/softGlueZynqTop.adl"
 	version=030105
 }
 display {
@@ -95,16 +95,16 @@ display {
 		height=20
 	}
 	display[2] {
-		label="softGlueMenu"
-		name="softGlueMenu.adl"
-		args="P=xxx:,H=softGlue:,PORT=SOFTGLUE,IPORT=SGI1,OPORT=SGO1"
+		label="softGlueZynqMenu"
+		name="softGlueZynqMenu.adl"
+		args="P=xxx:,H=softGlueZynq:,PORT=SOFTGLUE,IPORT=SGI1,OPORT=SGO1"
 	}
 	display[6] {
-		label="softGlue2 Menu"
-		name="softGlueMenu.adl"
-		args="P=xxx:,H=softGlue2:,PORT=SOFTGLUE2,IPORT=SGI2,OPORT=SGO2"
+		label="softGlueZynq2 Menu"
+		name="softGlueZynqMenu.adl"
+		args="P=xxx:,H=softGlueZynq2:,PORT=SOFTGLUE2,IPORT=SGI2,OPORT=SGO2"
 	}
 	clr=0
 	bclr=17
-	label="-softGlue"
+	label="-softGlueZynq"
 }

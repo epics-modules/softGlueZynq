@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueHalf.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqHalf.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=49
 	}
 	"composite name"=""
-	"composite file"="softGlue_AND_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_AND_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=49
 	}
 	"composite name"=""
-	"composite file"="softGlue_OR_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_OR_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -115,7 +115,7 @@ composite {
 		height=73
 	}
 	"composite name"=""
-	"composite file"="softGlue_DnCntr_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_DnCntr_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -125,7 +125,7 @@ composite {
 		height=95
 	}
 	"composite name"=""
-	"composite file"="softGlue_DFF_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_DFF_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -135,7 +135,7 @@ composite {
 		height=49
 	}
 	"composite name"=""
-	"composite file"="softGlue_XOR_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_XOR_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -145,7 +145,7 @@ composite {
 		height=72
 	}
 	"composite name"=""
-	"composite file"="softGlue_DivByN_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_DivByN_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -155,7 +155,7 @@ composite {
 		height=72
 	}
 	"composite name"=""
-	"composite file"="softGlue_MUX2_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_MUX2_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -165,7 +165,7 @@ composite {
 		height=52
 	}
 	"composite name"=""
-	"composite file"="softGlue_DEMUX2_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_DEMUX2_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -175,7 +175,7 @@ composite {
 		height=72
 	}
 	"composite name"=""
-	"composite file"="softGlue_UpCntr_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_UpCntr_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 composite {
 	object {
@@ -257,7 +257,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N1)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N1)"
 }
 composite {
 	object {
@@ -267,7 +267,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N2)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N2)"
 }
 composite {
 	object {
@@ -277,7 +277,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N3)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N3)"
 }
 composite {
 	object {
@@ -287,7 +287,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N4)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N4)"
 }
 composite {
 	object {
@@ -297,7 +297,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N5)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N5)"
 }
 composite {
 	object {
@@ -307,7 +307,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N6)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N6)"
 }
 composite {
 	object {
@@ -317,7 +317,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N7)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N7)"
 }
 composite {
 	object {
@@ -327,7 +327,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N8)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N8)"
 }
 composite {
 	object {
@@ -337,7 +337,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N1)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N1)"
 }
 composite {
 	object {
@@ -347,7 +347,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N2)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N2)"
 }
 composite {
 	object {
@@ -357,7 +357,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N3)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N3)"
 }
 composite {
 	object {
@@ -367,7 +367,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N4)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N4)"
 }
 composite {
 	object {
@@ -377,7 +377,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N5)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N5)"
 }
 composite {
 	object {
@@ -387,7 +387,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N6)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N6)"
 }
 composite {
 	object {
@@ -397,7 +397,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N7)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N7)"
 }
 composite {
 	object {
@@ -407,7 +407,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N8)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N8)"
 }
 composite {
 	object {
@@ -417,7 +417,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_8MHZ_CK_bare.adl;P=$(P),H=$(H)"
+	"composite file"="softGlueZynq_8MHZ_CK_bare.adl;P=$(P),H=$(H)"
 }
 composite {
 	object {

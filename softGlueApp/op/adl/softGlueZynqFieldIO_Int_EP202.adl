@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueFieldIO_Int_EP202.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqFieldIO_Int_EP202.adl"
 	version=030107
 }
 display {
@@ -185,7 +185,7 @@ composite {
 		height=339
 	}
 	"composite name"=""
-	"composite file"="softGlueFieldIO_Intxx_EP202_small_bare_label.adl;P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16"
+	"composite file"="softGlueZynqFieldIO_Intxx_EP202_small_bare_label.adl;P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16"
 }
 composite {
 	object {
@@ -195,7 +195,7 @@ composite {
 		height=339
 	}
 	"composite name"=""
-	"composite file"="softGlueFieldIO_Intxx_EP202_small_bare_label.adl;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
+	"composite file"="softGlueZynqFieldIO_Intxx_EP202_small_bare_label.adl;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
 }
 composite {
 	object {
@@ -205,7 +205,7 @@ composite {
 		height=339
 	}
 	"composite name"=""
-	"composite file"="softGlueFieldIO_Intxx_EP202_small_bare_label.adl;P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48"
+	"composite file"="softGlueZynqFieldIO_Intxx_EP202_small_bare_label.adl;P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48"
 }
 "related display" {
 	object {
@@ -216,7 +216,7 @@ composite {
 	}
 	display[0] {
 		label="Interrupt support"
-		name="softGlueFieldIO_EP202.adl"
+		name="softGlueZynqFieldIO_EP202.adl"
 		args="P=$(P),H=$(H)"
 		policy="replace display"
 	}

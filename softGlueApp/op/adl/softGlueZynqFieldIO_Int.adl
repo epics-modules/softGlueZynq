@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueFieldIO_Int.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynqFieldIO_Int.adl"
 	version=030107
 }
 display {
@@ -186,7 +186,7 @@ text {
 	}
 	display[0] {
 		label="Interrupt support"
-		name="softGlueFieldIO.adl"
+		name="softGlueZynqFieldIO.adl"
 		args="P=$(P),H=$(H)"
 		policy="replace display"
 	}
@@ -314,7 +314,7 @@ composite {
 		height=340
 	}
 	"composite name"=""
-	"composite file"="softGlueFieldIO_Intxx_small_bare_label.adl;P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16"
+	"composite file"="softGlueZynqFieldIO_Intxx_small_bare_label.adl;P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16"
 }
 composite {
 	object {
@@ -324,5 +324,5 @@ composite {
 		height=340
 	}
 	"composite name"=""
-	"composite file"="softGlueFieldIO_Intxx_small_bare_label.adl;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
+	"composite file"="softGlueZynqFieldIO_Intxx_small_bare_label.adl;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
 }

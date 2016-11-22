@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps_5_5/support/softGlue/softGlueApp/op/adl/softGlueFieldIOxx_bare.adl"
+	name="/home/oxygen/MOONEY/epics/synApps_5_5/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqFieldIOxx_bare.adl"
 	version=030104
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N1)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N1)"
 }
 composite {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N2)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N2)"
 }
 composite {
 	object {
@@ -115,7 +115,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N3)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N3)"
 }
 composite {
 	object {
@@ -125,7 +125,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N4)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N4)"
 }
 composite {
 	object {
@@ -135,7 +135,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N5)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N5)"
 }
 composite {
 	object {
@@ -145,7 +145,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N6)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N6)"
 }
 composite {
 	object {
@@ -155,7 +155,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N7)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N7)"
 }
 composite {
 	object {
@@ -165,7 +165,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N8)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N8)"
 }
 composite {
 	object {
@@ -175,7 +175,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N9)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N9)"
 }
 composite {
 	object {
@@ -185,7 +185,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N10)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N10)"
 }
 composite {
 	object {
@@ -195,7 +195,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N11)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N11)"
 }
 composite {
 	object {
@@ -205,7 +205,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N12)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N12)"
 }
 composite {
 	object {
@@ -215,7 +215,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N13)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N13)"
 }
 composite {
 	object {
@@ -225,7 +225,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N14)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N14)"
 }
 composite {
 	object {
@@ -235,7 +235,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N15)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N15)"
 }
 composite {
 	object {
@@ -245,7 +245,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N16)"
+	"composite file"="softGlueZynq_FieldInput_bare.adl;P=$(P),H=$(H),N=$(N16)"
 }
 composite {
 	object {
@@ -255,7 +255,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N1)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N1)"
 }
 composite {
 	object {
@@ -265,7 +265,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N2)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N2)"
 }
 composite {
 	object {
@@ -275,7 +275,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N3)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N3)"
 }
 composite {
 	object {
@@ -285,7 +285,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N4)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N4)"
 }
 composite {
 	object {
@@ -295,7 +295,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N5)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N5)"
 }
 composite {
 	object {
@@ -305,7 +305,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N6)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N6)"
 }
 composite {
 	object {
@@ -315,7 +315,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N7)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N7)"
 }
 composite {
 	object {
@@ -325,7 +325,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N8)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N8)"
 }
 composite {
 	object {
@@ -335,7 +335,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N9)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N9)"
 }
 composite {
 	object {
@@ -345,7 +345,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N10)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N10)"
 }
 composite {
 	object {
@@ -355,7 +355,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N11)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N11)"
 }
 composite {
 	object {
@@ -365,7 +365,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N12)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N12)"
 }
 composite {
 	object {
@@ -375,7 +375,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N13)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N13)"
 }
 composite {
 	object {
@@ -385,7 +385,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N14)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N14)"
 }
 composite {
 	object {
@@ -395,7 +395,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N15)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N15)"
 }
 composite {
 	object {
@@ -405,5 +405,5 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N16)"
+	"composite file"="softGlueZynq_FieldOutput_bare.adl;P=$(P),H=$(H),N=$(N16)"
 }

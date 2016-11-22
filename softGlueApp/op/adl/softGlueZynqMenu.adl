@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueMenu.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynqMenu.adl"
 	version=030107
 }
 display {
@@ -96,72 +96,72 @@ display {
 	}
 	display[0] {
 		label="AND 1"
-		name="softGlue_AND.adl"
+		name="softGlueZynq_AND.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[1] {
 		label="AND 2"
-		name="softGlue_AND.adl"
+		name="softGlueZynq_AND.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[2] {
 		label="AND 3"
-		name="softGlue_AND.adl"
+		name="softGlueZynq_AND.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[3] {
 		label="AND 4"
-		name="softGlue_AND.adl"
+		name="softGlueZynq_AND.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[4] {
 		label="OR 1"
-		name="softGlue_OR.adl"
+		name="softGlueZynq_OR.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[5] {
 		label="OR 2"
-		name="softGlue_OR.adl"
+		name="softGlueZynq_OR.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[6] {
 		label="OR 3"
-		name="softGlue_OR.adl"
+		name="softGlueZynq_OR.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[7] {
 		label="OR 4"
-		name="softGlue_OR.adl"
+		name="softGlueZynq_OR.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[8] {
 		label="XOR 1"
-		name="softGlue_XOR.adl"
+		name="softGlueZynq_XOR.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[9] {
 		label="XOR 2"
-		name="softGlue_XOR.adl"
+		name="softGlueZynq_XOR.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[10] {
 		label="BUFFER 1"
-		name="softGlue_BUFFER.adl"
+		name="softGlueZynq_BUFFER.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[11] {
 		label="BUFFER 2"
-		name="softGlue_BUFFER.adl"
+		name="softGlueZynq_BUFFER.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[12] {
 		label="BUFFER 3"
-		name="softGlue_BUFFER.adl"
+		name="softGlueZynq_BUFFER.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[13] {
 		label="BUFFER 4"
-		name="softGlue_BUFFER.adl"
+		name="softGlueZynq_BUFFER.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	clr=0
@@ -177,67 +177,67 @@ display {
 	}
 	display[0] {
 		label="UpCounter 1"
-		name="softGlue_UpCntr.adl"
+		name="softGlueZynq_UpCntr.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[1] {
 		label="UpCounter 2"
-		name="softGlue_UpCntr.adl"
+		name="softGlueZynq_UpCntr.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[2] {
 		label="UpCounter 3"
-		name="softGlue_UpCntr.adl"
+		name="softGlueZynq_UpCntr.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[3] {
 		label="UpCounter 4"
-		name="softGlue_UpCntr.adl"
+		name="softGlueZynq_UpCntr.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[4] {
 		label="DownCounter 1"
-		name="softGlue_DnCntr.adl"
+		name="softGlueZynq_DnCntr.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[5] {
 		label="DownCounter 2"
-		name="softGlue_DnCntr.adl"
+		name="softGlueZynq_DnCntr.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[6] {
 		label="DownCounter 3"
-		name="softGlue_DnCntr.adl"
+		name="softGlueZynq_DnCntr.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[7] {
 		label="DownCounter 4"
-		name="softGlue_DnCntr.adl"
+		name="softGlueZynq_DnCntr.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[8] {
 		label="UpDown Counter 1"
-		name="softGlue_UpDnCntr.adl"
+		name="softGlueZynq_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[9] {
 		label="UpDown Counter 2"
-		name="softGlue_UpDnCntr.adl"
+		name="softGlueZynq_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[10] {
 		label="UpDown Counter 3"
-		name="softGlue_UpDnCntr.adl"
+		name="softGlueZynq_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[11] {
 		label="UpDown Counter 4"
-		name="softGlue_UpDnCntr.adl"
+		name="softGlueZynq_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[12] {
 		label="UpDown Counter 5"
-		name="softGlue_UpDnCntr.adl"
+		name="softGlueZynq_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=5"
 	}
 	clr=0
@@ -253,22 +253,22 @@ display {
 	}
 	display[1] {
 		label="Field I/O All"
-		name="softGlueFieldIO.adl"
+		name="softGlueZynqFieldIO.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[2] {
 		label="Field I/O 1-16"
-		name="softGlueFieldIOxx.adl"
+		name="softGlueZynqFieldIOxx.adl"
 		args="P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16"
 	}
 	display[3] {
 		label="Field I/O 17-32"
-		name="softGlueFieldIOxx.adl"
+		name="softGlueZynqFieldIOxx.adl"
 		args="P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32"
 	}
 	display[4] {
 		label="Field I/O 33-48"
-		name="softGlueFieldIOxx.adl"
+		name="softGlueZynqFieldIOxx.adl"
 		args="P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48"
 	}
 	clr=0
@@ -284,72 +284,72 @@ display {
 	}
 	display[1] {
 		label="2-input multiplexer"
-		name="softGlue_MUX2.adl"
+		name="softGlueZynq_MUX2.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[2] {
 		label="2-input multiplexer"
-		name="softGlue_MUX2.adl"
+		name="softGlueZynq_MUX2.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[3] {
 		label="2-output demultiplexer"
-		name="softGlue_DEMUX2.adl"
+		name="softGlueZynq_DEMUX2.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[4] {
 		label="2-output demultiplexer"
-		name="softGlue_DEMUX2.adl"
+		name="softGlueZynq_DEMUX2.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[5] {
 		label="D FlipFlop 1"
-		name="softGlue_DFF.adl"
+		name="softGlueZynq_DFF.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[6] {
 		label="D FlipFlop 2"
-		name="softGlue_DFF.adl"
+		name="softGlueZynq_DFF.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[7] {
 		label="D FlipFlop 3"
-		name="softGlue_DFF.adl"
+		name="softGlueZynq_DFF.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[8] {
 		label="D FlipFlop 4"
-		name="softGlue_DFF.adl"
+		name="softGlueZynq_DFF.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[9] {
 		label="Divide By N 1"
-		name="softGlue_DivByN.adl"
+		name="softGlueZynq_DivByN.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[10] {
 		label="Divide By N 2"
-		name="softGlue_DivByN.adl"
+		name="softGlueZynq_DivByN.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[11] {
 		label="Divide By N 3"
-		name="softGlue_DivByN.adl"
+		name="softGlueZynq_DivByN.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[12] {
 		label="Divide By N 4"
-		name="softGlue_DivByN.adl"
+		name="softGlueZynq_DivByN.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[13] {
 		label="Quadrature Decoder 1"
-		name="softGlue_QuadDec.adl"
+		name="softGlueZynq_QuadDec.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[14] {
 		label="Quadrature Decoder 2"
-		name="softGlue_QuadDec.adl"
+		name="softGlueZynq_QuadDec.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	clr=0
@@ -364,18 +364,18 @@ display {
 		height=20
 	}
 	display[0] {
-		label="all softGlue"
-		name="softGlueAll.adl"
+		label="all softGlueZynq"
+		name="softGlueZynqAll.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[1] {
 		label="all but I/O"
-		name="softGlueAllButIO.adl"
+		name="softGlueZynqAllButIO.adl"
 		args="P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8"
 	}
 	display[2] {
 		label="convenience"
-		name="softGlueConvenience.adl"
+		name="softGlueZynqConvenience.adl"
 		args="P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT)"
 	}
 	display[3] {
@@ -383,7 +383,7 @@ display {
 	}
 	display[4] {
 		label="Extra"
-		name="softGlueExtra.adl"
+		name="softGlueZynqExtra.adl"
 		args="P=$(P),H=$(H)"
 	}
 	clr=0
@@ -489,52 +489,52 @@ composite {
 	}
 	display[0] {
 		label="50 MHZ Internal Clock"
-		name="softGlue_50MHZ_CK_bare_label.adl"
+		name="softGlueZynq_50MHZ_CK_bare_label.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[1] {
 		label="20 MHZ Internal Clock"
-		name="softGlue_20MHZ_CK_bare_label.adl"
+		name="softGlueZynq_20MHZ_CK_bare_label.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[2] {
 		label="10 MHZ Internal Clock"
-		name="softGlue_10MHZ_CK_bare_label.adl"
+		name="softGlueZynq_10MHZ_CK_bare_label.adl"
 		args="P=$(P),H=$(H)"
 	}
 	display[3] {
 		label="gateDly 1"
-		name="softGlue_GateDly.adl"
+		name="softGlueZynq_GateDly.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[4] {
 		label="gateDly 2"
-		name="softGlue_GateDly.adl"
+		name="softGlueZynq_GateDly.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[5] {
 		label="gateDly 3"
-		name="softGlue_GateDly.adl"
+		name="softGlueZynq_GateDly.adl"
 		args="P=$(P),H=$(H),N=3"
 	}
 	display[6] {
 		label="gateDly 4"
-		name="softGlue_GateDly.adl"
+		name="softGlueZynq_GateDly.adl"
 		args="P=$(P),H=$(H),N=4"
 	}
 	display[7] {
 		label="HistScal 1"
-		name="softGlue_HistScal.adl"
+		name="softGlueZynq_HistScal.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[8] {
 		label="PixelTrigger 1"
-		name="softGlue_PixelTrig.adl"
+		name="softGlueZynq_PixelTrig.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[9] {
 		label="PixelTrigger 2"
-		name="softGlue_PixelTrig.adl"
+		name="softGlueZynq_PixelTrig.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	clr=0

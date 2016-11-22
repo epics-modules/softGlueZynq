@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueOctupole.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqOctupole.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=117
 	}
 	"composite name"=""
-	"composite file"="softGlue_Shift32_bare_label.adl; P=$(P),H=$(H),N=2"
+	"composite file"="softGlueZynq_Shift32_bare_label.adl; P=$(P),H=$(H),N=2"
 }
 composite {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=117
 	}
 	"composite name"=""
-	"composite file"="softGlue_Shift32_bare_label.adl; P=$(P),H=$(H),N=1"
+	"composite file"="softGlueZynq_Shift32_bare_label.adl; P=$(P),H=$(H),N=1"
 }
 composite {
 	object {
