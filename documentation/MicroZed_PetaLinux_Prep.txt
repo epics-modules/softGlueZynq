@@ -1,3 +1,29 @@
+Cross compiling from linux to linux-arm:
+---------------------------------------
+Xilinx Vivado comes with a software-development kit, called SDK.
+In that distribution is the directory EPICS needs to cross compile for Zynq.
+To build base and synApps for the MicroZed, I modified two config files in base:
+
+Here's the base/configure/os/CONFIG_SITE file I used:
+
+	# CONFIG_SITE.linux-x86.linux-arm
+	#
+	# Site specific definitions for linux-x86 host - linux-arm target builds
+	#-------------------------------------------------------
+	
+	# Tools install path
+	GNU_DIR = /local/mooney/zynq/Xilinx/SDK/2015.4/gnu/arm/lin
+	
+	# GNU crosscompiler target name
+	GNU_TARGET = arm-xilinx-linux-gnueabi
+
+I added this line to base/configure/CONFIG_SITE:
+
+	CROSS_COMPILER_TARGET_ARCHS=linux-arm
+
+Then I set EPICS_HOST_ARCH to linux-x86_64, and built base and synApps.
+
+==============================================================================
 0.	Use petalinux-config to set the host name and MAC address
 
 	sudo rootsh
@@ -32,3 +58,17 @@
 	./run
 
 	
+------------------------------------------------------------------------------
+New way:
+
+		# set the MAC address by adding the following to the mountAPSshare
+		# application:
+		ifconfig eth0 down
+		ifconfig eth0 hw ether 00:19:B3:02:13:D7
+		ifconfig eth0 up
+#mount -o port=2049,nolock -t nfs s100dserv.xray.aps.anl.gov:/APSshare /mnt/APSshare
+#mount -o port=2049,nolock -t nfs s100dserv.xray.aps.anl.gov:/xorApps /mnt/xorApps
+
+ifdown eth0
+ifconfig eth0 hw ether 00:19:B3:02:13:D7
+ifup eth0

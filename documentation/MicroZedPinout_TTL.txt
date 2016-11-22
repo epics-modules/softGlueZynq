@@ -1,82 +1,83 @@
-MicroZed Breakout CON1 (MicroZed JX1)
-sig         zynq    mzed    bkout
----------------------------------------
-FI_01  		T11 	11  	5		
-FI_02  		T12 	12  	6		
-FI_03  		T10 	13  	7		
-FI_04  		U12 	14  	8		
-gnd                 15
-gnd                 16
-FI_05  		U13 	17  	9		
-FI_06  		V12 	18  	10  	
-FI_07  		V13 	19  	11  	
-FI_08  		W13 	20  	12  	
-gnd                 21
-gnd                 22
-FI_09  		T14 	23  	13  	
-FI_10  		P14 	24  	14  	
-FI_11  		T15 	25  	15  	
-FI_12  		R14 	26  	16  	
-gnd                 27
-gnd                 28
-FI_13  		Y16 	29  	19  	
-FI_14  		W14 	30  	20  	
-FI_15  		Y17 	31  	21  	
-FI_16  		Y14 	32  	22  	
-gnd                 33
-gnd                 34
-FI_17  		T16 	35  	23  	
-FI_18  		V15 	36  	24  	
-FI_19  		U17 	37  	25  	
-FI_20  		W15 	38  	26  	
-gnd                 39
-gnd                 40
-FI_21  		U14 	41  	27  	
-FI_22  		U18 	42  	28  	
-FI_23  		U15 	43  	29  	
-FI_24  		U19 	44  	30  	
-gnd                 45
-gnd                 46
-FO_01  		N18 	47  	31  	
-FO_02  		N20 	48  	32  	
-FO_03  		P19 	49  	33  	
-FO_04  		P20 	50  	34  	
-gnd                 51
-gnd                 52
-FO_05  		T20 	53  	35  	
-FO_06  		V20 	54  	36  	
-FO_07  		U20 	55  	37  	
-FO_08  		W20 	56  	38  	
 
-FO_09  		Y18 	61  	41  	
-FO_10  		V16 	62  	42  	
-FO_11  		Y19 	63  	43  	
-FO_12  		W16 	64  	44  	
-gnd                 65
-gnd                 66
-FO_13  		R16 	67  	45  	
-FO_14  		T17 	68  	46  	
-FO_15  		R17 	69  	47  	
-FO_16  		R18 	70  	48  	
-gnd                 71
-gnd                 72
-FO_17  		V17 	73  	49  	
-FO_18  		W18 	74  	50  	
-FO_19  		V18 	75  	51  	
-FO_20  		W19 	76  	52  	
+Signal	Zynq	MicroZed	Breakout board
+		JX1		CON1
+----------------------------------------------
+FI_01	T11	11		5
+FI_02	T12	12		6
+FI_03	T10	13		7
+FI_04	U12	14		8
+gnd		15
+gnd		16
+FI_05	U13	17		9
+FI_06	V12	18		10
+FI_07	V13	19		11
+FI_08	W13	20		12
+gnd		21
+gnd		22
+FI_09	T14	23		13
+FI_10	P14	24		14
+FI_11	T15	25		15
+FI_12	R14	26		16
+gnd		27
+gnd		28
+FI_13	Y16	29		19
+FI_14	W14	30		20
+FI_15	Y17	31		21
+FI_16	Y14	32		22
+gnd		33
+gnd		34
+FI_17	T16	35		23
+FI_18	V15	36		24
+FI_19	U17	37		25
+FI_20	W15	38		26
+gnd		39
+gnd		40
+FI_21	U14	41		27
+FI_22	U18	42		28
+FI_23	U15	43		29
+FI_24	U19	44		30
+gnd		45
+gnd		46
+FO_01	N18	47		31
+FO_02	N20	48		32
+FO_03	P19	49		33
+FO_04	P20	50		34
+gnd		51
+gnd		52
+FO_05	T20	53		35
+FO_06	V20	54		36
+FO_07	U20	55		37
+FO_08	W20	56		38
 
-FO_21  		N17 	81  	55  	
-FO_22  		P15 	82  	56  	
-FO_23  		P18 	83  	57  	
-FO_24  		P16 	84  	58  	
-gnd                 85
-gnd                 86
+FO_09	Y18	61		41
+FO_10	V16	62		42
+FO_11	Y19	63		43
+FO_12	W16	64		44
+gnd		65
+gnd		66
+FO_13	R16	67		45
+FO_14	T17	68		46
+FO_15	R17	69		47
+FO_16	R18	70		48
+gnd		71
+gnd		72
+FO_17	V17	73		49
+FO_18	W18	74		50
+FO_19	V18	75		51
+FO_20	W19	76		52
 
-GND                         1,2,17,18,59,60
+FO_21	N17	81		55
+FO_22	P15	82		56
+FO_23	P18	83		57
+FO_24	P16	84		58
+gnd		85
+gnd		86
+
+GND				1,2,17,18,59,60
 
 MicroZed Breakout CON2 (MicroZed JX2)
-Dsig  Asig    zynqP   zynqN   mzedP   mzedN   bkoutP  bkoutN  diff
-------------------------------------------------------------------
+Dsig  Asig    zynqP   zynqN   mzedP   mzedN   bkoutP  bkoutN 
+-------------------------------------------------------------
 Fx1   AD0     C20     B20     17      19      5       7       
 Fx2   AD8     B19     A20     18      20      6       8       
 Fx3   AD1     E17     D18     23      25      9       11      
