@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_40MHZ_CK_bare_label.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_40MHZ_CK_bare_label.adl"
 	version=030107
 }
 display {
@@ -111,5 +111,5 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_40MHZ_CK_bare.adl;P=$(P),H=$(H)"
+	"composite file"="softGlueZynq_40MHZ_CK_bare.adl;P=$(P),H=$(H)"
 }

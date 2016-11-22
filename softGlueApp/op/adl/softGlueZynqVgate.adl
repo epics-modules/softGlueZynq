@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlueVgate.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynqVgate.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=179
 	}
 	"composite name"=""
-	"composite file"="softGlue_UpDnCntr_bare.adl; P=$(P),H=$(H),N=2"
+	"composite file"="softGlueZynq_UpDnCntr_bare.adl; P=$(P),H=$(H),N=2"
 }
 composite {
 	object {
@@ -105,5 +105,5 @@ composite {
 		height=179
 	}
 	"composite name"=""
-	"composite file"="softGlue_UpDnCntr_bare.adl; P=$(P),H=$(H),N=1"
+	"composite file"="softGlueZynq_UpDnCntr_bare.adl; P=$(P),H=$(H),N=1"
 }

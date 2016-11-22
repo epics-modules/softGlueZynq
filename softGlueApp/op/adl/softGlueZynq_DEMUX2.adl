@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_DEMUX2.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_DEMUX2.adl"
 	version=030107
 }
 display {
@@ -135,7 +135,7 @@ composite {
 		height=67
 	}
 	"composite name"=""
-	"composite file"="softGlue_DEMUX2_bare_label.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_DEMUX2_bare_label.adl;P=$(P),H=$(H),N=$(N)"
 }
 text {
 	object {
