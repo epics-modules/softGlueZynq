@@ -379,10 +379,6 @@ signal names.
 between softGlueZynq circuit elements.  It might be more intuitive to think of a "signal" as a wire,
 to avoid confusing it with, say, field I/O.</blockquote>
 
-<blockquote>Note, if you're using more than one IP-EP20x module, that you can't connect signals implemented in
-different IP-EP20x modules using their text-entry boxes. To accomplish this, you must connect the signals to
-field I/O and make a physical connection.</blockquote>
-
 </ol>
 
 <P>If you want to use the inverted value of a signal for input to some component, append
@@ -557,6 +553,14 @@ is <code>1</code>, it will be cleared on the first rising edge of the clock.
 <P>10, 20, and 50 MHz clocks are available to softGlueZynq circuitry as free
 standing outputs.
 
+<blockquote>
+
+There is an API for changing the frequency of any softGlue clock (there are
+actually six clocks), but you aren't going to like it.  It's stupid and ugly,
+but it works and it isn't the most pressing need at the moment.
+
+<blockquote>
+
 <hr>
 <li><P>Field I/O
 <P><img src="Field_IO.jpg" name="Field I/O">
@@ -701,6 +705,46 @@ the travel direction implied by the change is output to <code>DIR</code>, and a
 pulse is output to <code>STEP</code>.  The pulse width is equal to the period of
 the <code>CLOCK</code> signal, and the input frequency may not be greater than
 half the clock frequency.
+
+<P>
+<hr>
+
+<li><P>Gate&Delay Generator
+<P><img src="GateAndDelay.jpg" name="GateAndDelay Generator">
+
+<P>The rising edge of the input signal <code>IN</code> will appear at
+<code>OUT</code> after <code>DLY</code> periods of the clock <code>></code>.
+If <code>WIDTH</code> is nonzero, it specifies the width in clock periods of
+the output pulse.  If  <code>WIDTH==0</code>, the width of the input signal
+will be used.
+
+<P>There is a faster version of this component, with 1 ns time resolution,
+connected directly to field I/O, and clocked by a fixed 500 MHz clock.
+
+<P>
+<hr>
+
+<li><P>Histogramming Scaler
+<P><img src="HistScal.jpg" name="Histogramming Scaler">
+
+<P>This is a one-input scaler with 20 time bins.  While <code>EN==1</code>, it
+counts pulses presented to <code>DET</code> into one of 20 scalers.  When a
+rising edge is presented to <code>SYNC</code>, the first scaler is selected. 
+Each time a rising edge is presented to the clock input, the next scaler is
+selected.  (Thus, the clock performs as the "channel advance" signal of a
+multichannel scaler.) When <code>CLEAR</code> is high, all counters are cleared.
+
+<P>Currently, the scaler values are routed to softGlue 32-bit registers for
+which no display is provided; the scaler values are collected by acalcout
+records, and presented as an array of counts as a function of the time elapsed
+since the most recent <code>SYNC</code> pulse.  This component is under
+development.  Probably it will be expanded to more channels, and the data will
+be written to a FIFO for transport to EPICS.
+
+<P>There is a version of this component that can channel advance at up to
+250 MHz.  The high speed version is connected directly to field inputs, and its
+clock input is hardwired to a dedicated clock generator, because the softGlue
+signal bus can't transport signals of frequency higher than 50 MHz.
 
 <P>
 
