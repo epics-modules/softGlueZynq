@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/analogProc_LOWPASS128.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/analogProc_LOWPASS128.adl"
 	version=030107
 }
 display {

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue4DEMUX4.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq4DEMUX4.adl"
 	version=030107
 }
 display {
@@ -135,7 +135,7 @@ composite {
 		height=122
 	}
 	"composite name"=""
-	"composite file"="softGlue_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=1"
+	"composite file"="softGlueZynq_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=1"
 }
 text {
 	object {
@@ -157,7 +157,7 @@ composite {
 		height=122
 	}
 	"composite name"=""
-	"composite file"="softGlue_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=2"
+	"composite file"="softGlueZynq_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=2"
 }
 composite {
 	object {
@@ -167,7 +167,7 @@ composite {
 		height=122
 	}
 	"composite name"=""
-	"composite file"="softGlue_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=3"
+	"composite file"="softGlueZynq_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=3"
 }
 composite {
 	object {
@@ -177,5 +177,5 @@ composite {
 		height=122
 	}
 	"composite name"=""
-	"composite file"="softGlue_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=4"
+	"composite file"="softGlueZynq_DEMUX4_bare_label.adl;P=$(P),H=$(H),N=4"
 }
