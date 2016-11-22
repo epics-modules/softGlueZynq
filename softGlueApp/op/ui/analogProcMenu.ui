@@ -52,7 +52,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>AND 1;AND 2;AND 3;AND 4;OR 1;OR 2;OR 3;OR 4;XOR 1;XOR 2;BUFFER 1;BUFFER 2;BUFFER 3;BUFFER 4</string>
             </property>
             <property name="files">
-                <string>softGlue_AND.adl;softGlue_AND.adl;softGlue_AND.adl;softGlue_AND.adl;softGlue_OR.adl;softGlue_OR.adl;softGlue_OR.adl;softGlue_OR.adl;softGlue_XOR.adl;softGlue_XOR.adl;softGlue_BUFFER.adl;softGlue_BUFFER.adl;softGlue_BUFFER.adl;softGlue_BUFFER.adl</string>
+                <string>softGlueZynq_AND.adl;softGlueZynq_AND.adl;softGlueZynq_AND.adl;softGlueZynq_AND.adl;softGlueZynq_OR.adl;softGlueZynq_OR.adl;softGlueZynq_OR.adl;softGlueZynq_OR.adl;softGlueZynq_XOR.adl;softGlueZynq_XOR.adl;softGlueZynq_BUFFER.adl;softGlueZynq_BUFFER.adl;softGlueZynq_BUFFER.adl;softGlueZynq_BUFFER.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4</string>
@@ -136,7 +136,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>Field I/O All;Field I/O 1-16;Field I/O 17-32;Field I/O 33-48</string>
             </property>
             <property name="files">
-                <string>softGlueFieldIO.adl;softGlueFieldIOxx.adl;softGlueFieldIOxx.adl;softGlueFieldIOxx.adl</string>
+                <string>softGlueZynqFieldIO.adl;softGlueZynqFieldIOxx.adl;softGlueZynqFieldIOxx.adl;softGlueZynqFieldIOxx.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H);P=$(P),H=$(H),N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8,N9=9,N10=10,N11=11,N12=12,N13=13,N14=14,N15=15,N16=16;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24,N9=25,N10=26,N11=27,N12=28,N13=29,N14=30,N15=31,N16=32;P=$(P),H=$(H),N1=33,N2=34,N3=35,N4=36,N5=37,N6=38,N7=39,N8=40,N9=41,N10=42,N11=43,N12=44,N13=45,N14=46,N15=47,N16=48</string>
@@ -178,7 +178,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>2-input multiplexer;2-input multiplexer;2-output demultiplexer;2-output demultiplexer;D FlipFlop 1;D FlipFlop 2;D FlipFlop 3;D FlipFlop 4;Divide By N 1;Divide By N 2;Divide By N 3;Divide By N 4;Quadrature Decoder 1;Quadrature Decoder 2</string>
             </property>
             <property name="files">
-                <string>softGlue_MUX2.adl;softGlue_MUX2.adl;softGlue_DEMUX2.adl;softGlue_DEMUX2.adl;softGlue_DFF.adl;softGlue_DFF.adl;softGlue_DFF.adl;softGlue_DFF.adl;softGlue_DivByN.adl;softGlue_DivByN.adl;softGlue_DivByN.adl;softGlue_DivByN.adl;softGlue_QuadDec.adl;softGlue_QuadDec.adl</string>
+                <string>softGlueZynq_MUX2.adl;softGlueZynq_MUX2.adl;softGlueZynq_DEMUX2.adl;softGlueZynq_DEMUX2.adl;softGlueZynq_DFF.adl;softGlueZynq_DFF.adl;softGlueZynq_DFF.adl;softGlueZynq_DFF.adl;softGlueZynq_DivByN.adl;softGlueZynq_DivByN.adl;softGlueZynq_DivByN.adl;softGlueZynq_DivByN.adl;softGlueZynq_QuadDec.adl;softGlueZynq_QuadDec.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
@@ -220,7 +220,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>all analogProc;all but I/O;convenience;------------;analogProcTest</string>
             </property>
             <property name="files">
-                <string>analogProcAll.adl;analogProcAllButIO.adl;softGlueConvenience.adl;softGlueConvenience.adl;analogProcTest.adl</string>
+                <string>analogProcAll.adl;analogProcAllButIO.adl;softGlueZynqConvenience.adl;softGlueZynqConvenience.adl;analogProcTest.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H)</string>
@@ -477,7 +477,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>10 MHZ Internal Clock;40 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;80 MHZ Internal Clock</string>
             </property>
             <property name="files">
-                <string>softGlue_10MHZ_CK_bare_label.adl;softGlue_40MHZ_CK_bare_label.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_GateDly.adl;softGlue_HistScal.adl;softGlue_100MHZ_CK_bare_label.adl</string>
+                <string>softGlueZynq_10MHZ_CK_bare_label.adl;softGlueZynq_40MHZ_CK_bare_label.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_HistScal.adl;softGlueZynq_100MHZ_CK_bare_label.adl</string>
             </property>
             <property name="args">
                 <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H)</string>

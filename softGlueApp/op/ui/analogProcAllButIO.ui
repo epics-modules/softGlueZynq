@@ -37,7 +37,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_AND_bare.adl</string>
+                <string>softGlueZynq_AND_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=1</string>
@@ -61,7 +61,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_AND_bare.adl</string>
+                <string>softGlueZynq_AND_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=2</string>
@@ -85,7 +85,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_AND_bare.adl</string>
+                <string>softGlueZynq_AND_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=3</string>
@@ -109,7 +109,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_AND_bare.adl</string>
+                <string>softGlueZynq_AND_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=4</string>
@@ -133,7 +133,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_OR_bare.adl</string>
+                <string>softGlueZynq_OR_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=3</string>
@@ -157,7 +157,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_OR_bare.adl</string>
+                <string>softGlueZynq_OR_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=4</string>
@@ -181,7 +181,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_OR_bare.adl</string>
+                <string>softGlueZynq_OR_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=1</string>
@@ -205,7 +205,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_OR_bare.adl</string>
+                <string>softGlueZynq_OR_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=2</string>
@@ -229,7 +229,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_DEMUX2_bare.adl</string>
+                <string>softGlueZynq_DEMUX2_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=2</string>
@@ -253,7 +253,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_DEMUX2_bare.adl</string>
+                <string>softGlueZynq_DEMUX2_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=1</string>
@@ -277,7 +277,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_MUX2_bare.adl</string>
+                <string>softGlueZynq_MUX2_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=1</string>
@@ -301,7 +301,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_MUX2_bare.adl</string>
+                <string>softGlueZynq_MUX2_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=2</string>
@@ -661,7 +661,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DFF_bare.adl</string>
+                    <string>softGlueZynq_DFF_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=1</string>
@@ -685,7 +685,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DFF_bare.adl</string>
+                    <string>softGlueZynq_DFF_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=2</string>
@@ -709,7 +709,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DFF_bare.adl</string>
+                    <string>softGlueZynq_DFF_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=3</string>
@@ -733,7 +733,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DFF_bare.adl</string>
+                    <string>softGlueZynq_DFF_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=4</string>
@@ -757,7 +757,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DivByN_bare.adl</string>
+                    <string>softGlueZynq_DivByN_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=1</string>
@@ -781,7 +781,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DivByN_bare.adl</string>
+                    <string>softGlueZynq_DivByN_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=2</string>
@@ -805,7 +805,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DivByN_bare.adl</string>
+                    <string>softGlueZynq_DivByN_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=3</string>
@@ -829,7 +829,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_DivByN_bare.adl</string>
+                    <string>softGlueZynq_DivByN_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=4</string>
@@ -853,7 +853,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_BUFFER_bare.adl</string>
+                    <string>softGlueZynq_BUFFER_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=1</string>
@@ -877,7 +877,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_BUFFER_bare.adl</string>
+                    <string>softGlueZynq_BUFFER_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=2</string>
@@ -901,7 +901,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_BUFFER_bare.adl</string>
+                    <string>softGlueZynq_BUFFER_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=3</string>
@@ -925,7 +925,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_BUFFER_bare.adl</string>
+                    <string>softGlueZynq_BUFFER_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),N=4</string>
@@ -1151,10 +1151,10 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <enum>Menu</enum>
                 </property>
                 <property name="labels">
-                    <string>all softGlue</string>
+                    <string>all softGlueZynq</string>
                 </property>
                 <property name="files">
-                    <string>softGlueAll.adl</string>
+                    <string>softGlueZynqAll.adl</string>
                 </property>
                 <property name="args">
                     <string>P=$(P),H=$(H)</string>
@@ -1193,10 +1193,10 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <enum>Menu</enum>
                 </property>
                 <property name="labels">
-                    <string>all softGlue</string>
+                    <string>all softGlueZynq</string>
                 </property>
                 <property name="files">
-                    <string>softGlueAllButIO_label.adl</string>
+                    <string>softGlueZynqAllButIO_label.adl</string>
                 </property>
                 <property name="args">
                     <string>P=$(P),H=$(H)</string>
@@ -1223,7 +1223,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_10MHZ_CK_bare.adl</string>
+                    <string>softGlueZynq_10MHZ_CK_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H)</string>
@@ -1247,7 +1247,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_40MHZ_CK_bare.adl</string>
+                    <string>softGlueZynq_40MHZ_CK_bare.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H)</string>

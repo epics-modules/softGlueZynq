@@ -37,7 +37,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_Input.adl</string>
+                <string>softGlueZynq_Input.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),SIG=nDIFF-$(N)_IN1</string>
@@ -61,7 +61,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_Input.adl</string>
+                <string>softGlueZynq_Input.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),SIG=nDIFF-$(N)_IN2</string>
@@ -317,7 +317,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_Output.adl</string>
+                <string>softGlueZynq_Output.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),SIG=nDIFF-$(N)_OUT</string>

@@ -153,7 +153,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_Input.adl</string>
+                <string>softGlueZynq_Input.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),SIG=shiftM_CLK</string>
@@ -253,7 +253,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_Input.adl</string>
+                <string>softGlueZynq_Input.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),SIG=SIAO-1_IN</string>
@@ -1000,7 +1000,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     </rect>
                 </property>
                 <property name="filename">
-                    <string>softGlue_Output.adl</string>
+                    <string>softGlueZynq_Output.adl</string>
                 </property>
                 <property name="macro">
                     <string>P=$(P),H=$(H),SIG=AISO-1_OUT</string>
@@ -1321,7 +1321,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlue_Output.adl</string>
+                <string>softGlueZynq_Output.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),SIG=AISO-2_OUT</string>
