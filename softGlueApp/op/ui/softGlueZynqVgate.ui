@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>634</x>
+            <y>276</y>
+            <width>485</width>
+            <height>390</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(218, 218, 218, 255);}
+QPushButton::menu-indicator {image: url(none.png); width: 0}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caInclude" name="caInclude_0">
+            <property name="geometry">
+                <rect>
+                    <x>9</x>
+                    <y>203</y>
+                    <width>469</width>
+                    <height>160</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>9</x>
+                    <y>203</y>
+                    <width>467</width>
+                    <height>158</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlueZynq_UpDnCntr_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string> P=$(P),H=$(H),N=2</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_1">
+            <property name="geometry">
+                <rect>
+                    <x>9</x>
+                    <y>14</y>
+                    <width>469</width>
+                    <height>160</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>9</x>
+                    <y>14</y>
+                    <width>467</width>
+                    <height>158</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlueZynq_UpDnCntr_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string> P=$(P),H=$(H),N=1</string>
+            </property>
+        </widget>
+        <zorder>caInclude_0</zorder>
+        <zorder>caInclude_1</zorder>
+    </widget>
+</widget>
+</ui>
