@@ -1,0 +1,318 @@
+
+file {
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_MUX2_bare_label.adl"
+	version=030107
+}
+display {
+	object {
+		x=612
+		y=259
+		width=411
+		height=91
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+composite {
+	object {
+		x=0
+		y=19
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN0"
+}
+composite {
+	object {
+		x=0
+		y=41
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN1"
+}
+composite {
+	object {
+		x=0
+		y=64
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_SEL"
+}
+polyline {
+	object {
+		x=153
+		y=54
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,55)
+		(154,55)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=32
+		width=12
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(164,33)
+		(154,33)
+	}
+}
+rectangle {
+	object {
+		x=164
+		y=22
+		width=82
+		height=43
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+text {
+	object {
+		x=171
+		y=27
+		width=15
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IN0"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=184
+		y=53
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SEL"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=204
+		y=63
+		width=2
+		height=17
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(205,64)
+		(205,79)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=77
+		width=54
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(206,78)
+		(154,78)
+	}
+}
+polyline {
+	object {
+		x=245
+		y=31
+		width=14
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(258,32)
+		(246,32)
+	}
+}
+text {
+	object {
+		x=221
+		y=24
+		width=17
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="OUT"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=254
+		y=18
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_OUT"
+}
+text {
+	object {
+		x=171
+		y=47
+		width=15
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IN1"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=189
+		y=39
+		width=35
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="MUX2-$(N)"
+}
+rectangle {
+	object {
+		x=186
+		y=36
+		width=45
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+"text entry" {
+	object {
+		x=0
+		y=0
+		width=410
+		height=16
+	}
+	control {
+		chan="$(P)$(H)MUX2-$(N)_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
+}
