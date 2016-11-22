@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synAppsSVN/support/softGlue/softGlueApp/op/adl/softGlue_MUX4_bare.adl"
+	name="/home/oxygen/MOONEY/epics/synAppsSVN/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_MUX4_bare.adl"
 	version=030104
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN0"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN0"
 }
 composite {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN1"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN1"
 }
 composite {
 	object {
@@ -115,7 +115,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_SEL"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_SEL"
 }
 composite {
 	object {
@@ -125,7 +125,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN2"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN2"
 }
 composite {
 	object {
@@ -135,7 +135,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN3"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN3"
 }
 composite {
 	object {
@@ -372,7 +372,7 @@ composite {
 						height=26
 					}
 					"composite name"=""
-					"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_OUT"
+					"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=MUX2-$(N)_OUT"
 				}
 			}
 		}

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_OR_bare_label.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_OR_bare_label.adl"
 	version=030107
 }
 display {
@@ -119,7 +119,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=OR-$(N)_IN1"
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=OR-$(N)_IN1"
 		}
 		composite {
 			object {
@@ -129,7 +129,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=OR-$(N)_IN2"
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=OR-$(N)_IN2"
 		}
 		polyline {
 			object {
@@ -245,7 +245,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=OR-$(N)_OUT"
+			"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=OR-$(N)_OUT"
 		}
 		text {
 			object {

@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_QuadDec_bare.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_QuadDec_bare.adl"
 	version=030107
 }
 display {
@@ -104,7 +104,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_B"
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_B"
 		}
 		composite {
 			object {
@@ -114,7 +114,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_A"
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_A"
 		}
 		polyline {
 			object {
@@ -251,7 +251,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_STEP"
+			"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_STEP"
 		}
 		composite {
 			object {
@@ -270,7 +270,7 @@ composite {
 						height=26
 					}
 					"composite name"=""
-					"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_CLOCK"
+					"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_CLOCK"
 				}
 				polyline {
 					object {
@@ -344,7 +344,7 @@ composite {
 						height=26
 					}
 					"composite name"=""
-					"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_DIR"
+					"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_DIR"
 				}
 			}
 		}
@@ -356,7 +356,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_MISSCLR"
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_MISSCLR"
 		}
 		polyline {
 			object {
@@ -413,7 +413,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_MISS"
+			"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=QuadDec-$(N)_MISS"
 		}
 		text {
 			object {

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_UpDnCntr8_bare.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_UpDnCntr8_bare.adl"
 	version=030107
 }
 display {
@@ -343,7 +343,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_CLEAR"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_CLEAR"
 }
 composite {
 	object {
@@ -353,7 +353,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_ENABLE"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_ENABLE"
 }
 composite {
 	object {
@@ -363,7 +363,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_CLOCK"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_CLOCK"
 }
 composite {
 	object {
@@ -373,7 +373,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_UPDOWN"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_UPDOWN"
 }
 composite {
 	object {
@@ -383,7 +383,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_LOAD"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_LOAD"
 }
 text {
 	object {
@@ -522,7 +522,7 @@ composite {
 				height=26
 			}
 			"composite name"=""
-			"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_Q8"
+			"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_Q8"
 		}
 	}
 }
@@ -564,7 +564,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_C8"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=UpDnCntr-$(N)_C8"
 }
 "text update" {
 	object {

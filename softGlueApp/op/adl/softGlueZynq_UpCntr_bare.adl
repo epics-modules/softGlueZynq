@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_UpCntr_bare.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_UpCntr_bare.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLEAR"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLEAR"
 }
 composite {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpCntr-$(N)_ENABLE"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpCntr-$(N)_ENABLE"
 }
 composite {
 	object {
@@ -115,7 +115,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLOCK"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLOCK"
 }
 polyline {
 	object {

@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_PixelTrig_bare.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_PixelTrig_bare.adl"
 	version=030107
 }
 display {
@@ -254,7 +254,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_CLEAR"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_CLEAR"
 }
 composite {
 	object {
@@ -264,7 +264,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_EN"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_EN"
 }
 composite {
 	object {
@@ -274,7 +274,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_CLOCK"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_CLOCK"
 }
 composite {
 	object {
@@ -284,7 +284,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_MISSCLR"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_MISSCLR"
 }
 text {
 	object {
@@ -411,7 +411,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_LOAD"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_LOAD"
 }
 polyline {
 	object {
@@ -450,7 +450,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_A1"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_A1"
 }
 polyline {
 	object {
@@ -489,7 +489,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_B1"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_B1"
 }
 polyline {
 	object {
@@ -528,7 +528,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_A2"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_A2"
 }
 polyline {
 	object {
@@ -567,7 +567,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_B2"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_B2"
 }
 text {
 	object {
@@ -805,7 +805,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_TRIG"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_TRIG"
 }
 polyline {
 	object {
@@ -845,7 +845,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_MISS"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_MISS"
 }
 composite {
 	object {

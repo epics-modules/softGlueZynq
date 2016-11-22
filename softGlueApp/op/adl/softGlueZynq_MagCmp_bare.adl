@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_MagCmp_bare.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_MagCmp_bare.adl"
 	version=030107
 }
 display {
@@ -95,7 +95,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Input.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_SAMPLE"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_SAMPLE"
 }
 polyline {
 	object {
@@ -178,7 +178,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_AGTB"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_AGTB"
 }
 composite {
 	object {
@@ -253,7 +253,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_ANEB"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_ANEB"
 }
 polyline {
 	object {
@@ -293,7 +293,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_BCK"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_BCK"
 }
 polyline {
 	object {
@@ -333,7 +333,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlue_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_BDIR"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=MagCmp-$(N)_BDIR"
 }
 "related display" {
 	object {
@@ -344,7 +344,7 @@ composite {
 	}
 	display[0] {
 		label="help"
-		name="softGlue_MagCmp_help.adl"
+		name="softGlueZynq_MagCmp_help.adl"
 	}
 	clr=0
 	bclr=63

@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_XOR.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_XOR.adl"
 	version=030107
 }
 display {
@@ -135,7 +135,7 @@ composite {
 		height=67
 	}
 	"composite name"=""
-	"composite file"="softGlue_XOR_bare_label.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_XOR_bare_label.adl;P=$(P),H=$(H),N=$(N)"
 }
 text {
 	object {

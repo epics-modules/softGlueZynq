@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/xxx/xxxApp/op/adl/softGlue_OutputDebug.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/xxx/xxxApp/op/adl/softGlueZynq_OutputDebug.adl"
 	version=030103
 }
 display {

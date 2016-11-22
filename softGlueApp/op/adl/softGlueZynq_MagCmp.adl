@@ -1,6 +1,6 @@
 
 file {
-	name="/home/oxygen/MOONEY/epics/synApps/support/softGlue/softGlueApp/op/adl/softGlue_MagCmp.adl"
+	name="/home/oxygen/MOONEY/epics/synApps/support/softGlueZynq/softGlueZynqApp/op/adl/softGlueZynq_MagCmp.adl"
 	version=030107
 }
 display {
@@ -147,5 +147,5 @@ composite {
 		height=140
 	}
 	"composite name"=""
-	"composite file"="softGlue_MagCmp_bare_label.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_MagCmp_bare_label.adl;P=$(P),H=$(H),N=$(N)"
 }

@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlue_PixelTrig.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_PixelTrig.adl"
 	version=030107
 }
 display {
@@ -135,7 +135,7 @@ composite {
 		height=270
 	}
 	"composite name"=""
-	"composite file"="softGlue_PixelTrig_bare_label.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_PixelTrig_bare_label.adl;P=$(P),H=$(H),N=$(N)"
 }
 text {
 	object {
