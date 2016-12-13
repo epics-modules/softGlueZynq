@@ -474,16 +474,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>50 MHZ Internal Clock;20 MHZ Internal Clock;10 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;PixelTrigger 1;PixelTrigger 2</string>
+                <string>50 MHZ Internal Clock;20 MHZ Internal Clock;10 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;PixelTrigger 1;PixelTrigger 2;PixelFIFO 1;PixelFIFO 2</string>
             </property>
             <property name="files">
-                <string>softGlueZynq_50MHZ_CK_bare_label.adl;softGlueZynq_20MHZ_CK_bare_label.adl;softGlueZynq_10MHZ_CK_bare_label.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_HistScal.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelTrig.adl</string>
+                <string>softGlueZynq_50MHZ_CK_bare_label.adl;softGlueZynq_20MHZ_CK_bare_label.adl;softGlueZynq_10MHZ_CK_bare_label.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_HistScal.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelFIFO.adl;softGlueZynq_PixelFIFO.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
+                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false;false;false;false;false</string>
+                <string>false;false;false;false;false;false;false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caFrame" name="caFrame_2">
