@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynqMenu.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqMenu.adl"
 	version=030107
 }
 display {
@@ -535,6 +535,16 @@ composite {
 	display[9] {
 		label="PixelTrigger 2"
 		name="softGlueZynq_PixelTrig.adl"
+		args="P=$(P),H=$(H),N=2"
+	}
+	display[10] {
+		label="PixelFIFO 1"
+		name="softGlueZynq_PixelFIFO.adl"
+		args="P=$(P),H=$(H),N=1"
+	}
+	display[11] {
+		label="PixelFIFO 2"
+		name="softGlueZynq_PixelFIFO.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	clr=0

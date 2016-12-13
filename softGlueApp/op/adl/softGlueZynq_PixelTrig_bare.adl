@@ -1,12 +1,12 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_PixelTrig_bare.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_PixelTrig_bare.adl"
 	version=030107
 }
 display {
 	object {
-		x=658
-		y=46
+		x=708
+		y=420
 		width=467
 		height=283
 	}
@@ -317,7 +317,7 @@ polyline {
 }
 "text entry" {
 	object {
-		x=145
+		x=113
 		y=261
 		width=80
 		height=20
@@ -332,15 +332,15 @@ polyline {
 }
 text {
 	object {
-		x=228
+		x=253
 		y=240
-		width=60
+		width=35
 		height=10
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="TRIG PRESET"
+	textix="PRESET"
 	align="horiz. centered"
 }
 polyline {
@@ -361,13 +361,13 @@ polyline {
 }
 "text entry" {
 	object {
-		x=246
-		y=261
+		x=245
+		y=260
 		width=50
 		height=20
 	}
 	control {
-		chan="$(P)$(H)pixelTrig-$(N)_PRETRIG"
+		chan="$(P)$(H)pixelTrig-$(N)_PREPIX"
 		clr=14
 		bclr=51
 	}
@@ -1100,4 +1100,101 @@ polyline {
 		(162,226)
 		(109,225)
 	}
+}
+"text entry" {
+	object {
+		x=210
+		y=260
+		width=30
+		height=20
+	}
+	control {
+		chan="$(P)$(H)pixelTrig-$(N)_PRETRIG"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=216
+		y=227
+		width=66
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="PIXEL"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=215
+		y=240
+		width=30
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SIZE"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=223
+		y=253
+		width=2
+		height=15
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(224,254)
+		(224,267)
+	}
+}
+composite {
+	object {
+		x=310
+		y=193
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelTrig_ENTRIG"
+}
+polyline {
+	object {
+		x=293
+		y=206
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(311,207)
+		(294,207)
+	}
+}
+text {
+	object {
+		x=259
+		y=201
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ENTRIG"
+	align="horiz. centered"
 }

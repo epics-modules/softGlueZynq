@@ -1,0 +1,325 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_PixelFIFO_bare.adl"
+	version=030107
+}
+display {
+	object {
+		x=486
+		y=745
+		width=460
+		height=125
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=175
+		y=6
+		width=102
+		height=117
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+text {
+	object {
+		x=198
+		y=35
+		width=70
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="PixelFIFO-$(N)"
+}
+rectangle {
+	object {
+		x=192
+		y=32
+		width=80
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+polyline {
+	object {
+		x=276
+		y=22
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,23)
+		(277,23)
+	}
+}
+text {
+	object {
+		x=220
+		y=17
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="10% FULL"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=9
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_FIFO10"
+}
+polyline {
+	object {
+		x=276
+		y=55
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,56)
+		(277,56)
+	}
+}
+text {
+	object {
+		x=220
+		y=50
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="50% FULL"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=42
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_FIFO50"
+}
+polyline {
+	object {
+		x=276
+		y=82
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,83)
+		(277,83)
+	}
+}
+text {
+	object {
+		x=220
+		y=77
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="90% FULL"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=69
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_FIFO90"
+}
+polyline {
+	object {
+		x=276
+		y=110
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,111)
+		(277,111)
+	}
+}
+text {
+	object {
+		x=210
+		y=105
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CHADVDONE"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=97
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_ADVDONE"
+}
+text {
+	object {
+		x=179
+		y=89
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CHADV"
+}
+polyline {
+	object {
+		x=166
+		y=93
+		width=10
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(175,94)
+		(167,94)
+	}
+}
+composite {
+	object {
+		x=10
+		y=80
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_CHADV"
+}
