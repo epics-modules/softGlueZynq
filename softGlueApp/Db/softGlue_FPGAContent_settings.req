@@ -49,6 +49,7 @@ file GateDly_settings.req P=$(P),H=$(H),N=4
 file HistScal_settings.req P=$(P),H=$(H),N=1
 file PixelTrigger_settings.req P=$(P),H=$(H),N=1
 file PixelTrigger_settings.req P=$(P),H=$(H),N=2
+file PixelFIFO_settings.req P=$(P),H=$(H),N=1
 
 # hard-wired OR gates
 $(P)$(H)HW_OR-1_OUT_Signal
@@ -87,6 +88,19 @@ $(P)$(H)FI21_Signal
 $(P)$(H)FI22_Signal
 $(P)$(H)FI23_Signal
 $(P)$(H)FI24_Signal
+
+$(P)$(H)FI25_Signal
+$(P)$(H)FI26_Signal
+$(P)$(H)FI27_Signal
+$(P)$(H)FI28_Signal
+$(P)$(H)FI29_Signal
+$(P)$(H)FI30_Signal
+$(P)$(H)FI31_Signal
+$(P)$(H)FI32_Signal
+$(P)$(H)FI33_Signal
+$(P)$(H)FI34_Signal
+$(P)$(H)FI35_Signal
+$(P)$(H)FI36_Signal
 
 $(P)$(H)FO1_Signal
 $(P)$(H)FO2_Signal

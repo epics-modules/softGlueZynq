@@ -28,6 +28,8 @@ pattern {SIG		ADDR}
 {pixelTrig-2_PRESET		56}
 {pixelTrig-1_ACQTIME	57}
 {pixelTrig-2_ACQTIME	58}
+{pixelTrig-1_PREPIX		59}
+{pixelTrig-2_PREPIX		60}
 }
 
 file "softGlue_InRegister.db"
@@ -63,14 +65,14 @@ pattern {SIG     	ADDR}
 {HistScal-1_S13 	   25}
 {HistScal-1_S14 	   26}
 {HistScal-1_S15 	   27}
-{HistScal-1_S16 	   28}
-{HistScal-1_S17 	   29}
-{HistScal-1_S18 	   30}
-{HistScal-1_S19 	   31}
+#{HistScal-1_S16 	   28}
+#{HistScal-1_S17 	   29}
+#{HistScal-1_S18 	   30}
+#{HistScal-1_S19 	   31}
 
-#{pixelTrig-1_PIXEL		28}
-#{pixelTrig-1_COUNTS		29}
-#{pixelTrig-2_PIXEL		30}
-#{pixelTrig-2_COUNTS		31}
+{pixelTrig-1_PIXEL		28}
+{pixelTrig-1_COUNTS		29}
+{pixelTrig-2_PIXEL		30}
+{pixelTrig-2_COUNTS		31}
 }
 

@@ -12,3 +12,4 @@ $(P)$(H)pixelTrig-$(N)_MISS_Signal
 $(P)$(H)pixelTrig-$(N)_PRESET
 $(P)$(H)pixelTrig-$(N)_PRETRIG
 $(P)$(H)pixelTrig-$(N)_ACQTIME
+$(P)$(H)pixelTrig-$(N)_PREPIX

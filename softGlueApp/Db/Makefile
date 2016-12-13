@@ -22,7 +22,7 @@ DB += softGlue_FPGAInt.db
 DB += analogProc_FPGAContent.db
 DB += analogProc_FPGARegisters.db
 
-DB += MCS.db DMA.db
+DB += MCS.db DMA.db pixelTrigger.db readSoftGlueCounter_ISR.db
 
 DB_INSTALLS += ../softGlue_SignalShow.db  ../softGlue_convenience.db
 

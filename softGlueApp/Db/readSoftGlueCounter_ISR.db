@@ -1,0 +1,88 @@
+# This database is tailored to a specific softGlue circuit
+# macros:
+# P			ioc prefix
+# Q			this instance of readSoftGlueCounter_ISR.db
+# N			num array elements
+
+
+# a (int):	counter1 in [1..5] specifies which UpDown counter to read
+# b (int):	if 1, set array index to zero and set b to zero
+# c (int):	number of values in array
+# d (int):	counter2 in [1..5] specifies which UpDown counter to read
+# e (int):  continuous (0) or one shot (1)
+# vala (int):	output value array
+# valb (int):	array index
+record(aSub, "$(P)$(Q)aSub") {
+	field(PRIO, "HIGH")
+	field(INAM, "readSoftGlueCounter_ISR_init")
+	field(SNAM, "readSoftGlueCounter_ISR")
+	field(FTA, "LONG")
+	field(FTB, "LONG")
+	field(FTC, "LONG")
+	field(FTD, "LONG")
+	field(FTE, "LONG")
+	field(FTVA, "LONG")
+	field(NOVA, "$(N)")
+	field(FTVB, "LONG")
+	field(FTVC, "LONG")
+	field(NOVC, "$(N)")
+}
+
+# Get a copy of the accumulated encoder values array so we can plot it
+record(acalcout, "$(P)$(Q)cVals") {
+	field(NELM, "$(N)")
+	field(NUSE, "$(N)")
+	field(INAA, "$(P)$(Q)aSub.VALA")
+	field(INBB, "$(P)$(Q)aSub.VALC")
+	field(FLNK, "$(P)$(Q)aSub")
+	field(CALC, "0")
+}
+
+record(longout, "$(P)$(Q)trackNUSE") {
+	field(OMSL, "closed_loop")
+	field(DOL, "$(P)$(Q)cVals.NUSE CP")
+	field(OUT, "$(P)$(Q)fft.NUSE PP")
+}
+# Python macro will read encoder-value array from AA, and
+# write FFT to BB, time axis to CC.  We want to smooth and display
+# only relevant data.
+record(acalcout, "$(P)$(Q)fft") {
+	field(NELM, "$(N)")
+	field(NUSE, "$(N)")
+	field(A, "20")
+	field(INAA, "$(P)$(Q)aSub.VALA")
+	field(INPD, "$(P)$(Q)fft.NUSE")
+	# We don't want first element to be zero; it messes up log plot
+	#field(CALC, "bb+bb[1,1]")
+	field(CALC, "nsmoo(bb+bb[1,1],d/100)[0,d/2-1]")
+}
+
+record(bo, "$(P)$(Q)reset") {
+	field(DOL, "1")
+	field(OUT, "$(P)$(Q)aSub.B PP")
+}
+
+record(bo, "$(P)$(Q)oneshot") {
+	field(ZNAM, "continuous")
+	field(ONAM, "oneshot")
+	field(OUT, "$(P)$(Q)aSub.E PP")
+}
+record(calcout, "$(P)$(Q)acquireDone") {
+	field(SDIS, "$(P)$(Q)acquire")
+	field(DISV, "0")
+	field(INPA, "$(P)$(Q)aSub.VALB CP")
+	field(INPB, "$(P)$(Q)cVals.NUSE")
+	field(CALC, "a>=b")
+	field(OOPT, "Transition To Non-zero")
+	field(DOPT, "Use OCAL")
+	field(OCAL, "0")
+	field(OUT, "$(P)$(Q)acquire CA")
+}
+record(busy, "$(P)$(Q)acquire") {
+	field(OUT, "$(P)$(Q)doAcquire.PROC PP")
+}
+record(bo, "$(P)$(Q)doAcquire") {
+	field(SDIS, "$(P)$(Q)acquire")
+	field(DISV, "0")
+	field(OUT, "$(P)$(Q)reset.PROC PP")
+}

@@ -142,6 +142,7 @@ pattern {SIG		ADDR}
 {GateDly-4_CLK		225}
 
 {HistScal-1_DET		226}
+{PixelFIFO-1_CHADV	230}
 
 {FO1				231}
 {FO2				232}
@@ -281,6 +282,30 @@ pattern {SIG   	ADDR}
 {pixelTrig-2_TRIG	78}
 {pixelTrig-2_MISS	79}
 
+{scalersToFIFO-1_WRTCK	80}
+# enabled combined trigger out
+{PixelTrig_ENTRIG		81}
+{PixelFIFO-1_FIFO10		82}
+{PixelFIFO-1_FIFO50		83}
+{PixelFIFO-1_FIFO90		84}
+{PixelFIFO-1_ADVDONE	85}
+
+{FI25			86}
+{FI26			87}
+{FI27			88}
+{FI28			89}
+{FI29			90}
+{FI30			91}
+{FI31			92}
+{FI32			93}
+{FI33			94}
+{FI34			95}
+{FI35			96}
+{FI36			97}
+
+# debug
+{PixelTrig_ENQ	98}
+{PixelFIFO-1_ROOM	99}
 }
 
 #file "softGlue_FieldInput.db"
@@ -446,6 +471,7 @@ pattern {SIG N}
 {HistScal-1 80}
 {HW_OR-1 80}
 {HW_OR-2 80}
+{PixelFIFO-1 80}
 }
 
 # pinout:
