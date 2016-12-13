@@ -845,6 +845,9 @@ int softGlueRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 falling
 }
 
 /* This function runs in a separate thread.  It waits for an interrupt. */
+volatile int drvZynqISRState = 0;
+epicsExportAddress(int, drvZynqISRState);
+
 STATIC void dispatchThread(drvZynqPvt *pPvt)
 {
 	epicsUInt32 risingMask=0, fallingMask=0;
@@ -860,6 +863,7 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 	char name[100];
 
 	/* initialize interrupt infrastructure */
+	drvZynqISRState = 0;
 
 	/* enable interrupt generation in FPGA */
 	pPvt->regs->globalEnable = 1;
@@ -876,17 +880,21 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 	fclose(uioName_fd);
 
 	uio_fd = open("/dev/uio0", O_RDWR);
+	drvZynqISRState = 1;
 
 	while(1) {
 
 		/*  Enable interrupts */
+		drvZynqISRState = 2;
 		if (drvZynqDebug) printf("drvZynq:dispatchThread: enabling interrupts\n");
 		write(uio_fd, (void *)&reenable, sizeof(int));
 
+		drvZynqISRState = 3;
 		/*  Wait for an interrupt */
 		if (drvZynqDebug) printf("drvZynq:dispatchThread: calling read(uio_fd...)\n");
 		read(uio_fd, (void *)&pending,sizeof(int));
 		
+		drvZynqISRState = 4;
 		/* Respond to interrupt */
 		if (drvZynqDebug) {
 			printf("drvZynq:dispatchThread: responding to interrupt\n");
@@ -920,7 +928,9 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 		}
 
 
+		drvZynqISRState = 5;
 		if (!handled) {
+			drvZynqISRState = 6;
 			if (drvZynqDebug)
 				printf("drvZynq:dispatchThread: IntMask=0x%x\n", risingMask);
 
@@ -945,6 +955,8 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 				}
 				pasynManager->interruptEnd(pPvt->interruptPvt);
 			}
+
+			drvZynqISRState = 7;
 			/* If intFunc disabled any interrupt bits, cause them to show their new states. */
 			if (pPvt->disabledIntMask) {
 				epicsUInt32 maskBit;
@@ -975,10 +987,45 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 			}
 		}
 
+		drvZynqISRState = 8;
 		/* Clear the interrupt bits we handled (should handle more than one simultaneously asserted interrupt bit) */
 		pPvt->regs->acknowledge = pPvt->regs->risingIntStatus;
 	}
 }
+
+int debugISR(int dummy)
+{
+	int pending = 0;
+	int reenable = 1;
+	int uio_fd;
+	FILE *uioName_fd;
+	char name[100];
+
+	/* Make sure we have UIO */
+	uioName_fd = fopen("/sys/class/uio/uio0/name", "r");
+	if (uioName_fd==NULL) {
+		printf("drvZynq:dispatchThread: Failed to open /sys/class/uio/uio0/name\n");
+		return(0);
+	}
+	fgets(name, 100, uioName_fd);
+	if (drvZynqDebug) printf("drvZynq:debugISR: uio0.name='%s'\n", name);
+	fclose(uioName_fd);
+
+	uio_fd = open("/dev/uio0", O_RDWR);
+
+	while(1) {
+
+		/*  Enable interrupts */
+		if (drvZynqDebug) printf("drvZynq:dispatchThread: enabling interrupts\n");
+		write(uio_fd, (void *)&reenable, sizeof(int));
+
+		/*  Wait for an interrupt */
+		if (drvZynqDebug) printf("drvZynq:dispatchThread: calling read(uio_fd...)\n");
+		read(uio_fd, (void *)&pending,sizeof(int));
+		if (drvZynqDebug) printf("drvZynq:dispatchThread: read returned. pending=%d\n", pending);
+	}
+	return(0);
+}	
 
 /* I don't know what these two functions are for.  I'm just including them because an example did. */
 STATIC asynStatus setInterruptUInt32D(void *drvPvt, asynUser *pasynUser, epicsUInt32 mask,
@@ -1172,12 +1219,21 @@ STATIC void initSRCallFunc(const iocshArgBuf *args) {
 	initZynqSingleRegisterPort(args[0].sval, args[1].ival);
 }
 
+/* int debugISR(int dummy) */
+STATIC const iocshArg debugISRArg0 = { "dummy",			iocshArgInt};
+STATIC const iocshArg * const debugISRArgs[1] = {&debugISRArg0};
+STATIC const iocshFuncDef debugISRFuncDef = {"debugISR",1,debugISRArgs};
+STATIC void debugISRCallFunc(const iocshArgBuf *args) {
+	debugISR(args[0].ival);
+}
+
 void ZynqRegister(void)
 {
 	iocshRegister(&initZynqInterruptsFuncDef,initZynqInterruptsCallFunc);
 	iocshRegister(&initSRFuncDef,initSRCallFunc);
 	iocshRegister(&testReadSpeedFuncDef,testReadSpeedCallFunc);
 	iocshRegister(&testUIOFuncDef,testUIOCallFunc);
+	iocshRegister(&debugISRFuncDef,debugISRCallFunc);
 }
 
 epicsExportRegistrar(ZynqRegister);

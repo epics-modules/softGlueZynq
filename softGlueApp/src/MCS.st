@@ -101,6 +101,9 @@ ss MCSread {
 		} state waitForStart
 		when () {
 			%%pVar->doRead = *(pVar->pcnt) > 7;
+			if (MCSDebug>5) {
+				%%printf("MCSread: *(pVar->pcnt)=%d\n", *(pVar->pcnt));
+			}
 		} state checkWait
 	}
 
@@ -123,7 +126,8 @@ ss MCSread {
 
 	state readMore {
 		when () {
-			%%for (pVar->ii=0; (*(pVar->pcnt) > 20) && (pVar->ii) < 100000; (pVar->ii)++) {
+			%%for (pVar->ii=0; (*(pVar->pcnt) > MAX_SIGNALS) && (pVar->ii) < 100000; (pVar->ii)++) {
+			%%	pVar->newData = 1;
 			%%	for (pVar->i=0; pVar->i < MAX_SIGNALS; (pVar->i)++) {
 			%%		pVar->s[pVar->i][pVar->currIx] = *(pVar->preg) & 0x7fffffff;
 			%%	}
@@ -140,7 +144,6 @@ ss MCSread {
 			%%			pVar->stop = 1;
 			%%	}
 			%%}
-			newData = 1;
 		} state read
 	}
 
@@ -158,9 +161,10 @@ ss MCSwrite {
 			if (newData) {
 				for (j=0; j<MAX_SIGNALS; j++) pvPut(s[j]);
 				newData = 0;
+				if (MCSDebug) printf("MCSwrite: newData\n");
 			}
-			if (MCSDebug) {
-				printf("MCSwrite:ix=%d, s[0][ix]=%d, s[1][ix]=%d\n", currIx, s[0][currIx], s[1][currIx]);
+			if (MCSDebug>5 && currIx>1) {
+				printf("MCSwrite:ix=%d, s[0][ix]=%d, s[1][ix]=%d\n", currIx-1, s[0][currIx-1], s[1][currIx-1]);
 			}
 			if (stop) _stop = 1;
 		} state start

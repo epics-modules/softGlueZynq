@@ -1,6 +1,9 @@
 registrar(ZynqRegister)
 variable(drvZynqDebug, int)
+variable(drvZynqISRState, int)
+
 variable(devAsynSoftGlueDebug, int)
+variable(pixelTriggerDebug, int)
 device(stringout, INST_IO, asynSoftGlue, "softGlue")
 device(bo, INST_IO, softGlueShow, "softGlueShow")
 device(longout, INST_IO, softGlueSigNum, "softGlueSigNum")
@@ -20,3 +23,13 @@ device(mbbi,VME_IO,devMbbiA32Zed,"Zed")
 device(mbbo,VME_IO,devMbboA32Zed,"Zed")
 device(waveform,VME_IO,devWaveformA32Zed,"Zed")
 registrar(ZedRegister)
+
+# asub pixelTrigger
+variable(pixelTriggerDebug, int)
+registrar(pixelTriggerRegister)
+registrar(pixelTriggerISRRegistrar)
+
+# asub readSoftGlueCounter_ISR
+registrar(RSCsoftGlueISRRegistrar)
+registrar(readSoftGlueCounter_ISRRegister)
+variable(readSoftGlueCounter_ISRDebug, int)
