@@ -240,6 +240,11 @@ display {
 		name="softGlueZynq_UpDnCntr.adl"
 		args="P=$(P),H=$(H),N=5"
 	}
+	display[13] {
+		label="Frequency Counter 1"
+		name="softGlueZynq_FreqCntr.adl"
+		args="P=$(P),H=$(H),N=1"
+	}
 	clr=0
 	bclr=63
 	label="-Counters"
