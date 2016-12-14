@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>418</width>
+    <height>670</height>
+   </rect>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#centralWidget {background: rgb(200, 200, 200);}
+
+caTable {
+       font: 10pt;
+       background: cornsilk;
+       alternate-background-color: wheat;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <widget class="caCamera" name="cacamera">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALI</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCamera" name="cacamera_2">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALJ</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCamera" name="cacamera_3">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALK</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCamera" name="cacamera_4">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>170</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALL</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCamera" name="cacamera_5">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALM</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCamera" name="cacamera_6">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>330</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALN</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caCamera" name="cacamera_7">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>200</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.VALO</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTrigger.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTrigger_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>caCamera</class>
+   <extends>QWidget</extends>
+   <header>caCamera</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

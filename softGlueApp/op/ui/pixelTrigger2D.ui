@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>498</width>
-    <height>400</height>
+    <height>424</height>
    </rect>
   </property>
   <property name="autoFillBackground">
@@ -56,16 +56,57 @@ caTable {
     <property name="Zoom" stdset="0">
      <enum>caCamera::Yes</enum>
     </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
     <property name="minLevel">
      <string notr="true"/>
     </property>
-    <property name="ColorMap" stdset="0">
-     <enum>caCamera::grey</enum>
+   </widget>
+   <widget class="caRelatedDisplay" name="carelateddisplay">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>400</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="label">
+     <string notr="true">all</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>18</red>
+      <green>164</green>
+      <blue>10</blue>
+     </color>
+    </property>
+    <property name="labels">
+     <string notr="true">all</string>
+    </property>
+    <property name="files">
+     <string notr="true">pixelTrigger2D_8.ui</string>
+    </property>
+    <property name="args">
+     <string notr="true">P=$(P),Q=$(Q)</string>
     </property>
    </widget>
   </widget>
  </widget>
  <customwidgets>
+  <customwidget>
+   <class>caRelatedDisplay</class>
+   <extends>QWidget</extends>
+   <header>caRelatedDisplay</header>
+  </customwidget>
   <customwidget>
    <class>caCamera</class>
    <extends>QWidget</extends>

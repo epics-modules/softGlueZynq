@@ -91,16 +91,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>UpCounter 1;UpCounter 2;UpCounter 3;UpCounter 4;DownCounter 1;DownCounter 2;DownCounter 3;DownCounter 4;UpDown Counter 1;UpDown Counter 2;UpDown Counter 3;UpDown Counter 4;UpDown Counter 5</string>
+                <string>UpCounter 1;UpCounter 2;UpCounter 3;UpCounter 4;DownCounter 1;DownCounter 2;DownCounter 3;DownCounter 4;UpDown Counter 1;UpDown Counter 2;UpDown Counter 3;UpDown Counter 4;UpDown Counter 5;Frequency Counter 1</string>
             </property>
             <property name="files">
-                <string>softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl</string>
+                <string>softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_FreqCntr.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=5</string>
+                <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=5;P=$(P),H=$(H),N=1</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false;false;false;false;false;false;false;false</string>
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caRelatedDisplay" name="caRelatedDisplay_2">
@@ -257,7 +257,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>10</x>
                     <y>20</y>
-                    <width>50</width>
+                    <width>54</width>
                     <height>10</height>
                 </rect>
             </property>
@@ -652,7 +652,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <rect>
                         <x>75</x>
                         <y>35</y>
-                        <width>20</width>
+                        <width>36</width>
                         <height>20</height>
                     </rect>
                 </property>
