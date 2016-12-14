@@ -1,3 +1,4 @@
+$(P)$(H)QuadDec-$(N)_desc
 $(P)$(H)QuadDec-$(N)_A_Signal
 $(P)$(H)QuadDec-$(N)_B_Signal
 $(P)$(H)QuadDec-$(N)_CLOCK_Signal

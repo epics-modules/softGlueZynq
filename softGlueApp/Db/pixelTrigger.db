@@ -12,7 +12,9 @@ record(aSub, "$(P)$(Q)pixelTrigger") {
   field(FTB, "LONG")
   field(FTC, "LONG")
   field(FTD, "LONG")
-  
+  field(FTE, "DOUBLE")
+  field(FTF, "LONG")
+
   field(FTVA, "LONG")
   field(NOVA, "$(N)")
   field(FTVB, "LONG")

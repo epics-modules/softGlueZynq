@@ -187,35 +187,5 @@ $(P)$(H)FO8_Signal
 #$(P)$(H)FO47_Signal
 #$(P)$(H)FO48_Signal
 
-# circuit and element descriptions
+# circuit description
 $(P)$(H)circuit_desc
-$(P)$(H)40MHZ_CLOCK_desc
-$(P)$(H)10MHZ_CLOCK_desc
-$(P)$(H)AND-1_desc
-$(P)$(H)AND-2_desc
-$(P)$(H)AND-3_desc
-$(P)$(H)AND-4_desc
-$(P)$(H)BUFFER-1_desc
-$(P)$(H)BUFFER-2_desc
-$(P)$(H)BUFFER-3_desc
-$(P)$(H)BUFFER-4_desc
-$(P)$(H)DEMUX2-1_desc
-$(P)$(H)DEMUX2-2_desc
-$(P)$(H)DFF-1_desc
-$(P)$(H)DFF-2_desc
-$(P)$(H)DFF-3_desc
-$(P)$(H)DFF-4_desc
-$(P)$(H)DivByN-1_desc
-$(P)$(H)DivByN-2_desc
-$(P)$(H)DivByN-3_desc
-$(P)$(H)DivByN-4_desc
-$(P)$(H)DnCntr-1_desc
-$(P)$(H)DnCntr-2_desc
-$(P)$(H)DnCntr-3_desc
-$(P)$(H)DnCntr-4_desc
-$(P)$(H)MUX2-1_desc
-$(P)$(H)MUX2-2_desc
-$(P)$(H)OR-1_desc
-$(P)$(H)OR-2_desc
-$(P)$(H)OR-3_desc
-$(P)$(H)OR-4_desc

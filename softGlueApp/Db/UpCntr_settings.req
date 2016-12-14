@@ -1,3 +1,4 @@
+$(P)$(H)UpCntr-$(N)_desc
 $(P)$(H)UpCntr-$(N)_CLEAR_Signal
 $(P)$(H)UpCntr-$(N)_CLOCK_Signal
 $(P)$(H)UpCntr-$(N)_ENABLE_Signal

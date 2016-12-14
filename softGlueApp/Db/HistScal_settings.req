@@ -1,3 +1,4 @@
+$(P)$(H)HistScal-$(N)_desc
 $(P)$(H)HistScal-$(N)_EN_Signal
 $(P)$(H)HistScal-$(N)_SYNC_Signal
 $(P)$(H)HistScal-$(N)_CLK_Signal

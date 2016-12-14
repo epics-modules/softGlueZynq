@@ -1,3 +1,4 @@
+$(P)$(H)Shift-$(N)_desc
 $(P)$(H)Shift-$(N)_LOADVAL
 $(P)$(H)Shift-$(N)_D_Signal
 $(P)$(H)Shift-$(N)_CLOCK_Signal

@@ -64,11 +64,13 @@ pattern {SIG     	ADDR}
 {HistScal-1_S12 	   24}
 {HistScal-1_S13 	   25}
 {HistScal-1_S14 	   26}
-{HistScal-1_S15 	   27}
+#{HistScal-1_S15 	   27}
 #{HistScal-1_S16 	   28}
 #{HistScal-1_S17 	   29}
 #{HistScal-1_S18 	   30}
 #{HistScal-1_S19 	   31}
+
+{FreqCntr-1_COUNTS 	   27}
 
 {pixelTrig-1_PIXEL		28}
 {pixelTrig-1_COUNTS		29}

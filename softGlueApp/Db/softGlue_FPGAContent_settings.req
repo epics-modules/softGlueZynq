@@ -51,6 +51,8 @@ file PixelTrigger_settings.req P=$(P),H=$(H),N=1
 file PixelTrigger_settings.req P=$(P),H=$(H),N=2
 file PixelFIFO_settings.req P=$(P),H=$(H),N=1
 
+file FreqCntr_settings.req P=$(P),H=$(H),N=1
+
 # hard-wired OR gates
 $(P)$(H)HW_OR-1_OUT_Signal
 $(P)$(H)HW_OR-2_OUT_Signal
@@ -127,55 +129,10 @@ $(P)$(H)FO22_Signal
 $(P)$(H)FO23_Signal
 $(P)$(H)FO24_Signal
 
-# circuit and element descriptions
+# circuit description
 $(P)$(H)circuit_desc
 $(P)$(H)50MHZ_CLOCK_desc
 $(P)$(H)20MHZ_CLOCK_desc
 $(P)$(H)10MHZ_CLOCK_desc
-$(P)$(H)AND-1_desc
-$(P)$(H)AND-2_desc
-$(P)$(H)AND-3_desc
-$(P)$(H)AND-4_desc
-$(P)$(H)BUFFER-1_desc
-$(P)$(H)BUFFER-2_desc
-$(P)$(H)BUFFER-3_desc
-$(P)$(H)BUFFER-4_desc
-$(P)$(H)DEMUX2-1_desc
-$(P)$(H)DEMUX2-2_desc
-$(P)$(H)DFF-1_desc
-$(P)$(H)DFF-2_desc
-$(P)$(H)DFF-3_desc
-$(P)$(H)DFF-4_desc
-$(P)$(H)DivByN-1_desc
-$(P)$(H)DivByN-2_desc
-$(P)$(H)DivByN-3_desc
-$(P)$(H)DivByN-4_desc
-$(P)$(H)DnCntr-1_desc
-$(P)$(H)DnCntr-2_desc
-$(P)$(H)DnCntr-3_desc
-$(P)$(H)DnCntr-4_desc
-$(P)$(H)MUX2-1_desc
-$(P)$(H)MUX2-2_desc
-$(P)$(H)OR-1_desc
-$(P)$(H)OR-2_desc
-$(P)$(H)OR-3_desc
-$(P)$(H)OR-4_desc
-$(P)$(H)UpCntr-1_desc
-$(P)$(H)UpCntr-2_desc
-$(P)$(H)UpCntr-3_desc
-$(P)$(H)UpCntr-4_desc
-$(P)$(H)XOR-1_desc
-$(P)$(H)XOR-2_desc
-
-$(P)$(H)UpDnCntr-1_desc
-$(P)$(H)UpDnCntr-2_desc
-$(P)$(H)UpDnCntr-3_desc
-$(P)$(H)UpDnCntr-4_desc
-#$(P)$(H)UpDnCntr-5_desc
-$(P)$(H)QuadDec-1_desc
-$(P)$(H)QuadDec-2_desc
-#$(P)$(H)MagCmp-1_desc
-$(P)$(H)HistScal-1_desc
-
 $(P)$(H)HW_OR-1_desc
 $(P)$(H)HW_OR-2_desc

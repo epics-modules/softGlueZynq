@@ -1,3 +1,4 @@
+$(P)$(H)DEMUX4-$(N)_desc
 $(P)$(H)DEMUX4-$(N)_IN_Signal
 $(P)$(H)DEMUX4-$(N)_OUT0_Signal
 $(P)$(H)DEMUX4-$(N)_OUT1_Signal

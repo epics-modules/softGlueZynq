@@ -142,6 +142,8 @@ pattern {SIG		ADDR}
 {GateDly-4_CLK		225}
 
 {HistScal-1_DET		226}
+{FreqCntr-1_CLK		227}
+
 {PixelFIFO-1_CHADV	230}
 
 {FO1				231}
@@ -472,6 +474,14 @@ pattern {SIG N}
 {HW_OR-1 80}
 {HW_OR-2 80}
 {PixelFIFO-1 80}
+
+{GateDly-1 80}
+{GateDly-2 80}
+{GateDly-3 80}
+{GateDly-4 80}
+{FreqCntr-1 80}
+{pixelTrig-1 80}
+{pixelTrig-2 80}
 }
 
 # pinout:
