@@ -19,6 +19,9 @@
  *  b       number of X pixels
  *  c       number of Y pixels
  *  d       clear arrays
+ *	e		clock rate counter1
+ *	f		mode
+ *
  * Tim Mooney
  */
 
@@ -41,6 +44,8 @@
 #include <recSup.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
+
+#define MAX(a,b) ((a)>(b)?(a):(b))
 
 volatile int pixelTriggerDebug=0;
 epicsExportAddress(int, pixelTriggerDebug);
@@ -81,7 +86,9 @@ static long pixelTrigger_init(aSubRecord *pasub) {
 }
 
 static long pixelTrigger_do(aSubRecord *pasub) {
-	int *d = (int *)pasub->d;
+	int *clear = (int *)pasub->d;
+	double clockRate = *((double *)pasub->e);
+	int mode = *((int *)pasub->f);
 	epicsUInt32 *pixels1 = (epicsUInt32 *)pasub->vala;
 	epicsUInt32 *pixels2 = (epicsUInt32 *)pasub->valb;
 	epicsUInt32 *pixels3 = (epicsUInt32 *)pasub->valc;
@@ -100,12 +107,14 @@ static long pixelTrigger_do(aSubRecord *pasub) {
 	epicsUInt16 *image7 = (epicsUInt16 *)pasub->valo;
 	int i;
 	volatile epicsUInt32 *fifoAddr = myISRData.fifoAddr;
+	double time;
+	epicsUInt32 max2=0, max3=0, max4=0, max5=0, max6=0, max7=0;
 
 	if (pixelTriggerDebug) {
 		printf("pixelTrigger_do: entry\n");
 	}
 
-	if (*d) {
+	if (*clear) {
 		for (i=0; i<pasub->nova; i++) {
 			pixels1[i] = 0;
 			pixels2[i] = 0;
@@ -118,17 +127,41 @@ static long pixelTrigger_do(aSubRecord *pasub) {
 			*fifoAddr = 0;	/* write to fifoAddr clears the FIFO */
 			myISRData.cleared = 1;
 		}
-		*d = 0;
+		*clear = 0;
 	}
 
+	if (mode==1) {
+		for (i=0; i<pasub->nova; i++) {
+			max2 = MAX(max2, pixels2[i]);
+			max3 = MAX(max3, pixels3[i]);
+			max4 = MAX(max4, pixels4[i]);
+			max5 = MAX(max5, pixels5[i]);
+			max6 = MAX(max6, pixels6[i]);
+			max7 = MAX(max7, pixels7[i]);
+		}
+	}
+
+	if (pixelTriggerDebug) printf("pixelTrigger_do: max2=%d, max3=%d\n", max2, max3);
+
 	for (i=0; i<pasub->nova; i++) {
-		image1[i] = pixels1[i];
-		image2[i] = pixels2[i];
-		image3[i] = pixels3[i];
-		image4[i] = pixels4[i];
-		image5[i] = pixels5[i];
-		image6[i] = pixels6[i];
-		image7[i] = pixels7[i];
+		time = pixels1[i]/clockRate;
+		if (pixels1[i] > 0 && mode==1) {
+			image1[i] = pixels1[i];
+			image2[i] = (epicsUInt16)((65535. * pixels2[i]/time)/max2);
+			image3[i] = (epicsUInt16)((65535. * pixels3[i]/time)/max3);
+			image4[i] = (epicsUInt16)((65535. * pixels4[i]/time)/max4);
+			image5[i] = (epicsUInt16)((65535. * pixels5[i]/time)/max5);
+			image6[i] = (epicsUInt16)((65535. * pixels6[i]/time)/max6);
+			image7[i] = (epicsUInt16)((65535. * pixels7[i]/time)/max7);
+		} else {
+			image1[i] = pixels1[i];
+			image2[i] = pixels2[i];
+			image3[i] = pixels3[i];
+			image4[i] = pixels4[i];
+			image5[i] = pixels5[i];
+			image6[i] = pixels6[i];
+			image7[i] = pixels7[i];
+		}
 	}
 
 	return(0);
@@ -159,9 +192,10 @@ void pixelTriggerRoutine(softGlueIntRoutineData *IRData) {
 	int fifoSize = myISRData->fifoSize;
 	int i, count, offset, record=0;
 	epicsUInt16 x, y;
-	epicsUInt32 pixelValue=0, prevPixelValue, scalerValue;
+	epicsUInt32 pixelValue=0, scalerValue;
+	static epicsUInt32 prevPixelValue;
 
-	if (pixelTriggerDebug) {
+	if (pixelTriggerDebug>=10) {
 		printf("pixelTriggerRoutine(0x%x, 0x%x) fifoAddr=%p\n", risingMask, wentHigh, fifoAddr);
 		printf("pixelTriggerRoutine: *fifoCountAddr=%d, *fifoCountAddr/(numScalers+1)=%d\n", *fifoCountAddr, *fifoCountAddr/(numScalers+1));
 	}
@@ -175,13 +209,14 @@ void pixelTriggerRoutine(softGlueIntRoutineData *IRData) {
 			y = (epicsUInt16) (prevPixelValue & 0xffff);
 
 			record = (x < numX) && (y < numY) && (myISRData->cleared==0);
-			if (pixelTriggerDebug) printf("pixelTriggerRoutine: x=%d, y=%d, record=%d\n", x, y, record);
+			if (prevPixelValue == 0) record = 0;
+			if (pixelTriggerDebug>=10) printf("pixelTriggerRoutine: x=%d, y=%d, record=%d\n", x, y, record);
 			offset = y*numX+x;
 			switch (numScalers) {
 				case 7:
 					scalerValue = *fifoAddr;
 					if (record) *(pixels1+offset) += scalerValue;
-					if (pixelTriggerDebug) printf("pixelTriggerRoutine: x=%d, y=%d, scalerValue=%d\n", x, y, scalerValue);
+					if (pixelTriggerDebug>=10) printf("pixelTriggerRoutine: x=%d, y=%d, scalerValue=%d\n", x, y, scalerValue);
 				case 6:
 					scalerValue = *fifoAddr;
 					if (record) *(pixels2+offset) += scalerValue;
@@ -208,7 +243,7 @@ void pixelTriggerRoutine(softGlueIntRoutineData *IRData) {
 			pixelValue = *fifoAddr;
 			myISRData->cleared = 0;
 		}
-		if (pixelTriggerDebug) printf("pixelTriggerRoutine: *fifoCountAddr=%d, *fifoCountAddr/(numScalers+1)=%d\n", *fifoCountAddr, *fifoCountAddr/(numScalers+1));
+		if (pixelTriggerDebug>=10) printf("pixelTriggerRoutine: *fifoCountAddr=%d, *fifoCountAddr/(numScalers+1)=%d\n", *fifoCountAddr, *fifoCountAddr/(numScalers+1));
 		count = *fifoCountAddr;
 	}
 }
