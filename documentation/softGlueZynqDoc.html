@@ -184,6 +184,7 @@ elements:
 <li>Four 32-bit up/down counters
 <li>Four gate&delay generators
 <li>Two quadrature decoders
+<li>One frequency counter
 <li>One one-input, 20 channel histogramming scaler
 <li>One pixelTrigger circuit (x-ray microscope data-acquisition system)
 <li>One eight-input multichannel scaler (currently, the channel-advance rate is limited to a few kHz)
@@ -739,6 +740,15 @@ connected directly to field I/O, and clocked by a fixed 500 MHz clock.
 <P>
 <hr>
 
+<li><P>Frequency Counter
+<P><img src="FreqCntr.jpg" name="Frequency Counter">
+
+<P>This component counts the number of rising edges per second
+presented to the ">" input.
+
+<P>
+<hr>
+
 <li><P>Histogramming Scaler
 <P><img src="HistScal.jpg" name="Histogramming Scaler">
 
@@ -774,7 +784,7 @@ quadrature), which are the X and Y positions of a microscope lens and sample,
 and produces pixel maps of detector data that were acquired in softGlueZynq
 counters as the interferometer signals varied.
 
-<P>The user specifies how many interferometer pulses are to represent the X and
+<P>The user specifies how many interferometer edges are to represent the X and
 Y sizes of the pixels.  The circuit subtracts lens and sample positions to yield
 the location, on the sample, of the focal spot.  When the focal spot crosses a
 pixel boundary, the circuit generates a data acquisition trigger, which is used
