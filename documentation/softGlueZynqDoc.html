@@ -69,17 +69,27 @@ line.
 
 <blockquote>
 
-The D flipflops are not of much interest to an end user; their purpose is
-to tell Xilinx routing software how much time it has to get a signal from the
-input flipflop to the softGlue component (note: clocked on the falling edge),
-from the softGlue component to the output flipflop, and from the output flipflop
-through the switches to the input flipflop.  This arrangement sets the maximum
-frequency of signals that can be transported on the signal bus to be half the
-frequency of the register clock.  Currently, the register clock is 100 MHz.
+The synchronizing flipflops are not of much interest to an end user; their
+purpose is to tell Xilinx routing software how much time it has to get a signal
+from the input flipflop to the softGlue component (note: clocked on the falling
+edge), from the softGlue component to the output flipflop, and from the output
+flipflop through the switches to the input flipflop.  This arrangement sets the
+maximum frequency of signals that can be transported on the signal bus to be
+half the frequency of the softGlue register clock.  Currently, the softGlue
+register clock is 100 MHz.
 
 </blockquote>
 
+<P>Here's what a component looks like in the Xilinx Vivado block diagram:
+<P><center><img src="inVivado.jpg" name="Vivado block diagram"></center>
 
+<P>The switches, synchronizing flipflops, and softGlue signal bus lines are all
+contained in the big blue box, which Xilinx calls an "AXI4 peripheral."  To us,
+this means that it contains registers we can read and write from EPICS.  Each
+switch is controlled by an eight bit register, as detailed below in the section
+"softGlueZynq register component."
+
+<hr>
 <h3>Requirements</h3>
 
 <P>To use softGlueZynq, you must have the following hardware and software:
@@ -90,47 +100,65 @@ frequency of the register clock.  Currently, the register clock is 100 MHz.
 
 <li>A  <a href="http://zedboard.org/product/microzed">MicroZed</a> (7010 or 7020)
 
+<li>A carrier card, such as the <a
+href="http://zedboard.org/product/microzed-breakout-carrier-card"> MicroZed
+Breakout Carrier Card</a>
+
+<li>An 8Gb or larger MicroSD card.
+
+<li>A MicroSD card writer.
+
 </ul>
 
-<blockquote> softGlueZynq is intended to be useable with any Zynq device, and will certainly
-be ported to one or more versions of the PicoZed, but the FPGA-load files, databases, and
-MEDM displays supplied in this version are for the MicroZed 7010 and 7020.  Other devices
-have not yet been tested.</blockquote>
+<blockquote> softGlueZynq is intended to be useable with any Zynq device, and
+will certainly be ported to one or more versions of the PicoZed, but the
+FPGA-load files, databases, and MEDM displays supplied in this version are for
+the MicroZed 7010 and 7020.  Other devices have not yet been
+tested.</blockquote>
 
 <li><h4>Software</h4>
 <ul>
 
+<li>EPICS base, release 3.15.3 or higher.
+
 <li>The EPICS <a href="http://www.aps.anl.gov/epics/modules/soft/asyn">asyn</a> module, version
 	4.6 or higher.
 
-<li>The EPICS extension, <a href="http://www.aps.anl.gov/epics/extensions/msi/index.php">msi</a>,
-    version 1-5 or higher.
-	
-	<blockquote>This tool is needed to build some softGlueZynq databases.</blockquote>
+<li>The EPICS extension, <a
+	href="http://www.aps.anl.gov/epics/extensions/msi/index.php">msi</a>,
+	version 1-5 or higher.
+
+	<blockquote>This tool is needed to build some softGlueZynq
+	databases.</blockquote>
 
 <li>MEDM, or caQtDM, or CSS-BOY, or the ability to adapt some other display
-	manager, or Channel Access client, to implement softGlueZynq's user interface.
+	manager, or Channel Access client, to implement softGlueZynq's user
+	interface.
 
 </ul>
 </ul>
 
-	<blockquote> Some of the softGlueZynq databases, displays, and examples presume the
-	availability of synApps modules such as calc and busy, but these are not needed for any
-	essential feature of softGlueZynq.
+	<blockquote> Some of the softGlueZynq databases, displays, and examples
+	presume the availability of synApps modules such as calc and busy, but these
+	are not needed for any essential feature of softGlueZynq.  You're probably
+	going to want autosave, release 5.7 or higher, because it makes loading and
+	saving circuits very easy.
 
 	</blockquote>
 
-<p>You do <b>not</b> need to be able to program the Zynq FPGA.  In the default implementation,
-the FPGA content is programmed automatically into the module at IOC-boot time.  A Xilinx
-.bin file is included with softGlueZynq for this purpose.  softGlueZynq loads the FPGA on every
-IOC boot, though it's also possible to reboot the IOC without affecting a running FPGA.
+<p>You do <b>not</b> need to be able to program the Zynq FPGA.  In the default
+implementation, the FPGA content is programmed automatically into the module at
+IOC-boot time.  A Xilinx .bin file is included with softGlueZynq for this
+purpose.  softGlueZynq loads the FPGA on every IOC boot, though it's also
+possible to reboot the IOC without affecting a running FPGA.
 
 
 <blockquote>
 
-If you have a copy of the Xilix Vivado software, you can load your own custom FPGA content into
-the module, and use softGlueZynq to talk to it.  softGlueZynq was designed with this use in mind,
-though we don't yet have documentation on how it's done.
+If you have a copy of the Xilinx Vivado software, you can load your own custom
+FPGA content into the module, and use softGlueZynq to talk to it.  softGlueZynq
+was designed with this use in mind, though we don't yet have documentation on
+how it's done.
 
 </blockquote>
 
@@ -141,9 +169,11 @@ softGlueZynq and EPICS:
 
 <ul>
 
-<li>With no programming at all, softGlueZynq functions simply as a 48-bit digital I/O module.
+<li>With no programming at all, softGlueZynq functions simply as a
+digital I/O module.
 
-<li>Conditionally send a trigger signal to a detector after every N steps of a stepper motor.
+<li>Conditionally send a trigger signal to a detector after every N steps of a
+stepper motor.
 
 <li>Conditionally send a trigger signal to a detector after every N(i) steps of
 a stepper motor, where N(i) is an array of step-interval numbers.
@@ -151,24 +181,25 @@ a stepper motor, where N(i) is an array of step-interval numbers.
 <li>Gate a detector off during the acceleration and deceleration portions of a
 steppermotor's motion.
 
-<li>Send a trigger to a detector precisely 23.003 ms after sending a trigger to a shutter.
+<li>Send a trigger to a detector precisely 23.003 ms after sending a trigger to
+a shutter.
 
-<li>Conditionally trigger the execution of an EPICS record on the change of state
-of an external signal.
+<li>Conditionally trigger the execution of an EPICS record on the change of
+state of an external signal.
 
 <li>Implement an extraordinarily smart trigger signal for an oscilloscope.
 
-<li>Implement efficiently a timer useable by EPICS software, with a time resolution that is
-much better than the system clock's resolution.  (With this, you can for example cause an
-EPICS database to wait for 0.7 ms.)
+<li>Implement efficiently a timer useable by EPICS software, with a time
+resolution that is much better than the system clock's resolution.  (With this,
+you can for example cause an EPICS database to wait for 0.7 ms.)
 
 </ul>
 
 
 <h4>Implemented circuit elements</h4>
 
-In this version of softGlueZynq, the FPGA is programmed with the following circuit
-elements:
+In this version of softGlueZynq, the FPGA is programmed with the following
+circuit elements:
 
 <ul>
 <li>Four AND gates
@@ -179,28 +210,37 @@ elements:
 <li>Two 2-input/1-output multiplexers
 <li>Two 1-input/2-output demultiplexers
 <li>Four 32-bit up counters
-<li>Four 32-bit preset counters
-<li>Four 32-bit divide-by-N circuits
+<li>Four 32-bit down counters
+<li>Four 32-bit divide-by-N counters
 <li>Four 32-bit up/down counters
 <li>Four gate&delay generators
 <li>Two quadrature decoders
 <li>One frequency counter
 <li>One one-input, 20 channel histogramming scaler
-<li>One pixelTrigger circuit (x-ray microscope data-acquisition system)
-<li>One eight-input multichannel scaler (currently, the channel-advance rate is limited to a few kHz)
-<li>24 field-input bits
-<li>24 field-output bits
+
+<li>Two "pixelTrigger" components, configured as an x-ray microscope
+data-acquisition system.
+
+<li>One eight-input multichannel scaler (currently, the channel-advance rate is
+limited to a few kHz)
+
+<li>24 field-input bits  (12 LVCMOS, 12 LVDS)
+<li>12 field-output bits (LVCMOS)
 <li>One 10MHz clock signal (clock frequencies can be changed at run time)
 <li>One 20MHz clock signal
 <li>One 50MHz clock signal
 </ul>
 
-<P>In addition to the above listed components, softGlueZynq includes the ability to handle
-analog values in much the same way it handles digital values.  This is accomplished by
-encoding analog values as bit streams that can be put on the softGlue signal bus.  This is
-currently rudimentary: only proof-of-principle components have been written, and there is no
-input or output capability.  These circuit elements are in a separate FPGA-load file, which
-also includes an abbreviated version of the digital components in normal softGlue.
+<h4>Analog Processor circuit elements</h4>
+
+<P>In addition to the above listed components, softGlueZynq includes the ability
+to handle analog values in much the same way it handles digital values.  This is
+accomplished by encoding analog values as bit streams that can be put on the
+softGlue signal bus.  This is currently rudimentary: only proof-of-principle
+components have been written, and there is no input or output capability.  These
+circuit elements are in a separate FPGA-load file ("analogProc"), which also
+includes an abbreviated version of the digital components in standard
+softGlueZynq.
 
 <ul>
 <li>Two two-input sum circuits
@@ -215,58 +255,125 @@ also includes an abbreviated version of the digital components in normal softGlu
 <a name="Installation and deployment"></a>
 <h2><center>Installation and deployment</center></h2>
 
-	The simplest way to deploy softGlueZynq is to download and build the module
-	iocZed, which uses softGlueZynq as a support module, and contains code to
-	load and run it on a MicroZed.  iocZed can also include as much or as little
-	of the rest of synApps as you want.  It's essentially a custom copy of the
-	synApps xxx module.  As delivered, iocZed expects all non-VME dependent
-	synApps modules to be available.  Even if you don't want to use the MicroZed
-	as a general purpose soft IOC, you're probably going to want modules like
-	autosave and calc.
+The simplest way to deploy softGlueZynq is to download and build the module
+iocZed, which uses softGlueZynq as a support module, and which contains code
+to load and run it on a MicroZed.  iocZed can also include as much or as
+little of the rest of synApps as you want.  It's essentially a custom copy
+of the synApps xxx module.  As delivered, iocZed is ready for all non-VME
+dependent synApps modules, and will build with whatever modules are defined
+in <code>synApps/support/configure/RELEASE</code>.  (areaDetector is still
+a work in progress.)  Even if you don't want to use the MicroZed as a
+general purpose soft IOC, you're probably going to want modules like
+autosave and calc.
+
+<P>Before I get started, there are a <i>lot</i> of different ways to run Linux,
+EPICS, and FPGA code on the MicroZed.  I'm not an expert, but I found a way that
+is similar to the way we run vxWorks and soft Linux beamline IOCs at the
+Advanced Photon Source, and that's what I'm going to describe.  We build EPICS
+and synApps on the read-only file system <code>/APSshare</code>, and build
+IOC-application directories on a read-write file system
+<code>/net/s<i>N</i>dserv/xorApps/epics/ioc</code>.  You going to do whatever
+you want, of course; I'm just telling you this to make the description more
+understandable.
 
 
-	<h3>How to get the software</h3>
-	softGlueZynq and iocZed are on on GitHub
-	(<a href="https://github.com/epics-modules/softGlueZynq">softGlueZynq</a>)
-	(<a href="https://github.com/epics-modules/iocZed">iocZed</a>)
+<h3>How to get the software</h3>
+softGlueZynq and iocZed are on on GitHub
+(<a href="https://github.com/epics-modules/softGlueZynq">softGlueZynq</a>)
+(<a href="https://github.com/epics-modules/iocZed">iocZed</a>)
 
-	<h3>Building softGlueZynq</h3>
-	
-	The supported way to built SoftGlueZynq and iocZed is to cross compile.  You
-	will need a copy of the Xilinx Software Development Kit.  (You'll need to
-	get a license, but the license is free.)  In the file <a
-	href="MicroZed_PetaLinux_Prep.txt">MicroZed_PetaLinux_Prep.txt</a> is a
-	detailed recipe explaining how to prepare a MicroZed for use as an EPICS
-	IOC, how to configure EPICS base to cross compile for the MicroZed's
-	linux-arm processor, and how to do some other stuff that you won't need to
-	do unless you write custom FPGA components.  Once you done all that, and
-	built EPICS base, you're ready to build softGlueZynq.
+<h3>Building softGlueZynq</h3>
 
-	<ul>
+The supported way to build SoftGlueZynq and iocZed is to cross compile.  You
+will need a copy of the <a
+href="https://www.xilinx.com/products/design-tools/embedded-software/sdk.html">Xilinx
+Software Development Kit</a>.  (You'll need to get a license, but the
+license is free.)  In the file <a
+href="MicroZed_PetaLinux_Prep.txt">MicroZed_PetaLinux_Prep.txt</a> is a
+detailed recipe explaining how to prepare a MicroZed for use as an EPICS
+IOC, how to configure EPICS base to cross compile for the MicroZed's
+linux-arm processor, and how to do some other stuff that you won't need to
+do unless you write custom FPGA components.  Once you done all that, and
+built EPICS base, you're ready to build softGlueZynq.
 
-	<li>Edit <code>softGlueZynq/configure/RELEASE</code>, to specify the paths
-	to EPICS_BASE and ASYN.
+<ul>
 
-	<li>Edit <code>iocZed/configure/RELEASE</code>, to specify the paths to
-	SUPPORT.
+<li>Edit <code>softGlueZynq/configure/RELEASE</code>, to specify the paths
+to EPICS_BASE and ASYN.
 
-	<li>Run <code>make</code> in the top-level directories of softGlueZynq and iocZed, using the
-	same <code>make</code> executable used to build EPICS base.
+<li>Edit <code>iocZed/configure/RELEASE</code>, to specify the paths to
+SUPPORT.
 
-	<blockquote>The softGlueZynq build will issue a warning that it can't expand all macros
-	in substitution files.  This is not an error; unexpanded macros are intended
-	to be defined at boot time.  (Note that version 1-4 of <code>msi</code>
-	returns an error, which causes the softGlueZynq build to fail, after writing a
-	database file that contains unexpanded macros.) </blockquote>
+<li>Run <code>make</code> in the top-level directories of softGlueZynq and iocZed, using the
+same <code>make</code> executable used to build EPICS base.
 
-	</ul>
+<blockquote>The softGlueZynq build will issue a warning that it can't expand all macros
+in substitution files.  This is not an error; unexpanded macros are intended
+to be defined at boot time.  (Note that version 1-4 of <code>msi</code>
+returns an error, which causes the softGlueZynq build to fail, after writing a
+database file that contains unexpanded macros.) </blockquote>
 
-	<h3>Deploying softGlueZynq to an IOC</h3>
-	
+</ul>
 
-	<h3>Configuring softGlueZynq (editing softGlueZynq.iocsh)</h3>
+<h3>Deploying softGlueZynq to an IOC</h3>
 
-<h4>User Callable Functions:</h4>
+<P>A PetaLinux operating system image is included with softGlueZynq.  This
+image sets up the Linux directory tree and starts Linux.   PetaLinux is a
+memory-resident OS, so nothing you do in the PetaLinux file system will ever
+survive a reboot.  For this reason, we put all the EPICS code on an served
+file system, have the MicroZed mount that file system, and run EPICS from
+there.
+
+<P>Let's say you want to use the IOC prefix "yyy:".  On a workstation, in
+a copy of iocZed:
+
+<ul>
+<li><code>make distclean</code>
+<li><code>changePrefix zzz yyy</code>
+<blockquote>changePrefix is a script in the synApps utils directory.  Its
+purpose is to customize a copy of the synApps xxx or iocZed module as an
+IOC-boot directory.
+</blockquote>
+<li><code>make</code>
+
+<li>edit <code>start_epics_yyy</code> to set <code>EPICS_APP</code> and
+<code>EPICS_APP_ADL_DIR</code>.
+
+<li>edit <code>iocBoot/iocyyy/run</code> to set the environment variable
+<code>PATH</code> to the directory that has executables for linux-arm.
+
+<li>In softGlueZynq/documentation/SD_card, find the directory that matches
+the MicroZed version you have.  Untar it, edit <code>userConfig</code>
+according to instructions in that file.
+
+<blockquote>The strategy for mounting NFS
+disks and arranging for directory names to look the same on the MicroZed as
+they looked on the workstation that built EPICS software is likely to
+change, and it must match Linux-initialization code that will have been
+built into <code>BOOT.BIN</code> and <code>image.ub</code>, so I'm not going
+to document it here.</blockquote>
+
+<li>Copy <code>userConfig</code>, <code>BOOT.BIN</code> and
+<code>image.ub</code> to a MicroSD card, and insert the card in the
+MicroZed.
+
+<li>Power the MicroZed.  If it succeeds in getting an IP address via DHCP,
+ssh to root@&lt;IP address&gt;.
+
+<li>See if NFS mounts succeeded.  If not, you might be able to do them by
+sourcing doMounts.sh.
+
+<li>The alias <code>iocgo</code> should take you to the IOC directory.
+
+<li>Type <code>./run</code> to start the IOC.
+
+</ul>
+
+
+<h4>Configuring softGlueZynq (editing softGlueZynq.iocsh)</h4>
+
+
+<h5>User Callable Functions:</h5>
 <ul>
 
 <li>
