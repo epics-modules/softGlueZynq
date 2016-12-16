@@ -6,7 +6,7 @@ to register, but it's free.  https://www.xilinx.com/support/download.html
 In the distribution is the directory EPICS needs to cross compile for the Zynq.
 To build base and synApps for the MicroZed, I modified two config files in base:
 
-Here's the base/configure/os/CONFIG_SITE file I used:
+Here's the base/configure/os/CONFIG_SITE.linux-x86.linux-arm file I used:
 
 	# CONFIG_SITE.linux-x86.linux-arm
 	#
