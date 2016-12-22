@@ -13,6 +13,7 @@ registrar(MCSRegistrar)
 registrar(DMARegistrar)
 
 # devA32Zed
+variable(devA32ZedDebug, int)
 device(bo,VME_IO,devBoA32Zed,"Zed")
 device(bi,VME_IO,devBiA32Zed,"Zed")
 device(ai,VME_IO,devAiA32Zed,"Zed")
