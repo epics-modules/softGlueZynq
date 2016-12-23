@@ -8,9 +8,10 @@ DBD += softGlueZynqSupport.dbd
 INC += drvZynq.h
 
 LIBRARY_IOC = softGlueZynq
-LIB_SRCS += drvZynq.c devAsynSoftGlue.c MCS.st devA32Zed.c DMA.st
+LIB_SRCS += drvZynq.c devAsynSoftGlue.c devA32Zed.c
 LIB_SRCS += sampleCustomInterruptHandler.c
 LIB_SRCS += pixelTriggerAsub.c
+LIB_SRCS += MCSAsub.c
 LIB_SRCS += readSoftGlueCounter_ISR.c
 
 LIB_LIBS += asyn
