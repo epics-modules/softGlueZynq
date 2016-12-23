@@ -4,13 +4,13 @@ variable(drvZynqISRState, int)
 
 variable(devAsynSoftGlueDebug, int)
 variable(pixelTriggerDebug, int)
+variable(MCSDebug, int)
 device(stringout, INST_IO, asynSoftGlue, "softGlue")
 device(bo, INST_IO, softGlueShow, "softGlueShow")
 device(longout, INST_IO, softGlueSigNum, "softGlueSigNum")
 # example of custom interrupt service routine
 registrar(sampleCustomInterruptRegistrar)
-registrar(MCSRegistrar)
-registrar(DMARegistrar)
+registrar(MCSISRRegistrar)
 
 # devA32Zed
 variable(devA32ZedDebug, int)
