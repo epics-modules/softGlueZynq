@@ -1,3 +1,10 @@
+/* Copyright (c) 2016 UChicago Argonne LLC, as Operator of Argonne
+ * National Laboratory, and The Regents of the University of California, as
+ * Operator of Los Alamos National Laboratory.
+ * softGlueZynq is distributed subject to a Software License Agreement found
+ * in the file LICENSE that is included with this distribution.
+ */
+
 /* pixelTriggerAsub - bin pixelTrigger events into 2D histograms.
  * aSub record fields:
  *  vala[]  Histogram 1
@@ -248,20 +255,24 @@ void pixelTriggerRoutine(softGlueIntRoutineData *IRData) {
 	}
 }
 
-/* int pixelTriggerPrepare(epicsUInt32 risingMask)
- * Mask:	bit(s) to which we want to respond (e.g., 0x1, 0x8000000)
+/* int pixelTriggerPrepare(componentName, risingMask, fifoSize)
+ * componentName: pixelFIFO_
+ * risingMask:	bit(s) to which we want to respond (e.g., 0x1, 0x8000000)
+ * fifoSize: length of FIFO in 32-bit words
  */
-int pixelTriggerPrepare(int AXI_Address, epicsUInt32 risingMask, int fifoSize) {
-	int fd;
-	
+int pixelTriggerPrepare(const char *componentName, epicsUInt32 risingMask, int fifoSize) {
+	int i;
+	volatile epicsUInt32 *localAddr = NULL;
+	UIO_struct *pUIO = NULL;
+
+	i = findUioAddr(componentName, 0);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		localAddr = pUIO->localAddr;
+	}
 
 	/* Get the address of fifo register. */
-	fd = open("/dev/mem",O_RDWR|O_SYNC);
-	if (fd < 0) {
-	  printf("Can't open /dev/mem\n");
-	  return(-1);
-	}
-	myISRData.fifoAddr = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,fd,AXI_Address);
+	myISRData.fifoAddr = localAddr;
 	myISRData.fifoCountAddr = myISRData.fifoAddr + 1;
 	myISRData.fifoSize = fifoSize;
 
@@ -289,14 +300,14 @@ static void pixelTriggerRegister(void) {
 epicsExportRegistrar(pixelTriggerRegister);
 
 /* interrupt stuff */
-/* int pixelTriggerPrepare(int AXI_Address, epicsUInt32 risingMask, int fifoSize) */
-static const iocshArg myArg1 = { "AXI_Address",	iocshArgInt};
+/* int pixelTriggerPrepare(const char *componentName, epicsUInt32 risingMask, int fifoSize) */
+static const iocshArg myArg1 = { "componentName",	iocshArgString};
 static const iocshArg myArg2 = { "risingMask",	iocshArgInt};
 static const iocshArg myArg3 = { "fifoSize",	iocshArgInt};
 static const iocshArg * const myArgs[3] = {&myArg1, &myArg2, &myArg3};
 static const iocshFuncDef myFuncDef = {"pixelTriggerPrepare", 3, myArgs};
 static void myCallFunc(const iocshArgBuf *args) {
-	pixelTriggerPrepare(args[0].ival, args[1].ival, args[2].ival);
+	pixelTriggerPrepare(args[0].sval, args[1].ival, args[2].ival);
 }
 
 void pixelTriggerISRRegistrar(void)
