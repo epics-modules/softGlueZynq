@@ -1,3 +1,10 @@
+/* Copyright (c) 2016 UChicago Argonne LLC, as Operator of Argonne
+ * National Laboratory, and The Regents of the University of California, as
+ * Operator of Los Alamos National Laboratory.
+ * softGlueZynq is distributed subject to a Software License Agreement found
+ * in the file LICENSE that is included with this distribution.
+ */
+
 /* drvZynq.cc
 
     Original Author: Marty Smith (as drvIp1k125.c)
@@ -214,6 +221,7 @@ STATIC struct asynInt32 ZynqInt32 = {
 STATIC void dispatchThread	(drvZynqPvt *pPvt);
 STATIC void rebootCallback	(void *);
 
+/* the following is for the original mmap() strategy, which requires us to run as root */
 int devMemFd = 0;
 int initDevMem() {
   /* microZed Open /dev/mem to write to FPGA registers */
@@ -226,12 +234,114 @@ int initDevMem() {
   return(0);
 }
 
+/* the following is for the generic-uio mmap() strategy, which does not require us to run as root */
+int foundUIO = 0;
+UIO_struct *UIO[MAX_UIO] = {0};
+
+int findUioAddr(const char *componentName, int map) {
+	int i, uio_fd, match;
+	FILE *uioName_fd;
+	char name[UIO_NAMELEN], uioFileName[UIO_NAMELEN], uioDevName[UIO_NAMELEN];
+	volatile epicsUInt32 *addr;
+	volatile epicsUInt32 *localAddr;
+	UIO_struct *pUIO = NULL;
+	epicsUInt32 iaddr;
+
+	/* first, see if we've already done this */
+	for (i=0; i<foundUIO; i++) {
+		pUIO = UIO[i];
+		if ((strncmp(pUIO->componentName, componentName, strlen(componentName))==0) &&
+				(pUIO->map == map)) {
+			if (drvZynqDebug) {
+				printf("findUioAddr: using previously mapped UIO for component '%s', map %d, addr=%p\n",
+					componentName, map, pUIO->localAddr);
+			}
+			return(i);
+		}
+	}
+
+	/* find the uio whose name matches */
+	match = -1;
+	for (i=0; i<MAX_UIO && match==-1; i++) {
+	  	sprintf(uioFileName, "/sys/class/uio/uio%d/name", i);
+		uioName_fd = fopen(uioFileName, "r");
+		if (uioName_fd==NULL) {
+			printf("findUioAddr: Failed to open '%s'\n", uioFileName);
+			return(-1);
+		}
+		fgets(name, UIO_NAMELEN-1, uioName_fd);
+		name[strlen(name)-1] = '\0'; /* strip \n */
+		if (drvZynqDebug>=10) printf("findUioAddr: uio%d.name='%s'\n", i, name);
+		if (strncmp(name, componentName, strlen(componentName))==0) {
+			match = i;
+			if (drvZynqDebug) printf("findUioAddr: name matches, match=%d\n", match);
+		}
+		fclose(uioName_fd);
+	}
+
+	if (match == -1) {
+		printf("findUioAddr: no match; nothing done\n");
+		return(-1);
+	}
+
+	/* get base address, just for reporting */
+	sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map%d/addr", match, map);
+	uioName_fd = fopen(uioFileName, "r");
+	if (uioName_fd==NULL) {
+		printf("findUioAddr: Failed to open '%s'\n", uioFileName);
+		return(-1);
+	}
+	fscanf(uioName_fd, "%x", &iaddr);
+	addr = (volatile epicsUInt32 *)iaddr;
+	if (drvZynqDebug) printf("findUioAddr: uio%d addr=%p\n", match, (void *)addr);
+	fclose(uioName_fd);
+
+	/* Open UIO, and keep it open.  User can access mapped memory only as long as this is open. */
+	sprintf(uioDevName, "/dev/uio%d", match);
+	uio_fd = open(uioDevName,O_RDWR|O_SYNC);
+	if (uio_fd < 0) {
+		epicsPrintf("Can't open '%s'\n", uioDevName);
+		return(-1);
+	}
+
+	localAddr = (volatile epicsUInt32 *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,uio_fd,map*getpagesize());
+	if (localAddr == NULL) {
+		epicsPrintf("findUioAddr: mmap() failed for component '%s', map %d\n",componentName, map);
+	}
+	else {
+		epicsPrintf("findUioAddr: mmap() succeeded for component '%s', map %d\n",componentName, map);
+		epicsPrintf("findUioAddr: %p mapped to %p\n", (void *)addr, (void *)localAddr);
+	}
+
+	/* Copy everything to UIO array */
+	if (foundUIO < MAX_UIO) {
+		foundUIO++;
+		pUIO = callocMustSucceed(1, sizeof(UIO_struct), "UIO_struct");
+		UIO[foundUIO-1] = pUIO;
+
+		strncpy(pUIO->componentName, componentName, UIO_NAMELEN-1);
+		pUIO->map = map;
+		strncpy(pUIO->uioDevName, uioDevName, UIO_NAMELEN-1);
+		strncpy(pUIO->uioFileName, uioFileName, UIO_NAMELEN-1);
+		strncpy(pUIO->uioDevName, uioDevName, UIO_NAMELEN-1);
+		pUIO->addr = addr;
+		pUIO->localAddr = localAddr;
+		pUIO->uioName_fd = uioName_fd;
+		pUIO->uio_fd = uio_fd;
+	
+		return(foundUIO-1);
+	} else {
+		return(-1);
+	}
+}
+
 /* Init interrupt-control register set (contained in AXI4 Lite peripheral) */
 int initZynqInterrupts(const char *portName, int AXI_Address) {
 
 	drvZynqPvt *pPvt;
-	int status;
+	int i, status;
 	char threadName[80] = "";
+	UIO_struct *pUIO = NULL;
 
 	if (AXI_Address==0) {
 		printf("initZynqInterrupts: using hard-coded AXI_Address\n");
@@ -243,12 +353,17 @@ int initZynqInterrupts(const char *portName, int AXI_Address) {
 
 	pPvt->msgQId = epicsMessageQueueCreate(MAX_MESSAGES, sizeof(interruptMessage));
 
-	/* open /dev/mem, in case it's not already open */
-	initDevMem();
-
-	pPvt->mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_Address);
+	/* pPvt->mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_Address); */
+	/* softGlue_* component has two memory maps: 0 for memory access, 1 for interrupt access */
+	i = findUioAddr("softGlue_", 1);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		pPvt->mem = pUIO->localAddr;
+	} else {
+		pPvt->mem = NULL;
+	}
 	if (pPvt->mem == NULL) {
-		printf("initZynqInterrupts: mmap A32 Address map failed for address 0x%X\n", AXI_Address);
+		printf("initZynqInterrupts: mmap() failed for 'softGlue_' map 1\n");
 	}
 	pPvt->regs = (interruptControlRegisterSet *) ((char *)(pPvt->mem));
 	if (drvZynqDebug>5) {
@@ -325,16 +440,6 @@ int initZynqInterrupts(const char *portName, int AXI_Address) {
 		epicsThreadGetStackSize(epicsThreadStackBig),
 		(EPICSTHREADFUNC)dispatchThread, pPvt);
 
-#if 0
-	/* Associate interrupt service routine with intVector */
-	if (devConnectInterruptVME(pPvt->intVector, intFunc, (void *)pPvt)) {
-		printf("Zynq interrupt connect failure\n");
-		return(-1);
-	}
-	/* Enable interrupts and set module status. */
-	/* how do I do this? */
-#endif
-
 	epicsAtExit(rebootCallback, pPvt);
 	return(0);
 }
@@ -368,22 +473,29 @@ STATIC asynStatus destroy_asynDrvUser(void *drvPvt,asynUser *pasynUser)
 
 
 /* init memory mapped access to softGlue registers */
-int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
+int initZynqSingleRegisterPort(const char *portName, const char *componentName)
 {
 	drvZynqPvt *pPvt;
-	int status;
+	int i, status;
+	UIO_struct *pUIO = NULL;
 
 	pPvt = callocMustSucceed(1, sizeof(*pPvt), "drvZynqPvt");
 	driverTable[numDriverTables++] = pPvt;	/* save pointers for softGlueRegisterInterruptRoutine() */
 	pPvt->portName = epicsStrDup(portName);
 
 	/* Set up address */
-	initDevMem();
-	pPvt->mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_BaseAddress);
-	if (pPvt->mem == NULL) {
-		printf("initZynqSingleRegisterPort: mmap A32 Address map failed for address 0x%X\n", AXI_BaseAddress);
+	i = findUioAddr(componentName, 0);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		pPvt->mem = pUIO->localAddr;
+	} else {
+		pPvt->mem = NULL;
 	}
-	else printf("initZynqSingleRegisterPort: mmap A32 Address map successful for address 0x%X\n", AXI_BaseAddress);
+
+	if (pPvt->mem == NULL) {
+		printf("initZynqSingleRegisterPort: mmap() failed for '%s' map 0\n", componentName);
+	}
+	else printf("initZynqSingleRegisterPort: mmap() succeded for '%s' map 0\n", componentName);
 
 	/* Link with higher level routines */
 	pPvt->common.interfaceType = asynCommonType;
@@ -450,140 +562,6 @@ int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
 	}
 	return(0);
 }
-
-#if 0 /*vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv*/
-
-/* Initialize IP module's FPGA from file in .bin or .bit format (haven't decided yet).
- * In Vivado, select "write Bitstream".
- * Programming the FPGA can be done manually:
- *	1.Copy bitstream file from Vivado project area:
- *		cp VivadoProjects/softGlue_1/softGlue_1.runs/impl_1/design_1_wrapper.bit .
- *	2. Convert .bit to .to bin using fpga-bit-to-bin.py:
- * 		fpga-bit-to-bin.py -f design_1_wrapper.bit design_1_wrapper.bin
- *	3. Write .bin file to FPGA:
- *		cat design_1_wrapper.bin >/dev/xdefcfg
- */
- 
- /* initZynqIP() doesn't work yet. */
-#define BUF_SIZE 1000
-#include "macLib.h"
-/*#include "xdevcfg.h"*/
-int initZynqIP(char *filepath)
-{
-	int i, maxwait, total_bytes, intLevel=0;
-	short n;
-	FILE *source_fd=0, *dest_fd=0;
-	unsigned char buffer[BUF_SIZE], *bp;
-	unsigned short *sp;
-	char *filename;
-	unsigned long l;
-
-	bp = buffer;
-	sp = (unsigned short *)buffer;
-
-	/* Disable interrupt level for this module.  Otherwise we may get
-	 * interrupts while the FPGA is being loaded.
-	 */
-	/* how do I do this? */
-
-	filename = macEnvExpand(filepath); /* in case filepath = '$(SOFTGLUE)/...' */
-	if (filename == NULL) {
-		printf("initZynqIP: macEnvExpand() returned NULL.  I quit.\n");
-		goto errReturn;
-	}
-	if ((source_fd = fopen(filename,"rb")) == NULL) {
-		printf("initZynqIP: Can't open source file '%s'.\n", filename);
-		free(filename); /* macEnvExpand() allocated this for us. We're done with it now. */
-		goto errReturn;
-	}
-	free(filename); /* macEnvExpand() allocated this for us. We're done with it now. */
-	if ((dest_fd = fopen("/dev/xdevcfg","ab")) == NULL) {
-		printf("initZynqIP: Can't open dest file '%s'.\n", filename);
-		goto errReturn;
-	}
-
-	maxwait = 0;
-	total_bytes = 0;
-	i = fread(bp, 1, 2, source_fd);
-	n = (bp[0]<<8) + bp[1];
-	if (n != 9) {
-		printf("initZynqIP: '%s' doesn't look like a .bit file (0x%x, 0x%x, first short=0x%hx)\n", filepath, *bp, bp[1], n);
-		goto errReturn;
-	}
-	/* skip over <0009> header */
-	i = fread(bp, 1, n, source_fd);
-
-	/* read <a> header */
-	i = fread(bp, 1, 2, source_fd);	/* read num bytes */
-	n = (bp[0]<<8) + bp[1];			/* get num bytes as n */
-	printf("...%d bytes\n", n);
-	fread(bp, 1, n, source_fd);	/* read n bytes */
-	printf("...read %c\n", *bp);
-	if (*bp != 'a') {
-		printf("initZynqIP: Missing <a> header, not a bit file\n");
-		goto errReturn;
-	}
-	i = fread(bp, 1, 2, source_fd);	/* read design name num bytes */
-	n = (bp[0]<<8) + bp[1];			/* get num bytes as n */
-	fread(bp, 1, n, source_fd);	/* read n bytes */
-	printf("...design name = '%s'\n", bp);
-
-	while (1) {
-		i = fread(bp, 1, 1, source_fd);	/* read num bytes */
-		if (feof(source_fd)) {
-			printf("initZynqIP: unexpected end of file\n");
-			goto errReturn;
-		}
-		switch (*bp) {
-		case 'e':
-			i = fread(bp, 1, 4, source_fd);	/* read binary data num bytes */
-			l = (bp[0]<<24) + (bp[1]<<16) + (bp[2]<<8) + bp[3];		/* get num bytes as l */
-			printf("...%ld bytes of bin data\n", l);
-			for (i=0; i<l/4; i++) {
-				fread(bp, 1, 4, source_fd);	/* read 4 bytes */
-				l = (bp[3]<<24) + (bp[2]<<16) + (bp[1]<<8) + bp[0];
-				if (i<16) printf("...writing 0x%x, 0x%x, 0x%x, 0x%x (0x%lx)\n", bp[3], bp[2], bp[1], bp[0], l);
-				fwrite(l, 1, 4, dest_fd);	/* write 4 bytes */
-			}
-			fclose(source_fd);
-			fclose(dest_fd);
-			return(0);
-			break;
-		case 'b':
-			i = fread(bp, 1, 2, source_fd);	/* read part name num bytes */
-			n = (bp[0]<<8) + bp[1];			/* get num bytes as n */
-			fread(bp, 1, (int)n, source_fd);	/* read n bytes */
-			printf("...part name = '%s'\n", bp);
-			break;
-		case 'c':
-			i = fread(bp, 1, 2, source_fd);	/* read date num bytes */
-			n = (bp[0]<<8) + bp[1];			/* get num bytes as n */
-			fread(bp, 1, (int)n, source_fd);	/* read n bytes */
-			printf("...date = '%s'\n", bp);
-			break;
-		case 'd':
-			i = fread(bp, 1, 2, source_fd);	/* read time num bytes */
-			n = (bp[0]<<8) + bp[1];			/* get num bytes as n */
-			fread(bp, 1, (int)n, source_fd);	/* read n bytes */
-			printf("...time = '%s'\n", bp);
-			break;
-		default:
-			break;
-		}
-	}
-
-	/* devEnableInterruptLevel(intVME,intLevel); */
-	fclose(source_fd);
-	return(0);
-
-errReturn:
-	/* devEnableInterruptLevel(intVME,intLevel); */
-	if (source_fd) fclose(source_fd);
-	if (dest_fd) fclose(dest_fd);
-	return(-1);
-}
-
-#endif /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^*/
 
 /*
  * softGlueCalcSpecifiedRegisterAddress - For access to a single-register component by
@@ -859,29 +837,42 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 	int pending = 0;
 	int reenable = 1;
 	int i, uio_fd;
-	FILE *uioName_fd;
-	char name[100];
+	volatile epicsUInt32 *localAddr;
+	UIO_struct *pUIO = NULL;
 
 	/* initialize interrupt infrastructure */
 	drvZynqISRState = 0;
 
+	/* Make sure we have UIO */
+	uio_fd = 0;
+
+	i = findUioAddr("softGlue_", 0);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		localAddr = pUIO->localAddr;
+		uio_fd = pUIO->uio_fd;
+	} else {
+		localAddr = NULL;
+		uio_fd = 0;
+	}
+
+
+	if (localAddr == 0) {
+		printf("drvZynq:dispatchThread: findUioAddr() failed\n");
+		return;
+	}
+
+	if (uio_fd == 0) {
+		printf("drvZynq:dispatchThread: uio_fd==0\n");
+		return;
+	}
+
+	drvZynqISRState = 1;
+
+/*** SHOULD USE LOCALADDR? ***/
 	/* enable interrupt generation in FPGA */
 	pPvt->regs->globalEnable = 1;
 	//pPvt->regs->risingIntEnable = 0xffffffff;
-
-	/* Make sure we have UIO */
-	uioName_fd = fopen("/sys/class/uio/uio0/name", "r");
-	if (uioName_fd==NULL) {
-		printf("drvZynq:dispatchThread: Failed to open /sys/class/uio/uio0/name\n");
-		return;
-	}
-	fgets(name, 100, uioName_fd);
-	if (drvZynqDebug) printf("drvZynq:dispatchThread: uio0.name='%s'\n", name);
-	fclose(uioName_fd);
-
-	uio_fd = open("/dev/uio0", O_RDWR);
-	drvZynqISRState = 1;
-
 	while(1) {
 
 		/*  Enable interrupts */
@@ -892,8 +883,9 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 		drvZynqISRState = 3;
 		/*  Wait for an interrupt */
 		if (drvZynqDebug) printf("drvZynq:dispatchThread: calling read(uio_fd...)\n");
-		read(uio_fd, (void *)&pending,sizeof(int));
-		
+		i = read(uio_fd, (void *)&pending,sizeof(int));
+		if (drvZynqDebug) printf("drvZynq:dispatchThread: read(uio_fd...) returned %d\n", i);
+
 		drvZynqISRState = 4;
 		/* Respond to interrupt */
 		if (drvZynqDebug) {
@@ -1100,18 +1092,19 @@ STATIC asynStatus disconnect(void *drvPvt, asynUser *pasynUser)
 }
 
 /* test speed of reading from FPGA register */
-int testReadSpeed(epicsUInt32 addr, int numReads) {
-	volatile epicsUInt32 *mem;
+int testReadSpeed(int numReads) {
+	volatile epicsUInt32 *mem = NULL;
 	epicsUInt32 reg32=0, first, last;
-	int devMemFd=0, i;
+	int i;
 	epicsTimeStamp  timeStart, timeEnd;
+	UIO_struct *pUIO = NULL;
 
-	devMemFd = open("/dev/mem",O_RDWR|O_SYNC);
-		if (devMemFd < 0) {
-		epicsPrintf("Can't Open /dev/mem\n");
-		return(-1);
+	i = findUioAddr("softGlue_", 0);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		mem = pUIO->localAddr;
 	}
-	mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,addr);
+
 	epicsTimeGetCurrent(&timeStart);
 	first = *mem;
 	for (i=0; i<numReads; i++) {
@@ -1129,18 +1122,21 @@ int testUIO(epicsUInt32 AXI_Address, int numInts) {
 	int pending = 0;
 	int reenable = 1;
 	int i, uio_fd;
-	FILE *uioName_fd;
-	char name[100];
-	volatile epicsUInt32 *mem;
+	volatile epicsUInt32 *mem = NULL;
 	volatile epicsUInt32 *mem_enable, *m_status, *m_ack, *m_pending;
+	UIO_struct *pUIO = NULL;
 
-	initDevMem();
-	if (AXI_Address==0) {AXI_Address = 0x43c10000;}
-	mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_Address);
+	i = findUioAddr("softGlue_", 1);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		mem = pUIO->localAddr;
+		uio_fd = pUIO->uio_fd;
+	}
 	if (mem==NULL) {
 	  printf("Can't map interrupt-control registers\n");
 	  return(0);
 	}
+
 	mem_enable = (epicsUInt32 *)mem;
 	mem_enable += 1;
 	*mem_enable = 0xffffffff;
@@ -1152,15 +1148,6 @@ int testUIO(epicsUInt32 AXI_Address, int numInts) {
 	m_pending = (epicsUInt32 *)mem;
 	m_pending += 4;	 /* interrupt-pending register */
 	/* printf("testUIO: mem=0x%x, m_status=0x%x, m_ack=0x%x\n", mem, m_status, m_ack); */
-
-	uioName_fd = fopen("/sys/class/uio/uio0/name", "r");
-	if (uioName_fd==NULL) {
-		printf("testUIO: Failed to open /sys/class/uio/uio0/name\n");
-		return(0);
-	}
-	fgets(name, 100, uioName_fd);
-	printf("testUIO: uio0.name='%s'\n", name);
-	fclose(uioName_fd);
 
 	uio_fd = open("/dev/uio0", O_RDWR);
 	printf("testUIO: enabling interrupts\n");
@@ -1190,14 +1177,13 @@ STATIC void testUIOCallFunc(const iocshArgBuf *args) {
 	testUIO(args[0].ival, args[1].ival);
 }
 
-/* int testReadSpeed(epicsUInt32 addr, int numReads) */
-STATIC const iocshArg testReadSpeedArg0 = { "address", iocshArgInt};
-STATIC const iocshArg testReadSpeedArg1 = { "numReads",	iocshArgInt};
+/* int testReadSpeed(int numReads) */
+STATIC const iocshArg testReadSpeedArg0 = { "numReads",	iocshArgInt};
 
-STATIC const iocshArg * const testReadSpeedArgs[2] = {&testReadSpeedArg0, &testReadSpeedArg1};
-STATIC const iocshFuncDef testReadSpeedFuncDef = {"testReadSpeed",2,testReadSpeedArgs};
+STATIC const iocshArg * const testReadSpeedArgs[1] = {&testReadSpeedArg0};
+STATIC const iocshFuncDef testReadSpeedFuncDef = {"testReadSpeed",1,testReadSpeedArgs};
 STATIC void testReadSpeedCallFunc(const iocshArgBuf *args) {
-	testReadSpeed(args[0].ival, args[1].ival);
+	testReadSpeed(args[0].ival);
 }
 
 /* int initZynqInterrupts(const char *portName, int AXI_Address)
@@ -1210,13 +1196,13 @@ STATIC void initZynqInterruptsCallFunc(const iocshArgBuf *args) {
 	initZynqInterrupts(args[0].sval, args[1].ival);
 }
 
-/* int initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress) */
+/* int initZynqSingleRegisterPort(const char *portName, const char *componentName) */
 STATIC const iocshArg initSRArg0 = { "Port name",			iocshArgString};
-STATIC const iocshArg initSRArg1 = { "AXI base address",	iocshArgInt};
+STATIC const iocshArg initSRArg1 = { "componentName",		iocshArgString};
 STATIC const iocshArg * const initSRArgs[2] = {&initSRArg0, &initSRArg1};
 STATIC const iocshFuncDef initSRFuncDef = {"initZynqSingleRegisterPort",2,initSRArgs};
 STATIC void initSRCallFunc(const iocshArgBuf *args) {
-	initZynqSingleRegisterPort(args[0].sval, args[1].ival);
+	initZynqSingleRegisterPort(args[0].sval, args[1].sval);
 }
 
 /* int debugISR(int dummy) */
