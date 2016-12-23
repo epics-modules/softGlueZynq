@@ -1,0 +1,32 @@
+record(bo, "$(P)$(Q)MCSEnable") {
+	field(ZNAM, "Disable")
+	field(ONAM, "Enable")
+}
+record(aSub, "$(P)$(Q)MCS") {
+  field(SDIS, "$(P)$(Q)MCSEnable")
+  field(DISV, 0)
+  field(INAM, "MCS_init")
+  field(SNAM, "MCS_do")
+  field(PREC, "2")
+  field(FTA, "LONG")
+  field(FTD, "LONG")
+  field(FTE, "DOUBLE")
+
+  field(FTVA, "LONG")
+  field(NOVA, "$(N)")
+  field(FTVB, "LONG")
+  field(NOVB, "$(N)")
+  field(FTVC, "LONG")
+  field(NOVC, "$(N)")
+  field(FTVD, "LONG")
+  field(NOVD, "$(N)")
+  field(FTVE, "LONG")
+  field(NOVE, "$(N)")
+  field(FTVF, "LONG")
+  field(NOVF, "$(N)")
+  field(FTVG, "LONG")
+  field(NOVG, "$(N)")
+
+  field(FTVH, "LONG")
+
+}
