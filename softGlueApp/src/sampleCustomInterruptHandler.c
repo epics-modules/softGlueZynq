@@ -1,3 +1,10 @@
+/* Copyright (c) 2016 UChicago Argonne LLC, as Operator of Argonne
+ * National Laboratory, and The Regents of the University of California, as
+ * Operator of Los Alamos National Laboratory.
+ * softGlueZynq is distributed subject to a Software License Agreement found
+ * in the file LICENSE that is included with this distribution.
+ */
+
 /* Demonstrate softGlue custom interrupt routine to write new values to DivByN-3_N
  */
 
