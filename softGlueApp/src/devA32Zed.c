@@ -1,77 +1,12 @@
-/* 	devA32Vme.c ---> devA32Zed.c	*/
-
-/*****************************************************************
- *
- *      Author :                     John T Weizeorick
- *      Date:                        03/25/2016
- *
- *      Experimental Physics and Industrial Control System (EPICS)
- *
- *****************************************************************
- *                         COPYRIGHT NOTIFICATION
- *****************************************************************
-
- * THE FOLLOWING IS A NOTICE OF COPYRIGHT, AVAILABILITY OF THE CODE,
- * AND DISCLAIMER WHICH MUST BE INCLUDED IN THE PROLOGUE OF THE CODE
- * AND IN ALL SOURCE LISTINGS OF THE CODE.
- 
- * (C)  COPYRIGHT 1993 UNIVERSITY OF CHICAGO
- 
- * Argonne National Laboratory (ANL), with facilities in the States of 
- * Illinois and Idaho, is owned by the United States Government, and
- * operated by the University of Chicago under provision of a contract
- * with the Department of Energy.
-
- * Portions of this material resulted from work developed under a U.S.
- * Government contract and are subject to the following license:  For
- * a period of five years from March 30, 1993, the Government is
- * granted for itself and others acting on its behalf a paid-up,
- * nonexclusive, irrevocable worldwide license in this computer
- * software to reproduce, prepare derivative works, and perform
- * publicly and display publicly.  With the approval of DOE, this
- * period may be renewed for two additional five year periods. 
- * Following the expiration of this period or periods, the Government
- * is granted for itself and others acting on its behalf, a paid-up,
- * nonexclusive, irrevocable worldwide license in this computer
- * software to reproduce, prepare derivative works, distribute copies
- * to the public, perform publicly and display publicly, and to permit
- * others to do so.
-
- *****************************************************************
- *                               DISCLAIMER
- *****************************************************************
-
- * NEITHER THE UNITED STATES GOVERNMENT NOR ANY AGENCY THEREOF, NOR
- * THE UNIVERSITY OF CHICAGO, NOR ANY OF THEIR EMPLOYEES OR OFFICERS,
- * MAKES ANY WARRANTY, EXPRESS OR IMPLIED, OR ASSUMES ANY LEGAL
- * LIABILITY OR RESPONSIBILITY FOR THE ACCURACY, COMPLETENESS, OR
- * USEFULNESS OF ANY INFORMATION, APPARATUS, PRODUCT, OR PROCESS
- * DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE PRIVATELY
- * OWNED RIGHTS.  
-
- *****************************************************************
- * LICENSING INQUIRIES MAY BE DIRECTED TO THE INDUSTRIAL TECHNOLOGY
- * DEVELOPMENT CENTER AT ARGONNE NATIONAL LABORATORY (708-252-2000).
- *****************************************************************
-
- * Modification Log:
- * -----------------
- * 01-23-98   nda       initially functional Ned Arnold
- * 02-25-98   mr        modified ai and ao to support 2's complement.
- * 07-22-98   mr        Fixed Param field to accomadate both i`uni and bi polar
- * 			Inputs and outputs (AI, AO records)..
- * 10-06-98   nda       fixed a bug with li,lo,ai,ao where sum of bit+
- *                      numbits > MAX_ACTIVE_BITS
- * 03-21-2016 jtw	Changed devA32Vme to devA32Zed - Non VxWorks!!
- * 03-22-2016 jtw	Need to register calls to shell
- * 03-23-2016 jtw	writing wf record to scan pixel given by lo with signal = 10
- * 04-11-2016 jtw	modify write_lo to set pixelToScanLO signal = 10
- * 04-22-2016 jtw       modify write_lo to set DAC Trim Bits LO with signal = 11
- * 04-25-2016 jtw	modify write_lo to set Configure Bits to Count LO with signal = 12
-*              
+/* Copyright (c) 2016 UChicago Argonne LLC, as Operator of Argonne
+ * National Laboratory, and The Regents of the University of California, as
+ * Operator of Los Alamos National Laboratory.
+ * softGlueZynq is distributed subject to a Software License Agreement found
+ * in the file LICENSE that is included with this distribution.
  */
 
-
+/* 	devA32Vme.c ---> devA32Zed.c	*/
+
 /*To Use this device support, Include the following before iocInit */
 /* devA32ZedConfig(card,a32base,nreg,iVector,iLevel)  */
 /*    card    = card number                           */
@@ -170,6 +105,8 @@ static long readWf(struct waveformRecord*);
 static long devA32ZedReport();
 
 int  devA32ZedDebug = 0;
+epicsExportAddress(int, devA32ZedDebug);
+
 int  OK = 0;
 
 #define MAX_NUM_CARDS    10
@@ -261,50 +198,81 @@ return(0);
 * Initialization of A32/D32 Card - called in st.cmd
 *
 ***************************************************************************/
-int devA32ZedConfig(card,a32base,nregs,iVector,iLevel)
-int	      card;
-unsigned long a32base;
-//int           a32base;
-int	      nregs;
-int	      iVector;
-int	      iLevel;
+int devA32ZedConfig(int card, char *componentName, int map, int nregs)
 {
+	int i, fd, match;
+	FILE *uioName_fd;
+	char name[100], uioFileName[100], uioDevName[100];
+	int a32base;
 
-  //unsigned long probeVal;
-  int	fd;
+	if ((card >= MAX_NUM_CARDS) || (card < 0)) {
+		epicsPrintf("devA32ZedConfig: Invalid Card # %d \n",card);
+		return(ERROR);
+	}
 
-  if((card >= MAX_NUM_CARDS) || (card < 0)) {
-      epicsPrintf("devA32ZedConfig: Invalid Card # %d \n",card);
-      return(ERROR);
-  }
+	/* find the uio whose name matches */
+	match = -1;
+	for (i=0; i<6 && match==-1; i++) {
+	  	sprintf(uioFileName, "/sys/class/uio/uio%d/name", i);
+		uioName_fd = fopen(uioFileName, "r");
+		if (uioName_fd==NULL) {
+			printf("devA32ZedConfig: Failed to open '%s'\n", uioFileName);
+			return(ERROR);
+		}
+		fgets(name, 100, uioName_fd);
+		name[strlen(name)-1] = '\0'; /* strip \n */
+		if (devA32ZedDebug) printf("devA32ZedConfig: uio%d.name='%s'\n", i, name);
+		if (strncmp(name, componentName, strlen(componentName))==0) {
+			match = i;
+			if (devA32ZedDebug) printf("devA32ZedConfig: name matches, match=%d\n", match);
+		}
+		fclose(uioName_fd);
+	}
 
-  // microZed Open /dev/mem to write to FPGA registers 
-  fd = open("/dev/mem",O_RDWR|O_SYNC);
-  if (fd < 0) {
-	epicsPrintf("Can't Open /dev/mem\n");
-	return(ERROR);
-  }
+	if (match == -1) {
+		printf("devA32ZedConfig: no match; nothing done\n");
+		return(ERROR);
+	}
 
-  /* accesses to clock wizard AXI component yielded a segfault, probably because I hadn't mapped
-   * a large enough section.
-   */
-  /*cards[card].base = (unsigned int *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,fd,a32base);*/
-  cards[card].base = (unsigned int *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,fd,a32base);
-  if (cards[card].base == NULL) {
-       epicsPrintf("devA32ZedConfig: mmap A32 Address map failed for Card %d\n",card);
-  }
-  else epicsPrintf("devA32ZedConfig: mmap A32 Address map Successful for Card %d\n",card);
+	sprintf(uioDevName, "/dev/uio%d", match);
+	fd = open(uioDevName,O_RDWR|O_SYNC);
+	if (fd < 0) {
+		epicsPrintf("Can't open '%s'\n", uioDevName);
+		return(ERROR);
+	}
 
-  if(nregs > MAX_ACTIVE_REGS) {
-      epicsPrintf("devA32ZedConfig: # of registers (%d) exceeds max\n",nregs);
-      return(ERROR);
-  }
-  else {
-      cards[card].nReg = nregs;
-      cards[card].lock = epicsMutexMustCreate();
-  }
+	/* get base address */
+	sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map%d/addr", match, map);
+	uioName_fd = fopen(uioFileName, "r");
+	if (uioName_fd==NULL) {
+		printf("devA32ZedConfig: Failed to open '%s'\n", uioFileName);
+		return(ERROR);
+	}
+	fscanf(uioName_fd, "%x", &a32base);
+	if (devA32ZedDebug) printf("devA32ZedConfig: uio%d a32base=0x%x\n", match, a32base);
+	fclose(uioName_fd);
+
+	//cards[card].base = (volatile a32Reg  *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,fd,a32base);
+	//cards[card].base = (volatile a32Reg  *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+	cards[card].base = (volatile a32Reg  *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,fd,map*getpagesize());
+	if (cards[card].base == NULL) {
+		epicsPrintf("devA32ZedConfig: mmap A32 Address map failed for Card %d\n",card);
+	}
+	else {
+		epicsPrintf("devA32ZedConfig: mmap A32 Address map Successful for Card %d\n",card);
+		epicsPrintf("devA32ZedConfig: 0x%x mapped to %p\n", a32base, (void *)cards[card].base);
+	}
+
+	if(nregs > MAX_ACTIVE_REGS) {
+		epicsPrintf("devA32ZedConfig: # of registers (%d) exceeds max\n",nregs);
+		return(ERROR);
+	}
+	else {
+		cards[card].nReg = nregs;
+		cards[card].lock = epicsMutexMustCreate();
+	}
  
-  return(OK);
+	return(OK);
 }
 
 /**************************************************************************
@@ -946,7 +914,7 @@ struct longoutRecord   *plo;
 
 
       status = OK;
-      epicsPrintf("devA32Zed-init_lo Sucessfull  bit=%d, numBits=%d sizeof=%u\n",bit,numBits,sizeof(struct a32ZedDpvt));
+      epicsPrintf("devA32Zed-init_lo Sucessfull  bit=%d, numBits=%d sizeof=%u\n",bit,numBits,(unsigned int)sizeof(struct a32ZedDpvt));
 
       break;
     default :
@@ -1354,28 +1322,21 @@ short   card;
 
 /*******************************/
 /* Information needed by iocsh */
-// zed Config arguments
+// int devA32ZedConfig(int card, char *componentName, int map, int nregs)
 static const iocshArg zedconfigArg0 = {"Card being configured", iocshArgInt};
-static const iocshArg zedconfigArg1 = {"zed fpga base address", iocshArgInt};
-static const iocshArg zedconfigArg2 = {"number registers", iocshArgInt};
-static const iocshArg zedconfigArg3 = {"iVector", iocshArgInt};
-static const iocshArg zedconfigArg4 = {"iLevel", iocshArgInt};
-static const iocshArg * const zedconfigArgs[5] = 
-{
-    &zedconfigArg0, 
-    &zedconfigArg1,
-    &zedconfigArg2,
-    &zedconfigArg3,
-    &zedconfigArg4
-};
+static const iocshArg zedconfigArg1 = {"component name", iocshArgString};
+static const iocshArg zedconfigArg2 = {"map number", iocshArgInt};
+static const iocshArg zedconfigArg3 = {"number registers", iocshArgInt};
+static const iocshArg * const zedconfigArgs[4] =
+	{&zedconfigArg0, &zedconfigArg1, &zedconfigArg2, &zedconfigArg3};
 
-static const iocshFuncDef configZedFuncDef = {"devA32ZedConfig", 5, zedconfigArgs};
+static const iocshFuncDef configZedFuncDef = {"devA32ZedConfig", 4, zedconfigArgs};
 static const iocshFuncDef reportZedFuncDef = {"devA32ZedReport", 0, NULL};
 
 // Wrappers with args
 static void configZedCallFunc(const iocshArgBuf *args) 
 {
-    devA32ZedConfig(args[0].ival, args[1].ival, args[2].ival, args[3].ival, args[4].ival);
+    devA32ZedConfig(args[0].ival, args[1].sval, args[2].ival, args[3].ival);
 }
 static void reportZedCallFunc(const iocshArgBuf *args)
 {
