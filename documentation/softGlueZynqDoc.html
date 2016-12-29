@@ -737,8 +737,7 @@ When <code>N</code>==<code>0</code>, the divide circuitry is bypassed, and the
 clock is connected directly to <code>Q</code>.  This is an error; the output
 should still be gated by the <code>EN</code> signal.
 
-<P>In softGlueZynq version 2.1 and earlier, the <code>RESET</code> signal doesn't do
-anything.  Beginning with softGlueZynq 2.2, the <code>RESET</code> signal loads the
+<P>The <code>RESET</code> signal loads the
 counter with <code>N</code>, so that <code>Q</code> will be driven to
 <code>1</code> after <code>N</code> rising edges of the clock. 
 <code>RESET</code> does not clear the output <code>Q</code>.  If <code>Q</code>
