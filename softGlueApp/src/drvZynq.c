@@ -336,25 +336,18 @@ int findUioAddr(const char *componentName, int map) {
 }
 
 /* Init interrupt-control register set (contained in AXI4 Lite peripheral) */
-int initZynqInterrupts(const char *portName, int AXI_Address) {
+int initZynqInterrupts(const char *portName, const char *componentName) {
 
 	drvZynqPvt *pPvt;
 	int i, status;
 	char threadName[80] = "";
 	UIO_struct *pUIO = NULL;
 
-	if (AXI_Address==0) {
-		printf("initZynqInterrupts: using hard-coded AXI_Address\n");
-		AXI_Address = 0x43c10000;
-	}
-
 	pPvt = callocMustSucceed(1, sizeof(*pPvt), "initZynqInterrupts");
 	pPvt->portName = epicsStrDup(portName);
 
 	pPvt->msgQId = epicsMessageQueueCreate(MAX_MESSAGES, sizeof(interruptMessage));
 
-	/* pPvt->mem = (epicsUInt32 *) mmap(0,255,PROT_READ|PROT_WRITE,MAP_SHARED,devMemFd,AXI_Address); */
-	/* softGlue_* component has two memory maps: 0 for memory access, 1 for interrupt access */
 	i = findUioAddr("softGlue_", 1);
 	if (i >= 0) {
 		pUIO = UIO[i];
@@ -1186,14 +1179,14 @@ STATIC void testReadSpeedCallFunc(const iocshArgBuf *args) {
 	testReadSpeed(args[0].ival);
 }
 
-/* int initZynqInterrupts(const char *portName, int AXI_Address)
+/* int initZynqInterrupts(const char *portName, const char *componentName)
  */
 STATIC const iocshArg initZynqInterruptsArg0 = { "Port Name",				iocshArgString};
-STATIC const iocshArg initZynqInterruptsArg1 = { "AXI_Address",				iocshArgInt};
+STATIC const iocshArg initZynqInterruptsArg1 = { "componentName",			iocshArgString};
 STATIC const iocshArg * const initZynqInterruptsArgs[2] = {&initZynqInterruptsArg0, &initZynqInterruptsArg1};
 STATIC const iocshFuncDef initZynqInterruptsFuncDef = {"initZynqInterrupts",2,initZynqInterruptsArgs};
 STATIC void initZynqInterruptsCallFunc(const iocshArgBuf *args) {
-	initZynqInterrupts(args[0].sval, args[1].ival);
+	initZynqInterrupts(args[0].sval, args[1].sval);
 }
 
 /* int initZynqSingleRegisterPort(const char *portName, const char *componentName) */
