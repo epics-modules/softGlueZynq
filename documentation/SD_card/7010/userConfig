@@ -1,0 +1,43 @@
+#!/bin/sh
+# This build of Petalinux 2015.4 is configured to use DHCP to get the IP
+# address, etc.  You must choose a MAC address that is unique on your network.
+# On my system, I have to wait a few seconds after changing the MAC address
+# before mounting NFS file systems.
+export MAC=00:19:B3:02:13:D7
+export SLEEP_AFTER_MAC=5
+export HOSTNAME=microzed-j
+
+# softGlueZynq and this Petalinux build are configured so that an ordinary
+# account is permitted to load the FPGA, access FPGA registers, etc.,
+# because running as root just can't be a good idea.  I haven't figured out how
+# to disable the root account, but at least you can set the password.
+export USERNAME=mz1
+export USERUID=1001
+export USERPASSWORD=pwd
+export ROOTPASSWORD=pwd
+
+# softGlueZynq and this build of Petalinux are configured to mount NFS file
+# systems, and to get EPICS, synApps, and IOC specific code from those systems.
+# SHAREMOUNT can be a read-only file system.  IOCMOUNT must be read/write.
+# Here are the mount related commands that will be executed at boot time:
+#	mkdir /mnt${SHAREMOUNT}
+#	mkdir /mnt${IOCMOUNT}
+#	mkdir /net
+#	mkdir /net/s100dserv
+#	ln -s /mnt${SHAREMOUNT} $SHARELOCAL
+#	ln -s /mnt${IOCMOUNT} $IOCLOCAL
+#	ln -s /mnt${SHAREMOUNT} ${SHAREMOUNT}
+#	mount -o port=2049,nolock -t nfs ${SHARESERVER}:${SHAREMOUNT} /mnt${SHAREMOUNT}
+#	mount -o port=2049,nolock -t nfs ${IOCSERVER}:${IOCMOUNT} /mnt${IOCMOUNT}
+
+
+export SHARESERVER=s100dserv.xray.aps.anl.gov
+export SHAREMOUNT=/APSshare
+export SHARELOCAL=/net/s100dserv/APSshare
+export IOCSERVER=s100dserv.xray.aps.anl.gov
+export IOCMOUNT=/xorApps
+export IOCLOCAL=/net/s100dserv/xorApps
+
+# Here's the path to the IOC directory, and a command to take you there:
+export IOCDIR=/net/s100dserv/xorApps/zed/epics/ioc/tmm/iocBoot/ioctmm
+alias iocgo="cd $IOCDIR"
