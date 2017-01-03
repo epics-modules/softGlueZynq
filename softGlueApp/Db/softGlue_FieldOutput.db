@@ -2,12 +2,12 @@ record(stringout,"$(P)$(H)$(SIG)_Signal") {
 	field(DESC,"$(IOPIN)")
 	field(PINI,"YES")
 	field(DTYP,"softGlue")
-	field(OUT,"@asynMask($(PORT),$(ADDR),0x6f)")
+	field(OUT,"@asynMask($(PORT),$(ADDR),0x1f)")
 	info(softGlueIO,"IN")
 }
 record(bi,"$(P)$(H)$(SIG)_BI") {
 	field(DTYP,"asynUInt32Digital")
-	field(INP,"@asynMask($(PORT),$(ADDR),0x10)")
+	field(INP,"@asynMask($(PORT),$(ADDR),0x80)")
 	field(ZNAM,"0")
 	field(ONAM,"1")
 }

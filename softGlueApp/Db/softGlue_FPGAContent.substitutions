@@ -146,31 +146,31 @@ pattern {SIG		ADDR}
 
 {PixelFIFO-1_CHADV	230}
 
-{FO1				231}
-{FO2				232}
-{FO3				233}
-{FO4				234}
-{FO5				235}
-{FO6				236}
-{FO7				237}
-{FO8				238}
-{FO9				239}
-{FO10				240}
-{FO11				241}
-{FO12				242}
-
-{FO13     		  243}
-{FO14     		  244}
-{FO15     		  245}
-{FO16     		  246}
-{FO17     		  247}
-{FO18     		  248}
-{FO19     		  249}
-{FO20     		  250}
-{FO21     		  251}
-{FO22 			  252}
-{FO23 			  253}
-{FO24 			  254}
+#{FO1				231}
+#{FO2				232}
+#{FO3				233}
+#{FO4				234}
+#{FO5				235}
+#{FO6				236}
+#{FO7				237}
+#{FO8				238}
+#{FO9				239}
+#{FO10				240}
+#{FO11				241}
+#{FO12				242}
+#
+#{FO13     		  243}
+#{FO14     		  244}
+#{FO15     		  245}
+#{FO16     		  246}
+#{FO17     		  247}
+#{FO18     		  248}
+#{FO19     		  249}
+#{FO20     		  250}
+#{FO21     		  251}
+#{FO22 			  252}
+#{FO23 			  253}
+#{FO24 			  254}
 
 {pixelTrig-1_A1			255}
 {pixelTrig-1_B1			256}
@@ -253,31 +253,31 @@ pattern {SIG   	ADDR}
 {GateDly-3_OUT	50}
 {GateDly-4_OUT	51}
 
-{FI1			52}
-{FI2			53}
-{FI3			54}
-{FI4			55}
-{FI5			56}
-{FI6			57}
-{FI7			58}
-{FI8			59}
-{FI9			60}
-{FI10			61}
-{FI11			62}
-{FI12			63}
-
-{FI13			64}
-{FI14			65}
-{FI15			66}
-{FI16			67}
-{FI17			68}
-{FI18			69}
-{FI19			70}
-{FI20			71}
-{FI21			72}
-{FI22			73}
-{FI23			74}
-{FI24			75}
+#{FI1			52}
+#{FI2			53}
+#{FI3			54}
+#{FI4			55}
+#{FI5			56}
+#{FI6			57}
+#{FI7			58}
+#{FI8			59}
+#{FI9			60}
+#{FI10			61}
+#{FI11			62}
+#{FI12			63}
+#
+#{FI13			64}
+#{FI14			65}
+#{FI15			66}
+#{FI16			67}
+#{FI17			68}
+#{FI18			69}
+#{FI19			70}
+#{FI20			71}
+#{FI21			72}
+#{FI22			73}
+#{FI23			74}
+#{FI24			75}
 
 {pixelTrig-1_TRIG	76}
 {pixelTrig-1_MISS	77}
@@ -292,133 +292,100 @@ pattern {SIG   	ADDR}
 {PixelFIFO-1_FIFO90		84}
 {PixelFIFO-1_ADVDONE	85}
 
-{FI25			86}
-{FI26			87}
-{FI27			88}
-{FI28			89}
-{FI29			90}
-{FI30			91}
-{FI31			92}
-{FI32			93}
-{FI33			94}
-{FI34			95}
-{FI35			96}
-{FI36			97}
+#{FI25			86}
+#{FI26			87}
+#{FI27			88}
+#{FI28			89}
+#{FI29			90}
+#{FI30			91}
+#{FI31			92}
+#{FI32			93}
+#{FI33			94}
+#{FI34			95}
+#{FI35			96}
+#{FI36			97}
 
 # debug
 {PixelTrig_ENQ	98}
 {PixelFIFO-1_ROOM	99}
 }
 
-#file "softGlue_FieldInput.db"
-#{
-#pattern {SIG   PORT	ADDR       IOPIN}
+file "softGlue_FieldInput.db"
+{
+pattern {SIG   ADDR 	  IOPIN}
 ## These are inputs from the user's viewpoint, but they behave like softGlue
 ## outputs.
-#{FI1	   52}
-#{FI2	   53}
-#{FI3	   54}
-#{FI4	   55}
-#{FI5	   56}
-#{FI6	   57}
-#{FI7	   58}
-#{FI8	   59}
-#{FI9	    9}
-#{FI10		10}
-#{FI11		11}
-#{FI12		12}
-#{FI13		13}
-#{FI14		14}
-#{FI15		15}
-#{FI16		16}
-#{FI17		17}
-#{FI18		18}
-#{FI19		19}
-#{FI20		20}
-#{FI21		21}
-#{FI22		22}
-#{FI23		23}
-#{FI24		24}
-#{FI25		25}
-#{FI26		26}
-#{FI27		27}
-#{FI28		28}
-#{FI29		29}
-#{FI30		30}
-#{FI31		31}
-#{FI32		32}
-#{FI33		33}
-#{FI34		34}
-#{FI35		35}
-#{FI36		36}
-#{FI37		37}
-#{FI38		38}
-#{FI39		39}
-#{FI40		40}
-#{FI41		41}
-#{FI42		42}
-#{FI43		43}
-#{FI44		44}
-#{FI45		45}
-#{FI46		46}
-#{FI47		47}
-#{FI48		48}
-#}
+{FI1			52	1}
+{FI2			53	2}
+{FI3			54	3}
+{FI4			55	4}
+{FI5			56	5}
+{FI6			57	6}
+{FI7			58	7}
+{FI8			59	8}
+{FI9			60	9}
+{FI10			61	10}
+{FI11			62	11}
+{FI12			63	12}
 
-#file "softGlue_FieldOutput.db"
-#{
-#pattern {SIG   ADDR       IOPIN}
+{FI13			64	13}
+{FI14			65	14}
+{FI15			66	15}
+{FI16			67	16}
+{FI17			68	17}
+{FI18			69	18}
+{FI19			70	19}
+{FI20			71	20}
+{FI21			72	21}
+{FI22			73	22}
+{FI23			74	23}
+{FI24			75	24}
+
+{FI25			86	25}
+{FI26			87	26}
+{FI27			88	27}
+{FI28			89	28}
+{FI29			90	29}
+{FI30			91	30}
+{FI31			92	31}
+{FI32			93	32}
+{FI33			94	33}
+{FI34			95	34}
+{FI35			96	35}
+{FI36			97	36}
+}
+
+file "softGlue_FieldOutput.db"
+{
+pattern {SIG   ADDR 	  IOPIN}
 ## These are outputs from the user's viewpoint, but they behave like softGlue
 ## inputs.
-#{FO1   231}
-#{FO2   232}
-#{FO3   233}
-#{FO4   234}
-#{FO5   235}
-#{FO6   236}
-#{FO7   237}
-#{FO8   238}
-#{FO9	9}
-#{FO10	10}
-#{FO11	11}
-#{FO12	12}
-#{FO13	13}
-#{FO14	14}
-#{FO15	15}
-#{FO16	16}
-#{FO17	17}
-#{FO18	18}
-#{FO19	19}
-#{FO20	20}
-#{FO21	21}
-#{FO22	22}
-#{FO23	23}
-#{FO24	24}
-#{FO25	25}
-#{FO26	26}
-#{FO27	27}
-#{FO28	28}
-#{FO29	29}
-#{FO30	30}
-#{FO31	31}
-#{FO32	32}
-#{FO33	33}
-#{FO34	34}
-#{FO35	35}
-#{FO36	36}
-#{FO37	37}
-#{FO38	38}
-#{FO39	39}
-#{FO40	40}
-#{FO41	41}
-#{FO42	42}
-#{FO43	43}
-#{FO44	44}
-#{FO45	45}
-#{FO46	46}
-#{FO47	47}
-#{FO48	48}
-#}
+{FO1	231	1}
+{FO2	232	2}
+{FO3	233	3}
+{FO4	234	4}
+{FO5	235	5}
+{FO6	236	6}
+{FO7	237	7}
+{FO8	238	8}
+{FO9	239	9}
+{FO10	240	10}
+{FO11	241	11}
+{FO12	242	12}
+
+{FO13	243	13}
+{FO14	244	14}
+{FO15	245	15}
+{FO16	246	16}
+{FO17	247	17}
+{FO18	248	18}
+{FO19	249	19}
+{FO20	250	20}
+{FO21	251	21}
+{FO22	252	22}
+{FO23	253	23}
+{FO24	254	24}
+}
 
 
 file "softGlue_description.db"
