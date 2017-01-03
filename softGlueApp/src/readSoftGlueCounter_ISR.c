@@ -117,7 +117,7 @@ static int counterOffset[10] = {
 	7
 };
 
-int readSoftGlueCounter_ISRPrepare(int AXI_Address, epicsUInt32 risingMask) {
+int readSoftGlueCounter_ISRPrepare(epicsUInt32 risingMask) {
 	int i;
 	/* Get the address of the COUNTS registers of eight counters. */
 	for (i=0; i<5; i++) {
@@ -180,13 +180,12 @@ static long readSoftGlueCounter_ISR_init(aSubRecord *pasub) {
 }
 
 static long readSoftGlueCounter_ISR(aSubRecord *pasub) {
-	int *values = (int *) pasub->vala;
 	int *reset = (int *) pasub->b;
 	int *index = (int *) pasub->valb;
 	int *counter1 = (int *) pasub->a;
 	int *counter2 = (int *) pasub->d;
 	int *oneshot = (int *) pasub->e;
-	int numValues = pasub->nova;
+	int numValues = rcISRData.numValues;
 	int i;
 
 	*index = rcISRData.index;
@@ -197,17 +196,14 @@ static long readSoftGlueCounter_ISR(aSubRecord *pasub) {
 			rcISRData.UpDnCounter_1_values, rcISRData.UpDnCounter_2_values);
 	}
 
-	rcISRData.numValues = numValues;
 	rcISRData.oneshot = *oneshot;
 	if (*reset) {
 		rcISRData.reset = 1;
 		*reset = 0;
-#if 1
 		for (i=0; i<numValues; i++) {
 			rcISRData.UpDnCounter_1_values[i] = 0;
 			rcISRData.UpDnCounter_2_values[i] = 0;
 		}
-#endif
 	}
 
 	/* which counter should we read? */
@@ -225,13 +221,12 @@ static long readSoftGlueCounter_ISR(aSubRecord *pasub) {
 #include <registryFunction.h>
 
 /* register readSoftGlueCounter_ISRPrepare so it can be called from the ioc shell */
-/* int readSoftGlueCounter_ISRPrepare(int AXI_Address, epicsUInt32 risingMask) */
-static const iocshArg myArg1 = { "AXI_Address",	iocshArgInt};
-static const iocshArg myArg2 = { "risingMask",	iocshArgInt};
-static const iocshArg * const myArgs[2] = {&myArg1, &myArg2};
-static const iocshFuncDef myFuncDef = {"readSoftGlueCounter_ISRPrepare",2,myArgs};
+/* int readSoftGlueCounter_ISRPrepare(epicsUInt32 risingMask) */
+static const iocshArg myArg1 = { "risingMask",	iocshArgInt};
+static const iocshArg * const myArgs[1] = {&myArg1};
+static const iocshFuncDef myFuncDef = {"readSoftGlueCounter_ISRPrepare",1,myArgs};
 static void myCallFunc(const iocshArgBuf *args) {
-	readSoftGlueCounter_ISRPrepare(args[0].ival, args[1].ival);
+	readSoftGlueCounter_ISRPrepare(args[0].ival);
 }
 void RSCsoftGlueISRRegistrar(void)
 {
