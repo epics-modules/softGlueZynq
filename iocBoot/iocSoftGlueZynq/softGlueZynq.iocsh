@@ -1,18 +1,18 @@
 # BEGIN softGlue.iocsh ----------------------------------------------------------
 
-epicsEnvSet("PORT1", "SGIO_1")
-epicsEnvSet("PORT2", "SGIO_2")
-epicsEnvSet("PORT3", "SGIO_3")
+
+epicsEnvSet("PREFIX", "zzz:")
+epicsEnvSet("INSTANCE", "SG:")
+epicsEnvSet("CONFIG", "SG")
+
+epicsEnvSet("READEVENT", "10")
+epicsEnvSet("IPORT", "AXI0INT")
 epicsEnvSet("SPORT", "AXI0")
 epicsEnvSet("RPORT", "AXI1")
-epicsEnvSet("PREFIX", "zzz:")
-epicsEnvSet("INSTANCE", "softGlue:")
-epicsEnvSet("CONFIG", "SG")
-epicsEnvSet("READEVENT", "10")
 
 
 #var devAsynSoftGlueDebug,1
-#var drvZynqDebug,5
+#var drvZynqDebug,1
 ################################################################################
 #    Initialize the FPGA
 #-----------------------
@@ -26,33 +26,14 @@ epicsEnvSet("READEVENT", "10")
 #    filename: Name of the FPGA-content hex file to load into the FPGA.
 #
 
-#initZynqIP("design_1_wrapper.bit")
-#system("loadFPGA_3_IO.sh")
-system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/design_1_wrapper_3_IO.bin >/dev/xdevcfg")
+#system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7010.bin >/dev/xdevcfg")
+system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7020.bin >/dev/xdevcfg")
 
 #-------------------------------------------------------------------------------
-#int initZynqIO(const char *portName, 
-#	int msecPoll, int dataDir, int AXI_Address, int interruptVector,
-#	int risingMask, int fallingMask) {
+#int initZynqInterrupts(const char *portName, const char *componentName) {
 #    portName: Name of asyn port for component at sopcOffset
-#    msecPoll:        Time interval between driver polls of field I/O bits
-#    dataDir:         Data direction for I/O bits, explained below.
-#    AXI_Address:     AXI_Address.
-#    interruptVector: Must agree with the FPGA content loaded (0x90, 0x91,
-#                     0x92 for softGlue 2.1 and higher; 0x80, 0x81, 0x82 for
-#                     softGlue 2.0 and lower).
-#    risingMask:      16-bit mask: if a bit is 1, the corresponding I/O bit will
-#                     generate an interrupt when its value goes from 0 to 1.
-#                     Bit 0 corresponds to field I/O pin 1, bit 1 to pin 2, etc.
-#    fallingMask:     Similar to risingMask, but for 1-to-0 transitions.
-#
-#                     Note that the user can overwrite risingMask and
-#                     fallingMask at run time, with menu selections, and
-#                     probably has those selections autosaved.
-#    dataDir is yet to be determined.
-#!initZynqIO("$(PORT1)",1000000,0x101,0x800000,0x90,0x00,0x00)
-#!initZynqIO("$(PORT2)",1000000,0x101,0x800010,0x91,0x00,0x00)
-#!initZynqIO("$(PORT3)",1000000,0x101,0x800020,0x92,0x00,0x00)
+#    componentName: name of softGlue AXI component.
+initZynqInterrupts("$(IPORT)","softGlue_")
 
 ################################################################################
 #    Initialize softGlue signal-name support
@@ -60,12 +41,9 @@ system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/design_1_wrapper_3_IO.bin >/dev/xdevc
 #    All instances of a single-register component are initialized with a single
 #    call, as follows:
 #
-#initZynqSingleRegisterPort(const char *portName, int AXI_BaseAddress)
-#
-# For example:
-# initZynqSingleRegisterPort("$(SPORT)", 0x43C00000)
-initZynqSingleRegisterPort("$(SPORT)", 0x43C00000)
-initZynqSingleRegisterPort("$(RPORT)", 0x43C20000)
+# initZynqSingleRegisterPort(const char *portName, const char *componentName)
+initZynqSingleRegisterPort("$(SPORT)", "softGlue_")
+initZynqSingleRegisterPort("$(RPORT)", "softGlueReg32_")
 
 
 ################################################################################
@@ -85,10 +63,7 @@ dbLoadRecords("$(SOFTGLUEZYNQ)/db/softGlue_FPGARegisters.db", "P=$(PREFIX),H=$(I
 
 
 #    Interrupt support.
-#    ('epicsEnvSet' is used to fit the command into the vxWorks command line space.)
-#epicsEnvSet("SFDB", "$(SOFTGLUEZYNQ)/db/softGlue_FPGAInt.db")
-#dbLoadRecords("$(SFDB)","P=$(PREFIX),H=$(INSTANCE),PORT1=$(PORT1),PORT2=$(PORT2),PORT3=$(PORT3),FIFO=10")
-#dbLoadRecords("$(SOFTGLUEZYNQ)/db/softGlue_FPGAInt.db","P=$(PREFIX),H=$(INSTANCE),PORT1=$(PORT1),PORT2=$(PORT2),PORT3=$(PORT3),FIFO=10")
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/softGlue_FPGAInt.db","P=$(PREFIX),H=$(INSTANCE),IPORT=$(IPORT)")
 
 #    Some stuff just for convenience: software clock and pulse generators, and
 #    a couple of busy records.
@@ -106,9 +81,23 @@ doAfterIocInit("create_manual_set('$(CONFIG)Menu.req','P=$(PREFIX),CONFIG=$(CONF
 # This is for interrupts that occur too closely spaced in time for softGlue's
 # normal interrupt service (an output link to an EPICS record) to handle.
 # Note that this command must be issued after iocInit.
-#doAfterIocInit("sampleCustomInterruptPrepare($(IPCARRIER), $(IPSLOT), 0x800010, 0x1)")
+#doAfterIocInit("sampleCustomInterruptPrepare(0x10000, 0x0)")
 
-# debug:
-dbLoadRecords("$(ASYN)/db/asynRecord.db","P=zzz:,R=asynSoftGlue,PORT=$(SPORT),ADDR=0,OMAX=0,IMAX=0")
-dbLoadRecords("$(ASYN)/db/asynRecord.db","P=zzz:,R=asynSoftGlueReg,PORT=$(RPORT),ADDR=0,OMAX=0,IMAX=0")
+# attach pixelTrigger histogrammer to FO_16 interrupt.
+# pixelTriggerPrepare(char *componentName, epicsUInt32 risingMask, int fifoSize)
+#var pixelTriggerDebug,1
+doAfterIocInit("pixelTriggerPrepare(pixelFIFO_, 0x80000000, 1024)")
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/pixelTrigger.db","P=$(PREFIX),Q=1,N=40000")
+
+# attach MCS to FO_16 interrupt.
+# pixelTriggerPrepare(char *componentName, epicsUInt32 risingMask, int fifoSize)
+#var MCSADebug,1
+#doAfterIocInit("MCSPrepare(pixelFIFO_, 0x80000000, 1024)")
+#dbLoadRecords("$(SOFTGLUEZYNQ)/db/MCSAsub.db","P=$(PREFIX),Q=1,N=40000")
+
+# readSoftGlueCounter_ISR
+var readSoftGlueCounter_ISRDebug, 1
+#dbLoadRecords("$(SOFTGLUEZYNQ)/db/readSoftGlueCounter_ISR.db","P=$(PREFIX),Q=SG_RdCntr:,N=100000")
+#doAfterIocInit("readSoftGlueCounter_ISRPrepare(0x40000000)")
+
 # END softGlue.cmd ------------------------------------------------------------
