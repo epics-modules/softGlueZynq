@@ -80,88 +80,6 @@ register clock is 100 MHz.
 
 </blockquote>
 
-<P>Here's what a component looks like in the Xilinx Vivado block diagram:
-<P><center><img src="inVivado.jpg" name="Vivado block diagram"></center>
-
-<P>The switches, synchronizing flipflops, and softGlue signal bus lines are all
-contained in the big blue box, which Xilinx calls an "AXI4 peripheral."  To us,
-this means that it contains registers we can read and write from EPICS.  Each
-switch is controlled by an eight bit register, as detailed later in the section
-"softGlueZynq register component."
-
-<P>Here is what that component looks like in the EPICS substitutions file
-<code>softGlue_FPGAContent.substitutions</code>:
-
-<blockquote>
-<pre>
-file "softGlue_Input.db"
-{
-pattern {SIG     ADDR}
-...
-{DFF-1_D        124}
-{DFF-1_CLOCK    125}
-{DFF-1_SET      126}
-{DFF-1_CLEAR    127}
-...
-}
-
-file "softGlue_Output.db"
-{
-pattern {SIG  ADDR}
-...
-{DFF-1_OUT    14}
-...
-}
-
-</pre>
-</blockquote>
-
-<P>So you see how easy it is to add custom components to softGlue, and get them
-hooked up to EPICS PVs.  Making an MEDM display is not much harder, because
-softGlue displays are hierarchical, and nearly all the work has already been
-done.  You just choose the existing display that resembles what you want, add or
-delete inputs and outputs, and rename stuff.  softGlueZynq is not just for
-making circuits by wiring existing components; it's also a really easy way to
-make custom application-specific electronics available to EPICS users.
-
-<P>For completeness, here's what that flipflop looks like in Verilog:
-
-<blockquote>
-<pre>
-module flipflop (
-	input wire regClk, D, Clk, Set, Clear,
-	output reg Q
-);
-	reg [1:0] rClk;
-	
-	// detect rising edges
-	always @(negedge regClk) begin
-		rClk <= {rClk[0], Clk};
-	end
-
-	always @(negedge regClk) begin
-		if (~Set)
-			Q <= 1;
-		else if (~Clear)
-			Q <= 0;
-		else if (rClk==2'b01)
-			Q <= D;
-	end
-endmodule
-</pre>
-</blockquote>
-
-<P>&lt;spiel&gt;<br>
-
-Very simple stuff.  Vivado represents a bit of a learning curve, but you can
-learn enough to add a custom component to softGlueZynq in about a week.  Even
-though most people are not going to customize softGlueZynq in this way, I wanted
-you to know how easy it is.  We've gotten used to the idea that EPICS users can
-ask their developers for custom, application-specific EPICS software.  Custom,
-application-specific hardware is not hard anymore.
-
-<br>
-&lt;/spiel&gt;
 
 <hr>
 <h3>Requirements</h3>
@@ -452,7 +370,7 @@ sourcing doMounts.sh.
 
 <li>
 <pre>
-initZynqSingleRegisterPort(char *portName, int AXI_BaseAddress)
+initZynqSingleRegisterPort(const char *portName, const char *componentName)
 </pre>
 
 <P>Initialize softGlueZynq signal-name support.
@@ -460,18 +378,14 @@ initZynqSingleRegisterPort(char *portName, int AXI_BaseAddress)
 <P>Example:
 
 <pre>
-# !!! For now, AXI0 MUST come first, AXI1 MUST come second, if
-# softGlueCalcSpecifiedRegisterAddress() will be called, because the routine
-# is sloppily written.
-# softGlue signals
-initZynqSingleRegisterPort("AXI0", 0x43C00000)
+initZynqSingleRegisterPort("AXI0", "softGlue_")
 # softGlue registers
-initZynqSingleRegisterPort("AXI1", 0x43C20000)
+initZynqSingleRegisterPort("AXI1", "softGlueReg32_")
 </pre>
 
 <li>
 <pre>
-initZynqInterrupts(const char *portName, int AXI_BaseAddress)
+initZynqInterrupts(const char *portName, const char *componentName)
 </pre>
 
 <P>Initialize softGlueZynq interrupt support.
@@ -479,7 +393,7 @@ initZynqInterrupts(const char *portName, int AXI_BaseAddress)
 <P>Example:
 
 <pre>
-initZynqInterrupts("AXI0INT",0x43c10000)
+initZynqInterrupts("AXI0INT", "softGlue_")
 </pre>
 
 </ul>
@@ -680,7 +594,8 @@ edge sensitive.  All clock inputs in softGlueZynq act on the rising edge of the 
 
 <P>The open circle ("bubble") in the <code>SET</code> and <code>CLEAR</code> inputs' signal paths indicate
 that these signals are inverted before being used.  Thus, applying '0' to the <code>CLEAR</code> input causes
-the output to be "cleared" (given the value 0).
+the output to be "cleared" (given the value 0).  <code>SET</code> and <code>CLEAR</code>
+are asynchronous: they act immediately, and don't wait for the next clock edge.
 
 <P><table border>
 <tr><th>SET<th>CLEAR<th>D<th>&gt; (clock)<th><th>Q
@@ -709,18 +624,22 @@ the output to be "cleared" (given the value 0).
 <P><img src="UpCntr.gif" name="32-bit Counter">
 
 <P><code>EN==1</code> enables the clock ("&gt;") input, whose rising edge increments the counter value.
+<P><code>CLEAR</code> is asynchronous, and acts whether or not <code>EN==1</code>.
 
 <hr>
 <li><P>Down Counter (32-bit Preset Counter)
 <P><img src="DnCntr.gif" name="16-bit Preset Counter">
 
-<P><code>EN==1</code> enables the clock (">") input, whose rising edge decrements the counter value. 
-When <code>LOAD==1</code> the counter is loaded with the value applied to the <code>PRESET</code>
-input.  While <code>LOAD==1</code>, the counter does not count down.  While <code>LOAD==0</code> and
-<code>EN==1</code>, a rising edge at the clock input decrements the counter.  When the counter value
-reaches <code>0</code>, the output <code>Q</code> goes to <code>1</code>; the next rising edge of the
-clock returns <code>Q</code> to <code>0</code> (regardless of the states of <code>EN</code> and
-<code>LOAD</code>).
+<P><code>EN==1</code> enables the clock (">") input, whose rising edge
+decrements the counter value.  When <code>LOAD==1</code> the counter is loaded
+immediately with the value applied to the <code>PRESET</code> input (whether or
+not <code>EN==1</code>).  While
+<code>LOAD==1</code>, the counter does not count down.  While
+<code>LOAD==0</code> and <code>EN==1</code>, a rising edge at the clock input
+decrements the counter.  When the counter value reaches <code>0</code>, the
+output <code>Q</code> goes to <code>1</code>; the next rising edge of the clock
+returns <code>Q</code> to <code>0</code> (regardless of the states of
+<code>EN</code> and <code>LOAD</code>).
 
 <hr>
 <li><P>32-bit Divide By N
@@ -733,9 +652,9 @@ the output signal, but it does not guarantee the same number of falling edges.
 Therefore, using an inverted copy of the output to clock downstream electronics
 will in some cases have inconsistent results.
 
-When <code>N</code>==<code>0</code>, the divide circuitry is bypassed, and the
-clock is connected directly to <code>Q</code>.  This is an error; the output
-should still be gated by the <code>EN</code> signal.
+When <code>N</code>==<code>1</code>, the divide circuitry is bypassed, and the
+clock is connected directly to <code>Q</code>, if <code>EN==1</code>, or is set
+to 0 if <code>EN==0</code>.
 
 <P>The <code>RESET</code> signal loads the
 counter with <code>N</code>, so that <code>Q</code> will be driven to
@@ -744,8 +663,58 @@ counter with <code>N</code>, so that <code>Q</code> will be driven to
 is <code>1</code>, it will be cleared on the first rising edge of the clock.
 
 <P>
-
 <hr>
+
+<li><P>32-bit Up/Down Counter
+<P><img src="UpDnCntr.gif" name="Up/Down Counter">
+
+<P><code>EN==1</code> enables the clock (">") input.  <code>CLEAR==1</code> sets
+the current count and the output value <code>Q</code> to zero.  When
+<code>UP/DOWN==1</code> the counter counts up.  <code>LOAD</code> sets the
+current count to <code>PRESET</code>
+
+<P>
+<hr>
+
+<li><P>Quadrature Decoder
+<P><img src="QuadDec.gif" name="Quadrature Decoder">
+
+<P>This circuit converts a pair of digital quadrature signals <code>A, B</code>
+(for example, signals from an encoder) into a pair of <code>STEP, DIR</code>
+signals.  <code>A</code> and <code>B</code> are samples on rising edges of the
+<code>CLOCK</code> signal.  If either have changed since the last rising edge,
+the travel direction implied by the change is output to <code>DIR</code>, and a
+pulse is output to <code>STEP</code>.  The pulse width is equal to the period of
+the <code>CLOCK</code> signal, and the input frequency may not be greater than
+half the clock frequency.
+
+<P>
+<hr>
+
+<li><P>Gate&Delay Generator
+<P><img src="GateAndDelay.jpg" name="GateAndDelay Generator">
+
+<P>The rising edge of the input signal <code>IN</code> will appear at
+<code>OUT</code> after <code>DLY</code> periods of the clock <code>></code>.
+If <code>WIDTH</code> is nonzero, it specifies the width in clock periods of
+the output pulse.  If  <code>WIDTH==0</code>, the width of the input signal
+will be used.
+
+<P>There is a faster version of this component, with 1 ns time resolution,
+connected directly to field I/O, and clocked by a fixed 500 MHz clock.
+
+<P>
+<hr>
+
+<li><P>Frequency Counter
+<P><img src="FreqCntr.jpg" name="Frequency Counter">
+
+<P>This component counts the number of rising edges per second
+presented to the ">" input.
+
+<P>
+<hr>
+
 <li><P>10 MHz internal clock
 <P><img src="10MHz_clock.jpg" name="* MHz clock">
 
@@ -764,26 +733,26 @@ but it works and it isn't the most pressing need at the moment.
 <li><P>Field I/O
 <P><img src="Field_IO.jpg" name="Field I/O">
 
-<P>This display allows you to connect field I/O signals to each other and to softGlueZynq circuits. 
-Note that a "Field Input Bit" looks like and behaves as a softGlueZynq <em>output</em>, because what
-you're actually controlling is the output of a buffer driven by the field-input signal.  Similarly,
-a "Field Output Bit" looks like and behaves as a softGlueZynq <em>input</em>, because you're actually
-controlling the input of a buffer that drives the field-output signal.
+<P>This display allows you to connect field I/O signals to each other and to
+softGlueZynq circuits.  Note that a "Field Input Bit" looks like and behaves as
+a softGlueZynq <em>output</em>, because what you're actually controlling is the
+output of a buffer driven by the field-input signal.  Similarly, a "Field Output
+Bit" looks like and behaves as a softGlueZynq <em>input</em>, because you're
+actually controlling the input of a buffer that drives the field-output signal.
 
 
 <P>The signals in this display are the field inputs or outputs connected to 
 MicroZed I/O pins.  As currently implemented, softGlueZynq supports 24 inputs
-and 24 outputs configured for LVCMOS33.  The outputs are TTL compatible,
-but the inputs must be limited to around 3.5 V.
+and 24 outputs configured for LVCMOS33, and 12 inputs configured for LVDS.  The
+LVCMOS33 outputs are TTL compatible, but the inputs must be limited to around
+3.5 V.
 
 <blockquote>You can change the "CONNECTOR&nbsp;#" strings in this display
 &mdash; for example, to support a custom signal-breakout module, or to give the
 I/O signals application-specific names.  The strings are defined in
 <code>softGlueZynqApp/Db/softGlueZynq_FPGAContent.substitutions</code>, as the
 macro <code>IOPIN</code> supplied to <code>softGlueZynq_FieldOutput.db</code>
-and <code>softGlueZynq_FieldInput.db</code>.  In softGlueZynq 2.3.1, field I/O
-displays leave room for longer strings, and there is a an autosave-request file
-for these PVs.</blockquote>
+and <code>softGlueZynq_FieldInput.db</code>.</blockquote>
 
 <hr>
 <li><P>Field I/O Interrupt support
@@ -799,8 +768,8 @@ PV, by writing an EPICS link description into the purple box labelled "ON
 INTERRUPT, WRITE SIGNAL VALUE VIA THIS LINK".
 
 <P><i>For interrupts that may occur too closely spaced in time for
-softGlueZynq's normal interrupt-response mechanism to handle reliably, see
-"Custom Interrupt Handlers", below.</i>
+softGlueZynq's EPICS-record-processing interrupt-response mechanism to handle
+reliably, see "Custom Interrupt Handlers", below.</i>
 
 <h4>About EPICS links</h4>
 
@@ -877,57 +846,12 @@ CA put will succeed in clearing it and causing its processing to appear done to 
 <a name="Additional FPGA components"></a>
 <h2><center>Additional FPGA components</center></h2>
 
+<P>The following components are not general purpose, but are specific to an
+experiment type or a measurement technique.  Components in this category are not
+guaranteed to be compatible with previous or future versions of themselves. 
+These are custom components, and they will evolve with user requirements.
+
 <ul>
-
-<li><P>32-bit Up/Down Counter
-<P><img src="UpDnCntr.gif" name="Up/Down Counter">
-
-<P><code>EN==1</code> enables the clock (">") input.  <code>CLEAR==1</code> sets
-the current count and the output value <code>Q</code> to zero.  When
-<code>UP/DOWN==1</code> the counter counts up.  <code>LOAD</code> sets the
-current count to <code>PRESET</code>
-
-<P>
-<hr>
-
-<li><P>Quadrature Decoder
-<P><img src="QuadDec.gif" name="Quadrature Decoder">
-
-<P>This circuit converts a pair of digital quadrature signals <code>A, B</code>
-(for example, signals from an encoder) into a pair of <code>STEP, DIR</code>
-signals.  <code>A</code> and <code>B</code> are samples on rising edges of the
-<code>CLOCK</code> signal.  If either have changed since the last rising edge,
-the travel direction implied by the change is output to <code>DIR</code>, and a
-pulse is output to <code>STEP</code>.  The pulse width is equal to the period of
-the <code>CLOCK</code> signal, and the input frequency may not be greater than
-half the clock frequency.
-
-<P>
-<hr>
-
-<li><P>Gate&Delay Generator
-<P><img src="GateAndDelay.jpg" name="GateAndDelay Generator">
-
-<P>The rising edge of the input signal <code>IN</code> will appear at
-<code>OUT</code> after <code>DLY</code> periods of the clock <code>></code>.
-If <code>WIDTH</code> is nonzero, it specifies the width in clock periods of
-the output pulse.  If  <code>WIDTH==0</code>, the width of the input signal
-will be used.
-
-<P>There is a faster version of this component, with 1 ns time resolution,
-connected directly to field I/O, and clocked by a fixed 500 MHz clock.
-
-<P>
-<hr>
-
-<li><P>Frequency Counter
-<P><img src="FreqCntr.jpg" name="Frequency Counter">
-
-<P>This component counts the number of rising edges per second
-presented to the ">" input.
-
-<P>
-<hr>
 
 <li><P>Histogramming Scaler
 <P><img src="HistScal.jpg" name="Histogramming Scaler">
@@ -951,8 +875,10 @@ be written to a FIFO for transport to EPICS.
 clock input is hardwired to a dedicated clock generator, because the softGlue
 signal bus can't transport signals of frequency higher than 50 MHz.
 
-<P>
-<hr>
+<P>Note that the histogramming scaler was dropped from the 7010 version, because
+there wasn't enough room in the FPGA.
+
+ <hr>
 
 
 <li><P>2D Microscope Data-Acquisition System ("pixelTrigger")
@@ -986,7 +912,9 @@ desktop.)  caQtDM is required for the image display, because MEDM has no 2D
 display widget for live data.  
 
 <P>The maximum rate (number of pixel-boundary crossings per second) depends on
-whether or not it is permissible for any pixels to be missed.  If all pixels
+the size of the FIFO, and on whether or not it is permissible for any pixels to
+be missed.  In the 7020 version, the FIFO is 1024 words; in the 7010, it is 256
+words.  The following rates were measured with the 7020 version.  If all pixels
 must be acquired, the maximum rate is around 5000 pixels/s.  This is determined
 by the worst case interrupt latency of the Linux processor, because EPICS must
 read the FIFO before it fills up.  If it's permissible to skip pixels
@@ -1080,12 +1008,13 @@ are in iocBoot/iocsoftGlueZynq.
 		<ol>
 		<li><h4>Motor-pulse gate </h4>
 
-		Positive-going pulses can be gated with an AND gate, by applying the signal to one input of the AND gate,
-		and setting the other input to 0(1) to deny(allow) passage through the gate.
+		Positive-going pulses can be gated with an AND gate, by applying the signal to
+		one input of the AND gate, and setting the other input to 0(1) to deny(allow)
+		passage through the gate.
 
-		<P>Negative-going pulses can be gated with an OR gate, by applying the signal to one input
-		of the OR gate, and setting the other input to 0(1) to allow(deny) passage through the
-		gate.
+		<P>Negative-going pulses can be gated with an OR gate, by applying the signal
+		to one input of the OR gate, and setting the other input to 0(1) to
+		allow(deny) passage through the gate.
 
 		<li><h4>Gated scaler</h4> <P><i><code>gatedScaler.cfg</code></i>
 
@@ -1095,10 +1024,10 @@ are in iocBoot/iocsoftGlueZynq.
 		that the scaler is controlled by a busy record from the softGlueZynq
 		convenience database, so that client software can discover when counting
 		is finished in the standard EPICS way.  See
-		<code>softGlueZynqApp/op/burt/gatedScaler.txt</code> for more details.
+		<a href="gatedScaler.txt">gatedScaler.txt</a> for more details.
 
 
-		<P><img src="gatedScaler.gif" name="gatedScaler">
+		<P><img src="gatedScaler.jpg" name="gatedScaler">
 
 		<li><h4>Four independent start-time/stop-time pulses</h4>
 		<P><code>fourPulses.cfg</code>
@@ -1116,7 +1045,7 @@ are in iocBoot/iocsoftGlueZynq.
 		is available, however, so the pulse sequence could also be started by an
 		external signal.
 
-		<P><img src="fourPulses.gif" name="fourPulses">
+		<P><img src="fourPulses.jpg" name="fourPulses">
 
 		<li><h4>Motor-pulse accel/decel gate</h4>
 		
@@ -1160,7 +1089,7 @@ are in iocBoot/iocsoftGlueZynq.
 			as shown, causes a short positive-going pulse to be applied to it, and thus to its output,
 			the signal named "reset".
 
-		<P><img src="accelDecelGate.gif" name="accelDecelGate">
+		<P><img src="accelDecelGate.jpg" name="accelDecelGate">
 
 		<P>Down counter <code>DnCntr-1</code>, and flipflop <code>DFF-1</code>, together produce a gate
 		signal that is 0 after a reset, and that goes to 1 after <code>DnCntr-1_PRESET</code> motor
@@ -1190,9 +1119,9 @@ are in iocBoot/iocsoftGlueZynq.
 		<P><img src="accelDecelGateCalc.gif" name="accelDecelGateCalc">
 		</ol>
 
-<P>For more softGlueZynq-circuit examples, see
+<P>For more softGlue-circuit examples, see
 <a
-href="https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlueZynq_examples">https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlueZynq_examples</a>
+href="https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlue_examples">https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlue_examples</a>
 Currently, the following circuits are documented:
 <ul>
 <li>Programmable pulse train
@@ -1282,6 +1211,78 @@ baseline performance, autosave was disabled.
 <hr>
 <a name="Implementation"></a>
 <h2><center>Implementation</center></h2>
+
+<P>Here's what a component looks like in the Xilinx Vivado block diagram:
+<P><center><img src="inVivado.jpg" name="Vivado block diagram"></center>
+
+<P>The switches, synchronizing flipflops, and softGlue signal bus lines are all
+contained in the big blue box, which Xilinx calls an "AXI4 peripheral."  To us,
+this means that it contains registers we can read and write from EPICS.  Each
+switch is controlled by an eight bit register, as detailed later in the section
+"softGlueZynq register component."
+
+<P>Here is what that component looks like in the EPICS substitutions file
+<code>softGlue_FPGAContent.substitutions</code>:
+
+<blockquote>
+<pre>
+file "softGlue_Input.db"
+{
+pattern {SIG     ADDR}
+...
+{DFF-1_D        124}
+{DFF-1_CLOCK    125}
+{DFF-1_SET      126}
+{DFF-1_CLEAR    127}
+...
+}
+
+file "softGlue_Output.db"
+{
+pattern {SIG  ADDR}
+...
+{DFF-1_OUT    14}
+...
+}
+
+</pre>
+</blockquote>
+
+<P>It's easy to add custom components to softGlue, and get them hooked up to
+EPICS PVs.  Making an MEDM display is also easy, because softGlue displays are
+hierarchical, and nearly all the work has already been done.  You just choose
+the existing display that resembles what you want, add or delete inputs and
+outputs, and rename stuff.  Thus, softGlueZynq is useful not only for making
+circuits by wiring existing components; it's also infrastructure to support
+custom application-specific electronics.
+
+<P>For completeness, here's what that flipflop looks like in Verilog:
+
+<blockquote>
+<pre>
+module flipflop (
+	input wire regClk, D, Clk, Set, Clear,
+	output reg Q
+);
+	reg [1:0] rClk;
+	
+	// detect rising edges
+	always @(negedge regClk) begin
+		rClk <= {rClk[0], Clk};
+	end
+
+	always @(negedge regClk) begin
+		if (~Set)
+			Q <= 1;
+		else if (~Clear)
+			Q <= 0;
+		else if (rClk==2'b01)
+			Q <= D;
+	end
+endmodule
+</pre>
+</blockquote>
+
 
 	<h3>FPGA-content files</h3>
 
