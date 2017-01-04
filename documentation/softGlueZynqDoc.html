@@ -328,11 +328,17 @@ IOC-boot directory.
 </blockquote>
 <li><code>make</code>
 
+<li><code>chmod a+w iocBoot/iocyyy</code>
+<li><code>chmod a+w iocBoot/iocyyy/autosave</code>
+<li><code>chmod a+x iocBoot/iocyyy/run</code>
 <li>edit <code>start_epics_yyy</code> to set <code>EPICS_APP</code> and
 <code>EPICS_APP_ADL_DIR</code>.
 
 <li>edit <code>iocBoot/iocyyy/run</code> to set the environment variable
 <code>PATH</code> to the directory that has executables for linux-arm.
+
+<li>edit <code>iocBoot/iocyyy/softGlueZynq.iocsh</code> to select the "system()"
+command that will load FPGA content matching your MicroZed version.
 
 <li>In softGlueZynq/documentation/SD_card, find the directory that matches
 the MicroZed version you have.  Untar it, edit <code>userConfig</code>
@@ -349,8 +355,8 @@ to document it here.</blockquote>
 <code>image.ub</code> to a MicroSD card, and insert the card in the
 MicroZed.
 
-<li>Power the MicroZed.  If it succeeds in getting an IP address via DHCP,
-ssh to root@&lt;IP address&gt;.
+<li>Power the MicroZed.  If it succeeds in getting an IP address via DHCP, ssh
+to root@&lt;IP address&gt;, or to the user account you specified in userConfig.
 
 <li>See if NFS mounts succeeded.  If not, you might be able to do them by
 sourcing doMounts.sh.
