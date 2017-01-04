@@ -264,7 +264,7 @@ is similar to the way we run vxWorks and soft Linux beamline IOCs at the
 Advanced Photon Source, and that's what I'm going to describe.  We build EPICS
 and synApps on the read-only file system <code>/APSshare</code>, and build
 IOC-application directories on a read-write file system
-<code>/net/s<i>N</i>dserv/xorApps/epics/ioc</code>.  You going to do whatever
+<code>/net/s<i>N</i>dserv/xorApps/epics/ioc</code>.  You're going to do whatever
 you want, of course; I'm just telling you this to make the description more
 understandable.
 
@@ -370,6 +370,9 @@ sourcing doMounts.sh.
 
 <h4>Configuring softGlueZynq (editing softGlueZynq.iocsh)</h4>
 
+<P>You shouldn't need to modify anything here, except to select the
+<code>system()</code> command that loads the copy of
+softGlue_FPGAContent_70x0.bin for the MicroZed model you have.
 
 <h5>User Callable Functions:</h5>
 <ul>
@@ -436,7 +439,8 @@ conveniently discussed from the viewpoint of the field-wiring connector.
 
 <P><code>softGlueZynqMenu.adl</code> is the top softGlueZynq display, which serves mostly to call up other
 displays.  The menu labelled <code>READ PERIOD</code> specifies the period at which the values of
-all signals are sampled for display to the user.
+all signals are sampled for display to the user.  <code>#SIGS IN USE</code>
+shows the number of signal names you have defined.
 
 
 <blockquote>Most softGlueZynq displays are not interrupt driven.  (That would be a disaster, because
@@ -957,17 +961,22 @@ read, histogram, and display 50,000 pixels/s.
 
 	<h4>Saving and restoring circuits with autosave's configMenu facility</h4>
 
+	<P>Note that the supplied copy of softGlueZynq.iocsh is already configured
+	to use configMenu.  The following description is just to document how it's
+	done.
+
 	<P><img src="configMenu.jpg" name="configMenu">
 
 	<P>If you have autosave R5-1 or higher, you can use configMenu to save and
-	restore circuits.  Here are the steps needed to implement a menu of softGlueZynq
-	circuits, and to give the user a GUI display for saving and restoring them. 
-	(In the following, <font color="blue">SG</font> is the name of this instance
-	of configMenu.  The files it loads and saves will be named "<font
+	restore circuits.  (autosave R5-7 supports an unlimited number of circuits.)
+	Here are the steps needed to implement a menu of softGlueZynq circuits, and
+	to give the user a GUI display for saving and restoring them.  (In the
+	following, <font color="blue">SG</font> is the name of this instance of
+	configMenu.  The files it loads and saves will be named "<font
 	color="blue">SG</font>_&lt;<i>config Name</i>&gt;.cfg".  For examples, the
 	configMenu instance pictured above has files named "<font
 	color="blue">SG</font>_clear.cfg", "<font
-	color="blue">SG</font>_encoderTest.cfg", etc..)
+	color="blue">SG</font>_encoderTest.cfg", etc.)
 
 	<blockquote> <ol> <li>In the IOC's startup directory, create an autosave
 	request file, which I'll call "<font color="blue">SG</font>Menu.req", with
@@ -1127,7 +1136,7 @@ are in iocBoot/iocsoftGlueZynq.
 
 <P>For more softGlue-circuit examples, see
 <a
-href="https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlue_examples">https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlue_examples</a>
+href="https://subversion.xray.aps.anl.gov/admin_bcdaext/softGlue_examples">softGlue_examples</a>
 Currently, the following circuits are documented:
 <ul>
 <li>Programmable pulse train
