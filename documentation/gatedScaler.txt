@@ -17,11 +17,11 @@ Usage
 
 0) Connect field inputs to the counters by giving names to four field input
    bits, and writing those names also to the clock inputs for up counters 1-4.
-   (As delivered, all counters count the signal named "Clock_8MHz", which is the
-   name this circuit gives to the 8 MHz clock.)
+   (As delivered, all counters count the signal named "Clock_10MHz", which is the
+   name this circuit gives to the 10 MHz clock.)
 
 1) Set the count time by writing a number, to the "N" input of DivByN-1.  The
-   the timebase clock is 8 MHz, so the actual count time will be N/10e6 seconds.
+   the timebase clock is 10 MHz, so the actual count time will be N/10e6 seconds.
 
 2) Start the counter by writing 1 to $(P)$(H)busy1 (one of the busy records
    in the EPICS database, softGlue_convenience.db, which is loaded by the
