@@ -274,6 +274,11 @@ softGlueZynq and iocZed are on on GitHub
 (<a href="https://github.com/epics-modules/softGlueZynq">softGlueZynq</a>)
 (<a href="https://github.com/epics-modules/iocZed">iocZed</a>)
 
+<P>The file <a href="assembleBaseAndSynApps.csh">assembleBaseAndSynApps.csh</a>
+is a script you can run to get EPICS base and synApps (including softGlueZynq
+and iocZed) from web sources.  Comments at the bottom of the file detail the
+edits you'll have to make to get everything to build.
+
 <h3>Building softGlueZynq</h3>
 
 The supported way to build SoftGlueZynq and iocZed is to cross compile.  You
@@ -282,11 +287,10 @@ href="https://www.xilinx.com/products/design-tools/embedded-software/sdk.html">X
 Software Development Kit</a>.  (You'll need to get a license, but the
 license is free.)  In the file <a
 href="MicroZed_PetaLinux_Prep.txt">MicroZed_PetaLinux_Prep.txt</a> is a
-detailed recipe explaining how to prepare a MicroZed for use as an EPICS
-IOC, how to configure EPICS base to cross compile for the MicroZed's
+detailed recipe explaining how to configure EPICS base to cross compile for the MicroZed's
 linux-arm processor, and how to do some other stuff that you won't need to
-do unless you write custom FPGA components.  Once you done all that, and
-built EPICS base, you're ready to build softGlueZynq.
+do unless you write custom FPGA components.
+
 
 <ul>
 
