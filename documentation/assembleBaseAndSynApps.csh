@@ -163,18 +163,18 @@ echo 'OPTICS=$(SUPPORT)/optics-'${TAG} >>RELEASE_files.txt
 #echo 'SOFTGLUE=$(SUPPORT)/softGlue-'${TAG} >>RELEASE_files.txt
 
 # softGlueZynq
-#setenv TAG R1-0
-#wget https://github.com/epics-modules/softGlueZynq/archive/${TAG}.tar.gz
-#tar zxf ${TAG}.tar.gz
-#rm ${TAG}.tar.gz
-#echo 'SOFTGLUEZYNQ=$(SUPPORT)/softGlueZynq-'${TAG} >>RELEASE_files.txt
+setenv TAG R1-0
+wget https://github.com/epics-modules/softGlueZynq/archive/${TAG}.tar.gz
+tar zxf ${TAG}.tar.gz
+rm ${TAG}.tar.gz
+echo 'SOFTGLUEZYNQ=$(SUPPORT)/softGlueZynq-'${TAG} >>RELEASE_files.txt
 
 # Until softGlueZynq is tagged...
-wget https://github.com/epics-modules/softGlueZynq/archive/master.zip
-unzip master.zip
-rm master.zip
-mv softGlueZynq-master softGlueZynq
-echo 'SOFTGLUEZYNQ=$(SUPPORT)/softGlueZynq' >>RELEASE_files.txt
+#wget https://github.com/epics-modules/softGlueZynq/archive/master.zip
+#unzip master.zip
+#rm master.zip
+#mv softGlueZynq-master softGlueZynq
+#echo 'SOFTGLUEZYNQ=$(SUPPORT)/softGlueZynq' >>RELEASE_files.txt
 
 # sscan
 setenv TAG R2-10-1
@@ -231,18 +231,18 @@ echo 'VAC=$(SUPPORT)/vac-'${TAG} >>RELEASE_files.txt
 #echo 'XXX=$(SUPPORT)/xxx-'${TAG} >>RELEASE_files.txt
 
 # iocZed
-#setenv TAG R1-0
-#wget https://github.com/epics-modules/ioczed/archive/${TAG}.tar.gz
-#tar zxf ${TAG}.tar.gz
-#rm ${TAG}.tar.gz
-#echo 'IOCZED=$(SUPPORT)/ioczed-'${TAG} >>RELEASE_files.txt
+setenv TAG R1-0
+wget https://github.com/epics-modules/ioczed/archive/${TAG}.tar.gz
+tar zxf ${TAG}.tar.gz
+rm ${TAG}.tar.gz
+echo 'IOCZED=$(SUPPORT)/ioczed-'${TAG} >>RELEASE_files.txt
 
 # Until ioczed is tagged...
-wget https://github.com/epics-modules/ioczed/archive/master.zip
-unzip master.zip
-rm master.zip
-mv ioczed-master ioczed
-echo 'IOCZED=$(SUPPORT)/ioczed' >>RELEASE_files.txt
+#wget https://github.com/epics-modules/ioczed/archive/master.zip
+#unzip master.zip
+#rm master.zip
+#mv ioczed-master ioczed
+#echo 'IOCZED=$(SUPPORT)/ioczed' >>RELEASE_files.txt
 
 ### other directories
 
