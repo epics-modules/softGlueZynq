@@ -340,5 +340,6 @@ echo 'IOCSTATS=$(SUPPORT)/iocStats-R3-1-14' >>RELEASE_files.txt
 # edit epics/synApps_5_8a/support/mca-R7-6/mcaApp/RontecSrc/Makefile to comment out 'PROD_IOC'
 # edit epics/synApps_5_8a/support/delaygen-R1-1-1/delaygenApp/src/Makefile to comment out 'PROD_IOC'
 # edit epics/synApps_5_8a/support/motor-R6-9/motorApp/NewportSrc/Makefile to comment out 'PROD_IOC' twice
+# edit epics/synApps_5_8a/support/iocStats-R3-1-14/RELEASE_SITE to edit or comment out everything
 # do 'make release' in epics/synApps_5_8a/support
 # do 'make -j' in epics/synApps_5_8a/support
