@@ -1056,7 +1056,7 @@ are in iocBoot/iocsoftGlueZynq.
 		pulse, and which last for specified pulse-length times.  It uses four
 		DnCntr's to implement the start-delay times, and four DivByN's to
 		implement the pulse-length times.  Times are specified as multiples of
-		the (125 ns) clock period (<code>PRESET</code> for the DnCntr's;
+		the (100 ns) clock period (<code>PRESET</code> for the DnCntr's;
 		<code>N</code> for the DivByN's), and these numbers must be greater than
 		or equal to 1.  The pulse sequence starts on the falling edge of the
 		signal <code>BUF-1</code>, written by a periodically scanned EPICS
@@ -1324,9 +1324,10 @@ time.
 <dt>softGlueZynq_FPGAContent.substitutions
 
 <dd>This substitutions file is run through <code>msi</code> at build time to
-produce the database file <code>softGlueZynq_FPGAContent.db</code>.  The database
-file loads records matching most of the FPGA content that is loaded at cold-boot
-time from <code>softGlueZynq_2_2.hex</code>.<P>
+produce the database file <code>softGlueZynq_FPGAContent.db</code>.  The
+database file loads records matching most of the FPGA content that is loaded at
+cold-boot time from <code>softGlue_FPGAContent_7010.bin</code> or
+<code>softGlue_FPGAContent_7020.bin</code>.<P>
 
 
 <dt>softGlueZynq_Input.db<br>
@@ -1342,8 +1343,7 @@ softGlueZynq_FieldOutput.db
 
 <dt>softGlueZynq_InRegister.db
 
-<dd>This database supports reads from a 32-bit register, implemented in the FPGA
-as two 16-bit registers.<P>
+<dd>This database supports reads from a 32-bit register.<P>
 
 <dt>softGlueZynq_IntBit.db
 
