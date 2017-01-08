@@ -6,7 +6,7 @@ Requirements
 ------------
 
 This circuit uses a busy record (from the busy module) and a sseq record (from
-the std module), which are loaded by softGlue_convenience.db.  If these records
+the calc module), which are loaded by softGlue_convenience.db.  If these records
 are not available, the circuit will still function, but the counters will not be
 read immediately after the count time has elapsed, and it will not be useful to
 drive the counter with a ca_put_callback(), because the callback will come
