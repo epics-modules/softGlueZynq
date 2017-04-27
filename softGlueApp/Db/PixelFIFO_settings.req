@@ -1,7 +1,6 @@
 $(P)$(H)PixelFIFO-$(N)_desc
 $(P)$(H)PixelFIFO-$(N)_FIFO10_Signal
 $(P)$(H)PixelFIFO-$(N)_FIFO50_Signal
-$(P)$(H)PixelFIFO-$(N)_FIFO90_Signal
 $(P)$(H)PixelFIFO-$(N)_ADVDONE_Signal
 $(P)$(H)PixelTrig_ENTRIG_Signal
 $(P)$(H)PixelFIFO-1_CHADV_Signal
