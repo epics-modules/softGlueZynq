@@ -1,0 +1,6 @@
+$(P)$(H)scalToStream-$(N)_desc
+$(P)$(H)scalToStream-$(N)_CHADV_Signal
+$(P)$(H)scalToStream-$(N)_ADVDONE_Signal
+$(P)$(H)scalToStream-$(N)_FULL_Signal
+$(P)$(H)scalToStream-$(N)_RESET_Signal
+$(P)$(H)scalToStream-$(N)_DMAWORDS

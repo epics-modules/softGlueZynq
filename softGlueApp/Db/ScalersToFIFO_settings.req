@@ -1,0 +1,5 @@
+$(P)$(H)scalersToFIFO-$(N)_desc
+$(P)$(H)scalersToFIFO-$(N)_CHADV_Signal
+$(P)$(H)scalersToFIFO-$(N)_regClk_Signal
+$(P)$(H)scalersToFIFO-$(N)_ADVDONE_Signal
+$(P)$(H)scalersToFIFO-$(N)_WRTCK_Signal
