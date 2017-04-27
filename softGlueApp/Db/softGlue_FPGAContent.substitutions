@@ -192,7 +192,11 @@ pattern {SIG		ADDR}
 {pixelTrig-2_LOAD		271}
 {pixelTrig-2_CLEAR		272}
 
-{MCS-1_CHADV			273}
+{scalToStream-1_CHADV	273}
+{HistScal-1_READ		278}
+{StreamMUX-1_SEL0		279}
+{StreamMUX-1_SEL1		280}
+{scalToStream-1_RESET	299}
 
 }
 
@@ -285,11 +289,12 @@ pattern {SIG   	ADDR}
 {pixelTrig-2_MISS	79}
 
 {scalersToFIFO-1_WRTCK	80}
-# enabled combined trigger out
+# enabled (room in FIFO) combined trigger out
 {PixelTrig_ENTRIG		81}
 {PixelFIFO-1_FIFO10		82}
 {PixelFIFO-1_FIFO50		83}
-{PixelFIFO-1_FIFO90		84}
+{scalToStream-1_ADVDONE	84}
+
 {PixelFIFO-1_ADVDONE	85}
 
 #{FI25			86}
@@ -305,9 +310,14 @@ pattern {SIG   	ADDR}
 #{FI35			96}
 #{FI36			97}
 
-# debug
-{PixelTrig_ENQ	98}
-{PixelFIFO-1_ROOM	99}
+{scalToStream-1_FULL 98}
+
+# debug (ENQ is DFF_5 Q)
+#{PixelTrig_ENQ	98}
+#{PixelFIFO-1_ROOM	99}
+# raw combined trigger out
+{PixelTrig_TRIG		99}
+
 }
 
 file "softGlue_FieldInput.db"
@@ -441,6 +451,7 @@ pattern {SIG N}
 {HW_OR-1 80}
 {HW_OR-2 80}
 {PixelFIFO-1 80}
+{scalToStream-1 80}
 
 {GateDly-1 80}
 {GateDly-2 80}
@@ -508,3 +519,7 @@ pattern {SIG N}
 # Fx21		L14	L15	82	84	
 # Fx22		M14	M15	87	89	
 # Fx23		K16	J16	88	90	
+
+
+# Connected fast gate&delay 4 to FI_02 and FO_11
+# Connected FI_12 to clock input of clk_wiz_1, connected output of clk_wiz_1 to FO_12
