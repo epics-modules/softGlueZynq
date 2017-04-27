@@ -1,7 +1,7 @@
 # BEGIN softGlue.iocsh ----------------------------------------------------------
 
 
-epicsEnvSet("PREFIX", "zzz:")
+epicsEnvSet("PREFIX", "tmm:")
 epicsEnvSet("INSTANCE", "SG:")
 epicsEnvSet("CONFIG", "SG")
 
@@ -27,7 +27,9 @@ epicsEnvSet("RPORT", "AXI1")
 #
 
 #system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7010.bin >/dev/xdevcfg")
-system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7020.bin >/dev/xdevcfg")
+#system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7020.bin >/dev/xdevcfg")
+system("cat $(SOFTGLUEZYNQ)/softGlueApp/Db/softGlue_FPGAContent_7020_dma.bin >/dev/xdevcfg")
+# (have to be root) system("modprobe dma_proxy")
 
 #-------------------------------------------------------------------------------
 #int initZynqInterrupts(const char *portName, const char *componentName) {
@@ -89,6 +91,21 @@ doAfterIocInit("create_manual_set('$(CONFIG)Menu.req','P=$(PREFIX),CONFIG=$(CONF
 doAfterIocInit("pixelTriggerPrepare(pixelFIFO_, 0x80000000, 1024)")
 dbLoadRecords("$(SOFTGLUEZYNQ)/db/pixelTrigger.db","P=$(PREFIX),Q=1,N=40000")
 
+# attach pixelTriggerDma histogrammer to FO_15 interrupt.
+# pixelTriggerDmaPrepare(char *componentName, epicsUInt32 risingMask, int notused)
+#var pixelTriggerDmaDebug,1
+doAfterIocInit("pixelTriggerDmaPrepare(softGlueReg32_, 0x40000000, 0)")
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/pixelTriggerDma.db","P=$(PREFIX),Q=1,N=40000")
+# for list-mode testing
+#dbLoadRecords("$(SOFTGLUEZYNQ)/db/pixelTriggerDma.db","P=$(PREFIX),Q=1,N=1000000")
+
+# histoScalerStream
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/histScalerDma.db","P=$(PREFIX),Q=1,N=64")
+
+# clockConfig
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/clockConfig.db","P=$(PREFIX),Q=1")
+
+
 # attach MCS to FO_16 interrupt.
 # pixelTriggerPrepare(char *componentName, epicsUInt32 risingMask, int fifoSize)
 #var MCSADebug,1
@@ -100,4 +117,7 @@ var readSoftGlueCounter_ISRDebug, 1
 #dbLoadRecords("$(SOFTGLUEZYNQ)/db/readSoftGlueCounter_ISR.db","P=$(PREFIX),Q=SG_RdCntr:,N=100000")
 #doAfterIocInit("readSoftGlueCounter_ISRPrepare(0x40000000)")
 
+# debug:
+dbLoadRecords("$(ASYN)/db/asynRecord.db","P=tmm:,R=asynSoftGlue,PORT=$(SPORT),ADDR=0,OMAX=0,IMAX=0")
+dbLoadRecords("$(ASYN)/db/asynRecord.db","P=tmm:,R=asynSoftGlueReg,PORT=$(RPORT),ADDR=0,OMAX=0,IMAX=0")
 # END softGlue.cmd ------------------------------------------------------------
