@@ -1,0 +1,64 @@
+record(bo, "$(P)$(Q)pixelTriggerDmaEnable") {
+	field(ZNAM, "Disable")
+	field(ONAM, "Enable")
+}
+record(mbbo, "$(P)$(Q)pixelTriggerDmaMode") {
+	field(NOBT,"2")
+	field(ZRST, "2D")
+	field(ONST, "List")
+	field(TWST, "x,y,t")
+}
+record(aSub, "$(P)$(Q)pixelTriggerDma") {
+  field(SDIS, "$(P)$(Q)pixelTriggerDmaEnable")
+  field(DISV, 0)
+  field(INAM, "pixelTriggerDma_init")
+  field(SNAM, "pixelTriggerDma_do")
+  field(PREC, "2")
+  field(FTA, "LONG")
+  field(FTB, "LONG")
+  field(FTC, "LONG")
+  field(FTD, "LONG")
+  field(FTE, "DOUBLE")
+  field(FTF, "LONG")
+  field(FTG, "LONG")
+  field(INPG, "$(P)$(Q)pixelTriggerDmaMode")
+  field(FTH, "LONG")
+
+  field(FTVA, "LONG")
+  field(NOVA, "$(N)")
+  field(FTVB, "LONG")
+  field(NOVB, "$(N)")
+  field(FTVC, "LONG")
+  field(NOVC, "$(N)")
+  field(FTVD, "LONG")
+  field(NOVD, "$(N)")
+  field(FTVE, "LONG")
+  field(NOVE, "$(N)")
+  field(FTVF, "LONG")
+  field(NOVF, "$(N)")
+  field(FTVG, "LONG")
+  field(NOVG, "$(N)")
+
+  field(FTVH, "LONG")
+
+  field(FTVI, "SHORT")
+  field(NOVI, "$(N)")
+  field(FTVJ, "SHORT")
+  field(NOVJ, "$(N)")
+  field(FTVK, "SHORT")
+  field(NOVK, "$(N)")
+  field(FTVL, "SHORT")
+  field(NOVL, "$(N)")
+  field(FTVM, "SHORT")
+  field(NOVM, "$(N)")
+  field(FTVN, "SHORT")
+  field(NOVN, "$(N)")
+  field(FTVO, "SHORT")
+  field(NOVO, "$(N)")
+}
+record(longout, "$(P)$(Q)pixelTriggerDma_code") {
+	field(DOL, "1")
+}
+record(longout, "$(P)$(Q)pixelTriggerDma_BPP") {
+	field(DOL, "2")
+}

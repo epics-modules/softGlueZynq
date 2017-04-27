@@ -1,0 +1,25 @@
+record(bo, "$(P)$(Q)histScalerDmaEnable") {
+	field(ZNAM, "Disable")
+	field(ONAM, "Enable")
+}
+record(mbbo, "$(P)$(Q)histScalerDmaMode") {
+	field(NOBT,"2")
+	field(ZRST, "notused1")
+	field(ONST, "notused2")
+	field(TWST, "notused3")
+}
+record(aSub, "$(P)$(Q)histScalerDma") {
+  field(SDIS, "$(P)$(Q)histScalerDmaEnable")
+  field(DISV, 0)
+  field(INAM, "histScalerDma_init")
+  field(SNAM, "histScalerDma_do")
+  field(PREC, "2")
+  field(FTA, "LONG")
+  field(FTD, "LONG")
+  field(FTG, "LONG")
+  field(INPG, "$(P)$(Q)histScalerDmaMode")
+  field(FTH, "LONG")
+  field(FTVA, "LONG")
+  field(NOVA, "$(N)")
+  field(FTVH, "LONG")
+}
