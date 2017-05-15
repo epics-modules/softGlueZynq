@@ -1,5 +1,33 @@
+If you're starting from zero - you have a MicroZed 7020 and a MicroSD card,
+and that's all you have, you're going to need one or more of the following
+recipes, depending on what you want to do with softGlueZynq.
+
+
+1. Run softGlueZynq as-is:
+
+	All you need is "Cross compiling from linux to linux-arm."
+
+2. Modify some softGlueZynq FPGA content, but don't make modifications that
+   require a new PetaLinux build:
+
+	You need "Cross compiling from linux to linux-arm" and "Installing
+	softGlueZynq in your own Vivado project."
+
+3. Modify the PetaLinux build, or make a modification to softGlueZynq FPGA
+   content for which a new PetaLinux build is required:
+
+	You need "Cross compiling from linux to linux-arm," and "Installing
+	softGlueZynq in your own Vivado project," and "Building a softGlueZynq
+	compatible Petalinux project ."
+
+==============================================================================
 Cross compiling from linux to linux-arm:
-----------------------------------------
+==============================================================================
+
+You have to cross compile EPICS base, synApps, softGlueZynq, and iocZed. (If you
+have synApps 5.9 or later, softGlueZynq is included, and you don't need iocZed,
+because the xxx module is ready for softGlueZynq.)
+
 You're going to need the Xilinx software-development kit (SDK).  You'll have
 to register, but it's free.  https://www.xilinx.com/support/download.html
 
@@ -25,52 +53,22 @@ I added this line to base/configure/CONFIG_SITE:
 
 Then I set EPICS_HOST_ARCH to linux-x86_64, and built base and synApps.
 
+
 ==============================================================================
-0.	Use petalinux-config to set the host name and MAC address
+Installing softGlueZynq in your own Vivado project
+==============================================================================
 
-	sudo rootsh
-	source /local/mooney/zynq/PetaLinux/petalinux-v2015.4-final/settings.sh
-	# cd to existing, working petalinux project.  This project has been customized to mount /APSshare and
-	# s100dserv, to load the libstd6++6 library, and to load a fixed ssh host key.
-	cd /local/mooney/zynq/PetaLinux/mz_7010_2015_4
+See softGlueZynq/documentation/Vivado/README, which also describes how to
+install Vivado.
 
-	petalinux-config
-	# Got linux system config screen
-	# Navigate to Subsystem AUTO Hardware Settings > Ethernet Settings > (xx:xx:xx:xx:xx:xx) Ethernet MAC address
-	# set MAC address to 00:19:B3:02:13:D7
-	# Navigate to Firmware Version Configuration > Host name
-	# set host name to microzed-j
-	# exit
+You can modify softGlueZynq without having to build a new PetaLinux OS if
+you don't change anything that will modify device-tree files.  Modifying or
+adding or deleting AXI components or the Xilinx DMA component will require
+a new OS.  All other modifications will not.
 
-	petalinux-build
+==============================================================================
+Building a softGlueZynq compatible Petalinux project
+==============================================================================
 
-	# as mooney on mooneylinux:
-	# copy boot files to a directory the PC can access via a mapped network drive
-	cd /home/oxygen/MOONEY/zynq/PetaLinux/myBuilds
-	cp /local/mooney/zynq/PetaLinux/mz_7010_2015_4/images/linux/BOOT.BIN .
-	cp /local/mooney/zynq/PetaLinux/mz_7010_2015_4/images/linux/image.ub .
-
-	# on PC:
-	# Put SD card into card writer (on PC).  Open SD card on PC and copy BOOT.BIN and image.ub, using PC's mapped network drive.
-	# Put SD card in MicroZed.
-	# Connect USB from PC to MicroZed, start Putty using serial (COM5 at 115200 baud).
-
-1.	Login to the MicroZed as root.  
-	cd /net/s100dserv/xorApps/zed/epics/ioc/ioczed/iocBoot/iocZed
-	./run
-
-	
-------------------------------------------------------------------------------
-New way:
-
-		# set the MAC address by adding the following to the mountAPSshare
-		# application:
-		ifconfig eth0 down
-		ifconfig eth0 hw ether 00:19:B3:02:13:D7
-		ifconfig eth0 up
-#mount -o port=2049,nolock -t nfs s100dserv.xray.aps.anl.gov:/APSshare /mnt/APSshare
-#mount -o port=2049,nolock -t nfs s100dserv.xray.aps.anl.gov:/xorApps /mnt/xorApps
-
-ifdown eth0
-ifconfig eth0 hw ether 00:19:B3:02:13:D7
-ifup eth0
+See softGlueZynq/documentation/PetaLinux/README, which also describes how to
+install the Petalinux build system.

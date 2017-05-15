@@ -20,6 +20,7 @@
   <li><a href="#Installation and deployment">Installation and deployment</a></li>
   <li><a href="#User's Manual">User's Manual</a></li>
   <li><a href="#Additional FPGA components">Additional FPGA components</a></li>
+  <li><a href="#Miscellaneous configuration">Miscellaneous configuration</a></li>
   <li><a href="#Saving and restoring circuits">Saving and restoring circuits</a></li>
   <li><a href="#Example circuits">Example circuits</a></li>
   <li><a href="#Field wiring">Field wiring</a></li>
@@ -218,7 +219,8 @@ limited to a few kHz)
 
 <li>24 field-input bits  (12 LVCMOS, 12 LVDS)
 <li>12 field-output bits (LVCMOS)
-<li>One 10MHz clock signal (clock frequencies can be changed at run time)
+<li>One 10MHz clock signal (Clock frequencies can be changed at run time.
+See <a href="#Miscellaneous configuration">Miscellaneous configuration</a> below.)
 <li>One 20MHz clock signal
 <li>One 50MHz clock signal
 </ul>
@@ -737,9 +739,8 @@ standing outputs.
 
 <blockquote>
 
-There is an API for changing the frequency of any softGlue clock (there are
-actually six clocks), but you aren't going to like it.  It's stupid and ugly,
-but it works and it isn't the most pressing need at the moment.
+Clock frequencies can be changed at run time. See <a href="#Miscellaneous
+configuration">Miscellaneous configuration</a> below.
 
 </blockquote>
 
@@ -867,22 +868,76 @@ These are custom components, and they will evolve with user requirements.
 
 <ul>
 
+<li><P>16 Input Gated Scaler
+<P><img src="SGscaler16.jpg" name="Scaler16 Component">
+<img src="scaler16m_more.jpg" name="Scaler Record display">
+
+<P>This is a 16-input gated scaler with the first input dedicated to
+determining the dwell time.  Although the scaler16m display has
+<code>Gate</code> fields for all inputs, the fields are currently fixed by the
+FPGA  content, and by the Epics device support code.  Inputs 2-16 are hardwired
+to field inputs 2-16.  Field input 1 is available for use as a gate or clock.
+
+<blockquote>
+
+<P>Note that the scaler as shown here requires the synApps STD module, because
+that module defines the EPICS scaler record.  If the STD module is unavailable
+or unwanted, you can drive the scaler with softGlueZynq's SGscaler.db database.
+But also note that this database is unsupported, and was intended only as a way
+for me to learn how to write scalerRecord device support for this scaler
+hardware.
+
+<P>The frequency accuracy of softGlueZynq's 10 MHz clock was measured by
+comparing it with the 10 MHz output of a Keysight 33600A waveform generator,
+which claims few ppm accuracy.  softGlueZynq's 10 MHz clock differed by around
+24 ppm on the MicroZed I used for the measurement. I don't know if this is
+representative of MicroZeds genrally, or how the frequency varies with
+temperature.
+
+</blockquote>
+
+<P>The connections <code>CNT</code>, <code>STOP</code>, <code>CLEAR</code>, and
+<code>READ</code>, and the <code>PRESET</code> value are driven by EPICS
+scalerRecord device support, if the scaler database is loaded.  The output
+<code>Q</code> produces a short positive going pulse when the scaler is done
+counting.  The output <code>CNTG</code> goes high when the scaler starts
+counting, and goes low when the count is done, either because counter 1 has
+reached its preset, or because the user has cleared the scaler record's CNT
+field (that is, pressed the "Done" button).
+
+<P>The user is responsible for the following connections: <ol>
+
+<li>connecting a softGlue clock signal to the scaler, and telling the scaler
+record the clock frequency, as shown above.
+
+<li>enabling the scaler (the <code>EN</code> input), either with a constant
+value, or with some softGlue signal name, as shown above.
+
+<li>connecting the scaler's <code>Q</code> output to field I/O output 16, and
+setting that bit's interrupt enable to "Rising", as shown below.  The scaler
+record's device support currently is hard coded to use this interrupt source.
+
+</ol>
+
+<P><img src="SGscaler16_fieldIO.jpg" name="Scaler16 Field I/O wiring">
+
+<hr>
+
+
 <li><P>Histogramming Scaler
 <P><img src="HistScal.jpg" name="Histogramming Scaler">
+<img src="HistScalerDma.jpg" name="Histogramming Scaler Application">
 
-<P>This is a one-input scaler with 20 time bins.  While <code>EN==1</code>, it
-counts pulses presented to <code>DET</code> into one of 20 scalers.  When a
+<P>This is a one-input scaler with 64 time bins.  While <code>EN==1</code>, it
+counts pulses presented to <code>DET</code> into one of 64 scalers.  When a
 rising edge is presented to <code>SYNC</code>, the first scaler is selected. 
 Each time a rising edge is presented to the clock input, the next scaler is
 selected.  (Thus, the clock performs as the "channel advance" signal of a
 multichannel scaler.) When <code>CLEAR</code> is high, all counters are cleared.
 
-<P>Currently, the scaler values are routed to softGlue 32-bit registers for
-which no display is provided; the scaler values are collected by acalcout
-records, and presented as an array of counts as a function of the time elapsed
-since the most recent <code>SYNC</code> pulse.  This component is under
-development.  Probably it will be expanded to more channels, and the data will
-be written to a FIFO for transport to EPICS.
+<P>Scaler values are routed via DMA to EPICS, which collects them using an aSub
+record, and presents them as an array of counts as a function of the channel
+number - time elapsed since the most recent <code>SYNC</code> pulse.
 
 <P>There is a version of this component that can channel advance at up to
 250 MHz.  The high speed version is connected directly to field inputs, and its
@@ -945,6 +1000,52 @@ read, histogram, and display 50,000 pixels/s.
  </ul>
 
 <hr>
+<a name="Miscellaneous configuration"></a>
+<h2><center>Miscellaneous configuration</center></h2>
+
+<P>There are several features of softGlueZynq that are configurable by the end
+user.  Some of these are controlled with the softGlueZynqConfig display shown
+below.
+
+<ul>
+<li>streamMux
+
+<P>The pixelTrigger, histogramming scaler, and fast histogramming scaler all use
+the same data path from the FPGA to EPICS, but only one of them can use it at a
+time.
+
+
+<li>Selected field-I/O points
+
+<P>The fast Gate&Delay generators make sense only if connected directly to field
+I/O, because if they were connected to the softGlue signal bus, their inputs and
+outputs would be clocked by the softGlue register clock, and this would defeat
+the purpose of these components.  Accordingly, the fast Gate&Delay generators
+are connected to input pins 1-4, and can be connected to output pins 9-12.
+
+<li>Clock frequencies
+
+<P>You can change the frequencies of any of the six clocks used in softGlueZynq,
+but you need to know what you're doing if the changes are to be useful:
+<ol>
+
+<li>You should probably never change the frequency of the softGlue-register
+clock.
+
+<li>The nominally 10, 20, and 50 MHz clocks can usefully be changed to a frequency in the
+range 6-50 MHz.
+
+<li>The fast Gate&Delay clock can usefully be changed to a frequency in the
+range 6-300 MHz.
+
+<li>The fast histoScaler clock can usefully be changed to a frequency in the
+range 6-300 MHz.
+
+<ul>
+
+</ul>
+
+<P><img src="Config.jpg" name="softGlueZynqConfig.adl">
 
 <a name="Saving and restoring circuits"></a>
 <h2><center>Saving and restoring circuits</center></h2>
