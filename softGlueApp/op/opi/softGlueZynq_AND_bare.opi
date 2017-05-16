@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-6c78</wuid>
+  <wuid>335787df:15c124f3cc3:-6b11</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -37,7 +37,7 @@
       <SIG>AND-$(N)_IN1</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6c77</wuid>
+    <wuid>335787df:15c124f3cc3:-6b10</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -79,7 +79,7 @@
       <SIG>AND-$(N)_IN2</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6c76</wuid>
+    <wuid>335787df:15c124f3cc3:-6b0f</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -121,7 +121,7 @@
       <SIG>AND-$(N)_OUT</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6c71</wuid>
+    <wuid>335787df:15c124f3cc3:-6b0a</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -163,7 +163,7 @@
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6c75</wuid>
+    <wuid>335787df:15c124f3cc3:-6b0e</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -218,7 +218,7 @@ $(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <visible>true</visible>
     <total_angle>180</total_angle>
-    <wuid>-488445a9:1588d1d156a:-6c74</wuid>
+    <wuid>335787df:15c124f3cc3:-6b0d</wuid>
     <start_angle>270</start_angle>
     <scripts />
     <height>41</height>
@@ -267,7 +267,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6c73</wuid>
+    <wuid>335787df:15c124f3cc3:-6b0c</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -322,7 +322,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6c72</wuid>
+    <wuid>335787df:15c124f3cc3:-6b0b</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -377,7 +377,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6c70</wuid>
+    <wuid>335787df:15c124f3cc3:-6b09</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -429,7 +429,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6c6f</wuid>
+    <wuid>335787df:15c124f3cc3:-6b08</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>

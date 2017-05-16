@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-68ce</wuid>
+  <wuid>335787df:15c124f3cc3:-6725</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -38,7 +38,7 @@
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-68c9</wuid>
+    <wuid>335787df:15c124f3cc3:-6720</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -95,7 +95,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="MEDM_COLOR_53" red="42" green="99" blue="228" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-68c0</wuid>
+    <wuid>335787df:15c124f3cc3:-6717</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -151,7 +151,7 @@ $(pv_value)</tooltip>
       <SIG>GateDly-$(N)_IN</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-68cd</wuid>
+    <wuid>335787df:15c124f3cc3:-6724</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -193,7 +193,7 @@ $(pv_value)</tooltip>
       <SIG>GateDly-$(N)_CLK</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-68cc</wuid>
+    <wuid>335787df:15c124f3cc3:-6723</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -235,7 +235,7 @@ $(pv_value)</tooltip>
       <SIG>GateDly-$(N)_OUT</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-68bf</wuid>
+    <wuid>335787df:15c124f3cc3:-6716</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -277,7 +277,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-68cb</wuid>
+    <wuid>335787df:15c124f3cc3:-6722</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -332,7 +332,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-68ca</wuid>
+    <wuid>335787df:15c124f3cc3:-6721</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -387,7 +387,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-68c8</wuid>
+    <wuid>335787df:15c124f3cc3:-671f</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -443,7 +443,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-68c7</wuid>
+    <wuid>335787df:15c124f3cc3:-671e</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -495,7 +495,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-68c6</wuid>
+    <wuid>335787df:15c124f3cc3:-671d</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -536,7 +536,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-68c5</wuid>
+    <wuid>335787df:15c124f3cc3:-671c</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -577,7 +577,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-68c4</wuid>
+    <wuid>335787df:15c124f3cc3:-671b</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -621,7 +621,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-68c3</wuid>
+    <wuid>335787df:15c124f3cc3:-671a</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -701,7 +701,7 @@ $(pv_value)</tooltip>
     <minimum>-Infinity</minimum>
     <next_focus>0</next_focus>
     <show_units>false</show_units>
-    <wuid>-488445a9:1588d1d156a:-68c2</wuid>
+    <wuid>335787df:15c124f3cc3:-6719</wuid>
     <rotation_angle>0.0</rotation_angle>
     <style>0</style>
     <name>Text Input</name>
@@ -735,7 +735,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-68c1</wuid>
+    <wuid>335787df:15c124f3cc3:-6718</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -776,7 +776,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-68be</wuid>
+    <wuid>335787df:15c124f3cc3:-6715</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -845,7 +845,7 @@ $(pv_value)</tooltip>
     <minimum>-Infinity</minimum>
     <next_focus>0</next_focus>
     <show_units>false</show_units>
-    <wuid>-488445a9:1588d1d156a:-68bd</wuid>
+    <wuid>335787df:15c124f3cc3:-6714</wuid>
     <rotation_angle>0.0</rotation_angle>
     <style>0</style>
     <name>Text Input</name>
@@ -882,7 +882,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-68bc</wuid>
+    <wuid>335787df:15c124f3cc3:-6713</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>

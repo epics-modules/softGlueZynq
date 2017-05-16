@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-6916</wuid>
+  <wuid>335787df:15c124f3cc3:-67af</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -37,7 +37,7 @@
       <SIG>FI$(N)</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6915</wuid>
+    <wuid>335787df:15c124f3cc3:-67ae</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -76,7 +76,7 @@
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6914</wuid>
+    <wuid>335787df:15c124f3cc3:-67ad</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>20</height>
@@ -119,7 +119,7 @@
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
     <show_units>false</show_units>
-    <wuid>-488445a9:1588d1d156a:-6913</wuid>
+    <wuid>335787df:15c124f3cc3:-67ac</wuid>
     <auto_size>false</auto_size>
     <rotation_angle>0.0</rotation_angle>
     <scripts />

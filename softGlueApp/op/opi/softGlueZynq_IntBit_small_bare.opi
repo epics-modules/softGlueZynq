@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-67ce</wuid>
+  <wuid>335787df:15c124f3cc3:-6615</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -38,7 +38,7 @@
     <line_color>
       <color name="alarm" red="253" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-67cb</wuid>
+    <wuid>335787df:15c124f3cc3:-6612</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -129,7 +129,7 @@ $(pv_value)</tooltip>
     <minimum>-Infinity</minimum>
     <next_focus>0</next_focus>
     <show_units>false</show_units>
-    <wuid>-488445a9:1588d1d156a:-67cd</wuid>
+    <wuid>335787df:15c124f3cc3:-6614</wuid>
     <rotation_angle>0.0</rotation_angle>
     <style>0</style>
     <name>Text Input</name>
@@ -164,7 +164,7 @@ $(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <visible>true</visible>
     <actions_from_pv>true</actions_from_pv>
-    <wuid>-488445a9:1588d1d156a:-67cc</wuid>
+    <wuid>335787df:15c124f3cc3:-6613</wuid>
     <scripts />
     <height>18</height>
     <name>Menu Button</name>

@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-7eef</wuid>
+  <wuid>335787df:15c124f3cc3:-7f01</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -37,7 +37,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7eee</wuid>
+    <wuid>335787df:15c124f3cc3:-7f00</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -79,7 +79,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7eed</wuid>
+    <wuid>335787df:15c124f3cc3:-7eff</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -121,7 +121,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7eec</wuid>
+    <wuid>335787df:15c124f3cc3:-7efe</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -163,7 +163,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7eeb</wuid>
+    <wuid>335787df:15c124f3cc3:-7efd</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -205,7 +205,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7eea</wuid>
+    <wuid>335787df:15c124f3cc3:-7efc</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -247,7 +247,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee9</wuid>
+    <wuid>335787df:15c124f3cc3:-7efb</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -289,7 +289,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee8</wuid>
+    <wuid>335787df:15c124f3cc3:-7efa</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -331,7 +331,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee7</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef9</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -373,7 +373,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee6</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef8</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -415,7 +415,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee5</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef7</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -457,7 +457,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee4</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef6</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -499,7 +499,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee3</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef5</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -540,7 +540,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ee2</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef4</wuid>
     <scripts />
     <height>20</height>
     <name>Grouping Container</name>
@@ -582,7 +582,7 @@
       <line_color>
         <color red="128" green="0" blue="255" />
       </line_color>
-      <wuid>-488445a9:1588d1d156a:-7ee1</wuid>
+      <wuid>335787df:15c124f3cc3:-7ef3</wuid>
       <bg_gradient_color>
         <color red="255" green="255" blue="255" />
       </bg_gradient_color>
@@ -635,7 +635,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-7ee0</wuid>
+      <wuid>335787df:15c124f3cc3:-7ef2</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>20</height>
@@ -680,7 +680,7 @@ $(pv_value)</tooltip>
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ede</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef0</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -722,7 +722,7 @@ $(pv_value)</tooltip>
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7edd</wuid>
+    <wuid>335787df:15c124f3cc3:-7eef</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -763,7 +763,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7edc</wuid>
+    <wuid>335787df:15c124f3cc3:-7eee</wuid>
     <scripts />
     <height>155</height>
     <name>Grouping Container</name>
@@ -804,7 +804,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7edb</wuid>
+      <wuid>335787df:15c124f3cc3:-7eed</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -846,7 +846,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eda</wuid>
+      <wuid>335787df:15c124f3cc3:-7eec</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -888,7 +888,7 @@ $(pv_value)</tooltip>
         <N>3</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed9</wuid>
+      <wuid>335787df:15c124f3cc3:-7eeb</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -930,7 +930,7 @@ $(pv_value)</tooltip>
         <N>4</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed8</wuid>
+      <wuid>335787df:15c124f3cc3:-7eea</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -972,7 +972,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ed7</wuid>
+    <wuid>335787df:15c124f3cc3:-7ee9</wuid>
     <scripts />
     <height>99</height>
     <name>Grouping Container</name>
@@ -1013,7 +1013,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed6</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee8</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1055,7 +1055,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed5</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee7</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1097,7 +1097,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ed4</wuid>
+    <wuid>335787df:15c124f3cc3:-7ee6</wuid>
     <scripts />
     <height>468</height>
     <name>Grouping Container</name>
@@ -1138,7 +1138,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed3</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee5</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1180,7 +1180,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed2</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee4</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1222,7 +1222,7 @@ $(pv_value)</tooltip>
         <N>3</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed1</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee3</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1264,7 +1264,7 @@ $(pv_value)</tooltip>
         <N>4</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ed0</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee2</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1306,7 +1306,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ecf</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee1</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1348,7 +1348,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ece</wuid>
+      <wuid>335787df:15c124f3cc3:-7ee0</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1390,7 +1390,7 @@ $(pv_value)</tooltip>
         <N>3</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ecd</wuid>
+      <wuid>335787df:15c124f3cc3:-7edf</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1432,7 +1432,7 @@ $(pv_value)</tooltip>
         <N>4</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ecc</wuid>
+      <wuid>335787df:15c124f3cc3:-7ede</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1474,7 +1474,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ecb</wuid>
+      <wuid>335787df:15c124f3cc3:-7edd</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1516,7 +1516,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eca</wuid>
+      <wuid>335787df:15c124f3cc3:-7edc</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1558,7 +1558,7 @@ $(pv_value)</tooltip>
         <N>3</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ec9</wuid>
+      <wuid>335787df:15c124f3cc3:-7edb</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1600,7 +1600,7 @@ $(pv_value)</tooltip>
         <N>4</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ec8</wuid>
+      <wuid>335787df:15c124f3cc3:-7eda</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1641,7 +1641,7 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ec7</wuid>
+      <wuid>335787df:15c124f3cc3:-7ed9</wuid>
       <scripts />
       <height>20</height>
       <name>Grouping Container</name>
@@ -1681,7 +1681,7 @@ $(pv_value)</tooltip>
         <visible>true</visible>
         <vertical_alignment>1</vertical_alignment>
         <show_units>false</show_units>
-        <wuid>-488445a9:1588d1d156a:-7ec6</wuid>
+        <wuid>335787df:15c124f3cc3:-7ed8</wuid>
         <auto_size>false</auto_size>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
@@ -1730,7 +1730,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <visible>true</visible>
         <vertical_alignment>1</vertical_alignment>
-        <wuid>-488445a9:1588d1d156a:-7ec5</wuid>
+        <wuid>335787df:15c124f3cc3:-7ed7</wuid>
         <auto_size>false</auto_size>
         <scripts />
         <height>20</height>
@@ -1771,7 +1771,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <visible>true</visible>
         <vertical_alignment>1</vertical_alignment>
-        <wuid>-488445a9:1588d1d156a:-7ec4</wuid>
+        <wuid>335787df:15c124f3cc3:-7ed6</wuid>
         <auto_size>false</auto_size>
         <scripts />
         <height>20</height>
@@ -1814,7 +1814,7 @@ $(pv_value)</tooltip>
         <visible>true</visible>
         <vertical_alignment>1</vertical_alignment>
         <show_units>false</show_units>
-        <wuid>-488445a9:1588d1d156a:-7ec3</wuid>
+        <wuid>335787df:15c124f3cc3:-7ed5</wuid>
         <auto_size>false</auto_size>
         <rotation_angle>0.0</rotation_angle>
         <scripts />
@@ -1866,7 +1866,7 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ec0</wuid>
+      <wuid>335787df:15c124f3cc3:-7ed2</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1907,7 +1907,7 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ebf</wuid>
+      <wuid>335787df:15c124f3cc3:-7ed1</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1947,7 +1947,7 @@ $(pv_value)</tooltip>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <visible>true</visible>
       <actions_from_pv>false</actions_from_pv>
-      <wuid>-488445a9:1588d1d156a:-7ec2</wuid>
+      <wuid>335787df:15c124f3cc3:-7ed4</wuid>
       <scripts />
       <height>20</height>
       <name>Menu Button</name>
@@ -1999,7 +1999,7 @@ $(pv_value)</tooltip>
       <border_alarm_sensitive>false</border_alarm_sensitive>
       <visible>true</visible>
       <actions_from_pv>false</actions_from_pv>
-      <wuid>-488445a9:1588d1d156a:-7ec1</wuid>
+      <wuid>335787df:15c124f3cc3:-7ed3</wuid>
       <scripts />
       <height>20</height>
       <name>Menu Button</name>
@@ -2053,7 +2053,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ebe</wuid>
+    <wuid>335787df:15c124f3cc3:-7ed0</wuid>
     <scripts />
     <height>48</height>
     <name>Grouping Container</name>
@@ -2094,7 +2094,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ebd</wuid>
+      <wuid>335787df:15c124f3cc3:-7ecf</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2136,7 +2136,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7ebc</wuid>
+      <wuid>335787df:15c124f3cc3:-7ece</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2178,7 +2178,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7ebb</wuid>
+    <wuid>335787df:15c124f3cc3:-7ecd</wuid>
     <scripts />
     <height>99</height>
     <name>Grouping Container</name>
@@ -2219,7 +2219,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eba</wuid>
+      <wuid>335787df:15c124f3cc3:-7ecc</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2261,7 +2261,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eb9</wuid>
+      <wuid>335787df:15c124f3cc3:-7ecb</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2303,7 +2303,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7eb8</wuid>
+    <wuid>335787df:15c124f3cc3:-7eca</wuid>
     <scripts />
     <height>209</height>
     <name>Grouping Container</name>
@@ -2344,7 +2344,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eb7</wuid>
+      <wuid>335787df:15c124f3cc3:-7ec9</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2386,7 +2386,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eb6</wuid>
+      <wuid>335787df:15c124f3cc3:-7ec8</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2428,7 +2428,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eb5</wuid>
+      <wuid>335787df:15c124f3cc3:-7ec7</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2470,7 +2470,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7eb4</wuid>
+      <wuid>335787df:15c124f3cc3:-7ec6</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -2513,7 +2513,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-7edf</wuid>
+    <wuid>335787df:15c124f3cc3:-7ef1</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>

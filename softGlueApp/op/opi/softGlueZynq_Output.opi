@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-65ac</wuid>
+  <wuid>335787df:15c124f3cc3:-63f3</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -38,7 +38,7 @@
     <line_color>
       <color name="softGlue_output" red="205" green="97" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-65a7</wuid>
+    <wuid>335787df:15c124f3cc3:-63ee</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -105,7 +105,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color red="128" green="0" blue="255" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-65ab</wuid>
+    <wuid>335787df:15c124f3cc3:-63f2</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -171,7 +171,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-65aa</wuid>
+    <wuid>335787df:15c124f3cc3:-63f1</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -251,7 +251,7 @@ $(pv_value)</tooltip>
     <minimum>-Infinity</minimum>
     <next_focus>0</next_focus>
     <show_units>false</show_units>
-    <wuid>-488445a9:1588d1d156a:-65a9</wuid>
+    <wuid>335787df:15c124f3cc3:-63f0</wuid>
     <rotation_angle>0.0</rotation_angle>
     <style>0</style>
     <name>Text Input</name>
@@ -289,7 +289,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color red="128" green="0" blue="255" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-65a8</wuid>
+    <wuid>335787df:15c124f3cc3:-63ef</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -352,7 +352,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.ActionButton" version="2.0.0">
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-65a6</wuid>
+    <wuid>335787df:15c124f3cc3:-63ed</wuid>
     <scripts />
     <height>20</height>
     <style>1</style>
@@ -414,7 +414,7 @@ $(pv_value)</tooltip>
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
     <show_units>false</show_units>
-    <wuid>-488445a9:1588d1d156a:-65a5</wuid>
+    <wuid>335787df:15c124f3cc3:-63ec</wuid>
     <auto_size>false</auto_size>
     <rotation_angle>0.0</rotation_angle>
     <scripts />

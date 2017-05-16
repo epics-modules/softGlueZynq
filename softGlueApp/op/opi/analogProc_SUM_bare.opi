@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-7bd6</wuid>
+  <wuid>335787df:15c124f3cc3:-7be8</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -38,7 +38,7 @@
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7bd1</wuid>
+    <wuid>335787df:15c124f3cc3:-7be3</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -95,7 +95,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="MEDM_COLOR_53" red="42" green="99" blue="228" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7bca</wuid>
+    <wuid>335787df:15c124f3cc3:-7bdc</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -151,7 +151,7 @@ $(pv_value)</tooltip>
       <SIG>SUM-$(N)_IN1</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7bd5</wuid>
+    <wuid>335787df:15c124f3cc3:-7be7</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -193,7 +193,7 @@ $(pv_value)</tooltip>
       <SIG>SUM-$(N)_IN2</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7bd4</wuid>
+    <wuid>335787df:15c124f3cc3:-7be6</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -235,7 +235,7 @@ $(pv_value)</tooltip>
       <SIG>SUM-$(N)_OUT</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7bcd</wuid>
+    <wuid>335787df:15c124f3cc3:-7bdf</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -277,7 +277,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-7bd3</wuid>
+    <wuid>335787df:15c124f3cc3:-7be5</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -332,7 +332,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-7bd2</wuid>
+    <wuid>335787df:15c124f3cc3:-7be4</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -384,7 +384,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7bd0</wuid>
+    <wuid>335787df:15c124f3cc3:-7be2</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -428,7 +428,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-7bcf</wuid>
+    <wuid>335787df:15c124f3cc3:-7be1</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -480,7 +480,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7bce</wuid>
+    <wuid>335787df:15c124f3cc3:-7be0</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -521,7 +521,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7bcc</wuid>
+    <wuid>335787df:15c124f3cc3:-7bde</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -562,7 +562,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7bcb</wuid>
+    <wuid>335787df:15c124f3cc3:-7bdd</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>

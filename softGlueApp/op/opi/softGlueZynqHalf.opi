@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-6e30</wuid>
+  <wuid>335787df:15c124f3cc3:-6ccb</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -36,7 +36,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e2f</wuid>
+    <wuid>335787df:15c124f3cc3:-6cca</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -77,7 +77,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e2e</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc9</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -118,7 +118,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e2d</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc8</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -159,7 +159,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e2c</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc7</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -200,7 +200,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e2b</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc6</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -241,7 +241,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e2a</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc5</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -282,7 +282,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e29</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc4</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -323,7 +323,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e28</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc3</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -364,7 +364,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e27</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc2</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -405,7 +405,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e26</wuid>
+    <wuid>335787df:15c124f3cc3:-6cc1</wuid>
     <scripts />
     <height>15</height>
     <name>Grouping Container</name>
@@ -443,7 +443,7 @@
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-6e25</wuid>
+      <wuid>335787df:15c124f3cc3:-6cc0</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>15</height>
@@ -484,7 +484,7 @@
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-6e24</wuid>
+      <wuid>335787df:15c124f3cc3:-6cbf</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>15</height>
@@ -528,7 +528,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e23</wuid>
+    <wuid>335787df:15c124f3cc3:-6cbe</wuid>
     <scripts />
     <height>10</height>
     <name>Grouping Container</name>
@@ -566,7 +566,7 @@
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-6e22</wuid>
+      <wuid>335787df:15c124f3cc3:-6cbd</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>10</height>
@@ -607,7 +607,7 @@
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-6e21</wuid>
+      <wuid>335787df:15c124f3cc3:-6cbc</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>10</height>
@@ -652,7 +652,7 @@
       <N>$(N1)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e20</wuid>
+    <wuid>335787df:15c124f3cc3:-6cbb</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -694,7 +694,7 @@
       <N>$(N2)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e1f</wuid>
+    <wuid>335787df:15c124f3cc3:-6cba</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -736,7 +736,7 @@
       <N>$(N3)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e1e</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb9</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -778,7 +778,7 @@
       <N>$(N4)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e1d</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb8</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -820,7 +820,7 @@
       <N>$(N5)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e1c</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb7</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -862,7 +862,7 @@
       <N>$(N6)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e1b</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb6</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -904,7 +904,7 @@
       <N>$(N7)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e1a</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb5</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -946,7 +946,7 @@
       <N>$(N8)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e19</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb4</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -988,7 +988,7 @@
       <N>$(N1)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e18</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb3</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1030,7 +1030,7 @@
       <N>$(N2)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e17</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb2</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1072,7 +1072,7 @@
       <N>$(N3)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e16</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb1</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1114,7 +1114,7 @@
       <N>$(N4)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e15</wuid>
+    <wuid>335787df:15c124f3cc3:-6cb0</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1156,7 +1156,7 @@
       <N>$(N5)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e14</wuid>
+    <wuid>335787df:15c124f3cc3:-6caf</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1198,7 +1198,7 @@
       <N>$(N6)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e13</wuid>
+    <wuid>335787df:15c124f3cc3:-6cae</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1240,7 +1240,7 @@
       <N>$(N7)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e12</wuid>
+    <wuid>335787df:15c124f3cc3:-6cad</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1282,7 +1282,7 @@
       <N>$(N8)</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e11</wuid>
+    <wuid>335787df:15c124f3cc3:-6cac</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1323,7 +1323,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e10</wuid>
+    <wuid>335787df:15c124f3cc3:-6cab</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1364,7 +1364,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6e0f</wuid>
+    <wuid>335787df:15c124f3cc3:-6caa</wuid>
     <scripts />
     <height>23</height>
     <name>Grouping Container</name>
@@ -1404,7 +1404,7 @@
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-6e0e</wuid>
+      <wuid>335787df:15c124f3cc3:-6ca9</wuid>
       <scripts />
       <height>20</height>
       <name>Grouping Container</name>
@@ -1446,7 +1446,7 @@
         <line_color>
           <color red="128" green="0" blue="255" />
         </line_color>
-        <wuid>-488445a9:1588d1d156a:-6e0d</wuid>
+        <wuid>335787df:15c124f3cc3:-6ca8</wuid>
         <bg_gradient_color>
           <color red="255" green="255" blue="255" />
         </bg_gradient_color>
@@ -1499,7 +1499,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <visible>true</visible>
         <vertical_alignment>1</vertical_alignment>
-        <wuid>-488445a9:1588d1d156a:-6e0c</wuid>
+        <wuid>335787df:15c124f3cc3:-6ca7</wuid>
         <auto_size>false</auto_size>
         <scripts />
         <height>20</height>
@@ -1544,7 +1544,7 @@ $(pv_value)</tooltip>
       <arrow_length>20</arrow_length>
       <visible>true</visible>
       <fill_level>100.0</fill_level>
-      <wuid>-488445a9:1588d1d156a:-6e0b</wuid>
+      <wuid>335787df:15c124f3cc3:-6ca6</wuid>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
       <arrows>0</arrows>

@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-6b14</wuid>
+  <wuid>335787df:15c124f3cc3:-69ad</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -38,7 +38,7 @@
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-6b13</wuid>
+    <wuid>335787df:15c124f3cc3:-69ac</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -95,7 +95,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="MEDM_COLOR_53" red="42" green="99" blue="228" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-6b06</wuid>
+    <wuid>335787df:15c124f3cc3:-699f</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -151,7 +151,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_IN</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6b0e</wuid>
+    <wuid>335787df:15c124f3cc3:-69a7</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -193,7 +193,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_SEL0</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6b0b</wuid>
+    <wuid>335787df:15c124f3cc3:-69a4</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -235,7 +235,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_SEL1</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6b08</wuid>
+    <wuid>335787df:15c124f3cc3:-69a1</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -277,7 +277,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_OUT0</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6b05</wuid>
+    <wuid>335787df:15c124f3cc3:-699e</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -318,7 +318,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6b04</wuid>
+    <wuid>335787df:15c124f3cc3:-699d</wuid>
     <scripts />
     <height>13</height>
     <name>Grouping Container</name>
@@ -359,7 +359,7 @@ $(pv_value)</tooltip>
       <arrow_length>20</arrow_length>
       <visible>true</visible>
       <fill_level>100.0</fill_level>
-      <wuid>-488445a9:1588d1d156a:-6b03</wuid>
+      <wuid>335787df:15c124f3cc3:-699c</wuid>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
       <arrows>0</arrows>
@@ -411,7 +411,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-6b02</wuid>
+      <wuid>335787df:15c124f3cc3:-699b</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>13</height>
@@ -456,7 +456,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_OUT3</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6afd</wuid>
+    <wuid>335787df:15c124f3cc3:-6996</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -498,7 +498,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_OUT2</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6afc</wuid>
+    <wuid>335787df:15c124f3cc3:-6995</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -540,7 +540,7 @@ $(pv_value)</tooltip>
       <SIG>DEMUX4-$(N)_OUT1</SIG>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-6afb</wuid>
+    <wuid>335787df:15c124f3cc3:-6994</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -582,7 +582,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6b12</wuid>
+    <wuid>335787df:15c124f3cc3:-69ab</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -634,7 +634,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6b11</wuid>
+    <wuid>335787df:15c124f3cc3:-69aa</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -675,7 +675,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6b10</wuid>
+    <wuid>335787df:15c124f3cc3:-69a9</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -719,7 +719,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6b0f</wuid>
+    <wuid>335787df:15c124f3cc3:-69a8</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -774,7 +774,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6b0d</wuid>
+    <wuid>335787df:15c124f3cc3:-69a6</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -826,7 +826,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6b0c</wuid>
+    <wuid>335787df:15c124f3cc3:-69a5</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -870,7 +870,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6b0a</wuid>
+    <wuid>335787df:15c124f3cc3:-69a3</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -922,7 +922,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6b09</wuid>
+    <wuid>335787df:15c124f3cc3:-69a2</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -963,7 +963,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6b07</wuid>
+    <wuid>335787df:15c124f3cc3:-69a0</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -1007,7 +1007,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6b01</wuid>
+    <wuid>335787df:15c124f3cc3:-699a</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -1059,7 +1059,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6b00</wuid>
+    <wuid>335787df:15c124f3cc3:-6999</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>
@@ -1103,7 +1103,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-6aff</wuid>
+    <wuid>335787df:15c124f3cc3:-6998</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -1155,7 +1155,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-6afe</wuid>
+    <wuid>335787df:15c124f3cc3:-6997</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>13</height>

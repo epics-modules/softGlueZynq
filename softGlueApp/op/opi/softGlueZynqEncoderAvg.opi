@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-7752</wuid>
+  <wuid>335787df:15c124f3cc3:-75f1</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -38,7 +38,7 @@
     <line_color>
       <color red="128" green="0" blue="255" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7751</wuid>
+    <wuid>335787df:15c124f3cc3:-75f0</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -95,7 +95,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-774c</wuid>
+    <wuid>335787df:15c124f3cc3:-75eb</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -152,7 +152,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-774a</wuid>
+    <wuid>335787df:15c124f3cc3:-75e9</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -209,7 +209,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7748</wuid>
+    <wuid>335787df:15c124f3cc3:-75e7</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -266,7 +266,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7746</wuid>
+    <wuid>335787df:15c124f3cc3:-75e5</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -323,7 +323,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7738</wuid>
+    <wuid>335787df:15c124f3cc3:-75d7</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -380,7 +380,7 @@ $(pv_value)</tooltip>
     <line_color>
       <color name="Gray_14" red="0" green="0" blue="0" />
     </line_color>
-    <wuid>-488445a9:1588d1d156a:-7737</wuid>
+    <wuid>335787df:15c124f3cc3:-75d6</wuid>
     <bg_gradient_color>
       <color red="255" green="255" blue="255" />
     </bg_gradient_color>
@@ -436,7 +436,7 @@ $(pv_value)</tooltip>
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-774e</wuid>
+    <wuid>335787df:15c124f3cc3:-75ed</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -478,7 +478,7 @@ $(pv_value)</tooltip>
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-774b</wuid>
+    <wuid>335787df:15c124f3cc3:-75ea</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -520,7 +520,7 @@ $(pv_value)</tooltip>
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7749</wuid>
+    <wuid>335787df:15c124f3cc3:-75e8</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -562,7 +562,7 @@ $(pv_value)</tooltip>
       <N>5</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7747</wuid>
+    <wuid>335787df:15c124f3cc3:-75e6</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -603,7 +603,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7741</wuid>
+    <wuid>335787df:15c124f3cc3:-75e0</wuid>
     <scripts />
     <height>190</height>
     <name>Grouping Container</name>
@@ -645,7 +645,7 @@ $(pv_value)</tooltip>
       <line_color>
         <color name="Gray_14" red="0" green="0" blue="0" />
       </line_color>
-      <wuid>-488445a9:1588d1d156a:-773e</wuid>
+      <wuid>335787df:15c124f3cc3:-75dd</wuid>
       <bg_gradient_color>
         <color red="255" green="255" blue="255" />
       </bg_gradient_color>
@@ -702,7 +702,7 @@ $(pv_value)</tooltip>
       <line_color>
         <color name="Gray_14" red="0" green="0" blue="0" />
       </line_color>
-      <wuid>-488445a9:1588d1d156a:-773d</wuid>
+      <wuid>335787df:15c124f3cc3:-75dc</wuid>
       <bg_gradient_color>
         <color red="255" green="255" blue="255" />
       </bg_gradient_color>
@@ -758,7 +758,7 @@ $(pv_value)</tooltip>
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7740</wuid>
+      <wuid>335787df:15c124f3cc3:-75df</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -800,7 +800,7 @@ $(pv_value)</tooltip>
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-773f</wuid>
+      <wuid>335787df:15c124f3cc3:-75de</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -839,7 +839,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-773c</wuid>
+      <wuid>335787df:15c124f3cc3:-75db</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>20</height>
@@ -880,7 +880,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-773b</wuid>
+      <wuid>335787df:15c124f3cc3:-75da</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>20</height>
@@ -925,7 +925,7 @@ $(pv_value)</tooltip>
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-773a</wuid>
+    <wuid>335787df:15c124f3cc3:-75d9</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -967,7 +967,7 @@ $(pv_value)</tooltip>
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7739</wuid>
+    <wuid>335787df:15c124f3cc3:-75d8</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1006,7 +1006,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7750</wuid>
+    <wuid>335787df:15c124f3cc3:-75ef</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>25</height>
@@ -1050,7 +1050,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-774f</wuid>
+    <wuid>335787df:15c124f3cc3:-75ee</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -1102,7 +1102,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-774d</wuid>
+    <wuid>335787df:15c124f3cc3:-75ec</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>25</height>
@@ -1143,7 +1143,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7745</wuid>
+    <wuid>335787df:15c124f3cc3:-75e4</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>20</height>
@@ -1184,7 +1184,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-7744</wuid>
+    <wuid>335787df:15c124f3cc3:-75e3</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>20</height>
@@ -1228,7 +1228,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-7743</wuid>
+    <wuid>335787df:15c124f3cc3:-75e2</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>
@@ -1283,7 +1283,7 @@ $(pv_value)</tooltip>
     <arrow_length>20</arrow_length>
     <visible>true</visible>
     <fill_level>100.0</fill_level>
-    <wuid>-488445a9:1588d1d156a:-7742</wuid>
+    <wuid>335787df:15c124f3cc3:-75e1</wuid>
     <rotation_angle>0.0</rotation_angle>
     <scripts />
     <arrows>0</arrows>

@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-783f</wuid>
+  <wuid>335787df:15c124f3cc3:-773d</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -36,7 +36,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-783e</wuid>
+    <wuid>335787df:15c124f3cc3:-773c</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -78,7 +78,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-783d</wuid>
+    <wuid>335787df:15c124f3cc3:-773b</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -120,7 +120,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-783c</wuid>
+    <wuid>335787df:15c124f3cc3:-773a</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -162,7 +162,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-783b</wuid>
+    <wuid>335787df:15c124f3cc3:-7739</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -204,7 +204,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-783a</wuid>
+    <wuid>335787df:15c124f3cc3:-7738</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -246,7 +246,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7839</wuid>
+    <wuid>335787df:15c124f3cc3:-7737</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -288,7 +288,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7838</wuid>
+    <wuid>335787df:15c124f3cc3:-7736</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -330,7 +330,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7837</wuid>
+    <wuid>335787df:15c124f3cc3:-7735</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -372,7 +372,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7836</wuid>
+    <wuid>335787df:15c124f3cc3:-7734</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -414,7 +414,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7835</wuid>
+    <wuid>335787df:15c124f3cc3:-7733</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -456,7 +456,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7834</wuid>
+    <wuid>335787df:15c124f3cc3:-7732</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -498,7 +498,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7833</wuid>
+    <wuid>335787df:15c124f3cc3:-7731</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -540,7 +540,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7832</wuid>
+    <wuid>335787df:15c124f3cc3:-7730</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -597,7 +597,7 @@
       <N16>16</N16>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7831</wuid>
+    <wuid>335787df:15c124f3cc3:-772f</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -654,7 +654,7 @@
       <N16>32</N16>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7830</wuid>
+    <wuid>335787df:15c124f3cc3:-772e</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -711,7 +711,7 @@
       <N16>48</N16>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-782f</wuid>
+    <wuid>335787df:15c124f3cc3:-772d</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -753,7 +753,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-782e</wuid>
+    <wuid>335787df:15c124f3cc3:-772c</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -795,7 +795,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-782d</wuid>
+    <wuid>335787df:15c124f3cc3:-772b</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -837,7 +837,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-782c</wuid>
+    <wuid>335787df:15c124f3cc3:-772a</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -879,7 +879,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-782b</wuid>
+    <wuid>335787df:15c124f3cc3:-7729</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -921,7 +921,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-782a</wuid>
+    <wuid>335787df:15c124f3cc3:-7728</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -963,7 +963,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7829</wuid>
+    <wuid>335787df:15c124f3cc3:-7727</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1005,7 +1005,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7828</wuid>
+    <wuid>335787df:15c124f3cc3:-7726</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1047,7 +1047,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7827</wuid>
+    <wuid>335787df:15c124f3cc3:-7725</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1088,7 +1088,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7826</wuid>
+    <wuid>335787df:15c124f3cc3:-7724</wuid>
     <scripts />
     <height>99</height>
     <name>Grouping Container</name>
@@ -1129,7 +1129,7 @@
         <N>1</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7825</wuid>
+      <wuid>335787df:15c124f3cc3:-7723</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1171,7 +1171,7 @@
         <N>2</N>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-7824</wuid>
+      <wuid>335787df:15c124f3cc3:-7722</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <zoom_to_fit>true</zoom_to_fit>
@@ -1214,7 +1214,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7823</wuid>
+    <wuid>335787df:15c124f3cc3:-7721</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1256,7 +1256,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7822</wuid>
+    <wuid>335787df:15c124f3cc3:-7720</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1298,7 +1298,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7821</wuid>
+    <wuid>335787df:15c124f3cc3:-771f</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1340,7 +1340,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7820</wuid>
+    <wuid>335787df:15c124f3cc3:-771e</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1382,7 +1382,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-781f</wuid>
+    <wuid>335787df:15c124f3cc3:-771d</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1424,7 +1424,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-781e</wuid>
+    <wuid>335787df:15c124f3cc3:-771c</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1466,7 +1466,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-781d</wuid>
+    <wuid>335787df:15c124f3cc3:-771b</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1508,7 +1508,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-781c</wuid>
+    <wuid>335787df:15c124f3cc3:-771a</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1550,7 +1550,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-781b</wuid>
+    <wuid>335787df:15c124f3cc3:-7719</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1592,7 +1592,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-781a</wuid>
+    <wuid>335787df:15c124f3cc3:-7718</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1634,7 +1634,7 @@
       <N>3</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7819</wuid>
+    <wuid>335787df:15c124f3cc3:-7717</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1676,7 +1676,7 @@
       <N>4</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7818</wuid>
+    <wuid>335787df:15c124f3cc3:-7716</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1718,7 +1718,7 @@
       <N>1</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7817</wuid>
+    <wuid>335787df:15c124f3cc3:-7715</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1760,7 +1760,7 @@
       <N>2</N>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7816</wuid>
+    <wuid>335787df:15c124f3cc3:-7714</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -1801,7 +1801,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-7815</wuid>
+    <wuid>335787df:15c124f3cc3:-7713</wuid>
     <scripts />
     <height>20</height>
     <name>Grouping Container</name>
@@ -1841,7 +1841,7 @@
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
       <show_units>false</show_units>
-      <wuid>-488445a9:1588d1d156a:-7814</wuid>
+      <wuid>335787df:15c124f3cc3:-7712</wuid>
       <auto_size>false</auto_size>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
@@ -1890,7 +1890,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-7813</wuid>
+      <wuid>335787df:15c124f3cc3:-7711</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>20</height>
@@ -1931,7 +1931,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-7812</wuid>
+      <wuid>335787df:15c124f3cc3:-7710</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>20</height>
@@ -1974,7 +1974,7 @@ $(pv_value)</tooltip>
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
       <show_units>false</show_units>
-      <wuid>-488445a9:1588d1d156a:-7811</wuid>
+      <wuid>335787df:15c124f3cc3:-770f</wuid>
       <auto_size>false</auto_size>
       <rotation_angle>0.0</rotation_angle>
       <scripts />

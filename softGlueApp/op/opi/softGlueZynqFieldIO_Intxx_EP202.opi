@@ -3,7 +3,7 @@
   <macros>
     <include_parent_macros>true</include_parent_macros>
   </macros>
-  <wuid>-488445a9:1588d1d156a:-75bb</wuid>
+  <wuid>335787df:15c124f3cc3:-7456</wuid>
   <boy_version>3.2.10.20140131</boy_version>
   <scripts />
   <show_ruler>true</show_ruler>
@@ -36,7 +36,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-75ba</wuid>
+    <wuid>335787df:15c124f3cc3:-7455</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <zoom_to_fit>true</zoom_to_fit>
@@ -77,7 +77,7 @@
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-75b6</wuid>
+    <wuid>335787df:15c124f3cc3:-7451</wuid>
     <scripts />
     <height>17</height>
     <name>Grouping Container</name>
@@ -143,7 +143,7 @@
       <minimum>-Infinity</minimum>
       <next_focus>0</next_focus>
       <show_units>false</show_units>
-      <wuid>-488445a9:1588d1d156a:-75b5</wuid>
+      <wuid>335787df:15c124f3cc3:-7450</wuid>
       <rotation_angle>0.0</rotation_angle>
       <style>0</style>
       <name>Text Input</name>
@@ -177,7 +177,7 @@ $(pv_value)</tooltip>
     <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
       <visible>true</visible>
       <vertical_alignment>1</vertical_alignment>
-      <wuid>-488445a9:1588d1d156a:-75b4</wuid>
+      <wuid>335787df:15c124f3cc3:-744f</wuid>
       <auto_size>false</auto_size>
       <scripts />
       <height>10</height>
@@ -221,7 +221,7 @@ $(pv_value)</tooltip>
       <include_parent_macros>true</include_parent_macros>
     </macros>
     <visible>true</visible>
-    <wuid>-488445a9:1588d1d156a:-75ac</wuid>
+    <wuid>335787df:15c124f3cc3:-7447</wuid>
     <scripts />
     <height>23</height>
     <name>Grouping Container</name>
@@ -261,7 +261,7 @@ $(pv_value)</tooltip>
         <include_parent_macros>true</include_parent_macros>
       </macros>
       <visible>true</visible>
-      <wuid>-488445a9:1588d1d156a:-75ab</wuid>
+      <wuid>335787df:15c124f3cc3:-7446</wuid>
       <scripts />
       <height>20</height>
       <name>Grouping Container</name>
@@ -303,7 +303,7 @@ $(pv_value)</tooltip>
         <line_color>
           <color red="128" green="0" blue="255" />
         </line_color>
-        <wuid>-488445a9:1588d1d156a:-75aa</wuid>
+        <wuid>335787df:15c124f3cc3:-7445</wuid>
         <bg_gradient_color>
           <color red="255" green="255" blue="255" />
         </bg_gradient_color>
@@ -356,7 +356,7 @@ $(pv_value)</tooltip>
       <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
         <visible>true</visible>
         <vertical_alignment>1</vertical_alignment>
-        <wuid>-488445a9:1588d1d156a:-75a9</wuid>
+        <wuid>335787df:15c124f3cc3:-7444</wuid>
         <auto_size>false</auto_size>
         <scripts />
         <height>20</height>
@@ -401,7 +401,7 @@ $(pv_value)</tooltip>
       <arrow_length>20</arrow_length>
       <visible>true</visible>
       <fill_level>100.0</fill_level>
-      <wuid>-488445a9:1588d1d156a:-75a8</wuid>
+      <wuid>335787df:15c124f3cc3:-7443</wuid>
       <rotation_angle>0.0</rotation_angle>
       <scripts />
       <arrows>0</arrows>
@@ -455,7 +455,7 @@ $(pv_value)</tooltip>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <visible>true</visible>
     <actions_from_pv>false</actions_from_pv>
-    <wuid>-488445a9:1588d1d156a:-75b9</wuid>
+    <wuid>335787df:15c124f3cc3:-7454</wuid>
     <scripts />
     <height>20</height>
     <name>Menu Button</name>
@@ -506,7 +506,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75b8</wuid>
+    <wuid>335787df:15c124f3cc3:-7453</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -547,7 +547,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75b7</wuid>
+    <wuid>335787df:15c124f3cc3:-7452</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -588,7 +588,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75b3</wuid>
+    <wuid>335787df:15c124f3cc3:-744e</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>20</height>
@@ -629,7 +629,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75b2</wuid>
+    <wuid>335787df:15c124f3cc3:-744d</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>20</height>
@@ -670,7 +670,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75b1</wuid>
+    <wuid>335787df:15c124f3cc3:-744c</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>20</height>
@@ -711,7 +711,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75b0</wuid>
+    <wuid>335787df:15c124f3cc3:-744b</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -752,7 +752,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75af</wuid>
+    <wuid>335787df:15c124f3cc3:-744a</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -793,7 +793,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75ae</wuid>
+    <wuid>335787df:15c124f3cc3:-7449</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
@@ -834,7 +834,7 @@ $(pv_value)</tooltip>
   <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
     <visible>true</visible>
     <vertical_alignment>1</vertical_alignment>
-    <wuid>-488445a9:1588d1d156a:-75ad</wuid>
+    <wuid>335787df:15c124f3cc3:-7448</wuid>
     <auto_size>false</auto_size>
     <scripts />
     <height>10</height>
