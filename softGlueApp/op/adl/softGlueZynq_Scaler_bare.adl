@@ -1,0 +1,514 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_Scaler_bare.adl"
+	version=030112
+}
+display {
+	object {
+		x=293
+		y=138
+		width=460
+		height=190
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=175
+		y=6
+		width=102
+		height=152
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+composite {
+	object {
+		x=12
+		y=105
+		width=207
+		height=26
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=179
+				y=114
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="READ"
+		}
+		polyline {
+			object {
+				x=166
+				y=118
+				width=10
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(175,119)
+				(167,119)
+			}
+		}
+		composite {
+			object {
+				x=12
+				y=105
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_CHADV"
+		}
+	}
+}
+polyline {
+	object {
+		x=163
+		y=93
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(175,94)
+		(164,94)
+	}
+}
+text {
+	object {
+		x=179
+		y=89
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CLEAR"
+}
+composite {
+	object {
+		x=12
+		y=80
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_CLR"
+}
+polyline {
+	object {
+		x=165
+		y=18
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(177,19)
+		(166,19)
+	}
+}
+text {
+	object {
+		x=181
+		y=13
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="EN"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=12
+		y=5
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_EN"
+}
+polyline {
+	object {
+		x=165
+		y=43
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(177,44)
+		(166,44)
+	}
+}
+text {
+	object {
+		x=177
+		y=38
+		width=25
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CNT"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=12
+		y=30
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_CNT"
+}
+polyline {
+	object {
+		x=165
+		y=68
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(177,69)
+		(166,69)
+	}
+}
+text {
+	object {
+		x=178
+		y=63
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="STOP"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=12
+		y=55
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_STOP"
+}
+text {
+	object {
+		x=203
+		y=23
+		width=60
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="Scaler-$(N)"
+}
+rectangle {
+	object {
+		x=197
+		y=20
+		width=70
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+composite {
+	object {
+		x=203
+		y=144
+		width=80
+		height=41
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=218
+				y=144
+				width=40
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="PRESET"
+			align="horiz. centered"
+		}
+		polyline {
+			object {
+				x=237
+				y=155
+				width=2
+				height=16
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			points {
+				(238,156)
+				(238,170)
+			}
+		}
+		"text entry" {
+			object {
+				x=203
+				y=165
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(H)Scaler-$(N)_PRESET"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+	}
+}
+polyline {
+	object {
+		x=166
+		y=143
+		width=10
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(175,144)
+		(167,144)
+	}
+}
+composite {
+	object {
+		x=12
+		y=130
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_CLK"
+}
+polyline {
+	object {
+		x=175
+		y=135
+		width=11
+		height=16
+	}
+	"basic attribute" {
+		clr=14
+		width=2
+	}
+	points {
+		(176,136)
+		(185,143)
+		(176,150)
+	}
+}
+polyline {
+	object {
+		x=276
+		y=73
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,74)
+		(277,74)
+	}
+}
+text {
+	object {
+		x=263
+		y=68
+		width=10
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Q"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=60
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_Q"
+}
+polyline {
+	object {
+		x=276
+		y=103
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,104)
+		(277,104)
+	}
+}
+text {
+	object {
+		x=243
+		y=98
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CNTG"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=90
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=Scaler-$(N)_CNTG"
+}

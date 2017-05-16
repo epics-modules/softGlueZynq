@@ -1,14 +1,14 @@
 
 file {
 	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqMenu.adl"
-	version=030107
+	version=030112
 }
 display {
 	object {
 		x=1080
 		y=248
 		width=120
-		height=220
+		height=240
 	}
 	clr=14
 	bclr=2
@@ -245,6 +245,11 @@ display {
 		name="softGlueZynq_FreqCntr.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
+	display[14] {
+		label="Scaler16"
+		name="softGlueZynq_Scaler.adl"
+		args="P=$(P),H=$(H),N=1"
+	}
 	clr=0
 	bclr=63
 	label="-Counters"
@@ -389,6 +394,11 @@ display {
 	display[4] {
 		label="Extra"
 		name="softGlueZynqExtra.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[5] {
+		label="Configure"
+		name="softGlueZynqConfig.adl"
 		args="P=$(P),H=$(H)"
 	}
 	clr=0
@@ -552,6 +562,11 @@ composite {
 		name="softGlueZynq_PixelFIFO.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
+	display[12] {
+		label="ScalToStream 1"
+		name="softGlueZynq_ScalToStream.adl"
+		args="P=$(P),H=$(H),N=1"
+	}
 	clr=0
 	bclr=63
 	label="-Clk,G&D,HS,PT"
@@ -559,7 +574,7 @@ composite {
 composite {
 	object {
 		x=10
-		y=160
+		y=180
 		width=100
 		height=55
 	}
@@ -568,7 +583,7 @@ composite {
 		"text update" {
 			object {
 				x=50
-				y=195
+				y=215
 				width=30
 				height=20
 			}
@@ -584,7 +599,7 @@ composite {
 		text {
 			object {
 				x=10
-				y=195
+				y=215
 				width=40
 				height=10
 			}
@@ -596,7 +611,7 @@ composite {
 		text {
 			object {
 				x=10
-				y=205
+				y=225
 				width=40
 				height=10
 			}
@@ -608,7 +623,7 @@ composite {
 		text {
 			object {
 				x=85
-				y=195
+				y=215
 				width=20
 				height=20
 			}
@@ -621,7 +636,7 @@ composite {
 		text {
 			object {
 				x=10
-				y=160
+				y=180
 				width=100
 				height=10
 			}
@@ -634,7 +649,7 @@ composite {
 		menu {
 			object {
 				x=10
-				y=170
+				y=190
 				width=100
 				height=20
 			}
@@ -645,4 +660,45 @@ composite {
 			}
 		}
 	}
+}
+"related display" {
+	object {
+		x=10
+		y=150
+		width=100
+		height=20
+	}
+	display[9] {
+		label="pixelTriggerImage 1"
+		name="pixelTrigger2D.adl"
+		args="P=tmm:,letter=I"
+	}
+	display[10] {
+		label="pixelTriggerImage 2"
+		name="pixelTrigger2D.adl"
+		args="P=tmm:,letter=J"
+	}
+	display[11] {
+		label="readSoftGlueCounter"
+		name="readSoftGlueCounter.adl"
+		args="P=tmm:,Q=SG_RdCntr:"
+	}
+	display[12] {
+		label="pixelTriggerDma"
+		name="pixelTriggerDma.adl"
+		args="P=tmm:,Q=1"
+	}
+	display[13] {
+		label="pixelTriggerDmaImage 1"
+		name="pixelTriggerDma2D.adl"
+		args="P=tmm:,letter=I"
+	}
+	display[14] {
+		label="histScalerDma"
+		name="histScalerDma.adl"
+		args="P=tmm:,Q=1"
+	}
+	clr=0
+	bclr=17
+	label="-Applications"
 }

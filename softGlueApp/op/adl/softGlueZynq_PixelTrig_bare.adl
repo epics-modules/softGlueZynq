@@ -5,8 +5,8 @@ file {
 }
 display {
 	object {
-		x=708
-		y=420
+		x=258
+		y=445
 		width=467
 		height=283
 	}
@@ -569,204 +569,6 @@ composite {
 	"composite name"=""
 	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=pixelTrig-$(N)_B2"
 }
-text {
-	object {
-		x=240
-		y=111
-		width=50
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="COUNTS2"
-	align="horiz. right"
-}
-polyline {
-	object {
-		x=293
-		y=115
-		width=17
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(309,116)
-		(294,116)
-	}
-}
-text {
-	object {
-		x=240
-		y=86
-		width=50
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="COUNTS1"
-	align="horiz. right"
-}
-polyline {
-	object {
-		x=293
-		y=90
-		width=17
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(309,91)
-		(294,91)
-	}
-}
-"text update" {
-	object {
-		x=312
-		y=107
-		width=128
-		height=18
-	}
-	monitor {
-		chan="$(P)$(H)pixelTrig-$(N)_COUNTS2"
-		clr=54
-		bclr=2
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-composite {
-	object {
-		x=307
-		y=105
-		width=136
-		height=24
-	}
-	"composite name"=""
-	children {
-		polyline {
-			object {
-				x=307
-				y=105
-				width=135
-				height=24
-			}
-			"basic attribute" {
-				clr=10
-				fill="outline"
-				width=2
-			}
-			"dynamic attribute" {
-				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
-			}
-			points {
-				(308,128)
-				(308,106)
-				(441,106)
-			}
-		}
-		polyline {
-			object {
-				x=307
-				y=105
-				width=135
-				height=24
-			}
-			"basic attribute" {
-				clr=0
-				fill="outline"
-				width=2
-			}
-			"dynamic attribute" {
-				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
-			}
-			points {
-				(441,106)
-				(441,128)
-				(308,128)
-			}
-		}
-	}
-}
-"text update" {
-	object {
-		x=312
-		y=82
-		width=128
-		height=18
-	}
-	monitor {
-		chan="$(P)$(H)pixelTrig-$(N)_COUNTS1"
-		clr=54
-		bclr=2
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-composite {
-	object {
-		x=307
-		y=80
-		width=136
-		height=24
-	}
-	"composite name"=""
-	children {
-		polyline {
-			object {
-				x=307
-				y=80
-				width=135
-				height=24
-			}
-			"basic attribute" {
-				clr=10
-				fill="outline"
-				width=2
-			}
-			"dynamic attribute" {
-				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
-			}
-			points {
-				(308,103)
-				(308,81)
-				(441,81)
-			}
-		}
-		polyline {
-			object {
-				x=307
-				y=80
-				width=135
-				height=24
-			}
-			"basic attribute" {
-				clr=0
-				fill="outline"
-				width=2
-			}
-			"dynamic attribute" {
-				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
-			}
-			points {
-				(441,81)
-				(441,103)
-				(308,103)
-			}
-		}
-	}
-}
 polyline {
 	object {
 		x=293
@@ -850,7 +652,7 @@ composite {
 composite {
 	object {
 		x=240
-		y=130
+		y=87
 		width=203
 		height=24
 	}
@@ -859,7 +661,7 @@ composite {
 		text {
 			object {
 				x=240
-				y=136
+				y=93
 				width=50
 				height=10
 			}
@@ -872,7 +674,7 @@ composite {
 		polyline {
 			object {
 				x=293
-				y=140
+				y=97
 				width=17
 				height=2
 			}
@@ -882,14 +684,14 @@ composite {
 				width=2
 			}
 			points {
-				(309,141)
-				(294,141)
+				(309,98)
+				(294,98)
 			}
 		}
 		"text update" {
 			object {
 				x=312
-				y=132
+				y=89
 				width=128
 				height=20
 			}
@@ -905,7 +707,7 @@ composite {
 		composite {
 			object {
 				x=307
-				y=130
+				y=87
 				width=136
 				height=24
 			}
@@ -914,7 +716,7 @@ composite {
 				polyline {
 					object {
 						x=307
-						y=130
+						y=87
 						width=135
 						height=24
 					}
@@ -927,15 +729,15 @@ composite {
 						chan="$(P)$(H)UpCntr-$(N)_COUNTS"
 					}
 					points {
-						(308,153)
-						(308,131)
-						(441,131)
+						(308,110)
+						(308,88)
+						(441,88)
 					}
 				}
 				polyline {
 					object {
 						x=307
-						y=130
+						y=87
 						width=135
 						height=24
 					}
@@ -948,9 +750,9 @@ composite {
 						chan="$(P)$(H)UpCntr-$(N)_COUNTS"
 					}
 					points {
-						(441,131)
-						(441,153)
-						(308,153)
+						(441,88)
+						(441,110)
+						(308,110)
 					}
 				}
 			}
@@ -960,7 +762,7 @@ composite {
 text {
 	object {
 		x=240
-		y=161
+		y=118
 		width=50
 		height=10
 	}
@@ -973,7 +775,7 @@ text {
 polyline {
 	object {
 		x=293
-		y=165
+		y=122
 		width=17
 		height=2
 	}
@@ -983,14 +785,14 @@ polyline {
 		width=2
 	}
 	points {
-		(309,166)
-		(294,166)
+		(309,123)
+		(294,123)
 	}
 }
 "text update" {
 	object {
 		x=312
-		y=157
+		y=114
 		width=128
 		height=20
 	}
@@ -1006,7 +808,7 @@ polyline {
 composite {
 	object {
 		x=307
-		y=155
+		y=112
 		width=136
 		height=24
 	}
@@ -1015,7 +817,7 @@ composite {
 		polyline {
 			object {
 				x=307
-				y=155
+				y=112
 				width=135
 				height=24
 			}
@@ -1028,15 +830,15 @@ composite {
 				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
 			}
 			points {
-				(308,178)
-				(308,156)
-				(441,156)
+				(308,135)
+				(308,113)
+				(441,113)
 			}
 		}
 		polyline {
 			object {
 				x=307
-				y=155
+				y=112
 				width=135
 				height=24
 			}
@@ -1049,9 +851,9 @@ composite {
 				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
 			}
 			points {
-				(441,156)
-				(441,178)
-				(308,178)
+				(441,113)
+				(441,135)
+				(308,135)
 			}
 		}
 	}
@@ -1161,17 +963,17 @@ polyline {
 composite {
 	object {
 		x=310
-		y=193
+		y=150
 		width=157
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelTrig_ENTRIG"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelTrig_TRIG"
 }
 polyline {
 	object {
 		x=293
-		y=206
+		y=163
 		width=19
 		height=2
 	}
@@ -1181,15 +983,55 @@ polyline {
 		width=2
 	}
 	points {
-		(311,207)
-		(294,207)
+		(311,164)
+		(294,164)
 	}
 }
 text {
 	object {
 		x=259
-		y=201
+		y=158
 		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="TRIG"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=310
+		y=180
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelTrig_ENTRIG"
+}
+polyline {
+	object {
+		x=293
+		y=193
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(311,194)
+		(294,194)
+	}
+}
+text {
+	object {
+		x=248
+		y=188
+		width=40
 		height=13
 	}
 	"basic attribute" {

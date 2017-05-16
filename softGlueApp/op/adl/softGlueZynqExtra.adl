@@ -1,12 +1,12 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynqExtra.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqExtra.adl"
+	version=030112
 }
 display {
 	object {
 		x=520
-		y=25
+		y=50
 		width=1000
 		height=890
 	}
@@ -477,26 +477,4 @@ polyline {
 		(525,617)
 		(525,633)
 	}
-}
-composite {
-	object {
-		x=15
-		y=630
-		width=155
-		height=26
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=MCS-1_CHADV"
-}
-text {
-	object {
-		x=175
-		y=635
-		width=104
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="MCS-1 ChanAdv"
 }

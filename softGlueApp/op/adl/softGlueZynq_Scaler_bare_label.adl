@@ -1,14 +1,14 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_HistScal.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_Scaler_bare_label.adl"
+	version=030112
 }
 display {
 	object {
-		x=143
-		y=416
-		width=440
-		height=186
+		x=641
+		y=516
+		width=450
+		height=205
 	}
 	clr=14
 	bclr=2
@@ -87,65 +87,29 @@ display {
 		1a7309,
 	}
 }
-rectangle {
+"text entry" {
 	object {
 		x=0
 		y=0
-		width=443
-		height=25
+		width=445
+		height=16
 	}
-	"basic attribute" {
-		clr=0
-	}
-}
-text {
-	object {
-		x=220
-		y=0
-		width=220
-		height=25
-	}
-	"basic attribute" {
+	control {
+		chan="$(P)$(H)UpDnCntr-$(N)_desc"
 		clr=14
+		bclr=2
 	}
-	textix="HistScal $(N)"
-	align="horiz. centered"
-}
-polyline {
-	object {
-		x=0
-		y=25
-		width=444
-		height=3
-	}
-	"basic attribute" {
-		clr=54
-		width=3
-	}
-	points {
-		(1,26)
-		(442,26)
+	format="string"
+	limits {
 	}
 }
 composite {
 	object {
-		x=10
-		y=30
-		width=420
-		height=156
+		x=5
+		y=20
+		width=436
+		height=180
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_HistScal_bare_label.adl;P=$(P),H=$(H),N=$(N)"
-}
-text {
-	object {
-		x=10
-		y=0
-		width=210
-		height=25
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(P)$(H)"
+	"composite file"="softGlueZynq_Scaler_bare.adl;P=$(P),H=$(H),N=$(N)"
 }

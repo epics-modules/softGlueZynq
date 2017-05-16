@@ -1,14 +1,14 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_HistScal.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_ScalToStream.adl"
 	version=030107
 }
 display {
 	object {
-		x=143
-		y=416
-		width=440
-		height=186
+		x=684
+		y=370
+		width=460
+		height=170
 	}
 	clr=14
 	bclr=2
@@ -91,7 +91,7 @@ rectangle {
 	object {
 		x=0
 		y=0
-		width=443
+		width=460
 		height=25
 	}
 	"basic attribute" {
@@ -100,22 +100,22 @@ rectangle {
 }
 text {
 	object {
-		x=220
+		x=170
 		y=0
-		width=220
+		width=290
 		height=25
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="HistScal $(N)"
+	textix="ScalToStream $(N)"
 	align="horiz. centered"
 }
 polyline {
 	object {
 		x=0
 		y=25
-		width=444
+		width=459
 		height=3
 	}
 	"basic attribute" {
@@ -124,24 +124,24 @@ polyline {
 	}
 	points {
 		(1,26)
-		(442,26)
+		(457,26)
 	}
 }
 composite {
 	object {
 		x=10
 		y=30
-		width=420
-		height=156
+		width=440
+		height=134
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_HistScal_bare_label.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_ScalToStream_bare_label.adl;P=$(P),H=$(H),N=$(N)"
 }
 text {
 	object {
 		x=10
 		y=0
-		width=210
+		width=160
 		height=25
 	}
 	"basic attribute" {

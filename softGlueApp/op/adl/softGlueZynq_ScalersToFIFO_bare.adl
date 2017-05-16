@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_PixelFIFO_bare.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_ScalersToFIFO_bare.adl"
 	version=030107
 }
 display {
@@ -100,34 +100,10 @@ rectangle {
 		width=2
 	}
 }
-text {
-	object {
-		x=198
-		y=35
-		width=70
-		height=10
-	}
-	"basic attribute" {
-		clr=53
-	}
-	textix="PixelFIFO-$(N)"
-}
-rectangle {
-	object {
-		x=192
-		y=32
-		width=80
-		height=14
-	}
-	"basic attribute" {
-		clr=53
-		fill="outline"
-	}
-}
 polyline {
 	object {
 		x=276
-		y=22
+		y=82
 		width=17
 		height=2
 	}
@@ -137,72 +113,32 @@ polyline {
 		width=2
 	}
 	points {
-		(292,23)
-		(277,23)
+		(292,83)
+		(277,83)
 	}
 }
 text {
 	object {
 		x=220
-		y=17
+		y=77
 		width=50
 		height=13
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="10% FULL"
+	textix="DMA FULL"
 	align="horiz. centered"
 }
 composite {
 	object {
 		x=291
-		y=9
+		y=69
 		width=157
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_FIFO10"
-}
-polyline {
-	object {
-		x=276
-		y=55
-		width=17
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(292,56)
-		(277,56)
-	}
-}
-text {
-	object {
-		x=220
-		y=50
-		width=50
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="50% FULL"
-	align="horiz. centered"
-}
-composite {
-	object {
-		x=291
-		y=42
-		width=157
-		height=26
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_FIFO50"
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=DMA_FIFO_FULL"
 }
 polyline {
 	object {
@@ -242,36 +178,7 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_ADVDONE"
-}
-text {
-	object {
-		x=179
-		y=89
-		width=40
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="CHADV"
-}
-polyline {
-	object {
-		x=166
-		y=93
-		width=10
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(175,94)
-		(167,94)
-	}
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=scalersToFIFO-$(N)_ADVDONE"
 }
 composite {
 	object {
@@ -281,5 +188,108 @@ composite {
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_CHADV"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalersToFIFO-$(N)_CHADV"
+}
+composite {
+	object {
+		x=10
+		y=15
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalersToFIFO-$(N)_regClk"
+}
+composite {
+	object {
+		x=166
+		y=89
+		width=53
+		height=13
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=179
+				y=89
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="CHADV"
+		}
+		polyline {
+			object {
+				x=166
+				y=93
+				width=10
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(175,94)
+				(167,94)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=178
+		y=24
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="REGCK"
+}
+polyline {
+	object {
+		x=165
+		y=28
+		width=10
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(174,29)
+		(166,29)
+	}
+}
+text {
+	object {
+		x=185
+		y=51
+		width=83
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="scalToFIFO-$(N)"
+}
+rectangle {
+	object {
+		x=179
+		y=48
+		width=93
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
 }

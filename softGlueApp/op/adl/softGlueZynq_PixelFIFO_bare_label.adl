@@ -91,11 +91,11 @@ composite {
 	object {
 		x=10
 		y=25
-		width=273
+		width=438
 		height=117
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_PixelFIFO_bare.adl;P=$(P),H=$(H),N=$(N)"
+	"composite file"="softGlueZynq_ScalersToFIFO_bare.adl;P=$(P),H=$(H),N=$(N)"
 }
 "text entry" {
 	object {
@@ -105,7 +105,7 @@ composite {
 		height=16
 	}
 	control {
-		chan="$(P)$(H)PixelFIFO-$(N)_desc"
+		chan="$(P)$(H)ScalersToFIFO-$(N)_desc"
 		clr=14
 		bclr=2
 	}
