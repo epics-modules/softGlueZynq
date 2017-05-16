@@ -29,6 +29,35 @@ tar zxf ${TAG}.tar.gz
 rm ${TAG}.tar.gz
 echo 'ALIVE=$(SUPPORT)/alive-'${TAG} >>RELEASE_files.txt
 
+# get areaDetector, ADCore, and ADSimDetector from https://github.com/areaDetector
+setenv TAG R2-6
+wget https://github.com/areaDetector/areaDetector/archive/${TAG}.tar.gz
+tar zxf ${TAG}.tar.gz
+rm ${TAG}.tar.gz
+echo 'AREADETECTOR=$(SUPPORT)/areaDetector-'${TAG} >>RELEASE_files.txt
+
+cd areaDetector-${TAG}
+
+setenv TAG R2-6
+wget https://github.com/areaDetector/ADCore/archive/${TAG}.tar.gz
+tar zxf ${TAG}.tar.gz
+rm ${TAG}.tar.gz
+echo 'ADCORE=$(AREADETECTOR)/ADCore-'${TAG} >>../RELEASE_files.txt
+
+setenv TAG R1-1
+wget https://github.com/areaDetector/ADSupport/archive/${TAG}.tar.gz
+tar zxf ${TAG}.tar.gz
+rm ${TAG}.tar.gz
+echo 'ADSUPPORT=$(AREADETECTOR)/ADSupport-'${TAG} >>../RELEASE_files.txt
+
+setenv TAG R2-4
+wget https://github.com/areaDetector/ADSimDetector/archive/${TAG}.tar.gz
+tar zxf ${TAG}.tar.gz
+rm ${TAG}.tar.gz
+echo 'ADSIMDETECTOR=$(AREADETECTOR)/ADSimDetector-'${TAG} >>../RELEASE_files.txt
+
+cd ..
+
 # autosave
 setenv TAG R5-7-1
 wget https://github.com/epics-modules/autosave/archive/${TAG}.tar.gz
