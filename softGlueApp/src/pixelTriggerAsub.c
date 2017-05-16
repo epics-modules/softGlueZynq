@@ -105,6 +105,9 @@ static long pixelTrigger_do(aSubRecord *pasub) {
 	epicsUInt32 *pixels7 = (epicsUInt32 *)pasub->valg;
 	epicsUInt32 *numEvents = (epicsUInt32 *)pasub->valh;
 
+	/* At present, caQtDM does not have a widget to display 2D images from four byte data arrays,
+	 * so we're going to have to copy to two byte arrays.
+	 */
 	epicsUInt16 *image1 = (epicsUInt16 *)pasub->vali;
 	epicsUInt16 *image2 = (epicsUInt16 *)pasub->valj;
 	epicsUInt16 *image3 = (epicsUInt16 *)pasub->valk;
@@ -122,6 +125,7 @@ static long pixelTrigger_do(aSubRecord *pasub) {
 	}
 
 	if (*clear) {
+		/* erase pixel maps */
 		for (i=0; i<pasub->nova; i++) {
 			pixels1[i] = 0;
 			pixels2[i] = 0;
@@ -138,6 +142,7 @@ static long pixelTrigger_do(aSubRecord *pasub) {
 	}
 
 	if (mode==1) {
+		/* prepare to normalize to data in pixels1[], which is presumed to record the time spent in the pixel. */
 		for (i=0; i<pasub->nova; i++) {
 			max2 = MAX(max2, pixels2[i]);
 			max3 = MAX(max3, pixels3[i]);
@@ -149,7 +154,7 @@ static long pixelTrigger_do(aSubRecord *pasub) {
 	}
 
 	if (pixelTriggerDebug) printf("pixelTrigger_do: max2=%d, max3=%d\n", max2, max3);
-
+	/* Copy pixel maps to displayable arrays */
 	for (i=0; i<pasub->nova; i++) {
 		time = pixels1[i]/clockRate;
 		if (pixels1[i] > 0 && mode==1) {
