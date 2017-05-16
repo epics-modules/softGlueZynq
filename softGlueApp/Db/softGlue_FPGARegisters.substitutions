@@ -13,7 +13,7 @@ pattern {SIG		ADDR}
 {UpDnCntr-2_PRESET	41}
 {UpDnCntr-3_PRESET	42}
 {UpDnCntr-4_PRESET	43}
-#{UpDnCntr-5_PRESET	44}
+{Scaler-1_PRESET	44}
 {GateDly-1_DLY		45}
 {GateDly-1_WIDTH	46}
 {GateDly-2_DLY		47}
@@ -31,6 +31,8 @@ pattern {SIG		ADDR}
 {pixelTrig-1_PREPIX		59}
 {pixelTrig-2_PREPIX		60}
 {scalToStream-1_DMAWORDS		61}
+# See softGlue_config.db for input to this PV
+{config-1		62}
 }
 
 file "softGlue_InRegister.db"
