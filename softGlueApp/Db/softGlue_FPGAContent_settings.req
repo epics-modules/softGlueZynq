@@ -49,9 +49,13 @@ file GateDly_settings.req P=$(P),H=$(H),N=4
 file HistScal_settings.req P=$(P),H=$(H),N=1
 file PixelTrigger_settings.req P=$(P),H=$(H),N=1
 file PixelTrigger_settings.req P=$(P),H=$(H),N=2
+$(P)$(H)PixelTrig_TRIG_Signal
+$(P)$(H)PixelTrig_ENTRIG_Signal
 file PixelFIFO_settings.req P=$(P),H=$(H),N=1
-
+file ScalToStream_settings.req P=$(P),H=$(H),N=1
+#file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
 file FreqCntr_settings.req P=$(P),H=$(H),N=1
+file scaler16_settings.req P=$(P),H=$(H),N=1
 
 # hard-wired OR gates
 $(P)$(H)HW_OR-1_OUT_Signal
@@ -62,8 +66,7 @@ $(P)$(H)10MHZ_CLOCK_Signal
 $(P)$(H)20MHZ_CLOCK_Signal
 $(P)$(H)50MHZ_CLOCK_Signal
 
-# MCS channel advance
-$(P)$(H)MCS-1_CHADV_Signal
+$(P)$(H)config-1
 
 # field I/O
 $(P)$(H)FI1_Signal
@@ -136,3 +139,11 @@ $(P)$(H)20MHZ_CLOCK_desc
 $(P)$(H)10MHZ_CLOCK_desc
 $(P)$(H)HW_OR-1_desc
 $(P)$(H)HW_OR-2_desc
+
+# clock frequencies
+$(P)clock1desiredFreq
+$(P)clock2desiredFreq
+$(P)clock3desiredFreq
+$(P)clock4desiredFreq
+$(P)clock5desiredFreq
+$(P)clock6desiredFreq
