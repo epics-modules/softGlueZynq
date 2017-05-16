@@ -7,7 +7,7 @@
             <x>1080</x>
             <y>248</y>
             <width>120</width>
-            <height>220</height>
+            <height>240</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -91,16 +91,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>UpCounter 1;UpCounter 2;UpCounter 3;UpCounter 4;DownCounter 1;DownCounter 2;DownCounter 3;DownCounter 4;UpDown Counter 1;UpDown Counter 2;UpDown Counter 3;UpDown Counter 4;UpDown Counter 5;Frequency Counter 1</string>
+                <string>UpCounter 1;UpCounter 2;UpCounter 3;UpCounter 4;DownCounter 1;DownCounter 2;DownCounter 3;DownCounter 4;UpDown Counter 1;UpDown Counter 2;UpDown Counter 3;UpDown Counter 4;UpDown Counter 5;Frequency Counter 1;Scaler16</string>
             </property>
             <property name="files">
-                <string>softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_FreqCntr.adl</string>
+                <string>softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_UpCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_DnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_UpDnCntr.adl;softGlueZynq_FreqCntr.adl;softGlueZynq_Scaler.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=5;P=$(P),H=$(H),N=1</string>
+                <string>P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=5;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=1</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caRelatedDisplay" name="caRelatedDisplay_2">
@@ -217,16 +217,16 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>all softGlueZynq;all but I/O;convenience;------------;Extra</string>
+                <string>all softGlueZynq;all but I/O;convenience;------------;Extra;Configure</string>
             </property>
             <property name="files">
-                <string>softGlueZynqAll.adl;softGlueZynqAllButIO.adl;softGlueZynqConvenience.adl;softGlueZynqConvenience.adl;softGlueZynqExtra.adl</string>
+                <string>softGlueZynqAll.adl;softGlueZynqAllButIO.adl;softGlueZynqConvenience.adl;softGlueZynqConvenience.adl;softGlueZynqExtra.adl;softGlueZynqConfig.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H)</string>
+                <string>P=$(P),H=$(H);P=$(P),H=$(H),N=1,N1=1,N2=2,N3=3,N4=4,N5=5,N6=6,N7=7,N8=8;P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H),PORT=$(PORT),IPORT=$(IPORT),OPORT=$(OPORT);P=$(P),H=$(H);P=$(P),H=$(H)</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false</string>
+                <string>false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caLabel" name="caLabel_0">
@@ -257,7 +257,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>10</x>
                     <y>20</y>
-                    <width>54</width>
+                    <width>50</width>
                     <height>10</height>
                 </rect>
             </property>
@@ -474,23 +474,23 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Menu</enum>
             </property>
             <property name="labels">
-                <string>50 MHZ Internal Clock;20 MHZ Internal Clock;10 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;PixelTrigger 1;PixelTrigger 2;PixelFIFO 1;PixelFIFO 2</string>
+                <string>50 MHZ Internal Clock;20 MHZ Internal Clock;10 MHZ Internal Clock;gateDly 1;gateDly 2;gateDly 3;gateDly 4;HistScal 1;PixelTrigger 1;PixelTrigger 2;PixelFIFO 1;PixelFIFO 2;ScalToStream 1</string>
             </property>
             <property name="files">
-                <string>softGlueZynq_50MHZ_CK_bare_label.adl;softGlueZynq_20MHZ_CK_bare_label.adl;softGlueZynq_10MHZ_CK_bare_label.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_HistScal.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelFIFO.adl;softGlueZynq_PixelFIFO.adl</string>
+                <string>softGlueZynq_50MHZ_CK_bare_label.adl;softGlueZynq_20MHZ_CK_bare_label.adl;softGlueZynq_10MHZ_CK_bare_label.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_GateDly.adl;softGlueZynq_HistScal.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelTrig.adl;softGlueZynq_PixelFIFO.adl;softGlueZynq_PixelFIFO.adl;softGlueZynq_ScalToStream.adl</string>
             </property>
             <property name="args">
-                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2</string>
+                <string>P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H);P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=3;P=$(P),H=$(H),N=4;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1;P=$(P),H=$(H),N=2;P=$(P),H=$(H),N=1</string>
             </property>
             <property name="removeParent">
-                <string>false;false;false;false;false;false;false;false;false;false;false;false</string>
+                <string>false;false;false;false;false;false;false;false;false;false;false;false;false</string>
             </property>
         </widget>
         <widget class="caFrame" name="caFrame_2">
             <property name="geometry">
                 <rect>
                     <x>10</x>
-                    <y>160</y>
+                    <y>180</y>
                     <width>102</width>
                     <height>57</height>
                 </rect>
@@ -652,7 +652,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <rect>
                         <x>75</x>
                         <y>35</y>
-                        <width>36</width>
+                        <width>20</width>
                         <height>20</height>
                     </rect>
                 </property>
@@ -724,6 +724,48 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </property>
             </widget>
         </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_6">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>150</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Applications</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>pixelTriggerImage 1;pixelTriggerImage 2;readSoftGlueCounter;pixelTriggerDma;pixelTriggerDmaImage 1;histScalerDma</string>
+            </property>
+            <property name="files">
+                <string>pixelTrigger2D.adl;pixelTrigger2D.adl;readSoftGlueCounter.adl;pixelTriggerDma.adl;pixelTriggerDma2D.adl;histScalerDma.adl</string>
+            </property>
+            <property name="args">
+                <string>P=tmm:,letter=I;P=tmm:,letter=J;P=tmm:,Q=SG_RdCntr:;P=tmm:,Q=1;P=tmm:,letter=I;P=tmm:,Q=1</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false;false;false;false;false</string>
+            </property>
+        </widget>
         <zorder>caLabel_0</zorder>
         <zorder>caRectangle_0</zorder>
         <zorder>caLabel_1</zorder>
@@ -744,6 +786,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caRelatedDisplay_5</zorder>
         <zorder>caLineEdit_1</zorder>
         <zorder>caMenu_0</zorder>
+        <zorder>caRelatedDisplay_6</zorder>
     </widget>
 </widget>
 </ui>

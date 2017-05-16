@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>498</width>
+    <height>424</height>
+   </rect>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#centralWidget {background: rgb(200, 200, 200);}
+
+caTable {
+       font: 10pt;
+       background: cornsilk;
+       alternate-background-color: wheat;
+}
+
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <widget class="caCamera" name="cacamera">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>500</width>
+      <height>371</height>
+     </rect>
+    </property>
+    <property name="channelData" stdset="0">
+     <string notr="true">$(P)1pixelTriggerDma.VAL$(letter)</string>
+    </property>
+    <property name="channelWidth" stdset="0">
+     <string notr="true">$(P)1pixelTriggerDma.B</string>
+    </property>
+    <property name="channelHeight" stdset="0">
+     <string notr="true">$(P)1pixelTriggerDma.C</string>
+    </property>
+    <property name="channelCode" stdset="0">
+     <string notr="true">$(P)1pixelTriggerDma_code</string>
+    </property>
+    <property name="channelBPP" stdset="0">
+     <string notr="true">$(P)1pixelTriggerDma_BPP</string>
+    </property>
+    <property name="Zoom" stdset="0">
+     <enum>caCamera::Yes</enum>
+    </property>
+    <property name="ColorMap" stdset="0">
+     <enum>caCamera::grey</enum>
+    </property>
+    <property name="minLevel">
+     <string notr="true"/>
+    </property>
+   </widget>
+   <widget class="caRelatedDisplay" name="carelateddisplay">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>400</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="label">
+     <string notr="true">all</string>
+    </property>
+    <property name="foreground">
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+    </property>
+    <property name="background">
+     <color>
+      <red>18</red>
+      <green>164</green>
+      <blue>10</blue>
+     </color>
+    </property>
+    <property name="labels">
+     <string notr="true">all</string>
+    </property>
+    <property name="files">
+     <string notr="true">pixelTriggerDma2D_8.ui</string>
+    </property>
+    <property name="args">
+     <string notr="true">P=$(P),Q=$(Q)</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>caRelatedDisplay</class>
+   <extends>QWidget</extends>
+   <header>caRelatedDisplay</header>
+  </customwidget>
+  <customwidget>
+   <class>caCamera</class>
+   <extends>QWidget</extends>
+   <header>caCamera</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

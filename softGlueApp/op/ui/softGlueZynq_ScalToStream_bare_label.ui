@@ -37,7 +37,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlueZynq_ScalersToFIFO_bare.adl</string>
+                <string>softGlueZynq_ScalToStream_bare.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=$(N)</string>
@@ -56,7 +56,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)$(H)ScalersToFIFO-$(N)_desc</string>
+                <string>$(P)$(H)scalToStream-$(N)_desc</string>
             </property>
             <property name="foreground">
                 <color alpha="255">

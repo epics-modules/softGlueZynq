@@ -4,10 +4,10 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>143</x>
-            <y>416</y>
+            <x>728</x>
+            <y>949</y>
             <width>440</width>
-            <height>186</height>
+            <height>100</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -71,7 +71,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </color>
             </property>
             <property name="text">
-                <string>HistScal $(N)</string>
+                <string>Freq Counter $(N)</string>
             </property>
             <property name="fontScaleMode">
                 <enum>ESimpleLabel::WidthAndHeight</enum>
@@ -130,7 +130,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <x>10</x>
                     <y>30</y>
                     <width>422</width>
-                    <height>162</height>
+                    <height>72</height>
                 </rect>
             </property>
             <property name="geometry">
@@ -138,11 +138,11 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                     <x>10</x>
                     <y>30</y>
                     <width>420</width>
-                    <height>160</height>
+                    <height>70</height>
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlueZynq_HistScal_bare_label.adl</string>
+                <string>softGlueZynq_FreqCntr_bare_label.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=$(N)</string>

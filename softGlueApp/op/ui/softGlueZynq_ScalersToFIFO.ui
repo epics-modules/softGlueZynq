@@ -4,10 +4,10 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>143</x>
-            <y>416</y>
-            <width>440</width>
-            <height>186</height>
+            <x>684</x>
+            <y>370</y>
+            <width>460</width>
+            <height>170</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -27,7 +27,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>443</width>
+                    <width>460</width>
                     <height>25</height>
                 </rect>
             </property>
@@ -71,7 +71,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </color>
             </property>
             <property name="text">
-                <string>HistScal $(N)</string>
+                <string>ScalersToFIFO $(N)</string>
             </property>
             <property name="fontScaleMode">
                 <enum>ESimpleLabel::WidthAndHeight</enum>
@@ -81,9 +81,9 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="geometry">
                 <rect>
-                    <x>220</x>
+                    <x>170</x>
                     <y>0</y>
-                    <width>220</width>
+                    <width>290</width>
                     <height>25</height>
                 </rect>
             </property>
@@ -93,7 +93,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>0</x>
                     <y>25</y>
-                    <width>444</width>
+                    <width>459</width>
                     <height>3</height>
                 </rect>
             </property>
@@ -121,7 +121,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>1,1;442,1;</string>
+                <string>1,1;457,1;</string>
             </property>
         </widget>
         <widget class="caInclude" name="caInclude_0">
@@ -129,20 +129,20 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>10</x>
                     <y>30</y>
-                    <width>422</width>
-                    <height>162</height>
+                    <width>462</width>
+                    <height>152</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
                     <x>10</x>
                     <y>30</y>
-                    <width>420</width>
-                    <height>160</height>
+                    <width>460</width>
+                    <height>150</height>
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlueZynq_HistScal_bare_label.adl</string>
+                <string>softGlueZynq_ScalersToFIFO_bare_label.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=$(N)</string>
@@ -176,7 +176,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>10</x>
                     <y>0</y>
-                    <width>210</width>
+                    <width>160</width>
                     <height>25</height>
                 </rect>
             </property>

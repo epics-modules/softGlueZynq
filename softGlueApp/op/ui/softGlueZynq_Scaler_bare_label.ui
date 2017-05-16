@@ -4,10 +4,10 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>215</x>
-            <y>380</y>
-            <width>460</width>
-            <height>150</height>
+            <x>641</x>
+            <y>516</y>
+            <width>450</width>
+            <height>205</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -19,36 +19,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
 </string>
     </property>
     <widget class="QWidget" name="centralWidget">
-        <widget class="caInclude" name="caInclude_0">
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>25</y>
-                    <width>462</width>
-                    <height>127</height>
-                </rect>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>25</y>
-                    <width>460</width>
-                    <height>125</height>
-                </rect>
-            </property>
-            <property name="filename">
-                <string>softGlueZynq_ScalersToFIFO_bare.adl</string>
-            </property>
-            <property name="macro">
-                <string>P=$(P),H=$(H),N=$(N)</string>
-            </property>
-        </widget>
         <widget class="caTextEntry" name="caTextEntry_0">
             <property name="geometry">
                 <rect>
-                    <x>10</x>
-                    <y>8</y>
-                    <width>440</width>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>445</width>
                     <height>16</height>
                 </rect>
             </property>
@@ -56,7 +32,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)$(H)ScalersToFIFO-$(N)_desc</string>
+                <string>$(P)$(H)UpDnCntr-$(N)_desc</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -92,6 +68,30 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
             </property>
             <property name="formatType">
                 <enum>string</enum>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_0">
+            <property name="geometry">
+                <rect>
+                    <x>5</x>
+                    <y>20</y>
+                    <width>462</width>
+                    <height>192</height>
+                </rect>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>5</x>
+                    <y>20</y>
+                    <width>460</width>
+                    <height>190</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlueZynq_Scaler_bare.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),N=$(N)</string>
             </property>
         </widget>
         <zorder>caInclude_0</zorder>

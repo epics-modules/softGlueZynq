@@ -56,7 +56,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)$(H)ScalersToFIFO-$(N)_desc</string>
+                <string>$(P)$(H)scalersToFIFO-$(N)_desc</string>
             </property>
             <property name="foreground">
                 <color alpha="255">

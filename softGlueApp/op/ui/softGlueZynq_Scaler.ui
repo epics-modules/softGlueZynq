@@ -4,10 +4,10 @@
 <widget class="QMainWindow" name="MainWindow">
     <property name="geometry">
         <rect>
-            <x>143</x>
-            <y>416</y>
-            <width>440</width>
-            <height>186</height>
+            <x>102</x>
+            <y>429</y>
+            <width>465</width>
+            <height>230</height>
         </rect>
     </property>
     <property name="styleSheet">
@@ -27,7 +27,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>0</x>
                     <y>0</y>
-                    <width>443</width>
+                    <width>465</width>
                     <height>25</height>
                 </rect>
             </property>
@@ -71,7 +71,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </color>
             </property>
             <property name="text">
-                <string>HistScal $(N)</string>
+                <string>Scaler $(N)</string>
             </property>
             <property name="fontScaleMode">
                 <enum>ESimpleLabel::WidthAndHeight</enum>
@@ -93,7 +93,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>0</x>
                     <y>25</y>
-                    <width>444</width>
+                    <width>466</width>
                     <height>3</height>
                 </rect>
             </property>
@@ -121,7 +121,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>1,1;442,1;</string>
+                <string>1,1;464,1;</string>
             </property>
         </widget>
         <widget class="caInclude" name="caInclude_0">
@@ -129,20 +129,20 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>10</x>
                     <y>30</y>
-                    <width>422</width>
-                    <height>162</height>
+                    <width>452</width>
+                    <height>207</height>
                 </rect>
             </property>
             <property name="geometry">
                 <rect>
                     <x>10</x>
                     <y>30</y>
-                    <width>420</width>
-                    <height>160</height>
+                    <width>450</width>
+                    <height>205</height>
                 </rect>
             </property>
             <property name="filename">
-                <string>softGlueZynq_HistScal_bare_label.adl</string>
+                <string>softGlueZynq_Scaler_bare_label.adl</string>
             </property>
             <property name="macro">
                 <string>P=$(P),H=$(H),N=$(N)</string>
