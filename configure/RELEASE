@@ -7,13 +7,14 @@ TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 SUPPORT=/net/s100dserv/xorApps/zed/epics/synApps/support
 -include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
 
-ASYN=$(SUPPORT)/asyn-R4-29
+ASYN=$(SUPPORT)/asyn-R4-31
 SNCSEQ=$(SUPPORT)/seq-2-2-2
+STD=$(SUPPORT)/std-R3-4
 
 MSI=msi
 
 # EPICS_BASE usually appears last so other apps can override stuff:
-EPICS_BASE=/net/s100dserv/xorApps/zed/epics/base-3.15.3
+EPICS_BASE=/net/s100dserv/xorApps/zed/epics/base-3.15.5
 -include $(TOP)/../configure/EPICS_BASE.$(EPICS_HOST_ARCH)
 
 #Capfast users may need the following definitions
