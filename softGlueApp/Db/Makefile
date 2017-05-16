@@ -26,6 +26,10 @@ DB += MCSAsub.db DMA.db pixelTrigger.db readSoftGlueCounter_ISR.db
 DB += pixelTriggerDma.db
 DB += histScalerDma.db
 DB += clockConfig.db
+DB += SGscaler.db
+ifdef CALC
+	DB += softGlue_config.db
+endif
 
 DB_INSTALLS += ../softGlue_SignalShow.db  ../softGlue_convenience.db
 
