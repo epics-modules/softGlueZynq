@@ -143,6 +143,8 @@ pattern {SIG		ADDR}
 
 {HistScal-1_DET		226}
 {FreqCntr-1_CLK		227}
+{Scaler-1_EN		228}
+{Scaler-1_CLR		229}
 
 {PixelFIFO-1_CHADV	230}
 
@@ -194,8 +196,10 @@ pattern {SIG		ADDR}
 
 {scalToStream-1_CHADV	273}
 {HistScal-1_READ		278}
-{StreamMUX-1_SEL0		279}
-{StreamMUX-1_SEL1		280}
+{Scaler-1_CNT			281}
+{Scaler-1_STOP			282}
+{Scaler-1_CLK			283}
+
 {scalToStream-1_RESET	299}
 
 }
@@ -291,8 +295,9 @@ pattern {SIG   	ADDR}
 {scalersToFIFO-1_WRTCK	80}
 # enabled (room in FIFO) combined trigger out
 {PixelTrig_ENTRIG		81}
-{PixelFIFO-1_FIFO10		82}
-{PixelFIFO-1_FIFO50		83}
+{Scaler-1_Q				82}
+{Scaler-1_CNTG			83}
+#{PixelFIFO-1_FIFO50		83}
 {scalToStream-1_ADVDONE	84}
 
 {PixelFIFO-1_ADVDONE	85}
