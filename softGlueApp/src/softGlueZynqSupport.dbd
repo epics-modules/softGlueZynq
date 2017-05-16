@@ -3,7 +3,6 @@ variable(drvZynqDebug, int)
 variable(drvZynqISRState, int)
 
 variable(devAsynSoftGlueDebug, int)
-variable(pixelTriggerDebug, int)
 variable(MCSDebug, int)
 device(stringout, INST_IO, asynSoftGlue, "softGlue")
 device(bo, INST_IO, softGlueShow, "softGlueShow")
@@ -30,7 +29,24 @@ variable(pixelTriggerDebug, int)
 registrar(pixelTriggerRegister)
 registrar(pixelTriggerISRRegistrar)
 
+# asub scaler
+variable(scalerDebug, int)
+registrar(scalerRegister)
+
+# asub pixelTriggerDma
+registrar(pixelTriggerDmaRegister)
+registrar(pixelTriggerDmaISRRegistrar)
+
+# asub histScalerDma
+registrar(histScalerDmaRegister)
+
+# asub clockConfig
+registrar(clockConfigRegister)
+
 # asub readSoftGlueCounter_ISR
 registrar(RSCsoftGlueISRRegistrar)
 registrar(readSoftGlueCounter_ISRRegister)
 variable(readSoftGlueCounter_ISRDebug, int)
+
+device(scaler,VME_IO,devSGscaler16,"SGscaler16")
+variable(devSGscaler16Debug, int)
