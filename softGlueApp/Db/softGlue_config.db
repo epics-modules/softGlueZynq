@@ -1,0 +1,82 @@
+# This is not the way mbbo records were designed to be used.  I think there is
+# no EPICS record that does what I want, but the mbbo record does some of it.
+# I want to split a 32 bit register into sections, and control each section
+# separately:
+#
+# bits  function
+#-----------------
+# 1:0   streamMux (pixelTrigger, HistoScaler, fHistoScaler, future_use)
+# 2:2   FO9Mux    (softGlue output, fGateDly-1 output)
+# 3:3   FO10Mux   (softGlue output, fGateDly-2 output)
+# 4:4   FO11Mux   (softGlue output, fGateDly-3 output)
+# 5:5   FO12Mux   (softGlue output, fGateDly-4 output)
+
+record(mbbo,"$(P)$(H)streamMux") {
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,"$(P)$(H)configTran.PROC PP")
+	field(NOBT,"2")
+	field(SHFT,"0")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(TWVL,"2")
+	field(THVL,"3")
+	field(ZRST,"pixelTrigger")
+	field(ONST,"HistoScaler")
+	field(TWST,"fHistoScaler")
+	field(THST,"unused")
+}
+record(mbbo,"$(P)$(H)FO9Mux") {
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,"$(P)$(H)configTran.PROC PP")
+	field(NOBT,"1")
+	field(SHFT,"2")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(ZRST,"softGlue")
+	field(ONST,"fastGateDly-1")
+}
+record(mbbo,"$(P)$(H)FO10Mux") {
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,"$(P)$(H)configTran.PROC PP")
+	field(NOBT,"1")
+	field(SHFT,"3")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(ZRST,"softGlue")
+	field(ONST,"fastGateDly-2")
+}
+record(mbbo,"$(P)$(H)FO11Mux") {
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,"$(P)$(H)configTran.PROC PP")
+	field(NOBT,"1")
+	field(SHFT,"4")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(ZRST,"softGlue")
+	field(ONST,"fastGateDly-3")
+}
+record(mbbo,"$(P)$(H)FO12Mux") {
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,"$(P)$(H)configTran.PROC PP")
+	field(NOBT,"1")
+	field(SHFT,"5")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(ZRST,"softGlue")
+	field(ONST,"fastGateDly-4")
+}
+record(transform, "$(P)$(H)configTran") {
+	field(PINI,"YES")
+	field(INPA, "$(P)$(H)streamMux")
+	field(INPB, "$(P)$(H)streamMux.SHFT")
+	field(INPC, "$(P)$(H)FO9Mux")
+	field(INPD, "$(P)$(H)FO9Mux.SHFT")
+	field(INPE, "$(P)$(H)FO10Mux")
+	field(INPF, "$(P)$(H)FO10Mux.SHFT")
+	field(INPG, "$(P)$(H)FO11Mux")
+	field(INPH, "$(P)$(H)FO11Mux.SHFT")
+	field(INPI, "$(P)$(H)FO12Mux")
+	field(INPJ, "$(P)$(H)FO12Mux.SHFT")
+	field(CLCP, "(a<<b)|(c<<d)|(e<<f)|(g<<h)|(i<<j)")
+	field(OUTP, "$(P)$(H)config-1 PP")
+}

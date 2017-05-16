@@ -1,0 +1,26 @@
+# This database provides a way to use the 16 input scaler if the scaler
+# record is not available (that is, if the synApps std module is not available).
+record(aSub, "$(P)$(Q)") {
+  field(INAM, "scaler_init")
+  field(SNAM, "scaler_do")
+  field(PREC, "2")
+  field(FTA, "LONG")
+  field(FTB, "LONG")
+
+  field(FTVA, "LONG")
+  field(FTVB, "LONG")
+  field(FTVC, "LONG")
+  field(FTVD, "LONG")
+  field(FTVE, "LONG")
+  field(FTVF, "LONG")
+  field(FTVG, "LONG")
+  field(FTVH, "LONG")
+  field(FTVI, "LONG")
+  field(FTVJ, "LONG")
+  field(FTVK, "LONG")
+  field(FTVL, "LONG")
+  field(FTVM, "LONG")
+  field(FTVN, "LONG")
+  field(FTVO, "LONG")
+  field(FTVP, "LONG")
+}
