@@ -1,0 +1,159 @@
+Install Vivado:
+
+Download Xilinx_Vivado_SDK_2015.4_1118_2.tar.gz from
+https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/archive.html
+execute xsetup script
+
+Download "MicroZed Board Definition Install for Vivado 2015.3, 2015.4" from
+http://zedboard.org/support/documentation/1519
+unzip to get a .zip file (board-definition files) and a .pdf file (how to load)
+cd Xilinx/Vivado/2015.4/data/boards/board_files
+unzip board-definition file.
+
+------------------------------------------------------------------------------------------------------------
+To reconstruct softGlueZynq Vivado project from github sources:
+1. Start Vivado
+2. In tcl console, enter "cd <dir>", where <dir> is the directory that contains
+   the build.tcl, and bd.tcl scripts.
+3. In tcl console, enter "source build.tcl"
+4. In Vivado, select "Generate Bitstream" from the "Flow Navigator" window.
+
+------------------------------------------------------------------------------------------------------------
+To run softGlueZynq as-is, you can use the softGlue_FPGAContent_7020_dma.bin
+file included in softGlueZynq/softGlueApp/Db directory.  If you make any changes
+in your softGlue project, and generate a new bitstream file, you can prepare the
+new file for loading into the FPGA with softGlueZynq/softGlueApp/Db/flipBin.py,
+as demonstrated in softGlueZynq/softGlueApp/Db/doBitstream_3_TTL_7020_dma.csh.
+softGlueZynq.iocsh expects the file to be in the softGlueZynqApp/Db directory.
+
+	It might be helpful to peek under the hood a little to understand what's
+	happening here.  The PetaLinux build process included a copy of the
+	bitstream file into the operating system image that was copied to the
+	MicroSD card.  This bitstream needn't be identical to what
+	softGlueZynq.iocsh will load into the FPGA at IOC boot time; it only need be
+	identical in those elements that must exist in the FPGA at Linux boot time. 
+	The AXI DMA component, for example, must exist at Linux boot time because a
+	Linux kernel driver must initialize it and be configured to work with it. 
+	Other AXI components also must exist for the generic UIO platform driver. 
+	But if you add, for example, an additional gateDelay component to the FPGA,
+	you needn't rebuild the operating system, because Linux doesn't need to know
+	about that component when Linux boots.  You only need to have
+	softGlueZynq.iocsh load the new bitstream file at IOC boot time.
+
+--------------------------------------------------------------------------------
+To modify a softGlue component that was installed by the above reconstruction
+process:
+
+For concreteness, let's take the gateDly component.  In the ip directory that
+was downloaded from github is the directory, gateDly, which contains the files
+component.xml, src/gateDly.v, and xgui/gateDelay_v1_0.tcl.  Vivado knows how to
+generate component.xml and gateDelay_v1_0.tcl, so we can work solely from
+gateDly.v.
+
+# <dir> is the directory that contains the softGlue_3_TTL_7020_dma project
+cd <dir>
+mkdir projects
+mkdir ipsrc
+cp ip/gateDly/src/gateDly.v ipsrc/gateDly.v
+# Make some trivial edit to ipsrc/gateDly.v, so it will be different.
+# Get rid of the original directory, so we don't end up with two components
+# named gateDly in the IP repository (ip).
+rm -rf ip/gateDly
+cd projects
+# Start Vivado
+	File > New Project
+		Next
+		Project name: gateDly1
+		Project location: <dir>/projects
+		Check "Create project subdirectory".
+		Next
+		Select "RTL project", and check "Do not specify sources at this time"
+		Next
+		Select Boards, and select "MicroZed7020 Board"
+		Next
+		Finish
+		In "Flow Navigator", under "Project manager", click "Add Sources"
+		Select "Add or create design sources".
+		Next
+		Click "Add Files"
+		Navigate to the ipsrc directory and choose gateDly.v
+		Finish
+		In "Flow Navigator", under Synthesis, select "Run Synthesis".  If it
+		succeeds:
+		Select "Tools" > "Create and Package IP..."
+		Next
+		Select "Package your current project"
+		Next
+		IP location: <dir>/ip/gateDly
+		Next
+		Finish
+		In new Vivado project that comes up, Select "Review and Package", and click
+		"Package IP"
+		Close the package project and the gateDly project.
+
+# In Vivado, open the softGlue_3_TTL_7020_dma project
+
+	In "Flow Navigator", under "IP Integrator", Select "Open Block Design"
+
+	Vivado will notice that you changed gateDly.v.  Click "Report IP Status"
+	(in the yellow bar above the block diagram).
+
+	Click "Upgrade Selected" (at the bottom of the IP status window).
+
+	Click "Generate Bitstream" from the "Flow Manager" window.
+
+	Prepare a new bitstream file for loading into the FPGA as described above
+	(with flipBin.py).
+
+------------------------------------------------------------------------------------------------------------
+To produce new github sources from an existing softGlueZynq Vivado project.
+(That is, to update the build.tcl and bd.tcl scripts):
+1. In Vivado, select File > Export > Export Block Design...
+2.  Copy the resulting tcl file to bd.tcl
+3. In Vivado, with the project open, select "File > Write Project Tcl..."
+4. Check "Do not import sources", and choose a file name
+5. Edit the resulting .tcl file, replacing lines marked - with lines marked +,
+   as follows.  (For clarity, compare built.tcl.ORIG with build.tcl.)
+
+	- set origin_dir "."
+	+ set origin_dir [file dirname [info script]]
+
+	- create_project softGlue_3_TTL_7020_dma ./softGlue_3_TTL_7020_dma
+	+ create_project softGlue_3_TTL_7020_dma $origin_dir/softGlue_3_TTL_7020_dma
+
+	- set_property "ip_repo_paths" "[file normalize "$origin_dir/VivadoProjects/ip_repo"]" $obj
+	+ set_property "ip_repo_paths" "[file normalize "$origin_dir/ip"]" $obj
+
+	Delete everything (many lines) that touches "sources_1", leaving only the
+	following:
+		# Set 'sources_1' fileset properties
+		set obj [get_filesets sources_1]
+		set_property "top" "design_1_wrapper" $obj
+
+	- set file "[file normalize "$origin_dir/VivadoProjects/softGlue_3_TTL_7020_dma/softGlue_3_TTL_7020_dma.srcs/constrs_1/imports/src/timing.xdc"]"
+	+ set file "[file normalize "$origin_dir/ip/constraints/timing.xdc"]"
+
+	- set file "$origin_dir/VivadoProjects/softGlue_3_TTL_7020_dma/softGlue_3_TTL_7020_dma.srcs/constrs_1/imports/src/timing.xdc"
+	+ set file "$origin_dir/ip/constraints/timing.xdc"
+
+	- set file "[file normalize "$origin_dir/VivadoProjects/softGlue_3_TTL_7020_dma/softGlue_3_TTL_7020_dma.srcs/constrs_1/imports/src/TTL_IO.xdc"]"
+	+ set file "[file normalize "$origin_dir/ip/constraints/TTL_IO.xdc"]"
+
+	- set file "$origin_dir/VivadoProjects/softGlue_3_TTL_7020_dma/softGlue_3_TTL_7020_dma.srcs/constrs_1/imports/src/TTL_IO.xdc"
+	+ set file "$origin_dir/ip/constraints/TTL_IO.xdc"
+
+	Add the following lines just before the last line ("puts "INFO..."):
+		# Create block design
+		source $origin_dir/bd.tcl
+
+		# Generate the wrapper
+		set design_name [get_bd_designs]
+		make_wrapper -files [get_files $design_name.bd] -top -import
+ 
+ 6. Use copyIPForGit.sh for each component.  Use copyConstraintsForGit.sh
+-----------------------------------------------------------------------------------------------------------
+ 
+Sources:
+	http://www.fpgadeveloper.com/2014/08/version-control-for-vivado-projects.html
+	https://github.com/fpgadeveloper/microzed-base/blob/master/Vivado/build.tcl
+
