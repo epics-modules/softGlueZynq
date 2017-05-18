@@ -97,7 +97,7 @@ register clock is 100 MHz.
 href="http://zedboard.org/product/microzed-breakout-carrier-card"> MicroZed
 Breakout Carrier Card</a>
 
-<li>An 8Gb or larger MicroSD card.
+<li>A MicroSD card.
 
 <li>A MicroSD card writer.
 
@@ -135,7 +135,8 @@ tested.</blockquote>
 	presume the availability of synApps modules such as calc and busy, but these
 	are not needed for any essential feature of softGlueZynq.  You're probably
 	going to want autosave, release 5.7 or higher, because it makes loading and
-	saving circuits very easy.
+	saving circuits very easy.  SoftGlueZynq includes a 16-input scaler and
+	support for the scaler record, which record is in the std module.
 
 	</blockquote>
 
@@ -149,9 +150,9 @@ possible to reboot the IOC without affecting a running FPGA.
 <blockquote>
 
 If you have a copy of the Xilinx Vivado software, you can load your own custom
-FPGA content into the module, and use softGlueZynq to talk to it.  softGlueZynq
-was designed with this use in mind, though we don't yet have documentation on
-how it's done.
+FPGA content into the module, and use softGlueZynq to talk to it.  Code and
+instructions for reproducing the softGlueZynq Vivado project are in
+softGlueZynq/documentation/Vivado.
 
 </blockquote>
 
@@ -209,16 +210,20 @@ circuit elements:
 <li>Four gate&delay generators
 <li>Two quadrature decoders
 <li>One frequency counter
-<li>One one-input, 20 channel histogramming scaler
+
+<li>One one-input, 64 channel histogramming scaler on the softGlue signal bus.
+
+<li>One one-input, 64 channel histogramming scaler direct connected to field
+I/O.
 
 <li>Two "pixelTrigger" components, configured as an x-ray microscope
 data-acquisition system.
 
-<li>One eight-input multichannel scaler (currently, the channel-advance rate is
-limited to a few kHz)
+<li>One seven-input multichannel scaler.  (This is actually just the
+pixelTrigger acquisition system operating in "list" mode.)
 
-<li>24 field-input bits  (12 LVCMOS, 12 LVDS)
-<li>12 field-output bits (LVCMOS)
+<li>36 field-input bits  (24 LVCMOS, 12 LVDS)
+<li>24 field-output bits (LVCMOS)
 <li>One 10MHz clock signal (Clock frequencies can be changed at run time.
 See <a href="#Miscellaneous configuration">Miscellaneous configuration</a> below.)
 <li>One 20MHz clock signal
@@ -250,15 +255,15 @@ softGlueZynq.
 <h2><center>Installation and deployment</center></h2>
 
 The simplest way to deploy softGlueZynq is to download and build the module
-iocZed, which uses softGlueZynq as a support module, and which contains code
-to load and run it on a MicroZed.  iocZed can also include as much or as
-little of the rest of synApps as you want.  It's essentially a custom copy
-of the synApps xxx module.  As delivered, iocZed is ready for all non-VME
-dependent synApps modules, and will build with whatever modules are defined
-in <code>synApps/support/configure/RELEASE</code>.  (areaDetector is still
-a work in progress.)  Even if you don't want to use the MicroZed as a
-general purpose soft IOC, you're probably going to want modules like
-autosave and calc.
+iocZed, which uses softGlueZynq as a support module, and which contains code to
+load and run it on a MicroZed.  iocZed can also include as much or as little of
+the rest of synApps as you want.  It's essentially a custom copy of the synApps
+xxx module.  As delivered, iocZed is ready for all non-VME dependent synApps
+modules, and will build with whatever modules are defined in
+<code>synApps/support/configure/RELEASE</code>.  Even if you don't want to use
+the MicroZed as a general purpose soft IOC, you're probably going to want
+modules like autosave and calc.  If you want to use the included 16 input scaler
+with the scaler record, you'll need the std module.
 
 <P>Before I get started, there are a <i>lot</i> of different ways to run Linux,
 EPICS, and FPGA code on the MicroZed.  I'm not an expert, but I found a way that
@@ -297,7 +302,7 @@ do unless you write custom FPGA components.
 <ul>
 
 <li>Edit <code>softGlueZynq/configure/RELEASE</code>, to specify the paths
-to EPICS_BASE and ASYN.
+to EPICS_BASE, ASYN, and any other modules you want.
 
 <li>Edit <code>iocZed/configure/RELEASE</code>, to specify the paths to
 SUPPORT.
@@ -716,8 +721,14 @@ If <code>WIDTH</code> is nonzero, it specifies the width in clock periods of
 the output pulse.  If  <code>WIDTH==0</code>, the width of the input signal
 will be used.
 
-<P>There is a faster version of this component, with 1 ns time resolution,
-connected directly to field I/O, and clocked by a fixed 500 MHz clock.
+<P>There is a faster version of this component, with 4 ns time resolution,
+connected directly to field I/O, and clocked by a dedicated 250 MHz clock. The
+fast versions are controlled by the same DLY and WIDTH registers as the normal
+(softGlue-bus-connected) versions, but they only use the lower 16 bits of those
+registers.  fastGate&Delays 1-4 are hard wired to field inputs FI1-4,
+respectively.  By default, the outputs are not connected to field outputs.  You
+can change this by selecting "Configure" from the softGlueZynqMenu display.  See
+<a href="#Miscellaneous configuration">Miscellaneous configuration</a> below.
 
 <P>
 <hr>
@@ -939,10 +950,11 @@ multichannel scaler.) When <code>CLEAR</code> is high, all counters are cleared.
 record, and presents them as an array of counts as a function of the channel
 number - time elapsed since the most recent <code>SYNC</code> pulse.
 
-<P>There is a version of this component that can channel advance at up to
-250 MHz.  The high speed version is connected directly to field inputs, and its
-clock input is hardwired to a dedicated clock generator, because the softGlue
-signal bus can't transport signals of frequency higher than 50 MHz.
+<P>There is a version of this component that can channel advance at up to 250
+MHz.  In the high speed version, the SYNC input is connected to the Q output of
+fastGate&Delay-3, whose input is hardwired to FI-3; the DET input is connected
+to the Q output of fastGate&Delay-4, whose input is hardwired to FI-4; and the
+clock input is hardwired to a dedicated clock generator.
 
 <P>Note that the histogramming scaler was dropped from the 7010 version, because
 there wasn't enough room in the FPGA.
@@ -980,18 +992,10 @@ be a microscope.  The mechanical vibrations are just me knocking on the
 desktop.)  caQtDM is required for the image display, because MEDM has no 2D
 display widget for live data.  
 
-<P>The maximum rate (number of pixel-boundary crossings per second) depends on
-the size of the FIFO, and on whether or not it is permissible for any pixels to
-be missed.  In the 7020 version, the FIFO is 1024 words; in the 7010, it is 256
-words.  The following rates were measured with the 7020 version.  If all pixels
-must be acquired, the maximum rate is around 5000 pixels/s.  This is determined
-by the worst case interrupt latency of the Linux processor, because EPICS must
-read the FIFO before it fills up.  If it's permissible to skip pixels
-occasionally, the maximum rate is around 50,000 pixels/s.  This is determined 
-by the maximum permissible CPU load.  It takes around 50% of the CPU cycles to
-read, histogram, and display 50,000 pixels/s.
-
-<P>Here's a video demonstration of pixelTrigger:
+<P>The maximum rate (number of pixel-boundary crossings per second) is around
+400,000 pixels/s.  This is determined by the worst case interrupt latency of the
+Linux processor, because EPICS must start a DMA transfer to read the FIFO before
+it fills up.   <P>Here's a video demonstration of pixelTrigger:
 
 <video width="854" height="480" controls>
   <source src="pixelTriggerSmall.mp4" type="video/mp4">
