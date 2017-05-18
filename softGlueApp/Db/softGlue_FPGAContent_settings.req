@@ -141,7 +141,7 @@ $(P)$(H)HW_OR-1_desc
 $(P)$(H)HW_OR-2_desc
 
 # clock frequencies
-$(P)clock1desiredFreq
+#$(P)clock1desiredFreq
 $(P)clock2desiredFreq
 $(P)clock3desiredFreq
 $(P)clock4desiredFreq
