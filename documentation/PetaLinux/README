@@ -1,0 +1,89 @@
+Here's how to install Petalinux:
+
+Download petalinux-v2015.4-final-installer.run from
+https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools/archive.html
+
+execute petalinux-v2015.4-final-installer.run
+
+	WARNING: No tftp server found - please refer to "PetaLinux SDK Installation
+	Guide" for its impact and solution
+
+	INFO: PetaLinux SDK has been installed to
+	/local/mooney/zynq/PetaLinux/petalinux-v2015.4-final
+
+cd petalinux-v2015.4-final
+source settings.csh
+
+Download BSPs from zedboard.org->Support->Reference Design/Tutorials->MicroZed
+"PetaLinux Board Support Packages"
+	PetaLinux 2015.4 Compressed BSP, z7010 
+	PetaLinux 2015.4 Compressed BSP, z7020 
+and save them someplace.  They will be used in petalinux-create commands below.
+
+
+
+
+--------------------------------------------------------------------------------------
+# Here's how to use this tar file to configure a Petalinux project to work with
+# softGlueZynq:
+
+sudo rootsh
+bash
+
+# Edit the following two lines to specify your Petalinux and Vivado
+# installation directories:
+source /local/mooney/zynq/PetaLinux/petalinux-v2015.4-final/settings.sh
+source /local/mooney/zynq/Xilinx/Vivado/2015.4/settings64.sh
+
+# Edit the following line to specify your Petalinux project directory
+cd /local/mooney/zynq/PetaLinux/testProject
+
+# Edit the following line to specify the location of your board-support package:
+petalinux-create -t project -s /home/oxygen/MOONEY/zynq/PetaLinux/microzed_7010_7020_BSP/mz_7020_2015_4.bsp
+# This will create the project directory, mz_7020_2015_4
+
+cd mz_7020_2015_4
+tar xf inPetalinuxProject.tar
+petalinux-config
+	# Kernel Bootargs
+	# 	uncheck "generate...automatically", and set bootargs as follows:
+	# 	console=ttyPS0,115200 earlyprintk uio_pdrv_genirq.of_id=generic-uio
+	# Image Packaging Configuration > Turn off tftp 
+
+petalinux-config -c rootfs
+	# Filesystem Packages > base > external-xilinx-toolchain
+	# 	check libstd6++6
+	# Apps
+	# 	check copy_ssh_key, dma_proxy_test and mountAPSshare
+	# Modules
+	# 	check dmaFromUserSpace
+
+# Save copies of device-tree files that petalinux-config will overwrite:
+cp subsystems/linux/configs/device-tree/pl.dtsi subsystems/linux/configs/device-tree/pl.dtsi.save
+cp subsystems/linux/configs/device-tree/system-conf.dtsi cp subsystems/linux/configs/device-tree/system-conf.dtsi.save
+cp subsystems/linux/configs/device-tree/system-top.dts cp subsystems/linux/configs/device-tree/system-top.dts.save
+
+# Edit to specify the Vivado project (which must have completed "Generate Bitstream," and which must have exported hardware,
+# with "Include bitstream" checked).
+petalinux-config --get-hw-description=/home/oxygen/MOONEY/zynq/VivadoProjects/softGlue_3_TTL_7020_dma/softGlue_3_TTL_7020_dma.sdk
+
+# Edit pl.dtsi to specify "compatible = "generic-uio";" for all amba_pl components, except axi_dma_0;
+nedit subsystems/linux/configs/device-tree/pl.dtsi
+# Edit system-conf.dtsi, to add usb_phy0:phy0 component, as shown in system-conf.dtsi.save
+nedit subsystems/linux/configs/device-tree/system-conf.dtsi
+# Edit system-top.dts, to add dmatest_0 component, as shown in system-top.dts.save
+nedit subsystems/linux/configs/device-tree/system-top.dts
+
+petalinux-build
+petalinux-package --force --boot --fsbl images/linux/zynq_fsbl.elf --fpga images/linux/design_1_wrapper.bit --u-boot
+
+# Copy images/linux/image.ub and images/linux/BOOT.BIN to a MicroSD card
+
+# If you don't have a copy of userConfig on the MicroSD card, edit a copy of
+# softGlueZynq/documentation/SD_card/7020/userConfig, as described in that file,
+# and copy it to the MicroSD card.  At APS, tell IT that you need an IP address
+# for the MAC address and host name you specified in userConfig
+
+# Boot the MicroZed.  Around a minute later, you'll be able to ssh to it.
+% ssh vw5@microzed-j
+vw5@microzed-j:~$ iocrun
