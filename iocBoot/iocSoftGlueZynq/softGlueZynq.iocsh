@@ -103,8 +103,10 @@ dbLoadRecords("$(SOFTGLUEZYNQ)/db/pixelTriggerDma.db","P=$(PREFIX),Q=1,N=40000")
 dbLoadRecords("$(SOFTGLUEZYNQ)/db/histScalerDma.db","P=$(PREFIX),Q=1,N=64")
 
 # clockConfig
-dbLoadRecords("$(SOFTGLUEZYNQ)/db/clockConfig.db","P=$(PREFIX),Q=1")
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/clockConfig.db","P=$(PREFIX),H=$(INSTANCE),Q=1")
 
+# scaler
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/SGscaler.db","P=$(PREFIX),Q=SGscaler")
 
 # attach MCS to FO_16 interrupt.
 # pixelTriggerPrepare(char *componentName, epicsUInt32 risingMask, int fifoSize)
@@ -120,4 +122,8 @@ var readSoftGlueCounter_ISRDebug, 1
 # debug:
 dbLoadRecords("$(ASYN)/db/asynRecord.db","P=tmm:,R=asynSoftGlue,PORT=$(SPORT),ADDR=0,OMAX=0,IMAX=0")
 dbLoadRecords("$(ASYN)/db/asynRecord.db","P=tmm:,R=asynSoftGlueReg,PORT=$(RPORT),ADDR=0,OMAX=0,IMAX=0")
+
+# Use bits of a reg32 register to control stuff
+dbLoadRecords("$(SOFTGLUEZYNQ)/db/softGlue_config.db","P=$(PREFIX),H=$(INSTANCE)")
+
 # END softGlue.cmd ------------------------------------------------------------
