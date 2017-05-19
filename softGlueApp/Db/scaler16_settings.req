@@ -2,3 +2,8 @@ $(P)$(H)Scaler-1_Q_Signal
 $(P)$(H)Scaler-1_CNTG_Signal
 $(P)$(H)Scaler-1_CLK_Signal
 $(P)$(H)Scaler-1_EN_Signal
+$(P)$(H)Scaler-1_CNT_Signal
+$(P)$(H)Scaler-1_STOP_Signal
+$(P)$(H)Scaler-1_CLR_Signal
+# "READ" $(P)$(H)PixelFIFO-1_CHADV_Signal
+$(P)$(H)Scaler-1_PRESET

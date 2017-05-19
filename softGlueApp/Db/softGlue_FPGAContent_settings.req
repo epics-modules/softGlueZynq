@@ -66,8 +66,6 @@ $(P)$(H)10MHZ_CLOCK_Signal
 $(P)$(H)20MHZ_CLOCK_Signal
 $(P)$(H)50MHZ_CLOCK_Signal
 
-$(P)$(H)config-1
-
 # field I/O
 $(P)$(H)FI1_Signal
 $(P)$(H)FI2_Signal
@@ -140,10 +138,5 @@ $(P)$(H)10MHZ_CLOCK_desc
 $(P)$(H)HW_OR-1_desc
 $(P)$(H)HW_OR-2_desc
 
-# clock frequencies
-#$(P)clock1desiredFreq
-$(P)clock2desiredFreq
-$(P)clock3desiredFreq
-$(P)clock4desiredFreq
-$(P)clock5desiredFreq
-$(P)clock6desiredFreq
+file softGlue_config_settings.req P=$(P),H=$(H)
+file clockConfig_settings.req P=$(P),H=$(H),Q=1
