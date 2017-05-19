@@ -1370,6 +1370,9 @@ pattern {SIG  ADDR}
 </pre>
 </blockquote>
 
+Here is the corresponding MEDM display:
+<P><img src="DFF.gif" name="D FlipFlop">
+
 <P>It's easy to add custom components to softGlue, and get them hooked up to
 EPICS PVs.  Making an MEDM display is also easy, because softGlue displays are
 hierarchical, and nearly all the work has already been done.  You just choose
@@ -1405,6 +1408,9 @@ endmodule
 </pre>
 </blockquote>
 
+This Verilog file contains all of the information Vivado needs to make
+a component that can be added to the softGlueZynq block diagram.  There is a
+recipe, in softGlueZynq/documentation/Vivado/README, for doing that.
 
 	<h3>FPGA-content files</h3>
 
