@@ -1,4 +1,0 @@
-# If you have a booted MicroZed, you can copy files to the SD card like this:
-scp image.ub root@microzed-j:/media/card
-scp BOOT.BIN root@microzed-j:/media/card
-scp userConfig root@microzed-j:/media/card
