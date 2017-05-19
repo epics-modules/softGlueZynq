@@ -155,7 +155,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>10</x>
                     <y>40</y>
-                    <width>100</width>
+                    <width>108</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -332,7 +332,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>270</x>
                     <y>40</y>
-                    <width>600</width>
+                    <width>696</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -376,165 +376,155 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
         </widget>
-        <widget class="caFrame" name="caFrame_0">
+        <widget class="caMenu" name="caMenu_0">
             <property name="geometry">
                 <rect>
                     <x>130</x>
                     <y>40</y>
-                    <width>122</width>
-                    <height>102</height>
+                    <width>120</width>
+                    <height>20</height>
                 </rect>
             </property>
-            <widget class="caMenu" name="caMenu_0">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>120</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="channel">
-                    <string>$(P)$(H)streamMux</string>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>187</red>
-                        <green>187</green>
-                        <blue>187</blue>
-                    </color>
-                </property>
-                <property name="colorMode">
-                    <enum>caMenu::Static</enum>
-                </property>
-            </widget>
-            <widget class="caMenu" name="caMenu_1">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>20</y>
-                        <width>120</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="channel">
-                    <string>$(P)$(H)FO9Mux</string>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>187</red>
-                        <green>187</green>
-                        <blue>187</blue>
-                    </color>
-                </property>
-                <property name="colorMode">
-                    <enum>caMenu::Static</enum>
-                </property>
-            </widget>
-            <widget class="caMenu" name="caMenu_2">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>40</y>
-                        <width>120</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="channel">
-                    <string>$(P)$(H)FO10Mux</string>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>187</red>
-                        <green>187</green>
-                        <blue>187</blue>
-                    </color>
-                </property>
-                <property name="colorMode">
-                    <enum>caMenu::Static</enum>
-                </property>
-            </widget>
-            <widget class="caMenu" name="caMenu_3">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>60</y>
-                        <width>120</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="channel">
-                    <string>$(P)$(H)FO11Mux</string>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>187</red>
-                        <green>187</green>
-                        <blue>187</blue>
-                    </color>
-                </property>
-                <property name="colorMode">
-                    <enum>caMenu::Static</enum>
-                </property>
-            </widget>
-            <widget class="caMenu" name="caMenu_4">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>80</y>
-                        <width>120</width>
-                        <height>20</height>
-                    </rect>
-                </property>
-                <property name="channel">
-                    <string>$(P)$(H)FO12Mux</string>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="255">
-                        <red>187</red>
-                        <green>187</green>
-                        <blue>187</blue>
-                    </color>
-                </property>
-                <property name="colorMode">
-                    <enum>caMenu::Static</enum>
-                </property>
-            </widget>
+            <property name="channel">
+                <string>$(P)$(H)streamMux</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>187</red>
+                    <green>187</green>
+                    <blue>187</blue>
+                </color>
+            </property>
+            <property name="colorMode">
+                <enum>caMenu::Static</enum>
+            </property>
+        </widget>
+        <widget class="caMenu" name="caMenu_1">
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>60</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)FO9Mux</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>187</red>
+                    <green>187</green>
+                    <blue>187</blue>
+                </color>
+            </property>
+            <property name="colorMode">
+                <enum>caMenu::Static</enum>
+            </property>
+        </widget>
+        <widget class="caMenu" name="caMenu_2">
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>80</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)FO10Mux</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>187</red>
+                    <green>187</green>
+                    <blue>187</blue>
+                </color>
+            </property>
+            <property name="colorMode">
+                <enum>caMenu::Static</enum>
+            </property>
+        </widget>
+        <widget class="caMenu" name="caMenu_3">
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>100</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)FO11Mux</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>187</red>
+                    <green>187</green>
+                    <blue>187</blue>
+                </color>
+            </property>
+            <property name="colorMode">
+                <enum>caMenu::Static</enum>
+            </property>
+        </widget>
+        <widget class="caMenu" name="caMenu_4">
+            <property name="geometry">
+                <rect>
+                    <x>130</x>
+                    <y>120</y>
+                    <width>120</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="channel">
+                <string>$(P)$(H)FO12Mux</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>187</red>
+                    <green>187</green>
+                    <blue>187</blue>
+                </color>
+            </property>
+            <property name="colorMode">
+                <enum>caMenu::Static</enum>
+            </property>
         </widget>
         <widget class="caLabel" name="caLabel_8">
             <property name="frameShape">
@@ -657,7 +647,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock3desiredFreq</string>
+                <string>$(P)$(H)clock3desiredFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -708,7 +698,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock3actualFreq</string>
+                <string>$(P)$(H)clock3actualFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -798,7 +788,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock1desiredFreq</string>
+                <string>$(P)$(H)clock1desiredFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -849,7 +839,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock1actualFreq</string>
+                <string>$(P)$(H)clock1actualFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -939,7 +929,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock4desiredFreq</string>
+                <string>$(P)$(H)clock4desiredFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -990,7 +980,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock4actualFreq</string>
+                <string>$(P)$(H)clock4actualFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1080,7 +1070,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock5desiredFreq</string>
+                <string>$(P)$(H)clock5desiredFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1131,7 +1121,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock5actualFreq</string>
+                <string>$(P)$(H)clock5actualFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1221,7 +1211,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock6desiredFreq</string>
+                <string>$(P)$(H)clock6desiredFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1272,7 +1262,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock6actualFreq</string>
+                <string>$(P)$(H)clock6actualFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1362,7 +1352,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock2desiredFreq</string>
+                <string>$(P)$(H)clock2desiredFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1413,7 +1403,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>caLineEdit::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock2actualFreq</string>
+                <string>$(P)$(H)clock2actualFreq</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1518,7 +1508,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>165</x>
                     <y>220</y>
-                    <width>125</width>
+                    <width>132</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1662,7 +1652,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>166</x>
                     <y>420</y>
-                    <width>150</width>
+                    <width>180</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1698,7 +1688,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>165</x>
                     <y>470</y>
-                    <width>160</width>
+                    <width>192</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1719,7 +1709,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>EPushButton::WidthAndHeight</enum>
             </property>
             <property name="channel">
-                <string>$(P)clock1readAll.PROC</string>
+                <string>$(P)$(H)clock1readAll.PROC</string>
             </property>
             <property name="foreground">
                 <color alpha="255">
@@ -1834,7 +1824,6 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caLabel_5</zorder>
         <zorder>caLabel_6</zorder>
         <zorder>caLabel_7</zorder>
-        <zorder>caFrame_0</zorder>
         <zorder>caLabel_8</zorder>
         <zorder>caLabel_9</zorder>
         <zorder>caLabel_10</zorder>
