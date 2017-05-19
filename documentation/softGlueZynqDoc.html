@@ -91,7 +91,7 @@ register clock is 100 MHz.
 <li><h4>Hardware</h4>
 <ul>
 
-<li>A  <a href="http://zedboard.org/product/microzed">MicroZed</a> (7010 or 7020)
+<li>A  <a href="http://zedboard.org/product/microzed">MicroZed 7020</a>
 
 <li>A carrier card, such as the <a
 href="http://zedboard.org/product/microzed-breakout-carrier-card"> MicroZed
@@ -106,8 +106,9 @@ Breakout Carrier Card</a>
 <blockquote> softGlueZynq is intended to be useable with any Zynq device, and
 will certainly be ported to one or more versions of the PicoZed, but the
 FPGA-load files, databases, and MEDM displays supplied in this version are for
-the MicroZed 7010 and 7020.  Other devices have not yet been
-tested.</blockquote>
+the MicroZed 7020.  The first version of softGlueZynq was also useable on the
+MicroZed 7010, but that device's FPGA is too small to contain this version,
+and it will no longer be supported.</blockquote>
 
 <li><h4>Software</h4>
 <ul>
@@ -501,7 +502,7 @@ direct softGlueZynq to write a pair of logic values: "0!" writes "0" followed
 immediately by "1"; "1!" writes "1" followed immediately by "0".  The time
 interval between writes is system dependent, and not at all guaranteed, but it
 should be much smaller than the interval you could achieve from separate
-writes.  On an MicroZed 7010, I measure around 3.5 &mu;s.
+writes.  On an MicroZed 7020, I measure around 3.5 &mu;s.
 
 
 <b><li>Enter a string that begins with something other than a number.</b><br>
@@ -956,10 +957,7 @@ fastGate&Delay-3, whose input is hardwired to FI-3; the DET input is connected
 to the Q output of fastGate&Delay-4, whose input is hardwired to FI-4; and the
 clock input is hardwired to a dedicated clock generator.
 
-<P>Note that the histogramming scaler was dropped from the 7010 version, because
-there wasn't enough room in the FPGA.
-
- <hr>
+<hr>
 
 
 <li><P>2D Microscope Data-Acquisition System ("pixelTrigger")
@@ -1306,7 +1304,7 @@ sampleCustomInterruptHandler are <code>Makefile</code>, which builds it, and
 <code>softGlueSupport.dbd</code>, which contains the line
 <code>registrar(sampleCustomInterruptRegistrar)</code>.
 
-<h4>Interrupt-response time</h4> <P>On a microZed 7010, interrupt-response time
+<h4>Interrupt-response time</h4> <P>On a microZed 7020, interrupt-response time
 was measured using  sampleCustomInterruptRoutine(), and routing the interrupt
 response (BUFFER_4_OUT) to the clock input of a counter, and to an output pin. 
 The signal that generated the interrupt was also routed to the clock input of a
@@ -1414,8 +1412,6 @@ endmodule
 time.
 
 <P><dl>
-<dt>softGlue_FPGAContent_7010.bin
-<dd>This file contains standard softGlueZynq for a Zynq 7010 chip.
 <dt>softGlue_FPGAContent_7020.bin
 <dd>This file contains standard softGlueZynq for a Zynq 7020 chip.
 
@@ -1431,8 +1427,7 @@ time.
 <dd>This substitutions file is run through <code>msi</code> at build time to
 produce the database file <code>softGlueZynq_FPGAContent.db</code>.  The
 database file loads records matching most of the FPGA content that is loaded at
-cold-boot time from <code>softGlue_FPGAContent_7010.bin</code> or
-<code>softGlue_FPGAContent_7020.bin</code>.<P>
+cold-boot time from <code>softGlue_FPGAContent_7020.bin</code>.<P>
 
 
 <dt>softGlueZynq_Input.db<br>
