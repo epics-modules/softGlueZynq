@@ -47,10 +47,12 @@
 volatile epicsUInt32 *hs_localAddr = NULL;
 volatile epicsUInt32 *hs_fifoCountAddr = NULL;
 volatile epicsUInt32 *histScalerDmaWords = NULL;
+static volatile epicsUInt8 *histRead, *histClear;
 
 static long histScalerDma_init(aSubRecord *pasub) {
 	int i;
 	UIO_struct *pUIO = NULL;
+	volatile epicsUInt8 *reg8_localAddr;
 
 	i = findUioAddr("softGlueReg32_", 0);
 	if (i >= 0) {
@@ -59,6 +61,14 @@ static long histScalerDma_init(aSubRecord *pasub) {
 	}
 	hs_fifoCountAddr = hs_localAddr + 26; // Address of fifo count reg
 	histScalerDmaWords = hs_localAddr + 61; // Address of DMA words reg
+
+	i = findUioAddr("softGlue_", 0);
+	if (i >= 0) {
+		pUIO = UIO[i];
+		reg8_localAddr = (epicsUInt8 *)(pUIO->localAddr);
+		histRead = reg8_localAddr + 278;	/* HistScal-1_READ */
+		histClear = reg8_localAddr + 207;	/* HistScal-1_CLEAR */
+	}
 	return(0);
 }
 
@@ -89,8 +99,14 @@ static long histScalerDma_do(aSubRecord *pasub) {
 		for (i=0; i<pasub->nova; i++) {
 			counts1[i] = 0;
 		}
+		*histClear = 0x20;
+		*histClear = 0;
 		*clear = 0;
 	}
+
+	/* cause HistScal component to dump its data to the FIFO */
+	*histRead = 0x20;
+	*histRead = 0;
 
 	dma_words = *histScalerDmaWords;
 	dma_bytes = dma_words*4;
