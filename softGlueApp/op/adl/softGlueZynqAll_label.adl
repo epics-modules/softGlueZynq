@@ -1,12 +1,12 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynqAll_label.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqAll_label.adl"
+	version=030111
 }
 display {
 	object {
-		x=2
-		y=104
+		x=-417
+		y=50
 		width=1880
 		height=1080
 	}
@@ -604,35 +604,152 @@ composite {
 		}
 	}
 }
-composite {
+polyline {
+	object {
+		x=1117
+		y=929
+		width=21
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(1137,930)
+		(1118,930)
+	}
+}
+"text entry" {
+	object {
+		x=1140
+		y=919
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P)$(H)10MHZ_CLOCK_Signal"
+		clr=14
+		bclr=31
+	}
+	format="string"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=1137
+		y=916
+		width=106
+		height=26
+	}
+	"basic attribute" {
+		clr=34
+		fill="outline"
+		width=3
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		calc="a"
+		chan="$(P)$(H)10MHZ_CLOCK_SigShow"
+	}
+}
+"message button" {
+	object {
+		x=1243
+		y=919
+		width=20
+		height=20
+	}
+	control {
+		chan="$(P)$(H)10MHZ_CLOCK_Show"
+		clr=14
+		bclr=51
+	}
+	label="="
+	press_msg="1"
+	release_msg="0"
+}
+text {
+	object {
+		x=978
+		y=921
+		width=140
+		height=20
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="10 MHz Clock"
+}
+"text entry" {
 	object {
 		x=975
-		y=901
+		y=900
 		width=295
-		height=43
+		height=16
 	}
-	"composite name"=""
-	"composite file"="softGlueZynq_10MHZ_CK_bare_label.adl;P=$(P),H=$(H)"
+	control {
+		chan="$(P)$(H)10MHZ_CLOCK_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
 }
-composite {
+"text entry" {
 	object {
 		x=975
 		y=945
 		width=295
-		height=46
+		height=16
 	}
-	"composite name"=""
-	"composite file"="softGlueZynq_20MHZ_CK_bare_label.adl;P=$(P),H=$(H)"
+	control {
+		chan="$(P)$(H)20MHZ_CLOCK_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
 }
 composite {
 	object {
-		x=975
-		y=995
-		width=295
-		height=46
+		x=980
+		y=960
+		width=285
+		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_50MHZ_CK_bare_label.adl;P=$(P),H=$(H)"
+	"composite file"="softGlueZynq_20MHZ_CK_bare.adl;P=$(P),H=$(H)"
+}
+"text entry" {
+	object {
+		x=975
+		y=990
+		width=295
+		height=16
+	}
+	control {
+		chan="$(P)$(H)50MHZ_CLOCK_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
+}
+composite {
+	object {
+		x=980
+		y=1006
+		width=285
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_50MHZ_CK_bare.adl;P=$(P),H=$(H)"
 }
 composite {
 	object {
@@ -663,4 +780,99 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="softGlueZynqFieldIOxx8_small_bare_label.adl;P=$(P),H=$(H),N1=17,N2=18,N3=19,N4=20,N5=21,N6=22,N7=23,N8=24"
+}
+"text entry" {
+	object {
+		x=977
+		y=1035
+		width=295
+		height=16
+	}
+	control {
+		chan="$(P)$(H)VAR_CLOCK_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
+}
+polyline {
+	object {
+		x=1122
+		y=1064
+		width=21
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(1142,1065)
+		(1123,1065)
+	}
+}
+"text entry" {
+	object {
+		x=1144
+		y=1054
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P)$(H)VAR_CLOCK_Signal"
+		clr=14
+		bclr=31
+	}
+	format="string"
+	limits {
+	}
+}
+rectangle {
+	object {
+		x=1141
+		y=1051
+		width=106
+		height=26
+	}
+	"basic attribute" {
+		clr=34
+		fill="outline"
+		width=3
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		calc="a"
+		chan="$(P)$(H)50MHZ_CLOCK_SigShow"
+	}
+}
+"message button" {
+	object {
+		x=1247
+		y=1054
+		width=20
+		height=20
+	}
+	control {
+		chan="$(P)$(H)VAR_CLOCK_Show"
+		clr=14
+		bclr=51
+	}
+	label="="
+	press_msg="1"
+	release_msg="0"
+}
+text {
+	object {
+		x=982
+		y=1056
+		width=140
+		height=20
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="Variable Clock"
 }

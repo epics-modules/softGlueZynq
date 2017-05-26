@@ -1,13 +1,13 @@
 
 file {
 	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqConfig.adl"
-	version=030112
+	version=030111
 }
 display {
 	object {
-		x=578
-		y=488
-		width=1000
+		x=580
+		y=513
+		width=700
 		height=585
 	}
 	clr=14
@@ -91,7 +91,7 @@ rectangle {
 	object {
 		x=0
 		y=0
-		width=1000
+		width=700
 		height=25
 	}
 	"basic attribute" {
@@ -102,7 +102,7 @@ polyline {
 	object {
 		x=0
 		y=25
-		width=999
+		width=701
 		height=3
 	}
 	"basic attribute" {
@@ -111,7 +111,7 @@ polyline {
 	}
 	points {
 		(1,26)
-		(997,26)
+		(699,26)
 	}
 }
 text {
@@ -178,43 +178,6 @@ text {
 	textix="FO11"
 	align="horiz. centered"
 }
-text {
-	object {
-		x=10
-		y=120
-		width=100
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FO12"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=270
-		y=40
-		width=600
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Select component that drives data-acquisition stream (DMA)"
-}
-text {
-	object {
-		x=270
-		y=60
-		width=500
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Select what drives field output 9 (FO9)"
-}
 menu {
 	object {
 		x=130
@@ -267,24 +230,35 @@ menu {
 		bclr=4
 	}
 }
-menu {
+text {
 	object {
-		x=130
-		y=120
-		width=120
+		x=270
+		y=40
+		width=420
 		height=20
 	}
-	control {
-		chan="$(P)$(H)FO12Mux"
+	"basic attribute" {
 		clr=14
-		bclr=4
 	}
+	textix="Select component that drives DMA"
+}
+text {
+	object {
+		x=270
+		y=60
+		width=420
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Select what drives field output 9 (FO9)"
 }
 text {
 	object {
 		x=270
 		y=80
-		width=500
+		width=420
 		height=20
 	}
 	"basic attribute" {
@@ -296,7 +270,7 @@ text {
 	object {
 		x=270
 		y=100
-		width=500
+		width=420
 		height=20
 	}
 	"basic attribute" {
@@ -304,22 +278,10 @@ text {
 	}
 	textix="Select what drives field output 11 (FO11)"
 }
-text {
-	object {
-		x=270
-		y=120
-		width=500
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Select what drives field output 12 (FO12)"
-}
 "text entry" {
 	object {
 		x=45
-		y=320
+		y=340
 		width=100
 		height=20
 	}
@@ -334,7 +296,7 @@ text {
 "text update" {
 	object {
 		x=46
-		y=300
+		y=320
 		width=100
 		height=18
 	}
@@ -349,7 +311,7 @@ text {
 text {
 	object {
 		x=20
-		y=320
+		y=340
 		width=25
 		height=20
 	}
@@ -361,7 +323,7 @@ text {
 "text entry" {
 	object {
 		x=45
-		y=220
+		y=240
 		width=100
 		height=20
 	}
@@ -376,7 +338,7 @@ text {
 "text update" {
 	object {
 		x=46
-		y=200
+		y=220
 		width=100
 		height=18
 	}
@@ -391,7 +353,7 @@ text {
 text {
 	object {
 		x=20
-		y=220
+		y=240
 		width=25
 		height=20
 	}
@@ -403,7 +365,7 @@ text {
 "text entry" {
 	object {
 		x=45
-		y=370
+		y=390
 		width=100
 		height=20
 	}
@@ -418,7 +380,7 @@ text {
 "text update" {
 	object {
 		x=46
-		y=350
+		y=370
 		width=100
 		height=18
 	}
@@ -433,7 +395,7 @@ text {
 text {
 	object {
 		x=20
-		y=370
+		y=390
 		width=25
 		height=20
 	}
@@ -445,7 +407,7 @@ text {
 "text entry" {
 	object {
 		x=45
-		y=420
+		y=440
 		width=100
 		height=20
 	}
@@ -460,7 +422,7 @@ text {
 "text update" {
 	object {
 		x=46
-		y=400
+		y=420
 		width=100
 		height=18
 	}
@@ -475,7 +437,7 @@ text {
 text {
 	object {
 		x=20
-		y=420
+		y=440
 		width=25
 		height=20
 	}
@@ -487,7 +449,7 @@ text {
 "text entry" {
 	object {
 		x=45
-		y=470
+		y=490
 		width=100
 		height=20
 	}
@@ -502,7 +464,7 @@ text {
 "text update" {
 	object {
 		x=46
-		y=450
+		y=470
 		width=100
 		height=18
 	}
@@ -517,7 +479,7 @@ text {
 text {
 	object {
 		x=20
-		y=470
+		y=490
 		width=25
 		height=20
 	}
@@ -529,7 +491,7 @@ text {
 "text entry" {
 	object {
 		x=45
-		y=270
+		y=290
 		width=100
 		height=20
 	}
@@ -544,7 +506,7 @@ text {
 "text update" {
 	object {
 		x=46
-		y=250
+		y=270
 		width=100
 		height=18
 	}
@@ -559,7 +521,7 @@ text {
 text {
 	object {
 		x=20
-		y=270
+		y=290
 		width=25
 		height=20
 	}
@@ -568,82 +530,10 @@ text {
 	}
 	textix="2"
 }
-text {
-	object {
-		x=165
-		y=220
-		width=125
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="softGlueReg"
-}
-text {
-	object {
-		x=165
-		y=270
-		width=125
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="50 MHz"
-}
-text {
-	object {
-		x=165
-		y=320
-		width=125
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="20 MHz"
-}
-text {
-	object {
-		x=165
-		y=370
-		width=125
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="10 MHz"
-}
-text {
-	object {
-		x=166
-		y=420
-		width=150
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="fast gate&delay"
-}
-text {
-	object {
-		x=165
-		y=470
-		width=160
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="fast histoScaler"
-}
 "message button" {
 	object {
-		x=260
-		y=160
+		x=238
+		y=180
 		width=85
 		height=20
 	}
@@ -658,7 +548,7 @@ text {
 text {
 	object {
 		x=20
-		y=160
+		y=180
 		width=221
 		height=20
 	}
@@ -671,8 +561,8 @@ text {
 rectangle {
 	object {
 		x=10
-		y=155
-		width=345
+		y=175
+		width=400
 		height=350
 	}
 	"basic attribute" {
@@ -683,4 +573,237 @@ rectangle {
 	"dynamic attribute" {
 		chan="$(P)clock3actualFreq"
 	}
+}
+composite {
+	object {
+		x=10
+		y=120
+		width=680
+		height=20
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=10
+				y=120
+				width=100
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="FO12"
+			align="horiz. centered"
+		}
+		menu {
+			object {
+				x=130
+				y=120
+				width=120
+				height=20
+			}
+			control {
+				chan="$(P)$(H)FO12Mux"
+				clr=14
+				bclr=4
+			}
+		}
+		text {
+			object {
+				x=270
+				y=120
+				width=420
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="Select what drives field output 12 (FO12)"
+		}
+	}
+}
+text {
+	object {
+		x=10
+		y=140
+		width=100
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FO24"
+	align="horiz. centered"
+}
+menu {
+	object {
+		x=130
+		y=140
+		width=120
+		height=20
+	}
+	control {
+		chan="$(P)$(H)FO24Mux"
+		clr=14
+		bclr=4
+	}
+}
+text {
+	object {
+		x=270
+		y=140
+		width=420
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Select what drives field output 24 (FO24)"
+}
+text {
+	object {
+		x=165
+		y=240
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="(Don't change)"
+}
+text {
+	object {
+		x=165
+		y=290
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="50 MHz (~5MHz res.)"
+}
+text {
+	object {
+		x=165
+		y=340
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="20 MHz (~5 MHz res.)"
+}
+text {
+	object {
+		x=165
+		y=390
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="10 MHz (~5 MHz res.)"
+}
+text {
+	object {
+		x=165
+		y=440
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="fast gate&delay"
+}
+text {
+	object {
+		x=165
+		y=490
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="(fast histoScaler)"
+}
+text {
+	object {
+		x=165
+		y=470
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Var Clock (~.1 MHz res.)"
+}
+text {
+	object {
+		x=165
+		y=420
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="250 MHz (~5 MHz res.)"
+}
+composite {
+	object {
+		x=335
+		y=185
+		width=65
+		height=20
+	}
+	"composite name"=""
+	children {
+		"text entry" {
+			object {
+				x=370
+				y=185
+				width=30
+				height=20
+			}
+			control {
+				chan="$(P)$(H)clock1Config.D"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=335
+				y=185
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="dbg"
+		}
+	}
+}
+text {
+	object {
+		x=165
+		y=220
+		width=240
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="softGlueReg"
 }
