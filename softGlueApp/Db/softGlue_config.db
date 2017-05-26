@@ -65,6 +65,16 @@ record(mbbo,"$(P)$(H)FO12Mux") {
 	field(ZRST,"softGlue")
 	field(ONST,"fastGateDly-4")
 }
+record(mbbo,"$(P)$(H)FO24Mux") {
+	field(DTYP, "Raw Soft Channel")
+	field(OUT,"$(P)$(H)configTran.PROC PP")
+	field(NOBT,"1")
+	field(SHFT,"6")
+	field(ZRVL,"0")
+	field(ONVL,"1")
+	field(ZRST,"softGlue")
+	field(ONST,"Clock 6")
+}
 record(transform, "$(P)$(H)configTran") {
 	field(PINI,"YES")
 	field(INPA, "$(P)$(H)streamMux")
@@ -77,6 +87,8 @@ record(transform, "$(P)$(H)configTran") {
 	field(INPH, "$(P)$(H)FO11Mux.SHFT")
 	field(INPI, "$(P)$(H)FO12Mux")
 	field(INPJ, "$(P)$(H)FO12Mux.SHFT")
-	field(CLCP, "(a<<b)|(c<<d)|(e<<f)|(g<<h)|(i<<j)")
+	field(INPK, "$(P)$(H)FO24Mux")
+	field(INPL, "$(P)$(H)FO24Mux.SHFT")
+	field(CLCP, "(a<<b)|(c<<d)|(e<<f)|(g<<h)|(i<<j)|(k<<l)")
 	field(OUTP, "$(P)$(H)config-1 PP")
 }

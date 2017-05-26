@@ -4,3 +4,4 @@ $(P)$(H)clock3desiredFreq
 $(P)$(H)clock4desiredFreq
 $(P)$(H)clock5desiredFreq
 $(P)$(H)clock6desiredFreq
+$(P)$(H)clock1Config.D

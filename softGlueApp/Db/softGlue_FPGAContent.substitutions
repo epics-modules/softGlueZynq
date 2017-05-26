@@ -300,7 +300,8 @@ pattern {SIG   	ADDR}
 #{PixelFIFO-1_FIFO50		83}
 {scalToStream-1_ADVDONE	84}
 
-{PixelFIFO-1_ADVDONE	85}
+#{PixelFIFO-1_ADVDONE	85}
+{VAR_CLOCK	85}
 
 #{FI25			86}
 #{FI26			87}

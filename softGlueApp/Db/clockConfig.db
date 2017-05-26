@@ -3,6 +3,7 @@ record(ao, "$(P)$(H)clock1desiredFreq") {
 	field(DRVH, "100")
 	field(DRVL, "10")
 	field(PREC, "6")
+	field(DOL, "100")
 	field(OUT, "$(P)$(H)clock1Seq.DO1 PP")
 }
 record(seq, "$(P)$(H)clock1Seq") {
@@ -26,6 +27,7 @@ record(ao, "$(P)$(H)clock1actualFreq") {
 
 record(ao, "$(P)$(H)clock2desiredFreq") {
 	field(PREC, "6")
+	field(DOL, "50")
 	field(OUT, "$(P)$(H)clock2Seq.DO1 PP")
 }
 record(seq, "$(P)$(H)clock2Seq") {
@@ -46,6 +48,7 @@ record(ao, "$(P)$(H)clock2actualFreq") {
 
 record(ao, "$(P)$(H)clock3desiredFreq") {
 	field(PREC, "6")
+	field(DOL, "20")
 	field(OUT, "$(P)$(H)clock3Seq.DO1 PP")
 }
 record(seq, "$(P)$(H)clock3Seq") {
@@ -66,6 +69,7 @@ record(ao, "$(P)$(H)clock3actualFreq") {
 
 record(ao, "$(P)$(H)clock4desiredFreq") {
 	field(PREC, "6")
+	field(DOL, "10")
 	field(OUT, "$(P)$(H)clock4Seq.DO1 PP")
 }
 record(seq, "$(P)$(H)clock4Seq") {
@@ -85,6 +89,7 @@ record(ao, "$(P)$(H)clock4actualFreq") {
 
 record(ao, "$(P)$(H)clock5desiredFreq") {
 	field(PREC, "6")
+	field(DOL, "250")
 	field(OUT, "$(P)$(H)clock5Seq.DO1 PP")
 }
 record(seq, "$(P)$(H)clock5Seq") {
@@ -104,6 +109,7 @@ record(ao, "$(P)$(H)clock5actualFreq") {
 
 record(ao, "$(P)$(H)clock6desiredFreq") {
 	field(PREC, "6")
+	field(DOL, "250")
 	field(OUT, "$(P)$(H)clock6Seq.DO1 PP")
 }
 record(seq, "$(P)$(H)clock6Seq") {

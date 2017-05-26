@@ -65,6 +65,7 @@ $(P)$(H)HW_OR-2_OUT_Signal
 $(P)$(H)10MHZ_CLOCK_Signal
 $(P)$(H)20MHZ_CLOCK_Signal
 $(P)$(H)50MHZ_CLOCK_Signal
+$(P)$(H)VAR_CLOCK_Signal
 
 # field I/O
 $(P)$(H)FI1_Signal
