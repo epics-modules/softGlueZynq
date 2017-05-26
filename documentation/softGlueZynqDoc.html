@@ -746,12 +746,13 @@ presented to the ">" input.
 <li><P>10 MHz internal clock
 <P><img src="10MHz_clock.jpg" name="* MHz clock">
 
-<P>10, 20, and 50 MHz clocks are available to softGlueZynq circuitry as free
+<P>10, 20, and 50 MHz clocks, and one clock whose frequency can be varied with
+roughly .1 MHz resolution, are available to softGlueZynq circuitry as free
 standing outputs.
 
 <blockquote>
 
-Clock frequencies can be changed at run time. See <a href="#Miscellaneous
+All clock frequencies can be changed at run time. See <a href="#Miscellaneous
 configuration">Miscellaneous configuration</a> below.
 
 </blockquote>
@@ -1009,6 +1010,8 @@ it fills up.   <P>Here's a video demonstration of pixelTrigger:
 user.  Some of these are controlled with the softGlueZynqConfig display shown
 below.
 
+<P><img src="Config.jpg" name="softGlueZynqConfig.adl">
+
 <ul>
 <li>streamMux
 
@@ -1025,29 +1028,33 @@ outputs would be clocked by the softGlue register clock, and this would defeat
 the purpose of these components.  Accordingly, the fast Gate&Delay generators
 are connected to input pins 1-4, and can be connected to output pins 9-12.
 
+<P>The variable clock (fast histogrammer clock) can be connected directly to
+output pin 24.
+
 <li>Clock frequencies
 
 <P>You can change the frequencies of any of the six clocks used in softGlueZynq,
-but you need to know what you're doing if the changes are to be useful:
+but you need to know what you're doing if the changes are to be useful.  Some
+frequencies aren't stable.  You should verify the frequency with the
+frequency counter before relying on it.
 <ol>
 
 <li>You should probably never change the frequency of the softGlue-register
 clock.
 
-<li>The nominally 10, 20, and 50 MHz clocks can usefully be changed to a frequency in the
-range 6-50 MHz.
+<li>The nominally 10, 20, and 50 MHz clocks can be changed to 
+frequencies in the range 6-50 MHz, with roughly 5 MHz resolution.
 
-<li>The fast Gate&Delay clock can usefully be changed to a frequency in the
-range 6-300 MHz.
+<li>The fast Gate&Delay clock can be changed to a frequency in the
+range 6-300 MHz, with roughly 5 MHz resolution.
 
-<li>The fast histoScaler clock can usefully be changed to a frequency in the
-range 6-300 MHz.
+<li>The fast histoScaler clock can be changed to a frequency in the
+range 5-600 MHz, with roughly 0.1 MHz resolution.
 
-<ul>
+</ol>
 
 </ul>
 
-<P><img src="Config.jpg" name="softGlueZynqConfig.adl">
 
 <a name="Saving and restoring circuits"></a>
 <h2><center>Saving and restoring circuits</center></h2>
