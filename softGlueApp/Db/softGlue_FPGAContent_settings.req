@@ -136,6 +136,8 @@ $(P)$(H)circuit_desc
 $(P)$(H)50MHZ_CLOCK_desc
 $(P)$(H)20MHZ_CLOCK_desc
 $(P)$(H)10MHZ_CLOCK_desc
+$(P)$(H)VAR_CLOCK_desc
+
 $(P)$(H)HW_OR-1_desc
 $(P)$(H)HW_OR-2_desc
 
