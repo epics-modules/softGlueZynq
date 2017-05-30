@@ -150,7 +150,7 @@ To produce new github sources from an existing softGlueZynq Vivado project.
 		set design_name [get_bd_designs]
 		make_wrapper -files [get_files $design_name.bd] -top -import
  
- 6. Use copyIPForGit.sh for each component.  Use copyConstraintsForGit.sh
+ 6. Use copyIPForGit.sh for each component.  Use copyConstraintsForGit.sh for each constraint.
 -----------------------------------------------------------------------------------------------------------
  
 Sources:

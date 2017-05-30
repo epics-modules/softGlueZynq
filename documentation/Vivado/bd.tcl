@@ -380,8 +380,8 @@ CONFIG.NUM_MI {1} \
 CONFIG.NUM_SI {2} \
  ] $axi_interconnect_0
 
-  # Create instance: clk_wiz_0, and set properties
-  set clk_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.2 clk_wiz_0 ]
+  # Create instance: clk_wiz0_0_0, and set properties
+  set clk_wiz0_0_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.2 clk_wiz0_0_0 ]
   set_property -dict [ list \
 CONFIG.CLKIN1_JITTER_PS {100.0} \
 CONFIG.CLKOUT1_DRIVES {BUFG} \
@@ -423,9 +423,9 @@ CONFIG.CLKOUT7_JITTER {212.630} \
 CONFIG.CLKOUT7_PHASE_ERROR {208.802} \
 CONFIG.CLKOUT7_USED {false} \
 CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
-CONFIG.MMCM_CLKFBOUT_MULT_F {10} \
+CONFIG.MMCM_CLKFBOUT_MULT_F {10.000} \
 CONFIG.MMCM_CLKIN1_PERIOD {10.0} \
-CONFIG.MMCM_CLKOUT0_DIVIDE_F {10} \
+CONFIG.MMCM_CLKOUT0_DIVIDE_F {10.000} \
 CONFIG.MMCM_CLKOUT1_DIVIDE {20} \
 CONFIG.MMCM_CLKOUT1_DUTY_CYCLE {0.500} \
 CONFIG.MMCM_CLKOUT1_PHASE {0.000} \
@@ -439,12 +439,84 @@ CONFIG.MMCM_CLKOUT6_DIVIDE {1} \
 CONFIG.MMCM_COMPENSATION {ZHOLD} \
 CONFIG.MMCM_DIVCLK_DIVIDE {1} \
 CONFIG.NUM_OUT_CLKS {6} \
-CONFIG.PRIMITIVE {PLL} \
+CONFIG.PRIMITIVE {MMCM} \
 CONFIG.PRIM_IN_FREQ {100} \
+CONFIG.PRIM_SOURCE {Single_ended_clock_capable_pin} \
+CONFIG.SECONDARY_SOURCE {Single_ended_clock_capable_pin} \
 CONFIG.USE_DYN_RECONFIG {true} \
 CONFIG.USE_LOCKED {true} \
+CONFIG.USE_PHASE_ALIGNMENT {false} \
 CONFIG.USE_RESET {true} \
- ] $clk_wiz_0
+ ] $clk_wiz0_0_0
+
+  # Create instance: clk_wiz1_0_0, and set properties
+  set clk_wiz1_0_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:clk_wiz:5.2 clk_wiz1_0_0 ]
+  set_property -dict [ list \
+CONFIG.CLKIN1_JITTER_PS {500.0} \
+CONFIG.CLKOUT1_DRIVES {BUFG} \
+CONFIG.CLKOUT1_JITTER {231.111} \
+CONFIG.CLKOUT1_PHASE_ERROR {301.005} \
+CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {250} \
+CONFIG.CLKOUT1_USED {true} \
+CONFIG.CLKOUT2_DRIVES {BUFG} \
+CONFIG.CLKOUT2_JITTER {151.636} \
+CONFIG.CLKOUT2_PHASE_ERROR {98.575} \
+CONFIG.CLKOUT2_REQUESTED_DUTY_CYCLE {50} \
+CONFIG.CLKOUT2_REQUESTED_OUT_FREQ {50} \
+CONFIG.CLKOUT2_REQUESTED_PHASE {0.000} \
+CONFIG.CLKOUT2_USED {false} \
+CONFIG.CLKOUT3_DRIVES {BUFG} \
+CONFIG.CLKOUT3_JITTER {183.243} \
+CONFIG.CLKOUT3_PHASE_ERROR {98.575} \
+CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {20} \
+CONFIG.CLKOUT3_REQUESTED_PHASE {0.000} \
+CONFIG.CLKOUT3_USED {false} \
+CONFIG.CLKOUT4_DRIVES {BUFG} \
+CONFIG.CLKOUT4_JITTER {209.588} \
+CONFIG.CLKOUT4_PHASE_ERROR {98.575} \
+CONFIG.CLKOUT4_REQUESTED_OUT_FREQ {10.000} \
+CONFIG.CLKOUT4_REQUESTED_PHASE {0.000} \
+CONFIG.CLKOUT4_USED {false} \
+CONFIG.CLKOUT5_DRIVES {BUFG} \
+CONFIG.CLKOUT5_JITTER {110.209} \
+CONFIG.CLKOUT5_PHASE_ERROR {98.575} \
+CONFIG.CLKOUT5_REQUESTED_OUT_FREQ {250} \
+CONFIG.CLKOUT5_USED {false} \
+CONFIG.CLKOUT6_DRIVES {BUFG} \
+CONFIG.CLKOUT6_JITTER {110.209} \
+CONFIG.CLKOUT6_PHASE_ERROR {98.575} \
+CONFIG.CLKOUT6_REQUESTED_OUT_FREQ {250} \
+CONFIG.CLKOUT6_USED {false} \
+CONFIG.CLKOUT7_DRIVES {BUFG} \
+CONFIG.CLKOUT7_JITTER {212.630} \
+CONFIG.CLKOUT7_PHASE_ERROR {208.802} \
+CONFIG.CLKOUT7_USED {false} \
+CONFIG.FEEDBACK_SOURCE {FDBK_AUTO} \
+CONFIG.MMCM_CLKFBOUT_MULT_F {50.000} \
+CONFIG.MMCM_CLKIN1_PERIOD {50.0} \
+CONFIG.MMCM_CLKOUT0_DIVIDE_F {4.000} \
+CONFIG.MMCM_CLKOUT1_DIVIDE {1} \
+CONFIG.MMCM_CLKOUT1_DUTY_CYCLE {0.500} \
+CONFIG.MMCM_CLKOUT1_PHASE {0.000} \
+CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
+CONFIG.MMCM_CLKOUT2_PHASE {0.000} \
+CONFIG.MMCM_CLKOUT3_DIVIDE {1} \
+CONFIG.MMCM_CLKOUT3_PHASE {0.000} \
+CONFIG.MMCM_CLKOUT4_DIVIDE {1} \
+CONFIG.MMCM_CLKOUT5_DIVIDE {1} \
+CONFIG.MMCM_CLKOUT6_DIVIDE {1} \
+CONFIG.MMCM_COMPENSATION {ZHOLD} \
+CONFIG.MMCM_DIVCLK_DIVIDE {1} \
+CONFIG.NUM_OUT_CLKS {1} \
+CONFIG.PRIMITIVE {MMCM} \
+CONFIG.PRIM_IN_FREQ {20} \
+CONFIG.PRIM_SOURCE {Single_ended_clock_capable_pin} \
+CONFIG.SECONDARY_SOURCE {Single_ended_clock_capable_pin} \
+CONFIG.USE_DYN_RECONFIG {true} \
+CONFIG.USE_LOCKED {true} \
+CONFIG.USE_PHASE_ALIGNMENT {false} \
+CONFIG.USE_RESET {true} \
+ ] $clk_wiz1_0_0
 
   # Create instance: demux2_1, and set properties
   set demux2_1 [ create_bd_cell -type ip -vlnv user.org:user:demux2:1.0 demux2_1 ]
@@ -555,6 +627,9 @@ CONFIG.N {16} \
   # Create instance: mux2_5, and set properties
   set mux2_5 [ create_bd_cell -type ip -vlnv user.org:user:mux2:1.0 mux2_5 ]
 
+  # Create instance: mux2_6, and set properties
+  set mux2_6 [ create_bd_cell -type ip -vlnv user.org:user:mux2:1.0 mux2_6 ]
+
   # Create instance: one, and set properties
   set one [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 one ]
   set_property -dict [ list \
@@ -607,7 +682,7 @@ CONFIG.PCW_FCLK_CLK2_BUF {true} \
 CONFIG.PCW_FCLK_CLK3_BUF {true} \
 CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {50} \
 CONFIG.PCW_FPGA1_PERIPHERAL_FREQMHZ {150} \
-CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {80} \
+CONFIG.PCW_FPGA2_PERIPHERAL_FREQMHZ {20} \
 CONFIG.PCW_FPGA3_PERIPHERAL_FREQMHZ {100} \
 CONFIG.PCW_GPIO_EMIO_GPIO_ENABLE {0} \
 CONFIG.PCW_GPIO_MIO_GPIO_ENABLE {1} \
@@ -1052,6 +1127,14 @@ CONFIG.DIN_TO {5} \
 CONFIG.DOUT_WIDTH {1} \
  ] $xlslice_4
 
+  # Create instance: xlslice_5, and set properties
+  set xlslice_5 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_5 ]
+  set_property -dict [ list \
+CONFIG.DIN_FROM {6} \
+CONFIG.DIN_TO {6} \
+CONFIG.DOUT_WIDTH {1} \
+ ] $xlslice_5
+
   # Create instance: zero, and set properties
   set zero [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 zero ]
   set_property -dict [ list \
@@ -1073,7 +1156,8 @@ CONFIG.CONST_VAL {0} \
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M02_AXI [get_bd_intf_pins processing_system7_0_axi_periph/M02_AXI] [get_bd_intf_pins softGlueReg32_v1_0_0/s00_axi]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M03_AXI [get_bd_intf_pins pixelFIFO_v1_0_0/s00_axi] [get_bd_intf_pins processing_system7_0_axi_periph/M03_AXI]
   connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M04_AXI [get_bd_intf_pins axi_dma_0/S_AXI_LITE] [get_bd_intf_pins processing_system7_0_axi_periph/M04_AXI]
-  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M05_AXI [get_bd_intf_pins clk_wiz_0/s_axi_lite] [get_bd_intf_pins processing_system7_0_axi_periph/M05_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M05_AXI [get_bd_intf_pins clk_wiz0_0_0/s_axi_lite] [get_bd_intf_pins processing_system7_0_axi_periph/M05_AXI]
+  connect_bd_intf_net -intf_net processing_system7_0_axi_periph_M06_AXI [get_bd_intf_pins clk_wiz1_0_0/s_axi_lite] [get_bd_intf_pins processing_system7_0_axi_periph/M06_AXI]
   connect_bd_intf_net -intf_net scalersToStream_0_M_AXIS [get_bd_intf_pins scalersToStream_0/M_AXIS] [get_bd_intf_pins streamMux_0/s0]
   connect_bd_intf_net -intf_net streamMux_0_m [get_bd_intf_pins fifo_generator_1/S_AXIS] [get_bd_intf_pins streamMux_0/m]
 
@@ -1142,12 +1226,12 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net XOR_2_Res [get_bd_pins XOR_2/Res] [get_bd_pins softGlue_300IO_v1_0_0/sg_in009]
   connect_bd_net -net axi_dma_0_mm2s_introut [get_bd_pins axi_dma_0/mm2s_introut] [get_bd_pins xlconcat_1/In1]
   connect_bd_net -net axi_dma_0_s2mm_introut [get_bd_pins axi_dma_0/s2mm_introut] [get_bd_pins xlconcat_1/In2]
-  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz_0/clk_out1] [get_bd_pins softGlue_300IO_v1_0_0/softGlueRegClock]
-  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz_0/clk_out2] [get_bd_pins softGlue_300IO_v1_0_0/sg_in045]
-  connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins clk_wiz_0/clk_out3] [get_bd_pins softGlue_300IO_v1_0_0/sg_in046]
-  connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_pins clk_wiz_0/clk_out4] [get_bd_pins softGlue_300IO_v1_0_0/sg_in047]
-  connect_bd_net -net clk_wiz_0_clk_out5 [get_bd_pins clk_wiz_0/clk_out5] [get_bd_pins gateDelayFast_1/Clk] [get_bd_pins gateDelayFast_2/Clk] [get_bd_pins gateDelayFast_3/Clk] [get_bd_pins gateDelayFast_4/Clk]
-  connect_bd_net -net clk_wiz_0_clk_out6 [get_bd_pins clk_wiz_0/clk_out6] [get_bd_pins fhistoScalerStream_0/Ck]
+  connect_bd_net -net clk_wiz_0_clk_out1 [get_bd_pins clk_wiz0_0_0/clk_out1] [get_bd_pins softGlue_300IO_v1_0_0/softGlueRegClock]
+  connect_bd_net -net clk_wiz_0_clk_out2 [get_bd_pins clk_wiz0_0_0/clk_out2] [get_bd_pins softGlue_300IO_v1_0_0/sg_in045]
+  connect_bd_net -net clk_wiz_0_clk_out3 [get_bd_pins clk_wiz0_0_0/clk_out3] [get_bd_pins softGlue_300IO_v1_0_0/sg_in046]
+  connect_bd_net -net clk_wiz_0_clk_out4 [get_bd_pins clk_wiz0_0_0/clk_out4] [get_bd_pins softGlue_300IO_v1_0_0/sg_in047]
+  connect_bd_net -net clk_wiz_0_clk_out5 [get_bd_pins clk_wiz0_0_0/clk_out5] [get_bd_pins gateDelayFast_1/Clk] [get_bd_pins gateDelayFast_2/Clk] [get_bd_pins gateDelayFast_3/Clk] [get_bd_pins gateDelayFast_4/Clk]
+  connect_bd_net -net clk_wiz_0_clk_out6 [get_bd_pins clk_wiz1_0_0/clk_out1] [get_bd_pins fhistoScalerStream_0/Ck] [get_bd_pins mux2_6/In1] [get_bd_pins softGlue_300IO_v1_0_0/sg_in085]
   connect_bd_net -net demux2_1_Out0 [get_bd_pins demux2_1/Out0] [get_bd_pins softGlue_300IO_v1_0_0/sg_in022]
   connect_bd_net -net demux2_1_Out1 [get_bd_pins demux2_1/Out1] [get_bd_pins softGlue_300IO_v1_0_0/sg_in023]
   connect_bd_net -net demux2_2_Out0 [get_bd_pins demux2_2/Out0] [get_bd_pins softGlue_300IO_v1_0_0/sg_in024]
@@ -1173,6 +1257,7 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net mux2_3_Outp [get_bd_ports FO_10] [get_bd_pins mux2_3/Outp]
   connect_bd_net -net mux2_4_Outp [get_bd_ports FO_11] [get_bd_pins mux2_4/Outp]
   connect_bd_net -net mux2_5_Outp [get_bd_ports FO_09] [get_bd_pins mux2_5/Outp]
+  connect_bd_net -net mux2_6_Outp [get_bd_ports FO_24] [get_bd_pins mux2_6/Outp]
   connect_bd_net -net one_dout [get_bd_pins one/dout] [get_bd_pins scalerChan_10/UpDn] [get_bd_pins scalerChan_11/UpDn] [get_bd_pins scalerChan_12/UpDn] [get_bd_pins scalerChan_13/UpDn] [get_bd_pins scalerChan_14/UpDn] [get_bd_pins scalerChan_15/UpDn] [get_bd_pins scalerChan_16/UpDn] [get_bd_pins scalerChan_2/UpDn] [get_bd_pins scalerChan_3/UpDn] [get_bd_pins scalerChan_4/UpDn] [get_bd_pins scalerChan_5/UpDn] [get_bd_pins scalerChan_6/UpDn] [get_bd_pins scalerChan_7/UpDn] [get_bd_pins scalerChan_8/UpDn] [get_bd_pins scalerChan_9/UpDn]
   connect_bd_net -net pixelFIFO_v1_0_0_roomForEvent [get_bd_pins DFF_5/Clear] [get_bd_pins pixelFIFO_v1_0_0/roomForEvent]
   connect_bd_net -net pixelTrigger_0_Counts [get_bd_pins pixelTrigger_0/Counts] [get_bd_pins softGlueReg32_v1_0_0/out_reg29]
@@ -1183,8 +1268,9 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net pixelTrigger_1_Pixel [get_bd_pins pixelTrigger_1/Pixel] [get_bd_pins softGlueReg32_v1_0_0/out_reg30] [get_bd_pins xlconcat_3/In1]
   connect_bd_net -net pixelTrigger_1_Trig [get_bd_pins OR_7/Op2] [get_bd_pins pixelTrigger_1/Trig] [get_bd_pins softGlue_300IO_v1_0_0/sg_in078]
   connect_bd_net -net pixelTrigger_1_miss [get_bd_pins pixelTrigger_1/miss] [get_bd_pins softGlue_300IO_v1_0_0/sg_in079]
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DFF_5/regClk] [get_bd_pins DFF_6/regClk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins clk_wiz_0/s_axi_aclk] [get_bd_pins fhistoScalerStream_0/M_AXIS_ACLK] [get_bd_pins fifo_generator_1/s_aclk] [get_bd_pins histoScalerStream_0/M_AXIS_ACLK] [get_bd_pins pixelFIFO_v1_0_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/M03_ACLK] [get_bd_pins processing_system7_0_axi_periph/M04_ACLK] [get_bd_pins processing_system7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0_axi_periph/M06_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S01_ACLK] [get_bd_pins rst_processing_system7_0_100M1/slowest_sync_clk] [get_bd_pins rst_processing_system7_0_100M2/slowest_sync_clk] [get_bd_pins scalerChan_1/regClk] [get_bd_pins scalerChan_10/regClk] [get_bd_pins scalerChan_11/regClk] [get_bd_pins scalerChan_12/regClk] [get_bd_pins scalerChan_13/regClk] [get_bd_pins scalerChan_14/regClk] [get_bd_pins scalerChan_15/regClk] [get_bd_pins scalerChan_16/regClk] [get_bd_pins scalerChan_2/regClk] [get_bd_pins scalerChan_3/regClk] [get_bd_pins scalerChan_4/regClk] [get_bd_pins scalerChan_5/regClk] [get_bd_pins scalerChan_6/regClk] [get_bd_pins scalerChan_7/regClk] [get_bd_pins scalerChan_8/regClk] [get_bd_pins scalerChan_9/regClk] [get_bd_pins scalersToFIFO_1/regClk] [get_bd_pins scalersToStream_0/M_AXIS_ACLK] [get_bd_pins softGlueReg32_v1_0_0/s00_axi_aclk] [get_bd_pins softGlue_300IO_v1_0_0/s00_axi_aclk] [get_bd_pins softGlue_300IO_v1_0_0/s_axi_intr_aclk] [get_bd_pins streamMux_0/m_aclk] [get_bd_pins streamMux_0/s0_aclk] [get_bd_pins streamMux_0/s1_aclk] [get_bd_pins streamMux_0/s2_aclk] [get_bd_pins streamMux_0/s3_aclk]
-  connect_bd_net -net processing_system7_0_FCLK_CLK3 [get_bd_pins clk_wiz_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK3]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_pins DFF_5/regClk] [get_bd_pins DFF_6/regClk] [get_bd_pins axi_dma_0/m_axi_mm2s_aclk] [get_bd_pins axi_dma_0/m_axi_s2mm_aclk] [get_bd_pins axi_dma_0/s_axi_lite_aclk] [get_bd_pins axi_interconnect_0/ACLK] [get_bd_pins axi_interconnect_0/M00_ACLK] [get_bd_pins axi_interconnect_0/S00_ACLK] [get_bd_pins axi_interconnect_0/S01_ACLK] [get_bd_pins clk_wiz0_0_0/s_axi_aclk] [get_bd_pins clk_wiz1_0_0/s_axi_aclk] [get_bd_pins fhistoScalerStream_0/M_AXIS_ACLK] [get_bd_pins fifo_generator_1/s_aclk] [get_bd_pins histoScalerStream_0/M_AXIS_ACLK] [get_bd_pins pixelFIFO_v1_0_0/s00_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_HP0_ACLK] [get_bd_pins processing_system7_0_axi_periph/ACLK] [get_bd_pins processing_system7_0_axi_periph/M00_ACLK] [get_bd_pins processing_system7_0_axi_periph/M01_ACLK] [get_bd_pins processing_system7_0_axi_periph/M02_ACLK] [get_bd_pins processing_system7_0_axi_periph/M03_ACLK] [get_bd_pins processing_system7_0_axi_periph/M04_ACLK] [get_bd_pins processing_system7_0_axi_periph/M05_ACLK] [get_bd_pins processing_system7_0_axi_periph/M06_ACLK] [get_bd_pins processing_system7_0_axi_periph/S00_ACLK] [get_bd_pins processing_system7_0_axi_periph/S01_ACLK] [get_bd_pins rst_processing_system7_0_100M1/slowest_sync_clk] [get_bd_pins rst_processing_system7_0_100M2/slowest_sync_clk] [get_bd_pins scalerChan_1/regClk] [get_bd_pins scalerChan_10/regClk] [get_bd_pins scalerChan_11/regClk] [get_bd_pins scalerChan_12/regClk] [get_bd_pins scalerChan_13/regClk] [get_bd_pins scalerChan_14/regClk] [get_bd_pins scalerChan_15/regClk] [get_bd_pins scalerChan_16/regClk] [get_bd_pins scalerChan_2/regClk] [get_bd_pins scalerChan_3/regClk] [get_bd_pins scalerChan_4/regClk] [get_bd_pins scalerChan_5/regClk] [get_bd_pins scalerChan_6/regClk] [get_bd_pins scalerChan_7/regClk] [get_bd_pins scalerChan_8/regClk] [get_bd_pins scalerChan_9/regClk] [get_bd_pins scalersToFIFO_1/regClk] [get_bd_pins scalersToStream_0/M_AXIS_ACLK] [get_bd_pins softGlueReg32_v1_0_0/s00_axi_aclk] [get_bd_pins softGlue_300IO_v1_0_0/s00_axi_aclk] [get_bd_pins softGlue_300IO_v1_0_0/s_axi_intr_aclk] [get_bd_pins streamMux_0/m_aclk] [get_bd_pins streamMux_0/s0_aclk] [get_bd_pins streamMux_0/s1_aclk] [get_bd_pins streamMux_0/s2_aclk] [get_bd_pins streamMux_0/s3_aclk]
+  connect_bd_net -net processing_system7_0_FCLK_CLK2 [get_bd_pins clk_wiz1_0_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK2]
+  connect_bd_net -net processing_system7_0_FCLK_CLK3 [get_bd_pins clk_wiz0_0_0/clk_in1] [get_bd_pins processing_system7_0/FCLK_CLK3]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_processing_system7_0_100M1/ext_reset_in] [get_bd_pins rst_processing_system7_0_100M2/ext_reset_in]
   connect_bd_net -net quadDec_1_dir [get_bd_pins quadDec_1/dir] [get_bd_pins softGlue_300IO_v1_0_0/sg_in039]
   connect_bd_net -net quadDec_1_miss [get_bd_pins quadDec_1/miss] [get_bd_pins softGlue_300IO_v1_0_0/sg_in036]
@@ -1192,7 +1278,7 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net quadDec_2_dir [get_bd_pins quadDec_2/dir] [get_bd_pins softGlue_300IO_v1_0_0/sg_in041]
   connect_bd_net -net quadDec_2_miss [get_bd_pins quadDec_2/miss] [get_bd_pins softGlue_300IO_v1_0_0/sg_in037]
   connect_bd_net -net quadDec_2_step [get_bd_pins quadDec_2/step] [get_bd_pins softGlue_300IO_v1_0_0/sg_in040]
-  connect_bd_net -net rst_processing_system7_0_100M_peripheral_aresetn [get_bd_pins clk_wiz_0/s_axi_aresetn] [get_bd_pins pixelFIFO_v1_0_0/s00_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M04_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M05_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M06_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_processing_system7_0_100M1/peripheral_aresetn] [get_bd_pins softGlueReg32_v1_0_0/s00_axi_aresetn] [get_bd_pins softGlue_300IO_v1_0_0/s00_axi_aresetn] [get_bd_pins softGlue_300IO_v1_0_0/s_axi_intr_aresetn]
+  connect_bd_net -net rst_processing_system7_0_100M_peripheral_aresetn [get_bd_pins clk_wiz0_0_0/s_axi_aresetn] [get_bd_pins clk_wiz1_0_0/s_axi_aresetn] [get_bd_pins pixelFIFO_v1_0_0/s00_axi_aresetn] [get_bd_pins processing_system7_0_axi_periph/M00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M01_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M02_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M03_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M04_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M05_ARESETN] [get_bd_pins processing_system7_0_axi_periph/M06_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S00_ARESETN] [get_bd_pins processing_system7_0_axi_periph/S01_ARESETN] [get_bd_pins rst_processing_system7_0_100M1/peripheral_aresetn] [get_bd_pins softGlueReg32_v1_0_0/s00_axi_aresetn] [get_bd_pins softGlue_300IO_v1_0_0/s00_axi_aresetn] [get_bd_pins softGlue_300IO_v1_0_0/s_axi_intr_aresetn]
   connect_bd_net -net scalerAND_Res [get_bd_pins scalerAND/Res] [get_bd_pins scalerChan_1/En] [get_bd_pins scalerChan_10/En] [get_bd_pins scalerChan_11/En] [get_bd_pins scalerChan_12/En] [get_bd_pins scalerChan_13/En] [get_bd_pins scalerChan_14/En] [get_bd_pins scalerChan_15/En] [get_bd_pins scalerChan_16/En] [get_bd_pins scalerChan_2/En] [get_bd_pins scalerChan_3/En] [get_bd_pins scalerChan_4/En] [get_bd_pins scalerChan_5/En] [get_bd_pins scalerChan_6/En] [get_bd_pins scalerChan_7/En] [get_bd_pins scalerChan_8/En] [get_bd_pins scalerChan_9/En]
   connect_bd_net -net scalerChan_10_Counts [get_bd_pins scalerChan_10/Counts] [get_bd_pins scalersToFIFO_1/in9]
   connect_bd_net -net scalerChan_11_Counts [get_bd_pins scalerChan_11/Counts] [get_bd_pins scalersToFIFO_1/in10]
@@ -1214,7 +1300,6 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net scaler_or1_Res [get_bd_pins DFF_6/Clear] [get_bd_pins scaler_or1/Res]
   connect_bd_net -net scaler_or2_Res [get_bd_pins DFF_6/Set] [get_bd_pins scaler_or2/Res]
   connect_bd_net -net scaler_or_Res [get_bd_pins scaler_or/Res] [get_bd_pins scaler_or1/Op1]
-  connect_bd_net -net scalersToFIFO_1_chanAdvDone [get_bd_pins scalersToFIFO_1/chanAdvDone] [get_bd_pins softGlue_300IO_v1_0_0/sg_in085]
   connect_bd_net -net scalersToFIFO_1_outReg [get_bd_pins pixelFIFO_v1_0_0/pixelValue] [get_bd_pins scalersToFIFO_1/outReg]
   connect_bd_net -net scalersToFIFO_1_wrtCk [get_bd_pins pixelFIFO_v1_0_0/writeCk] [get_bd_pins scalersToFIFO_1/wrtCk] [get_bd_pins softGlue_300IO_v1_0_0/sg_in080]
   connect_bd_net -net scalersToStream_0_chanAdvDone [get_bd_pins scalersToStream_0/chanAdvDone] [get_bd_pins softGlue_300IO_v1_0_0/sg_in084]
@@ -1268,7 +1353,7 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net softGlueReg32_v1_0_0_in_reg59 [get_bd_pins pixelTrigger_0/PresetPixel] [get_bd_pins softGlueReg32_v1_0_0/in_reg59]
   connect_bd_net -net softGlueReg32_v1_0_0_in_reg60 [get_bd_pins pixelTrigger_1/PresetPixel] [get_bd_pins softGlueReg32_v1_0_0/in_reg60]
   connect_bd_net -net softGlueReg32_v1_0_0_in_reg61 [get_bd_pins fifo_generator_1/axis_prog_full_thresh] [get_bd_pins scalersToStream_0/packetWords] [get_bd_pins softGlueReg32_v1_0_0/in_reg61]
-  connect_bd_net -net softGlueReg32_v1_0_0_in_reg62 [get_bd_pins softGlueReg32_v1_0_0/in_reg62] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din] [get_bd_pins xlslice_4/Din]
+  connect_bd_net -net softGlueReg32_v1_0_0_in_reg62 [get_bd_pins softGlueReg32_v1_0_0/in_reg62] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din] [get_bd_pins xlslice_2/Din] [get_bd_pins xlslice_3/Din] [get_bd_pins xlslice_4/Din] [get_bd_pins xlslice_5/Din]
   connect_bd_net -net softGlue_300IO_v1_0_0_irq [get_bd_pins softGlue_300IO_v1_0_0/irq] [get_bd_pins xlconcat_1/In0]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out100 [get_bd_pins AND_1/Op1] [get_bd_pins softGlue_300IO_v1_0_0/sg_out100]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out101 [get_bd_pins AND_1/Op2] [get_bd_pins softGlue_300IO_v1_0_0/sg_out101]
@@ -1424,7 +1509,7 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out251 [get_bd_ports FO_21] [get_bd_pins softGlue_300IO_v1_0_0/sg_out251]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out252 [get_bd_ports FO_22] [get_bd_pins softGlue_300IO_v1_0_0/sg_out252]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out253 [get_bd_ports FO_23] [get_bd_pins softGlue_300IO_v1_0_0/sg_out253]
-  connect_bd_net -net softGlue_300IO_v1_0_0_sg_out254 [get_bd_ports FO_24] [get_bd_pins softGlue_300IO_v1_0_0/sg_out254]
+  connect_bd_net -net softGlue_300IO_v1_0_0_sg_out254 [get_bd_pins mux2_6/In0] [get_bd_pins softGlue_300IO_v1_0_0/sg_out254]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out255 [get_bd_pins pixelTrigger_0/A1] [get_bd_pins softGlue_300IO_v1_0_0/sg_out255]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out256 [get_bd_pins pixelTrigger_0/B1] [get_bd_pins softGlue_300IO_v1_0_0/sg_out256]
   connect_bd_net -net softGlue_300IO_v1_0_0_sg_out257 [get_bd_pins pixelTrigger_0/A2] [get_bd_pins softGlue_300IO_v1_0_0/sg_out257]
@@ -1486,12 +1571,14 @@ CONFIG.CONST_VAL {0} \
   connect_bd_net -net xlslice_2_Dout [get_bd_pins mux2_3/Sel] [get_bd_pins xlslice_2/Dout]
   connect_bd_net -net xlslice_3_Dout [get_bd_pins mux2_4/Sel] [get_bd_pins xlslice_3/Dout]
   connect_bd_net -net xlslice_4_Dout [get_bd_pins mux2_0/Sel] [get_bd_pins xlslice_4/Dout]
+  connect_bd_net -net xlslice_5_Dout [get_bd_pins mux2_6/Sel] [get_bd_pins xlslice_5/Dout]
 
   # Create address segments
   create_bd_addr_seg -range 0x40000000 -offset 0x0 [get_bd_addr_spaces axi_dma_0/Data_MM2S] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x40000000 -offset 0x0 [get_bd_addr_spaces axi_dma_0/Data_S2MM] [get_bd_addr_segs processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM] SEG_processing_system7_0_HP0_DDR_LOWOCM
   create_bd_addr_seg -range 0x10000 -offset 0x40400000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_dma_0/S_AXI_LITE/Reg] SEG_axi_dma_0_Reg
-  create_bd_addr_seg -range 0x10000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs clk_wiz_0/s_axi_lite/Reg] SEG_clk_wiz_0_Reg
+  create_bd_addr_seg -range 0x10000 -offset 0x43C50000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs clk_wiz0_0_0/s_axi_lite/Reg] SEG_clk_wiz_0_Reg
+  create_bd_addr_seg -range 0x10000 -offset 0x43C40000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs clk_wiz1_0_0/s_axi_lite/Reg] SEG_clk_wiz_1_Reg
   create_bd_addr_seg -range 0x10000 -offset 0x43C30000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs pixelFIFO_v1_0_0/s00_axi/reg0] SEG_pixelFIFO_v1_0_0_reg0
   create_bd_addr_seg -range 0x10000 -offset 0x43C20000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs softGlueReg32_v1_0_0/s00_axi/reg0] SEG_softGlueReg32_v1_0_0_reg0
   create_bd_addr_seg -range 0x10000 -offset 0x43C00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs softGlue_300IO_v1_0_0/s00_axi/reg0] SEG_softGlue_300IO_v1_0_0_reg0
@@ -1545,8 +1632,8 @@ preplace port FI_03 -pg 1 -y 9810 -defaultsOSRD
 preplace port FO_22 -pg 1 -y 10550 -defaultsOSRD
 preplace port FO_23 -pg 1 -y 10570 -defaultsOSRD
 preplace port FI_04 -pg 1 -y 9830 -defaultsOSRD
-preplace port FO_24 -pg 1 -y 10590 -defaultsOSRD
 preplace port FI_05 -pg 1 -y 9850 -defaultsOSRD
+preplace port FO_24 -pg 1 -y 10590 -defaultsOSRD
 preplace port FI_06 -pg 1 -y 9870 -defaultsOSRD
 preplace port FI_07 -pg 1 -y 9890 -defaultsOSRD
 preplace port FI_08 -pg 1 -y 9910 -defaultsOSRD
@@ -1592,7 +1679,6 @@ preplace inst scalerAND -pg 1 -lvl 19 -y 11630 -defaultsOSRD
 preplace inst updncntr_4 -pg 1 -lvl 28 -y 9410 -defaultsOSRD
 preplace inst OR_6 -pg 1 -lvl 26 -y 9420 -defaultsOSRD
 preplace inst OR_7 -pg 1 -lvl 15 -y 10890 -defaultsOSRD
-preplace inst clk_wiz_0 -pg 1 -lvl 9 -y 11540 -defaultsOSRD
 preplace inst scalerChan_1 -pg 1 -lvl 20 -y 11620 -defaultsOSRD
 preplace inst scalerChan_2 -pg 1 -lvl 20 -y 11850 -defaultsOSRD
 preplace inst demux2_1 -pg 1 -lvl 13 -y 8820 -defaultsOSRD
@@ -1605,7 +1691,7 @@ preplace inst scalerChan_4 -pg 1 -lvl 20 -y 12260 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M1 -pg 1 -lvl 8 -y 10690 -defaultsOSRD
 preplace inst DnCntr_1 -pg 1 -lvl 13 -y 8290 -defaultsOSRD
 preplace inst AND_1 -pg 1 -lvl 13 -y 7460 -defaultsOSRD
-preplace inst mux2_0 -pg 1 -lvl 31 -y 10360 -defaultsOSRD
+preplace inst mux2_0 -pg 1 -lvl 30 -y 10360 -defaultsOSRD
 preplace inst scalerChan_5 -pg 1 -lvl 20 -y 12460 -defaultsOSRD
 preplace inst rst_processing_system7_0_100M2 -pg 1 -lvl 8 -y 10900 -defaultsOSRD
 preplace inst gateDelayFast_3 -pg 1 -lvl 3 -y 11950 -defaultsOSRD
@@ -1620,14 +1706,16 @@ preplace inst scalerChan_7 -pg 1 -lvl 20 -y 12860 -defaultsOSRD
 preplace inst mux2_2 -pg 1 -lvl 27 -y 8880 -defaultsOSRD
 preplace inst AND_4 -pg 1 -lvl 27 -y 7500 -defaultsOSRD
 preplace inst DnCntr_4 -pg 1 -lvl 27 -y 8450 -defaultsOSRD
-preplace inst mux2_3 -pg 1 -lvl 31 -y 10060 -defaultsOSRD
+preplace inst mux2_3 -pg 1 -lvl 30 -y 10060 -defaultsOSRD
 preplace inst scalerChan_8 -pg 1 -lvl 20 -y 13060 -defaultsOSRD
-preplace inst softGlueReg32_v1_0_0 -pg 1 -lvl 30 -y 11160 -defaultsOSRD
-preplace inst mux2_4 -pg 1 -lvl 31 -y 10220 -defaultsOSRD
+preplace inst softGlueReg32_v1_0_0 -pg 1 -lvl 29 -y 11160 -defaultsOSRD
+preplace inst mux2_4 -pg 1 -lvl 30 -y 10220 -defaultsOSRD
 preplace inst scalerChan_9 -pg 1 -lvl 22 -y 11610 -defaultsOSRD
 preplace inst softGlue_300IO_v1_0_0 -pg 1 -lvl 11 -y 8070 -defaultsOSRD
-preplace inst mux2_5 -pg 1 -lvl 31 -y 9940 -defaultsOSRD
+preplace inst mux2_5 -pg 1 -lvl 30 -y 9940 -defaultsOSRD
 preplace inst gateDly_1 -pg 1 -lvl 13 -y 10050 -defaultsOSRD
+preplace inst mux2_6 -pg 1 -lvl 30 -y 10620 -defaultsOSRD
+preplace inst clk_wiz1_0_0 -pg 1 -lvl 9 -y 11840 -defaultsOSRD
 preplace inst scalerChan_10 -pg 1 -lvl 22 -y 11810 -defaultsOSRD
 preplace inst gateDly_2 -pg 1 -lvl 15 -y 10040 -defaultsOSRD
 preplace inst pixelTrigger_0 -pg 1 -lvl 14 -y 10730 -defaultsOSRD
@@ -1655,12 +1743,13 @@ preplace inst UpCntr_3 -pg 1 -lvl 25 -y 8700 -defaultsOSRD
 preplace inst UpCntr_4 -pg 1 -lvl 27 -y 8680 -defaultsOSRD
 preplace inst xlconcat_1 -pg 1 -lvl 8 -y 11470 -defaultsOSRD
 preplace inst xlconcat_2 -pg 1 -lvl 10 -y 10830 -defaultsOSRD
-preplace inst freqCounter_0 -pg 1 -lvl 30 -y 8670 -defaultsOSRD
+preplace inst freqCounter_0 -pg 1 -lvl 29 -y 8670 -defaultsOSRD
 preplace inst xlconcat_3 -pg 1 -lvl 15 -y 11340 -defaultsOSRD
 preplace inst util_ds_buf_0 -pg 1 -lvl 1 -y 10340 -defaultsOSRD
 preplace inst XOR_1 -pg 1 -lvl 13 -y 7850 -defaultsOSRD
 preplace inst XOR_2 -pg 1 -lvl 15 -y 7910 -defaultsOSRD
 preplace inst util_ds_buf_10 -pg 1 -lvl 1 -y 11800 -defaultsOSRD
+preplace inst clk_wiz0_0_0 -pg 1 -lvl 9 -y 11540 -defaultsOSRD
 preplace inst util_ds_buf_1 -pg 1 -lvl 1 -y 10460 -defaultsOSRD
 preplace inst scaler_or1 -pg 1 -lvl 17 -y 11750 -defaultsOSRD
 preplace inst scaler_or -pg 1 -lvl 16 -y 11740 -defaultsOSRD
@@ -1668,35 +1757,36 @@ preplace inst util_ds_buf_11 -pg 1 -lvl 1 -y 11060 -defaultsOSRD
 preplace inst util_ds_buf_2 -pg 1 -lvl 1 -y 12420 -defaultsOSRD
 preplace inst scaler_or2 -pg 1 -lvl 17 -y 11670 -defaultsOSRD
 preplace inst util_ds_buf_3 -pg 1 -lvl 1 -y 10580 -defaultsOSRD
-preplace inst xlslice_0 -pg 1 -lvl 30 -y 11800 -defaultsOSRD
+preplace inst xlslice_0 -pg 1 -lvl 29 -y 11800 -defaultsOSRD
 preplace inst util_ds_buf_4 -pg 1 -lvl 1 -y 12300 -defaultsOSRD
 preplace inst xlconstant_0 -pg 1 -lvl 19 -y 10730 -defaultsOSRD
-preplace inst xlslice_1 -pg 1 -lvl 30 -y 11880 -defaultsOSRD
+preplace inst xlslice_1 -pg 1 -lvl 29 -y 11880 -defaultsOSRD
 preplace inst zero -pg 1 -lvl 19 -y 11720 -defaultsOSRD
 preplace inst util_ds_buf_5 -pg 1 -lvl 1 -y 11520 -defaultsOSRD
-preplace inst xlslice_2 -pg 1 -lvl 30 -y 11960 -defaultsOSRD
+preplace inst xlslice_2 -pg 1 -lvl 29 -y 11960 -defaultsOSRD
 preplace inst pixelFIFO_v1_0_0 -pg 1 -lvl 24 -y 11820 -defaultsOSRD
 preplace inst quadDec_1 -pg 1 -lvl 13 -y 9720 -defaultsOSRD
 preplace inst util_ds_buf_6 -pg 1 -lvl 1 -y 10700 -defaultsOSRD
-preplace inst xlslice_3 -pg 1 -lvl 30 -y 12050 -defaultsOSRD
+preplace inst xlslice_3 -pg 1 -lvl 29 -y 12050 -defaultsOSRD
 preplace inst scalersToStream_0 -pg 1 -lvl 4 -y 11320 -defaultsOSRD
 preplace inst quadDec_2 -pg 1 -lvl 15 -y 9750 -defaultsOSRD
 preplace inst util_ds_buf_7 -pg 1 -lvl 1 -y 10820 -defaultsOSRD
-preplace inst xlslice_4 -pg 1 -lvl 30 -y 12130 -defaultsOSRD
+preplace inst xlslice_4 -pg 1 -lvl 29 -y 12130 -defaultsOSRD
 preplace inst fhistoScalerStream_0 -pg 1 -lvl 4 -y 11980 -defaultsOSRD
 preplace inst util_ds_buf_8 -pg 1 -lvl 1 -y 10940 -defaultsOSRD
 preplace inst axi_dma_0 -pg 1 -lvl 7 -y 11460 -defaultsOSRD
+preplace inst xlslice_5 -pg 1 -lvl 29 -y 12210 -defaultsOSRD
 preplace inst one -pg 1 -lvl 19 -y 11870 -defaultsOSRD
 preplace inst streamMux_0 -pg 1 -lvl 5 -y 11570 -defaultsOSRD
 preplace inst processing_system7_0_axi_periph -pg 1 -lvl 8 -y 10300 -defaultsOSRD
 preplace inst util_ds_buf_9 -pg 1 -lvl 1 -y 12160 -defaultsOSRD
-preplace inst divByN_1 -pg 1 -lvl 13 -y 9000 -defaultsOSRD
+preplace inst divByN_1 -pg 1 -lvl 13 -y 8990 -defaultsOSRD
 preplace inst axi_interconnect_0 -pg 1 -lvl 7 -y 10850 -defaultsOSRD
 preplace netloc scalerChan_10_Counts 1 22 1 12180
 preplace netloc softGlue_300IO_v1_0_0_sg_out104 1 11 14 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ 6140 NJ
-preplace netloc scalerChan_16_Counts 1 22 1 12300
+preplace netloc scalerChan_16_Counts 1 22 1 12290
 preplace netloc softGlue_300IO_v1_0_0_sg_out105 1 11 14 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ 6160 NJ
-preplace netloc xlconstant_1_dout 1 17 5 10650 11570 NJ 11570 11120 13170 NJ 13030 NJ
+preplace netloc xlconstant_1_dout 1 17 5 10650 11570 NJ 11570 11180 13170 NJ 13030 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out106 1 11 16 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ 6180 NJ
 preplace netloc FI_23_1 1 0 11 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 N
 preplace netloc softGlue_300IO_v1_0_0_sg_out107 1 11 16 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ 6200 NJ
@@ -1704,420 +1794,423 @@ preplace netloc softGlue_300IO_v1_0_0_sg_out108 1 11 2 N 6220 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out109 1 11 2 N 6240 NJ
 preplace netloc processing_system7_0_FCLK_RESET0_N 1 7 2 -1590 10810 -1100
 preplace netloc xlconcat_1_dout 1 7 2 -1590 11540 -1100
-preplace netloc updncntr_1_Counts 1 3 27 NJ 10040 NJ 10040 NJ 10040 NJ 10040 NJ 9940 NJ 9930 NJ 9930 NJ 10270 NJ 9970 NJ 9930 NJ 9980 NJ 10550 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ
-preplace netloc DFF_6_Q 1 10 9 550 11580 NJ 11580 NJ 11580 NJ 11580 NJ 11580 NJ 11580 NJ 11580 NJ 11580 10800
-preplace netloc pixelTrigger_1_Trig 1 10 5 NJ 10820 NJ 10810 NJ 10810 NJ 10920 8090
-preplace netloc scalerChan_14_Counts 1 22 1 12280
+preplace netloc updncntr_1_Counts 1 3 26 NJ 11560 NJ 11730 NJ 11690 NJ 11690 NJ 11690 NJ 11700 NJ 11700 NJ 11700 NJ 9160 NJ 9160 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ 9270 NJ
+preplace netloc DFF_6_Q 1 10 9 530 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 10810
+preplace netloc pixelTrigger_1_Trig 1 10 5 NJ 10750 NJ 10750 NJ 10750 NJ 10520 7390
+preplace netloc scalerChan_14_Counts 1 22 1 12270
 preplace netloc axi_dma_0_mm2s_introut 1 7 1 -1700
-preplace netloc DnCntr_1_Counts 1 13 17 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 15000
-preplace netloc XOR_1_Res 1 10 4 NJ 10640 NJ 10630 NJ 10630 NJ
+preplace netloc DnCntr_1_Counts 1 13 16 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ 8280 NJ
+preplace netloc XOR_1_Res 1 10 4 NJ 10660 NJ 10650 NJ 10650 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out200 1 11 14 NJ 8410 NJ 8410 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ 8320 NJ
-preplace netloc gateDelayFast_4_Q 1 3 28 -4270 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 10650 NJ 10650 NJ 10510 NJ 10590 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10630 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ
-preplace netloc scalersToFIFO_1_wrtCk 1 10 14 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ
-preplace netloc OR_1_Res 1 10 4 NJ 10610 NJ 10560 NJ 10560 NJ
+preplace netloc gateDelayFast_4_Q 1 3 27 -4280 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 12100 NJ 10670 NJ 10670 NJ 10390 NJ 10630 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ 10360 NJ
+preplace netloc scalersToFIFO_1_wrtCk 1 10 14 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ 10940 NJ 10940 NJ 10940 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ
+preplace netloc OR_1_Res 1 10 4 NJ 10640 NJ 10570 NJ 10570 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out201 1 11 17 NJ 8080 NJ 8170 NJ 8170 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ 8190 NJ
 preplace netloc IBUF_DS_P_10_1 1 0 1 NJ
-preplace netloc quadDec_1_miss 1 10 4 NJ 10830 NJ 10820 NJ 10820 NJ
+preplace netloc quadDec_1_miss 1 10 4 NJ 10870 NJ 10870 NJ 10870 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out202 1 11 17 NJ 8100 NJ 8130 NJ 8120 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ 7970 NJ
-preplace netloc sg_in057_1 1 0 20 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9900 NJ 9900 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ
+preplace netloc sg_in057_1 1 0 20 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ 12640 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out203 1 11 17 NJ 8190 NJ 8190 NJ 8190 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ 8200 NJ
 preplace netloc scalersToStream_0_chanAdvDone 1 4 7 NJ 8740 NJ 8740 NJ 8740 NJ 8740 NJ 8740 NJ 8740 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out204 1 11 17 NJ 8140 NJ 8150 NJ 8150 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ 7990 NJ
 preplace netloc FI_24_1 1 0 11 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 N
-preplace netloc AND_0_Res 1 10 10 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ
-preplace netloc divByN_2_Q 1 10 6 NJ 10380 NJ 10380 NJ 10390 NJ 10240 NJ 10240 NJ
+preplace netloc AND_0_Res 1 10 10 NJ 10610 NJ 10430 NJ 10430 NJ 10430 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ
+preplace netloc divByN_2_Q 1 10 6 NJ 10350 NJ 10350 NJ 10350 NJ 10290 NJ 10700 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out205 1 11 17 NJ 8160 NJ 8160 NJ 8160 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7980 NJ 7960 NJ 7960 NJ 7960 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out206 1 3 9 NJ 11590 NJ 11780 NJ 11780 NJ 11780 NJ 11780 NJ 11780 NJ 11780 NJ 11780 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out206 1 3 9 NJ 11860 NJ 11860 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ
 preplace netloc util_ds_buf_8_IBUF_OUT 1 1 10 -9690 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ
 preplace netloc sg_in072_1 1 0 11 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ 8500 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out207 1 3 9 NJ 11850 NJ 11850 NJ 11850 NJ 11850 NJ 11850 NJ 11850 NJ 11850 NJ 11850 NJ
-preplace netloc scalerChan_1_Counts 1 20 3 NJ 11520 NJ 11480 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out208 1 3 9 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10020 NJ 10020 NJ 10730 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out207 1 3 9 NJ 11850 NJ 11850 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ
+preplace netloc scalerChan_1_Counts 1 20 3 NJ 11520 NJ 11490 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out208 1 3 9 NJ 10010 NJ 10010 NJ 10010 NJ 10010 NJ 10000 NJ 10000 NJ 10000 NJ 10170 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out170 1 11 14 NJ 7550 NJ 7550 NJ 7550 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ 7560 NJ
-preplace netloc scalerAND_Res 1 19 3 11260 11490 NJ 11490 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out209 1 3 9 NJ 10010 NJ 10010 NJ 10010 NJ 10010 NJ 10010 NJ 10200 NJ 10200 NJ 10200 NJ
+preplace netloc scalerAND_Res 1 19 3 11280 11500 NJ 11500 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out209 1 3 9 NJ 10030 NJ 10030 NJ 10030 NJ 10030 NJ 10010 NJ 10250 NJ 10250 NJ 10250 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out171 1 11 16 NJ 7480 NJ 7540 NJ 7540 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ 7570 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out172 1 11 16 NJ 7500 NJ 7530 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ 7440 NJ
-preplace netloc mux2_3_Outp 1 31 1 16100
+preplace netloc mux2_3_Outp 1 30 1 16120
 preplace netloc softGlue_300IO_v1_0_0_sg_out173 1 11 16 NJ 7520 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ 7770 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out299 1 7 5 -1610 10600 NJ 10430 NJ 10430 NJ 10560 1250
+preplace netloc softGlue_300IO_v1_0_0_sg_out299 1 7 5 -1600 10600 NJ 10430 NJ 10430 NJ 10430 1260
 preplace netloc softGlue_300IO_v1_0_0_sg_out174 1 11 2 NJ 7540 2770
 preplace netloc softGlue_300IO_v1_0_0_sg_out175 1 11 2 NJ 7570 2740
 preplace netloc IBUF_DS_P_2_1 1 0 1 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out176 1 11 2 NJ 7580 2720
 preplace netloc softGlue_300IO_v1_0_0_sg_out177 1 11 4 NJ 7600 NJ 7710 NJ 7710 NJ
-preplace netloc processing_system7_0_FIXED_IO 1 2 7 -9340 7410 NJ 7410 NJ 7410 NJ 7410 NJ 7410 NJ 7410 -1070
+preplace netloc processing_system7_0_FIXED_IO 1 2 7 -9330 7410 NJ 7410 NJ 7410 NJ 7410 NJ 7410 NJ 7410 -1070
 preplace netloc softGlue_300IO_v1_0_0_sg_out178 1 11 4 NJ 7590 NJ 7570 NJ 7570 NJ
-preplace netloc OR_3_Res 1 10 16 NJ 10690 NJ 10580 NJ 10580 NJ 10340 NJ 10530 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ 10520 NJ 10520 NJ
-preplace netloc DnCntr_2_Counts 1 15 15 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out210 1 11 2 NJ 8260 2550
+preplace netloc OR_3_Res 1 10 16 NJ 10590 NJ 10580 NJ 10580 NJ 10370 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ
+preplace netloc DnCntr_2_Counts 1 15 14 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ 8330 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out210 1 11 2 NJ 8260 2560
 preplace netloc softGlue_300IO_v1_0_0_sg_out179 1 11 4 NJ 7560 NJ 7560 NJ 7560 NJ
 preplace netloc fifo_generator_1_M_AXIS 1 6 1 -2190
 preplace netloc scalerChan_2_Counts 1 20 3 NJ 11840 NJ 11920 NJ
 preplace netloc DnCntr_1_Q 1 10 4 NJ 10520 NJ 10520 NJ 10520 NJ
-preplace netloc clk_wiz_0_clk_out1 1 9 2 -640 7040 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out211 1 11 2 NJ 8280 2580
+preplace netloc clk_wiz_0_clk_out1 1 9 2 -650 7040 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out211 1 11 2 NJ 8280 2570
 preplace netloc clk_wiz_0_clk_out2 1 9 2 -630 7960 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out212 1 11 2 NJ 8300 2540
-preplace netloc UpCntr_4_Counts 1 3 27 NJ 11500 NJ 11730 NJ 11730 NJ 11730 NJ 11730 NJ 11730 NJ 11730 NJ 11730 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ
-preplace netloc clk_wiz_0_clk_out3 1 9 2 -620 7980 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out212 1 11 2 NJ 8300 2550
+preplace netloc UpCntr_4_Counts 1 3 26 NJ 11530 NJ 11720 NJ 11720 NJ 11720 NJ 11720 NJ 11720 NJ 11720 NJ 11720 NJ 10160 NJ 10160 NJ 10110 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ 10580 NJ
+preplace netloc clk_wiz_0_clk_out3 1 9 2 -610 7980 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out213 1 11 2 NJ 8320 2520
-preplace netloc clk_wiz_0_clk_out4 1 9 2 -600 8000 NJ
+preplace netloc clk_wiz_0_clk_out4 1 9 2 -590 8000 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out214 1 11 4 NJ 8200 NJ 8200 NJ 8200 NJ
 preplace netloc IBUF_DS_N_1_1 1 0 1 NJ
-preplace netloc scalersToFIFO_1_outReg 1 23 1 12600
-preplace netloc clk_wiz_0_clk_out5 1 2 13 -9300 11860 NJ 11610 NJ 11770 NJ 11770 NJ 11770 NJ 11770 NJ 11770 NJ 11560 NJ 11560 1750 10370 2990 10370 NJ 10270 NJ
-preplace netloc softGlue_300IO_v1_0_0_softGlueRegClockOut 1 3 27 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11380 NJ 11380 NJ 11380 NJ 11380 NJ 8000 NJ 10770 NJ 10060 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 8000 NJ 8000 NJ 8600 NJ 8660 NJ 8660 NJ
+preplace netloc scalersToFIFO_1_outReg 1 23 1 12550
+preplace netloc clk_wiz_0_clk_out5 1 2 13 -9290 11860 NJ 11610 NJ 11790 NJ 11790 NJ 11790 NJ 11790 NJ 11660 NJ 11560 NJ 11560 1700 10360 2870 10360 NJ 10220 NJ
+preplace netloc softGlue_300IO_v1_0_0_softGlueRegClockOut 1 3 26 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 8000 NJ 10880 NJ 10080 NJ 10170 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 8000 NJ 8000 NJ 8600 NJ 8660 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out215 1 11 4 NJ 8180 NJ 8180 NJ 8180 NJ
-preplace netloc clk_wiz_0_clk_out6 1 3 7 NJ 11860 NJ 11860 NJ 11860 NJ 11860 NJ 11860 NJ 11860 -680
-preplace netloc sg_in061_1 1 0 22 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 10580 NJ 10580 NJ 10390 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11550 NJ 11510 NJ 11510 NJ
+preplace netloc clk_wiz_0_clk_out6 1 3 27 NJ 11870 NJ 11870 NJ 11870 NJ 11870 NJ 11870 NJ 11920 -510 11830 NJ 10830 NJ 10830 NJ 10830 NJ 10510 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10600 NJ 10600 NJ
+preplace netloc sg_in061_1 1 0 22 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11780 NJ 11780 NJ 11740 NJ 11740 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out216 1 11 4 NJ 8370 NJ 8400 NJ 8400 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out160 1 11 14 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ 7260 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out217 1 11 4 NJ 8400 NJ 8420 NJ 8420 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out161 1 11 16 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ 7280 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out218 1 11 2 NJ 8420 2490
+preplace netloc softGlue_300IO_v1_0_0_sg_out218 1 11 2 NJ 8420 2480
 preplace netloc softGlue_300IO_v1_0_0_sg_out162 1 11 16 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ 7300 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out219 1 11 2 NJ 8430 2480
+preplace netloc mux2_6_Outp 1 30 1 16180
+preplace netloc softGlue_300IO_v1_0_0_sg_out219 1 11 2 NJ 8430 2460
 preplace netloc softGlue_300IO_v1_0_0_sg_out163 1 11 16 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ 7320 NJ
-preplace netloc updncntr_2_Counts 1 3 27 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11340 NJ 11340 NJ 11340 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ 10980 NJ 10970 NJ 10970 NJ 10970 NJ 10980 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ
+preplace netloc updncntr_2_Counts 1 3 26 NJ 11550 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11300 NJ 11300 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 10980 NJ 10980 NJ 10980 NJ 10980 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out164 1 11 2 NJ 7340 2800
-preplace netloc histoScalerStream_0_M_AXIS 1 4 1 -3560
-preplace netloc softGlueReg32_v1_0_0_in_reg60 1 13 18 6840 11530 NJ 11530 NJ 11530 NJ 11530 NJ 11530 NJ 11530 NJ 11480 NJ 11480 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11590 15700
+preplace netloc histoScalerStream_0_M_AXIS 1 4 1 -3520
+preplace netloc softGlueReg32_v1_0_0_in_reg60 1 13 17 6870 11520 NJ 11490 NJ 11490 NJ 11490 NJ 11490 NJ 11490 NJ 11490 NJ 11490 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11630 15700
 preplace netloc softGlue_300IO_v1_0_0_sg_out165 1 11 2 NJ 7360 2780
 preplace netloc softGlue_300IO_v1_0_0_sg_out180 1 11 14 NJ 7660 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ 7580 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg61 1 3 28 NJ 11120 NJ 11120 NJ 11350 NJ 11350 NJ 11370 NJ 11370 NJ 11370 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11090 NJ 11600 15690
+preplace netloc softGlueReg32_v1_0_0_in_reg61 1 3 27 NJ 11120 NJ 11120 NJ 11340 NJ 11340 NJ 11350 NJ 11350 NJ 11350 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11600 15680
 preplace netloc util_ds_buf_5_IBUF_OUT 1 1 10 -9710 8880 NJ 8880 NJ 8880 NJ 8880 NJ 8880 NJ 8880 NJ 8880 NJ 8880 NJ 8880 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out166 1 11 4 NJ 7370 NJ 7370 NJ 7370 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out181 1 11 14 NJ 7680 NJ 7700 NJ 7690 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ 7740 NJ
-preplace netloc divByN_4_Q 1 10 18 NJ 10400 NJ 10400 NJ 10400 NJ 10220 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10580 NJ 10580 NJ 10580 NJ
-preplace netloc mux2_5_Outp 1 31 1 16130
-preplace netloc softGlueReg32_v1_0_0_in_reg62 1 29 2 15020 11680 15730
+preplace netloc divByN_4_Q 1 10 18 NJ 10300 NJ 10300 NJ 10380 NJ 10310 NJ 10650 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ
+preplace netloc mux2_5_Outp 1 30 1 16160
+preplace netloc softGlueReg32_v1_0_0_in_reg62 1 28 2 14950 11680 15690
 preplace netloc softGlue_300IO_v1_0_0_sg_out167 1 11 4 NJ 7390 NJ 7390 NJ 7390 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out182 1 11 14 NJ 7700 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ 7720 NJ
 preplace netloc sg_in068_1 1 0 11 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ 8420 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out168 1 11 14 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ 7400 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out183 1 11 16 NJ 7720 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ 7730 NJ
 preplace netloc IBUF_DS_P_5_1 1 0 1 NJ
-preplace netloc sg_in055_1 1 0 20 NJ 9830 NJ 9830 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ
+preplace netloc sg_in055_1 1 0 20 NJ 9830 NJ 9830 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ 12240 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out169 1 11 14 NJ 7440 NJ 7520 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ 7430 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out184 1 11 16 NJ 7740 NJ 7740 NJ 7740 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ 7750 NJ
-preplace netloc mux2_0_Outp 1 31 1 16190
+preplace netloc mux2_0_Outp 1 30 1 16180
 preplace netloc softGlue_300IO_v1_0_0_sg_out185 1 11 16 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ 7760 NJ
-preplace netloc xlslice_0_Dout 1 4 27 -3480 11710 NJ 11650 NJ 11650 NJ 11650 NJ 11650 NJ 11570 NJ 11570 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11650 15690
+preplace netloc xlslice_0_Dout 1 4 26 -3470 11350 NJ 11350 NJ 11350 NJ 11360 NJ 11360 NJ 11360 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11650 15680
 preplace netloc FI_22_1 1 0 11 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 N
 preplace netloc softGlue_300IO_v1_0_0_sg_out220 1 11 4 NJ 8460 NJ 8430 NJ 8430 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out186 1 11 2 NJ 7780 2670
-preplace netloc sg_in059_1 1 0 20 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9920 NJ 9920 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out186 1 11 2 NJ 7780 2680
+preplace netloc sg_in059_1 1 0 20 NJ 9910 NJ 9910 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ 13040 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out221 1 11 4 NJ 8440 NJ 8440 NJ 8440 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out187 1 11 2 NJ 7800 2650
+preplace netloc softGlue_300IO_v1_0_0_sg_out187 1 11 2 NJ 7800 2660
 preplace netloc softGlue_300IO_v1_0_0_sg_out222 1 11 14 NJ 8470 NJ 8470 NJ 8470 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ 8550 NJ
-preplace netloc UpCntr_1_Counts 1 3 27 NJ 11480 NJ 11740 NJ 11740 NJ 11740 NJ 11740 NJ 11740 NJ 11740 NJ 11740 NJ 9430 NJ 9430 NJ 9440 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9510 NJ 9500 NJ 9500 NJ 9550 NJ 9550 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out188 1 11 2 NJ 7820 2630
-preplace netloc softGlue_300IO_v1_0_0_sg_out189 1 11 2 NJ 7840 2620
+preplace netloc UpCntr_1_Counts 1 3 26 NJ 11520 NJ 11780 NJ 11780 NJ 11780 NJ 11780 NJ 11680 NJ 11680 NJ 11680 NJ 9120 NJ 9120 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8940 NJ 8930 NJ 8950 NJ 8940 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out188 1 11 2 NJ 7820 2640
+preplace netloc softGlue_300IO_v1_0_0_sg_out189 1 11 2 NJ 7840 2630
 preplace netloc softGlue_300IO_v1_0_0_sg_out223 1 11 14 NJ 8490 NJ 8460 NJ 8460 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ 8580 NJ
-preplace netloc OR_7_Res 1 10 11 NJ 10630 NJ 10620 NJ 10620 NJ 10520 NJ 10800 10140 10800 NJ 10800 NJ 10800 NJ 10800 NJ 10800 NJ
+preplace netloc OR_7_Res 1 10 11 NJ 10650 NJ 10640 NJ 10640 NJ 10200 NJ 10800 9870 10800 NJ 10800 NJ 10800 NJ 10800 NJ 10800 NJ
 preplace netloc sg_in071_1 1 0 11 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ 8480 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out150 1 11 16 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ 7060 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out224 1 11 16 NJ 8450 NJ 8450 NJ 8450 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ 8590 NJ
 preplace netloc IBUF_DS_N_3_1 1 0 1 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out151 1 11 16 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ 7080 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out225 1 11 16 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out226 1 3 9 NJ 10020 NJ 10020 NJ 10020 NJ 10020 NJ 10020 NJ 10030 NJ 10030 NJ 10170 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out226 1 3 9 NJ 10040 NJ 10040 NJ 10040 NJ 10040 NJ 10030 NJ 10240 NJ 10240 NJ 10280 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out152 1 11 2 NJ 7100 2840
-preplace netloc softGlue_300IO_v1_0_0_sg_out227 1 11 19 NJ 8500 NJ 8500 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out227 1 11 18 NJ 8500 NJ 8500 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ 8560 NJ
 preplace netloc util_ds_buf_2_IBUF_OUT 1 1 10 -9700 8820 NJ 8820 NJ 8820 NJ 8820 NJ 8820 NJ 8820 NJ 8820 NJ 8820 NJ 8820 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out153 1 11 2 NJ 7120 2830
-preplace netloc softGlue_300IO_v1_0_0_sg_out228 1 11 8 NJ 8510 NJ 8510 NJ 8500 NJ 8510 NJ 8500 NJ 8500 NJ 8500 10830
+preplace netloc softGlue_300IO_v1_0_0_sg_out228 1 11 8 NJ 8510 NJ 8510 NJ 8500 NJ 8510 NJ 8500 NJ 8500 NJ 8500 10840
 preplace netloc softGlue_300IO_v1_0_0_sg_out154 1 11 2 NJ 7140 2820
-preplace netloc softGlue_300IO_v1_0_0_sg_out229 1 11 11 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 11190 11470 NJ 11470 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out229 1 11 11 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 NJ 8540 11220 11460 NJ 11480 NJ
 preplace netloc util_ds_buf_0_IBUF_OUT 1 1 10 -9760 8780 NJ 8780 NJ 8780 NJ 8780 NJ 8780 NJ 8780 NJ 8780 NJ 8780 NJ 8780 NJ
-preplace netloc pixelTrigger_0_Pixel 1 14 16 NJ 11410 NJ 11410 NJ 11410 NJ 11410 NJ 11410 NJ 11410 NJ 11410 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg50 1 2 29 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11000 NJ 11200 NJ 11200 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11610 15800
+preplace netloc pixelTrigger_0_Pixel 1 14 15 NJ 11400 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg50 1 2 28 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11000 NJ 11200 NJ 11200 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ 11570 15730
 preplace netloc softGlue_300IO_v1_0_0_sg_out155 1 11 4 NJ 7160 NJ 7160 NJ 7160 NJ
-preplace netloc FI_12_1 1 0 22 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 10360 NJ 10360 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ
-preplace netloc sg_in065_1 1 0 22 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 10000 NJ 10000 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg51 1 2 29 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11130 NJ 11390 NJ 11390 NJ 11390 NJ 11080 NJ 11080 NJ 11080 NJ 11080 NJ 11080 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 13840 10970 NJ 10970 NJ 10970 NJ 11620 15790
+preplace netloc FI_12_1 1 0 22 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 9930 NJ 10370 NJ 10370 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ 11050 NJ
+preplace netloc sg_in065_1 1 0 22 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 9980 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10980 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg51 1 2 28 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11340 NJ 11340 NJ 11340 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 13860 11120 NJ 11120 NJ 11580 15720
 preplace netloc softGlue_300IO_v1_0_0_sg_out156 1 11 4 NJ 7180 NJ 7180 NJ 7180 NJ
-preplace netloc fifo_generator_1_axis_data_count 1 6 24 NJ 11570 NJ 11570 NJ 11210 NJ 11210 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ
-preplace netloc sg_in052_1 1 0 13 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 10260 NJ 10260 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out190 1 11 2 NJ 7860 2610
-preplace netloc softGlueReg32_v1_0_0_in_reg52 1 2 29 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 10990 NJ 10990 NJ 11190 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 13960 10980 NJ 10980 NJ 10980 NJ 11550 15710
+preplace netloc fifo_generator_1_axis_data_count 1 6 23 NJ 11580 NJ 11580 NJ 11210 NJ 11210 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ
+preplace netloc sg_in052_1 1 0 13 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 9770 NJ 10240 NJ 10240 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out190 1 11 2 NJ 7860 2620
+preplace netloc softGlueReg32_v1_0_0_in_reg52 1 2 28 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 10990 NJ 10990 NJ 11190 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 13980 10980 NJ 10980 NJ 11590 15710
 preplace netloc softGlue_300IO_v1_0_0_sg_out157 1 11 4 NJ 7200 NJ 7200 NJ 7200 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg53 1 13 18 6850 9900 NJ 9900 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 15860
+preplace netloc softGlueReg32_v1_0_0_in_reg53 1 13 17 6860 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 15850
 preplace netloc softGlue_300IO_v1_0_0_sg_out158 1 11 14 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ 7220 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out191 1 11 4 NJ 7880 NJ 7910 NJ 7910 NJ
-preplace netloc processing_system7_0_axi_periph_M00_AXI 1 8 3 -1030 7000 NJ 7000 NJ
-preplace netloc mux2_4_Outp 1 31 1 16080
-preplace netloc AND_1_Res 1 10 4 NJ 10440 NJ 10440 NJ 10440 6240
+preplace netloc processing_system7_0_axi_periph_M00_AXI 1 8 3 -1020 7000 NJ 7000 NJ
+preplace netloc mux2_4_Outp 1 30 1 16080
+preplace netloc AND_1_Res 1 10 4 NJ 10440 NJ 10440 NJ 10440 6250
 preplace netloc IBUF_DS_P_1 1 0 1 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg54 1 13 18 6860 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 15850
+preplace netloc softGlueReg32_v1_0_0_in_reg54 1 13 17 6870 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 15840
 preplace netloc softGlue_300IO_v1_0_0_sg_out159 1 11 14 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ 7240 NJ
-preplace netloc divByN_1_Q 1 10 4 NJ 10360 NJ 10360 NJ 10360 NJ
+preplace netloc divByN_1_Q 1 10 4 NJ 10410 NJ 10410 NJ 10410 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out192 1 11 4 NJ 7900 NJ 7920 NJ 7920 NJ
 preplace netloc IBUF_DS_P_2 1 0 1 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg55 1 13 18 6380 11520 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11580 15720
-preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 7 23 NJ 10590 NJ 9990 NJ 9990 NJ 10940 NJ 10940 NJ 10940 NJ 10940 NJ 10960 NJ 10940 NJ 10940 NJ 10940 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ
-preplace netloc OR_5_Res 1 10 5 NJ 10700 NJ 10600 NJ 10600 NJ 9990 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg55 1 13 17 6840 11530 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11610 15770
+preplace netloc rst_processing_system7_0_100M_peripheral_aresetn 1 7 22 NJ 10580 NJ 10020 NJ 10020 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11060 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ
+preplace netloc OR_5_Res 1 10 5 NJ 10620 NJ 10610 NJ 10610 NJ 9990 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out193 1 11 4 NJ 7920 NJ 7790 NJ 7790 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg56 1 13 18 6870 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11640 NJ 11640 NJ 11640 NJ 11640 NJ 11640 NJ 11640 NJ 11640 NJ 11640 15780
-preplace netloc pixelTrigger_0_Trig 1 10 5 NJ 10810 NJ 10800 NJ 10800 NJ 10910 7390
-preplace netloc DnCntr_3_Q 1 10 16 NJ 10540 NJ 10540 NJ 10540 NJ 10300 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ 10500 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10470 NJ 10480 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg56 1 13 17 6860 11510 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11460 NJ 11620 15760
+preplace netloc pixelTrigger_0_Trig 1 10 5 NJ 10730 NJ 10730 NJ 10730 NJ 10530 7410
+preplace netloc DnCntr_3_Q 1 10 16 NJ 10540 NJ 10540 NJ 10540 NJ 10360 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out194 1 11 4 NJ 7930 NJ 7930 NJ 7930 NJ
-preplace netloc pixelFIFO_v1_0_0_roomForEvent 1 20 5 NJ 9890 NJ 9890 NJ 9890 NJ 9890 12860
-preplace netloc softGlueReg32_v1_0_0_in_reg57 1 13 18 6840 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 15880
+preplace netloc pixelFIFO_v1_0_0_roomForEvent 1 20 5 NJ 9860 NJ 9860 NJ 9860 NJ 9860 12860
+preplace netloc softGlueReg32_v1_0_0_in_reg57 1 13 17 6840 9830 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 NJ 9840 15870
 preplace netloc softGlue_300IO_v1_0_0_sg_out195 1 11 4 NJ 7940 NJ 7940 NJ 7940 NJ
 preplace netloc IBUF_DS_N_10_1 1 0 1 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg58 1 13 18 6870 11510 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11450 NJ 11630 15740
+preplace netloc softGlueReg32_v1_0_0_in_reg58 1 13 17 6850 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11560 NJ 11510 NJ 11510 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11470 NJ 11640 15780
 preplace netloc softGlue_300IO_v1_0_0_sg_out196 1 11 14 NJ 7980 NJ 8140 NJ 8140 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ 8170 NJ
 preplace netloc IBUF_DS_N_4_1 1 0 1 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg59 1 13 18 6870 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 15870
-preplace netloc AND_4_Res 1 10 18 NJ 10470 NJ 10470 NJ 10470 NJ 10390 NJ 10490 NJ 10450 NJ 10450 NJ 10450 NJ 10450 NJ 10450 NJ 10450 NJ 10450 NJ 10450 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg59 1 13 17 6850 9840 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 15860
+preplace netloc AND_4_Res 1 10 18 NJ 10470 NJ 10470 NJ 10470 NJ 10450 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out197 1 11 14 NJ 8390 NJ 8390 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ 8300 NJ
-preplace netloc XOR_2_Res 1 10 6 NJ 10650 NJ 10640 NJ 10640 NJ 10120 NJ 10160 NJ
+preplace netloc XOR_2_Res 1 10 6 NJ 10670 NJ 10660 NJ 10660 NJ 10190 NJ 10190 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out140 1 11 2 NJ 6860 2890
 preplace netloc softGlue_300IO_v1_0_0_sg_out198 1 11 14 NJ 8360 NJ 8380 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ 8310 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out141 1 11 2 NJ 6880 2880
 preplace netloc softGlue_300IO_v1_0_0_sg_out199 1 11 14 NJ 7950 NJ 7950 NJ 7950 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ 8180 NJ
-preplace netloc DFF_2_Q 1 10 6 NJ 10490 NJ 10490 NJ 10490 NJ 10090 NJ 10140 NJ
+preplace netloc DFF_2_Q 1 10 6 NJ 10490 NJ 10490 NJ 10490 NJ 10160 NJ 10160 NJ
 preplace netloc util_ds_buf_4_IBUF_OUT 1 1 10 -9680 8860 NJ 8860 NJ 8860 NJ 8860 NJ 8860 NJ 8860 NJ 8860 NJ 8860 NJ 8860 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out142 1 11 2 NJ 6900 2860
 preplace netloc scaler_or_Res 1 16 1 10430
 preplace netloc IBUF_DS_N_9_1 1 0 1 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out143 1 11 4 NJ 6920 NJ 6920 NJ 6920 NJ
-preplace netloc DnCntr_4_Counts 1 27 3 NJ 8460 NJ 8460 NJ
+preplace netloc DnCntr_4_Counts 1 27 2 NJ 8460 NJ
 preplace netloc processing_system7_0_axi_periph_M04_AXI 1 6 3 NJ 7420 NJ 7420 -1100
-preplace netloc util_vector_logic_0_Res 1 3 6 NJ 11550 NJ 11720 NJ 11620 NJ 11580 NJ 11580 -1080
+preplace netloc util_vector_logic_0_Res 1 3 6 NJ 11480 NJ 11430 NJ 11440 NJ 11570 NJ 11570 -1080
 preplace netloc softGlue_300IO_v1_0_0_sg_out144 1 11 4 NJ 6940 NJ 6940 NJ 6940 NJ
-preplace netloc processing_system7_0_axi_periph_M05_AXI 1 8 1 -1030
+preplace netloc processing_system7_0_axi_periph_M05_AXI 1 8 1 -1000
 preplace netloc IBUF_DS_P_3_1 1 0 1 NJ
-preplace netloc quadDec_1_step 1 10 4 NJ 10840 NJ 10830 NJ 10830 NJ
+preplace netloc quadDec_1_step 1 10 4 NJ 10840 NJ 10840 NJ 10840 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out145 1 11 4 NJ 6960 NJ 6960 NJ 6960 NJ
+preplace netloc processing_system7_0_axi_periph_M06_AXI 1 8 1 -1020
 preplace netloc scalerChan_13_Counts 1 22 1 12260
-preplace netloc OR_4_Res 1 10 18 NJ 10590 NJ 10590 NJ 10590 NJ 10530 NJ 10710 NJ 10710 NJ 10710 NJ 10710 NJ 10540 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10540 NJ 10540 NJ 10540 NJ 10540 NJ
+preplace netloc OR_4_Res 1 10 18 NJ 10600 NJ 10590 NJ 10590 NJ 10270 NJ 10540 NJ 10540 NJ 10540 NJ 10540 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out146 1 11 14 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ 6980 NJ
-preplace netloc updncntr_3_Q 1 10 16 NJ 10180 NJ 9170 NJ 9170 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ
+preplace netloc updncntr_3_Q 1 10 16 NJ 10150 NJ 9170 NJ 9170 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ 9210 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out147 1 11 14 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ 7000 NJ
-preplace netloc scalerChan_15_Counts 1 22 1 12290
-preplace netloc updncntr_4_Q 1 10 19 NJ 10770 NJ 10770 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ
+preplace netloc scalerChan_15_Counts 1 22 1 12280
+preplace netloc updncntr_4_Q 1 10 19 NJ 10210 NJ 10210 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9540 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out148 1 11 14 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ 7020 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out149 1 11 16 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ 7040 NJ
 preplace netloc util_ds_buf_10_IBUF_OUT 1 1 10 -9650 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ
-preplace netloc updncntr_3_Counts 1 3 27 NJ 11110 NJ 11110 NJ 11110 NJ 11110 NJ 11350 NJ 11350 NJ 11350 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 13520 10960 NJ 10960 NJ 10960 NJ 10960 NJ
+preplace netloc updncntr_3_Counts 1 3 26 NJ 11160 NJ 11300 NJ 11300 NJ 11300 NJ 11380 NJ 11380 NJ 11380 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 11040 NJ 10970 NJ 10970 NJ 10960 NJ 10960 13520 10960 NJ 10960 NJ 10960 NJ
 preplace netloc util_ds_buf_6_IBUF_OUT 1 1 10 -9730 8900 NJ 8900 NJ 8900 NJ 8900 NJ 8900 NJ 8900 NJ 8900 NJ 8900 NJ 8900 NJ
-preplace netloc processing_system7_0_axi_periph_M02_AXI 1 8 22 NJ 10280 NJ 10280 NJ 10750 NJ 10750 NJ 10750 NJ 10550 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ
-preplace netloc DnCntr_3_Counts 1 25 5 NJ 8430 NJ 8550 NJ 8550 NJ 8550 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg40 1 12 19 NJ 10150 NJ 10150 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10780 NJ 10780 NJ 10870 NJ 10750 NJ 10750 NJ 10750 NJ 10750 NJ 10750 NJ 10750 NJ 10750 NJ 10750 NJ 10750 15720
-preplace netloc softGlueReg32_v1_0_0_in_reg41 1 14 17 NJ 10780 NJ 10780 NJ 10780 NJ 10780 NJ 10790 NJ 10790 NJ 10890 NJ 10760 NJ 10760 NJ 10760 NJ 10760 NJ 10760 NJ 10760 NJ 10760 NJ 10760 NJ 10760 15710
-preplace netloc softGlueReg32_v1_0_0_in_reg42 1 24 7 NJ 10430 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 15750
-preplace netloc softGlueReg32_v1_0_0_in_reg43 1 27 4 NJ 9570 NJ 9570 NJ 9560 15840
-preplace netloc softGlueReg32_v1_0_0_in_reg44 1 19 12 11270 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11560 15770
+preplace netloc processing_system7_0_axi_periph_M02_AXI 1 8 21 NJ 10280 NJ 10280 NJ 10900 NJ 10900 NJ 10900 NJ 10910 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10850 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ
+preplace netloc DnCntr_3_Counts 1 25 4 NJ 8430 NJ 8550 NJ 8550 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg40 1 12 18 NJ 10150 NJ 10130 NJ 10510 NJ 10500 NJ 10500 NJ 10500 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 15710
+preplace netloc softGlueReg32_v1_0_0_in_reg41 1 14 16 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 NJ 10200 15740
+preplace netloc softGlueReg32_v1_0_0_in_reg42 1 24 6 NJ 10250 NJ 10250 NJ 10250 NJ 10250 NJ 10250 15730
+preplace netloc softGlueReg32_v1_0_0_in_reg43 1 27 3 NJ 9580 NJ 9580 15830
+preplace netloc softGlueReg32_v1_0_0_in_reg44 1 19 11 11290 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11340 NJ 11550 15750
 preplace netloc IBUF_DS_N_5_1 1 0 1 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg45 1 12 19 NJ 10350 NJ 10350 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10820 NJ 10860 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 15730
-preplace netloc xlconcat_3_dout 1 3 13 NJ 11160 NJ 11300 NJ 11300 NJ 11300 NJ 11360 NJ 11360 NJ 11360 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11150 9850
+preplace netloc softGlueReg32_v1_0_0_in_reg45 1 12 18 NJ 10340 NJ 10340 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10560 NJ 10560 15720
+preplace netloc xlconcat_3_dout 1 3 13 NJ 11150 NJ 11150 NJ 11150 NJ 11150 NJ 11370 NJ 11370 NJ 11370 NJ 11140 NJ 11140 NJ 11140 NJ 11140 NJ 11140 9850
 preplace netloc IBUF_DS_P_8_1 1 0 1 NJ
-preplace netloc pixelTrigger_0_miss 1 10 5 NJ 10720 NJ 10720 NJ 10720 NJ 10410 7380
-preplace netloc softGlueReg32_v1_0_0_in_reg46 1 12 19 NJ 10380 NJ 10380 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10670 15760
+preplace netloc pixelTrigger_0_miss 1 10 5 NJ 10740 NJ 10740 NJ 10740 NJ 10410 7380
+preplace netloc softGlueReg32_v1_0_0_in_reg46 1 12 18 NJ 10330 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 NJ 10240 15800
 preplace netloc sg_in056_1 1 0 20 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 12440 NJ 12440 NJ 12440 NJ 12440 NJ 12440 NJ 12440 NJ 12440 NJ 12440 NJ 12440 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg47 1 14 17 NJ 10410 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 NJ 10390 15820
-preplace netloc quadDec_2_step 1 10 6 NJ 10880 NJ 10880 NJ 10880 NJ 10190 NJ 10190 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg48 1 14 17 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 15810
-preplace netloc softGlueReg32_v1_0_0_in_reg49 1 2 29 NJ 11540 NJ 11540 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11800 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11570 15750
+preplace netloc softGlueReg32_v1_0_0_in_reg47 1 14 16 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 NJ 10410 15780
+preplace netloc quadDec_2_step 1 10 6 NJ 10920 NJ 10920 NJ 10920 NJ 10150 NJ 10150 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg48 1 14 16 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 NJ 10420 15770
+preplace netloc softGlueReg32_v1_0_0_in_reg49 1 2 28 NJ 11540 NJ 11540 NJ 11750 NJ 11740 NJ 11740 NJ 11740 NJ 11740 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11810 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11440 NJ 11560 15740
 preplace netloc util_ds_buf_7_IBUF_OUT 1 1 10 -9720 8920 NJ 8920 NJ 8920 NJ 8920 NJ 8920 NJ 8920 NJ 8920 NJ 8920 NJ 8920 NJ
 preplace netloc IBUF_DS_N_2_1 1 0 1 NJ
-preplace netloc OR_2_Res 1 10 6 NJ 10680 NJ 10570 NJ 10570 NJ 9970 NJ 9940 NJ
+preplace netloc OR_2_Res 1 10 6 NJ 10570 NJ 10550 NJ 10550 NJ 10180 NJ 10180 NJ
 preplace netloc scalersToStream_0_M_AXIS 1 4 1 NJ
-preplace netloc scalerChan_4_Counts 1 20 3 11540 11420 NJ 11410 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg32 1 12 19 NJ 8490 NJ 8490 NJ 8500 NJ 8490 NJ 8490 NJ 8490 NJ 8490 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8540 NJ 8540 NJ 8540 NJ 8540 15790
-preplace netloc softGlueReg32_v1_0_0_in_reg33 1 14 17 NJ 10830 NJ 10830 NJ 10830 NJ 10830 NJ 10830 NJ 10830 NJ 10880 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10720 15690
+preplace netloc scalerChan_4_Counts 1 20 3 11600 11380 NJ 11380 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg32 1 12 18 NJ 8490 NJ 8490 NJ 8500 NJ 8490 NJ 8490 NJ 8490 NJ 8490 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8530 NJ 8540 NJ 8540 NJ 8540 15790
+preplace netloc softGlueReg32_v1_0_0_in_reg33 1 14 16 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 15680
 preplace netloc util_ds_buf_3_IBUF_OUT 1 1 10 -9740 8840 NJ 8840 NJ 8840 NJ 8840 NJ 8840 NJ 8840 NJ 8840 NJ 8840 NJ 8840 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg34 1 24 7 NJ 9550 NJ 9550 NJ 9550 NJ 9560 NJ 9560 NJ 9550 15780
-preplace netloc softGlueReg32_v1_0_0_in_reg35 1 26 5 13950 9680 NJ 9680 NJ 9680 NJ 9680 15770
-preplace netloc scalerChan_12_Counts 1 22 1 12200
-preplace netloc gateDly_3_Q 1 10 16 NJ 10860 NJ 10680 NJ 10680 NJ 10400 NJ 10600 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ 10590 NJ
-preplace netloc softGlueReg32_v1_0_0_in_reg36 1 12 19 NJ 10140 NJ 10140 NJ 10700 NJ 10700 NJ 10700 NJ 10700 NJ 10680 NJ 10680 NJ 10850 NJ 10740 NJ 10740 NJ 10740 NJ 10740 NJ 10740 NJ 10740 NJ 10740 NJ 10740 NJ 10740 15700
-preplace netloc softGlueReg32_v1_0_0_in_reg37 1 14 17 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 15830
-preplace netloc softGlueReg32_v1_0_0_in_reg38 1 24 7 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10470 15740
-preplace netloc S00_AXI_1 1 6 2 -2180 10690 -1730
-preplace netloc softGlueReg32_v1_0_0_in_reg39 1 26 5 14020 9690 NJ 9690 NJ 9690 NJ 9690 15800
+preplace netloc softGlueReg32_v1_0_0_in_reg34 1 24 6 NJ 9550 NJ 9550 NJ 9550 NJ 9550 NJ 9550 15760
+preplace netloc softGlueReg32_v1_0_0_in_reg35 1 26 4 13970 9560 NJ 9560 NJ 9560 15750
+preplace netloc scalerChan_12_Counts 1 22 1 12210
+preplace netloc gateDly_3_Q 1 10 16 NJ 10700 NJ 10700 NJ 10700 NJ 10490 NJ 10670 NJ 10670 NJ 10670 NJ 10670 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ
+preplace netloc softGlueReg32_v1_0_0_in_reg36 1 12 18 NJ 10140 NJ 10140 NJ 10830 NJ 10830 NJ 10830 NJ 10830 NJ 10830 NJ 10830 NJ 10860 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10770 15690
+preplace netloc softGlueReg32_v1_0_0_in_reg37 1 14 16 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 15820
+preplace netloc softGlueReg32_v1_0_0_in_reg38 1 24 6 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 15700
+preplace netloc S00_AXI_1 1 6 2 -2150 10690 -1730
+preplace netloc softGlueReg32_v1_0_0_in_reg39 1 26 4 14040 9570 NJ 9570 NJ 9570 15810
 preplace netloc IBUF_DS_N_8_1 1 0 1 NJ
-preplace netloc gateDly_2_Q 1 10 6 NJ 10670 NJ 10670 NJ 10670 NJ 10370 NJ 10440 NJ
-preplace netloc pixelTrigger_1_Pixel 1 14 16 NJ 11400 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ
-preplace netloc quadDec_2_miss 1 10 6 NJ 10870 NJ 10860 NJ 10860 NJ 10180 NJ 10180 NJ
-preplace netloc fifo_generator_1_axis_prog_full 1 6 5 -2220 9020 NJ 9020 NJ 9020 NJ 9020 NJ
-preplace netloc mux2_2_Outp 1 10 18 NJ 10710 NJ 10710 NJ 10710 NJ 10490 NJ 10640 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10620 NJ 10640 NJ 10640 NJ 10640 NJ 10640 14300
-preplace netloc pixelTrigger_1_miss 1 10 5 NJ 10760 NJ 10740 NJ 10740 NJ 10480 7370
-preplace netloc UpCntr_3_Counts 1 3 27 NJ 11490 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ 11760 NJ 9960 NJ 9960 NJ 9960 NJ 10580 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 NJ 10550 13500 10480 NJ 10480 NJ 10480 NJ 10480 NJ
-preplace netloc AND_3_Res 1 10 16 NJ 10460 NJ 10460 NJ 10460 NJ 10450 NJ 10680 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ
+preplace netloc gateDly_2_Q 1 10 6 NJ 10690 NJ 10690 NJ 10690 NJ 10500 NJ 10500 NJ
+preplace netloc pixelTrigger_1_Pixel 1 14 15 NJ 11410 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ 11360 NJ
+preplace netloc quadDec_2_miss 1 10 6 NJ 10910 NJ 10910 NJ 10910 NJ 9980 NJ 9950 NJ
+preplace netloc fifo_generator_1_axis_prog_full 1 6 5 -2210 9020 NJ 9020 NJ 9020 NJ 9020 NJ
+preplace netloc mux2_2_Outp 1 10 18 NJ 10890 NJ 10890 NJ 10890 NJ 10920 NJ 10810 NJ 10810 NJ 10810 NJ 10810 NJ 10810 NJ 10810 NJ 10890 NJ 10890 NJ 10890 NJ 10890 NJ 10890 NJ 10890 NJ 10890 14330
+preplace netloc pixelTrigger_1_miss 1 10 5 NJ 10760 NJ 10760 NJ 10760 NJ 10550 7370
+preplace netloc UpCntr_3_Counts 1 3 26 NJ 11500 NJ 11740 NJ 11680 NJ 11680 NJ 11680 NJ 11690 NJ 11690 NJ 11690 NJ 9950 NJ 9950 NJ 9950 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 NJ 10440 13530 10440 NJ 10440 NJ 10440 NJ
+preplace netloc AND_3_Res 1 10 16 NJ 10460 NJ 10460 NJ 10460 NJ 10440 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out230 1 11 12 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 NJ 8520 12240
 preplace netloc IBUF_DS_N_7_1 1 0 1 NJ
 preplace netloc IBUF_DS_P_4_1 1 0 1 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out231 1 9 23 NJ 10470 NJ 10920 NJ 10920 NJ 10920 NJ 10200 NJ 10200 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10150 NJ 10130 NJ 10130 NJ 10130 NJ 10130 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out232 1 9 23 NJ 10400 NJ 10900 NJ 10900 NJ 10900 NJ 10250 NJ 10250 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10150 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out231 1 9 22 NJ 10400 NJ 10780 NJ 10810 NJ 10810 NJ 10250 NJ 10250 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10130 NJ 10130 NJ 10130 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out232 1 9 22 NJ 10410 NJ 10790 NJ 10790 NJ 10790 NJ 10380 NJ 10440 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10140 NJ 10150 NJ 10150 NJ 10150 NJ 10150 NJ
 preplace netloc sg_in069_1 1 0 11 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ 8440 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out233 1 9 23 NJ 10410 NJ 10420 NJ 9490 NJ 9490 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out234 1 9 23 NJ 10330 NJ 10330 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ 9580 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out235 1 9 23 NJ 10230 NJ 10230 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ
-preplace netloc updncntr_1_Q 1 10 4 NJ 10150 NJ 9210 NJ 9210 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out236 1 9 23 NJ 10460 NJ 10580 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9560 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out233 1 9 22 NJ 10440 NJ 10800 NJ 10800 NJ 10800 NJ 10350 NJ 10430 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10170 NJ 10140 NJ 10140 NJ 10140 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out234 1 9 22 NJ 10460 NJ 10770 NJ 10780 NJ 10780 NJ 10330 NJ 10460 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ 10290 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out235 1 9 22 NJ 10380 NJ 10380 NJ 9430 NJ 9430 NJ 9450 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ 9520 NJ
+preplace netloc updncntr_1_Q 1 10 4 NJ 10160 NJ 9210 NJ 9210 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out236 1 9 22 NJ 10340 NJ 10340 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ 9590 NJ
 preplace netloc processing_system7_0_axi_periph_M01_AXI 1 8 3 -1000 7020 NJ 7020 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out237 1 9 23 NJ 10450 NJ 10600 NJ 9710 NJ 9890 NJ 9890 NJ 9890 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ 9870 NJ
-preplace netloc sg_in058_1 1 0 20 NJ 9890 NJ 9890 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9910 NJ 9910 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out238 1 9 23 NJ 10340 NJ 10350 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9570 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ
-preplace netloc xlslice_3_Dout 1 30 1 15950
-preplace netloc gateDelayFast_2_Q 1 15 16 10020 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10160 NJ 10060 NJ 10060 NJ 10060 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out239 1 9 22 NJ 10310 NJ 10310 NJ 9690 NJ 9830 NJ 9830 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ 9850 NJ
-preplace netloc DFF_3_Q 1 10 16 NJ 10500 NJ 10500 NJ 10500 NJ 10360 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10450 NJ 10450 NJ
-preplace netloc sg_in053_1 1 0 20 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 10910 NJ 10910 NJ 10910 NJ 10320 NJ 10810 NJ 10810 NJ 10810 NJ 10810 NJ 10810 NJ
-preplace netloc xlslice_1_Dout 1 30 1 15890
-preplace netloc one_dout 1 19 3 11130 11740 NJ 11740 NJ
-preplace netloc gateDelayFast_3_Q 1 3 28 -4290 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 10170 NJ 10170 NJ 10160 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ
-preplace netloc sg_in066_1 1 0 22 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 10010 NJ 10010 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11030 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 NJ 11020 11770
+preplace netloc softGlue_300IO_v1_0_0_sg_out237 1 9 22 NJ 10310 NJ 10310 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ 9600 NJ
+preplace netloc sg_in058_1 1 0 20 NJ 9890 NJ 9890 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ 12840 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out238 1 9 22 NJ 10320 NJ 10320 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ
+preplace netloc xlslice_3_Dout 1 29 1 15940
+preplace netloc gateDelayFast_2_Q 1 15 15 N 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ 10330 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out239 1 9 21 NJ 10330 NJ 10330 NJ 9490 NJ 9490 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ
+preplace netloc DFF_3_Q 1 10 16 NJ 10500 NJ 10500 NJ 10500 NJ 10460 NJ 10720 NJ 10720 NJ 10720 NJ 10720 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ
+preplace netloc sg_in053_1 1 0 20 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 9790 NJ 10860 NJ 10860 NJ 10860 NJ 10320 NJ 10780 NJ 10780 NJ 10780 NJ 10780 NJ 10790 NJ
+preplace netloc xlslice_1_Dout 1 29 1 15890
+preplace netloc one_dout 1 19 3 11200 11730 NJ 11730 NJ
+preplace netloc gateDelayFast_3_Q 1 3 27 -4290 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 12090 NJ 9960 NJ 9960 NJ 9960 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ 10220 NJ
+preplace netloc sg_in066_1 1 0 22 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9990 NJ 9970 NJ 10040 NJ 10040 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11000 NJ 11000 NJ 11000 NJ 11010 NJ 11010 NJ 11010 11840
 preplace netloc processing_system7_0_axi_periph_M03_AXI 1 8 16 NJ 10300 NJ 10300 NJ 10930 NJ 10930 NJ 10930 NJ 10930 NJ 10950 NJ 10930 NJ 10930 NJ 10930 NJ 10950 NJ 10930 NJ 10930 NJ 10930 NJ 10930 12560
-preplace netloc S01_AXI_1 1 6 2 -2170 10700 -1740
+preplace netloc S01_AXI_1 1 6 2 -2140 10700 -1740
 preplace netloc IBUF_DS_P_7_1 1 0 1 NJ
-preplace netloc xlconcat_2_dout 1 10 1 -80
-preplace netloc freqCounter_0_Counts 1 29 2 15020 8610 15770
-preplace netloc updncntr_4_Counts 1 28 2 NJ 9400 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out240 1 9 22 NJ 10320 NJ 10320 NJ 9500 NJ 9500 NJ 9500 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9510 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ
+preplace netloc xlconcat_2_dout 1 10 1 -60
+preplace netloc freqCounter_0_Counts 1 28 2 14950 8610 15750
+preplace netloc updncntr_4_Counts 1 28 1 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out240 1 9 21 NJ 10360 NJ 10360 NJ 9710 NJ 9890 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ 9910 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out130 1 11 4 NJ 6660 NJ 6660 NJ 6660 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out241 1 9 22 NJ 10240 NJ 10240 NJ 9530 NJ 9530 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ 9660 NJ
-preplace netloc sg_in062_1 1 0 22 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 10570 NJ 10570 NJ 10380 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11010 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out241 1 9 21 NJ 10260 NJ 10260 NJ 9720 NJ 9910 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ 9920 NJ
+preplace netloc sg_in062_1 1 0 22 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9960 NJ 9970 NJ 9970 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 11000 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out131 1 11 4 NJ 6680 NJ 6680 NJ 6680 NJ
 preplace netloc scalerChan_9_Counts 1 22 1 12190
-preplace netloc softGlue_300IO_v1_0_0_sg_out242 1 9 22 NJ 10270 NJ 10280 NJ 9520 NJ 9520 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out242 1 9 21 NJ 10270 NJ 10270 NJ 9690 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ 9900 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out132 1 11 14 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ 6700 NJ
-preplace netloc ssi_master_0_ssi_clk 1 10 3 NJ 10210 NJ 10210 2380
-preplace netloc softGlue_300IO_v1_0_0_sg_out243 1 9 23 NJ 10220 NJ 10220 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9610 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ
+preplace netloc ssi_master_0_ssi_clk 1 10 3 NJ 10230 NJ 10230 2380
+preplace netloc softGlue_300IO_v1_0_0_sg_out243 1 9 22 NJ 10470 NJ 10480 NJ 9620 NJ 9620 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out133 1 11 14 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ 6720 NJ
-preplace netloc quadDec_1_dir 1 10 4 NJ 10780 NJ 10780 NJ 10780 NJ
-preplace netloc scalerChan_1_Q 1 10 11 560 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 9860 11420 NJ 11420 NJ 11420 NJ 11420 NJ 11420 11500
-preplace netloc softGlue_300IO_v1_0_0_sg_out244 1 9 23 NJ 10290 NJ 10290 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9620 NJ 9630 NJ 9630 NJ 9630 NJ 9630 NJ
+preplace netloc quadDec_1_dir 1 10 4 NJ 10810 NJ 10820 NJ 10820 NJ
+preplace netloc scalerChan_1_Q 1 10 11 520 10990 NJ 10990 NJ 10990 NJ 10990 NJ 10990 10050 11420 NJ 11420 NJ 11420 NJ 11420 NJ 11420 11560
+preplace netloc softGlue_300IO_v1_0_0_sg_out244 1 9 22 NJ 10450 NJ 10450 NJ 9440 NJ 9440 NJ 9440 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9490 NJ 9510 NJ 9510 NJ 9510 NJ 9540 NJ 9540 NJ 9540 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out134 1 11 14 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ 6740 NJ
 preplace netloc scaler_or2_Res 1 17 1 10640
-preplace netloc softGlue_300IO_v1_0_0_sg_out245 1 9 23 NJ 10250 NJ 10250 NJ 9150 NJ 9150 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8930 NJ 8940 NJ 8940 NJ 8950 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out245 1 9 22 NJ 10290 NJ 10290 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9500 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ 9640 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out135 1 11 14 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ 6760 NJ
-preplace netloc processing_system7_0_FCLK_CLK0 1 3 27 NJ 11530 NJ 11430 NJ 11430 NJ 10660 -1660 11400 -1050 11220 NJ 11220 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11120 NJ 11390 NJ 11390 NJ 11390 NJ 11390 NJ 11380 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ 11480 NJ
-preplace netloc DnCntr_4_Q 1 10 18 NJ 10550 NJ 10550 NJ 10550 NJ 10310 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ 10510 NJ
+preplace netloc processing_system7_0_FCLK_CLK0 1 3 26 NJ 11580 NJ 11770 NJ 11460 NJ 10680 -1650 11400 -1040 11220 NJ 11220 NJ 11080 NJ 11080 NJ 11080 NJ 11080 NJ 11080 NJ 11080 NJ 11080 NJ 11370 NJ 11370 NJ 11370 NJ 11370 NJ 11370 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ 11430 NJ
+preplace netloc DnCntr_4_Q 1 10 18 NJ 10560 NJ 10560 NJ 10560 NJ 10300 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10560 NJ 10560 NJ
 preplace netloc util_ds_buf_1_IBUF_OUT 1 1 10 -9750 8800 NJ 8800 NJ 8800 NJ 8800 NJ 8800 NJ 8800 NJ 8800 NJ 8800 NJ 8800 NJ
-preplace netloc scalersToFIFO_1_chanAdvDone 1 10 14 NJ 10890 NJ 10890 NJ 10890 NJ 10470 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 NJ 10660 12530
-preplace netloc softGlue_300IO_v1_0_0_sg_out246 1 9 23 NJ 10370 NJ 10370 NJ 9120 NJ 9120 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8950 NJ 8950 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out246 1 9 22 NJ 10220 NJ 10220 NJ 9510 NJ 9510 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ 9650 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out136 1 11 16 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ 6780 NJ
-preplace netloc softGlue_300IO_v1_0_0_irq 1 7 5 NJ 10790 NJ 10440 NJ 10440 NJ 10570 1240
-preplace netloc softGlue_300IO_v1_0_0_sg_out247 1 11 21 NJ 10870 NJ 10870 NJ 10460 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10620 NJ 10620 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ
-preplace netloc sg_in067_1 1 0 22 NJ 10070 NJ 10070 NJ 10070 NJ 10070 NJ 10070 NJ 10070 NJ 10070 NJ 9960 NJ 9960 NJ 9960 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13010 N
-preplace netloc DFF_1_Q 1 10 4 NJ 10480 NJ 10480 NJ 10480 NJ
+preplace netloc processing_system7_0_FCLK_CLK2 1 8 1 -1070
+preplace netloc softGlue_300IO_v1_0_0_irq 1 7 5 NJ 11650 NJ 11650 NJ 11650 NJ 11650 1250
+preplace netloc softGlue_300IO_v1_0_0_sg_out247 1 11 20 NJ 9000 NJ 9080 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ
+preplace netloc sg_in067_1 1 0 22 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 10000 NJ 9990 NJ 9990 NJ 9990 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13180 NJ 13010 N
+preplace netloc DFF_1_Q 1 10 4 NJ 10550 NJ 10480 NJ 10480 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out137 1 11 16 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ 6800 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out248 1 11 21 NJ 9020 NJ 9130 NJ 8950 NJ 8950 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out248 1 11 20 NJ 9020 NJ 9090 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8940 NJ 8950 NJ 8940 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out138 1 11 16 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ 6820 NJ
-preplace netloc processing_system7_0_FCLK_CLK3 1 8 1 -1060
-preplace netloc softGlue_300IO_v1_0_0_sg_out249 1 11 21 NJ 9040 NJ 9140 NJ 8960 NJ 8960 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ 9020 NJ
+preplace netloc processing_system7_0_FCLK_CLK3 1 8 1 -1030
+preplace netloc softGlue_300IO_v1_0_0_sg_out249 1 11 20 NJ 9040 NJ 9110 NJ 8950 NJ 8950 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out139 1 11 16 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ 6840 NJ
-preplace netloc demux2_2_Out0 1 10 6 NJ 10300 NJ 10300 NJ 10330 NJ 10280 NJ 10450 NJ
-preplace netloc demux2_2_Out1 1 10 6 NJ 10410 NJ 10410 NJ 10410 NJ 10260 NJ 10470 NJ
+preplace netloc demux2_2_Out0 1 10 6 NJ 10390 NJ 10390 NJ 10390 NJ 10280 NJ 10450 NJ
+preplace netloc demux2_2_Out1 1 10 6 NJ 10400 NJ 10400 NJ 10400 NJ 10260 NJ 10640 NJ
 preplace netloc IBUF_DS_N_1 1 0 1 NJ
-preplace netloc pixelTrigger_1_Counts 1 14 16 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ
+preplace netloc pixelTrigger_1_Counts 1 14 15 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ 11280 NJ
 preplace netloc IBUF_DS_N_2 1 0 1 NJ
-preplace netloc gateDly_4_Q 1 10 18 NJ 10800 NJ 10690 NJ 10690 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ
-preplace netloc xlslice_4_Dout 1 30 1 15960
-preplace netloc softGlue_300IO_v1_0_0_sg_out281 1 11 6 NJ 9680 NJ 9870 NJ 9870 NJ 9870 NJ 9880 10430
-preplace netloc softGlue_300IO_v1_0_0_sg_out120 1 10 2 770 5960 1360
-preplace netloc softGlue_300IO_v1_0_0_sg_out282 1 11 5 NJ 9700 NJ 9880 NJ 9880 NJ 9880 9870
-preplace netloc softGlue_300IO_v1_0_0_sg_out121 1 10 2 780 5970 1340
-preplace netloc processing_system7_0_M_AXI_GP0 1 7 2 -1620 10800 -1090
-preplace netloc softGlue_300IO_v1_0_0_sg_out283 1 11 9 NJ 9720 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 NJ 9860 11210
-preplace netloc softGlue_300IO_v1_0_0_sg_out250 1 11 21 NJ 9060 NJ 9090 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8970 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out122 1 10 2 790 5990 1320
-preplace netloc softGlue_300IO_v1_0_0_sg_out123 1 10 2 760 5940 1370
-preplace netloc softGlue_300IO_v1_0_0_sg_out251 1 11 21 NJ 9080 NJ 9110 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ
-preplace netloc scalerChan_11_Counts 1 22 1 12180
-preplace netloc softGlue_300IO_v1_0_0_sg_out252 1 11 21 NJ 9100 NJ 9100 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 8990 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ
+preplace netloc gateDly_4_Q 1 10 18 NJ 10710 NJ 10710 NJ 10710 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ 10230 NJ
+preplace netloc xlslice_4_Dout 1 29 1 15950
+preplace netloc softGlue_300IO_v1_0_0_sg_out281 1 11 6 NJ 9680 NJ 9870 NJ 9870 NJ 9870 NJ 9870 10430
+preplace netloc softGlue_300IO_v1_0_0_sg_out120 1 10 2 760 5960 1350
+preplace netloc softGlue_300IO_v1_0_0_sg_out282 1 11 5 NJ 9700 NJ 9880 NJ 9880 NJ 9880 10060
+preplace netloc softGlue_300IO_v1_0_0_sg_out121 1 10 2 770 5970 1340
+preplace netloc processing_system7_0_M_AXI_GP0 1 7 2 -1610 10780 -1090
+preplace netloc softGlue_300IO_v1_0_0_sg_out283 1 11 9 NJ 9520 NJ 9520 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 NJ 9530 11190
+preplace netloc softGlue_300IO_v1_0_0_sg_out250 1 11 20 NJ 9060 NJ 9100 NJ 8970 NJ 8970 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ 8980 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out122 1 10 2 780 5990 1320
+preplace netloc softGlue_300IO_v1_0_0_sg_out123 1 10 2 750 5940 1360
+preplace netloc softGlue_300IO_v1_0_0_sg_out251 1 11 20 NJ 9080 NJ 9140 NJ 9140 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ 9240 NJ
+preplace netloc scalerChan_11_Counts 1 22 1 12190
+preplace netloc softGlue_300IO_v1_0_0_sg_out252 1 11 20 NJ 9110 NJ 9150 NJ 9150 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ 9250 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out124 1 11 2 N 6540 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out253 1 11 21 NJ 10840 NJ 10840 NJ 10440 NJ 10610 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 NJ 10570 N
-preplace netloc OR_6_Res 1 10 17 NJ 10620 NJ 10610 NJ 10610 NJ 10540 NJ 10540 NJ 10530 NJ 10530 NJ 10530 NJ 10530 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10530 NJ 10530 NJ 10530 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out253 1 11 20 NJ 9130 NJ 9130 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9010 NJ 9010 NJ 9010 NJ 9010 16130
+preplace netloc OR_6_Res 1 10 17 NJ 10630 NJ 10620 NJ 10620 NJ 10480 NJ 10680 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ 10430 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out125 1 11 2 N 6560 NJ
-preplace netloc processing_system7_0_DDR 1 2 7 -9370 7390 NJ 7390 NJ 7390 NJ 7390 NJ 7390 NJ 7390 -1050
-preplace netloc softGlue_300IO_v1_0_0_sg_out254 1 11 21 NJ 9140 NJ 9160 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9010 NJ 9010 NJ 9010 NJ 9010 NJ 9010 NJ 9010 NJ 9010 16090
+preplace netloc processing_system7_0_DDR 1 2 7 -9360 7390 NJ 7390 NJ 7390 NJ 7390 NJ 7390 NJ 7390 -1040
+preplace netloc softGlue_300IO_v1_0_0_sg_out254 1 11 19 NJ 9140 NJ 9810 NJ 10050 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10600 NJ 10590 NJ 10590 15900
 preplace netloc softGlue_300IO_v1_0_0_sg_out126 1 11 2 N 6580 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out255 1 11 3 NJ 9160 NJ 9900 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out255 1 11 3 NJ 9150 NJ 9860 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out127 1 11 2 N 6600 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out256 1 11 3 NJ 9180 NJ 9910 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out256 1 11 3 NJ 10630 NJ 10630 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out128 1 11 4 NJ 6620 NJ 6620 NJ 6620 NJ
-preplace netloc fhistoScalerStream_0_M_AXIS 1 4 1 -3500
-preplace netloc scalerChan_6_Counts 1 20 3 11560 11400 NJ 11400 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out257 1 11 3 NJ 10730 NJ 10730 NJ
+preplace netloc fhistoScalerStream_0_M_AXIS 1 4 1 -3490
+preplace netloc scalerChan_6_Counts 1 20 3 11630 11410 NJ 11410 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out257 1 11 3 NJ 10600 NJ 10600 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out129 1 11 4 NJ 6640 NJ 6640 NJ 6640 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out258 1 11 3 NJ 10760 NJ 10760 NJ
+preplace netloc xlslice_5_Dout 1 29 1 15960
+preplace netloc softGlue_300IO_v1_0_0_sg_out258 1 11 3 NJ 10770 NJ 10770 NJ
 preplace netloc IBUF_DS_N_6_1 1 0 1 NJ
 preplace netloc IBUF_DS_P_1_1 1 0 1 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out259 1 11 3 NJ 9240 NJ 9470 NJ
-preplace netloc axi_interconnect_0_M00_AXI 1 7 1 -1630
-preplace netloc UpCntr_2_Counts 1 3 27 NJ 11520 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ 11750 NJ 9940 NJ 9940 NJ 9940 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10520 NJ 10490 NJ 10490 NJ 10490 NJ 10490 NJ 10500 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out259 1 11 3 NJ 9240 NJ 9570 NJ
+preplace netloc axi_interconnect_0_M00_AXI 1 7 1 -1660
+preplace netloc UpCntr_2_Counts 1 3 26 NJ 11490 NJ 11710 NJ 11710 NJ 11710 NJ 11710 NJ 11710 NJ 11710 NJ 11710 NJ 9970 NJ 9940 NJ 9940 NJ 10470 NJ 10460 NJ 10460 NJ 10460 NJ 10460 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ
 preplace netloc IBUF_DS_P_9_1 1 0 1 NJ
-preplace netloc sg_in064_1 1 0 22 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 10960 NJ 10960 NJ 10960 NJ 10960 NJ 10970 NJ 10960 NJ 10960 NJ 10960 NJ 10970 NJ 10970 NJ 10970 NJ
+preplace netloc sg_in064_1 1 0 22 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 9970 NJ 10570 NJ 10570 NJ 10390 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ 10970 NJ 10960 NJ 10960 NJ 10960 NJ 11000 NJ 11000 NJ 11000 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out270 1 11 3 NJ 9460 NJ 9460 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out271 1 11 3 NJ 9480 NJ 9480 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out110 1 11 4 N 6260 NJ 6260 NJ 6260 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out272 1 11 3 NJ 9510 NJ 9510 NJ
-preplace netloc demux2_1_Out0 1 10 4 NJ 10160 NJ 10160 NJ 10160 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out272 1 11 3 NJ 9530 NJ 9530 NJ
+preplace netloc demux2_1_Out0 1 10 4 NJ 10190 NJ 10170 NJ 10170 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out111 1 11 4 N 6280 NJ 6280 NJ 6280 NJ
-preplace netloc scalerChan_3_Counts 1 20 3 11520 11330 NJ 11330 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out273 1 3 9 NJ 10030 NJ 10030 NJ 10030 NJ 10030 NJ 10030 NJ 10040 NJ 10040 NJ 10190 1260
-preplace netloc demux2_1_Out1 1 10 4 NJ 10340 NJ 10340 NJ 10340 NJ
+preplace netloc scalerChan_3_Counts 1 20 3 11590 11330 NJ 11330 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out273 1 3 9 NJ 10020 NJ 10020 NJ 10020 NJ 10020 NJ 10020 NJ 10200 NJ 10200 NJ 10200 1240
+preplace netloc demux2_1_Out1 1 10 4 NJ 10370 NJ 10370 NJ 10370 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out112 1 11 14 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ 6300 NJ
-preplace netloc updncntr_2_Q 1 10 6 NJ 10790 NJ 10790 NJ 10790 NJ 9930 NJ 9930 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out274 1 11 1 1530
+preplace netloc updncntr_2_Q 1 10 6 NJ 10180 NJ 9940 NJ 9930 NJ 9930 NJ 9930 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out274 1 11 1 1500
 preplace netloc softGlue_300IO_v1_0_0_sg_out113 1 11 14 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ 6320 NJ
-preplace netloc gateDelayFast_1_Q 1 13 18 6270 10130 NJ 10170 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9940 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out275 1 11 1 1350
-preplace netloc softGlue_300IO_v1_0_0_sg_out260 1 11 3 NJ 9190 NJ 9190 NJ
-preplace netloc DnCntr_2_Q 1 10 6 NJ 10530 NJ 10530 NJ 10530 NJ 10110 NJ 10150 NJ
+preplace netloc gateDelayFast_1_Q 1 13 17 6310 10120 NJ 10140 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out275 1 11 1 1490
+preplace netloc softGlue_300IO_v1_0_0_sg_out260 1 11 3 NJ 9180 NJ 9180 NJ
+preplace netloc DnCntr_2_Q 1 10 6 NJ 10530 NJ 10530 NJ 10530 NJ 10210 NJ 10210 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out114 1 11 16 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ 6340 NJ
-preplace netloc scalerChan_7_Counts 1 20 3 11580 11530 NJ 11490 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out276 1 11 1 1330
-preplace netloc softGlue_300IO_v1_0_0_sg_out261 1 11 3 NJ 9220 NJ 9200 NJ
+preplace netloc scalerChan_7_Counts 1 20 3 11660 11530 NJ 11500 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out276 1 11 1 1480
+preplace netloc softGlue_300IO_v1_0_0_sg_out261 1 11 3 NJ 9190 NJ 9190 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out115 1 11 16 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ 6360 NJ
 preplace netloc scaler_or1_Res 1 17 1 10640
-preplace netloc softGlue_300IO_v1_0_0_sg_out277 1 11 1 1520
-preplace netloc softGlue_300IO_v1_0_0_sg_out262 1 11 3 NJ 9200 NJ 9180 NJ
-preplace netloc quadDec_2_dir 1 10 6 NJ 10850 NJ 10850 NJ 10850 NJ 10210 NJ 10210 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out277 1 11 1 1330
+preplace netloc softGlue_300IO_v1_0_0_sg_out262 1 11 3 NJ 9200 NJ 9200 NJ
+preplace netloc quadDec_2_dir 1 10 6 NJ 10850 NJ 10850 NJ 10850 NJ 9970 NJ 9940 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out116 1 11 2 N 6380 NJ
-preplace netloc DFF_4_Q 1 10 18 NJ 10510 NJ 10510 NJ 10510 NJ 10330 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10480 NJ 10470 NJ 10470 NJ 10470 NJ 10470 NJ 10460 NJ 10500 NJ 10500 NJ 10500 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out278 1 3 9 NJ 11870 NJ 11870 NJ 11870 NJ 11870 NJ 11870 NJ 11870 NJ 11870 NJ 11870 1290
+preplace netloc DFF_4_Q 1 10 18 NJ 10510 NJ 10510 NJ 10510 NJ 10470 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out278 1 3 9 NJ 11590 NJ 11760 NJ 11730 NJ 11730 NJ 11730 NJ 11730 NJ 11730 NJ 11730 1300
 preplace netloc IBUF_DS_P_6_1 1 0 1 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out263 1 11 3 NJ 9630 NJ 9630 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out263 1 11 3 NJ 9320 NJ 9470 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out117 1 11 2 N 6400 NJ
-preplace netloc xlslice_2_Dout 1 30 1 15930
-preplace netloc ARESETN_1 1 6 3 -2190 10680 -1630 10780 -1100
-preplace netloc softGlue_300IO_v1_0_0_sg_out264 1 11 3 NJ 9340 NJ 9450 NJ
+preplace netloc xlslice_2_Dout 1 29 1 15910
+preplace netloc ARESETN_1 1 6 3 -2160 10590 -1640 10590 -1100
+preplace netloc softGlue_300IO_v1_0_0_sg_out264 1 11 3 NJ 9340 NJ 9580 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out118 1 11 4 N 6420 NJ 6420 NJ 6420 NJ
 preplace netloc streamMux_0_m 1 5 1 -3070
-preplace netloc pixelTrigger_0_Counts 1 14 16 NJ 10690 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10640 NJ 10650 NJ 10650 NJ 10650 NJ 10650 NJ 10640 NJ 10640 NJ
-preplace netloc sg_in060_1 1 0 22 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9950 NJ 9940 NJ 9940 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ 11500 NJ 11540 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out265 1 11 3 NJ 9360 NJ 9840 NJ
+preplace netloc pixelTrigger_0_Counts 1 14 15 NJ 10710 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ 10630 NJ
+preplace netloc sg_in060_1 1 0 22 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 9940 NJ 10030 NJ 10030 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11540 NJ 11470 NJ 11470 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out265 1 11 3 NJ 9360 NJ 9820 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out119 1 11 4 N 6440 NJ 6440 NJ 6440 NJ
-preplace netloc AND_2_Res 1 10 6 NJ 10450 NJ 10450 NJ 10450 NJ 10080 NJ 10130 NJ
-preplace netloc Net1 1 21 1 11890
-preplace netloc xlconstant_0_dout 1 19 2 NJ 10730 11570
-preplace netloc softGlue_300IO_v1_0_0_sg_out266 1 11 3 NJ 9380 NJ 9810 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out267 1 11 3 NJ 9600 NJ 9600 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out268 1 11 3 NJ 9550 NJ 9550 NJ
-preplace netloc softGlue_300IO_v1_0_0_sg_out269 1 11 3 NJ 9440 NJ 9440 NJ
+preplace netloc AND_2_Res 1 10 6 NJ 10580 NJ 10450 NJ 10450 NJ 10090 NJ 10130 NJ
+preplace netloc Net1 1 21 1 11960
+preplace netloc xlconstant_0_dout 1 19 2 NJ 10730 11650
+preplace netloc softGlue_300IO_v1_0_0_sg_out266 1 11 3 NJ 9560 NJ 9560 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out267 1 11 3 NJ 9550 NJ 9550 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out268 1 11 3 NJ 9630 NJ 9630 NJ
+preplace netloc softGlue_300IO_v1_0_0_sg_out269 1 11 3 NJ 9450 NJ 9450 NJ
 preplace netloc util_ds_buf_11_IBUF_OUT 1 1 10 -9670 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ 9000 NJ
 preplace netloc util_ds_buf_9_IBUF_OUT 1 1 10 -9660 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ 8960 NJ
-preplace netloc DFF_5_Q 1 18 4 NJ 8920 NJ 8920 NJ 8920 11770
+preplace netloc DFF_5_Q 1 18 4 NJ 8920 NJ 8920 NJ 8920 11820
 preplace netloc softGlue_300IO_v1_0_0_sg_out100 1 11 2 N 6060 NJ
-preplace netloc divByN_3_Q 1 10 16 NJ 10390 NJ 10390 NJ 10420 NJ 10290 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10560 NJ 10570 NJ
-preplace netloc scalerChan_8_Counts 1 20 3 11570 11500 NJ 11500 NJ
+preplace netloc divByN_3_Q 1 10 16 NJ 10420 NJ 10420 NJ 10420 NJ 10400 NJ 10770 NJ 10770 NJ 10770 NJ 10770 NJ 10780 NJ 10780 NJ 10870 NJ 10870 NJ 10870 NJ 10870 NJ 10870 NJ
+preplace netloc scalerChan_8_Counts 1 20 3 11640 11430 NJ 11430 NJ
 preplace netloc sg_in070_1 1 0 11 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ 8460 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out101 1 11 2 N 6080 NJ
-preplace netloc gateDly_1_Q 1 10 4 NJ 10660 NJ 10660 NJ 10660 NJ
-preplace netloc scalerChan_5_Counts 1 20 3 11530 11370 NJ 11370 NJ
+preplace netloc gateDly_1_Q 1 10 4 NJ 10680 NJ 10680 NJ 10680 NJ
+preplace netloc scalerChan_5_Counts 1 20 3 11610 11400 NJ 11400 NJ
 preplace netloc axi_dma_0_s2mm_introut 1 7 1 -1610
 preplace netloc softGlue_300IO_v1_0_0_sg_out102 1 11 4 N 6100 NJ 6100 NJ 6100 NJ
-preplace netloc mux2_1_Outp 1 10 16 NJ 10740 NJ 10700 NJ 10700 NJ 10500 NJ 10620 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 NJ 10610 13480
+preplace netloc mux2_1_Outp 1 10 16 NJ 10720 NJ 10720 NJ 10720 NJ 10540 NJ 10690 NJ 10680 NJ 10680 NJ 10680 NJ 10680 NJ 10680 NJ 10880 NJ 10880 NJ 10880 NJ 10880 NJ 10880 13500
 preplace netloc sg_in054_1 1 0 20 NJ 9810 NJ 9810 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 9890 NJ 12030 NJ 12030 NJ 12030 NJ 12030 NJ 12030 NJ 12030 NJ 12030 NJ 12030 NJ 12030 NJ
 preplace netloc softGlue_300IO_v1_0_0_sg_out103 1 11 4 N 6120 NJ 6120 NJ 6120 NJ
-levelinfo -pg 1 -20150 -9890 -9530 -4380 -3720 -3150 -2440 -1910 -1320 -790 -190 1060 2260 6032 7240 9740 10340 10550 10730 11030 11390 11680 12070 12420 12730 13320 13650 14140 14530 14750 15560 16020 16290 -top -1070 -bot 15060
+levelinfo -pg 1 -20150 -9890 -9530 -4380 -3720 -3150 -2440 -1910 -1320 -790 -160 1060 2260 6032 7240 9740 10340 10550 10730 11090 11450 11740 12070 12420 12730 13330 13670 14180 14570 15550 16020 16300 -top -1070 -bot 15060
 ",
 }
 
