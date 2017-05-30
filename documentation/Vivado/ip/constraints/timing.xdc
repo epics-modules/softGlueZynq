@@ -41,7 +41,8 @@ set_false_path -from [get_pins */softGlue_300IO_*/inst/softGlue_300IO_*/out*/y_c
 set_false_path -from */softGlue_300IO_*/inst/softGlue_300IO_*/in*/y_reg/C -to */softGlue_300IO_*/inst/softGlue_300IO_*/out*/s_RB_reg[*]/D
 
 #set_clock_groups -name async_clk0_clk1 -asynchronous -group {clk_out1_design_1_clk_wiz_0_0} -group {clk_out2_design_1_clk_wiz_0_0} -group {clk_out3_design_1_clk_wiz_0_0} -group {clk_out4_design_1_clk_wiz_0_0}
-set_clock_groups -asynchronous -group clk_out1_design_1_clk_wiz_0_0 -group clk_out2_design_1_clk_wiz_0_0 -group clk_out3_design_1_clk_wiz_0_0 -group clk_out4_design_1_clk_wiz_0_0 -group clk_out5_design_1_clk_wiz_0_0 -group clk_out6_design_1_clk_wiz_0_0 -group clk_fpga_0
+#set_clock_groups -asynchronous -group clk_out1_design_1_clk_wiz0_0_0_0 -group clk_out2_design_1_clk_wiz0_0_0_0 -group clk_out3_design_1_clk_wiz0_0_0_0 -group clk_out4_design_1_clk_wiz0_0_0_0 -group clk_out5_design_1_clk_wiz0_0_0_0 -group clk_out6_design_1_clk_wiz0_0_0_0 -group clk_fpga_0
+set_clock_groups -asynchronous -group [get_clocks clk_out1*wiz0*] -group [get_clocks clk_out2*wiz0*] -group [get_clocks clk_out3*wiz0*] -group [get_clocks clk_out4*wiz0*] -group [get_clocks clk_out5*wiz0*] -group [get_clocks clk_out1*wiz1*] -group clk_fpga_0
 
 # See http://www.xilinx.com/support/answers/62136.html for how wildcard (*) works.  In short, it doesn't cross '/' unless you say "-hier"
 # See http://www.xilinx.com/support/documentation/sw_manuals/xilinx2013_1/ug835-vivado-tcl-commands.pdf
