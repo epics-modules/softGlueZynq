@@ -10,6 +10,7 @@
 		parameter integer FIFO_POINTER_BITS = 10,
 		// Must be 2^FIFO_POINTER_BITS
 		localparam integer FIFO_LENGTH = 2**FIFO_POINTER_BITS,
+		localparam integer NUMSCALERS = 16,
 
 		// User parameters ends
 		// Do not modify the parameters beyond this line
@@ -26,7 +27,7 @@
 		output reg fifo10,	// fifo greater than 10% full
 		output reg fifo50,	// fifo greater than 50% full
 		output reg fifo90,	// fifo greater than 90% full
-		output reg roomForEvent,	// fifo has enough room for an event (currently 8)
+		output reg roomForEvent,	// fifo has enough room for an event (NUMSCALERS words)
 
 		// User ports ends
 		// Do not modify the ports beyond this line
@@ -435,13 +436,13 @@
 			wr_ptr <= wr_ptr + 1;
 			rd_ptr <= rd_ptr + 1;
 			FIFO_cnt <= FIFO_cnt;
-			roomForEvent <= FIFO_cnt < FIFO_LENGTH-8;
+			roomForEvent <= FIFO_cnt < FIFO_LENGTH-NUMSCALERS;
 		end else if (FIFO_write) begin
 			if (FIFO_cnt < FIFO_LENGTH) begin
 				fifo_ram[wr_ptr] <= pixelValue;
 				wr_ptr <= wr_ptr + 1;
 				FIFO_cnt <= FIFO_cnt + 1;
-				roomForEvent <= FIFO_cnt < FIFO_LENGTH-8;
+				roomForEvent <= FIFO_cnt < FIFO_LENGTH-NUMSCALERS;
 				if (FIFO_cnt >= FIFO_LENGTH/10) fifo10 <= 1;
 				if (FIFO_cnt >= FIFO_LENGTH/2) fifo50 <= 1;
 				if (FIFO_cnt >= FIFO_LENGTH-(FIFO_LENGTH/10)) fifo90 <= 1;
@@ -450,7 +451,7 @@
 			if (FIFO_cnt!=0) begin
 				rd_ptr <= rd_ptr + 1;
 				FIFO_cnt <= FIFO_cnt - 1;
-				roomForEvent <= FIFO_cnt < FIFO_LENGTH-8;
+				roomForEvent <= FIFO_cnt < FIFO_LENGTH-NUMSCALERS;
 				if (FIFO_cnt < FIFO_LENGTH/10) fifo10 <= 0;
 				if (FIFO_cnt < FIFO_LENGTH/2) fifo50 <= 0;
 				if (FIFO_cnt < FIFO_LENGTH-(FIFO_LENGTH/10)) fifo90 <= 0;
