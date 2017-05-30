@@ -68,7 +68,14 @@ cp subsystems/linux/configs/device-tree/system-top.dts cp subsystems/linux/confi
 petalinux-config --get-hw-description=/home/oxygen/MOONEY/zynq/VivadoProjects/softGlue_3_TTL_7020_dma/softGlue_3_TTL_7020_dma.sdk
 
 # Edit pl.dtsi to specify "compatible = "generic-uio";" for all amba_pl components, except axi_dma_0;
+# Also change the following lines:
+#		clk_wiz0_0_0: clk_wiz@43c50000 {
+#		clk_wiz1_0_0: clk_wiz@43c40000 {
+# to
+#		clk_wiz0_0_0: clk_wiz_0@43c50000 {
+#		clk_wiz1_0_0: clk_wiz_1@43c40000 {
 nedit subsystems/linux/configs/device-tree/pl.dtsi
+
 # Edit system-conf.dtsi, to add usb_phy0:phy0 component, as shown in system-conf.dtsi.save
 nedit subsystems/linux/configs/device-tree/system-conf.dtsi
 # Edit system-top.dts, to add dmatest_0 component, as shown in system-top.dts.save
@@ -87,3 +94,6 @@ petalinux-package --force --boot --fsbl images/linux/zynq_fsbl.elf --fpga images
 # Boot the MicroZed.  Around a minute later, you'll be able to ssh to it.
 % ssh vw5@microzed-j
 vw5@microzed-j:~$ iocrun
+-----------------------------------------------------------------------------------
+# To make a new version of inPetalinuxProject.tar
+tar cf inPetalinuxProject.tar components/apps/copy_ssh_key  components/apps/dma_proxy_test  components/apps/mountAPSshare components/modules/dmaFromUserSpace config.project subsystems/linux/configs/device-tree
