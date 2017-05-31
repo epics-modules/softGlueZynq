@@ -1,7 +1,7 @@
 
 file {
 	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_Scaler_bare.adl"
-	version=030112
+	version=030111
 }
 display {
 	object {
@@ -100,55 +100,44 @@ rectangle {
 		width=2
 	}
 }
+text {
+	object {
+		x=179
+		y=114
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="READ"
+}
+polyline {
+	object {
+		x=166
+		y=118
+		width=10
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(175,119)
+		(167,119)
+	}
+}
 composite {
 	object {
 		x=12
 		y=105
-		width=207
+		width=155
 		height=26
 	}
 	"composite name"=""
-	children {
-		text {
-			object {
-				x=179
-				y=114
-				width=40
-				height=13
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="READ"
-		}
-		polyline {
-			object {
-				x=166
-				y=118
-				width=10
-				height=2
-			}
-			"basic attribute" {
-				clr=14
-				fill="outline"
-				width=2
-			}
-			points {
-				(175,119)
-				(167,119)
-			}
-		}
-		composite {
-			object {
-				x=12
-				y=105
-				width=155
-				height=26
-			}
-			"composite name"=""
-			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=PixelFIFO-$(N)_CHADV"
-		}
-	}
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalersToFIFO-$(N)_CHADV"
 }
 polyline {
 	object {
