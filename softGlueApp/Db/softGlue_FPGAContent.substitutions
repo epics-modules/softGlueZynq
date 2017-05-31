@@ -146,7 +146,7 @@ pattern {SIG		ADDR}
 {Scaler-1_EN		228}
 {Scaler-1_CLR		229}
 
-{PixelFIFO-1_CHADV	230}
+{scalersToFIFO-1_CHADV	230}
 
 #{FO1				231}
 #{FO2				232}

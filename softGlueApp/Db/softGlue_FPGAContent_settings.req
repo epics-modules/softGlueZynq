@@ -51,9 +51,9 @@ file PixelTrigger_settings.req P=$(P),H=$(H),N=1
 file PixelTrigger_settings.req P=$(P),H=$(H),N=2
 $(P)$(H)PixelTrig_TRIG_Signal
 $(P)$(H)PixelTrig_ENTRIG_Signal
-file PixelFIFO_settings.req P=$(P),H=$(H),N=1
+#file PixelFIFO_settings.req P=$(P),H=$(H),N=1
 file ScalToStream_settings.req P=$(P),H=$(H),N=1
-#file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
+file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
 file FreqCntr_settings.req P=$(P),H=$(H),N=1
 file scaler16_settings.req P=$(P),H=$(H),N=1
 
