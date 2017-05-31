@@ -59,115 +59,105 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
         </widget>
-        <widget class="caFrame" name="caFrame_0">
+        <widget class="caLabel" name="caLabel_0">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>READ</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>179</x>
+                    <y>114</y>
+                    <width>40</width>
+                    <height>13</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caPolyLine" name="caPolyLine_0">
+            <property name="geometry">
+                <rect>
+                    <x>166</x>
+                    <y>118</y>
+                    <width>10</width>
+                    <height>2</height>
+                </rect>
+            </property>
+            <property name="lineSize">
+                <number>2</number>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="lineColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="linestyle">
+                <enum>Solid</enum>
+            </property>
+            <property name="xyPairs">
+                <string>9,1;1,1;</string>
+            </property>
+        </widget>
+        <widget class="caInclude" name="caInclude_0">
             <property name="geometry">
                 <rect>
                     <x>12</x>
                     <y>105</y>
-                    <width>209</width>
+                    <width>158</width>
                     <height>28</height>
                 </rect>
             </property>
-            <widget class="caLabel" name="caLabel_0">
-                <property name="frameShape">
-                    <enum>QFrame::NoFrame</enum>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="0">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="text">
-                    <string>READ</string>
-                </property>
-                <property name="fontScaleMode">
-                    <enum>ESimpleLabel::WidthAndHeight</enum>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>167</x>
-                        <y>9</y>
-                        <width>40</width>
-                        <height>13</height>
-                    </rect>
-                </property>
-                <property name="alignment">
-                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-                </property>
-            </widget>
-            <widget class="caPolyLine" name="caPolyLine_0">
-                <property name="geometry">
-                    <rect>
-                        <x>154</x>
-                        <y>13</y>
-                        <width>10</width>
-                        <height>2</height>
-                    </rect>
-                </property>
-                <property name="lineSize">
-                    <number>2</number>
-                </property>
-                <property name="foreground">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="background">
-                    <color alpha="0">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="lineColor">
-                    <color alpha="255">
-                        <red>0</red>
-                        <green>0</green>
-                        <blue>0</blue>
-                    </color>
-                </property>
-                <property name="linestyle">
-                    <enum>Solid</enum>
-                </property>
-                <property name="xyPairs">
-                    <string>9,1;1,1;</string>
-                </property>
-            </widget>
-            <widget class="caInclude" name="caInclude_1">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>158</width>
-                        <height>28</height>
-                    </rect>
-                </property>
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>156</width>
-                        <height>26</height>
-                    </rect>
-                </property>
-                <property name="filename">
-                    <string>softGlueZynq_Input.adl</string>
-                </property>
-                <property name="macro">
-                    <string>P=$(P),H=$(H),SIG=PixelFIFO-$(N)_CHADV</string>
-                </property>
-            </widget>
+            <property name="geometry">
+                <rect>
+                    <x>12</x>
+                    <y>105</y>
+                    <width>156</width>
+                    <height>26</height>
+                </rect>
+            </property>
+            <property name="filename">
+                <string>softGlueZynq_Input.adl</string>
+            </property>
+            <property name="macro">
+                <string>P=$(P),H=$(H),SIG=scalersToFIFO-$(N)_CHADV</string>
+            </property>
         </widget>
         <widget class="caPolyLine" name="caPolyLine_1">
             <property name="geometry">
@@ -245,7 +235,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_2">
+        <widget class="caInclude" name="caInclude_1">
             <property name="geometry">
                 <rect>
                     <x>12</x>
@@ -340,12 +330,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>181</x>
                     <y>13</y>
-                    <width>10</width>
+                    <width>15</width>
                     <height>13</height>
                 </rect>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_3">
+        <widget class="caInclude" name="caInclude_2">
             <property name="geometry">
                 <rect>
                     <x>12</x>
@@ -445,7 +435,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_4">
+        <widget class="caInclude" name="caInclude_3">
             <property name="geometry">
                 <rect>
                     <x>12</x>
@@ -540,12 +530,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>178</x>
                     <y>63</y>
-                    <width>30</width>
+                    <width>31</width>
                     <height>13</height>
                 </rect>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_5">
+        <widget class="caInclude" name="caInclude_4">
             <property name="geometry">
                 <rect>
                     <x>12</x>
@@ -597,7 +587,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>203</x>
                     <y>23</y>
-                    <width>60</width>
+                    <width>66</width>
                     <height>10</height>
                 </rect>
             </property>
@@ -642,7 +632,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <enum>Solid</enum>
             </property>
         </widget>
-        <widget class="caFrame" name="caFrame_6">
+        <widget class="caFrame" name="caFrame_5">
             <property name="geometry">
                 <rect>
                     <x>203</x>
@@ -815,7 +805,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>9,1;1,1;</string>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_7">
+        <widget class="caInclude" name="caInclude_6">
             <property name="geometry">
                 <rect>
                     <x>12</x>
@@ -951,7 +941,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </rect>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_8">
+        <widget class="caInclude" name="caInclude_7">
             <property name="geometry">
                 <rect>
                     <x>291</x>
@@ -1046,12 +1036,12 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>243</x>
                     <y>98</y>
-                    <width>30</width>
+                    <width>31</width>
                     <height>13</height>
                 </rect>
             </property>
         </widget>
-        <widget class="caInclude" name="caInclude_9">
+        <widget class="caInclude" name="caInclude_8">
             <property name="geometry">
                 <rect>
                     <x>291</x>
@@ -1078,34 +1068,33 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
         <zorder>caRectangle_0</zorder>
         <zorder>caLabel_0</zorder>
         <zorder>caPolyLine_0</zorder>
-        <zorder>caInclude_1</zorder>
-        <zorder>caFrame_0</zorder>
+        <zorder>caInclude_0</zorder>
         <zorder>caPolyLine_1</zorder>
         <zorder>caLabel_1</zorder>
-        <zorder>caInclude_2</zorder>
+        <zorder>caInclude_1</zorder>
         <zorder>caPolyLine_2</zorder>
         <zorder>caLabel_2</zorder>
-        <zorder>caInclude_3</zorder>
+        <zorder>caInclude_2</zorder>
         <zorder>caPolyLine_3</zorder>
         <zorder>caLabel_3</zorder>
-        <zorder>caInclude_4</zorder>
+        <zorder>caInclude_3</zorder>
         <zorder>caPolyLine_4</zorder>
         <zorder>caLabel_4</zorder>
-        <zorder>caInclude_5</zorder>
+        <zorder>caInclude_4</zorder>
         <zorder>caLabel_5</zorder>
         <zorder>caRectangle_1</zorder>
         <zorder>caLabel_6</zorder>
         <zorder>caPolyLine_5</zorder>
-        <zorder>caFrame_6</zorder>
+        <zorder>caFrame_5</zorder>
         <zorder>caPolyLine_6</zorder>
-        <zorder>caInclude_7</zorder>
+        <zorder>caInclude_6</zorder>
         <zorder>caPolyLine_7</zorder>
         <zorder>caPolyLine_8</zorder>
         <zorder>caLabel_7</zorder>
-        <zorder>caInclude_8</zorder>
+        <zorder>caInclude_7</zorder>
         <zorder>caPolyLine_9</zorder>
         <zorder>caLabel_8</zorder>
-        <zorder>caInclude_9</zorder>
+        <zorder>caInclude_8</zorder>
         <zorder>caTextEntry_0</zorder>
     </widget>
 </widget>
