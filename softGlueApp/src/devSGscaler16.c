@@ -218,7 +218,7 @@ STATIC long scaler_init(int after)
 		scalerClr = reg8_localAddr + 229;	/* Scaler-1_CLR */
 		scalerCnt = reg8_localAddr + 281;	/* Scaler-1_CNT */
 		scalerStop = reg8_localAddr + 282;	/* Scaler-1_STOP */
-		scalerRead = reg8_localAddr + 230;	/* PixelFIFO-1_CHADV */
+		scalerRead = reg8_localAddr + 230;	/* scalersToFIFO-1_CHADV */
 		scalerCntg = reg8_localAddr + 83;	/* Scaler-1_CNTG */
 		scaler_state[card]->localAddr = reg8_localAddr;
 	}
