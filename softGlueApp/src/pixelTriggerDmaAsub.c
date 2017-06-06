@@ -338,9 +338,10 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 				}
 				myDmaISRData->cleared = 0;
 			}
-		} else if (*acqMode == ACQ_MODE_LIST) {
+		} else if (*acqMode == ACQ_MODE_LIST && (*numEvents < myDmaISRData->allocatedElements)) {
 			/* *acqMode == ACQ_MODE_LIST */
 			for (j=0; j<(dma_words-numEventWords); ) {
+				if (*debug>=2) printf("pixelTriggerDmaRoutine: *numEvents=%d\n", *numEvents);
 				/* Find a valid event */
 				while (!(data[j] & 0x80000000) && j<=(dma_words-numEventWords)) j++;
 				if (j>(dma_words-numEventWords)) {
@@ -370,7 +371,10 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 				pixels7[*numEvents] = data[++j];
 				myDmaISRData->cleared = 0;
 				*numEvents = *numEvents + 1;
-				if (*numEvents >= myDmaISRData->allocatedElements) *numEvents = 0;
+				if (*numEvents >= myDmaISRData->allocatedElements) {
+					/* for debugging missed events, wrap around to beginning of buffer */
+					if (*debug == -1) *numEvents = 0;
+				}
 			}
 		} else if (*acqMode == ACQ_MODE_XYT) {
 			/*** bin x,y,t data ***/
