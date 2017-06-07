@@ -93,8 +93,8 @@ dbLoadRecords("$(SOFTGLUEZYNQ)/db/SGscaler.db","P=$(PREFIX),Q=SGscaler")
 #doAfterIocInit("readSoftGlueCounter_ISRPrepare(0x40000000)")
 
 # begin debug  ----------------------------------------------------------------
-dbLoadRecords("$(ASYN)/db/asynRecord.db","P=tmm:,R=asynSoftGlue,PORT=$(SPORT),ADDR=0,OMAX=0,IMAX=0")
-dbLoadRecords("$(ASYN)/db/asynRecord.db","P=tmm:,R=asynSoftGlueReg,PORT=$(RPORT),ADDR=0,OMAX=0,IMAX=0")
+dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(PREFIX),R=asynSoftGlue,PORT=$(SPORT),ADDR=0,OMAX=0,IMAX=0")
+dbLoadRecords("$(ASYN)/db/asynRecord.db","P=$(PREFIX),R=asynSoftGlueReg,PORT=$(RPORT),ADDR=0,OMAX=0,IMAX=0")
 
 # devA32ZedConfig(card,a32base,nreg,iVector,iLevel) 
 #    card    = card number                          
