@@ -367,6 +367,9 @@ to document it here.</blockquote>
 <code>image.ub</code> to a MicroSD card, and insert the card in the
 MicroZed.
 
+<li>Ensure that the MicroZed's jumpers are set to boot from the MicroSD card:
+JP3: 2-3, JP2: 2-3
+
 <li>Power the MicroZed.  If it succeeds in getting an IP address via DHCP, ssh
 to root@&lt;IP address&gt;, or to the user account you specified in userConfig.
 
@@ -418,6 +421,14 @@ initZynqInterrupts("AXI0INT", "softGlue_")
 </pre>
 
 </ul>
+
+<h3>Customing softGlueZynq FPGA content and Petalinux code</h3>
+
+<P>The Vivado and Petalinux projects are included in softGlueZynq, in the event
+you want to customize either or both of them.  See the file <a
+href="MicroZed_PetaLinux_Prep.txt">MicroZed_PetaLinux_Prep.txt</a> in the
+softGlueZynq documentation directory, which will lead you to
+documentation/Vivado and/or documentation/PetaLinux.
 
 <hr>
 <a name="User's Manual"></a>
