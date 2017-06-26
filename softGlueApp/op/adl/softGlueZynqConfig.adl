@@ -671,7 +671,7 @@ text {
 	"basic attribute" {
 		clr=14
 	}
-	textix="(Don't change)"
+	textix="100 MHz (Don't change)"
 }
 text {
 	object {
