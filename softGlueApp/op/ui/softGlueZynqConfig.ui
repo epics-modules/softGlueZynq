@@ -1729,7 +1729,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 </color>
             </property>
             <property name="text">
-                <string>(Don&apos;t change)</string>
+                <string>100 MHz (Don&apos;t change)</string>
             </property>
             <property name="fontScaleMode">
                 <enum>ESimpleLabel::WidthAndHeight</enum>
@@ -1738,7 +1738,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <rect>
                     <x>165</x>
                     <y>240</y>
-                    <width>240</width>
+                    <width>264</width>
                     <height>20</height>
                 </rect>
             </property>
