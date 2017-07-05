@@ -750,7 +750,7 @@ QPushButton::menu-indicator {image: url(none.png); width: 0}
                 <string>pixelTrigger2D.adl;pixelTrigger2D.adl;readSoftGlueCounter.adl;pixelTriggerDma.adl;pixelTriggerDma2D.adl;histScalerDma.adl</string>
             </property>
             <property name="args">
-                <string>P=tmm:,letter=I;P=tmm:,letter=J;P=tmm:,Q=SG_RdCntr:;P=tmm:,Q=1;P=tmm:,letter=I;P=tmm:,Q=1</string>
+                <string>P=$(P),letter=I;P=$(P),letter=J;P=$(P),Q=SG_RdCntr:;P=$(P),Q=1;P=$(P),letter=I;P=$(P),Q=1</string>
             </property>
             <property name="removeParent">
                 <string>false;false;false;false;false;false</string>
