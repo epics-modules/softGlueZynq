@@ -659,32 +659,32 @@ menu {
 	display[9] {
 		label="pixelTriggerImage 1"
 		name="pixelTrigger2D.adl"
-		args="P=tmm:,letter=I"
+		args="P=$(P),letter=I"
 	}
 	display[10] {
 		label="pixelTriggerImage 2"
 		name="pixelTrigger2D.adl"
-		args="P=tmm:,letter=J"
+		args="P=$(P),letter=J"
 	}
 	display[11] {
 		label="readSoftGlueCounter"
 		name="readSoftGlueCounter.adl"
-		args="P=tmm:,Q=SG_RdCntr:"
+		args="P=$(P),Q=SG_RdCntr:"
 	}
 	display[12] {
 		label="pixelTriggerDma"
 		name="pixelTriggerDma.adl"
-		args="P=tmm:,Q=1"
+		args="P=$(P),Q=1"
 	}
 	display[13] {
 		label="pixelTriggerDmaImage 1"
 		name="pixelTriggerDma2D.adl"
-		args="P=tmm:,letter=I"
+		args="P=$(P),letter=I"
 	}
 	display[14] {
 		label="histScalerDma"
 		name="histScalerDma.adl"
-		args="P=tmm:,Q=1"
+		args="P=$(P),Q=1"
 	}
 	clr=0
 	bclr=17
