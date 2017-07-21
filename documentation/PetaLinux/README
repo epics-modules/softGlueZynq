@@ -96,4 +96,4 @@ petalinux-package --force --boot --fsbl images/linux/zynq_fsbl.elf --fpga images
 vw5@microzed-j:~$ iocrun
 -----------------------------------------------------------------------------------
 # To make a new version of inPetalinuxProject.tar
-tar cf inPetalinuxProject.tar components/apps/copy_ssh_key  components/apps/dma_proxy_test  components/apps/mountAPSshare components/modules/dmaFromUserSpace config.project subsystems/linux/configs/device-tree
+tar cf inPetalinuxProject.tar components/apps/copy_ssh_key  components/apps/dma_proxy_test  components/apps/mountAPSshare components/apps/ntpclient components/modules/dmaFromUserSpace config.project subsystems/linux/configs/device-tree
