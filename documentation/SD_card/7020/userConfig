@@ -19,8 +19,8 @@ export USERPASSWORD=pwd
 export ROOTPASSWORD=pwd
 
 # Set time zone (CST6 means Central Standard Time, with is UTC-6 hr.)
-export TZ=CST6
-echo "TZ=" TZ
+export TZ=CST6CDT
+echo "TZ=" $TZ
 
 # softGlueZynq and this build of Petalinux are configured to mount NFS file
 # systems, and to get EPICS, synApps, and IOC specific code from those systems.
