@@ -192,7 +192,7 @@ echo 'OPTICS=$(SUPPORT)/optics-'${TAG} >>RELEASE_files.txt
 #echo 'SOFTGLUE=$(SUPPORT)/softGlue-'${TAG} >>RELEASE_files.txt
 
 # softGlueZynq
-setenv TAG R1-0
+setenv TAG R2-0
 wget https://github.com/epics-modules/softGlueZynq/archive/${TAG}.tar.gz
 tar zxf ${TAG}.tar.gz
 rm ${TAG}.tar.gz
@@ -260,7 +260,7 @@ echo 'VAC=$(SUPPORT)/vac-'${TAG} >>RELEASE_files.txt
 #echo 'XXX=$(SUPPORT)/xxx-'${TAG} >>RELEASE_files.txt
 
 # iocZed
-setenv TAG R1-0
+setenv TAG R2-0
 wget https://github.com/epics-modules/ioczed/archive/${TAG}.tar.gz
 tar zxf ${TAG}.tar.gz
 rm ${TAG}.tar.gz
