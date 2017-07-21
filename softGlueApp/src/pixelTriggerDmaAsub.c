@@ -358,7 +358,7 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 					if (*numEvents > 0) {
 						if ((*numEvents) && (pixels1[*numEvents] != 0) && (pixels1[*numEvents] - pixels1[*numEvents-1]) != 1) {
 							ListModeTestMisses++;
-							printf("pixelTriggerDmaRoutine: missed %d, rep=%d, pixels1=0x%x\n", pixels1[*numEvents] - pixels1[*numEvents-1], rep, pixels1[*numEvents]);
+							/*printf("pixelTriggerDmaRoutine: missed %d, rep=%d, pixels1=0x%x\n", pixels1[*numEvents] - pixels1[*numEvents-1], rep, pixels1[*numEvents]); */
 						}
 					}
 				}
@@ -370,8 +370,9 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 				pixels6[*numEvents] = data[++j];
 				pixels7[*numEvents] = data[++j];
 				myDmaISRData->cleared = 0;
-				*numEvents = *numEvents + 1;
-				if (*numEvents >= myDmaISRData->allocatedElements) {
+				if (*numEvents < myDmaISRData->allocatedElements-1) {
+					*numEvents = *numEvents + 1;
+				} else {
 					/* for debugging missed events, wrap around to beginning of buffer */
 					if (*debug == -1) *numEvents = 0;
 				}
