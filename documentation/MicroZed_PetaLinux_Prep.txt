@@ -30,6 +30,9 @@ because the xxx module is ready for softGlueZynq.)
 
 You're going to need the Xilinx software-development kit (SDK).  You'll have
 to register, but it's free.  https://www.xilinx.com/support/download.html
+You should (must?) use the same version of the SDK as the Vivado version that
+was used to produce the FPGA content.  For softGlueZynq R2-0, that version
+is 2015.4.
 
 In the distribution is the directory EPICS needs to cross compile for the Zynq.
 To build base and synApps for the MicroZed, I modified two config files in base:
