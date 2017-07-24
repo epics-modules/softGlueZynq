@@ -213,7 +213,7 @@ rm ${TAG}.tar.gz
 echo 'SSCAN=$(SUPPORT)/sscan-'${TAG} >>RELEASE_files.txt
 
 # std
-setenv TAG R3-4
+setenv TAG R3-4-1
 wget https://github.com/epics-modules/std/archive/${TAG}.tar.gz
 tar zxf ${TAG}.tar.gz
 rm ${TAG}.tar.gz
