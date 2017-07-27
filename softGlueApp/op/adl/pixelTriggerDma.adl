@@ -524,6 +524,11 @@ text {
 		args="P=$(P),Q=$(Q),H=$(H)"
 		policy="replace display"
 	}
+	display[1] {
+		label="pixelTriggerDmaListFFT.adl"
+		name="pixelTriggerDmaListFFT.adl"
+		args="P=$(P)"
+	}
 	clr=0
 	bclr=17
 	label="-More"
