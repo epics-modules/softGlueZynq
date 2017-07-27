@@ -24,6 +24,7 @@ DB += analogProc_FPGARegisters.db
 
 DB += MCSAsub.db DMA.db pixelTrigger.db readSoftGlueCounter_ISR.db
 DB += pixelTriggerDma.db
+DB += pixelTriggerDmaListFFT.db
 DB += histScalerDma.db
 DB += clockConfig.db
 DB += SGscaler.db

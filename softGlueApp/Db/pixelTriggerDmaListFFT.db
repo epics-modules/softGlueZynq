@@ -1,0 +1,20 @@
+record(waveform, "$(P)pixelTrigFFT:t") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)pixelTrigFFT:s1") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)pixelTrigFFT:s2") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)pixelTrigFFT:s3") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)pixelTrigFFT:s4") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
