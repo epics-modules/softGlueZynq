@@ -1,0 +1,104 @@
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <actions hook="false" hook_all="false" />
+  <auto_scale_widgets>
+    <auto_scale_widgets>false</auto_scale_widgets>
+    <min_width>-1</min_width>
+    <min_height>-1</min_height>
+  </auto_scale_widgets>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <background_color>
+    <color name="Gray_1" red="236" green="236" blue="236" />
+  </background_color>
+  <boy_version>5.1.0.201802081749</boy_version>
+  <foreground_color>
+    <color name="MEDM_COLOR_64" red="26" green="115" blue="9" />
+  </foreground_color>
+  <grid_space>10</grid_space>
+  <height>40</height>
+  <macros>
+    <include_parent_macros>true</include_parent_macros>
+  </macros>
+  <name>softGlueZynqTop</name>
+  <rules />
+  <scripts />
+  <show_close_button>true</show_close_button>
+  <show_edit_range>true</show_edit_range>
+  <show_grid>false</show_grid>
+  <show_ruler>true</show_ruler>
+  <snap_to_geometry>false</snap_to_geometry>
+  <widget_type>Display</widget_type>
+  <width>100</width>
+  <x>11</x>
+  <y>25</y>
+  <widget typeId="org.csstudio.opibuilder.widgets.MenuButton" version="1.0.0">
+    <actions hook="false" hook_all="false">
+      <action type="OPEN_DISPLAY">
+        <path>softGlueZynqMenu.opi</path>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+          <P>xxx:</P>
+          <H>softGlueZynq:</H>
+          <PORT>SOFTGLUE</PORT>
+          <IPORT>SGI1</IPORT>
+          <OPORT>SGO1</OPORT>
+        </macros>
+        <mode>1</mode>
+        <description>softGlueZynqMenu</description>
+      </action>
+      <action type="OPEN_DISPLAY">
+        <path>softGlueZynqMenu.opi</path>
+        <macros>
+          <include_parent_macros>true</include_parent_macros>
+          <P>xxx:</P>
+          <H>softGlueZynq2:</H>
+          <PORT>SOFTGLUE2</PORT>
+          <IPORT>SGI2</IPORT>
+          <OPORT>SGO2</OPORT>
+        </macros>
+        <mode>1</mode>
+        <description>softGlueZynq2 Menu</description>
+      </action>
+    </actions>
+    <actions_from_pv>false</actions_from_pv>
+    <alarm_pulsing>false</alarm_pulsing>
+    <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
+    <background_color>
+      <color name="MEDM_COLOR_17" red="51" green="153" blue="0" />
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+    <border_color>
+      <color red="0" green="128" blue="255" />
+    </border_color>
+    <border_style>6</border_style>
+    <border_width>1</border_width>
+    <enabled>true</enabled>
+    <font>
+      <opifont.name fontName="Cantarell" height="11" style="0" pixels="false">Default</opifont.name>
+    </font>
+    <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
+    <foreground_color>
+      <color name="Gray_0" red="255" green="255" blue="255" />
+    </foreground_color>
+    <height>20</height>
+    <label>softGlueZynq</label>
+    <name>Menu Button</name>
+    <pv_name></pv_name>
+    <pv_value />
+    <rules />
+    <scale_options>
+      <width_scalable>true</width_scalable>
+      <height_scalable>true</height_scalable>
+      <keep_wh_ratio>false</keep_wh_ratio>
+    </scale_options>
+    <scripts />
+    <show_down_arrow>false</show_down_arrow>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <widget_type>Menu Button</widget_type>
+    <width>70</width>
+    <x>10</x>
+    <y>10</y>
+  </widget>
+</display>
