@@ -7,7 +7,7 @@ DBD += softGlueZynqSupport.dbd
 
 INC += drvZynq.h
 
-LIBRARY_IOC = softGlueZynq
+LIBRARY_IOC_Linux = softGlueZynq
 LIB_SRCS += drvZynq.c devAsynSoftGlue.c devA32Zed.c
 LIB_SRCS += sampleCustomInterruptHandler.c
 LIB_SRCS += pixelTriggerAsub.c
