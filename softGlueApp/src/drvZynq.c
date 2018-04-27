@@ -154,8 +154,8 @@ typedef struct {
  * Pointer to drvZynqPvt structure
  */
 #define MAX_DRVPVT 10
-int numDriverTables=0;
-drvZynqPvt *driverTable[MAX_DRVPVT] = {0};
+STATIC int numDriverTables=0;
+STATIC drvZynqPvt *driverTable[MAX_DRVPVT] = {0};
 
 /*
  * asynCommon interface
@@ -790,8 +790,8 @@ typedef struct {
 	softGlueIntRoutineData IRData;
 } intRoutineEntry;
 
-intRoutineEntry registeredIntRoutines[MAXROUTINES] = {{0}};
-int numRegisteredIntRoutines=0;
+STATIC intRoutineEntry registeredIntRoutines[MAXROUTINES] = {{0}};
+STATIC int numRegisteredIntRoutines=0;
 
 /* Register a routine to be called when a specified
  * I/O bit (mask) generates an interrupt.
