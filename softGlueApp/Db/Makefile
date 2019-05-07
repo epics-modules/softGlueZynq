@@ -32,6 +32,8 @@ DB += softGlue_config.db
 
 DB_INSTALLS += ../softGlue_SignalShow.db  ../softGlue_convenience.db
 
+REQ += $(patsubst ../%, %, $(wildcard ../*.req))
+
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
