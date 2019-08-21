@@ -72,13 +72,13 @@ int sampleCustomInterruptPrepare(epicsUInt32 risingMask, epicsUInt32 fallingMask
 	 * The address 123 is from softGlue_FPGAContent.substitutions.
 	 * We want to write to bit 5.
 	 */
-	myISRData.addr = softGlueCalcSpecifiedRegisterAddress(0, 123);
+	myISRData.addr = softGlueZCalcSpecifiedRegisterAddress(0, 123);
 
 	/* Get the address of the divByN N register.
 	 * The address 38 is from softGlue_FPGARegisters.substitutions.
 	 * It's the DivByN-3_N register to which we want to write.
 	 */
-	//myISRData.addr = softGlueCalcSpecifiedRegisterAddress(1, 38);
+	//myISRData.addr = softGlueZCalcSpecifiedRegisterAddress(1, 38);
 
 	/* Tell softGlue to call sampleCustomInterruptRoutine() when its interrupt-service routine handles an interrupt
 	 * from the specified carrier, slot, sopcAddress (I/O register), and bit (mask).  This also

@@ -557,13 +557,13 @@ int initZynqSingleRegisterPort(const char *portName, const char *componentName)
 }
 
 /*
- * softGlueCalcSpecifiedRegisterAddress - For access to a single-register component by
+ * softGlueZCalcSpecifiedRegisterAddress - For access to a single-register component by
  * other than an EPICS record (for example, by an interrupt-service routine).
  * The AXI and word offset are specified as arguments, and we need
  * to translate that information into a memory mapped address, as calcRegister32Address()
  * would have done for an EPICS record.
  */
-epicsUInt32 *softGlueCalcSpecifiedRegisterAddress(int type, int addr)
+epicsUInt32 *softGlueZCalcSpecifiedRegisterAddress(int type, int addr)
 {
 	drvZynqPvt *pPvt;
 	epicsUInt8 *reg8;

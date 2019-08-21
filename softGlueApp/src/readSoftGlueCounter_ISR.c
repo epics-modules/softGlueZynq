@@ -122,7 +122,7 @@ int readSoftGlueCounter_ISRPrepare(epicsUInt32 risingMask) {
 	/* Get the address of the COUNTS registers of eight counters. */
 	for (i=0; i<5; i++) {
 		/* The first arg specifies which AXI component: 0 for 8-bit I/O point register, 1 for 32-bit register */
-		rcISRData.addr[i] = softGlueCalcSpecifiedRegisterAddress(1, counterOffset[i]);
+		rcISRData.addr[i] = softGlueZCalcSpecifiedRegisterAddress(1, counterOffset[i]);
 		if (readSoftGlueCounter_ISRDebug) {
 			printf("readSoftGlueCounter_ISRPrepare: addr[%d]=%p\n", i, rcISRData.addr[i]);
 		}

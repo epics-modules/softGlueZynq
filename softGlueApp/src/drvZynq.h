@@ -43,4 +43,4 @@ int findUioAddr(const char *componentName, int map);
 int softGlueRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 fallingMask,
 	void (*routine)(softGlueIntRoutineData *IRData), void *userPvt);
 
-epicsUInt32 *softGlueCalcSpecifiedRegisterAddress(int type, int addr);
+epicsUInt32 *softGlueZCalcSpecifiedRegisterAddress(int type, int addr);
