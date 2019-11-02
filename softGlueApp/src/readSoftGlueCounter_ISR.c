@@ -136,7 +136,7 @@ int readSoftGlueCounter_ISRPrepare(epicsUInt32 risingMask) {
 	 * output links that might have been programmed to execute in response to this interrupt.
 	 * The second arg is for fallingMask, which hasn't been implemented yet.
 	 */
-	softGlueRegisterInterruptRoutine(risingMask, 0, readSoftGlueCounterISR, (void *)&rcISRData);
+	softGlueZynqRegisterInterruptRoutine(risingMask, 0, readSoftGlueCounterISR, (void *)&rcISRData);
 	return(0);
 }
 

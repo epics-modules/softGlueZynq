@@ -172,7 +172,7 @@ STATIC int scalerISRSetup(int card)
 {	
 	Debug(5, "scalerISRSetup: Entry, card #%d\n", card);
 	if ((card+1) > scaler_total_cards) return(ERROR);
-	softGlueRegisterInterruptRoutine(0x80000000, 0, scalerISR, (void *)NULL);
+	softGlueZynqRegisterInterruptRoutine(0x80000000, 0, scalerISR, (void *)NULL);
 	Debug(5, "scalerISRSetup: Exit, card #%d\n", card);
 	return (OK);
 }

@@ -85,7 +85,7 @@ int sampleCustomInterruptPrepare(epicsUInt32 risingMask, epicsUInt32 fallingMask
 	 * tells softGlue to not execute any output links that might also have been programmed to
 	 * execute in response to this interrupt.
 	 */
-	softGlueRegisterInterruptRoutine(risingMask, fallingMask, sampleCustomInterruptRoutine,
+	softGlueZynqRegisterInterruptRoutine(risingMask, fallingMask, sampleCustomInterruptRoutine,
 		(void *)&myISRData);
 
 	/* prepare example data for sampleCustomInterruptRoutine() */
