@@ -473,7 +473,7 @@ int initZynqSingleRegisterPort(const char *portName, const char *componentName)
 	UIO_struct *pUIO = NULL;
 
 	pPvt = callocMustSucceed(1, sizeof(*pPvt), "drvZynqPvt");
-	driverTable[numDriverTables++] = pPvt;	/* save pointers for softGlueRegisterInterruptRoutine() */
+	driverTable[numDriverTables++] = pPvt;	/* save pointers for softGlueZynqRegisterInterruptRoutine() */
 	pPvt->portName = epicsStrDup(portName);
 
 	/* Set up address */
@@ -798,9 +798,9 @@ STATIC int numRegisteredIntRoutines=0;
  * example invocation:
  *      void callMe(softGlueIntRoutineData *IRData);
  *		myDataType myData;
- *      softGlueRegisterInterruptRoutine(0x1, 0x0, callMe, (void *)&myData);
+ *      softGlueZynqRegisterInterruptRoutine(0x1, 0x0, callMe, (void *)&myData);
  */
-int softGlueRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 fallingMask,
+int softGlueZynqRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 fallingMask,
 	void (*routine)(softGlueIntRoutineData *IRData), void *userPvt) {
 
 	if (numRegisteredIntRoutines >= MAXROUTINES-1) return(-1);
@@ -809,7 +809,7 @@ int softGlueRegisterInterruptRoutine(epicsUInt32 risingMask, epicsUInt32 falling
 	registeredIntRoutines[numRegisteredIntRoutines].routine = routine;
 	registeredIntRoutines[numRegisteredIntRoutines].IRData.userPvt = userPvt;
 
-	if (drvZynqDebug>5) printf("softGlueRegisterInterruptRoutine: #%d, risingMask=0x%x, fallingMask=0x%x",
+	if (drvZynqDebug>5) printf("softGlueZynqRegisterInterruptRoutine: #%d, risingMask=0x%x, fallingMask=0x%x",
 	  numRegisteredIntRoutines, risingMask, fallingMask);
 	numRegisteredIntRoutines++;
 	return(0);

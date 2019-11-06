@@ -286,7 +286,7 @@ int pixelTriggerPrepare(const char *componentName, epicsUInt32 risingMask, int f
 	 * with the specified risingMask.  This also tells softGlue to not execute any output links that might
 	 * also have been programmed to execute in response to this value of risingMask.
 	 */
-	softGlueRegisterInterruptRoutine(risingMask, 0, pixelTriggerRoutine, (void *)&myISRData);
+	softGlueZynqRegisterInterruptRoutine(risingMask, 0, pixelTriggerRoutine, (void *)&myISRData);
 
 	return(0);
 }
