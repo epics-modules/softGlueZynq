@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_XOR_bare</name>
+  <x>859</x>
+  <y>536</y>
+  <width>380</width>
+  <height>50</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="group" version="2.0.0">
+    <name>composite #6</name>
+    <width>379</width>
+    <height>49</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #9</name>
+      <file>softGlueZynq_Input.bob</file>
+      <macros>
+        <SIG>XOR-$(N)_IN1</SIG>
+      </macros>
+      <width>155</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #11</name>
+      <file>softGlueZynq_Input.bob</file>
+      <macros>
+        <SIG>XOR-$(N)_IN2</SIG>
+      </macros>
+      <y>23</y>
+      <width>155</width>
+      <height>26</height>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>arc #13</name>
+      <x>143</x>
+      <width>25</width>
+      <height>48</height>
+      <start_angle>305.0</start_angle>
+      <total_angle>115.0</total_angle>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>arc #16</name>
+      <x>151</x>
+      <width>25</width>
+      <height>48</height>
+      <start_angle>305.0</start_angle>
+      <total_angle>115.0</total_angle>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #19</name>
+      <x>154</x>
+      <y>36</y>
+      <width>13</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="12.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #23</name>
+      <x>154</x>
+      <y>13</y>
+      <width>13</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="12.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #27</name>
+      <x>213</x>
+      <y>24</y>
+      <width>14</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="13.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #31</name>
+      <x>170</x>
+      <y>4</y>
+      <width>46</width>
+      <height>21</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="5.0" y="1.0">
+        </point>
+        <point x="12.0" y="1.0">
+        </point>
+        <point x="19.0" y="3.0">
+        </point>
+        <point x="25.0" y="5.0">
+        </point>
+        <point x="32.0" y="9.0">
+        </point>
+        <point x="39.0" y="14.0">
+        </point>
+        <point x="45.0" y="20.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #35</name>
+      <x>171</x>
+      <y>23</y>
+      <width>46</width>
+      <height>21</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="20.0">
+        </point>
+        <point x="5.0" y="20.0">
+        </point>
+        <point x="12.0" y="20.0">
+        </point>
+        <point x="19.0" y="18.0">
+        </point>
+        <point x="25.0" y="16.0">
+        </point>
+        <point x="32.0" y="12.0">
+        </point>
+        <point x="39.0" y="7.0">
+        </point>
+        <point x="45.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #39</name>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <SIG>XOR-$(N)_OUT</SIG>
+      </macros>
+      <x>222</x>
+      <y>11</y>
+      <width>157</width>
+      <height>26</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #41</name>
+      <text>XOR-$(N)</text>
+      <x>179</x>
+      <y>20</y>
+      <width>30</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="42" green="99" blue="228">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+</display>

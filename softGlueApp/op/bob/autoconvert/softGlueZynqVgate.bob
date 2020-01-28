@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqVgate</name>
+  <x>634</x>
+  <y>276</y>
+  <width>485</width>
+  <height>390</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #6</name>
+    <file>softGlueZynq_UpDnCntr_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>9</x>
+    <y>203</y>
+    <width>467</width>
+    <height>179</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #8</name>
+    <file>softGlueZynq_UpDnCntr_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>9</x>
+    <y>14</y>
+    <width>467</width>
+    <height>179</height>
+  </widget>
+</display>

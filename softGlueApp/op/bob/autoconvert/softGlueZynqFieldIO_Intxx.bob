@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqFieldIO_Intxx</name>
+  <x>168</x>
+  <y>599</y>
+  <width>1060</width>
+  <height>450</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #6</name>
+    <file>softGlueZynqFieldIO_Intxx_small_bare_label.bob</file>
+    <x>5</x>
+    <y>75</y>
+    <width>1042</width>
+    <height>340</height>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #8</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynqFieldIOxx.opi</file>
+        <target>replace</target>
+        <description>Plain I/O</description>
+      </action>
+    </actions>
+    <text>Less</text>
+    <x>350</x>
+    <y>430</y>
+    <width>70</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #11</name>
+    <text>CONNECTOR #</text>
+    <x>725</x>
+    <y>425</y>
+    <width>70</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #14</name>
+    <text>CONNECTOR #</text>
+    <x>5</x>
+    <y>425</y>
+    <width>80</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #17</name>
+    <text>Field Output Bit</text>
+    <x>545</x>
+    <y>35</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #20</name>
+    <text>Field Input Bit</text>
+    <x>65</x>
+    <y>35</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #23</name>
+    <width>1060</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>composite #26</name>
+      <width>1060</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>rectangle #29</name>
+        <width>1060</width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #32</name>
+        <text>$(P)$(H)</text>
+        <width>1060</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #35</name>
+      <y>20</y>
+      <width>1056</width>
+      <height>3</height>
+      <line_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="1054.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #39</name>
+    <x>260</x>
+    <y>30</y>
+    <width>260</width>
+    <height>41</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #42</name>
+      <text>INTERRUPT</text>
+      <y>20</y>
+      <width>65</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #45</name>
+      <text>ENABLE</text>
+      <y>31</y>
+      <width>65</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #48</name>
+      <text>ON INTERRUPT, WRITE SIGNAL</text>
+      <x>70</x>
+      <y>20</y>
+      <width>167</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #51</name>
+      <text>VALUE VIA THIS LINK</text>
+      <x>70</x>
+      <y>31</y>
+      <width>167</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #54</name>
+      <text>Interrupt-driven record</text>
+      <x>5</x>
+      <width>255</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #57</name>
+    <x>790</x>
+    <y>30</y>
+    <width>260</width>
+    <height>41</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #60</name>
+      <text>INTERRUPT</text>
+      <y>20</y>
+      <width>65</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #63</name>
+      <text>ENABLE</text>
+      <y>31</y>
+      <width>65</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #66</name>
+      <text>ON INTERRUPT, WRITE SIGNAL</text>
+      <x>70</x>
+      <y>20</y>
+      <width>167</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #69</name>
+      <text>VALUE VIA THIS LINK</text>
+      <x>70</x>
+      <y>31</y>
+      <width>167</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #72</name>
+      <text>Interrupt-driven record</text>
+      <x>5</x>
+      <width>255</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+</display>

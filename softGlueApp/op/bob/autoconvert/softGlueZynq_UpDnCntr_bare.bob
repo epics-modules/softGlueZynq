@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_UpDnCntr_bare</name>
+  <x>633</x>
+  <y>257</y>
+  <width>467</width>
+  <height>158</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>153</x>
+    <y>63</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #10</name>
+    <x>149</x>
+    <y>39</y>
+    <width>16</width>
+    <height>3</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="15.0" y="2.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #14</name>
+    <x>153</x>
+    <y>86</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #18</name>
+    <x>162</x>
+    <y>32</y>
+    <width>11</width>
+    <height>16</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="10.0" y="8.0">
+      </point>
+      <point x="1.0" y="15.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #22</name>
+    <x>153</x>
+    <y>109</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #26</name>
+    <x>153</x>
+    <y>17</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #30</name>
+    <x>163</x>
+    <width>132</width>
+    <height>130</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #33</name>
+    <text>EN</text>
+    <x>169</x>
+    <y>12</y>
+    <width>10</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #36</name>
+    <text>CLEAR</text>
+    <x>169</x>
+    <y>59</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #39</name>
+    <x>186</x>
+    <y>5</y>
+    <width>89</width>
+    <height>14</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #42</name>
+    <text>UpDnCntr-$(N)</text>
+    <x>194</x>
+    <y>8</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #45</name>
+    <text>UP/DOWN</text>
+    <x>169</x>
+    <y>82</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #48</name>
+    <text>LOAD</text>
+    <x>169</x>
+    <y>105</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #51</name>
+    <text>PRESET</text>
+    <x>211</x>
+    <y>117</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #54</name>
+    <x>230</x>
+    <y>128</y>
+    <width>2</width>
+    <height>16</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="1.0" y="15.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #58</name>
+    <pv_name>$(P)$(H)UpDnCntr-$(N)_PRESET</pv_name>
+    <x>196</x>
+    <y>138</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #62</name>
+    <x>189</x>
+    <y>80</y>
+    <width>22</width>
+    <height>0</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="0.0" y="0.0">
+      </point>
+      <point x="22.0" y="0.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #66</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>UpDnCntr-$(N)_CLEAR</SIG>
+    </macros>
+    <y>50</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #68</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>UpDnCntr-$(N)_ENABLE</SIG>
+    </macros>
+    <y>4</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #70</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>UpDnCntr-$(N)_CLOCK</SIG>
+    </macros>
+    <y>27</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #72</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>UpDnCntr-$(N)_UPDOWN</SIG>
+    </macros>
+    <y>73</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #74</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>UpDnCntr-$(N)_LOAD</SIG>
+    </macros>
+    <y>96</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #76</name>
+    <text>COUNTS</text>
+    <x>240</x>
+    <y>106</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #79</name>
+    <x>293</x>
+    <y>110</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #83</name>
+    <x>279</x>
+    <y>14</y>
+    <width>188</width>
+    <height>26</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #86</name>
+      <x>14</x>
+      <y>13</y>
+      <width>19</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="18.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #90</name>
+      <text>Q</text>
+      <y>10</y>
+      <width>10</width>
+      <height>13</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #93</name>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <SIG>UpDnCntr-$(N)_OUT</SIG>
+      </macros>
+      <x>31</x>
+      <width>157</width>
+      <height>26</height>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #95</name>
+    <text>COUNTS_S</text>
+    <x>240</x>
+    <y>81</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #98</name>
+    <x>293</x>
+    <y>85</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #102</name>
+    <text>COUNTS_8</text>
+    <x>240</x>
+    <y>56</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #105</name>
+    <x>293</x>
+    <y>60</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #109</name>
+    <x>307</x>
+    <y>50</y>
+    <width>136</width>
+    <height>74</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #112</name>
+      <pv_name>$(P)$(H)UpDnCntr-$(N)_COUNTS</pv_name>
+      <x>5</x>
+      <y>52</y>
+      <width>128</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #116</name>
+      <y>50</y>
+      <width>136</width>
+      <height>24</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #119</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="105" green="105" blue="105">
+          </color>
+        </line_color>
+        <points>
+          <point x="1.0" y="23.0">
+          </point>
+          <point x="1.0" y="1.0">
+          </point>
+          <point x="134.0" y="1.0">
+          </point>
+        </points>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #124</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <points>
+          <point x="134.0" y="1.0">
+          </point>
+          <point x="134.0" y="23.0">
+          </point>
+          <point x="1.0" y="23.0">
+          </point>
+        </points>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #129</name>
+      <pv_name>$(P)$(H)UpDnCntr-$(N)_COUNTS_s</pv_name>
+      <x>5</x>
+      <y>27</y>
+      <width>128</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #133</name>
+      <y>25</y>
+      <width>136</width>
+      <height>24</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #136</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="105" green="105" blue="105">
+          </color>
+        </line_color>
+        <points>
+          <point x="1.0" y="23.0">
+          </point>
+          <point x="1.0" y="1.0">
+          </point>
+          <point x="134.0" y="1.0">
+          </point>
+        </points>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #141</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <points>
+          <point x="134.0" y="1.0">
+          </point>
+          <point x="134.0" y="23.0">
+          </point>
+          <point x="1.0" y="23.0">
+          </point>
+        </points>
+      </widget>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #146</name>
+      <pv_name>$(P)$(H)UpDnCntr-$(N)_COUNTS_8</pv_name>
+      <x>5</x>
+      <y>2</y>
+      <width>128</width>
+      <height>18</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #150</name>
+      <width>136</width>
+      <height>24</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #153</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="105" green="105" blue="105">
+          </color>
+        </line_color>
+        <points>
+          <point x="1.0" y="23.0">
+          </point>
+          <point x="1.0" y="1.0">
+          </point>
+          <point x="134.0" y="1.0">
+          </point>
+        </points>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #158</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <points>
+          <point x="134.0" y="1.0">
+          </point>
+          <point x="134.0" y="23.0">
+          </point>
+          <point x="1.0" y="23.0">
+          </point>
+        </points>
+      </widget>
+    </widget>
+  </widget>
+</display>

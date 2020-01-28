@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_Output</name>
+  <x>981</x>
+  <y>512</y>
+  <width>156</width>
+  <height>26</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #6</name>
+    <y>7</y>
+    <width>13</width>
+    <height>13</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)$(SIG)_BI</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #10</name>
+    <x>10</x>
+    <y>13</y>
+    <width>29</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="28.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #14</name>
+    <pv_name>$(P)$(H)$(SIG)_Signal</pv_name>
+    <x>34</x>
+    <y>3</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="249" green="218" blue="60">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #18</name>
+    <y>7</y>
+    <width>13</width>
+    <height>13</height>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)$(SIG)_BI</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #22</name>
+    <x>31</x>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)$(SIG)_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #26</name>
+    <pv_name>$(P)$(H)$(SIG)_Show</pv_name>
+    <x>137</x>
+    <y>3</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #29</name>
+    <pv_name>$(P)$(H)$(SIG)_BI</pv_name>
+    <x>16</x>
+    <y>1</y>
+    <width>10</width>
+    <height>12</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

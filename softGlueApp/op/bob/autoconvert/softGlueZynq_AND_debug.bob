@@ -1,0 +1,929 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_AND_debug</name>
+  <x>1099</x>
+  <y>226</y>
+  <width>467</width>
+  <height>65</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>202</x>
+    <y>15</y>
+    <width>22</width>
+    <height>41</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="21.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="1.0" y="40.0">
+      </point>
+      <point x="20.0" y="40.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>arc #10</name>
+    <x>201</x>
+    <y>14</y>
+    <width>42</width>
+    <height>41</height>
+    <start_angle>270.0</start_angle>
+    <total_angle>180.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="30" green="144" blue="255">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #13</name>
+    <x>238</x>
+    <y>17</y>
+    <width>10</width>
+    <height>10</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #16</name>
+    <x>245</x>
+    <y>22</y>
+    <width>11</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="10.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #20</name>
+    <x>236</x>
+    <y>47</y>
+    <width>20</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="19.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #24</name>
+    <pv_name>$(P)$(H)AND-$(N)_IN2_Show</pv_name>
+    <x>10</x>
+    <y>38</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #27</name>
+    <x>30</x>
+    <y>35</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_IN2_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #31</name>
+    <x>130</x>
+    <y>48</y>
+    <width>64</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="63.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #35</name>
+    <pv_name>$(P)$(H)AND-$(N)_IN2_Signal</pv_name>
+    <x>33</x>
+    <y>38</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #39</name>
+    <x>180</x>
+    <y>42</y>
+    <width>13</width>
+    <height>13</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>oval #42</name>
+      <width>13</width>
+      <height>13</height>
+      <line_color>
+        <color red="253" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="253" green="0" blue="0">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0!=0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(H)AND-$(N)_IN2_BI</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>oval #46</name>
+      <width>13</width>
+      <height>13</height>
+      <line_color>
+        <color red="130" green="4" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="130" green="4" blue="0">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0==0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(H)AND-$(N)_IN2_BI</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #50</name>
+    <pv_name>$(P)$(H)AND-$(N)_IN1_Show</pv_name>
+    <x>10</x>
+    <y>13</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #53</name>
+    <x>30</x>
+    <y>10</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_IN1_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #57</name>
+    <x>130</x>
+    <y>23</y>
+    <width>64</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="63.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #61</name>
+    <pv_name>$(P)$(H)AND-$(N)_IN1_Signal</pv_name>
+    <x>33</x>
+    <y>13</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #65</name>
+    <x>180</x>
+    <y>17</y>
+    <width>13</width>
+    <height>13</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="ellipse" version="2.0.0">
+      <name>oval #68</name>
+      <width>13</width>
+      <height>13</height>
+      <line_color>
+        <color red="253" green="0" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="253" green="0" blue="0">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0!=0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(H)AND-$(N)_IN1_BI</pv_name>
+        </rule>
+      </rules>
+    </widget>
+    <widget type="ellipse" version="2.0.0">
+      <name>oval #72</name>
+      <width>13</width>
+      <height>13</height>
+      <line_color>
+        <color red="130" green="4" blue="0">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="130" green="4" blue="0">
+        </color>
+      </background_color>
+      <rules>
+        <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+          <exp bool_exp="!(pv0==0)">
+            <value>false</value>
+          </exp>
+          <pv_name>$(P)$(H)AND-$(N)_IN1_BI</pv_name>
+        </rule>
+      </rules>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #76</name>
+    <x>191</x>
+    <y>22</y>
+    <width>12</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="11.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #80</name>
+    <x>191</x>
+    <y>47</y>
+    <width>12</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="11.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #84</name>
+    <x>285</x>
+    <y>10</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_NOUT_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #88</name>
+    <x>285</x>
+    <y>10</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_NOUT_SigCheckShow.VAL</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #92</name>
+    <x>264</x>
+    <y>23</y>
+    <width>29</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="28.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #96</name>
+    <pv_name>$(P)$(H)AND-$(N)_NOUT_Signal</pv_name>
+    <x>288</x>
+    <y>13</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #100</name>
+    <x>254</x>
+    <y>17</y>
+    <width>13</width>
+    <height>13</height>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_NOUT_BI</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #104</name>
+    <x>254</x>
+    <y>17</y>
+    <width>13</width>
+    <height>13</height>
+    <line_color>
+      <color red="130" green="4" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="130" green="4" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_NOUT_BI</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #108</name>
+    <pv_name>$(P)$(H)AND-$(N)_NOUT_Show</pv_name>
+    <x>391</x>
+    <y>13</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #111</name>
+    <actions>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)AND-$(N)_NOUT_DoShow</S>
+        </macros>
+        <target>tab</target>
+        <description>Show sseq</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_NOUT_SigShow</C>
+        </macros>
+        <target>tab</target>
+        <description>SigShow scalcout</description>
+      </action>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)AND-$(N)_NOUT_DoCheck</S>
+        </macros>
+        <target>tab</target>
+        <description>Check sseq</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_NOUT_SigCheck</C>
+        </macros>
+        <target>tab</target>
+        <description>SigCheck scalcout</description>
+      </action>
+      <action type="open_display">
+        <file>yyCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_NOUT_SigCheckShow</C>
+        </macros>
+        <target>tab</target>
+        <description>SigCheckShow calcout</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_NOUT_autoRead</C>
+        </macros>
+        <target>tab</target>
+        <description>autoread scalcout</description>
+      </action>
+    </actions>
+    <text>debug</text>
+    <x>419</x>
+    <y>16</y>
+    <width>35</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #119</name>
+    <x>285</x>
+    <y>35</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_POUT_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #123</name>
+    <x>285</x>
+    <y>35</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_POUT_SigCheckShow.VAL</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #127</name>
+    <x>264</x>
+    <y>48</y>
+    <width>29</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="28.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #131</name>
+    <pv_name>$(P)$(H)AND-$(N)_POUT_Signal</pv_name>
+    <x>288</x>
+    <y>38</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="251" green="243" blue="74">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #135</name>
+    <x>254</x>
+    <y>42</y>
+    <width>13</width>
+    <height>13</height>
+    <line_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_POUT_BI</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="ellipse" version="2.0.0">
+    <name>oval #139</name>
+    <x>254</x>
+    <y>42</y>
+    <width>13</width>
+    <height>13</height>
+    <line_color>
+      <color red="130" green="4" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="130" green="4" blue="0">
+      </color>
+    </background_color>
+    <rules>
+      <rule name="vis_if_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0==0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)AND-$(N)_POUT_BI</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #143</name>
+    <pv_name>$(P)$(H)AND-$(N)_POUT_Show</pv_name>
+    <x>391</x>
+    <y>38</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #146</name>
+    <actions>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)AND-$(N)_POUT_DoShow</S>
+        </macros>
+        <target>tab</target>
+        <description>Show sseq</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_POUT_SigShow</C>
+        </macros>
+        <target>tab</target>
+        <description>SigShow scalcout</description>
+      </action>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)AND-$(N)_POUT_DoCheck</S>
+        </macros>
+        <target>tab</target>
+        <description>Check sseq</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_POUT_SigCheck</C>
+        </macros>
+        <target>tab</target>
+        <description>SigCheck scalcout</description>
+      </action>
+      <action type="open_display">
+        <file>yyCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_POUT_SigCheckShow</C>
+        </macros>
+        <target>tab</target>
+        <description>SigCheckShow calcout</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_POUT_autoRead</C>
+        </macros>
+        <target>tab</target>
+        <description>autoread scalcout</description>
+      </action>
+    </actions>
+    <text>debug</text>
+    <x>419</x>
+    <y>41</y>
+    <width>35</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #154</name>
+    <actions>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)AND-$(N)_IN1_DoShow</S>
+        </macros>
+        <target>tab</target>
+        <description>Show sseq</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_IN1_SigShow</C>
+        </macros>
+        <target>tab</target>
+        <description>SigShow scalcout</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_IN1_autoRead</C>
+        </macros>
+        <target>tab</target>
+        <description>autoread scalcout</description>
+      </action>
+    </actions>
+    <text>debug</text>
+    <x>139</x>
+    <width>35</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #159</name>
+    <actions>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)AND-$(N)_IN2_DoShow</S>
+        </macros>
+        <target>tab</target>
+        <description>Show sseq</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_IN2_SigShow</C>
+        </macros>
+        <target>tab</target>
+        <description>SigShow scalcout</description>
+      </action>
+      <action type="open_display">
+        <file>yysCalcoutRecord.opi</file>
+        <macros>
+          <C>$(H)AND-$(N)_IN2_autoRead</C>
+        </macros>
+        <target>tab</target>
+        <description>autoread scalcout</description>
+      </action>
+    </actions>
+    <text>debug</text>
+    <x>139</x>
+    <y>27</y>
+    <width>35</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+</display>

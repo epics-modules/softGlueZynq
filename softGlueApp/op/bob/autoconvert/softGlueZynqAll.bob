@@ -1,0 +1,1018 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqAll</name>
+  <x>40</x>
+  <y>151</y>
+  <width>1355</width>
+  <height>995</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #6</name>
+    <file>softGlueZynq_UpCntr_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>935</x>
+    <y>25</y>
+    <width>414</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #8</name>
+    <file>softGlueZynq_UpCntr_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>935</x>
+    <y>98</y>
+    <width>414</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #10</name>
+    <file>softGlueZynq_UpCntr_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>935</x>
+    <y>171</y>
+    <width>414</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #12</name>
+    <file>softGlueZynq_UpCntr_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>935</x>
+    <y>244</y>
+    <width>414</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #14</name>
+    <file>softGlueZynq_DnCntr_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>450</x>
+    <y>175</y>
+    <width>468</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #16</name>
+    <file>softGlueZynq_DnCntr_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>450</x>
+    <y>250</y>
+    <width>468</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #18</name>
+    <file>softGlueZynq_DnCntr_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>450</x>
+    <y>25</y>
+    <width>468</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #20</name>
+    <file>softGlueZynq_DnCntr_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>450</x>
+    <y>100</y>
+    <width>468</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #22</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>10</x>
+    <y>25</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #24</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>10</x>
+    <y>75</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #26</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>10</x>
+    <y>125</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #28</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>10</x>
+    <y>175</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #30</name>
+    <file>softGlueZynq_DFF_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>935</x>
+    <y>317</y>
+    <width>418</width>
+    <height>95</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #32</name>
+    <file>softGlueZynq_DFF_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>935</x>
+    <y>414</y>
+    <width>418</width>
+    <height>95</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #34</name>
+    <file>softGlueZynq_DFF_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>935</x>
+    <y>511</y>
+    <width>418</width>
+    <height>95</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #36</name>
+    <file>softGlueZynq_DFF_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>935</x>
+    <y>608</y>
+    <width>418</width>
+    <height>95</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #38</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>10</x>
+    <y>325</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #40</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>10</x>
+    <y>375</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #42</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>10</x>
+    <y>225</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #44</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>10</x>
+    <y>275</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #46</name>
+    <x>10</x>
+    <y>425</y>
+    <width>379</width>
+    <height>99</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #49</name>
+      <file>softGlueZynq_XOR_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>379</width>
+      <height>49</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #51</name>
+      <file>softGlueZynq_XOR_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>50</y>
+      <width>379</width>
+      <height>49</height>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #53</name>
+    <file>softGlueZynq_DEMUX2_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>10</x>
+    <y>722</y>
+    <width>412</width>
+    <height>52</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #55</name>
+    <file>softGlueZynq_DEMUX2_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>10</x>
+    <y>672</y>
+    <width>412</width>
+    <height>52</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #57</name>
+    <file>softGlueZynq_MUX2_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>10</x>
+    <y>525</y>
+    <width>411</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #59</name>
+    <file>softGlueZynq_MUX2_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>10</x>
+    <y>600</y>
+    <width>411</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #61</name>
+    <file>softGlueZynq_DivByN_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>450</x>
+    <y>325</y>
+    <width>469</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #63</name>
+    <file>softGlueZynq_DivByN_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>450</x>
+    <y>400</y>
+    <width>469</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #65</name>
+    <file>softGlueZynq_DivByN_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>450</x>
+    <y>475</y>
+    <width>469</width>
+    <height>72</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #67</name>
+    <file>softGlueZynq_DivByN_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>450</x>
+    <y>550</y>
+    <width>469</width>
+    <height>72</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #69</name>
+    <x>450</x>
+    <y>625</y>
+    <width>383</width>
+    <height>107</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #72</name>
+      <file>softGlueZynq_BUFFER_bare.bob</file>
+      <macros>
+        <N>3</N>
+      </macros>
+      <y>54</y>
+      <width>383</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #74</name>
+      <file>softGlueZynq_BUFFER_bare.bob</file>
+      <macros>
+        <N>4</N>
+      </macros>
+      <y>81</y>
+      <width>383</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #76</name>
+      <file>softGlueZynq_BUFFER_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>383</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #78</name>
+      <file>softGlueZynq_BUFFER_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>27</y>
+      <width>383</width>
+      <height>26</height>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #80</name>
+    <file>softGlueZynqFieldIOxx8_small_bare.bob</file>
+    <macros>
+      <N1>1</N1>
+      <N2>2</N2>
+      <N3>3</N3>
+      <N4>4</N4>
+      <N5>5</N5>
+      <N6>6</N6>
+      <N7>7</N7>
+      <N8>8</N8>
+    </macros>
+    <x>10</x>
+    <y>820</y>
+    <width>407</width>
+    <height>172</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #82</name>
+    <x>511</x>
+    <y>748</y>
+    <width>350</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #85</name>
+      <pv_name>$(P)$(H)availableSignals</pv_name>
+      <x>320</x>
+      <width>30</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #89</name>
+      <text>#Signals In Use:</text>
+      <width>160</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #92</name>
+      <text>#Remaining:</text>
+      <x>210</x>
+      <width>110</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #95</name>
+      <pv_name>$(P)$(H)numSignalsInUse</pv_name>
+      <x>160</x>
+      <width>30</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #99</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynqAllButIO.opi</file>
+        <target>replace</target>
+        <description>all but I/O</description>
+      </action>
+    </actions>
+    <text>No I/O</text>
+    <x>1305</x>
+    <y>760</y>
+    <width>50</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #102</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynqAll_label.opi</file>
+        <target>replace</target>
+        <description>all with labels</description>
+      </action>
+    </actions>
+    <text>Labels</text>
+    <x>1304</x>
+    <y>735</y>
+    <width>50</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #105</name>
+    <width>1355</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>composite #108</name>
+      <width>1355</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>rectangle #111</name>
+        <width>1355</width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #114</name>
+        <text>$(P)$(H)</text>
+        <width>1355</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #117</name>
+      <y>20</y>
+      <width>1354</width>
+      <height>3</height>
+      <line_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="1352.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #121</name>
+    <x>1115</x>
+    <y>723</y>
+    <width>21</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="20.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #125</name>
+    <pv_name>$(P)$(H)10MHZ_CLOCK_Signal</pv_name>
+    <x>1137</x>
+    <y>713</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="249" green="218" blue="60">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #129</name>
+    <x>1134</x>
+    <y>710</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)10MHZ_CLOCK_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #133</name>
+    <pv_name>$(P)$(H)10MHZ_CLOCK_Show</pv_name>
+    <x>1240</x>
+    <y>713</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #136</name>
+    <text>10 MHz Clock</text>
+    <x>975</x>
+    <y>715</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #139</name>
+    <x>1115</x>
+    <y>748</y>
+    <width>21</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="20.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #143</name>
+    <pv_name>$(P)$(H)20MHZ_CLOCK_Signal</pv_name>
+    <x>1137</x>
+    <y>738</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="249" green="218" blue="60">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #147</name>
+    <x>1134</x>
+    <y>735</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)20MHZ_CLOCK_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #151</name>
+    <pv_name>$(P)$(H)20MHZ_CLOCK_Show</pv_name>
+    <x>1240</x>
+    <y>738</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #154</name>
+    <text>20 MHz Clock</text>
+    <x>975</x>
+    <y>740</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #157</name>
+    <x>1115</x>
+    <y>773</y>
+    <width>21</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="20.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #161</name>
+    <pv_name>$(P)$(H)50MHZ_CLOCK_Signal</pv_name>
+    <x>1137</x>
+    <y>763</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="249" green="218" blue="60">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #165</name>
+    <x>1134</x>
+    <y>760</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)50MHZ_CLOCK_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #169</name>
+    <pv_name>$(P)$(H)50MHZ_CLOCK_Show</pv_name>
+    <x>1240</x>
+    <y>763</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #172</name>
+    <text>50 MHz Clock</text>
+    <x>975</x>
+    <y>765</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #175</name>
+    <file>softGlueZynqFieldIOxx8_small_bare.bob</file>
+    <macros>
+      <N1>9</N1>
+      <N2>10</N2>
+      <N3>11</N3>
+      <N4>12</N4>
+      <N5>13</N5>
+      <N6>14</N6>
+      <N7>15</N7>
+      <N8>16</N8>
+    </macros>
+    <x>450</x>
+    <y>820</y>
+    <width>407</width>
+    <height>172</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #177</name>
+    <file>softGlueZynqFieldIOxx8_small_bare.bob</file>
+    <macros>
+      <N1>17</N1>
+      <N2>18</N2>
+      <N3>19</N3>
+      <N4>20</N4>
+      <N5>21</N5>
+      <N6>22</N6>
+      <N7>23</N7>
+      <N8>24</N8>
+    </macros>
+    <x>935</x>
+    <y>820</y>
+    <width>407</width>
+    <height>172</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #179</name>
+    <x>1115</x>
+    <y>798</y>
+    <width>21</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="20.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #183</name>
+    <pv_name>$(P)$(H)VAR_CLOCK_Signal</pv_name>
+    <x>1137</x>
+    <y>788</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="249" green="218" blue="60">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #187</name>
+    <x>1134</x>
+    <y>785</y>
+    <width>106</width>
+    <height>26</height>
+    <line_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="205" green="97" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <rules>
+      <rule name="vis_if_not_zero" prop_id="visible" out_exp="false">
+        <exp bool_exp="!(pv0!=0)">
+          <value>false</value>
+        </exp>
+        <pv_name>$(P)$(H)50MHZ_CLOCK_SigShow</pv_name>
+      </rule>
+    </rules>
+  </widget>
+  <widget type="bool_button" version="2.0.0">
+    <name>message button #191</name>
+    <pv_name>$(P)$(H)VAR_CLOCK_Show</pv_name>
+    <x>1240</x>
+    <y>788</y>
+    <width>20</width>
+    <height>20</height>
+    <off_label></off_label>
+    <off_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </off_color>
+    <on_label></on_label>
+    <on_color>
+      <color red="92" green="178" blue="204">
+      </color>
+    </on_color>
+    <show_led>false</show_led>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <mode>1</mode>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #194</name>
+    <text>Variable Clock</text>
+    <x>975</x>
+    <y>790</y>
+    <width>140</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+</display>

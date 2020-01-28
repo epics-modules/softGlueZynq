@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_IntBit</name>
+  <x>900</x>
+  <y>200</y>
+  <width>257</width>
+  <height>50</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="label" version="2.0.0">
+    <name>text #6</name>
+    <text>Interrupt $(NAM)</text>
+    <width>257</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #9</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <y>20</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+</display>

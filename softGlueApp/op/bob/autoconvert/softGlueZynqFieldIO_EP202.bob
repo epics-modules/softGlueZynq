@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqFieldIO_EP202</name>
+  <x>660</x>
+  <y>32</y>
+  <width>520</width>
+  <height>1105</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #6</name>
+    <y>25</y>
+    <width>520</width>
+    <height>25</height>
+    <line_color>
+      <color red="236" green="236" blue="236">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="236" green="236" blue="236">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #9</name>
+    <file>softGlueZynqFieldIOxx_EP202_small_bare_label.bob</file>
+    <macros>
+      <N1>1</N1>
+      <N10>10</N10>
+      <N11>11</N11>
+      <N12>12</N12>
+      <N13>13</N13>
+      <N14>14</N14>
+      <N15>15</N15>
+      <N16>16</N16>
+      <N2>2</N2>
+      <N3>3</N3>
+      <N4>4</N4>
+      <N5>5</N5>
+      <N6>6</N6>
+      <N7>7</N7>
+      <N8>8</N8>
+      <N9>9</N9>
+    </macros>
+    <x>5</x>
+    <y>65</y>
+    <width>457</width>
+    <height>319</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #11</name>
+    <file>softGlueZynqFieldIOxx_EP202_small_bare_label.bob</file>
+    <macros>
+      <N1>17</N1>
+      <N10>26</N10>
+      <N11>27</N11>
+      <N12>28</N12>
+      <N13>29</N13>
+      <N14>30</N14>
+      <N15>31</N15>
+      <N16>32</N16>
+      <N2>18</N2>
+      <N3>19</N3>
+      <N4>20</N4>
+      <N5>21</N5>
+      <N6>22</N6>
+      <N7>23</N7>
+      <N8>24</N8>
+      <N9>25</N9>
+    </macros>
+    <x>5</x>
+    <y>405</y>
+    <width>457</width>
+    <height>319</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #13</name>
+    <file>softGlueZynqFieldIOxx_EP202_small_bare_label.bob</file>
+    <macros>
+      <N1>33</N1>
+      <N10>42</N10>
+      <N11>43</N11>
+      <N12>44</N12>
+      <N13>45</N13>
+      <N14>46</N14>
+      <N15>47</N15>
+      <N16>48</N16>
+      <N2>34</N2>
+      <N3>35</N3>
+      <N4>36</N4>
+      <N5>37</N5>
+      <N6>38</N6>
+      <N7>39</N7>
+      <N8>40</N8>
+      <N9>41</N9>
+    </macros>
+    <x>5</x>
+    <y>745</y>
+    <width>457</width>
+    <height>319</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #15</name>
+    <text>Field Input Bit</text>
+    <x>65</x>
+    <y>30</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #18</name>
+    <text>Field Output Bit</text>
+    <x>258</x>
+    <y>30</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #21</name>
+    <x>14</x>
+    <y>55</y>
+    <width>410</width>
+    <height>10</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #24</name>
+      <text>CONNECTOR #</text>
+      <x>340</x>
+      <width>70</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="253" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #27</name>
+      <text>CONNECTOR #</text>
+      <width>80</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="253" green="0" blue="0">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #30</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynqFieldIO_Int_EP202.opi</file>
+        <target>replace</target>
+        <description>Interrupt support</description>
+      </action>
+    </actions>
+    <text>More</text>
+    <x>356</x>
+    <y>1085</y>
+    <width>70</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #33</name>
+    <y>50</y>
+    <width>519</width>
+    <height>3</height>
+    <line_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="517.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #37</name>
+    <x>80</x>
+    <y>1087</y>
+    <width>130</width>
+    <height>17</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #40</name>
+      <pv_name>$(P)$(H)pollTimeMS</pv_name>
+      <x>90</x>
+      <width>40</width>
+      <height>17</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #44</name>
+      <text>POLL TIME (MS)</text>
+      <y>3</y>
+      <width>90</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #47</name>
+    <width>520</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>composite #50</name>
+      <width>520</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>rectangle #53</name>
+        <width>520</width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #56</name>
+        <text>$(P)$(H)</text>
+        <width>520</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #59</name>
+      <y>20</y>
+      <width>520</width>
+      <height>3</height>
+      <line_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="518.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+</display>

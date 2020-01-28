@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_Scaler_bare</name>
+  <x>293</x>
+  <y>138</y>
+  <width>460</width>
+  <height>190</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #6</name>
+    <x>175</x>
+    <y>6</y>
+    <width>102</width>
+    <height>152</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #9</name>
+    <text>READ</text>
+    <x>179</x>
+    <y>114</y>
+    <width>40</width>
+    <height>13</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #12</name>
+    <x>166</x>
+    <y>118</y>
+    <width>10</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="9.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #16</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>scalersToFIFO-$(N)_CHADV</SIG>
+    </macros>
+    <x>12</x>
+    <y>105</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #18</name>
+    <x>163</x>
+    <y>93</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #22</name>
+    <text>CLEAR</text>
+    <x>179</x>
+    <y>89</y>
+    <width>40</width>
+    <height>13</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #25</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_CLR</SIG>
+    </macros>
+    <x>12</x>
+    <y>80</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #27</name>
+    <x>165</x>
+    <y>18</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #31</name>
+    <text>EN</text>
+    <x>181</x>
+    <y>13</y>
+    <width>10</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #34</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_EN</SIG>
+    </macros>
+    <x>12</x>
+    <y>5</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #36</name>
+    <x>165</x>
+    <y>43</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #40</name>
+    <text>CNT</text>
+    <x>177</x>
+    <y>38</y>
+    <width>25</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #43</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_CNT</SIG>
+    </macros>
+    <x>12</x>
+    <y>30</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #45</name>
+    <x>165</x>
+    <y>68</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #49</name>
+    <text>STOP</text>
+    <x>178</x>
+    <y>63</y>
+    <width>30</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #52</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_STOP</SIG>
+    </macros>
+    <x>12</x>
+    <y>55</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #54</name>
+    <text>Scaler-$(N)</text>
+    <x>203</x>
+    <y>23</y>
+    <width>60</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #57</name>
+    <x>197</x>
+    <y>20</y>
+    <width>70</width>
+    <height>14</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #60</name>
+    <x>203</x>
+    <y>144</y>
+    <width>80</width>
+    <height>41</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #63</name>
+      <text>PRESET</text>
+      <x>15</x>
+      <width>40</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #66</name>
+      <x>34</x>
+      <y>11</y>
+      <width>2</width>
+      <height>16</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="1.0" y="15.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #70</name>
+      <pv_name>$(P)$(H)Scaler-$(N)_PRESET</pv_name>
+      <y>21</y>
+      <width>80</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #74</name>
+    <x>166</x>
+    <y>143</y>
+    <width>10</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="9.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #78</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_CLK</SIG>
+    </macros>
+    <x>12</x>
+    <y>130</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #80</name>
+    <x>175</x>
+    <y>135</y>
+    <width>11</width>
+    <height>16</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="10.0" y="8.0">
+      </point>
+      <point x="1.0" y="15.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #84</name>
+    <x>276</x>
+    <y>73</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #88</name>
+    <text>Q</text>
+    <x>263</x>
+    <y>68</y>
+    <width>10</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #91</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_Q</SIG>
+    </macros>
+    <x>291</x>
+    <y>60</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #93</name>
+    <x>276</x>
+    <y>103</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #97</name>
+    <text>CNTG</text>
+    <x>243</x>
+    <y>98</y>
+    <width>30</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #100</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>Scaler-$(N)_CNTG</SIG>
+    </macros>
+    <x>291</x>
+    <y>90</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+</display>

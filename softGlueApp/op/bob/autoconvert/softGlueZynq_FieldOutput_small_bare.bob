@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_FieldOutput_small_bare</name>
+  <x>1369</x>
+  <y>117</y>
+  <width>195</width>
+  <height>26</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #6</name>
+    <file>softGlueZynq_Input_small.bob</file>
+    <macros>
+      <SIG>FO$(N)</SIG>
+    </macros>
+    <width>155</width>
+    <height>24</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #8</name>
+    <text>$(N)</text>
+    <x>160</x>
+    <y>5</y>
+    <width>15</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #11</name>
+    <pv_name>$(P)$(H)FO$(N)_Signal.DESC</pv_name>
+    <x>185</x>
+    <y>9</y>
+    <width>12</width>
+    <height>12</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="12.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="253" green="0" blue="0">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>
