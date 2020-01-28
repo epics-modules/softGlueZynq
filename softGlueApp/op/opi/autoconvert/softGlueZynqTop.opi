@@ -7,11 +7,11 @@
   </auto_scale_widgets>
   <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
   <background_color>
-    <color name="Gray_1" red="236" green="236" blue="236" />
+    <color red="236" green="236" blue="236" />
   </background_color>
-  <boy_version>5.1.0.201802081749</boy_version>
+  <boy_version>5.1.0</boy_version>
   <foreground_color>
-    <color name="MEDM_COLOR_64" red="26" green="115" blue="9" />
+    <color red="26" green="115" blue="9" />
   </foreground_color>
   <grid_space>10</grid_space>
   <height>40</height>
@@ -63,7 +63,7 @@
     <alarm_pulsing>false</alarm_pulsing>
     <backcolor_alarm_sensitive>false</backcolor_alarm_sensitive>
     <background_color>
-      <color name="MEDM_COLOR_17" red="51" green="153" blue="0" />
+      <color red="51" green="153" blue="0" />
     </background_color>
     <border_alarm_sensitive>false</border_alarm_sensitive>
     <border_color>
@@ -73,11 +73,11 @@
     <border_width>1</border_width>
     <enabled>true</enabled>
     <font>
-      <opifont.name fontName="Cantarell" height="11" style="0" pixels="false">Default</opifont.name>
+      <opifont.name fontName="Sans" height="10" style="0" pixels="false">Default</opifont.name>
     </font>
     <forecolor_alarm_sensitive>false</forecolor_alarm_sensitive>
     <foreground_color>
-      <color name="Gray_0" red="255" green="255" blue="255" />
+      <color red="255" green="255" blue="255" />
     </foreground_color>
     <height>20</height>
     <label>softGlueZynq</label>
