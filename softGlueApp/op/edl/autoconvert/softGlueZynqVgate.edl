@@ -1,0 +1,74 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 634
+y 276
+w 485
+h 390
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 9
+y 203
+w 467
+h 179
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_UpDnCntr_bare.edl;"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_UpDnCntr_bare.edl;"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 9
+y 14
+w 467
+h 179
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_UpDnCntr_bare.edl;"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_UpDnCntr_bare.edl;"
+}
+noScroll
+endObjectProperties
+
