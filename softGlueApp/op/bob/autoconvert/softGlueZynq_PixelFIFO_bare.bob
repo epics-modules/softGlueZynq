@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_PixelFIFO_bare</name>
+  <x>486</x>
+  <y>745</y>
+  <width>460</width>
+  <height>125</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #6</name>
+    <x>175</x>
+    <y>6</y>
+    <width>102</width>
+    <height>117</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #9</name>
+    <text>PixelFIFO-$(N)</text>
+    <x>198</x>
+    <y>35</y>
+    <width>70</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #12</name>
+    <x>192</x>
+    <y>32</y>
+    <width>80</width>
+    <height>14</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #15</name>
+    <x>276</x>
+    <y>22</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #19</name>
+    <text>10% FULL</text>
+    <x>220</x>
+    <y>17</y>
+    <width>50</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #22</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>PixelFIFO-$(N)_FIFO10</SIG>
+    </macros>
+    <x>291</x>
+    <y>9</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #24</name>
+    <x>276</x>
+    <y>55</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #28</name>
+    <text>50% FULL</text>
+    <x>220</x>
+    <y>50</y>
+    <width>50</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #31</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>PixelFIFO-$(N)_FIFO50</SIG>
+    </macros>
+    <x>291</x>
+    <y>42</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #33</name>
+    <x>276</x>
+    <y>110</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #37</name>
+    <text>CHADVDONE</text>
+    <x>210</x>
+    <y>105</y>
+    <width>60</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #40</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>PixelFIFO-$(N)_ADVDONE</SIG>
+    </macros>
+    <x>291</x>
+    <y>97</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #42</name>
+    <text>CHADV</text>
+    <x>179</x>
+    <y>89</y>
+    <width>40</width>
+    <height>13</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #45</name>
+    <x>166</x>
+    <y>93</y>
+    <width>10</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="9.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #49</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>PixelFIFO-$(N)_CHADV</SIG>
+    </macros>
+    <x>10</x>
+    <y>80</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+</display>

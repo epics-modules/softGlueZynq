@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqFieldIO_Intxx_bare</name>
+  <x>203</x>
+  <y>283</y>
+  <width>955</width>
+  <height>372</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>480</x>
+    <width>3</width>
+    <height>371</height>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="1.0" y="369.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #11</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N1)</N>
+    </macros>
+    <x>490</x>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #13</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N2)</N>
+    </macros>
+    <x>490</x>
+    <y>23</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #15</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N3)</N>
+    </macros>
+    <x>490</x>
+    <y>46</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #17</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N4)</N>
+    </macros>
+    <x>490</x>
+    <y>69</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #19</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N5)</N>
+    </macros>
+    <x>490</x>
+    <y>92</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #21</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N6)</N>
+    </macros>
+    <x>490</x>
+    <y>115</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #23</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N7)</N>
+    </macros>
+    <x>490</x>
+    <y>138</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #25</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N8)</N>
+    </macros>
+    <x>490</x>
+    <y>161</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #27</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N9)</N>
+    </macros>
+    <x>490</x>
+    <y>184</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #29</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N10)</N>
+    </macros>
+    <x>490</x>
+    <y>207</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #31</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N11)</N>
+    </macros>
+    <x>490</x>
+    <y>230</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #33</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N12)</N>
+    </macros>
+    <x>490</x>
+    <y>253</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #35</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N13)</N>
+    </macros>
+    <x>490</x>
+    <y>276</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #37</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N14)</N>
+    </macros>
+    <x>490</x>
+    <y>299</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #39</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N15)</N>
+    </macros>
+    <x>490</x>
+    <y>322</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #41</name>
+    <file>softGlueZynq_FieldOutput_bare.bob</file>
+    <macros>
+      <N>$(N16)</N>
+    </macros>
+    <x>490</x>
+    <y>345</y>
+    <width>197</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #43</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N1)</N>
+    </macros>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #45</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N2)</N>
+    </macros>
+    <y>23</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #47</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N3)</N>
+    </macros>
+    <y>46</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #49</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N4)</N>
+    </macros>
+    <y>69</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #51</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N5)</N>
+    </macros>
+    <y>92</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #53</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N6)</N>
+    </macros>
+    <y>115</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #55</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N7)</N>
+    </macros>
+    <y>138</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #57</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N8)</N>
+    </macros>
+    <y>161</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #59</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N9)</N>
+    </macros>
+    <y>184</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #61</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N10)</N>
+    </macros>
+    <y>207</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #63</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N11)</N>
+    </macros>
+    <y>230</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #65</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N12)</N>
+    </macros>
+    <y>253</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #67</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N13)</N>
+    </macros>
+    <y>276</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #69</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N14)</N>
+    </macros>
+    <y>299</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #71</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N15)</N>
+    </macros>
+    <y>322</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #73</name>
+    <file>softGlueZynq_FieldInput_bare.bob</file>
+    <macros>
+      <N>$(N16)</N>
+    </macros>
+    <y>345</y>
+    <width>195</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #75</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N1)</NAM>
+    </macros>
+    <x>205</x>
+    <y>3</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #77</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N2)</NAM>
+    </macros>
+    <x>205</x>
+    <y>26</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #79</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N3)</NAM>
+    </macros>
+    <x>205</x>
+    <y>49</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #81</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N4)</NAM>
+    </macros>
+    <x>205</x>
+    <y>72</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #83</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N5)</NAM>
+    </macros>
+    <x>205</x>
+    <y>95</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #85</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N6)</NAM>
+    </macros>
+    <x>205</x>
+    <y>118</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #87</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N7)</NAM>
+    </macros>
+    <x>205</x>
+    <y>141</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #89</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N8)</NAM>
+    </macros>
+    <x>205</x>
+    <y>164</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #91</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N9)</NAM>
+    </macros>
+    <x>205</x>
+    <y>187</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #93</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N10)</NAM>
+    </macros>
+    <x>205</x>
+    <y>210</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #95</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N11)</NAM>
+    </macros>
+    <x>205</x>
+    <y>233</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #97</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N12)</NAM>
+    </macros>
+    <x>205</x>
+    <y>256</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #99</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N13)</NAM>
+    </macros>
+    <x>205</x>
+    <y>279</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #101</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N14)</NAM>
+    </macros>
+    <x>205</x>
+    <y>302</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #103</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N15)</NAM>
+    </macros>
+    <x>205</x>
+    <y>325</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #105</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>In_$(N16)</NAM>
+    </macros>
+    <x>205</x>
+    <y>348</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #107</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N1)</NAM>
+    </macros>
+    <x>695</x>
+    <y>3</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #109</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N2)</NAM>
+    </macros>
+    <x>695</x>
+    <y>26</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #111</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N3)</NAM>
+    </macros>
+    <x>695</x>
+    <y>49</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #113</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N4)</NAM>
+    </macros>
+    <x>695</x>
+    <y>72</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #115</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N5)</NAM>
+    </macros>
+    <x>695</x>
+    <y>95</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #117</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N6)</NAM>
+    </macros>
+    <x>695</x>
+    <y>118</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #119</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N7)</NAM>
+    </macros>
+    <x>695</x>
+    <y>141</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #121</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N8)</NAM>
+    </macros>
+    <x>695</x>
+    <y>164</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #123</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N9)</NAM>
+    </macros>
+    <x>695</x>
+    <y>187</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #125</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N10)</NAM>
+    </macros>
+    <x>695</x>
+    <y>210</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #127</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N11)</NAM>
+    </macros>
+    <x>695</x>
+    <y>233</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #129</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N12)</NAM>
+    </macros>
+    <x>695</x>
+    <y>256</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #131</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N13)</NAM>
+    </macros>
+    <x>695</x>
+    <y>279</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #133</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N14)</NAM>
+    </macros>
+    <x>695</x>
+    <y>302</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #135</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N15)</NAM>
+    </macros>
+    <x>695</x>
+    <y>325</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #137</name>
+    <file>softGlueZynq_IntBit_bare.bob</file>
+    <macros>
+      <NAM>Out_$(N16)</NAM>
+    </macros>
+    <x>695</x>
+    <y>348</y>
+    <width>257</width>
+    <height>24</height>
+  </widget>
+</display>

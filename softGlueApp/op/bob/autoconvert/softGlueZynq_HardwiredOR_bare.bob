@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_HardwiredOR_bare</name>
+  <x>1257</x>
+  <y>391</y>
+  <width>240</width>
+  <height>50</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="arc" version="2.0.0">
+    <name>arc #6</name>
+    <y>1</y>
+    <width>25</width>
+    <height>48</height>
+    <start_angle>305.0</start_angle>
+    <total_angle>115.0</total_angle>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="30" green="144" blue="255">
+      </color>
+    </line_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #9</name>
+    <x>10</x>
+    <y>36</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #13</name>
+    <x>10</x>
+    <y>13</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #17</name>
+    <x>72</x>
+    <y>25</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #21</name>
+    <x>19</x>
+    <y>5</y>
+    <width>54</width>
+    <height>21</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="5.0" y="1.0">
+      </point>
+      <point x="14.0" y="1.0">
+      </point>
+      <point x="22.0" y="3.0">
+      </point>
+      <point x="30.0" y="5.0">
+      </point>
+      <point x="38.0" y="9.0">
+      </point>
+      <point x="47.0" y="14.0">
+      </point>
+      <point x="53.0" y="20.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #25</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>HW_OR-$(N)_OUT</SIG>
+    </macros>
+    <x>82</x>
+    <y>12</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #27</name>
+    <text>HW_OR-$(N)</text>
+    <x>26</x>
+    <y>21</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #30</name>
+    <x>19</x>
+    <y>25</y>
+    <width>54</width>
+    <height>21</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="20.0">
+      </point>
+      <point x="5.0" y="20.0">
+      </point>
+      <point x="14.0" y="20.0">
+      </point>
+      <point x="24.0" y="18.0">
+      </point>
+      <point x="30.0" y="16.0">
+      </point>
+      <point x="38.0" y="12.0">
+      </point>
+      <point x="47.0" y="7.0">
+      </point>
+      <point x="53.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+</display>

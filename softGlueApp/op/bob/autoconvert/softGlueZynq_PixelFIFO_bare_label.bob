@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_PixelFIFO_bare_label</name>
+  <x>215</x>
+  <y>380</y>
+  <width>460</width>
+  <height>150</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #6</name>
+    <file>softGlueZynq_ScalersToFIFO_bare.bob</file>
+    <x>10</x>
+    <y>25</y>
+    <width>438</width>
+    <height>117</height>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #8</name>
+    <pv_name>$(P)$(H)ScalersToFIFO-$(N)_desc</pv_name>
+    <x>10</x>
+    <y>8</y>
+    <width>440</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

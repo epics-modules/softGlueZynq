@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_AND_bare_label</name>
+  <x>685</x>
+  <y>192</y>
+  <width>380</width>
+  <height>65</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="group" version="2.0.0">
+    <name>composite #6</name>
+    <width>380</width>
+    <height>64</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #9</name>
+      <file>softGlueZynq_Input.bob</file>
+      <macros>
+        <SIG>AND-$(N)_IN1</SIG>
+      </macros>
+      <y>15</y>
+      <width>155</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #11</name>
+      <file>softGlueZynq_Input.bob</file>
+      <macros>
+        <SIG>AND-$(N)_IN2</SIG>
+      </macros>
+      <y>38</y>
+      <width>155</width>
+      <height>26</height>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #13</name>
+      <x>165</x>
+      <y>20</y>
+      <width>22</width>
+      <height>41</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="21.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="1.0" y="40.0">
+        </point>
+        <point x="20.0" y="40.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="arc" version="2.0.0">
+      <name>arc #17</name>
+      <x>164</x>
+      <y>20</y>
+      <width>42</width>
+      <height>41</height>
+      <start_angle>270.0</start_angle>
+      <total_angle>180.0</total_angle>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="30" green="144" blue="255">
+        </color>
+      </line_color>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #20</name>
+      <x>205</x>
+      <y>40</y>
+      <width>15</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="14.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #24</name>
+      <x>154</x>
+      <y>28</y>
+      <width>12</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="11.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #28</name>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <SIG>AND-$(N)_OUT</SIG>
+      </macros>
+      <x>217</x>
+      <y>27</y>
+      <width>157</width>
+      <height>26</height>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #30</name>
+      <x>154</x>
+      <y>51</y>
+      <width>12</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="11.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #34</name>
+      <text>AND-$(N)</text>
+      <x>170</x>
+      <y>35</y>
+      <width>30</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="42" green="99" blue="228">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>text entry #37</name>
+      <pv_name>$(P)$(H)AND-$(N)_desc</pv_name>
+      <width>380</width>
+      <height>16</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>6</format>
+      <show_units>false</show_units>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

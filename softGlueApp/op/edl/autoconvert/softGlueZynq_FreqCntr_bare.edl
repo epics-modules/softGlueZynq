@@ -1,0 +1,305 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 681
+y 210
+w 414
+h 55
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 23
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=FreqCntr-$(N)_CLK"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=FreqCntr-$(N)_CLK"
+}
+noScroll
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 36
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 37
+1 37
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 9
+w 130
+h 35
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 162
+y 29
+w 11
+h 16
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 163
+1 172
+2 163
+}
+yPoints  {
+0 30
+1 37
+2 44
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 208
+y 33
+w 80
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "FREQUENCY (Hz)"
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 186
+y 13
+w 89
+h 14
+lineColor rgb 10752 25344 58368
+fillColor rgb 10752 25344 58368
+lineWidth 0
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 294
+y 37
+w 17
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 310
+1 295
+}
+yPoints  {
+0 38
+1 38
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 312
+y 29
+w 100
+h 20
+controlPv "$(P)$(H)FreqCntr-$(N)_COUNTS"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 55808 55808 55808
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 27
+w 106
+h 24
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 27
+w 106
+h 24
+lineColor rgb 26880 26880 26880
+fillColor rgb 26880 26880 26880
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 309
+1 309
+2 413
+}
+yPoints  {
+0 50
+1 28
+2 28
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 27
+w 106
+h 24
+lineColor rgb 65280 65280 65280
+fillColor rgb 65280 65280 65280
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 413
+1 413
+2 309
+}
+yPoints  {
+0 28
+1 50
+2 50
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 192
+y 16
+w 80
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor rgb 10752 25344 58368
+bgColor index 3
+useDisplayBg
+value {
+  "FreqCntr-$(N)"
+}
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 27
+w 106
+h 24
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+

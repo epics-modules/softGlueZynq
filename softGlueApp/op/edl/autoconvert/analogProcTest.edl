@@ -1,0 +1,1117 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 587
+y 46
+w 510
+h 310
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 17
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 18
+1 18
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 1
+w 168
+h 291
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 169
+y 12
+w 50
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "shiftClk"
+}
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 4
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=shiftM_CLK"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=shiftM_CLK"
+}
+noScroll
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 170
+y 53
+w 70
+h 13
+font "helvetica-medium-r-10.0"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "AISO-1_AIN"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 58
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 59
+1 59
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 54
+y 53
+w 100
+h 20
+controlPv "$(P)$(H)AISO-1_AIN"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 57
+y 40
+w 95
+h 10
+controlPv "$(P)$(H)AISO-1_AIN"
+format "hex"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 55808 55808 55808
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 170
+y 93
+w 70
+h 13
+font "helvetica-medium-r-10.0"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "AISO-2_AIN"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 98
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 99
+1 99
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 54
+y 93
+w 100
+h 20
+controlPv "$(P)$(H)AISO-2_AIN"
+format "decimal"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 29440 57088 65280
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 57
+y 80
+w 95
+h 10
+controlPv "$(P)$(H)AISO-2_AIN"
+format "hex"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 55808 55808 55808
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 143
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 144
+1 144
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 169
+y 139
+w 63
+h 13
+font "helvetica-medium-r-10.0"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "SIAO-1_IN"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 130
+w 155
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 0
+y 130
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=SIAO-1_IN"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=SIAO-1_IN"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 96
+w 19
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 349
+1 332
+}
+yPoints  {
+0 97
+1 97
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 254
+y 93
+w 73
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "AISO-2_OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 83
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 348
+y 83
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=AISO-2_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=AISO-2_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 246
+y 139
+w 80
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "SIAO-1_AOUT"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 143
+w 17
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 347
+1 332
+}
+yPoints  {
+0 144
+1 144
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 350
+y 135
+w 128
+h 20
+controlPv "$(P)$(H)SIAO-1_AOUT"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 55808 55808 55808
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 345
+y 133
+w 136
+h 24
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 345
+y 133
+w 135
+h 24
+lineColor rgb 26880 26880 26880
+fillColor rgb 26880 26880 26880
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 346
+1 346
+2 479
+}
+yPoints  {
+0 156
+1 134
+2 134
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 345
+y 133
+w 135
+h 24
+lineColor rgb 65280 65280 65280
+fillColor rgb 65280 65280 65280
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 479
+1 479
+2 346
+}
+yPoints  {
+0 134
+1 156
+2 156
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 350
+y 120
+w 128
+h 10
+controlPv "$(P)$(H)SIAO-1_AOUT_s"
+format "decimal"
+font "helvetica-medium-r-8.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 55808 55808 55808
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 56
+w 19
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 349
+1 332
+}
+yPoints  {
+0 57
+1 57
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 254
+y 53
+w 73
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "AISO-1_OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 43
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 348
+y 43
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=AISO-1_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=AISO-1_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 267
+y 165
+w 238
+h 26
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 178
+w 19
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 349
+1 332
+}
+yPoints  {
+0 179
+1 179
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 256
+y 175
+w 71
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "ADC-1_OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 165
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 348
+y 165
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-1_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-1_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 208
+w 19
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 349
+1 332
+}
+yPoints  {
+0 209
+1 209
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 256
+y 205
+w 71
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "ADC-2_OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 195
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 348
+y 195
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-2_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-2_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 238
+w 19
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 349
+1 332
+}
+yPoints  {
+0 239
+1 239
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 256
+y 235
+w 71
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "ADC-3_OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 225
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 348
+y 225
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-3_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-3_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 331
+y 268
+w 19
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 349
+1 332
+}
+yPoints  {
+0 269
+1 269
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 256
+y 265
+w 71
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "right"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "ADC-4_OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 348
+y 255
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 348
+y 255
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-4_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=ADC-4_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 345
+y 133
+w 136
+h 24
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 267
+y 165
+w 238
+h 26
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+

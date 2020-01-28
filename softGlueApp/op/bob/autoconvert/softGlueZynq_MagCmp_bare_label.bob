@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_MagCmp_bare_label</name>
+  <x>988</x>
+  <y>399</y>
+  <width>470</width>
+  <height>140</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #6</name>
+    <pv_name>$(P)$(H)UpDnCntr-$(N)_desc</pv_name>
+    <width>465</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #10</name>
+    <file>softGlueZynq_MagCmp_bare.bob</file>
+    <y>20</y>
+    <width>468</width>
+    <height>120</height>
+  </widget>
+</display>

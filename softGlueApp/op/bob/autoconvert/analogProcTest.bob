@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>analogProcTest</name>
+  <x>587</x>
+  <y>46</y>
+  <width>510</width>
+  <height>310</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>153</x>
+    <y>17</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #10</name>
+    <x>163</x>
+    <width>170</width>
+    <height>293</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #13</name>
+    <text>shiftClk</text>
+    <x>169</x>
+    <y>12</y>
+    <width>50</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #16</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>shiftM_CLK</SIG>
+    </macros>
+    <y>4</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #18</name>
+    <text>AISO-1_AIN</text>
+    <x>170</x>
+    <y>53</y>
+    <width>60</width>
+    <height>13</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #21</name>
+    <x>153</x>
+    <y>58</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #25</name>
+    <pv_name>$(P)$(H)AISO-1_AIN</pv_name>
+    <x>54</x>
+    <y>53</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #29</name>
+    <pv_name>$(P)$(H)AISO-1_AIN</pv_name>
+    <x>57</x>
+    <y>40</y>
+    <width>95</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>4</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #33</name>
+    <text>AISO-2_AIN</text>
+    <x>170</x>
+    <y>93</y>
+    <width>60</width>
+    <height>13</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #36</name>
+    <x>153</x>
+    <y>98</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #40</name>
+    <pv_name>$(P)$(H)AISO-2_AIN</pv_name>
+    <x>54</x>
+    <y>93</y>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #44</name>
+    <pv_name>$(P)$(H)AISO-2_AIN</pv_name>
+    <x>57</x>
+    <y>80</y>
+    <width>95</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>4</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #48</name>
+    <x>153</x>
+    <y>143</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #52</name>
+    <text>SIAO-1_IN</text>
+    <x>169</x>
+    <y>139</y>
+    <width>60</width>
+    <height>13</height>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #55</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>SIAO-1_IN</SIG>
+    </macros>
+    <y>130</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #57</name>
+    <x>331</x>
+    <y>96</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #61</name>
+    <text>AISO-2_OUT</text>
+    <x>267</x>
+    <y>93</y>
+    <width>60</width>
+    <height>13</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #64</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>AISO-2_OUT</SIG>
+    </macros>
+    <x>348</x>
+    <y>83</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #66</name>
+    <text>SIAO-1_AOUT</text>
+    <x>256</x>
+    <y>139</y>
+    <width>70</width>
+    <height>13</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #69</name>
+    <x>331</x>
+    <y>143</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #73</name>
+    <pv_name>$(P)$(H)SIAO-1_AOUT</pv_name>
+    <x>350</x>
+    <y>135</y>
+    <width>128</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #77</name>
+    <x>345</x>
+    <y>133</y>
+    <width>136</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #80</name>
+      <width>135</width>
+      <height>24</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="105" green="105" blue="105">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="23.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="134.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #85</name>
+      <width>135</width>
+      <height>24</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </line_color>
+      <points>
+        <point x="134.0" y="1.0">
+        </point>
+        <point x="134.0" y="23.0">
+        </point>
+        <point x="1.0" y="23.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #90</name>
+    <pv_name>$(P)$(H)SIAO-1_AOUT_s</pv_name>
+    <x>350</x>
+    <y>120</y>
+    <width>128</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #94</name>
+    <x>331</x>
+    <y>56</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #98</name>
+    <text>AISO-1_OUT</text>
+    <x>267</x>
+    <y>53</y>
+    <width>60</width>
+    <height>13</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #101</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>AISO-1_OUT</SIG>
+    </macros>
+    <x>348</x>
+    <y>43</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #103</name>
+    <x>267</x>
+    <y>165</y>
+    <width>238</width>
+    <height>26</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #106</name>
+      <x>64</x>
+      <y>13</y>
+      <width>19</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="18.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #110</name>
+      <text>ADC-1_OUT</text>
+      <y>10</y>
+      <width>60</width>
+      <height>13</height>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #113</name>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <SIG>ADC-1_OUT</SIG>
+      </macros>
+      <x>81</x>
+      <width>157</width>
+      <height>26</height>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #115</name>
+    <x>331</x>
+    <y>208</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #119</name>
+    <text>ADC-2_OUT</text>
+    <x>267</x>
+    <y>205</y>
+    <width>60</width>
+    <height>13</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #122</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>ADC-2_OUT</SIG>
+    </macros>
+    <x>348</x>
+    <y>195</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #124</name>
+    <x>331</x>
+    <y>238</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #128</name>
+    <text>ADC-3_OUT</text>
+    <x>267</x>
+    <y>235</y>
+    <width>60</width>
+    <height>13</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #131</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>ADC-3_OUT</SIG>
+    </macros>
+    <x>348</x>
+    <y>225</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #133</name>
+    <x>331</x>
+    <y>268</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #137</name>
+    <text>ADC-4_OUT</text>
+    <x>267</x>
+    <y>265</y>
+    <width>60</width>
+    <height>13</height>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #140</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>ADC-4_OUT</SIG>
+    </macros>
+    <x>348</x>
+    <y>255</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+</display>

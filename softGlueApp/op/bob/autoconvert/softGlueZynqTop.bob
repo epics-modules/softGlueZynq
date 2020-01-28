@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqTop</name>
+  <x>11</x>
+  <y>25</y>
+  <width>100</width>
+  <height>40</height>
+  <background_color>
+    <color red="236" green="236" blue="236">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #6</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynqMenu.opi</file>
+        <macros>
+          <H>softGlueZynq:</H>
+          <IPORT>SGI1</IPORT>
+          <OPORT>SGO1</OPORT>
+          <P>xxx:</P>
+          <PORT>SOFTGLUE</PORT>
+        </macros>
+        <target>tab</target>
+        <description>softGlueZynqMenu</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynqMenu.opi</file>
+        <macros>
+          <H>softGlueZynq2:</H>
+          <IPORT>SGI2</IPORT>
+          <OPORT>SGO2</OPORT>
+          <P>xxx:</P>
+          <PORT>SOFTGLUE2</PORT>
+        </macros>
+        <target>tab</target>
+        <description>softGlueZynq2 Menu</description>
+      </action>
+    </actions>
+    <text>softGlueZynq</text>
+    <x>10</x>
+    <y>10</y>
+    <width>70</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0">
+      </color>
+    </background_color>
+  </widget>
+</display>

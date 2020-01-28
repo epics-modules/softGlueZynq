@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_PixelTrig_bare</name>
+  <x>258</x>
+  <y>445</y>
+  <width>467</width>
+  <height>283</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>153</x>
+    <y>63</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #10</name>
+    <x>149</x>
+    <y>39</y>
+    <width>16</width>
+    <height>3</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="15.0" y="2.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #14</name>
+    <x>153</x>
+    <y>86</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #18</name>
+    <x>162</x>
+    <y>32</y>
+    <width>11</width>
+    <height>16</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="10.0" y="8.0">
+      </point>
+      <point x="1.0" y="15.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #22</name>
+    <x>153</x>
+    <y>17</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #26</name>
+    <x>163</x>
+    <width>132</width>
+    <height>255</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #29</name>
+    <text>EN</text>
+    <x>169</x>
+    <y>12</y>
+    <width>10</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #32</name>
+    <text>CLEAR</text>
+    <x>169</x>
+    <y>59</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #35</name>
+    <x>186</x>
+    <y>5</y>
+    <width>89</width>
+    <height>14</height>
+    <line_width>1</line_width>
+    <line_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #38</name>
+    <text>pixelTrig-$(N)</text>
+    <x>194</x>
+    <y>8</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="42" green="99" blue="228">
+      </color>
+    </foreground_color>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #41</name>
+    <text>MISS CLEAR</text>
+    <x>169</x>
+    <y>82</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #44</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_CLEAR</SIG>
+    </macros>
+    <y>50</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #46</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_EN</SIG>
+    </macros>
+    <y>4</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #48</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_CLOCK</SIG>
+    </macros>
+    <y>27</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #50</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_MISSCLR</SIG>
+    </macros>
+    <y>73</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #52</name>
+    <text>PRESET</text>
+    <x>167</x>
+    <y>240</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #55</name>
+    <x>186</x>
+    <y>253</y>
+    <width>2</width>
+    <height>15</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="1.0" y="14.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #59</name>
+    <pv_name>$(P)$(H)pixelTrig-$(N)_PRESET</pv_name>
+    <x>113</x>
+    <y>261</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #63</name>
+    <text>PRESET</text>
+    <x>253</x>
+    <y>240</y>
+    <width>35</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #66</name>
+    <x>269</x>
+    <y>253</y>
+    <width>2</width>
+    <height>15</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="1.0" y="14.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #70</name>
+    <pv_name>$(P)$(H)pixelTrig-$(N)_PREPIX</pv_name>
+    <x>245</x>
+    <y>260</y>
+    <width>50</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #74</name>
+    <x>153</x>
+    <y>109</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #78</name>
+    <text>LOAD</text>
+    <x>169</x>
+    <y>105</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #81</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_LOAD</SIG>
+    </macros>
+    <y>96</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #83</name>
+    <x>153</x>
+    <y>132</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #87</name>
+    <text>A1</text>
+    <x>169</x>
+    <y>128</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #90</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_A1</SIG>
+    </macros>
+    <y>119</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #92</name>
+    <x>153</x>
+    <y>155</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #96</name>
+    <text>B1</text>
+    <x>169</x>
+    <y>151</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #99</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_B1</SIG>
+    </macros>
+    <y>142</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #101</name>
+    <x>153</x>
+    <y>178</y>
+    <width>13</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="12.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #105</name>
+    <text>A2</text>
+    <x>169</x>
+    <y>174</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #108</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_A2</SIG>
+    </macros>
+    <y>165</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #110</name>
+    <x>156</x>
+    <y>201</y>
+    <width>10</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="9.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #114</name>
+    <text>B2</text>
+    <x>169</x>
+    <y>197</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #117</name>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_B2</SIG>
+    </macros>
+    <y>188</y>
+    <width>155</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #119</name>
+    <x>293</x>
+    <y>29</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #123</name>
+    <text>TRIG</text>
+    <x>255</x>
+    <y>24</y>
+    <width>40</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #126</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_TRIG</SIG>
+    </macros>
+    <x>310</x>
+    <y>16</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #128</name>
+    <x>293</x>
+    <y>52</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #132</name>
+    <text>MISS</text>
+    <x>259</x>
+    <y>47</y>
+    <width>30</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #135</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>pixelTrig-$(N)_MISS</SIG>
+    </macros>
+    <x>310</x>
+    <y>39</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #137</name>
+    <x>240</x>
+    <y>87</y>
+    <width>203</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>text #140</name>
+      <text>COUNTS</text>
+      <y>6</y>
+      <width>50</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #143</name>
+      <x>53</x>
+      <y>10</y>
+      <width>17</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="16.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #147</name>
+      <pv_name>$(P)$(H)pixelTrig-$(N)_COUNTS</pv_name>
+      <x>72</x>
+      <y>2</y>
+      <width>128</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #151</name>
+      <x>67</x>
+      <width>136</width>
+      <height>24</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #154</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="105" green="105" blue="105">
+          </color>
+        </line_color>
+        <points>
+          <point x="1.0" y="23.0">
+          </point>
+          <point x="1.0" y="1.0">
+          </point>
+          <point x="134.0" y="1.0">
+          </point>
+        </points>
+      </widget>
+      <widget type="polyline" version="2.0.0">
+        <name>polyline #159</name>
+        <width>135</width>
+        <height>24</height>
+        <line_width>2</line_width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <points>
+          <point x="134.0" y="1.0">
+          </point>
+          <point x="134.0" y="23.0">
+          </point>
+          <point x="1.0" y="23.0">
+          </point>
+        </points>
+      </widget>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #164</name>
+    <text>PIXEL</text>
+    <x>240</x>
+    <y>118</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #167</name>
+    <x>293</x>
+    <y>122</y>
+    <width>17</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="16.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #171</name>
+    <pv_name>$(P)$(H)pixelTrig-$(N)_PIXEL</pv_name>
+    <x>312</x>
+    <y>114</y>
+    <width>128</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <horizontal_alignment>2</horizontal_alignment>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #175</name>
+    <x>307</x>
+    <y>112</y>
+    <width>136</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #178</name>
+      <width>135</width>
+      <height>24</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="105" green="105" blue="105">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="23.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="134.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #183</name>
+      <width>135</width>
+      <height>24</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </line_color>
+      <points>
+        <point x="134.0" y="1.0">
+        </point>
+        <point x="134.0" y="23.0">
+        </point>
+        <point x="1.0" y="23.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #188</name>
+    <text>ACQ TIME</text>
+    <x>169</x>
+    <y>220</y>
+    <width>40</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #191</name>
+    <pv_name>$(P)$(H)pixelTrig-$(N)_ACQTIME</pv_name>
+    <x>44</x>
+    <y>217</y>
+    <width>80</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #195</name>
+    <x>108</x>
+    <y>224</y>
+    <width>55</width>
+    <height>3</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="54.0" y="2.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #199</name>
+    <pv_name>$(P)$(H)pixelTrig-$(N)_PRETRIG</pv_name>
+    <x>210</x>
+    <y>260</y>
+    <width>30</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <format>1</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #203</name>
+    <text>PIXEL</text>
+    <x>216</x>
+    <y>227</y>
+    <width>66</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #206</name>
+    <text>SIZE</text>
+    <x>215</x>
+    <y>240</y>
+    <width>30</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #209</name>
+    <x>223</x>
+    <y>253</y>
+    <width>2</width>
+    <height>15</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="1.0" y="14.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #213</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>PixelTrig_TRIG</SIG>
+    </macros>
+    <x>310</x>
+    <y>150</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #215</name>
+    <x>293</x>
+    <y>163</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #219</name>
+    <text>TRIG</text>
+    <x>259</x>
+    <y>158</y>
+    <width>30</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #222</name>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <SIG>PixelTrig_ENTRIG</SIG>
+    </macros>
+    <x>310</x>
+    <y>180</y>
+    <width>157</width>
+    <height>26</height>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #224</name>
+    <x>293</x>
+    <y>193</y>
+    <width>19</width>
+    <height>2</height>
+    <line_width>2</line_width>
+    <line_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </line_color>
+    <points>
+      <point x="18.0" y="1.0">
+      </point>
+      <point x="1.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #228</name>
+    <text>ENTRIG</text>
+    <x>248</x>
+    <y>188</y>
+    <width>40</width>
+    <height>13</height>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+</display>

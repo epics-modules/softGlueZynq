@@ -1,0 +1,683 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 824
+y 493
+w 682
+h 340
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N1)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N1)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 42
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N3)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N3)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 84
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N5)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N5)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 126
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N7)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N7)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 168
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N9)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N9)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 210
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N11)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N11)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 252
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N13)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N13)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 294
+w 195
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N15)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_small_bare.edl;P=$(P),H=$(H),N=$(N15)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 0
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N1)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N1)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 42
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N3)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N3)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 84
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N5)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N5)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 126
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N7)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N7)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 168
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N9)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N9)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 210
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N11)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N11)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 252
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N13)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N13)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 480
+y 294
+w 197
+h 25
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N15)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_small_bare.edl;P=$(P),H=$(H),N=$(N15)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 126
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N7)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N7)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 168
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N9)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N9)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 210
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N11)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N11)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 252
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N13)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N13)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 294
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N15)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N15)"
+}
+noScroll
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 470
+y 0
+w 3
+h 339
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 3
+numPoints 2 {
+xPoints  {
+0 471
+1 471
+}
+yPoints  {
+0 1
+1 337
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 0
+w 257
+h 22
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 205
+y 0
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N1)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N1)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 42
+w 257
+h 22
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 205
+y 42
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N3)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N3)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 205
+y 84
+w 257
+h 22
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 205
+y 84
+w 257
+h 22
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N5)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_IntBit_small_bare.edl;P=$(P),H=$(H),NAM=In_$(N5)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+

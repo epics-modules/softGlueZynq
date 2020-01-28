@@ -1,0 +1,562 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 761
+y 789
+w 435
+h 150
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 10
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN0"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN0"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 32
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN1"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN1"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 112
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_SEL"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_SEL"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 54
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN2"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN2"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 76
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN3"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_IN3"
+}
+noScroll
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 163
+y 16
+w 258
+h 110
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 163
+y 23
+w 12
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 174
+1 164
+}
+yPoints  {
+0 24
+1 24
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 175
+y 17
+w 80
+h 85
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 173
+y 19
+w 33
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "IN0"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 205
+y 87
+w 37
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "SEL"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 222
+y 100
+w 2
+h 25
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 223
+1 223
+}
+yPoints  {
+0 101
+1 124
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 163
+y 124
+w 62
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 224
+1 164
+}
+yPoints  {
+0 125
+1 125
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 163
+y 45
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 175
+1 164
+}
+yPoints  {
+0 46
+1 46
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 173
+y 38
+w 33
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "IN1"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 67
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 176
+1 165
+}
+yPoints  {
+0 68
+1 68
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 173
+y 61
+w 33
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "IN2"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 89
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 176
+1 165
+}
+yPoints  {
+0 90
+1 90
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 173
+y 83
+w 33
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "IN3"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 234
+y 48
+w 187
+h 26
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 255
+y 61
+w 14
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 268
+1 256
+}
+yPoints  {
+0 62
+1 62
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 222
+y 56
+w 39
+h 14
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "OUT"
+}
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 264
+y 48
+w 157
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 264
+y 48
+w 157
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_OUT"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Output.edl;P=$(P),H=$(H),SIG=MUX2-$(N)_OUT"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 163
+y 16
+w 258
+h 110
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 234
+y 48
+w 187
+h 26
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+

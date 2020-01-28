@@ -1,0 +1,490 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 752
+y 348
+w 420
+h 90
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 64
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLEAR"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLEAR"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 18
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=UpCntr-$(N)_ENABLE"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=UpCntr-$(N)_ENABLE"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 41
+w 155
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLOCK"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_Input.edl;P=$(P),H=$(H),SIG=UpCntr-$(N)_CLOCK"
+}
+noScroll
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 54
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 55
+1 55
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 31
+w 13
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 165
+1 154
+}
+yPoints  {
+0 32
+1 32
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 153
+y 77
+w 54
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 206
+1 154
+}
+yPoints  {
+0 78
+1 78
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 164
+y 27
+w 130
+h 35
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 162
+y 47
+w 11
+h 16
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 163
+1 172
+2 163
+}
+yPoints  {
+0 48
+1 55
+2 62
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 161
+y 29
+w 26
+h 13
+font "helvetica-medium-r-10.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "EN"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 250
+y 51
+w 42
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "COUNTS"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 185
+y 51
+w 40
+h 10
+font "helvetica-medium-r-8.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "CLEAR"
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 204
+y 61
+w 2
+h 19
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 205
+1 205
+}
+yPoints  {
+0 62
+1 79
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 186
+y 31
+w 89
+h 14
+lineColor rgb 10752 25344 58368
+fillColor rgb 10752 25344 58368
+lineWidth 0
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 294
+y 55
+w 17
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 310
+1 295
+}
+yPoints  {
+0 56
+1 56
+}
+endObjectProperties
+
+# (Text Monitor)
+object activeXTextDspClass:noedit
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 312
+y 47
+w 100
+h 20
+controlPv "$(P)$(H)UpCntr-$(N)_COUNTS"
+format "decimal"
+font "helvetica-medium-r-14.0"
+fontAlign "right"
+fgColor rgb 2560 0 47104
+bgColor rgb 55808 55808 55808
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 45
+w 106
+h 24
+
+beginGroup
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 45
+w 106
+h 24
+lineColor rgb 26880 26880 26880
+fillColor rgb 26880 26880 26880
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 309
+1 309
+2 413
+}
+yPoints  {
+0 68
+1 46
+2 46
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 45
+w 106
+h 24
+lineColor rgb 65280 65280 65280
+fillColor rgb 65280 65280 65280
+lineWidth 2
+numPoints 3 {
+xPoints  {
+0 413
+1 413
+2 309
+}
+yPoints  {
+0 46
+1 68
+2 68
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 206
+y 34
+w 56
+h 10
+font "helvetica-medium-r-8.0"
+fgColor rgb 10752 25344 58368
+bgColor index 3
+useDisplayBg
+value {
+  "UpCntr-$(N)"
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 0
+y 0
+w 420
+h 16
+controlPv "$(P)$(H)UpCntr-$(N)_desc"
+format "string"
+font "helvetica-medium-r-8.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 308
+y 45
+w 106
+h 24
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+

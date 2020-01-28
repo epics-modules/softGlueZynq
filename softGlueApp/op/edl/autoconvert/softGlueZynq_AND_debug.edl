@@ -1,0 +1,1009 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 1099
+y 226
+w 467
+h 65
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 202
+y 15
+w 22
+h 41
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 4 {
+xPoints  {
+0 223
+1 203
+2 203
+3 222
+}
+yPoints  {
+0 16
+1 16
+2 55
+3 55
+}
+endObjectProperties
+
+# (Arc)
+object activeArcClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 201
+y 14
+w 42
+h 41
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+startAngle  270
+totalAngle  180
+fillMode "pie"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 239
+y 18
+w 8
+h 8
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 245
+y 22
+w 11
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 255
+1 246
+}
+yPoints  {
+0 23
+1 23
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 236
+y 47
+w 20
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 255
+1 237
+}
+yPoints  {
+0 48
+1 48
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 31
+y 36
+w 103
+h 23
+lineColor rgb 13056 39168 0
+fillColor rgb 13056 39168 0
+lineWidth 3
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_IN2_SigShow)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 48
+w 64
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 193
+1 131
+}
+yPoints  {
+0 49
+1 49
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 33
+y 38
+w 100
+h 20
+controlPv "$(P)$(H)AND-$(N)_IN2_Signal"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 64256 62208 18944
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 180
+y 42
+w 13
+h 13
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 182
+y 44
+w 9
+h 9
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_IN2_BI)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 182
+y 44
+w 9
+h 9
+lineColor rgb 33280 1024 0
+fill
+fillColor rgb 33280 1024 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_IN2_BI)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 31
+y 11
+w 103
+h 23
+lineColor rgb 13056 39168 0
+fillColor rgb 13056 39168 0
+lineWidth 3
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_IN1_SigShow)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 130
+y 23
+w 64
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 193
+1 131
+}
+yPoints  {
+0 24
+1 24
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 33
+y 13
+w 100
+h 20
+controlPv "$(P)$(H)AND-$(N)_IN1_Signal"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 64256 62208 18944
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 180
+y 17
+w 13
+h 13
+
+beginGroup
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 182
+y 19
+w 9
+h 9
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_IN1_BI)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 182
+y 19
+w 9
+h 9
+lineColor rgb 33280 1024 0
+fill
+fillColor rgb 33280 1024 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_IN1_BI)"
+visMin 0
+visMax 1
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 191
+y 22
+w 12
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 192
+1 202
+}
+yPoints  {
+0 23
+1 23
+}
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 191
+y 47
+w 12
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 192
+1 202
+}
+yPoints  {
+0 48
+1 48
+}
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 286
+y 11
+w 103
+h 23
+lineColor rgb 52480 24832 0
+fillColor rgb 52480 24832 0
+lineWidth 3
+visPv "CALC\\\{(a&&b)\}($(P)$(H)AND-$(N)_NOUT_SigShow, $(P)$(H)SignalBlink)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 286
+y 11
+w 103
+h 23
+lineColor rgb 64768 0 0
+fillColor rgb 64768 0 0
+lineWidth 3
+lineStyle "dash"
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_NOUT_SigCheckShow.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 264
+y 23
+w 29
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 292
+1 265
+}
+yPoints  {
+0 24
+1 24
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 288
+y 13
+w 100
+h 20
+controlPv "$(P)$(H)AND-$(N)_NOUT_Signal"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 64256 62208 18944
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 19
+w 9
+h 9
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_NOUT_BI)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 19
+w 9
+h 9
+lineColor rgb 33280 1024 0
+fill
+fillColor rgb 33280 1024 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_NOUT_BI)"
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 286
+y 36
+w 103
+h 23
+lineColor rgb 52480 24832 0
+fillColor rgb 52480 24832 0
+lineWidth 3
+visPv "CALC\\\{(a&&b)\}($(P)$(H)AND-$(N)_POUT_SigShow, $(P)$(H)SignalBlink)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 286
+y 36
+w 103
+h 23
+lineColor rgb 64768 0 0
+fillColor rgb 64768 0 0
+lineWidth 3
+lineStyle "dash"
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_POUT_SigCheckShow.VAL)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 264
+y 48
+w 29
+h 2
+lineColor rgb 0 0 0
+fillColor rgb 0 0 0
+lineWidth 2
+numPoints 2 {
+xPoints  {
+0 292
+1 265
+}
+yPoints  {
+0 49
+1 49
+}
+endObjectProperties
+
+# (Text Control)
+object activeXTextDspClass
+beginObjectProperties
+major 4
+minor 7
+release 0
+x 288
+y 38
+w 100
+h 20
+controlPv "$(P)$(H)AND-$(N)_POUT_Signal"
+format "string"
+font "helvetica-medium-r-12.0"
+fontAlign "left"
+fgColor rgb 0 0 0
+bgColor rgb 64256 62208 18944
+editable
+motifWidget
+limitsFromDb
+nullColor rgb 60928 46592 11008
+smartRefresh
+fastUpdate
+newPos
+objType "controls"
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 44
+w 9
+h 9
+lineColor rgb 64768 0 0
+fill
+fillColor rgb 64768 0 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_POUT_BI)"
+visInvert
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Circle)
+object activeCircleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 256
+y 44
+w 9
+h 9
+lineColor rgb 33280 1024 0
+fill
+fillColor rgb 33280 1024 0
+lineWidth 2
+visPv "CALC\\\{(a)\}($(P)$(H)AND-$(N)_POUT_BI)"
+visMin 0
+visMax 1
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 38
+w 20
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)$(H)AND-$(N)_IN2_Show"
+pressValue "1"
+releaseValue "0"
+onLabel "="
+offLabel "="
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 180
+y 42
+w 13
+h 13
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 13
+w 20
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)$(H)AND-$(N)_IN1_Show"
+pressValue "1"
+releaseValue "0"
+onLabel "="
+offLabel "="
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 180
+y 17
+w 13
+h 13
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 391
+y 13
+w 20
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)$(H)AND-$(N)_NOUT_Show"
+pressValue "1"
+releaseValue "0"
+onLabel "="
+offLabel "="
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 419
+y 16
+w 35
+h 20
+fgColor rgb 65280 65280 65280
+bgColor rgb 13056 39168 0
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+buttonLabel "debug"
+numPvs 12
+numDsps 6
+displayFileName {
+  0 "yySseq.edl"
+  1 "yysCalcoutRecord.edl"
+  2 "yySseq.edl"
+  3 "yysCalcoutRecord.edl"
+  4 "yyCalcoutRecord.edl"
+  5 "yysCalcoutRecord.edl"
+}
+menuLabel {
+  0 "Show sseq"
+  1 "SigShow scalcout"
+  2 "Check sseq"
+  3 "SigCheck scalcout"
+  4 "SigCheckShow calcout"
+  5 "autoread scalcout"
+}
+symbols {
+  0 "P=$(P),S=$(H)AND-$(N)_NOUT_DoShow"
+  1 "P=$(P),C=$(H)AND-$(N)_NOUT_SigShow"
+  2 "P=$(P),S=$(H)AND-$(N)_NOUT_DoCheck"
+  3 "P=$(P),C=$(H)AND-$(N)_NOUT_SigCheck"
+  4 "P=$(P),C=$(H)AND-$(N)_NOUT_SigCheckShow"
+  5 "P=$(P),C=$(H)AND-$(N)_NOUT_autoRead"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+}
+endObjectProperties
+
+# (Message Button)
+object activeMessageButtonClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 391
+y 38
+w 20
+h 20
+fgColor rgb 0 0 0
+onColor rgb 29440 57088 65280
+offColor rgb 29440 57088 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+controlPv "$(P)$(H)AND-$(N)_POUT_Show"
+pressValue "1"
+releaseValue "0"
+onLabel "="
+offLabel "="
+3d
+useEnumNumeric
+font "helvetica-medium-r-12.0"
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 419
+y 41
+w 35
+h 20
+fgColor rgb 65280 65280 65280
+bgColor rgb 13056 39168 0
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+buttonLabel "debug"
+numPvs 12
+numDsps 6
+displayFileName {
+  0 "yySseq.edl"
+  1 "yysCalcoutRecord.edl"
+  2 "yySseq.edl"
+  3 "yysCalcoutRecord.edl"
+  4 "yyCalcoutRecord.edl"
+  5 "yysCalcoutRecord.edl"
+}
+menuLabel {
+  0 "Show sseq"
+  1 "SigShow scalcout"
+  2 "Check sseq"
+  3 "SigCheck scalcout"
+  4 "SigCheckShow calcout"
+  5 "autoread scalcout"
+}
+symbols {
+  0 "P=$(P),S=$(H)AND-$(N)_POUT_DoShow"
+  1 "P=$(P),C=$(H)AND-$(N)_POUT_SigShow"
+  2 "P=$(P),S=$(H)AND-$(N)_POUT_DoCheck"
+  3 "P=$(P),C=$(H)AND-$(N)_POUT_SigCheck"
+  4 "P=$(P),C=$(H)AND-$(N)_POUT_SigCheckShow"
+  5 "P=$(P),C=$(H)AND-$(N)_POUT_autoRead"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+  3 1
+  4 1
+  5 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 139
+y 0
+w 35
+h 20
+fgColor rgb 65280 65280 65280
+bgColor rgb 13056 39168 0
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+buttonLabel "debug"
+numPvs 6
+numDsps 3
+displayFileName {
+  0 "yySseq.edl"
+  1 "yysCalcoutRecord.edl"
+  2 "yysCalcoutRecord.edl"
+}
+menuLabel {
+  0 "Show sseq"
+  1 "SigShow scalcout"
+  2 "autoread scalcout"
+}
+symbols {
+  0 "P=$(P),S=$(H)AND-$(N)_IN1_DoShow"
+  1 "P=$(P),C=$(H)AND-$(N)_IN1_SigShow"
+  2 "P=$(P),C=$(H)AND-$(N)_IN1_autoRead"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+}
+endObjectProperties
+
+# (Related Display)
+object relatedDisplayClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 139
+y 27
+w 35
+h 20
+fgColor rgb 65280 65280 65280
+bgColor rgb 13056 39168 0
+topShadowColor rgb 55808 55808 55808
+botShadowColor rgb 17920 17920 17920
+font "helvetica-medium-r-12.0"
+buttonLabel "debug"
+numPvs 6
+numDsps 3
+displayFileName {
+  0 "yySseq.edl"
+  1 "yysCalcoutRecord.edl"
+  2 "yysCalcoutRecord.edl"
+}
+menuLabel {
+  0 "Show sseq"
+  1 "SigShow scalcout"
+  2 "autoread scalcout"
+}
+symbols {
+  0 "P=$(P),S=$(H)AND-$(N)_IN2_DoShow"
+  1 "P=$(P),C=$(H)AND-$(N)_IN2_SigShow"
+  2 "P=$(P),C=$(H)AND-$(N)_IN2_autoRead"
+}
+replaceSymbols {
+  0 1
+  1 1
+  2 1
+}
+endObjectProperties
+

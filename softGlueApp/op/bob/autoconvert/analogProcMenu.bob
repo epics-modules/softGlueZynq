@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>analogProcMenu</name>
+  <x>1080</x>
+  <y>248</y>
+  <width>120</width>
+  <height>220</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #6</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynq_AND.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>AND 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_AND.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>AND 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_AND.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>AND 3</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_AND.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>AND 4</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_OR.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>OR 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_OR.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>OR 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_OR.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>OR 3</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_OR.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>OR 4</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_XOR.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>XOR 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_XOR.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>XOR 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_BUFFER.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>BUFFER 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_BUFFER.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>BUFFER 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_BUFFER.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>BUFFER 3</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_BUFFER.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>BUFFER 4</description>
+      </action>
+    </actions>
+    <text>Gates</text>
+    <x>10</x>
+    <y>30</y>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #22</name>
+    <actions>
+      <action type="open_display">
+        <file>filter.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>filter 1</description>
+      </action>
+      <action type="open_display">
+        <file>filter.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>filter 2</description>
+      </action>
+      <action type="open_display">
+        <file>filter.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>filter 3</description>
+      </action>
+      <action type="open_display">
+        <file>filter.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>filter 4</description>
+      </action>
+    </actions>
+    <text>Filters</text>
+    <x>10</x>
+    <y>50</y>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #37</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynqFieldIO.opi</file>
+        <target>tab</target>
+        <description>Field I/O All</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynqFieldIOxx.opi</file>
+        <macros>
+          <N1>1</N1>
+          <N10>10</N10>
+          <N11>11</N11>
+          <N12>12</N12>
+          <N13>13</N13>
+          <N14>14</N14>
+          <N15>15</N15>
+          <N16>16</N16>
+          <N2>2</N2>
+          <N3>3</N3>
+          <N4>4</N4>
+          <N5>5</N5>
+          <N6>6</N6>
+          <N7>7</N7>
+          <N8>8</N8>
+          <N9>9</N9>
+        </macros>
+        <target>tab</target>
+        <description>Field I/O 1-16</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynqFieldIOxx.opi</file>
+        <macros>
+          <N1>17</N1>
+          <N10>26</N10>
+          <N11>27</N11>
+          <N12>28</N12>
+          <N13>29</N13>
+          <N14>30</N14>
+          <N15>31</N15>
+          <N16>32</N16>
+          <N2>18</N2>
+          <N3>19</N3>
+          <N4>20</N4>
+          <N5>21</N5>
+          <N6>22</N6>
+          <N7>23</N7>
+          <N8>24</N8>
+          <N9>25</N9>
+        </macros>
+        <target>tab</target>
+        <description>Field I/O 17-32</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynqFieldIOxx.opi</file>
+        <macros>
+          <N1>33</N1>
+          <N10>42</N10>
+          <N11>43</N11>
+          <N12>44</N12>
+          <N13>45</N13>
+          <N14>46</N14>
+          <N15>47</N15>
+          <N16>48</N16>
+          <N2>34</N2>
+          <N3>35</N3>
+          <N4>36</N4>
+          <N5>37</N5>
+          <N6>38</N6>
+          <N7>39</N7>
+          <N8>40</N8>
+          <N9>41</N9>
+        </macros>
+        <target>tab</target>
+        <description>Field I/O 33-48</description>
+      </action>
+    </actions>
+    <text>Field I/O 201</text>
+    <x>10</x>
+    <y>110</y>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #43</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynq_MUX2.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>2-input multiplexer</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_MUX2.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>2-input multiplexer</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DEMUX2.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>2-output demultiplexer</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DEMUX2.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>2-output demultiplexer</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DFF.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>D FlipFlop 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DFF.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>D FlipFlop 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DFF.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>D FlipFlop 3</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DFF.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>D FlipFlop 4</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DivByN.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>Divide By N 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DivByN.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>Divide By N 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DivByN.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>Divide By N 3</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_DivByN.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>Divide By N 4</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_QuadDec.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>Quadrature Decoder 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_QuadDec.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>Quadrature Decoder 2</description>
+      </action>
+    </actions>
+    <text>Mux,FF,Div,Qd</text>
+    <x>10</x>
+    <y>70</y>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #59</name>
+    <actions>
+      <action type="open_display">
+        <file>analogProcAll.opi</file>
+        <target>tab</target>
+        <description>all analogProc</description>
+      </action>
+      <action type="open_display">
+        <file>analogProcAllButIO.opi</file>
+        <macros>
+          <N>1</N>
+          <N1>1</N1>
+          <N2>2</N2>
+          <N3>3</N3>
+          <N4>4</N4>
+          <N5>5</N5>
+          <N6>6</N6>
+          <N7>7</N7>
+          <N8>8</N8>
+        </macros>
+        <target>tab</target>
+        <description>all but I/O</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynqConvenience.opi</file>
+        <target>tab</target>
+        <description>convenience</description>
+      </action>
+      <action type="open_display">
+        <file>analogProcTest.opi</file>
+        <target>tab</target>
+        <description>analogProcTest</description>
+      </action>
+    </actions>
+    <text>Collections</text>
+    <x>10</x>
+    <y>130</y>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #66</name>
+    <text>VERSION:</text>
+    <x>10</x>
+    <y>20</y>
+    <width>50</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <auto_size>true</auto_size>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>text update #69</name>
+    <pv_name>$(P)$(H)version</pv_name>
+    <x>60</x>
+    <y>20</y>
+    <width>30</width>
+    <height>10</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="10.0">
+      </font>
+    </font>
+    <foreground_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #73</name>
+    <width>120</width>
+    <height>18</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>composite #76</name>
+      <width>120</width>
+      <height>14</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>rectangle #79</name>
+        <width>120</width>
+        <height>14</height>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #82</name>
+        <text>$(P)$(H)</text>
+        <width>120</width>
+        <height>14</height>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #85</name>
+      <y>15</y>
+      <width>119</width>
+      <height>3</height>
+      <line_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="117.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #89</name>
+    <actions>
+      <action type="open_display">
+        <file>softGlueZynq_10MHZ_CK_bare_label.opi</file>
+        <target>tab</target>
+        <description>10 MHZ Internal Clock</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_40MHZ_CK_bare_label.opi</file>
+        <target>tab</target>
+        <description>40 MHZ Internal Clock</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_GateDly.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>gateDly 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_GateDly.opi</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <target>tab</target>
+        <description>gateDly 2</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_GateDly.opi</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <target>tab</target>
+        <description>gateDly 3</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_GateDly.opi</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <target>tab</target>
+        <description>gateDly 4</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_HistScal.opi</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <target>tab</target>
+        <description>HistScal 1</description>
+      </action>
+      <action type="open_display">
+        <file>softGlueZynq_100MHZ_CK_bare_label.opi</file>
+        <target>tab</target>
+        <description>80 MHZ Internal Clock</description>
+      </action>
+    </actions>
+    <text>Clk,G&amp;D,HS</text>
+    <x>10</x>
+    <y>90</y>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #99</name>
+    <x>10</x>
+    <y>160</y>
+    <width>100</width>
+    <height>55</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textupdate" version="2.0.0">
+      <name>text update #102</name>
+      <pv_name>$(P)$(H)numSignalsInUse</pv_name>
+      <x>40</x>
+      <y>35</y>
+      <width>30</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218">
+        </color>
+      </background_color>
+      <format>1</format>
+      <show_units>false</show_units>
+      <horizontal_alignment>2</horizontal_alignment>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #106</name>
+      <text>#SIGS</text>
+      <y>35</y>
+      <width>40</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #109</name>
+      <text>IN USE</text>
+      <y>45</y>
+      <width>40</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #112</name>
+      <text>/15</text>
+      <x>75</x>
+      <y>35</y>
+      <width>20</width>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="16.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #115</name>
+      <text>READ PERIOD</text>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+    <widget type="combo" version="2.0.0">
+      <name>menu #118</name>
+      <pv_name>$(P)$(H)ReadRate.SCAN</pv_name>
+      <y>10</y>
+      <height>20</height>
+      <background_color>
+        <color red="115" green="223" blue="255">
+        </color>
+      </background_color>
+      <border_alarm_sensitive>false</border_alarm_sensitive>
+    </widget>
+  </widget>
+</display>

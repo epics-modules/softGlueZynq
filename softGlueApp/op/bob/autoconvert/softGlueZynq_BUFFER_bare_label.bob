@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_BUFFER_bare_label</name>
+  <x>1075</x>
+  <y>590</y>
+  <width>383</width>
+  <height>41</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="group" version="2.0.0">
+    <name>composite #6</name>
+    <y>15</y>
+    <width>383</width>
+    <height>26</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #9</name>
+      <file>softGlueZynq_Input.bob</file>
+      <macros>
+        <SIG>BUFFER-$(N)_IN</SIG>
+      </macros>
+      <width>155</width>
+      <height>26</height>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #11</name>
+      <x>214</x>
+      <y>13</y>
+      <width>15</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="14.0" y="1.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #15</name>
+      <x>154</x>
+      <y>13</y>
+      <width>12</width>
+      <height>2</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="11.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #19</name>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <SIG>BUFFER-$(N)_OUT</SIG>
+      </macros>
+      <x>226</x>
+      <width>157</width>
+      <height>26</height>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #21</name>
+      <text>BUF-$(N)</text>
+      <x>168</x>
+      <y>9</y>
+      <width>30</width>
+      <height>10</height>
+      <font>
+        <font family="Liberation Sans" style="REGULAR" size="10.0">
+        </font>
+      </font>
+      <foreground_color>
+        <color red="42" green="99" blue="228">
+        </color>
+      </foreground_color>
+      <auto_size>true</auto_size>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #24</name>
+      <x>163</x>
+      <y>5</y>
+      <width>50</width>
+      <height>17</height>
+      <line_width>2</line_width>
+      <line_color>
+        <color red="0" green="0" blue="0">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="35.0" y="1.0">
+        </point>
+        <point x="49.0" y="9.0">
+        </point>
+        <point x="34.0" y="16.0">
+        </point>
+        <point x="1.0" y="16.0">
+        </point>
+        <point x="1.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #28</name>
+    <pv_name>$(P)$(H)BUFFER-$(N)_desc</pv_name>
+    <width>380</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+</display>

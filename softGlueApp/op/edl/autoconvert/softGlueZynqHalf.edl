@@ -1,0 +1,1251 @@
+4 0 1
+beginScreenProperties
+major 4
+minor 0
+release 1
+x 34
+y 186
+w 970
+h 560
+font "helvetica-medium-r-18.0"
+ctlFont "helvetica-bold-r-10.0"
+btnFont "helvetica-medium-r-18.0"
+fgColor rgb 0 0 0
+bgColor rgb 55808 55808 55808
+textColor rgb 0 0 0
+ctlFgColor1 rgb 64256 62208 18944
+ctlFgColor2 rgb 60928 46592 11008
+ctlBgColor1 rgb 52480 24832 0
+ctlBgColor2 rgb 65280 45056 65280
+topShadowColor rgb 44544 19968 48128
+botShadowColor rgb 13312 13056 34304
+showGrid
+snapToGrid
+gridSize 4
+endScreenProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 35
+w 374
+h 49
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_AND_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_AND_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 102
+w 373
+h 49
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_OR_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_OR_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 470
+y 35
+w 468
+h 73
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_DnCntr_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_DnCntr_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 470
+y 124
+w 418
+h 95
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_DFF_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_DFF_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 167
+w 379
+h 49
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_XOR_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_XOR_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 470
+y 241
+w 469
+h 72
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_DivByN_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_DivByN_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 470
+y 331
+w 411
+h 72
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_MUX2_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_MUX2_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 232
+w 412
+h 52
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_DEMUX2_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_DEMUX2_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 470
+y 419
+w 414
+h 72
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_UpCntr_bare.edl;P=$(P),H=$(H),N=$(N)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_UpCntr_bare.edl;P=$(P),H=$(H),N=$(N)"
+}
+noScroll
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 331
+w 380
+h 15
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 220
+y 331
+w 180
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Field Output Bits"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 20
+y 331
+w 180
+h 15
+font "helvetica-medium-r-12.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "Field Input Bits"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 551
+w 410
+h 10
+
+beginGroup
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 350
+y 551
+w 70
+h 10
+font "helvetica-medium-r-8.0"
+fgColor rgb 64768 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "CONNECTOR #"
+}
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 10
+y 551
+w 80
+h 10
+font "helvetica-medium-r-8.0"
+fgColor rgb 64768 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "CONNECTOR #"
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 345
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 345
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N1)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N1)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 370
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 370
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N2)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N2)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 395
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 395
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N3)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N3)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 420
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 420
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N4)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N4)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 445
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 445
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N5)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N5)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 470
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 470
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N6)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N6)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 495
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 495
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N7)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N7)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 520
+w 195
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 10
+y 520
+w 195
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N8)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldInput_bare.edl;P=$(P),H=$(H),N=$(N8)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 345
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 345
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N1)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N1)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 370
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 370
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N2)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N2)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 395
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 395
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N3)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N3)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 420
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 420
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N4)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N4)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 445
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 445
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N5)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N5)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 470
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 470
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N6)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N6)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 495
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 495
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N7)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N7)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 220
+y 520
+w 197
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 220
+y 520
+w 197
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N8)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_FieldOutput_bare.edl;P=$(P),H=$(H),N=$(N8)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 471
+y 522
+w 285
+h 26
+
+beginGroup
+
+# (Embedded Window)
+object activePipClass
+beginObjectProperties
+major 4
+minor 1
+release 0
+x 471
+y 522
+w 285
+h 26
+fgColor rgb 0 0 0
+bgColor rgb 65280 65280 65280
+topShadowColor rgb 65280 65280 65280
+botShadowColor rgb 0 0 0
+displaySource "file"
+file "softGlueZynq_8MHZ_CK_bare.edl;P=$(P),H=$(H)"
+sizeOfs 5
+numDsps 1
+displayFileName {
+  0 "softGlueZynq_8MHZ_CK_bare.edl;P=$(P),H=$(H)"
+}
+noScroll
+endObjectProperties
+
+endGroup
+
+visMin "A"
+visMax "1"
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 970
+h 23
+
+beginGroup
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 970
+h 20
+
+beginGroup
+
+# (Rectangle)
+object activeRectangleClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 969
+h 19
+lineColor rgb 65280 65280 65280
+fill
+fillColor rgb 65280 65280 65280
+lineWidth 0
+endObjectProperties
+
+# (Static Text)
+object activeXTextClass
+beginObjectProperties
+major 4
+minor 1
+release 1
+x 0
+y 0
+w 970
+h 20
+font "helvetica-medium-r-14.0"
+fontAlign "center"
+fgColor rgb 0 0 0
+bgColor index 3
+useDisplayBg
+value {
+  "$(P)$(H) "
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+
+# (Lines)
+object activeLineClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 20
+w 968
+h 3
+lineColor rgb 2560 0 47104
+fillColor rgb 2560 0 47104
+lineWidth 3
+numPoints 2 {
+xPoints  {
+0 1
+1 966
+}
+yPoints  {
+0 21
+1 21
+}
+endObjectProperties
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 20
+y 331
+w 380
+h 15
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 10
+y 551
+w 410
+h 10
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 970
+h 23
+
+beginGroup
+# (Group)
+object activeGroupClass
+beginObjectProperties
+major 4
+minor 0
+release 0
+x 0
+y 0
+w 970
+h 20
+
+beginGroup
+
+endGroup
+
+endObjectProperties
+
+
+endGroup
+
+endObjectProperties
+
+

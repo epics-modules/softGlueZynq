@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynqConvenience</name>
+  <x>598</x>
+  <y>29</y>
+  <width>280</width>
+  <height>200</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #6</name>
+    <actions>
+      <action type="open_display">
+        <file>xxBusyRecord.opi</file>
+        <macros>
+          <R>$(H)busy1</R>
+        </macros>
+        <target>tab</target>
+        <description>busy record 1</description>
+      </action>
+      <action type="open_display">
+        <file>xxBusyRecord.opi</file>
+        <macros>
+          <R>$(H)busy2</R>
+        </macros>
+        <target>tab</target>
+        <description>busy record 2</description>
+      </action>
+    </actions>
+    <text>busy records</text>
+    <x>5</x>
+    <y>175</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #10</name>
+    <text>SoftWare Clock Generators</text>
+    <x>5</x>
+    <y>100</y>
+    <width>265</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>text #13</name>
+    <text>Software Pulse Generators</text>
+    <x>5</x>
+    <y>25</y>
+    <width>265</width>
+    <height>16</height>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #16</name>
+    <pv_name>$(P)$(H)npulseOut.OUT</pv_name>
+    <x>90</x>
+    <y>70</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="164" green="170" blue="255">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #20</name>
+    <pv_name>$(P)$(H)clock1.OUT</pv_name>
+    <x>90</x>
+    <y>120</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="164" green="170" blue="255">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #24</name>
+    <pv_name>$(P)$(H)clock2.OUT</pv_name>
+    <x>90</x>
+    <y>145</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="164" green="170" blue="255">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>message button #28</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(H)npulse.PROC</pv_name>
+        <value>1</value>
+        <description>Write</description>
+      </action>
+    </actions>
+    <pv_name>$(P)$(H)npulse.PROC</pv_name>
+    <text>-Pulse</text>
+    <x>5</x>
+    <y>70</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #31</name>
+    <pv_name>$(P)$(H)clock1.SCAN</pv_name>
+    <x>5</x>
+    <y>120</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>menu #34</name>
+    <pv_name>$(P)$(H)clock2.SCAN</pv_name>
+    <x>5</x>
+    <y>145</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>text entry #37</name>
+    <pv_name>$(P)$(H)pulseOut.OUT</pv_name>
+    <x>90</x>
+    <y>45</y>
+    <width>180</width>
+    <font>
+      <font family="Liberation Sans" style="REGULAR" size="16.0">
+      </font>
+    </font>
+    <background_color>
+      <color red="164" green="170" blue="255">
+      </color>
+    </background_color>
+    <format>6</format>
+    <show_units>false</show_units>
+    <border_alarm_sensitive>false</border_alarm_sensitive>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>message button #41</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(H)pulse.PROC</pv_name>
+        <value>1</value>
+        <description>Write</description>
+      </action>
+    </actions>
+    <pv_name>$(P)$(H)pulse.PROC</pv_name>
+    <text>+Pulse</text>
+    <x>5</x>
+    <y>45</y>
+    <width>80</width>
+    <height>20</height>
+    <background_color>
+      <color red="115" green="223" blue="255">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>related display #44</name>
+    <actions>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)sseq1</S>
+        </macros>
+        <target>tab</target>
+        <description>sseq record 1</description>
+      </action>
+      <action type="open_display">
+        <file>yySseq.opi</file>
+        <macros>
+          <S>$(H)sseq2</S>
+        </macros>
+        <target>tab</target>
+        <description>sseq record 2</description>
+      </action>
+    </actions>
+    <text>sseq records</text>
+    <x>90</x>
+    <y>175</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255">
+      </color>
+    </foreground_color>
+    <background_color>
+      <color red="40" green="147" blue="21">
+      </color>
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #48</name>
+    <width>280</width>
+    <height>14</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="rectangle" version="2.0.0">
+      <name>rectangle #51</name>
+      <width>280</width>
+      <height>14</height>
+      <line_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>text #54</name>
+      <text>$(P)$(H)</text>
+      <width>280</width>
+      <height>14</height>
+      <horizontal_alignment>1</horizontal_alignment>
+    </widget>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #57</name>
+    <y>15</y>
+    <width>279</width>
+    <height>3</height>
+    <line_color>
+      <color red="10" green="0" blue="184">
+      </color>
+    </line_color>
+    <points>
+      <point x="1.0" y="1.0">
+      </point>
+      <point x="277.0" y="1.0">
+      </point>
+    </points>
+  </widget>
+</display>

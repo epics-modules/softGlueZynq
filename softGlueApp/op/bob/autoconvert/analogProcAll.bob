@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>analogProcAll</name>
+  <x>-129</x>
+  <y>25</y>
+  <width>1355</width>
+  <height>1122</height>
+  <background_color>
+    <color red="218" green="218" blue="218">
+    </color>
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <grid_step_x>5</grid_step_x>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #6</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>10</x>
+    <y>25</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #8</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>10</x>
+    <y>75</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #10</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>10</x>
+    <y>125</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #12</name>
+    <file>softGlueZynq_AND_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>10</x>
+    <y>175</y>
+    <width>374</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #14</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>3</N>
+    </macros>
+    <x>10</x>
+    <y>325</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #16</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>4</N>
+    </macros>
+    <x>10</x>
+    <y>375</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #18</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>10</x>
+    <y>225</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #20</name>
+    <file>softGlueZynq_OR_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>10</x>
+    <y>275</y>
+    <width>373</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #22</name>
+    <file>softGlueZynqFieldIOxx_small_bare.bob</file>
+    <macros>
+      <N1>1</N1>
+      <N10>10</N10>
+      <N11>11</N11>
+      <N12>12</N12>
+      <N13>13</N13>
+      <N14>14</N14>
+      <N15>15</N15>
+      <N16>16</N16>
+      <N2>2</N2>
+      <N3>3</N3>
+      <N4>4</N4>
+      <N5>5</N5>
+      <N6>6</N6>
+      <N7>7</N7>
+      <N8>8</N8>
+      <N9>9</N9>
+    </macros>
+    <x>10</x>
+    <y>693</y>
+    <width>407</width>
+    <height>340</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #24</name>
+    <width>1355</width>
+    <height>23</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="group" version="2.0.0">
+      <name>composite #27</name>
+      <width>1355</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="rectangle" version="2.0.0">
+        <name>rectangle #30</name>
+        <width>1355</width>
+        <line_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="255" green="255" blue="255">
+          </color>
+        </background_color>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #33</name>
+        <text>$(P)$(H)</text>
+        <width>1355</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <horizontal_alignment>1</horizontal_alignment>
+      </widget>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #36</name>
+      <y>20</y>
+      <width>1354</width>
+      <height>3</height>
+      <line_color>
+        <color red="10" green="0" blue="184">
+        </color>
+      </line_color>
+      <points>
+        <point x="1.0" y="1.0">
+        </point>
+        <point x="1352.0" y="1.0">
+        </point>
+      </points>
+    </widget>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #40</name>
+    <file>analogProc_SUM_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>450</x>
+    <y>30</y>
+    <width>411</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #42</name>
+    <file>analogProc_SUM_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>450</x>
+    <y>80</y>
+    <width>411</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #44</name>
+    <file>analogProc_DIFF_bare.bob</file>
+    <macros>
+      <N>1</N>
+    </macros>
+    <x>450</x>
+    <y>135</y>
+    <width>411</width>
+    <height>49</height>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>composite #46</name>
+    <file>analogProc_DIFF_bare.bob</file>
+    <macros>
+      <N>2</N>
+    </macros>
+    <x>450</x>
+    <y>185</y>
+    <width>411</width>
+    <height>49</height>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #48</name>
+    <x>880</x>
+    <y>30</y>
+    <width>467</width>
+    <height>155</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #51</name>
+      <file>analogProc_FILTER_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>467</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #53</name>
+      <file>analogProc_FILTER_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>40</y>
+      <width>467</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #55</name>
+      <file>analogProc_FILTER_bare.bob</file>
+      <macros>
+        <N>3</N>
+      </macros>
+      <y>80</y>
+      <width>467</width>
+      <height>35</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #57</name>
+      <file>analogProc_FILTER_bare.bob</file>
+      <macros>
+        <N>4</N>
+      </macros>
+      <y>120</y>
+      <width>467</width>
+      <height>35</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #59</name>
+    <x>10</x>
+    <y>430</y>
+    <width>412</width>
+    <height>249</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #62</name>
+      <file>softGlueZynq_DEMUX2_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>197</y>
+      <width>412</width>
+      <height>52</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #64</name>
+      <file>softGlueZynq_DEMUX2_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <y>147</y>
+      <width>412</width>
+      <height>52</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #66</name>
+      <file>softGlueZynq_MUX2_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>411</width>
+      <height>72</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #68</name>
+      <file>softGlueZynq_MUX2_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>75</y>
+      <width>411</width>
+      <height>72</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #70</name>
+    <x>440</x>
+    <y>417</y>
+    <width>915</width>
+    <height>635</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #73</name>
+      <file>softGlueZynq_DFF_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <x>495</x>
+      <width>418</width>
+      <height>95</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #75</name>
+      <file>softGlueZynq_DFF_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <x>495</x>
+      <y>97</y>
+      <width>418</width>
+      <height>95</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #77</name>
+      <file>softGlueZynq_DFF_bare.bob</file>
+      <macros>
+        <N>3</N>
+      </macros>
+      <x>495</x>
+      <y>194</y>
+      <width>418</width>
+      <height>95</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #79</name>
+      <file>softGlueZynq_DFF_bare.bob</file>
+      <macros>
+        <N>4</N>
+      </macros>
+      <x>495</x>
+      <y>291</y>
+      <width>418</width>
+      <height>95</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #81</name>
+      <file>softGlueZynq_DivByN_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <x>10</x>
+      <y>8</y>
+      <width>469</width>
+      <height>72</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #83</name>
+      <file>softGlueZynq_DivByN_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <x>10</x>
+      <y>83</y>
+      <width>469</width>
+      <height>72</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #85</name>
+      <file>softGlueZynq_DivByN_bare.bob</file>
+      <macros>
+        <N>3</N>
+      </macros>
+      <x>10</x>
+      <y>158</y>
+      <width>469</width>
+      <height>72</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #87</name>
+      <file>softGlueZynq_DivByN_bare.bob</file>
+      <macros>
+        <N>4</N>
+      </macros>
+      <x>10</x>
+      <y>233</y>
+      <width>469</width>
+      <height>72</height>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #89</name>
+      <x>10</x>
+      <y>308</y>
+      <width>383</width>
+      <height>107</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="embedded" version="2.0.0">
+        <name>composite #92</name>
+        <file>softGlueZynq_BUFFER_bare.bob</file>
+        <macros>
+          <N>3</N>
+        </macros>
+        <y>54</y>
+        <width>383</width>
+        <height>26</height>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>composite #94</name>
+        <file>softGlueZynq_BUFFER_bare.bob</file>
+        <macros>
+          <N>4</N>
+        </macros>
+        <y>81</y>
+        <width>383</width>
+        <height>26</height>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>composite #96</name>
+        <file>softGlueZynq_BUFFER_bare.bob</file>
+        <macros>
+          <N>1</N>
+        </macros>
+        <width>383</width>
+        <height>26</height>
+      </widget>
+      <widget type="embedded" version="2.0.0">
+        <name>composite #98</name>
+        <file>softGlueZynq_BUFFER_bare.bob</file>
+        <macros>
+          <N>2</N>
+        </macros>
+        <y>27</y>
+        <width>383</width>
+        <height>26</height>
+      </widget>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #100</name>
+      <file>softGlueZynqFieldIOxx8_small_bare.bob</file>
+      <macros>
+        <N1>17</N1>
+        <N2>18</N2>
+        <N3>19</N3>
+        <N4>20</N4>
+        <N5>21</N5>
+        <N6>22</N6>
+        <N7>23</N7>
+        <N8>24</N8>
+      </macros>
+      <y>463</y>
+      <width>407</width>
+      <height>172</height>
+    </widget>
+    <widget type="group" version="2.0.0">
+      <name>composite #102</name>
+      <x>71</x>
+      <y>431</y>
+      <width>350</width>
+      <height>20</height>
+      <style>3</style>
+      <transparent>true</transparent>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #105</name>
+        <pv_name>$(P)$(H)availableSignals</pv_name>
+        <x>320</x>
+        <width>30</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #109</name>
+        <text>#Signals In Use:</text>
+        <width>160</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="label" version="2.0.0">
+        <name>text #112</name>
+        <text>#Remaining:</text>
+        <x>210</x>
+        <width>110</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <auto_size>true</auto_size>
+      </widget>
+      <widget type="textupdate" version="2.0.0">
+        <name>text update #115</name>
+        <pv_name>$(P)$(H)numSignalsInUse</pv_name>
+        <x>160</x>
+        <width>30</width>
+        <font>
+          <font family="Liberation Sans" style="REGULAR" size="16.0">
+          </font>
+        </font>
+        <foreground_color>
+          <color red="10" green="0" blue="184">
+          </color>
+        </foreground_color>
+        <background_color>
+          <color red="218" green="218" blue="218">
+          </color>
+        </background_color>
+        <format>1</format>
+        <show_units>false</show_units>
+        <border_alarm_sensitive>false</border_alarm_sensitive>
+      </widget>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>related display #119</name>
+      <actions>
+        <action type="open_display">
+          <file>softGlueZynqAllButIO.opi</file>
+          <target>replace</target>
+          <description>all but I/O</description>
+        </action>
+      </actions>
+      <text>No I/O</text>
+      <x>865</x>
+      <y>443</y>
+      <width>50</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="40" green="147" blue="21">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="action_button" version="3.0.0">
+      <name>related display #122</name>
+      <actions>
+        <action type="open_display">
+          <file>softGlueZynqAll_label.opi</file>
+          <target>replace</target>
+          <description>all with labels</description>
+        </action>
+      </actions>
+      <text>Labels</text>
+      <x>864</x>
+      <y>418</y>
+      <width>50</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255">
+        </color>
+      </foreground_color>
+      <background_color>
+        <color red="40" green="147" blue="21">
+        </color>
+      </background_color>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #125</name>
+      <file>softGlueZynq_10MHZ_CK_bare.bob</file>
+      <x>535</x>
+      <y>383</y>
+      <width>285</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #127</name>
+      <file>softGlueZynq_40MHZ_CK_bare.bob</file>
+      <x>535</x>
+      <y>408</y>
+      <width>285</width>
+      <height>26</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #129</name>
+    <x>450</x>
+    <y>350</y>
+    <width>383</width>
+    <height>48</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #132</name>
+      <file>analogProc_LOWPASS128_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>383</width>
+      <height>26</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #134</name>
+      <file>analogProc_LOWPASS128_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>22</y>
+      <width>383</width>
+      <height>26</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #136</name>
+    <x>450</x>
+    <y>240</y>
+    <width>411</width>
+    <height>99</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #139</name>
+      <file>analogProc_nDIFF_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>411</width>
+      <height>49</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #141</name>
+      <file>analogProc_nDIFF_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>50</y>
+      <width>411</width>
+      <height>49</height>
+    </widget>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>composite #143</name>
+    <x>880</x>
+    <y>200</y>
+    <width>411</width>
+    <height>209</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #146</name>
+      <file>analogProc_MUL_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <width>411</width>
+      <height>49</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #148</name>
+      <file>analogProc_MUL_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>50</y>
+      <width>411</width>
+      <height>49</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #150</name>
+      <file>analogProc_DIV_bare.bob</file>
+      <macros>
+        <N>1</N>
+      </macros>
+      <y>110</y>
+      <width>411</width>
+      <height>49</height>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>composite #152</name>
+      <file>analogProc_DIV_bare.bob</file>
+      <macros>
+        <N>2</N>
+      </macros>
+      <y>160</y>
+      <width>411</width>
+      <height>49</height>
+    </widget>
+  </widget>
+</display>
