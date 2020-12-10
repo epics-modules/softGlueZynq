@@ -17,7 +17,7 @@ LIB_SRCS += histScalerDmaAsub.c
 LIB_SRCS += MCSAsub.c
 LIB_SRCS += clockConfigAsub.c
 LIB_SRCS += readSoftGlueCounter_ISR.c
-ifdef STD
+ifdef SCALER
 	LIB_SRCS += devSGscaler16.c
 endif
 
