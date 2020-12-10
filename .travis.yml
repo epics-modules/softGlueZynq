@@ -15,7 +15,7 @@ env:
     - MODULES="sncseq asyn std"
     - SNCSEQ=R2-2-8
     - ASYN=R4-38
-    - STD=R3-6-1
+    - SCALER=4.0
 
 addons:
   apt:
