@@ -137,7 +137,7 @@ and it will no longer be supported.</blockquote>
 	are not needed for any essential feature of softGlueZynq.  You're probably
 	going to want autosave, release 5.7 or higher, because it makes loading and
 	saving circuits very easy.  SoftGlueZynq includes a 16-input scaler and
-	support for the scaler record, which record is in the std module.
+	support for the scaler record, which record is in the scaler module.
 
 	</blockquote>
 
@@ -265,7 +265,7 @@ modules, and will build with whatever modules are defined in
 <code>synApps/support/configure/RELEASE</code>.  Even if you don't want to use
 the MicroZed as a general purpose soft IOC, you're probably going to want
 modules like autosave and calc.  If you want to use the included 16 input scaler
-with the scaler record, you'll need the std module.
+with the scaler record, you'll need the scaler module.
 
 <P>Before I get started, there are a <i>lot</i> of different ways to run Linux,
 EPICS, and FPGA code on the MicroZed.  I'm not an expert, but I found a way that
@@ -905,8 +905,8 @@ to field inputs 2-16.  Field input 1 is available for use as a gate or clock.
 
 <blockquote>
 
-<P>Note that the scaler as shown here requires the synApps STD module, because
-that module defines the EPICS scaler record.  If the STD module is unavailable
+<P>Note that the scaler as shown here requires the synApps SCALER module, because
+that module defines the EPICS scaler record.  If the SCALER module is unavailable
 or unwanted, you can drive the scaler with softGlueZynq's SGscaler.db database.
 But also note that this database is unsupported, and was intended only as a way
 for me to learn how to write scalerRecord device support for this scaler
