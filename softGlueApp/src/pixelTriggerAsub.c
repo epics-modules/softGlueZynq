@@ -66,7 +66,7 @@ typedef struct {
 	int fifoSize;
 	int cleared;
 } myISRDataStruct;
-myISRDataStruct myISRData;
+static myISRDataStruct myISRData;
 
 static long pixelTrigger_init(aSubRecord *pasub) {
 	epicsUInt32 *a = (epicsUInt32 *)pasub->a;

@@ -24,7 +24,7 @@ typedef struct {
 	int numValues;
 	int thisValue;
 } myISRDataStruct;
-myISRDataStruct myISRData;
+static myISRDataStruct myISRData;
 
 #define MAX_VALUES 1000
 static int sampleCustomInterruptValues[MAX_VALUES];

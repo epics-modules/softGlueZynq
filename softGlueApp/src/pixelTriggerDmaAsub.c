@@ -81,7 +81,7 @@ typedef struct {
 	epicsUInt32 *numX, *numY, *numScalers;
 	int cleared, *acqMode, allocatedElements, *debug;
 } myISRDataStruct;
-myISRDataStruct myDmaISRData;
+static myISRDataStruct myDmaISRData;
 
 static long pixelTriggerDma_init(aSubRecord *pasub) {
 	epicsUInt32 *a = (epicsUInt32 *)pasub->a;
