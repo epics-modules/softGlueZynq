@@ -58,7 +58,7 @@ typedef struct {
 	int currChannel;
 	int maxChannels;
 } myISRDataStruct;
-myISRDataStruct myISRData;
+static myISRDataStruct myISRData;
 
 static long MCS_init(aSubRecord *pasub) {
 	epicsUInt32 *a = (epicsUInt32 *)pasub->a;
