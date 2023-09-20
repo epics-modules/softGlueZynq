@@ -1,3 +1,10 @@
+---
+layout: default
+title: Release Notes
+nav_order: 3
+---
+
+
 softGlueZynq Release Notes
 --------------------------
 

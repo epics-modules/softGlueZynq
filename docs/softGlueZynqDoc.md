@@ -1,3 +1,10 @@
+---
+layout: default
+title: softGlueZynq module
+nav_order: 2
+---
+
+
 The synApps softGlueZynq module (R2-0)
 ======================================
 
