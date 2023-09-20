@@ -1,54 +1,35 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<HTML>
-<HEAD>
-	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=iso-8859-1">
-	<TITLE>softGlueReleaseNotes</TITLE>
-</HEAD>
-<BODY LANG="en-US" BGCOLOR="#ffffff" DIR="LTR">
-<H2 ALIGN=CENTER>softGlueZynq Release Notes</H2>
+softGlueZynq Release Notes
+--------------------------
 
-<H2 ALIGN=LEFT>Release R2-0-4</H2>
-<ul>
-<li>Use of STD module replaced with SCALER module</li>
-</ul>
-	
-<H2 ALIGN=LEFT>Release R2-0-3</H2>
-<ul>
-<li>Added bob files, updated ui and edl files</li>
-</ul>
-	
-<H2 ALIGN=LEFT>Release R2-0-2</H2>
-<ul>
-<li>Req files now installed to top level db folder.</li>
-</ul>
-	
-<H2 ALIGN=LEFT>Release R2-0 </H2>
-<ul>
+Release R2-0-4
+--------------
 
-<li>End user can change clock frequencies
+- Use of STD module replaced with SCALER module
 
-<li>Use Block-ram FIFO and DMA for data acquisition.
+Release R2-0-3
+--------------
 
-<li>Histogramming scaler increased to 64 channels.  Fast histogramming scaler
-channel advance rate adjustable in ~.1 MHz increments to around 250 MHz.
+- Added bob files, updated ui and edl files
 
-<li>Added 16 input scaler.
+Release R2-0-2
+--------------
 
-<li>Added source from which Vivado and Petalinux projects can be reconstructed.
+- Req files now installed to top level db folder.
 
-<li>Dropped support for the MicroZed 7010.  Its FPGA is too small.
-</ul>
+Release R2-0 
+-------------
 
-<H2 ALIGN=LEFT>Release R1-0 </H2>
-<ul>
+- End user can change clock frequencies
+- Use Block-ram FIFO and DMA for data acquisition.
+- Histogramming scaler increased to 64 channels. Fast histogramming scaler channel advance rate adjustable in ~.1 MHz increments to around 250 MHz.
+- Added 16 input scaler.
+- Added source from which Vivado and Petalinux projects can be reconstructed.
+- Dropped support for the MicroZed 7010. Its FPGA is too small.
 
-<li>First attempt
+Release R1-0 
+-------------
 
-</ul>
+- First attempt
 
-
-<ADDRESS STYLE="text-align: left">Suggestions and Comments to: <BR><A HREF="mailto:mooney@aps.anl.gov">
-Tim Mooney </A>: (mooney@aps.anl.gov) 
-</ADDRESS>
-</BODY>
-</HTML>
+Suggestions and Comments to:   
+[Tim Mooney ](mailto:mooney@aps.anl.gov): (mooney@aps.anl.gov)
