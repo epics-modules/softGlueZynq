@@ -1,4 +1,11 @@
+---
+layout: default
+title: Home
+nav_order: 1
+---
+
+
 # HTML documentation
 
-* [softGlueZynqDoc.html](https://htmlpreview.github.io/?https://github.com/epics-modules/softGlueZynq/blob/master/documentation/softGlueZynqDoc.html)
-* [softGlueZynqReleaseNotes.html](https://htmlpreview.github.io/?https://github.com/epics-modules/softGlueZynq/blob/master/documentation/softGlueZynqReleaseNotes.html)
+* [softGlueZynqDoc](softGlueZynqDoc.md)
+* [softGlueZynqReleaseNotes](softGlueZynqReleaseNotes.md)
