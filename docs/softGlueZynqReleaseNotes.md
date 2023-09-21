@@ -8,6 +8,11 @@ nav_order: 3
 softGlueZynq Release Notes
 --------------------------
 
+Release R2-0-5
+--------------
+
+- Documentation moved to github pages
+
 Release R2-0-4
 --------------
 
