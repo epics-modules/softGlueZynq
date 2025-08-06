@@ -1,0 +1,127 @@
+file "softGlue_Register.db"
+{
+pattern {SIG					ADDR}
+{DnCntr-1_PRESET				64}
+{DnCntr-2_PRESET				65}
+{DnCntr-3_PRESET				66}
+{DnCntr-4_PRESET				67}
+{DivByN-1_N						68}
+{DivByN-2_N						69}
+{DivByN-3_N						70}
+{DivByN-4_N						71}
+{UpDnCntr-1_PRESET				72}
+{UpDnCntr-2_PRESET				73}
+{UpDnCntr-3_PRESET				74}
+{UpDnCntr-4_PRESET				75}
+#{Scaler-1_PRESET				76}
+{DAC1_VAL						76}
+{GateDly-1_DLY					77}
+{GateDly-1_WIDTH				78}
+{GateDly-2_DLY					79}
+{GateDly-2_WIDTH				80}
+{GateDly-3_DLY					81}
+{GateDly-3_WIDTH				82}
+{GateDly-4_DLY					83}
+{GateDly-4_WIDTH				84}
+#{PID_READBK					84}
+#{ADC_SHIFTLEN					84}
+{pixelTrig-1_PRETRIG			85}
+{pixelTrig-1_PRESET				86}
+{pixelTrig-2_PRETRIG			87}
+{pixelTrig-2_PRESET				88}
+#{pixelTrig-1_ACQTIME			89}
+#{pixelTrig-2_ACQTIME			90}
+#{DAC3_VAL						89}
+#{DAC4_VAL						90}
+{PID_K1							89}
+{PID_K2							90}
+{PID_K3							91}
+{PID_SETPT						92}
+#{pixelTrig-1_PREPIX			91}
+#{pixelTrig-2_PREPIX			92}
+
+# Note that the scalToStream-1_DMAWORDS register number is also needed in
+# acquireDmaSub.c
+{scalToStream-1_DMAWORDS		93}
+# See softGlue_config.db for input to this PV
+{config-1						94}
+{DAC2_VAL						95}
+
+{NPI_Y_A						96}
+{NPI_Y_SH						97}
+{NPI_Y_SL						98}
+{NPI_X_SH						99}
+{NPI_X_SL						100}
+{averageN_N						101}
+{SOL-1_S						102}
+{SOL-1_O						103}
+{SOL-1_H						104}
+{SOL-1_L						105}
+{SOL-2_S						106}
+{SOL-2_O						107}
+{SOL-2_H						108}
+{SOL-2_L						109}
+{plsTrn-1_NPULSES  	110}
+{plsTrn-1_WIDTH  	111}
+{plsTrn-1_PERIOD  	112}
+}
+
+file "softGlue_InRegister.db"
+{
+pattern {SIG     	ADDR}
+{UpCntr-1_COUNTS	0}
+{UpCntr-2_COUNTS	1}
+{UpCntr-3_COUNTS	2}
+{UpCntr-4_COUNTS	3}
+{UpDnCntr-1_COUNTS	4}
+{UpDnCntr-2_COUNTS	5}
+{UpDnCntr-3_COUNTS	6}
+{UpDnCntr-4_COUNTS	7}
+
+{DnCntr-1_COUNTS	8}
+{DnCntr-2_COUNTS	9}
+{DnCntr-3_COUNTS	10}
+{DnCntr-4_COUNTS	11}
+
+{pixelTrig-1_POS1 	   12}
+{pixelTrig-1_POS2 	   13}
+{pixelTrig-2_POS1 	   14}
+{pixelTrig-2_POS2 	   15}
+#{pixelTrig-3_POS1 	   16}
+#{pixelTrig-3_POS2 	   17}
+#{aQuadB_INVAL         18}
+#{aQuadB_SENTVAL       19}
+#{HistScal-1_S06 	   18}
+#{HistScal-1_S07 	   19}
+#{HistScal-1_S08 	   20}
+#{ISN_x_X 	   20}
+#{HistScal-1_S09 	   21}
+#{HistScal-1_S10 	   22}
+#{HistScal-1_S11 	   23}
+{ADC1 16}
+{ADC2 17}
+{ADC3 18}
+{ADC4 19}
+{ADC5 20}
+{ADC6 21}
+{ADC7 22}
+{ADC8 23}
+{PID_U_OUT 	   24}
+{NPI_Y 	   	25}
+#{ADC_SHIFTREG	25}
+
+#{HistScal-1_S12 	   	24}
+#{HistScal-1_S13 	   	25}
+#{HistScal-1_S14 	   	26}
+{scalToStream-1_FIFO   	26}
+{FreqCntr-1_COUNTS 	   	27}
+{pixelTrig-1_PIXEL		28}
+{pixelTrig-1_COUNTS		29}
+{pixelTrig-2_PIXEL		30}
+{pixelTrig-2_COUNTS		31}
+{NPI_X 	   				32}
+{SOL-1					33}
+{SOL-2					34}
+{scalToStream-1_FIFO2   35}
+}
+

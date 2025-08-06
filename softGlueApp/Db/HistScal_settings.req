@@ -5,3 +5,5 @@ $(P)$(H)HistScal-$(N)_CLK_Signal
 $(P)$(H)HistScal-$(N)_DET_Signal
 $(P)$(H)HistScal-$(N)_CLEAR_Signal
 $(P)$(H)HistScal-$(N)_READ_Signal
+$(P)$(H)HistScal-$(N)_DET2_Signal
+$(P)$(H)HistScal-$(N)_MODE_Signal

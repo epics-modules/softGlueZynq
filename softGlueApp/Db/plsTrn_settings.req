@@ -1,0 +1,7 @@
+$(P)$(H)plsTrn-$(N)_Clk_Signal
+$(P)$(H)plsTrn-$(N)_Inp_Signal
+$(P)$(H)plsTrn-$(N)_Dis_Signal
+$(P)$(H)plsTrn-$(N)_Q_Signal
+$(P)$(H)plsTrn-$(N)_NPULSES
+$(P)$(H)plsTrn-$(N)_PERIOD
+$(P)$(H)plsTrn-$(N)_WIDTH

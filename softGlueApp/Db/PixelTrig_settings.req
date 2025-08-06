@@ -1,0 +1,15 @@
+$(P)$(H)pixelTrig-$(N)_EN_Signal
+$(P)$(H)pixelTrig-$(N)_CLOCK_Signal
+$(P)$(H)pixelTrig-$(N)_CLEAR_Signal
+$(P)$(H)pixelTrig-$(N)_MISSCLR_Signal
+$(P)$(H)pixelTrig-$(N)_LOAD_Signal
+$(P)$(H)pixelTrig-$(N)_A1_Signal
+$(P)$(H)pixelTrig-$(N)_B1_Signal
+$(P)$(H)pixelTrig-$(N)_A2_Signal
+$(P)$(H)pixelTrig-$(N)_B2_Signal
+#$(P)$(H)pixelTrig-$(N)_ACQTIME
+$(P)$(H)pixelTrig-$(N)_PRESET
+$(P)$(H)pixelTrig-$(N)_PRETRIG
+#$(P)$(H)pixelTrig-$(N)_PREPIX
+$(P)$(H)pixelTrig-$(N)_TRIG_Signal
+$(P)$(H)pixelTrig-$(N)_MISS_Signal

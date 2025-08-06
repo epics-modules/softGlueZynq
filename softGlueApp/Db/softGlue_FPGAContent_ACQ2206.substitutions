@@ -1,3 +1,6 @@
+# Don't forget to edit softGlue_FPGAContent_ACQ2206_settings.req and run "make"
+#in the Db directory after modifying this file.
+
 file "softGlue_Input.db"
 {
 pattern {SIG		ADDR}
@@ -107,16 +110,17 @@ pattern {SIG		ADDR}
 {UpDnCntr-4_LOAD	203}
 {UpDnCntr-4_CLEAR	204}
 {UpDnCntr-4_UPDOWN	205}
-#{UpDnCntr-5_ENABLE	206}
-#{UpDnCntr-5_CLOCK	207}
-#{UpDnCntr-5_LOAD	208}
+{ADC_RESET			206}
+{ADC_DISABLE		207}
+{ADC_START_CVT		208}
 #{UpDnCntr-5_CLEAR	209}
+{DAC_INIT	209}
 #{UpDnCntr-5_UPDOWN	210}
 
-{HistScal-1_EN		206}
-{HistScal-1_CLEAR	207}
-{HistScal-1_CLK		208}
-{HistScal-1_SYNC	209}
+#{HistScal-1_EN		206}
+#{HistScal-1_CLEAR	207}
+#{HistScal-1_CLK		208}
+#{HistScal-1_SYNC	209}
 #{HistScal-1_DET	see 226}
 
 # 250 MHz histogramming scaler, with test inputs
@@ -141,12 +145,19 @@ pattern {SIG		ADDR}
 {GateDly-4_IN		224}
 {GateDly-4_CLK		225}
 
-{HistScal-1_DET		226}
+#{HistScal-1_DET		226}
+{DAC_WRITE	226}
 {FreqCntr-1_CLK		227}
-{Scaler-1_EN		228}
-{Scaler-1_CLR		229}
 
-{scalersToFIFO-1_CHADV	230}
+{PID_RESET	228}
+#{ADC_CNV_A	229}
+#{ADC_CNV_B	230}
+#{Scaler-1_EN		228}
+#{Scaler-1_CLR		229}
+{PID_START		229}
+
+#{scalersToFIFO-1_CHADV	230}
+#{PID_CLOCK		230}
 
 # See 'file "softGlue_FieldOutput.db"' below
 #{FO1				231}
@@ -169,11 +180,15 @@ pattern {SIG		ADDR}
 #{FO17     		  247}
 #{FO18     		  248}
 #{FO19     		  249}
+{plsTrn-1_Clk  	  247}
+{plsTrn-1_Inp  	  248}
+{plsTrn-1_Dis  	  249}
 #{FO20     		  250}
 #{FO21     		  251}
 #{FO22 			  252}
 #{FO23 			  253}
 #{FO24 			  254}
+{PID_POS			254}
 
 {pixelTrig-1_A1			255}
 {pixelTrig-1_B1			256}
@@ -196,12 +211,19 @@ pattern {SIG		ADDR}
 {pixelTrig-2_CLEAR		272}
 
 {scalToStream-1_CHADV	273}
-{HistScal-1_DET2		274}
+{scalToStream-1_IMTRIG	274}
+#{HistScal-1_DET2		274}
 {HistScal-1_MODE		275}
 {HistScal-1_READ		278}
 {Scaler-1_CNT			281}
 {Scaler-1_STOP			282}
 {Scaler-1_CLK			283}
+
+{aQuadB_RESET			284}
+{aQuadB_ENABLE			285}
+{ISN_X_focal_spot_CLK	286}
+{aQuadB_INVERT			288}
+{aQuadB_CLOCK			289}
 
 {scalToStream-1_RESET	299}
 
@@ -253,9 +275,11 @@ pattern {SIG   	ADDR}
 {QuadDec-1_DIR	39}
 {QuadDec-2_STEP	40}
 {QuadDec-2_DIR	41}
-{HW_OR-1_OUT	42}
-{HW_OR-2_OUT	43}
+#{ADC_B1_SDO	42}
 
+{DAC_SYNC	42}
+{DAC_SPI	43}
+{ADC_DATA_VALID	44}
 {50MHZ_CLOCK	45}
 {20MHZ_CLOCK	46}
 {10MHZ_CLOCK	47}
@@ -282,9 +306,14 @@ pattern {SIG   	ADDR}
 #{FI15			66}
 #{FI16			67}
 #{FI17			68}
+{NPI_Y_SO		68}
 #{FI18			69}
+{PID_READY	69}
+{NPI_X_SO		70}
+#{PID_DONE	70}
 #{FI19			70}
 #{FI20			71}
+{plsTrn-1_Q  	71}
 #{FI21			72}
 #{FI22			73}
 #{FI23			74}
@@ -334,16 +363,24 @@ file "softGlue_FieldInput.db"
 pattern {SIG   ADDR 	  IOPIN}
 ## These are inputs from the user's viewpoint, but they behave like softGlue
 ## outputs.
-{FI1			52	1}
-{FI2			53	2}
-{FI3			54	3}
-{FI4			55	4}
-{FI5			56	5}
-{FI6			57	6}
-{FI7			58	7}
-{FI8			59	8}
-{FI9			60	9}
-{FI10			61	10}
+# FMC5 LA13_P - IN1
+{FI1			55	1}
+# FMC5 LA14_P - IN2
+{FI2			57	2}
+# FMC5 LA16_P - IN3
+{FI3			53	3}
+# FMC5 LA17_P - IN4
+{FI4			58	4}
+# FMC5 LA20_P - IN5
+{FI5			60	5}
+# FMC5 LA18_P - IN6
+{FI6			56	6}
+# FMC5 LA23_P - IN7
+{FI7			61	7}
+# FMC5 LA22_P - IN8
+{FI8			52	8}
+{FI9			54	9}
+{FI10			59	10}
 {FI11			62	11}
 {FI12			63	12}
 
@@ -379,31 +416,45 @@ file "softGlue_FieldOutput.db"
 pattern {SIG   ADDR 	  IOPIN}
 ## These are outputs from the user's viewpoint, but they behave like softGlue
 ## inputs.
-{FO1	231	1}
-{FO2	232	2}
-{FO3	233	3}
-{FO4	234	4}
-{FO5	235	5}
-{FO6	236	6}
-{FO7	237	7}
-{FO8	238	8}
-{FO9	239	9}
-{FO10	240	10}
-{FO11	241	11}
-{FO12	242	12}
+# FMC5 LA03_N - OUT1 - done
+{FO1	236	1}
+# FMC5 LA05_P - OUT2 - done
+{FO2	238	2}
+# FMC5 LA04_P - OUT3 - done
+{FO3	237	3}
+# FMC5 LA08_P - OUT4
+{FO4	250	4}
+# FMC5 LA07_P - OUT5 - done
+{FO5	240	5}
+# FMC5 LA10_P - OUT6
+{FO6	252	6}
+# FMC5 LA09_P - OUT7
+{FO7	251	7}
+# FMC5 LA12_P - OUT8
+{FO8	253	8}
+# FMC5 LA00_P - AQB 1A - done
+{FO9	231	9}
+# FMC5 LA02_P - AQB 1B - done
+{FO10	234	10}
+# FMC5 LA01_P - AQB 2A - done
+{FO11	232	11}
+# FMC5 LA03_P - AQB 2B - done
+{FO12	235	12}
+# FMC5 LA01_N - AQB 3A - done
+{FO13	233	13}
+# FMC5 LA06_P - AQB 3B - done
+{FO14	239	14}
+{FO15	241	15}
+{FO16	242	16}
 
-{FO13	243	13}
-{FO14	244	14}
-{FO15	245	15}
-{FO16	246	16}
-{FO17	247	17}
-{FO18	248	18}
-{FO19	249	19}
-{FO20	250	20}
-{FO21	251	21}
-{FO22	252	22}
-{FO23	253	23}
-{FO24	254	24}
+{FO17	243	17}
+{FO18	244	18}
+{FO19	245	19}
+{FO20	246	20}
+{FO21	247	21}
+{FO22	248	22}
+{FO23	249	23}
+#{FO24	254	24}
 }
 
 

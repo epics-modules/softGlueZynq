@@ -1,0 +1,46 @@
+word	signal					use
+---------------------------------------------------
+0		upCntr-1				1 MHz clock
+1		upCntr-2				pixel-rate trigger
+2		upCntr-3				image trigger
+3		IF_tracker_0:POS_0		Y1
+4		IF_tracker_0:POS_1		Y2
+5		IF_tracker_0:POS_2		Y3
+6		IF_tracker_0:POS_3		X1
+7		IF_tracker_0:POS_4		X2
+
+8		ADC_A
+9		ADC_B
+10		ADC_C
+11		ADC_D
+12		ADC_E
+13		ADC_F
+14		ADC_G
+15		ADC_H
+
+16		IF_tracker_0:POS_5		X3
+17	
+18	
+19	
+20	
+21	
+22	
+23	
+24	
+
+==================================
+
+IF_tracker_0:Snap_0	NPI:Y1
+IF_tracker_0:Snap_1	NPI:Y2
+IF_tracker_0:Snap_2	NPI:Y3
+
+IF_tracker_0:Snap_3	NPI:X1
+IF_tracker_0:Snap_4	NPI:X2
+IF_tracker_0:Snap_5	NPI:X3
+
+NPI:X	scaleOffsetLimit-0:X_in
+NPI:Y	scaleOffsetLimit-1:X_in
+
+scaleOffsetLimit-0:X	DAC-3
+scaleOffsetLimit-1:X	DAC-4
+

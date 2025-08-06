@@ -1,0 +1,93 @@
+def MCS(presetTime=3., dwellTime=.001, clockRate = 20.e6,
+	clockSource="Internal",numTriggers=1000, preScale=1, countOnStart=0, readDelay=.01):
+	recordDate = "Thu Apr  5 15:45:44 2018"
+
+	# Make sure 'enabled' and 'started' are 0
+	_caputw("zzz:SG:DFF-1_CLEAR_Signal", "1!")
+	_caputw("zzz:SG:DFF-1_CLEAR_Signal", "done*")
+	_caputw("zzz:SG:DFF-3_CLEAR_Signal", "1!")
+	_caputw("zzz:SG:DFF-3_CLEAR_Signal", "enabled")
+
+	# reset circuit and DMA
+	_caputw("zzz:SG:BUFFER-1_IN_Signal","1!")
+	# clear counters
+	_caputw("zzz:SG:OR-1_IN2_Signal","1!")
+	# send one pulse to scalToStream.  (For some reason, first pulse after a
+	# reset gets swallowed with no apparent effect.)
+	_caputw("zzz:SG:scalToStream-1_CHADV_Signal","1!chanAdv")
+	# set scalToStream CHADV back to original signal
+	_caputw("zzz:SG:scalToStream-1_CHADV_Signal","chanAdv")
+
+	# select channel-advance source
+	if clockSource=="Internal":
+		chanAdvPreset = dwellTime * clockRate
+		preset = int(round(presetTime/dwellTime))
+		_caputw("zzz:SG:DivByN-3_CLOCK_Signal", "ck20")
+	else:
+		chanAdvPreset = preScale
+		preset = numTriggers
+		_caputw("zzz:SG:DivByN-3_CLOCK_Signal", "extTrig")
+
+	# enable aSub software that reads via interrupt
+	_caputw("zzz:1pixelTriggerDmaMode", "List")
+	_caputw("zzz:1pixelTriggerDmaEnable","Enable")
+	# clear aSub data and display it
+	_caputw("zzz:1pixelTriggerDma.D","1")
+	_caputw("zzz:1pixelTriggerDma.PROC", "1")
+	# load preset scaler that will stop us when we're done
+	_caputw("zzz:SG:UpDnCntr-4_PRESET",preset)
+	_caputw("zzz:SG:UpDnCntr-4_LOAD_Signal", "1!")
+	# set chanAdv prescaler preset
+	_caputw("zzz:SG:DivByN-3_N", chanAdvPreset)
+	_caputw("zzz:SG:DivByN-3_RESET_Signal", "1!")
+
+	# enable counting
+	_caputw("zzz:SG:DFF-1_D_Signal","1")
+	_caputw("zzz:SG:DFF-1_CLOCK_Signal","1!")
+
+	# handle countOnStart
+	if (clockSource != "Internal") and not countOnStart:
+		# clock 'started' signal so counting will start immediately, rather
+		# than waiting for first external trigger to start counting.
+		_caputw("zzz:SG:DFF-3_CLOCK_Signal","extTrig")
+	else:
+		_caputw("zzz:SG:DFF-3_CLOCK_Signal","1!")
+
+	### wait until counting is done
+	time.sleep(0.1)
+	busy = epics.caget("zzz:SG:DFF-1_OUT_BI")
+	while (busy):
+		time.sleep(.15)	# assuming zzz:SG:ReadRate.SCAN is ".1 second"
+		busy = epics.caget("zzz:SG:DFF-1_OUT_BI")
+
+	# we may still have time bins in the FIFO
+	time.sleep(readDelay)
+	# disable response to channel advance except for driving FIFO
+	old_start = epics.caget("zzz:SG:DFF-3_D_Signal")
+	_caputw("zzz:SG:DFF-3_D_Signal", "0")
+	# make a high frequency clock to drive the FIFO
+	old_clockSource = epics.caget("zzz:SG:DivByN-3_CLOCK_Signal")
+	_caputw("zzz:SG:DivByN-3_CLOCK_Signal", "ck20")
+	old_chanAdvPreset = epics.caget("zzz:SG:DivByN-3_N")
+	_caputw("zzz:SG:DivByN-3_N", 2000)
+	_caputw("zzz:SG:DivByN-3_RESET_Signal", "1!")
+	# generate channel advances until FIFO generates an interrupt
+	_caputw("zzz:SG:DFF-2_CLEAR_Signal", "0!")
+	_caputw("zzz:SG:DivByN-3_ENABLE_Signal","1runningDly")
+	time.sleep(.1)
+	done = 0
+	while done == 0:
+		time.sleep(.1)
+		p = epics.caget("zzz:SG:UpDnCntr-4_PRESET")
+		curr = epics.caget("zzz:SG:UpDnCntr-4_COUNTS")
+		a = p-curr
+		b = epics.caget("zzz:1pixelTriggerDma.VALH")
+		c = epics.caget("zzz:SG:scalToStream-1_DMAWORDS")
+		done = b>=c/2 and b/8>=a
+	# stop generating channel advances
+	_caputw("zzz:SG:DivByN-3_ENABLE_Signal","runningDly")
+	# restore start signal, chanAdvPreset, and clockSource
+	_caputw("zzz:SG:DFF-3_D_Signal", old_start)
+	_caputw("zzz:SG:DivByN-3_N", old_chanAdvPreset)
+	_caputw("zzz:SG:DivByN-3_CLOCK_Signal",  old_clockSource)
+	_caputw("zzz:1pixelTriggerDma.PROC", "1")

@@ -1,0 +1,20 @@
+record(waveform, "$(P)acquireFFT:t") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)acquireFFT:s1") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)acquireFFT:s2") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)acquireFFT:s3") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}
+record(waveform, "$(P)acquireFFT:s4") {
+	field(NELM, "$(N)")
+	field(FTVL,"DOUBLE")
+}

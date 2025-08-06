@@ -1,0 +1,60 @@
+#!/bin/sh
+# This build of Petalinux 2022.1 is configured to use DHCP to get the IP
+# address, etc.  You must choose a MAC address that is unique on your network.
+# On my system, I have to wait a few seconds after changing the MAC address
+# before mounting NFS file systems.
+export MAC=00:19:B3:02:14:03
+export SLEEP_AFTER_MAC=48
+export HOSTNAME=microzed-t
+
+# softGlueZynq and this Petalinux build are configured so that an ordinary
+# account is permitted to load the FPGA, access FPGA registers, etc.,
+# because running as root just can't be a good idea.  I haven't figured out how
+# to disable the root account, but at least you can set the password.
+export USERNAME=vw5
+export USERUID=106
+export USERGROUP=vw
+export USERGID=74
+export USERPASSWORD=pwd
+export ROOTPASSWORD=pwd
+#export TIMEZONEFILE=/APSshare/zynq/timezone
+export TIMEZONEFILE=/net/s100dserv/xorApps/zed/timezone
+
+# Set default time zone (CST6 means Central Standard Time, with is UTC-6 hr.
+# DT changes to daylight savings time.  The startup code will source
+# $TIMEZONEFILE if it exists.)
+export TZ=CST6C
+
+# softGlueZynq and this build of Petalinux are configured to mount NFS file
+# systems, and to get EPICS, synApps, and IOC specific code from those systems.
+# SHAREMOUNT can be a read-only file system.  IOCMOUNT must be read/write.
+# Here are the mount related commands that will be executed at boot time:
+#	mkdir /mnt${SHAREMOUNT}
+#	mkdir /mnt${IOCMOUNT}
+#	mkdir -p `dirname $SHARELOCAL`
+#	mkdir -p `dirname $IOCLOCAL`
+#	ln -s /mnt${SHAREMOUNT} $SHARELOCAL
+#	ln -s /mnt${IOCMOUNT} $IOCLOCAL
+#	ln -s /mnt${SHAREMOUNT} ${SHAREMOUNT}
+#	mount -o port=2049,nolock -t nfs ${SHARESERVER}:${SHAREMOUNT} /mnt${SHAREMOUNT}
+#	mount -o port=2049,nolock -t nfs ${IOCSERVER}:${IOCMOUNT} /mnt${IOCMOUNT}
+
+
+export SHARESERVER=s100dserv.xray.aps.anl.gov
+export SHAREMOUNT=/APSshare
+export SHARELOCAL=/net/s100dserv/APSshare
+export IOCSERVER=s100dserv.xray.aps.anl.gov
+export IOCMOUNT=/xorApps
+export IOCLOCAL=/net/s100dserv/xorApps
+
+# Here's the path to the IOC directory, and a command to take you there:
+export IOCDIR=/net/s100dserv/xorApps/zed/epics/ioc_6_2_1/ioctmm/iocBoot/ioctmm
+alias iocgo="cd $IOCDIR"
+
+export AUTOSTART=YES
+
+export SSHAUTHKEYFILE=/APSshare/zynq/authorized_keys
+
+#export PROCSERVEXE=/APSshare/zynq/procServ
+export PROCSERVEXE=/net/s100dserv/xorApps/zed/procServ_2022.1
+export PROCSERVARGS="--logfile=procServ.log --logstamp=%y%m%d-%H%M%S%t --noautorestart -i ^D^C 20000 ./run"

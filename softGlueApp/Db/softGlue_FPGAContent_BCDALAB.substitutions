@@ -169,6 +169,11 @@ pattern {SIG		ADDR}
 #{FO17     		  247}
 #{FO18     		  248}
 #{FO19     		  249}
+{plsTrn-1_Inp			 247}
+{plsTrn-1_Clk			 248}
+{plsTrn-1_Dis			 249}
+{scalToStream-1_FLUSH	250}
+
 #{FO20     		  250}
 #{FO21     		  251}
 #{FO22 			  252}
@@ -202,6 +207,13 @@ pattern {SIG		ADDR}
 {Scaler-1_CNT			281}
 {Scaler-1_STOP			282}
 {Scaler-1_CLK			283}
+
+#{aQuadB_RESET			284}
+#{aQuadB_ENABLE			285}
+#{ISN_X_focal_spot_CLK	286}
+#{aQuadB_INVERT			288}
+#{aQuadB_CLOCK			289}
+{scalToStream-1_IMTRIG	290}
 
 {scalToStream-1_RESET	299}
 
@@ -287,6 +299,8 @@ pattern {SIG   	ADDR}
 #{FI20			71}
 #{FI21			72}
 #{FI22			73}
+{scalToStream-1_TIP			72}
+{scalToStream-1_need			73}
 #{FI23			74}
 #{FI24			75}
 
@@ -317,7 +331,13 @@ pattern {SIG   	ADDR}
 #{FI33			94}
 #{FI34			95}
 #{FI35			96}
+#{scalToStream-1_traninprog	93}
+#{scalToStream-1_need8	94}
+#{scalToStream-1_need24	95}
+#{scalToStream-1_room	96}
 #{FI36			97}
+
+{plsTrn-1_Q			97}
 
 {scalToStream-1_FULL 98}
 
@@ -355,8 +375,8 @@ pattern {SIG   ADDR 	  IOPIN}
 {FI18			69	18}
 {FI19			70	19}
 {FI20			71	20}
-{FI21			72	21}
-{FI22			73	22}
+#{FI21			72	21}
+#{FI22			73	22}
 {FI23			74	23}
 {FI24			75	24}
 
@@ -367,11 +387,11 @@ pattern {SIG   ADDR 	  IOPIN}
 {FI29			90	29}
 {FI30			91	30}
 {FI31			92	31}
-{FI32			93	32}
-{FI33			94	33}
-{FI34			95	34}
-{FI35			96	35}
-{FI36			97	36}
+#{FI32			93	32}
+#{FI33			94	33}
+#{FI34			95	34}
+#{FI35			96	35}
+#{FI36			97	36}
 }
 
 file "softGlue_FieldOutput.db"
@@ -396,10 +416,10 @@ pattern {SIG   ADDR 	  IOPIN}
 {FO14	244	14}
 {FO15	245	15}
 {FO16	246	16}
-{FO17	247	17}
-{FO18	248	18}
-{FO19	249	19}
-{FO20	250	20}
+#{FO17	247	17}
+#{FO18	248	18}
+#{FO19	249	19}
+#{FO20	250	20}
 {FO21	251	21}
 {FO22	252	22}
 {FO23	253	23}

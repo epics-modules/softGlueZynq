@@ -1,0 +1,30 @@
+softGlue_FPGAContent_7020_dma.bin
+
+	Standard softGlueZynq
+
+	scalersToStream produces the event:
+		(pixelTrigger_0_Pixel, pixelTrigger_1_Pixel)
+		UpCntr_1
+		UpCntr_2
+		UpCntr_3
+		UpCntr_4
+		UpDnCntr_1
+		UpDnCntr_2
+		UpDnCntr_3
+
+softGlue_FPGAContent_7020_dma_4If.bin
+
+	Standard softGlueZynq modified for reading four interferometers:
+	disconnected UpCntr_1 and UpCntr_2 from scalersToStream in1 and in2,
+	respectively, and connected pixelTrigger_0_Counts and pixelTrigger_1_Counts to
+	scalersToStream in1 and in2, respectively.  Now scalersToStream produces
+	the event:
+	
+		(pixelTrigger_0_Pixel, pixelTrigger_1_Pixel)
+		pixelTrigger_0 counts
+		pixelTrigger_0 counts
+		UpCntr_3
+		UpCntr_4
+		UpDnCntr_1
+		UpDnCntr_2
+		UpDnCntr_3

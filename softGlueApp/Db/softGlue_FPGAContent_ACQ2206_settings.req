@@ -56,6 +56,8 @@ file ScalToStream_settings.req P=$(P),H=$(H),N=1
 file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
 file FreqCntr_settings.req P=$(P),H=$(H),N=1
 file scaler16_settings.req P=$(P),H=$(H),N=1
+file ACQ427_settings.req P=$(P),H=$(H)
+file plsTrn_settings.req P=$(P),H=$(H),N=1
 
 # hard-wired OR gates
 $(P)$(H)HW_OR-1_OUT_Signal
@@ -144,10 +146,8 @@ $(P)$(H)HW_OR-2_desc
 file softGlue_config_settings.req P=$(P),H=$(H)
 file clockConfig_settings.req P=$(P),H=$(H),Q=1
 
-#$(P)$(H)aQuadB_RESET_Signal
-#$(P)$(H)aQuadB_ENABLE_Signal
-#$(P)$(H)aQuadB_CLOCK_Signal
-#$(P)$(H)aQuadB_INVERT_Signal
-#$(P)$(H)ISN_X_focal_spot_CLK_Signal
-
-#$(P)$(H)scalToStream-1_IMTRIG_Signal
+$(P)$(H)aQuadB_RESET_Signal
+$(P)$(H)aQuadB_ENABLE_Signal
+$(P)$(H)aQuadB_CLOCK_Signal
+$(P)$(H)aQuadB_INVERT_Signal
+$(P)$(H)ISN_X_focal_spot_CLK_Signal

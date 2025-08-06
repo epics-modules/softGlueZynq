@@ -1,0 +1,6 @@
+$(P)$(H)threshTrig-$(N)_desc
+$(P)$(H)threshTrig-$(N)_EN_Signal
+$(P)$(H)threshTrig-$(N)_CLK_Signal
+$(P)$(H)threshTrig-$(N)_TRIG_Signal
+$(P)$(H)threshTrig-$(N)_POSTHR
+$(P)$(H)threshTrig-$(N)_NEGTHR

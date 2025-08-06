@@ -1,0 +1,5 @@
+record(bo, "$(P)resetDMA") {
+    field(DESC, "reset DMA")
+    field(DTYP, "stream")
+    field(OUT,  "@resetDMA.proto resetDMA  dummy")
+}

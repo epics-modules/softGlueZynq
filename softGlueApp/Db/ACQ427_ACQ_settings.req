@@ -1,0 +1,15 @@
+$(P)$(H)DAC_INIT_Signal
+$(P)$(H)DAC_WRITE_Signal
+$(P)$(H)DAC1_VAL
+$(P)$(H)DAC2_VAL
+#$(P)$(H)DAC3_VAL
+#$(P)$(H)DAC4_VAL
+$(P)$(H)ADC_RESET_Signal
+$(P)$(H)ADC_DISABLE_Signal
+$(P)$(H)ADC_START_CVT_Signal
+$(P)$(H)ADC_DATA_VALID_Signal
+$(P)$(H)DAC_SPI_Signal
+$(P)$(H)DAC_SYNC_Signal
+
+$(P)$(H)mux32_SEL_IForDAC_Signal
+$(P)$(H)mux32_SEL_Signal

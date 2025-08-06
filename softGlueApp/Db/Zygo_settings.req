@@ -1,0 +1,6 @@
+$(P)$(H)Zygo-$(N)_desc
+$(P)$(H)Zygo-$(N)_Q_Signal
+$(P)$(H)Zygo-$(N)_ACQ_Signal
+$(P)$(H)Zygo-$(N)_CLK_Signal
+$(P)$(H)Zygo-$(N)_ENABLE_Signal
+$(P)$(H)Zygo-$(N)_RESET_Signal

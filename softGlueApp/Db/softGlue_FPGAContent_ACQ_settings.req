@@ -46,20 +46,33 @@ file GateDly_settings.req P=$(P),H=$(H),N=1
 file GateDly_settings.req P=$(P),H=$(H),N=2
 file GateDly_settings.req P=$(P),H=$(H),N=3
 file GateDly_settings.req P=$(P),H=$(H),N=4
-file HistScal_settings.req P=$(P),H=$(H),N=1
-file PixelTrig_settings.req P=$(P),H=$(H),N=1
-file PixelTrig_settings.req P=$(P),H=$(H),N=2
-$(P)$(H)PixelTrig_TRIG_Signal
-$(P)$(H)PixelTrig_ENTRIG_Signal
+#file HistScal_settings.req P=$(P),H=$(H),N=1
+file IF_tracker_settings.req P=$(P),H=$(H),N=1
+file IF_tracker_settings.req P=$(P),H=$(H),N=2
+file IF_tracker_settings.req P=$(P),H=$(H),N=3
 #file PixelFIFO_settings.req P=$(P),H=$(H),N=1
-file ScalToStream_settings.req P=$(P),H=$(H),N=1
-file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
+file ScalToStream8and16_settings.req P=$(P),H=$(H),N=1
+#file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
 file FreqCntr_settings.req P=$(P),H=$(H),N=1
-file scaler16_settings.req P=$(P),H=$(H),N=1
+#file scaler16_settings.req P=$(P),H=$(H),N=1
+file ACQ427_ACQ_settings.req P=$(P),H=$(H)
+file plsTrn_settings.req P=$(P),H=$(H),N=1
+file scaleOffsetLimit_settings.req P=$(P),H=$(H),N=1
+file scaleOffsetLimit_settings.req P=$(P),H=$(H),N=2
 
+file threshTrig_settings.req P=$(P),H=$(H),N=1
+
+$(P)$(H)FOCAL_Y_A
+$(P)$(H)averageN_N
+$(P)$(H)FOCAL_X_SH
+$(P)$(H)FOCAL_X_SL
+$(P)$(H)FOCAL_Y_SH
+$(P)$(H)FOCAL_Y_SL
+$(P)$(H)FOCAL_X_SO_Signal
+$(P)$(H)FOCAL_Y_SO_Signal
 # hard-wired OR gates
-$(P)$(H)HW_OR-1_OUT_Signal
-$(P)$(H)HW_OR-2_OUT_Signal
+#$(P)$(H)HW_OR-1_OUT_Signal
+#$(P)$(H)HW_OR-2_OUT_Signal
 
 # clock
 $(P)$(H)10MHZ_CLOCK_Signal
@@ -84,16 +97,16 @@ $(P)$(H)FI13_Signal
 $(P)$(H)FI14_Signal
 $(P)$(H)FI15_Signal
 $(P)$(H)FI16_Signal
-$(P)$(H)FI17_Signal
+#$(P)$(H)FI17_Signal
 $(P)$(H)FI18_Signal
-$(P)$(H)FI19_Signal
-$(P)$(H)FI20_Signal
+#$(P)$(H)FI19_Signal
+#$(P)$(H)FI20_Signal
 $(P)$(H)FI21_Signal
 $(P)$(H)FI22_Signal
 $(P)$(H)FI23_Signal
 $(P)$(H)FI24_Signal
 
-$(P)$(H)FI25_Signal
+#$(P)$(H)FI25_Signal
 $(P)$(H)FI26_Signal
 $(P)$(H)FI27_Signal
 $(P)$(H)FI28_Signal
@@ -104,7 +117,7 @@ $(P)$(H)FI32_Signal
 $(P)$(H)FI33_Signal
 $(P)$(H)FI34_Signal
 $(P)$(H)FI35_Signal
-$(P)$(H)FI36_Signal
+#$(P)$(H)FI36_Signal
 
 $(P)$(H)FO1_Signal
 $(P)$(H)FO2_Signal
@@ -122,14 +135,14 @@ $(P)$(H)FO13_Signal
 $(P)$(H)FO14_Signal
 $(P)$(H)FO15_Signal
 $(P)$(H)FO16_Signal
-$(P)$(H)FO17_Signal
-$(P)$(H)FO18_Signal
-$(P)$(H)FO19_Signal
+#$(P)$(H)FO17_Signal
+#$(P)$(H)FO18_Signal
+#$(P)$(H)FO19_Signal
 $(P)$(H)FO20_Signal
 $(P)$(H)FO21_Signal
 $(P)$(H)FO22_Signal
 $(P)$(H)FO23_Signal
-$(P)$(H)FO24_Signal
+#$(P)$(H)FO24_Signal
 
 # circuit description
 $(P)$(H)circuit_desc
@@ -138,16 +151,39 @@ $(P)$(H)20MHZ_CLOCK_desc
 $(P)$(H)10MHZ_CLOCK_desc
 $(P)$(H)VAR_CLOCK_desc
 
-$(P)$(H)HW_OR-1_desc
-$(P)$(H)HW_OR-2_desc
+#$(P)$(H)HW_OR-1_desc
+#$(P)$(H)HW_OR-2_desc
 
 file softGlue_config_settings.req P=$(P),H=$(H)
 file clockConfig_settings.req P=$(P),H=$(H),Q=1
 
-#$(P)$(H)aQuadB_RESET_Signal
-#$(P)$(H)aQuadB_ENABLE_Signal
-#$(P)$(H)aQuadB_CLOCK_Signal
-#$(P)$(H)aQuadB_INVERT_Signal
-#$(P)$(H)ISN_X_focal_spot_CLK_Signal
+$(P)$(H)aQuadB_RESET_Signal
+$(P)$(H)aQuadB_ENABLE_Signal
+$(P)$(H)aQuadB_CLOCK_Signal
+$(P)$(H)aQuadB_INVERT_Signal
 
-#$(P)$(H)scalToStream-1_IMTRIG_Signal
+$(P)$(H)PID_RESET_Signal
+$(P)$(H)PID_START_Signal
+$(P)$(H)PID_POS_Signal
+$(P)$(H)scalToStream-1_FLUSH_Signal
+$(P)$(H)ROTATE_SIN
+$(P)$(H)ROTATE_COS
+
+$(P)$(H)mem_ADDRA
+$(P)$(H)mem_DINA
+$(P)$(H)mem_WRT_Signal
+$(P)$(H)mem_EN_Signal
+$(P)$(H)mem_CLK_Signal
+$(P)$(H)driveRAM_N
+$(P)$(H)driveRAM_en_Signal
+
+$(P)$(H)mem2_DINA
+$(P)$(H)mem2_ADDRA
+$(P)$(H)driveRAMx_INC  
+$(P)$(H)driveRAMx_START
+$(P)$(H)driveRAMx_END
+$(P)$(H)driveRAMx_en_Signal
+$(P)$(H)driveRAMx_N
+$(P)$(H)mem2_WRT_Signal   
+$(P)$(H)mem2_EN_Signal    
+$(P)$(H)mem2_CLK_Signal   

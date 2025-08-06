@@ -157,15 +157,15 @@ pattern {SIG		ADDR}
 #{FO6				236}
 #{FO7				237}
 #{FO8				238}
-#{FO9				239}
-#{FO10				240}
-#{FO11				241}
-#{FO12				242}
-#
-#{FO13     		  243}
-#{FO14     		  244}
-#{FO15     		  245}
-#{FO16     		  246}
+{FO9				239}
+{FO10				240}
+{FO11				241}
+{FO12				242}
+
+{FO13     		  243}
+{FO14     		  244}
+{FO15     		  245}
+{FO16     		  246}
 #{FO17     		  247}
 #{FO18     		  248}
 #{FO19     		  249}
@@ -175,20 +175,20 @@ pattern {SIG		ADDR}
 #{FO23 			  253}
 #{FO24 			  254}
 
-{pixelTrig-1_A1			255}
-{pixelTrig-1_B1			256}
-{pixelTrig-1_A2			257}
-{pixelTrig-1_B2			258}
+#{pixelTrig-1_A1			255}
+#{pixelTrig-1_B1			256}
+#{pixelTrig-1_A2			257}
+#{pixelTrig-1_B2			258}
 {pixelTrig-1_CLOCK		259}
 {pixelTrig-1_MISSCLR	260}
 {pixelTrig-1_EN			261}
 {pixelTrig-1_LOAD		262}
 {pixelTrig-1_CLEAR		263}
 
-{pixelTrig-2_A1			264}
-{pixelTrig-2_B1			265}
-{pixelTrig-2_A2			266}
-{pixelTrig-2_B2			267}
+#{pixelTrig-2_A1			264}
+#{pixelTrig-2_B1			265}
+#{pixelTrig-2_A2			266}
+#{pixelTrig-2_B2			267}
 {pixelTrig-2_CLOCK		268}
 {pixelTrig-2_MISSCLR	269}
 {pixelTrig-2_EN			270}
@@ -196,14 +196,22 @@ pattern {SIG		ADDR}
 {pixelTrig-2_CLEAR		272}
 
 {scalToStream-1_CHADV	273}
-{HistScal-1_DET2		274}
+#{HistScal-1_DET2		274}
+{scalToStream-1_IMTRIG	274}
 {HistScal-1_MODE		275}
 {HistScal-1_READ		278}
 {Scaler-1_CNT			281}
 {Scaler-1_STOP			282}
 {Scaler-1_CLK			283}
 
+#{aQuadB_RESET			284}
+#{aQuadB_ENABLE			285}
+#{ISN_X_focal_spot_CLK	286}
+#{aQuadB_INVERT			288}
+#{aQuadB_CLOCK			289}
+
 {scalToStream-1_RESET	299}
+{scalToStream-1_FLUSH	265}
 
 }
 
@@ -290,10 +298,10 @@ pattern {SIG   	ADDR}
 #{FI23			74}
 #{FI24			75}
 
-{pixelTrig-1_TRIG	76}
-{pixelTrig-1_MISS	77}
-{pixelTrig-2_TRIG	78}
-{pixelTrig-2_MISS	79}
+#{pixelTrig-1_TRIG	76}
+#{pixelTrig-1_MISS	77}
+#{pixelTrig-2_TRIG	78}
+#{pixelTrig-2_MISS	79}
 
 {scalersToFIFO-1_WRTCK	80}
 # enabled (room in FIFO) combined trigger out
@@ -334,44 +342,14 @@ file "softGlue_FieldInput.db"
 pattern {SIG   ADDR 	  IOPIN}
 ## These are inputs from the user's viewpoint, but they behave like softGlue
 ## outputs.
-{FI1			52	1}
-{FI2			53	2}
-{FI3			54	3}
-{FI4			55	4}
-{FI5			56	5}
-{FI6			57	6}
-{FI7			58	7}
-{FI8			59	8}
-{FI9			60	9}
-{FI10			61	10}
-{FI11			62	11}
-{FI12			63	12}
-
-{FI13			64	13}
-{FI14			65	14}
-{FI15			66	15}
-{FI16			67	16}
-{FI17			68	17}
-{FI18			69	18}
-{FI19			70	19}
-{FI20			71	20}
-{FI21			72	21}
-{FI22			73	22}
-{FI23			74	23}
-{FI24			75	24}
-
-{FI25			86	25}
-{FI26			87	26}
-{FI27			88	27}
-{FI28			89	28}
-{FI29			90	29}
-{FI30			91	30}
-{FI31			92	31}
-{FI32			93	32}
-{FI33			94	33}
-{FI34			95	34}
-{FI35			96	35}
-{FI36			97	36}
+{FI1			69	1}
+{FI2			70	2}
+{FI3			71	3}
+{FI4			72	4}
+{FI5			73	5}
+{FI6			74	6}
+{FI7			75	7}
+{FI8			76	8}
 }
 
 file "softGlue_FieldOutput.db"
@@ -379,31 +357,14 @@ file "softGlue_FieldOutput.db"
 pattern {SIG   ADDR 	  IOPIN}
 ## These are outputs from the user's viewpoint, but they behave like softGlue
 ## inputs.
-{FO1	231	1}
-{FO2	232	2}
-{FO3	233	3}
-{FO4	234	4}
-{FO5	235	5}
-{FO6	236	6}
-{FO7	237	7}
-{FO8	238	8}
-{FO9	239	9}
-{FO10	240	10}
-{FO11	241	11}
-{FO12	242	12}
-
-{FO13	243	13}
-{FO14	244	14}
-{FO15	245	15}
-{FO16	246	16}
-{FO17	247	17}
-{FO18	248	18}
-{FO19	249	19}
-{FO20	250	20}
-{FO21	251	21}
-{FO22	252	22}
-{FO23	253	23}
-{FO24	254	24}
+{FO1	248	1}
+{FO2	249	2}
+{FO3	250	3}
+{FO4	251	4}
+{FO5	252	5}
+{FO6	253	6}
+{FO7	254	7}
+{FO8	255	8}
 }
 
 

@@ -1,0 +1,12 @@
+# Normally, clock1desiredFreq is not autosaved, because it should never be
+# changed by a user.  For the bunch-clock synchronized design, however, it's
+# advantageous to set the signal-bus clock to 88 MHz.
+$(P)$(H)clock1desiredFreq
+$(P)$(H)clock2desiredFreq
+$(P)$(H)clock3desiredFreq
+$(P)$(H)clock4desiredFreq
+$(P)$(H)clock5desiredFreq
+$(P)$(H)clock6desiredFreq
+$(P)$(H)clock$(Q)Config.D
+$(P)$(H)clock$(Q)Config.E
+$(P)$(H)clock$(Q)Config.F

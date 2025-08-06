@@ -113,10 +113,14 @@ pattern {SIG		ADDR}
 #{UpDnCntr-5_CLEAR	209}
 #{UpDnCntr-5_UPDOWN	210}
 
-{HistScal-1_EN		206}
-{HistScal-1_CLEAR	207}
-{HistScal-1_CLK		208}
-{HistScal-1_SYNC	209}
+{ADC_RESET			206}
+{ADC_DISABLE		207}
+{ADC_START_CVT		208}
+{DAC_INIT			209}
+#{HistScal-1_EN		206}
+#{HistScal-1_CLEAR	207}
+#{HistScal-1_CLK		208}
+#{HistScal-1_SYNC	209}
 #{HistScal-1_DET	see 226}
 
 # 250 MHz histogramming scaler, with test inputs
@@ -141,10 +145,11 @@ pattern {SIG		ADDR}
 {GateDly-4_IN		224}
 {GateDly-4_CLK		225}
 
-{HistScal-1_DET		226}
+#{HistScal-1_DET		226}
+{DAC_WRITE			226}
 {FreqCntr-1_CLK		227}
-{Scaler-1_EN		228}
-{Scaler-1_CLR		229}
+{PID_RESET		228}
+{PID_START		229}
 
 {scalersToFIFO-1_CHADV	230}
 
@@ -169,39 +174,57 @@ pattern {SIG		ADDR}
 #{FO17     		  247}
 #{FO18     		  248}
 #{FO19     		  249}
+{plsTrn-1_Inp			 248}
+{plsTrn-1_Clk			 247}
+{plsTrn-1_Dis			 249}
+
 #{FO20     		  250}
 #{FO21     		  251}
 #{FO22 			  252}
 #{FO23 			  253}
 #{FO24 			  254}
 
-{pixelTrig-1_A1			255}
-{pixelTrig-1_B1			256}
-{pixelTrig-1_A2			257}
-{pixelTrig-1_B2			258}
-{pixelTrig-1_CLOCK		259}
-{pixelTrig-1_MISSCLR	260}
-{pixelTrig-1_EN			261}
-{pixelTrig-1_LOAD		262}
-{pixelTrig-1_CLEAR		263}
+#{pixelTrig-1_A1			255}
+#{pixelTrig-1_B1			256}
+#{pixelTrig-1_A2			257}
+#{pixelTrig-1_B2			258}
+#{pixelTrig-1_CLOCK		259}
+#{pixelTrig-1_MISSCLR	260}
+#{pixelTrig-1_EN			261}
+#{pixelTrig-1_LOAD		262}
+#{pixelTrig-1_CLEAR		263}
 
-{pixelTrig-2_A1			264}
-{pixelTrig-2_B1			265}
-{pixelTrig-2_A2			266}
-{pixelTrig-2_B2			267}
-{pixelTrig-2_CLOCK		268}
-{pixelTrig-2_MISSCLR	269}
-{pixelTrig-2_EN			270}
-{pixelTrig-2_LOAD		271}
-{pixelTrig-2_CLEAR		272}
+#{pixelTrig-2_A1			264}
+#{pixelTrig-2_B1			265}
+#{pixelTrig-2_A2			266}
+#{pixelTrig-2_B2			267}
+#{pixelTrig-2_CLOCK		268}
+#{pixelTrig-2_MISSCLR	269}
+#{pixelTrig-2_EN			270}
+#{pixelTrig-2_LOAD		271}
+#{pixelTrig-2_CLEAR		272}
+
+{IF_tracker-1_CLOCK		259}
+{IF_tracker-1_MISSCLR	260}
+{IF_tracker-1_EN		261}
+{IF_tracker-1_LOAD		262}
+{IF_tracker-1_CLEAR		263}
 
 {scalToStream-1_CHADV	273}
-{HistScal-1_DET2		274}
+{scalToStream-1_IMTRIG	274}
+#{HistScal-1_DET2		274}
 {HistScal-1_MODE		275}
 {HistScal-1_READ		278}
 {Scaler-1_CNT			281}
 {Scaler-1_STOP			282}
 {Scaler-1_CLK			283}
+
+{aQuadB_RESET			284}
+{aQuadB_ENABLE			285}
+{ISN_X_focal_spot_CLK	286}
+{aQuadB_INVERT			288}
+{aQuadB_CLOCK			289}
+#{scalToStream-1_IMTRIG	290}
 
 {scalToStream-1_RESET	299}
 
@@ -253,8 +276,11 @@ pattern {SIG   	ADDR}
 {QuadDec-1_DIR	39}
 {QuadDec-2_STEP	40}
 {QuadDec-2_DIR	41}
-{HW_OR-1_OUT	42}
-{HW_OR-2_OUT	43}
+#{HW_OR-1_OUT	42}
+#{HW_OR-2_OUT	43}
+{DAC_SYNC		42}
+{DAC_SPI		43}
+{ADC_DATA_VALID	44}
 
 {50MHZ_CLOCK	45}
 {20MHZ_CLOCK	46}
@@ -285,22 +311,27 @@ pattern {SIG   	ADDR}
 #{FI18			69}
 #{FI19			70}
 #{FI20			71}
+{plsTrn-1_Q  	71}
 #{FI21			72}
 #{FI22			73}
+#{scalToStream-1_TIP			72}
+#{scalToStream-1_need			73}
 #{FI23			74}
 #{FI24			75}
 
-{pixelTrig-1_TRIG	76}
-{pixelTrig-1_MISS	77}
-{pixelTrig-2_TRIG	78}
-{pixelTrig-2_MISS	79}
+#{pixelTrig-1_TRIG	76}
+#{pixelTrig-1_MISS	77}
+{IF_tracker-1_MISS	77}
+#{pixelTrig-2_TRIG	78}
+#{pixelTrig-2_MISS	79}
 
-{scalersToFIFO-1_WRTCK	80}
+#{scalersToFIFO-1_WRTCK	80}
 # enabled (room in FIFO) combined trigger out
-{PixelTrig_ENTRIG		81}
-{Scaler-1_Q				82}
-{Scaler-1_CNTG			83}
+#{PixelTrig_ENTRIG		81}
+#{Scaler-1_Q				82}
+#{Scaler-1_CNTG			83}
 #{PixelFIFO-1_FIFO50		83}
+{scalToStream-1_IMDONE	83}
 {scalToStream-1_ADVDONE	84}
 
 #{PixelFIFO-1_ADVDONE	85}
@@ -317,6 +348,10 @@ pattern {SIG   	ADDR}
 #{FI33			94}
 #{FI34			95}
 #{FI35			96}
+#{scalToStream-1_traninprog	93}
+#{scalToStream-1_need8	94}
+#{scalToStream-1_need24	95}
+#{scalToStream-1_room	96}
 #{FI36			97}
 
 {scalToStream-1_FULL 98}
@@ -325,7 +360,7 @@ pattern {SIG   	ADDR}
 #{PixelTrig_ENQ	98}
 #{PixelFIFO-1_ROOM	99}
 # raw combined trigger out
-{PixelTrig_TRIG		99}
+#{PixelTrig_TRIG		99}
 
 }
 
@@ -354,7 +389,7 @@ pattern {SIG   ADDR 	  IOPIN}
 {FI17			68	17}
 {FI18			69	18}
 {FI19			70	19}
-{FI20			71	20}
+#{FI20			71	20}
 {FI21			72	21}
 {FI22			73	22}
 {FI23			74	23}
@@ -371,7 +406,7 @@ pattern {SIG   ADDR 	  IOPIN}
 {FI33			94	33}
 {FI34			95	34}
 {FI35			96	35}
-{FI36			97	36}
+#{FI36			97	36}
 }
 
 file "softGlue_FieldOutput.db"
@@ -396,9 +431,9 @@ pattern {SIG   ADDR 	  IOPIN}
 {FO14	244	14}
 {FO15	245	15}
 {FO16	246	16}
-{FO17	247	17}
-{FO18	248	18}
-{FO19	249	19}
+#{FO17	247	17}
+#{FO18	248	18}
+#{FO19	249	19}
 {FO20	250	20}
 {FO21	251	21}
 {FO22	252	22}

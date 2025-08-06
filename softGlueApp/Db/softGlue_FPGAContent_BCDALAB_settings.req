@@ -56,6 +56,7 @@ file ScalToStream_settings.req P=$(P),H=$(H),N=1
 file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
 file FreqCntr_settings.req P=$(P),H=$(H),N=1
 file scaler16_settings.req P=$(P),H=$(H),N=1
+file plsTrn_settings.req P=$(P),H=$(H),N=1
 
 # hard-wired OR gates
 $(P)$(H)HW_OR-1_OUT_Signal
@@ -88,8 +89,8 @@ $(P)$(H)FI17_Signal
 $(P)$(H)FI18_Signal
 $(P)$(H)FI19_Signal
 $(P)$(H)FI20_Signal
-$(P)$(H)FI21_Signal
-$(P)$(H)FI22_Signal
+#$(P)$(H)FI21_Signal
+#$(P)$(H)FI22_Signal
 $(P)$(H)FI23_Signal
 $(P)$(H)FI24_Signal
 
@@ -100,11 +101,6 @@ $(P)$(H)FI28_Signal
 $(P)$(H)FI29_Signal
 $(P)$(H)FI30_Signal
 $(P)$(H)FI31_Signal
-$(P)$(H)FI32_Signal
-$(P)$(H)FI33_Signal
-$(P)$(H)FI34_Signal
-$(P)$(H)FI35_Signal
-$(P)$(H)FI36_Signal
 
 $(P)$(H)FO1_Signal
 $(P)$(H)FO2_Signal
@@ -122,10 +118,10 @@ $(P)$(H)FO13_Signal
 $(P)$(H)FO14_Signal
 $(P)$(H)FO15_Signal
 $(P)$(H)FO16_Signal
-$(P)$(H)FO17_Signal
-$(P)$(H)FO18_Signal
-$(P)$(H)FO19_Signal
-$(P)$(H)FO20_Signal
+#$(P)$(H)FO17_Signal
+#$(P)$(H)FO18_Signal
+#$(P)$(H)FO19_Signal
+#$(P)$(H)FO20_Signal
 $(P)$(H)FO21_Signal
 $(P)$(H)FO22_Signal
 $(P)$(H)FO23_Signal
@@ -150,4 +146,3 @@ file clockConfig_settings.req P=$(P),H=$(H),Q=1
 #$(P)$(H)aQuadB_INVERT_Signal
 #$(P)$(H)ISN_X_focal_spot_CLK_Signal
 
-#$(P)$(H)scalToStream-1_IMTRIG_Signal
