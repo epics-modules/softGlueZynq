@@ -1,0 +1,34 @@
+clock5=22
+clkwiz1_in=22
+clock6 -> 44 works, according to zzz:SG:clock6actualFreq
+
+epics> epics> common0: div=1, mult=25, frac=0, frac_enable=1, baseFreq_0=1100.000000 MHz
+common1: div=1, mult=30, frac=0, frac_enable=1, baseFreq_1=660.000000 MHz
+   M/8 = 30.000, fBase=660.000000
+   N=119, f = 44.369748
+M/8=30.000, N/8=14.875,f=44.369748
+   N=120, f = 44.000000
+M/8=30.000, N/8=15.000,f=44.000000
+   N=121, f = 43.636364
+M/8=30.000, N/8=15.125,f=43.636364
+findBest: MBest/8=30.000,NBest/8=15.000, keepon=0
+clock 6: div=15, frac=0
+clock 6: div=15, frac=0, frac_enable=1, f=44.000000 MHz
+clk_wiz_1 status0=1, status1=1
+
+
+epics> epics> common0: div=1, mult=25, frac=0, frac_enable=1, baseFreq_0=1100.000000 MHz
+common1: div=1, mult=30, frac=0, frac_enable=1, baseFreq_1=1320.000000 MHz
+   M/8 = 30.000, fBase=1320.000000
+   M/8 = 30.125, fBase=1325.500000
+   M/8 = 30.250, fBase=1331.000000
+   M/8 = 30.375, fBase=1336.500000
+   M/8 = 30.500, fBase=1342.000000
+	...
+   M/8 = 60.625, fBase=2667.500000
+   M/8 = 60.750, fBase=2673.000000
+   M/8 = 60.875, fBase=2678.500000
+   M/8 = 61.000, fBase=2684.000000
+findBest: MBest/8=0.000,NBest/8=0.000, keepon=1
+clock 6: div=15, frac=0, frac_enable=1, f=88.000000 MHz
+clk_wiz_1 status0=1, status1=1

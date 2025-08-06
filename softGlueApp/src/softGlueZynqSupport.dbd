@@ -37,11 +37,17 @@ registrar(scalerRegister)
 registrar(pixelTriggerDmaRegister)
 registrar(pixelTriggerDmaISRRegistrar)
 
-# asub histScalerDma
-registrar(histScalerDmaRegister)
+# asub acquireDma
+registrar(acquireDmaRegister)
+registrar(acquireDmaISRRegistrar)
 
-# asub clockConfig
+# asub histScalerDma
+#!#registrar(histScalerDmaRegister)
+
+# asub clockConfig for normal design, clockConfigExt for design synchronized to
+# a 44 MHz proxy for the RF clock.
 registrar(clockConfigRegister)
+registrar(clockConfigExtRegister)
 
 # asub readSoftGlueCounter_ISR
 registrar(RSCsoftGlueISRRegistrar)

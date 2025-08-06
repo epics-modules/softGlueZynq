@@ -28,16 +28,8 @@
  *  d       clear arrays
  *	e		clock rate counter1
  *	f		normalizeMode
- *	g		acqMode: 2d/list/x,y,t/MCS
+ *	g		acqMode: 2d/list/x,y,t
  *	h		debug level
- *	i		scale1
- *	j		scale2
- *	k		scale3
- *	l		scale4
- *	m		scale5
- *	n		scale6
- *	o		scale7
- *  p		desired number of events (for MCS)
  *
  * Tim Mooney
  */
@@ -64,61 +56,50 @@
 
 /* for DMA */
 #include <sys/ioctl.h>
-#include "dma-proxy.h"
+#include "dma_proxy.h"
 
 #define MAX(a,b) ((a)>(b)?(a):(b))
 
 #define ACQ_MODE_2D 0
 #define ACQ_MODE_LIST 1
 #define ACQ_MODE_XYT 2
-#define ACQ_MODE_MCS 3
-#define ACQ_MODE_NONE 4
+#define ACQ_MODE_NONE 3
 
 /* make global so we can map at init */
-struct channel_buffer *rx_proxy_interface_p;
+struct dma_proxy_channel_interface *rx_proxy_interface_p;
 int rx_proxy_fd;
+#define MAX_DMA_BYTES 32*1024*4
 
 /* testing */
 int ListModeTestMisses = 0;
 
 typedef struct {
 	volatile epicsUInt32 *fifoCountAddr, *pixelTriggerDmaWords;
-	volatile epicsUInt8 *DFF2Clear;
-	float *pixels1, *pixels2, *pixels3, *pixels4, *pixels5, *pixels6, *pixels7;
-	float *scale1, *scale2, *scale3, *scale4, *scale5, *scale6, *scale7;
+	epicsUInt32 *pixels1, *pixels2, *pixels3, *pixels4, *pixels5, *pixels6, *pixels7;
 	epicsUInt16 *image1, *image2;
-	epicsUInt32 *numEvents, *desNumEvents;
+	epicsUInt32 *numEvents;
 	epicsUInt32 *numX, *numY, *numScalers;
 	int cleared, *acqMode, allocatedElements, *debug;
 } myISRDataStruct;
-static myISRDataStruct myDmaISRData;
+myISRDataStruct myDmaISRData;
 
 static long pixelTriggerDma_init(aSubRecord *pasub) {
 	epicsUInt32 *a = (epicsUInt32 *)pasub->a;
 	epicsUInt32 *b = (epicsUInt32 *)pasub->b;
 	epicsUInt32 *c = (epicsUInt32 *)pasub->c;
 
-	myDmaISRData.pixels1 = (float *)pasub->vala;
-	myDmaISRData.pixels2 = (float *)pasub->valb;
-	myDmaISRData.pixels3 = (float *)pasub->valc;
-	myDmaISRData.pixels4 = (float *)pasub->vald;
-	myDmaISRData.pixels5 = (float *)pasub->vale;
-	myDmaISRData.pixels6 = (float *)pasub->valf;
-	myDmaISRData.pixels7 = (float *)pasub->valg;
+	myDmaISRData.pixels1 = (epicsUInt32 *)pasub->vala;
+	myDmaISRData.pixels2 = (epicsUInt32 *)pasub->valb;
+	myDmaISRData.pixels3 = (epicsUInt32 *)pasub->valc;
+	myDmaISRData.pixels4 = (epicsUInt32 *)pasub->vald;
+	myDmaISRData.pixels5 = (epicsUInt32 *)pasub->vale;
+	myDmaISRData.pixels6 = (epicsUInt32 *)pasub->valf;
+	myDmaISRData.pixels7 = (epicsUInt32 *)pasub->valg;
 	myDmaISRData.numEvents = (epicsUInt32 *)pasub->valh;
-	myDmaISRData.desNumEvents = (epicsUInt32 *)pasub->p;
 	myDmaISRData.image1 = (epicsUInt16 *)pasub->vali;
 	myDmaISRData.image2 = (epicsUInt16 *)pasub->valj;
 	myDmaISRData.acqMode = (epicsInt32 *)pasub->g;
 	myDmaISRData.debug = (epicsInt32 *)pasub->h;
-
-	myDmaISRData.scale1 = (float *)pasub->i;
-	myDmaISRData.scale2 = (float *)pasub->j;
-	myDmaISRData.scale3 = (float *)pasub->k;
-	myDmaISRData.scale4 = (float *)pasub->l;
-	myDmaISRData.scale5 = (float *)pasub->m;
-	myDmaISRData.scale6 = (float *)pasub->n;
-	myDmaISRData.scale7 = (float *)pasub->o;
 
 	myDmaISRData.numScalers = a;
 	myDmaISRData.numX = b;
@@ -129,18 +110,17 @@ static long pixelTriggerDma_init(aSubRecord *pasub) {
 }
 
 static long pixelTriggerDma_do(aSubRecord *pasub) {
-	int allocatedElements = pasub->nova;
 	int *clear = (int *)pasub->d;
 	double clockRate = *((double *)pasub->e);
 	int normMode = *((int *)pasub->f);
 	int *acqMode = ((int *)pasub->g);
-	float *pixels1 = (float *)pasub->vala;
-	float *pixels2 = (float *)pasub->valb;
-	float *pixels3 = (float *)pasub->valc;
-	float *pixels4 = (float *)pasub->vald;
-	float *pixels5 = (float *)pasub->vale;
-	float *pixels6 = (float *)pasub->valf;
-	float *pixels7 = (float *)pasub->valg;
+	epicsUInt32 *pixels1 = (epicsUInt32 *)pasub->vala;
+	epicsUInt32 *pixels2 = (epicsUInt32 *)pasub->valb;
+	epicsUInt32 *pixels3 = (epicsUInt32 *)pasub->valc;
+	epicsUInt32 *pixels4 = (epicsUInt32 *)pasub->vald;
+	epicsUInt32 *pixels5 = (epicsUInt32 *)pasub->vale;
+	epicsUInt32 *pixels6 = (epicsUInt32 *)pasub->valf;
+	epicsUInt32 *pixels7 = (epicsUInt32 *)pasub->valg;
 	epicsUInt32 *numEvents = (epicsUInt32 *)pasub->valh;
 
 	/* At present, caQtDM does not have a widget to display 2D images from four byte data arrays,
@@ -155,7 +135,7 @@ static long pixelTriggerDma_do(aSubRecord *pasub) {
 	epicsUInt16 *image7 = (epicsUInt16 *)pasub->valo;
 	int i;
 	double time;
-	float max2=0, max3=0, max4=0, max5=0, max6=0, max7=0;
+	epicsUInt32 max2=0, max3=0, max4=0, max5=0, max6=0, max7=0;
 	int *debug = (int *)pasub->h;
 	myDmaISRData.acqMode = (epicsInt32 *)pasub->g;
 	myDmaISRData.debug = (epicsInt32 *)pasub->h;
@@ -166,7 +146,7 @@ static long pixelTriggerDma_do(aSubRecord *pasub) {
 
 	if (*clear) {
 		/* erase pixel maps */
-		for (i=0; i<allocatedElements; i++) {
+		for (i=0; i<pasub->nova; i++) {
 			pixels1[i] = 0;
 			pixels2[i] = 0;
 			pixels3[i] = 0;
@@ -191,12 +171,11 @@ static long pixelTriggerDma_do(aSubRecord *pasub) {
 		}
 	}
 
-	if (*acqMode == ACQ_MODE_LIST || *acqMode == ACQ_MODE_NONE || *acqMode == ACQ_MODE_MCS)
-		return(0);
+	if (*acqMode == ACQ_MODE_LIST || *acqMode == ACQ_MODE_NONE) return(0);
 
 	if (normMode==1) {
 		/* prepare to normalize to data in pixels1[], which is presumed to record the time spent in the pixel. */
-		for (i=0; i<allocatedElements; i++) {
+		for (i=0; i<pasub->nova; i++) {
 			max2 = MAX(max2, pixels2[i]);
 			max3 = MAX(max3, pixels3[i]);
 			max4 = MAX(max4, pixels4[i]);
@@ -206,9 +185,9 @@ static long pixelTriggerDma_do(aSubRecord *pasub) {
 		}
 	}
 
-	if (*debug > 1) printf("pixelTriggerDma_do: max2=%f, max3=%f\n", max2, max3);
+	if (*debug > 1) printf("pixelTriggerDma_do: max2=%d, max3=%d\n", max2, max3);
 	/* Copy pixel maps to displayable arrays */
-	for (i=0; i<allocatedElements; i++) {
+	for (i=0; i<pasub->nova; i++) {
 		time = pixels1[i]/clockRate;
 		if (pixels1[i] > 0 && normMode==1) {
 			image1[i] = pixels1[i];
@@ -254,45 +233,32 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 	epicsUInt32 risingMask = IRData->risingMask;
 	epicsUInt32 wentHigh = IRData->wentHigh;
 	myISRDataStruct *myDmaISRData = (myISRDataStruct *)(IRData->userPvt);
-	int allocatedElements = myDmaISRData->allocatedElements;
 	volatile epicsUInt32 *fifoCountAddr = myDmaISRData->fifoCountAddr;
 	volatile epicsUInt32 *pixelTriggerDmaWords = myDmaISRData->pixelTriggerDmaWords;
-	volatile epicsUInt8 *DFF2Clear = myDmaISRData->DFF2Clear;
-	float *pixels1 = myDmaISRData->pixels1;
-	float *pixels2 = myDmaISRData->pixels2;
-	float *pixels3 = myDmaISRData->pixels3;
-	float *pixels4 = myDmaISRData->pixels4;
-	float *pixels5 = myDmaISRData->pixels5;
-	float *pixels6 = myDmaISRData->pixels6;
-	float *pixels7 = myDmaISRData->pixels7;
-
-	float *scale1 = myDmaISRData->scale1;
-	float *scale2 = myDmaISRData->scale2;
-	float *scale3 = myDmaISRData->scale3;
-	float *scale4 = myDmaISRData->scale4;
-	float *scale5 = myDmaISRData->scale5;
-	float *scale6 = myDmaISRData->scale6;
-	float *scale7 = myDmaISRData->scale7;
-
+	epicsUInt32 *pixels1 = myDmaISRData->pixels1;
+	epicsUInt32 *pixels2 = myDmaISRData->pixels2;
+	epicsUInt32 *pixels3 = myDmaISRData->pixels3;
+	epicsUInt32 *pixels4 = myDmaISRData->pixels4;
+	epicsUInt32 *pixels5 = myDmaISRData->pixels5;
+	epicsUInt32 *pixels6 = myDmaISRData->pixels6;
+	epicsUInt32 *pixels7 = myDmaISRData->pixels7;
 	epicsUInt32 *numEvents = myDmaISRData->numEvents;
-	epicsUInt32 *desNumEvents = myDmaISRData->desNumEvents;
 	epicsUInt32 numX = *(myDmaISRData->numX);
 	epicsUInt32 numY = *(myDmaISRData->numY);
 	int numScalers = *(myDmaISRData->numScalers);
 	int numEventWords = numScalers+1;
 	int j, offset, record=0;
 	epicsUInt16 x, y;
-	epicsUInt32 pixelValue=0, timeValue=0, *data, uL;
-	float scalerValue;
+	epicsUInt32 pixelValue=0, scalerValue, *data, timeValue=0;
 	epicsTimeStamp  timeStart, timeEnd;
 	double dmaTime;
-	//struct channel_buffer *rx_proxy_interface_p;
+	//struct dma_proxy_channel_interface *rx_proxy_interface_p;
 	//int rx_proxy_fd;
-	int buffer_id = 0;
-	//int timeout_msecs = 10;
+	int dummy = 0;
+	int timeout_msecs = 10;
 	int dma_bytes; /* in bytes32-byte events */
 	int dma_words;
-	int rep, maxReps=50; // for testing, maxReps=1. For efficiency, maxReps=50;
+	int rep, maxReps=50;
 	int *debug = myDmaISRData->debug;
 	/* for list mode */
 	int *acqMode = myDmaISRData->acqMode;
@@ -302,9 +268,6 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 	dma_words = *pixelTriggerDmaWords;
 	dma_bytes = dma_words*4;
 
-	if (*debug) {
-		printf("pixelTriggerDmaRoutine: *desNumEvents=%d\n", *desNumEvents);
-	}
 	if (*debug>=10) {
 		printf("pixelTriggerDmaRoutine(0x%x, 0x%x)\n", risingMask, wentHigh);
 	}
@@ -317,46 +280,28 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 		printf("pixelTriggerDmaRoutine: Unable to open DMA proxy device file for RX\n");
 		return;
 	}
-	if (*debug) {
-		printf("pixelTriggerDmaRoutine: Opened /dev/dma_proxy_rx\n");
-	}
-	rx_proxy_interface_p = (struct channel_buffer *)mmap(NULL, sizeof(struct channel_buffer),
+	rx_proxy_interface_p = (struct dma_proxy_channel_interface *)mmap(NULL, sizeof(struct dma_proxy_channel_interface),
 			PROT_READ | PROT_WRITE, MAP_SHARED, rx_proxy_fd, 0);
 
     if (rx_proxy_interface_p == MAP_FAILED) {
        	printf("pixelTriggerDmaRoutine: Failed to mmap for RX\n");
        	return;
     }
-	if (*debug) {
-		printf("pixelTriggerDmaRoutine: mmap succeeded.\n");
-	}
 	//epicsTimeGetCurrent(&timeEnd);
 	//if (*debug > 0) printf("pixelTriggerDmaRoutine: map time = %f\n", epicsTimeDiffInSeconds(&timeEnd, &timeStart));
 
 	rx_proxy_interface_p->length = dma_bytes;
-	//rx_proxy_interface_p->timeout_msecs = timeout_msecs;
+	rx_proxy_interface_p->timeout_msecs = timeout_msecs;
 
 	dmaTime = 0;
 	for (rep=0; rep<maxReps; rep++) {
 
 		/* Perform the DMA transfer and after it finishes check the status */
 		epicsTimeGetCurrent(&timeStart);
-		// 2015.4 ioctl(rx_proxy_fd, 0, &dummy);
-		//ioctl(rx_proxy_fd, XFER, &buffer_id);
-		ioctl(rx_proxy_fd, START_XFER, &buffer_id);
-		if (*debug>0) {
-			printf("pixelTriggerDmaRoutine: ioctl(rx_proxy_fd, START_XFER, &buffer_id)\n");
-			sleep(30);
+		ioctl(rx_proxy_fd, 0, &dummy);
+		if (*debug>0 && (rx_proxy_interface_p->status != PROXY_NO_ERROR)) {
+			printf("pixelTriggerDmaRoutine: Proxy rx transfer error\n");
 		}
-		ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id);
-		if (*debug>0) {
-			if (rx_proxy_interface_p->status != PROXY_NO_ERROR) {
-				printf("pixelTriggerDmaRoutine: Proxy rx transfer error\n");
-			} else {
-				printf("pixelTriggerDmaRoutine: ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id) returned.\n");
-			}
-		}
-
 		data = (epicsUInt32 *)(rx_proxy_interface_p->buffer);
 		epicsTimeGetCurrent(&timeEnd);
 		dmaTime += epicsTimeDiffInSeconds(&timeEnd, &timeStart);
@@ -371,7 +316,6 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 
 				/* Bin this event */
 				*numEvents = *numEvents + 1;
-				/* pixelValue was marked by setting MSbit */
 				pixelValue = (data[j] & ~0x80000000);
 				x = (epicsUInt16) (pixelValue >> 16);
 				y = (epicsUInt16) (pixelValue & 0xffff);
@@ -380,35 +324,21 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 				if (*debug>=10) printf("pixelTriggerDmaRoutine: x=%d, y=%d, record=%d, j=%d\n", x, y, record, j);
 				offset = y*numX+x;
 				if (record) {
-					/* scaler values have MSbit cleared.  Make them ints. */
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					scalerValue = (epicsInt32)uL * (*scale1);
+					scalerValue = data[++j];
 					*(pixels1+offset) += scalerValue;
-					if (*debug>=10) printf("pixelTriggerDmaRoutine: x=%d, y=%d, scalerValue=%f\n", x, y, scalerValue);
-
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					*(pixels2+offset) += (epicsInt32)uL * (*scale2);
-
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					*(pixels3+offset) += (epicsInt32)uL * (*scale3);
-
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					*(pixels4+offset) += (epicsInt32)uL * (*scale4);
-
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					*(pixels5+offset) += (epicsInt32)uL * (*scale5);
-
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					*(pixels6+offset) += (epicsInt32)uL * (*scale6);
-
-					uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-					*(pixels7+offset) += (epicsInt32)uL * (*scale7);
+					if (*debug>=10) printf("pixelTriggerDmaRoutine: x=%d, y=%d, scalerValue=%d\n", x, y, scalerValue);
+					*(pixels2+offset) += data[++j];
+					*(pixels3+offset) += data[++j];
+					*(pixels4+offset) += data[++j];
+					*(pixels5+offset) += data[++j];
+					*(pixels6+offset) += data[++j];
+					*(pixels7+offset) += data[++j];
 				} else {
 					j++;
 				}
 				myDmaISRData->cleared = 0;
 			}
-		} else if ((*acqMode == ACQ_MODE_LIST || *acqMode == ACQ_MODE_MCS) && (*numEvents < myDmaISRData->allocatedElements-1)) {
+		} else if (*acqMode == ACQ_MODE_LIST && (*numEvents < myDmaISRData->allocatedElements)) {
 			/* *acqMode == ACQ_MODE_LIST */
 			for (j=0; j<(dma_words-numEventWords); ) {
 				if (*debug>=2) printf("pixelTriggerDmaRoutine: *numEvents=%d\n", *numEvents);
@@ -418,22 +348,12 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 					if (*debug>=10) printf("pixelTriggerDmaRoutine: stop at j=%d, data[j]=%d\n", j, data[j]);
 					break;
 				}
-
-				if ((*acqMode == ACQ_MODE_MCS) && ((*numEvents >= *desNumEvents) || (*numEvents >= allocatedElements-1))) {
-					/* We're done. Turn the scaler off by clearing DFF-1. */
-					*DFF2Clear = 0;
-					*DFF2Clear = 0x20;
-					/*printf("pixelTriggerDmaRoutine: done\n");*/
-					break;
-				}
-
 				/* Bin this event */
 				pixelValue = (data[j] & ~0x80000000);
 				image1[*numEvents] = (epicsUInt16) (pixelValue >> 16);
 				image2[*numEvents] = (epicsUInt16) (pixelValue & 0xffff);
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels1[*numEvents] = (epicsInt32)uL * (*scale1);
-				if (*debug>=10) printf("pixelTriggerDmaRoutine: pixels1[%d]=%f, j=%d\n", *numEvents, pixels1[*numEvents], j-1);
+				pixels1[*numEvents] = data[++j];
+				if (*debug>=10) printf("pixelTriggerDmaRoutine: pixels1[%d]=%d, j=%d\n", *numEvents, pixels1[*numEvents], j-1);
 				if (*debug == -1) {
 					if (*numEvents > 0) {
 						if ((*numEvents) && (pixels1[*numEvents] != 0) && (pixels1[*numEvents] - pixels1[*numEvents-1]) != 1) {
@@ -443,24 +363,18 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 					}
 				}
 
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels2[*numEvents] = (epicsInt32)uL * (*scale2);
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels3[*numEvents] = (epicsInt32)uL * (*scale3);
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels4[*numEvents] = (epicsInt32)uL * (*scale4);
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels5[*numEvents] = (epicsInt32)uL * (*scale5);
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels6[*numEvents] = (epicsInt32)uL * (*scale6);
-				uL = data[++j];	if (uL & 0x40000000) uL |= 0x80000000;
-				pixels7[*numEvents] = (epicsInt32)uL * (*scale7);
+				pixels2[*numEvents] = data[++j];
+				pixels3[*numEvents] = data[++j];
+				pixels4[*numEvents] = data[++j];
+				pixels5[*numEvents] = data[++j];
+				pixels6[*numEvents] = data[++j];
+				pixels7[*numEvents] = data[++j];
 				myDmaISRData->cleared = 0;
 				if (*numEvents < myDmaISRData->allocatedElements-1) {
 					*numEvents = *numEvents + 1;
 				} else {
-					/* wrap around to beginning of buffer */
-					*numEvents = 0;
+					/* for debugging missed events, wrap around to beginning of buffer */
+					if (*debug == -1) *numEvents = 0;
 				}
 			}
 		} else if (*acqMode == ACQ_MODE_XYT) {
@@ -478,8 +392,7 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 				y = (epicsUInt16) (pixelValue & 0xffff);
 				record = (x < numX) && (y < numY) && (myDmaISRData->cleared==0);
 				if (pixelValue == 0) record = 0;
-				uL = data[j+1];	if (uL & 0x40000000) uL |= 0x80000000;
-				scalerValue = (epicsInt32)uL * (*scale1);
+				scalerValue = data[j+1];
 				timeValue = data[j+5];
 				if (*debug>=10) printf("pixelTriggerDmaRoutine: x=%d, y=%d, record=%d, j=%d\n", x, y, record, j);
 				offset = y*numX+x;
@@ -510,7 +423,7 @@ done:
 	if (*debug>1 && rep>1) printf("pixelTriggerDmaRoutine: reps=%d, DMA time/rep=%f\n", rep, dmaTime/rep);
 	if (*debug>=10) printf("pixelTriggerDmaRoutine: done binning this buffer.\n");
 	/* For now, just open and close every time */
-	munmap(rx_proxy_interface_p, sizeof(struct channel_buffer));
+	munmap(rx_proxy_interface_p, sizeof(struct dma_proxy_channel_interface));
 	close(rx_proxy_fd);
 }
 
@@ -522,7 +435,6 @@ done:
 int pixelTriggerDmaPrepare(const char *componentName, epicsUInt32 risingMask, int fifoSize) {
 	int i;
 	volatile epicsUInt32 *localAddr = NULL;
-	volatile epicsUInt8 *localAddr8 = NULL;
 	UIO_struct *pUIO = NULL;
 
 	i = findUioAddr(componentName, 0);
@@ -532,14 +444,6 @@ int pixelTriggerDmaPrepare(const char *componentName, epicsUInt32 risingMask, in
 	}
 	myDmaISRData.fifoCountAddr = localAddr + 26; // Address of fifo count reg
 	myDmaISRData.pixelTriggerDmaWords = localAddr + 61; // Address of DMA words reg
-
-	/* To talk to DFF-1_CLEAR, we need the address of the "softGlue_" component */
-	i = findUioAddr("softGlue_", 0);
-	if (i >= 0) {
-		pUIO = UIO[i];
-		localAddr8 = (epicsUInt8 *)pUIO->localAddr;
-	}
-	myDmaISRData.DFF2Clear = localAddr8 + 131; // Address of DFF-2_CLEAR register
 
 	/* Tell softGlue to call pixelTriggerDmaRoutine() when its interrupt-service routine handles an interrupt
 	 * with the specified risingMask.  This also tells softGlue to not execute any output links that might

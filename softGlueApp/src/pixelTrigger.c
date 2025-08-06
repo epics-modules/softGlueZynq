@@ -26,7 +26,7 @@ typedef struct {
 	int **pixels;
 	int numX, numY, numScalers;
 } myISRDataStruct;
-static myISRDataStruct myISRData;
+myISRDataStruct myISRData;
 
 /* When an interrupt matching conditions specified by pixelTriggerPrepare() occurs,
  * we'll get called with the bitmask that generated the interrupt, and the bit that went low or high.

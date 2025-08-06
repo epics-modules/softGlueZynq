@@ -247,7 +247,6 @@ int findUioAddr(const char *componentName, int map) {
 	UIO_struct *pUIO = NULL;
 	epicsUInt32 iaddr;
 
-	printf("findUioAddr: Entry for component '%s', map %d\n", componentName, map);
 	/* first, see if we've already done this */
 	for (i=0; i<foundUIO; i++) {
 		pUIO = UIO[i];
@@ -261,7 +260,6 @@ int findUioAddr(const char *componentName, int map) {
 		}
 	}
 
-	if (drvZynqDebug) printf("findUioAddr: looking for uio for component '%s', map %d\n", componentName, map);
 	/* find the uio whose name matches */
 	match = -1;
 	for (i=0; i<MAX_UIO && match==-1; i++) {
@@ -286,8 +284,10 @@ int findUioAddr(const char *componentName, int map) {
 		return(-1);
 	}
 
-	/* get base address */
-	sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map%d/addr", match, map);
+	/* get base address, just for reporting */
+	/* In PetaLinux 2022.1, the maps are all named map0 */
+	/* sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map%d/addr", match, map);*/
+	sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map0/addr", match, map);
 	uioName_fd = fopen(uioFileName, "r");
 	if (uioName_fd==NULL) {
 		printf("findUioAddr: Failed to open '%s'\n", uioFileName);
@@ -307,7 +307,7 @@ int findUioAddr(const char *componentName, int map) {
 	}
 
 	localAddr = (volatile epicsUInt32 *) mmap(0,1024,PROT_READ|PROT_WRITE,MAP_SHARED,uio_fd,map*getpagesize());
-	if ((localAddr == NULL) || (localAddr == 0xffffffff)) {
+	if (localAddr == NULL) {
 		epicsPrintf("findUioAddr: mmap() failed for component '%s', map %d\n",componentName, map);
 	}
 	else {
@@ -358,7 +358,7 @@ int initZynqInterrupts(const char *portName, const char *componentName) {
 		pPvt->mem = NULL;
 	}
 	if (pPvt->mem == NULL) {
-		printf("initZynqInterrupts: mmap() failed for 'softGlue_' map 0\n");
+		printf("initZynqInterrupts: mmap() failed for 'softGlue_' map 1\n");
 	}
 	pPvt->regs = (interruptControlRegisterSet *) ((char *)(pPvt->mem));
 	if (drvZynqDebug>5) {
@@ -490,7 +490,7 @@ int initZynqSingleRegisterPort(const char *portName, const char *componentName)
 	if (pPvt->mem == NULL) {
 		printf("initZynqSingleRegisterPort: mmap() failed for '%s' map 0\n", componentName);
 	}
-	else printf("initZynqSingleRegisterPort: mmap() succeeded for '%s' map 0\n", componentName);
+	else printf("initZynqSingleRegisterPort: mmap() succeded for '%s' map 0\n", componentName);
 
 	/* Link with higher level routines */
 	pPvt->common.interfaceType = asynCommonType;
@@ -827,7 +827,7 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 	ELLLIST *pclientList;
 	interruptNode *pnode;
 	asynUInt32DigitalInterrupt *pUInt32D;
-	epicsUInt32 handled;
+	int handled;
 
 	int pending = 0;
 	int reenable = 1;
@@ -841,7 +841,7 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 	/* Make sure we have UIO */
 	uio_fd = 0;
 
-	i = findUioAddr("softGlue_", 1);
+	i = findUioAddr("softGlue_", 0);
 	if (i >= 0) {
 		pUIO = UIO[i];
 		localAddr = pUIO->localAddr;
@@ -881,7 +881,6 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 		i = read(uio_fd, (void *)&pending,sizeof(int));
 		if (drvZynqDebug) printf("drvZynq:dispatchThread: read(uio_fd...) returned %d\n", i);
 
-		handled = 0;
 		drvZynqISRState = 4;
 		/* Respond to interrupt */
 		if (drvZynqDebug) {
@@ -905,24 +904,19 @@ STATIC void dispatchThread(drvZynqPvt *pPvt)
 		 * handle interrupts at intervals EPICS would not be able to meet.) */
 		for (i=0, handled=0; i<numRegisteredIntRoutines; i++) {
 			if ((risingMask & registeredIntRoutines[i].risingMask) || (fallingMask & registeredIntRoutines[i].fallingMask)) {
-				if (drvZynqDebug>5) printf("intFunc: calling registered interrupt routine %p (%d)\n", registeredIntRoutines[i].routine, i);
+				if (drvZynqDebug>5) printf("intFunc: calling registered interrupt routine %p\n", registeredIntRoutines[i].routine);
 				registeredIntRoutines[i].IRData.risingMask = risingMask;
 				//registeredIntRoutines[i].IRData.fallingMask = fallingMask;
 				//registeredIntRoutines[i].IRData.wentLow = pPvt->regs->fallingIntStatus & pPvt->regs->fallingIntEnable;
 				registeredIntRoutines[i].IRData.wentHigh = pPvt->regs->risingIntStatus & pPvt->regs->risingIntEnable;
 				registeredIntRoutines[i].routine(&(registeredIntRoutines[i].IRData));
-				handled |= registeredIntRoutines[i].risingMask;
+				handled = 1;
 			}
 		}
 
 
-		/* clear interrupt bits that were handled */
-		risingMask &= ~handled;
-		if (drvZynqDebug)
-				printf("drvZynq:dispatchThread: after registered routines, handled=0x%x, IntMask=0x%x\n", handled, risingMask);
-
 		drvZynqISRState = 5;
-		if (risingMask) {
+		if (!handled) {
 			drvZynqISRState = 6;
 			if (drvZynqDebug)
 				printf("drvZynq:dispatchThread: IntMask=0x%x\n", risingMask);

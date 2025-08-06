@@ -242,7 +242,9 @@ int devA32ZedConfig(int card, char *componentName, int map, int nregs)
 	}
 
 	/* get base address */
-	sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map%d/addr", match, map);
+	/* In PetaLinux 2022.1, the maps are all named map0 */
+	/* sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map%d/addr", match, map);*/
+	sprintf(uioFileName, "/sys/class/uio/uio%d/maps/map0/addr", match, map);
 	uioName_fd = fopen(uioFileName, "r");
 	if (uioName_fd==NULL) {
 		printf("devA32ZedConfig: Failed to open '%s'\n", uioFileName);

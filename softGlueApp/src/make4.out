@@ -1,0 +1,10 @@
+make -C O.linux-x86_64 -f ../Makefile TOP=../../.. \
+    T_A=linux-x86_64 install
+make[1]: Entering directory '/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/src/O.linux-x86_64'
+Installing dbd file ../../../dbd/softGlueZynqSupport.dbd
+make[1]: Leaving directory '/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/src/O.linux-x86_64'
+make -C O.linux-arm -f ../Makefile TOP=../../.. \
+    T_A=linux-arm install
+make[1]: Entering directory '/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/src/O.linux-arm'
+make[1]: Nothing to be done for 'install'.
+make[1]: Leaving directory '/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/src/O.linux-arm'

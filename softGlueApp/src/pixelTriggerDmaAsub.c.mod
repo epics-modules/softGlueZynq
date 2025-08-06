@@ -64,7 +64,7 @@
 
 /* for DMA */
 #include <sys/ioctl.h>
-#include "dma-proxy.h"
+#include "dma_proxy.h"
 
 #define MAX(a,b) ((a)>(b)?(a):(b))
 
@@ -75,8 +75,9 @@
 #define ACQ_MODE_NONE 4
 
 /* make global so we can map at init */
-struct channel_buffer *rx_proxy_interface_p;
+struct dma_proxy_channel_interface *rx_proxy_interface_p;
 int rx_proxy_fd;
+#define MAX_DMA_BYTES 32*1024*4
 
 /* testing */
 int ListModeTestMisses = 0;
@@ -286,13 +287,13 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 	float scalerValue;
 	epicsTimeStamp  timeStart, timeEnd;
 	double dmaTime;
-	//struct channel_buffer *rx_proxy_interface_p;
+	//struct dma_proxy_channel_interface *rx_proxy_interface_p;
 	//int rx_proxy_fd;
-	int buffer_id = 0;
-	//int timeout_msecs = 10;
+	int dummy = 0;
+	int timeout_msecs = 10;
 	int dma_bytes; /* in bytes32-byte events */
 	int dma_words;
-	int rep, maxReps=50; // for testing, maxReps=1. For efficiency, maxReps=50;
+	int rep, maxReps=50;
 	int *debug = myDmaISRData->debug;
 	/* for list mode */
 	int *acqMode = myDmaISRData->acqMode;
@@ -317,46 +318,28 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 		printf("pixelTriggerDmaRoutine: Unable to open DMA proxy device file for RX\n");
 		return;
 	}
-	if (*debug) {
-		printf("pixelTriggerDmaRoutine: Opened /dev/dma_proxy_rx\n");
-	}
-	rx_proxy_interface_p = (struct channel_buffer *)mmap(NULL, sizeof(struct channel_buffer),
+	rx_proxy_interface_p = (struct dma_proxy_channel_interface *)mmap(NULL, sizeof(struct dma_proxy_channel_interface),
 			PROT_READ | PROT_WRITE, MAP_SHARED, rx_proxy_fd, 0);
 
     if (rx_proxy_interface_p == MAP_FAILED) {
        	printf("pixelTriggerDmaRoutine: Failed to mmap for RX\n");
        	return;
     }
-	if (*debug) {
-		printf("pixelTriggerDmaRoutine: mmap succeeded.\n");
-	}
 	//epicsTimeGetCurrent(&timeEnd);
 	//if (*debug > 0) printf("pixelTriggerDmaRoutine: map time = %f\n", epicsTimeDiffInSeconds(&timeEnd, &timeStart));
 
 	rx_proxy_interface_p->length = dma_bytes;
-	//rx_proxy_interface_p->timeout_msecs = timeout_msecs;
+	rx_proxy_interface_p->timeout_msecs = timeout_msecs;
 
 	dmaTime = 0;
 	for (rep=0; rep<maxReps; rep++) {
 
 		/* Perform the DMA transfer and after it finishes check the status */
 		epicsTimeGetCurrent(&timeStart);
-		// 2015.4 ioctl(rx_proxy_fd, 0, &dummy);
-		//ioctl(rx_proxy_fd, XFER, &buffer_id);
-		ioctl(rx_proxy_fd, START_XFER, &buffer_id);
-		if (*debug>0) {
-			printf("pixelTriggerDmaRoutine: ioctl(rx_proxy_fd, START_XFER, &buffer_id)\n");
-			sleep(30);
+		ioctl(rx_proxy_fd, 0, &dummy);
+		if (*debug>0 && (rx_proxy_interface_p->status != PROXY_NO_ERROR)) {
+			printf("pixelTriggerDmaRoutine: Proxy rx transfer error\n");
 		}
-		ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id);
-		if (*debug>0) {
-			if (rx_proxy_interface_p->status != PROXY_NO_ERROR) {
-				printf("pixelTriggerDmaRoutine: Proxy rx transfer error\n");
-			} else {
-				printf("pixelTriggerDmaRoutine: ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id) returned.\n");
-			}
-		}
-
 		data = (epicsUInt32 *)(rx_proxy_interface_p->buffer);
 		epicsTimeGetCurrent(&timeEnd);
 		dmaTime += epicsTimeDiffInSeconds(&timeEnd, &timeStart);
@@ -459,8 +442,8 @@ void pixelTriggerDmaRoutine(softGlueIntRoutineData *IRData) {
 				if (*numEvents < myDmaISRData->allocatedElements-1) {
 					*numEvents = *numEvents + 1;
 				} else {
-					/* wrap around to beginning of buffer */
-					*numEvents = 0;
+					/* for debugging missed events, wrap around to beginning of buffer */
+					if (*debug == -1) *numEvents = 0;
 				}
 			}
 		} else if (*acqMode == ACQ_MODE_XYT) {
@@ -510,7 +493,7 @@ done:
 	if (*debug>1 && rep>1) printf("pixelTriggerDmaRoutine: reps=%d, DMA time/rep=%f\n", rep, dmaTime/rep);
 	if (*debug>=10) printf("pixelTriggerDmaRoutine: done binning this buffer.\n");
 	/* For now, just open and close every time */
-	munmap(rx_proxy_interface_p, sizeof(struct channel_buffer));
+	munmap(rx_proxy_interface_p, sizeof(struct dma_proxy_channel_interface));
 	close(rx_proxy_fd);
 }
 
