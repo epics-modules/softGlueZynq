@@ -13,17 +13,6 @@ The synApps softGlueZynq module (R2-0)
 Table of Contents
 =================
 
-- [Overview](#Overview)
-- [Installation and deployment](<#Installation and deployment>)
-- [User's Manual](<#User's Manual>)
-- [Additional FPGA components](<#Additional FPGA components>)
-- [Miscellaneous configuration](<#Miscellaneous configuration>)
-- [Saving and restoring circuits](<#Saving and restoring circuits>)
-- [Example circuits](<#Example circuits>)
-- [Field wiring](<#Field wiring>)
-- [Custom Interrupt Handlers](<#Custom Interrupt Handlers>)
-- [Implementation](#Implementation)
-
 - [Overview](#overview)
 - [Installation and deployment](#installation-and-deployment)
 - [User's Manual](#users-manual)
