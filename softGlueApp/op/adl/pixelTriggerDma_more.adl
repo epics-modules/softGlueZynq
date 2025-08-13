@@ -8,7 +8,7 @@ display {
 		x=2
 		y=50
 		width=890
-		height=950
+		height=1010
 	}
 	clr=14
 	bclr=2
@@ -235,33 +235,6 @@ menu {
 		bclr=51
 	}
 }
-text {
-	object {
-		x=675
-		y=45
-		width=60
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="Events"
-}
-"text update" {
-	object {
-		x=745
-		y=45
-		width=110
-		height=20
-	}
-	monitor {
-		chan="$(P)$(Q)pixelTriggerDma.VALH"
-		clr=54
-		bclr=2
-	}
-	limits {
-	}
-}
 menu {
 	object {
 		x=265
@@ -403,37 +376,10 @@ composite {
 		}
 	}
 }
-"text entry" {
-	object {
-		x=780
-		y=70
-		width=80
-		height=20
-	}
-	control {
-		chan="$(P)$(Q)pixelTriggerDma.H"
-		clr=14
-		bclr=51
-	}
-	limits {
-	}
-}
-text {
-	object {
-		x=725
-		y=70
-		width=50
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="debug"
-}
 "related display" {
 	object {
-		x=820
-		y=930
+		x=750
+		y=985
 		width=70
 		height=20
 	}
@@ -447,102 +393,10 @@ text {
 	bclr=17
 	label="-Less"
 }
-composite {
-	object {
-		x=10
-		y=95
-		width=865
-		height=200
-	}
-	"composite name"=""
-	children {
-		composite {
-			object {
-				x=10
-				y=95
-				width=865
-				height=200
-			}
-			"composite name"=""
-			children {
-				"cartesian plot" {
-					object {
-						x=30
-						y=95
-						width=400
-						height=200
-					}
-					plotcom {
-						clr=14
-						bclr=0
-					}
-					trace[0] {
-						ydata="$(P)$(Q)pixelTriggerDma.VALA"
-						data_clr=14
-						yaxis=0
-					}
-					x_axis {
-						rangeStyle="auto-scale"
-					}
-					y1_axis {
-						rangeStyle="auto-scale"
-					}
-				}
-				text {
-					object {
-						x=10
-						y=175
-						width=20
-						height=20
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="s1"
-				}
-				"cartesian plot" {
-					object {
-						x=475
-						y=95
-						width=400
-						height=200
-					}
-					plotcom {
-						clr=14
-						bclr=0
-					}
-					trace[0] {
-						ydata="$(P)$(Q)pixelTriggerDma.VALB"
-						data_clr=14
-						yaxis=0
-					}
-					x_axis {
-						rangeStyle="auto-scale"
-					}
-					y1_axis {
-						rangeStyle="auto-scale"
-					}
-				}
-				text {
-					object {
-						x=455
-						y=175
-						width=20
-						height=20
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="s2"
-				}
-			}
-		}
-	}
-}
 "cartesian plot" {
 	object {
 		x=30
-		y=305
+		y=575
 		width=400
 		height=200
 	}
@@ -550,76 +404,7 @@ composite {
 		clr=14
 		bclr=0
 	}
-	trace[0] {
-		ydata="$(P)$(Q)pixelTriggerDma.VALC"
-		data_clr=14
-		yaxis=0
-	}
-	x_axis {
-		rangeStyle="auto-scale"
-	}
-	y1_axis {
-		rangeStyle="auto-scale"
-	}
-}
-text {
-	object {
-		x=10
-		y=385
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="s3"
-}
-"cartesian plot" {
-	object {
-		x=475
-		y=305
-		width=400
-		height=200
-	}
-	plotcom {
-		clr=14
-		bclr=0
-	}
-	trace[0] {
-		ydata="$(P)$(Q)pixelTriggerDma.VALD"
-		data_clr=14
-		yaxis=0
-	}
-	x_axis {
-		rangeStyle="auto-scale"
-	}
-	y1_axis {
-		rangeStyle="auto-scale"
-	}
-}
-text {
-	object {
-		x=455
-		y=385
-		width=20
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="s4"
-}
-"cartesian plot" {
-	object {
-		x=30
-		y=515
-		width=400
-		height=200
-	}
-	plotcom {
-		clr=14
-		bclr=0
-	}
+	style="line"
 	trace[0] {
 		ydata="$(P)$(Q)pixelTriggerDma.VALE"
 		data_clr=14
@@ -635,7 +420,7 @@ text {
 text {
 	object {
 		x=10
-		y=595
+		y=655
 		width=20
 		height=20
 	}
@@ -647,7 +432,7 @@ text {
 "cartesian plot" {
 	object {
 		x=475
-		y=515
+		y=575
 		width=400
 		height=200
 	}
@@ -655,6 +440,7 @@ text {
 		clr=14
 		bclr=0
 	}
+	style="line"
 	trace[0] {
 		ydata="$(P)$(Q)pixelTriggerDma.VALF"
 		data_clr=14
@@ -670,7 +456,7 @@ text {
 text {
 	object {
 		x=455
-		y=595
+		y=655
 		width=20
 		height=20
 	}
@@ -682,7 +468,7 @@ text {
 "cartesian plot" {
 	object {
 		x=30
-		y=725
+		y=805
 		width=400
 		height=200
 	}
@@ -690,6 +476,7 @@ text {
 		clr=14
 		bclr=0
 	}
+	style="line"
 	trace[0] {
 		ydata="$(P)$(Q)pixelTriggerDma.VALG"
 		data_clr=14
@@ -705,7 +492,7 @@ text {
 text {
 	object {
 		x=10
-		y=805
+		y=885
 		width=20
 		height=20
 	}
@@ -713,4 +500,384 @@ text {
 		clr=14
 	}
 	textix="s7"
+}
+"related display" {
+	object {
+		x=820
+		y=985
+		width=70
+		height=20
+	}
+	display[0] {
+		label="config"
+		name="pixelTriggerDma_config.adl"
+		args="P=$(P),Q=$(Q),H=$(H)"
+	}
+	display[1] {
+		label="pixelTriggerDmaListFFT.adl"
+		name="pixelTriggerDmaListFFT.adl"
+		args="P=$(P),Q=$(Q)"
+	}
+	clr=0
+	bclr=17
+	label="-More"
+}
+composite {
+	object {
+		x=10
+		y=345
+		width=420
+		height=200
+	}
+	"composite name"=""
+	children {
+		"cartesian plot" {
+			object {
+				x=30
+				y=345
+				width=400
+				height=200
+			}
+			plotcom {
+				clr=14
+				bclr=0
+			}
+			style="line"
+			trace[0] {
+				ydata="$(P)$(Q)pixelTriggerDma.VALB"
+				data_clr=14
+				yaxis=0
+			}
+			x_axis {
+				rangeStyle="auto-scale"
+			}
+			y1_axis {
+				rangeStyle="auto-scale"
+			}
+		}
+		text {
+			object {
+				x=10
+				y=425
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s2"
+		}
+	}
+}
+"cartesian plot" {
+	object {
+		x=30
+		y=115
+		width=400
+		height=200
+	}
+	plotcom {
+		clr=14
+		bclr=0
+	}
+	style="line"
+	trace[0] {
+		ydata="$(P)$(Q)pixelTriggerDma.VALA"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+}
+text {
+	object {
+		x=10
+		y=195
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s1"
+}
+composite {
+	object {
+		x=455
+		y=345
+		width=420
+		height=200
+	}
+	"composite name"=""
+	children {
+		"cartesian plot" {
+			object {
+				x=475
+				y=345
+				width=400
+				height=200
+			}
+			plotcom {
+				clr=14
+				bclr=0
+			}
+			style="line"
+			trace[0] {
+				ydata="$(P)$(Q)pixelTriggerDma.VALD"
+				data_clr=14
+				yaxis=0
+			}
+			x_axis {
+				rangeStyle="auto-scale"
+			}
+			y1_axis {
+				rangeStyle="auto-scale"
+			}
+		}
+		text {
+			object {
+				x=455
+				y=425
+				width=20
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s4"
+		}
+	}
+}
+"cartesian plot" {
+	object {
+		x=475
+		y=115
+		width=400
+		height=200
+	}
+	plotcom {
+		clr=14
+		bclr=0
+	}
+	style="line"
+	trace[0] {
+		ydata="$(P)$(Q)pixelTriggerDma.VALC"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+}
+text {
+	object {
+		x=455
+		y=195
+		width=20
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s3"
+}
+"text update" {
+	object {
+		x=30
+		y=95
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s1name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=30
+		y=325
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s2name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=475
+		y=95
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s3name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=475
+		y=325
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s4name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=30
+		y=555
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s5name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=475
+		y=555
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s6name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=30
+		y=785
+		width=400
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s7name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=655
+		y=45
+		width=140
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Events"
+}
+"text update" {
+	object {
+		x=800
+		y=45
+		width=80
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)pixelTriggerDma.VALH"
+		clr=54
+		bclr=2
+	}
+	limits {
+	}
+}
+"text entry" {
+	object {
+		x=720
+		y=985
+		width=30
+		height=20
+	}
+	control {
+		chan="$(P)$(Q)pixelTriggerDma.H"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=665
+		y=985
+		width=50
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="debug"
+}
+"text entry" {
+	object {
+		x=800
+		y=65
+		width=80
+		height=20
+	}
+	control {
+		chan="$(P)$(Q)pixelTriggerDma.P"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=655
+		y=65
+		width=140
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Desired events"
 }

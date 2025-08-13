@@ -563,7 +563,7 @@ rectangle {
 		x=10
 		y=175
 		width=400
-		height=350
+		height=400
 	}
 	"basic attribute" {
 		clr=14
@@ -806,4 +806,102 @@ text {
 		clr=14
 	}
 	textix="softGlueReg"
+}
+"text entry" {
+	object {
+		x=180
+		y=520
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(H)clock1Config.E"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=520
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="clkwiz0_inFreq"
+}
+"text entry" {
+	object {
+		x=180
+		y=545
+		width=60
+		height=20
+	}
+	control {
+		chan="$(P)$(H)clock1Config.F"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=25
+		y=545
+		width=150
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="clkwiz1_inFreq"
+}
+polyline {
+	object {
+		x=12
+		y=514
+		width=395
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	"dynamic attribute" {
+		chan="$(P)clock3actualFreq"
+	}
+	points {
+		(13,515)
+		(406,515)
+	}
+}
+text {
+	object {
+		x=245
+		y=520
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MHz"
+}
+text {
+	object {
+		x=245
+		y=545
+		width=40
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MHz"
 }

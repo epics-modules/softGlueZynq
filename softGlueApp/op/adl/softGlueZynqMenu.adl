@@ -1,6 +1,6 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqMenu.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/softGlueZynqMenu.adl"
 	version=030111
 }
 display {
@@ -8,7 +8,7 @@ display {
 		x=1080
 		y=248
 		width=120
-		height=240
+		height=260
 	}
 	clr=14
 	bclr=2
@@ -163,6 +163,11 @@ display {
 		label="BUFFER 4"
 		name="softGlueZynq_BUFFER.adl"
 		args="P=$(P),H=$(H),N=4"
+	}
+	display[14] {
+		label="4 BUFFERS"
+		name="softGlueZynq_4BUFFERS.adl"
+		args="P=$(P),H=$(H)"
 	}
 	clr=0
 	bclr=63
@@ -553,101 +558,32 @@ composite {
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[10] {
-		label="PixelFIFO 1"
-		name="softGlueZynq_PixelFIFO.adl"
+		label="IF_tracker 1"
+		name="softGlueZynq_IF_tracker.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
 	display[11] {
-		label="PixelFIFO 2"
-		name="softGlueZynq_PixelFIFO.adl"
+		label="IF_tracker 2"
+		name="softGlueZynq_IF_tracker.adl"
 		args="P=$(P),H=$(H),N=2"
 	}
 	display[12] {
+		label="IF_tracker 3"
+		name="softGlueZynq_IF_tracker.adl"
+		args="P=$(P),H=$(H),N=3"
+	}
+	display[13] {
 		label="ScalToStream 1"
 		name="softGlueZynq_ScalToStream.adl"
 		args="P=$(P),H=$(H),N=1"
 	}
+	display[14] {
+		label="Zygo 1"
+		name="softGlueZynq_Zygo.adl"
+	}
 	clr=0
 	bclr=63
 	label="-Clk,G&D,HS,PT"
-}
-"text update" {
-	object {
-		x=50
-		y=215
-		width=30
-		height=20
-	}
-	monitor {
-		chan="$(P)$(H)numSignalsInUse"
-		clr=54
-		bclr=2
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-text {
-	object {
-		x=10
-		y=215
-		width=40
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="#SIGS"
-}
-text {
-	object {
-		x=10
-		y=225
-		width=40
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="IN USE"
-}
-text {
-	object {
-		x=85
-		y=215
-		width=30
-		height=20
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="/15"
-}
-text {
-	object {
-		x=10
-		y=180
-		width=100
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="READ PERIOD"
-	align="horiz. centered"
-}
-menu {
-	object {
-		x=10
-		y=190
-		width=100
-		height=20
-	}
-	control {
-		chan="$(P)$(H)ReadRate.SCAN"
-		clr=14
-		bclr=51
-	}
 }
 "related display" {
 	object {
@@ -686,7 +622,162 @@ menu {
 		name="histScalerDma.adl"
 		args="P=$(P),Q=1"
 	}
+	display[15] {
+		label="acquireDma"
+		name="acquireDma.adl"
+		args="P=$(P),Q=1"
+	}
 	clr=0
 	bclr=17
 	label="-Applications"
+}
+composite {
+	object {
+		x=10
+		y=200
+		width=105
+		height=55
+	}
+	"composite name"=""
+	children {
+		"text update" {
+			object {
+				x=50
+				y=235
+				width=30
+				height=20
+			}
+			monitor {
+				chan="$(P)$(H)numSignalsInUse"
+				clr=54
+				bclr=2
+			}
+			align="horiz. right"
+			limits {
+			}
+		}
+		text {
+			object {
+				x=10
+				y=235
+				width=40
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="#SIGS"
+		}
+		text {
+			object {
+				x=10
+				y=245
+				width=40
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="IN USE"
+		}
+		text {
+			object {
+				x=85
+				y=235
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="/15"
+		}
+		text {
+			object {
+				x=10
+				y=200
+				width=100
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="READ PERIOD"
+			align="horiz. centered"
+		}
+		menu {
+			object {
+				x=10
+				y=210
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)$(H)ReadRate.SCAN"
+				clr=14
+				bclr=51
+			}
+		}
+	}
+}
+"related display" {
+	object {
+		x=10
+		y=170
+		width=100
+		height=20
+	}
+	display[0] {
+		label="2idb"
+		name="2idb.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[1] {
+		label="ACQ427"
+		name="softGlueZynq_ACQ427.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[2] {
+		label="PID"
+		name="softGlueZynq_PID.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[3] {
+		label="FOCAL_XY"
+		name="softGlueZynq_FOCAL_XY.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[4] {
+		label="scalOffLim-1"
+		name="softGlueZynq_scaleOffsetLimit.adl"
+		args="P=$(P),H=$(H),N=1"
+	}
+	display[5] {
+		label="scalOffLim-2"
+		name="softGlueZynq_scaleOffsetLimit.adl"
+		args="P=$(P),H=$(H),N=2"
+	}
+	display[6] {
+		label="pulseTrain-1"
+		name="softGlueZynq_pulseTrain.adl"
+		args="P=$(P),H=$(H),N=1"
+	}
+	display[7] {
+		label="rotate"
+		name="softGlueZynq_rotate.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[8] {
+		label="mem"
+		name="softGlueZynq_mem.adl"
+		args="P=$(P),H=$(H)"
+	}
+	display[9] {
+		label="mem2"
+		name="softGlueZynq_mem2.adl"
+		args="P=$(P),H=$(H)"
+	}
+	clr=0
+	bclr=17
+	label="-Development"
 }

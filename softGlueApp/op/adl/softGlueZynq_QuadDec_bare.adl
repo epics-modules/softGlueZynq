@@ -1,13 +1,13 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_QuadDec_bare.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_QuadDec_bare.adl"
+	version=030111
 }
 display {
 	object {
-		x=486
-		y=745
-		width=460
+		x=1068
+		y=788
+		width=440
 		height=95
 	}
 	clr=14
@@ -89,7 +89,7 @@ display {
 }
 composite {
 	object {
-		x=10
+		x=1
 		y=0
 		width=438
 		height=95
@@ -98,7 +98,7 @@ composite {
 	children {
 		composite {
 			object {
-				x=10
+				x=1
 				y=23
 				width=155
 				height=26
@@ -108,7 +108,7 @@ composite {
 		}
 		composite {
 			object {
-				x=10
+				x=1
 				y=0
 				width=155
 				height=26
@@ -118,7 +118,7 @@ composite {
 		}
 		polyline {
 			object {
-				x=164
+				x=155
 				y=36
 				width=12
 				height=2
@@ -129,13 +129,13 @@ composite {
 				width=2
 			}
 			points {
-				(175,37)
-				(165,37)
+				(166,37)
+				(156,37)
 			}
 		}
 		rectangle {
 			object {
-				x=175
+				x=166
 				y=6
 				width=102
 				height=86
@@ -148,7 +148,7 @@ composite {
 		}
 		text {
 			object {
-				x=179
+				x=170
 				y=31
 				width=10
 				height=13
@@ -161,7 +161,7 @@ composite {
 		}
 		polyline {
 			object {
-				x=164
+				x=155
 				y=13
 				width=13
 				height=2
@@ -172,13 +172,13 @@ composite {
 				width=2
 			}
 			points {
-				(176,14)
-				(165,14)
+				(167,14)
+				(156,14)
 			}
 		}
 		text {
 			object {
-				x=199
+				x=190
 				y=35
 				width=70
 				height=10
@@ -190,7 +190,7 @@ composite {
 		}
 		rectangle {
 			object {
-				x=192
+				x=183
 				y=32
 				width=80
 				height=14
@@ -202,7 +202,7 @@ composite {
 		}
 		text {
 			object {
-				x=179
+				x=170
 				y=8
 				width=10
 				height=13
@@ -215,7 +215,7 @@ composite {
 		}
 		polyline {
 			object {
-				x=276
+				x=267
 				y=22
 				width=17
 				height=2
@@ -226,13 +226,13 @@ composite {
 				width=2
 			}
 			points {
-				(292,23)
-				(277,23)
+				(283,23)
+				(268,23)
 			}
 		}
 		text {
 			object {
-				x=246
+				x=237
 				y=17
 				width=25
 				height=13
@@ -245,7 +245,7 @@ composite {
 		}
 		composite {
 			object {
-				x=291
+				x=282
 				y=9
 				width=157
 				height=26
@@ -255,7 +255,7 @@ composite {
 		}
 		composite {
 			object {
-				x=10
+				x=1
 				y=42
 				width=438
 				height=30
@@ -264,7 +264,7 @@ composite {
 			children {
 				composite {
 					object {
-						x=10
+						x=1
 						y=46
 						width=155
 						height=26
@@ -274,7 +274,7 @@ composite {
 				}
 				polyline {
 					object {
-						x=164
+						x=155
 						y=59
 						width=13
 						height=2
@@ -285,13 +285,13 @@ composite {
 						width=2
 					}
 					points {
-						(176,60)
-						(165,60)
+						(167,60)
+						(156,60)
 					}
 				}
 				polyline {
 					object {
-						x=174
+						x=165
 						y=52
 						width=11
 						height=16
@@ -301,14 +301,14 @@ composite {
 						width=2
 					}
 					points {
-						(175,53)
-						(184,60)
-						(175,67)
+						(166,53)
+						(175,60)
+						(166,67)
 					}
 				}
 				polyline {
 					object {
-						x=276
+						x=267
 						y=55
 						width=17
 						height=2
@@ -319,13 +319,13 @@ composite {
 						width=2
 					}
 					points {
-						(292,56)
-						(277,56)
+						(283,56)
+						(268,56)
 					}
 				}
 				text {
 					object {
-						x=251
+						x=242
 						y=50
 						width=20
 						height=13
@@ -338,7 +338,7 @@ composite {
 				}
 				composite {
 					object {
-						x=291
+						x=282
 						y=42
 						width=157
 						height=26
@@ -350,7 +350,7 @@ composite {
 		}
 		composite {
 			object {
-				x=10
+				x=1
 				y=69
 				width=155
 				height=26
@@ -360,7 +360,7 @@ composite {
 		}
 		polyline {
 			object {
-				x=164
+				x=155
 				y=82
 				width=13
 				height=2
@@ -371,13 +371,13 @@ composite {
 				width=2
 			}
 			points {
-				(176,83)
-				(165,83)
+				(167,83)
+				(156,83)
 			}
 		}
 		polyline {
 			object {
-				x=276
+				x=267
 				y=82
 				width=17
 				height=2
@@ -388,13 +388,13 @@ composite {
 				width=2
 			}
 			points {
-				(292,83)
-				(277,83)
+				(283,83)
+				(268,83)
 			}
 		}
 		text {
 			object {
-				x=241
+				x=232
 				y=77
 				width=30
 				height=13
@@ -407,7 +407,7 @@ composite {
 		}
 		composite {
 			object {
-				x=291
+				x=282
 				y=69
 				width=157
 				height=26
@@ -417,7 +417,7 @@ composite {
 		}
 		text {
 			object {
-				x=179
+				x=170
 				y=76
 				width=50
 				height=13

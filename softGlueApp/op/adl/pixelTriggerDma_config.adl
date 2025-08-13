@@ -1,0 +1,482 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/pixelTriggerDma_config.adl"
+	version=030111
+}
+display {
+	object {
+		x=588
+		y=413
+		width=295
+		height=230
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+rectangle {
+	object {
+		x=0
+		y=0
+		width=296
+		height=14
+	}
+	"basic attribute" {
+		clr=0
+	}
+}
+text {
+	object {
+		x=10
+		y=0
+		width=275
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="$(P)$(Q)pixelTriggerDma"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=0
+		y=15
+		width=294
+		height=3
+	}
+	"basic attribute" {
+		clr=54
+		width=3
+	}
+	points {
+		(1,16)
+		(292,16)
+	}
+}
+composite {
+	object {
+		x=15
+		y=50
+		width=30
+		height=170
+	}
+	"composite name"=""
+	children {
+		text {
+			object {
+				x=15
+				y=50
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s1"
+		}
+		text {
+			object {
+				x=15
+				y=75
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s2"
+		}
+		text {
+			object {
+				x=15
+				y=100
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s3"
+		}
+		text {
+			object {
+				x=15
+				y=125
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s4"
+		}
+		text {
+			object {
+				x=15
+				y=150
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s5"
+		}
+		text {
+			object {
+				x=15
+				y=175
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s6"
+		}
+		text {
+			object {
+				x=15
+				y=200
+				width=30
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="s7"
+		}
+	}
+}
+composite {
+	object {
+		x=45
+		y=25
+		width=80
+		height=195
+	}
+	"composite name"=""
+	children {
+		"text entry" {
+			object {
+				x=45
+				y=50
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.I"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=45
+				y=75
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.J"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=45
+				y=100
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.K"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=45
+				y=125
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.L"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=45
+				y=150
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.M"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=45
+				y=175
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.N"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=45
+				y=200
+				width=80
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)pixelTriggerDma.O"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=45
+				y=25
+				width=80
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="scale"
+			align="horiz. centered"
+		}
+	}
+}
+composite {
+	object {
+		x=135
+		y=25
+		width=150
+		height=195
+	}
+	"composite name"=""
+	children {
+		"text entry" {
+			object {
+				x=135
+				y=50
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s1name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=135
+				y=75
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s2name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=135
+				y=100
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s3name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=135
+				y=125
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s4name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=135
+				y=150
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s5name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=135
+				y=175
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s6name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		"text entry" {
+			object {
+				x=135
+				y=200
+				width=150
+				height=20
+			}
+			control {
+				chan="$(P)$(Q)s7name"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=135
+				y=25
+				width=150
+				height=20
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="name"
+			align="horiz. centered"
+		}
+	}
+}

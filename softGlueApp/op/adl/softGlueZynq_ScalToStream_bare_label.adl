@@ -1,14 +1,14 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_ScalToStream_bare_label.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/softGlueZynq_ScalToStream_bare_label.adl"
+	version=030111
 }
 display {
 	object {
-		x=215
-		y=380
+		x=685
+		y=618
 		width=460
-		height=150
+		height=200
 	}
 	clr=14
 	bclr=2
@@ -89,10 +89,10 @@ display {
 }
 composite {
 	object {
-		x=10
-		y=25
-		width=438
-		height=117
+		x=0
+		y=22
+		width=444
+		height=175
 	}
 	"composite name"=""
 	"composite file"="softGlueZynq_ScalToStream_bare.adl;P=$(P),H=$(H),N=$(N)"
@@ -100,7 +100,7 @@ composite {
 "text entry" {
 	object {
 		x=10
-		y=8
+		y=3
 		width=440
 		height=16
 	}

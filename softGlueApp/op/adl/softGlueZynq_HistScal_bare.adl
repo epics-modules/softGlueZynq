@@ -1,14 +1,14 @@
 
 file {
 	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_HistScal_bare.adl"
-	version=030107
+	version=030111
 }
 display {
 	object {
 		x=505
 		y=737
 		width=418
-		height=146
+		height=190
 	}
 	clr=14
 	bclr=2
@@ -87,139 +87,17 @@ display {
 		1a7309,
 	}
 }
-composite {
-	object {
-		x=0
-		y=114
-		width=155
-		height=26
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_CLEAR"
-}
-composite {
-	object {
-		x=0
-		y=66
-		width=155
-		height=26
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_CLK"
-}
-composite {
-	object {
-		x=0
-		y=44
-		width=155
-		height=26
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_DET"
-}
-polyline {
-	object {
-		x=154
-		y=79
-		width=13
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(166,80)
-		(155,80)
-	}
-}
 rectangle {
 	object {
 		x=165
 		y=4
 		width=120
-		height=112
+		height=156
 	}
 	"basic attribute" {
 		clr=14
 		fill="outline"
 		width=2
-	}
-}
-polyline {
-	object {
-		x=164
-		y=72
-		width=11
-		height=16
-	}
-	"basic attribute" {
-		clr=14
-		width=2
-	}
-	points {
-		(165,73)
-		(174,80)
-		(165,87)
-	}
-}
-text {
-	object {
-		x=169
-		y=52
-		width=20
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="DET"
-}
-text {
-	object {
-		x=195
-		y=102
-		width=40
-		height=10
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="CLEAR"
-	align="horiz. centered"
-}
-polyline {
-	object {
-		x=209
-		y=115
-		width=2
-		height=15
-	}
-	"basic attribute" {
-		clr=14
-		width=2
-	}
-	points {
-		(210,116)
-		(210,129)
-	}
-}
-polyline {
-	object {
-		x=154
-		y=126
-		width=57
-		height=3
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(210,127)
-		(155,128)
 	}
 }
 composite {
@@ -297,15 +175,226 @@ polyline {
 		(154,13)
 	}
 }
+text {
+	object {
+		x=169
+		y=28
+		width=30
+		height=10
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="SYNC"
+}
+polyline {
+	object {
+		x=154
+		y=33
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(166,34)
+		(155,34)
+	}
+}
 composite {
 	object {
 		x=0
 		y=22
-		width=199
-		height=36
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_SYNC"
+}
+composite {
+	object {
+		x=0
+		y=110
+		width=235
+		height=74
 	}
 	"composite name"=""
 	children {
+		composite {
+			object {
+				x=0
+				y=158
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_CLEAR"
+		}
+		polyline {
+			object {
+				x=154
+				y=123
+				width=13
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(166,124)
+				(155,124)
+			}
+		}
+		polyline {
+			object {
+				x=164
+				y=116
+				width=11
+				height=16
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			points {
+				(165,117)
+				(174,124)
+				(165,131)
+			}
+		}
+		text {
+			object {
+				x=195
+				y=146
+				width=40
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="CLEAR"
+			align="horiz. centered"
+		}
+		polyline {
+			object {
+				x=209
+				y=159
+				width=2
+				height=15
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			points {
+				(210,160)
+				(210,173)
+			}
+		}
+		polyline {
+			object {
+				x=154
+				y=170
+				width=57
+				height=3
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(210,171)
+				(155,172)
+			}
+		}
+		text {
+			object {
+				x=169
+				y=140
+				width=30
+				height=10
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="READ"
+		}
+		polyline {
+			object {
+				x=154
+				y=145
+				width=13
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(166,146)
+				(155,146)
+			}
+		}
+		composite {
+			object {
+				x=0
+				y=134
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_READ"
+		}
+		composite {
+			object {
+				x=0
+				y=110
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_CLK"
+		}
+	}
+}
+composite {
+	object {
+		x=0
+		y=44
+		width=189
+		height=26
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=0
+				y=44
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_DET"
+		}
+		text {
+			object {
+				x=169
+				y=52
+				width=20
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="DET"
+		}
 		polyline {
 			object {
 				x=154
@@ -323,64 +412,35 @@ composite {
 				(155,57)
 			}
 		}
-		text {
-			object {
-				x=169
-				y=28
-				width=30
-				height=10
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="SYNC"
-		}
-		polyline {
-			object {
-				x=154
-				y=33
-				width=13
-				height=2
-			}
-			"basic attribute" {
-				clr=14
-				fill="outline"
-				width=2
-			}
-			points {
-				(166,34)
-				(155,34)
-			}
-		}
-		composite {
-			object {
-				x=0
-				y=22
-				width=155
-				height=26
-			}
-			"composite name"=""
-			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_SYNC"
-		}
 	}
+}
+composite {
+	object {
+		x=0
+		y=66
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_DET2"
 }
 text {
 	object {
 		x=169
-		y=96
+		y=74
 		width=30
-		height=10
+		height=13
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="READ"
+	textix="DET2"
 }
 polyline {
 	object {
 		x=154
-		y=101
-		width=13
+		y=78
+		width=12
 		height=2
 	}
 	"basic attribute" {
@@ -389,17 +449,46 @@ polyline {
 		width=2
 	}
 	points {
-		(166,102)
-		(155,102)
+		(165,79)
+		(155,79)
 	}
 }
 composite {
 	object {
 		x=0
-		y=90
+		y=88
 		width=155
 		height=26
 	}
 	"composite name"=""
-	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_READ"
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=HistScal-$(N)_MODE"
+}
+text {
+	object {
+		x=169
+		y=96
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="MODE"
+}
+polyline {
+	object {
+		x=154
+		y=100
+		width=12
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,101)
+		(155,101)
+	}
 }

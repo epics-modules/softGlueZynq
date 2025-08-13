@@ -5,16 +5,18 @@
 TEMPLATE_TOP=$(EPICS_BASE)/templates/makeBaseApp/top
 
 SUPPORT=/corvette/home/epics/devel
+#SUPPORT=/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support
 -include $(TOP)/../configure/SUPPORT.$(EPICS_HOST_ARCH)
 
-ASYN=$(SUPPORT)/asyn-4-41
-SNCSEQ=$(SUPPORT)/seq-2-2-5
+ASYN=$(SUPPORT)/asyn-R4-42
+SNCSEQ=$(SUPPORT)/seq-2-2-9
 SCALER=$(SUPPORT)/scaler-4-0
 
 MSI=msi
 
 # EPICS_BASE usually appears last so other apps can override stuff:
 EPICS_BASE=/corvette/usr/local/epics-devel/base-7.0.4
+#EPICS_BASE=/net/s100dserv/xorApps/zed/epics/base-7.0.4.1
 -include $(TOP)/../configure/EPICS_BASE.$(EPICS_HOST_ARCH)
 
 #Capfast users may need the following definitions

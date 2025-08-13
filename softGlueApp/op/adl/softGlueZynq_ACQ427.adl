@@ -1,0 +1,2051 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/softGlueZynq_ACQ427.adl"
+	version=030111
+}
+display {
+	object {
+		x=587
+		y=132
+		width=667
+		height=310
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+polyline {
+	object {
+		x=153
+		y=17
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,18)
+		(154,18)
+	}
+}
+rectangle {
+	object {
+		x=163
+		y=-44
+		width=132
+		height=350
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+}
+text {
+	object {
+		x=168
+		y=12
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="INIT"
+	align="horiz. centered"
+}
+rectangle {
+	object {
+		x=200
+		y=5
+		width=50
+		height=14
+	}
+	"basic attribute" {
+		clr=53
+		fill="outline"
+	}
+}
+text {
+	object {
+		x=208
+		y=8
+		width=40
+		height=10
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="ACQ427"
+}
+composite {
+	object {
+		x=0
+		y=4
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=DAC_INIT"
+}
+"text entry" {
+	object {
+		x=23
+		y=118
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P)$(H)DAC2_VAL"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=168
+		y=119
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CH2"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=123
+		y=126
+		width=40
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(162,127)
+		(124,127)
+	}
+}
+"text entry" {
+	object {
+		x=23
+		y=140
+		width=100
+		height=20
+	}
+	control {
+		chan="$(P)$(H)DAC3_VAL"
+		clr=14
+		bclr=51
+	}
+	limits {
+	}
+}
+text {
+	object {
+		x=168
+		y=141
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CH3"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=123
+		y=148
+		width=40
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(162,149)
+		(124,149)
+	}
+}
+polyline {
+	object {
+		x=153
+		y=249
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,250)
+		(154,250)
+	}
+}
+text {
+	object {
+		x=168
+		y=244
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="INIT"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=0
+		y=236
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=ADC_RESET"
+}
+polyline {
+	object {
+		x=149
+		y=271
+		width=16
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(164,273)
+		(150,272)
+	}
+}
+composite {
+	object {
+		x=0
+		y=259
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=ADC_DISABLE"
+}
+text {
+	object {
+		x=167
+		y=265
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DIS"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=149
+		y=294
+		width=16
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(164,296)
+		(150,295)
+	}
+}
+composite {
+	object {
+		x=0
+		y=282
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=ADC_START_CVT"
+}
+text {
+	object {
+		x=167
+		y=288
+		width=30
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CVT"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=293
+		y=293
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(311,294)
+		(294,294)
+	}
+}
+text {
+	object {
+		x=250
+		y=290
+		width=40
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="VALID"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=310
+		y=280
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=ADC_DATA_VALID"
+}
+polyline {
+	object {
+		x=293
+		y=33
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(311,34)
+		(294,34)
+	}
+}
+text {
+	object {
+		x=244
+		y=30
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAC_SPI"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=310
+		y=20
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=DAC_SPI"
+}
+polyline {
+	object {
+		x=293
+		y=55
+		width=19
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(311,56)
+		(294,56)
+	}
+}
+text {
+	object {
+		x=230
+		y=52
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAC_SYNC"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=310
+		y=42
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=DAC_SYNC"
+}
+text {
+	object {
+		x=240
+		y=159
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC4"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=163
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,164)
+		(294,164)
+	}
+}
+text {
+	object {
+		x=240
+		y=109
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC2"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=113
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,114)
+		(294,114)
+	}
+}
+text {
+	object {
+		x=240
+		y=84
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC1"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=88
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,89)
+		(294,89)
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=155
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC4"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=153
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=153
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,176)
+				(308,154)
+				(441,154)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=153
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,154)
+				(441,176)
+				(308,176)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=105
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC2"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=103
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=103
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,126)
+				(308,104)
+				(441,104)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=103
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,104)
+				(441,126)
+				(308,126)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=80
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC1"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=78
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=78
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,101)
+				(308,79)
+				(441,79)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=78
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,79)
+				(441,101)
+				(308,101)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=240
+		y=134
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC3"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=138
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,139)
+		(294,139)
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=133
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC3"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=128
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=128
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,151)
+				(308,129)
+				(441,129)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=128
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,129)
+				(441,151)
+				(308,151)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=240
+		y=259
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC8"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=263
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,264)
+		(294,264)
+	}
+}
+text {
+	object {
+		x=240
+		y=209
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC6"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=213
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,214)
+		(294,214)
+	}
+}
+text {
+	object {
+		x=240
+		y=184
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC5"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=188
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,189)
+		(294,189)
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=255
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC8"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=253
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=253
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,276)
+				(308,254)
+				(441,254)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=253
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,254)
+				(441,276)
+				(308,276)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=205
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC6"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=203
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=203
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,226)
+				(308,204)
+				(441,204)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=203
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,204)
+				(441,226)
+				(308,226)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=180
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC5"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=178
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=178
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,201)
+				(308,179)
+				(441,179)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=178
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,179)
+				(441,201)
+				(308,201)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=240
+		y=234
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="ADC7"
+	align="horiz. right"
+}
+polyline {
+	object {
+		x=293
+		y=238
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(309,239)
+		(294,239)
+	}
+}
+"text update" {
+	object {
+		x=312
+		y=233
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC7"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+composite {
+	object {
+		x=307
+		y=228
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=307
+				y=228
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(308,251)
+				(308,229)
+				(441,229)
+			}
+		}
+		polyline {
+			object {
+				x=307
+				y=228
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(441,229)
+				(441,251)
+				(308,251)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=157
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC4"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=155
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=155
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,178)
+				(460,156)
+				(593,156)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=155
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,156)
+				(593,178)
+				(460,178)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=107
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC2"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=105
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=105
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,128)
+				(460,106)
+				(593,106)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=105
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,106)
+				(593,128)
+				(460,128)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=82
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC1"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=80
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=80
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,103)
+				(460,81)
+				(593,81)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=80
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,81)
+				(593,103)
+				(460,103)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=135
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC3"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=130
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=130
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,153)
+				(460,131)
+				(593,131)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=130
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,131)
+				(593,153)
+				(460,153)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=257
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC8"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=255
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=255
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,278)
+				(460,256)
+				(593,256)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=255
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,256)
+				(593,278)
+				(460,278)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=207
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC6"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=205
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=205
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,228)
+				(460,206)
+				(593,206)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=205
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,206)
+				(593,228)
+				(460,228)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=182
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC5"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=180
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=180
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,203)
+				(460,181)
+				(593,181)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=180
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,181)
+				(593,203)
+				(460,203)
+			}
+		}
+	}
+}
+"text update" {
+	object {
+		x=464
+		y=235
+		width=128
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)ADC7"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	format="hexadecimal"
+	limits {
+	}
+}
+composite {
+	object {
+		x=459
+		y=230
+		width=136
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=459
+				y=230
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(460,253)
+				(460,231)
+				(593,231)
+			}
+		}
+		polyline {
+			object {
+				x=459
+				y=230
+				width=135
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(593,231)
+				(593,253)
+				(460,253)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=23
+		y=163
+		width=175
+		height=20
+	}
+	"composite name"=""
+	children {
+		"text entry" {
+			object {
+				x=23
+				y=163
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)$(H)DAC4_VAL"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=168
+				y=163
+				width=30
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="CH4"
+			align="horiz. centered"
+		}
+		polyline {
+			object {
+				x=123
+				y=170
+				width=40
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(162,171)
+				(124,171)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=23
+		y=56
+		width=175
+		height=20
+	}
+	"composite name"=""
+	children {
+		"text entry" {
+			object {
+				x=23
+				y=56
+				width=100
+				height=20
+			}
+			control {
+				chan="$(P)$(H)DAC1_VAL"
+				clr=14
+				bclr=51
+			}
+			limits {
+			}
+		}
+		text {
+			object {
+				x=168
+				y=57
+				width=30
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="CH1"
+			align="horiz. centered"
+		}
+		polyline {
+			object {
+				x=123
+				y=64
+				width=40
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(162,65)
+				(124,65)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=0
+		y=27
+		width=197
+		height=26
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=149
+				y=39
+				width=16
+				height=3
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(164,41)
+				(150,40)
+			}
+		}
+		composite {
+			object {
+				x=0
+				y=27
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=DAC_WRITE"
+		}
+		text {
+			object {
+				x=167
+				y=33
+				width=30
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="WRT"
+			align="horiz. centered"
+		}
+	}
+}
+polyline {
+	object {
+		x=149
+		y=90
+		width=16
+		height=3
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(164,92)
+		(150,91)
+	}
+}
+composite {
+	object {
+		x=0
+		y=78
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=mux32_SEL"
+}
+text {
+	object {
+		x=167
+		y=84
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="DAC1_MAN"
+	align="horiz. centered"
+}

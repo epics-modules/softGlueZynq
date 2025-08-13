@@ -1,12 +1,12 @@
 
 file {
 	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynqExtra.adl"
-	version=030112
+	version=030111
 }
 display {
 	object {
-		x=520
-		y=50
+		x=11
+		y=267
 		width=1000
 		height=890
 	}
@@ -89,6 +89,136 @@ display {
 }
 rectangle {
 	object {
+		x=500
+		y=420
+		width=485
+		height=190
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=500
+		y=170
+		width=485
+		height=190
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=420
+		width=485
+		height=190
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=170
+		width=485
+		height=190
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=780
+		width=482
+		height=99
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=5
+		y=675
+		width=482
+		height=99
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=500
+		y=780
+		width=482
+		height=99
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=500
+		y=675
+		width=482
+		height=99
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=515
+		y=30
+		width=471
+		height=122
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
+		x=20
+		y=30
+		width=471
+		height=122
+	}
+	"basic attribute" {
+		clr=7
+		fill="outline"
+		width=2
+	}
+}
+rectangle {
+	object {
 		x=0
 		y=0
 		width=1000
@@ -118,7 +248,7 @@ composite {
 	object {
 		x=25
 		y=35
-		width=440
+		width=460
 		height=112
 	}
 	"composite name"=""
@@ -136,41 +266,15 @@ text {
 	}
 	textix="$(P)$(H)"
 }
-rectangle {
-	object {
-		x=17
-		y=30
-		width=456
-		height=122
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
-}
 composite {
 	object {
 		x=520
 		y=35
-		width=440
+		width=460
 		height=112
 	}
 	"composite name"=""
 	"composite file"="softGlueZynq_QuadDec_bare_label.adl;P=$(P),H=$(H),N=2"
-}
-rectangle {
-	object {
-		x=512
-		y=30
-		width=456
-		height=122
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
 }
 composite {
 	object {
@@ -181,42 +285,6 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=1"
-}
-composite {
-	object {
-		x=505
-		y=175
-		width=472
-		height=178
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=2"
-}
-rectangle {
-	object {
-		x=5
-		y=170
-		width=482
-		height=190
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
-}
-rectangle {
-	object {
-		x=500
-		y=170
-		width=482
-		height=190
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
 }
 text {
 	object {
@@ -254,42 +322,6 @@ composite {
 }
 composite {
 	object {
-		x=505
-		y=425
-		width=472
-		height=178
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=4"
-}
-rectangle {
-	object {
-		x=5
-		y=420
-		width=482
-		height=190
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
-}
-rectangle {
-	object {
-		x=500
-		y=420
-		width=482
-		height=190
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
-}
-composite {
-	object {
 		x=11
 		y=681
 		width=470
@@ -297,19 +329,6 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="softGlueZynq_GateDly_bare_label.adl;P=$(P),H=$(H),N=1"
-}
-rectangle {
-	object {
-		x=5
-		y=675
-		width=482
-		height=99
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
 }
 composite {
 	object {
@@ -321,19 +340,6 @@ composite {
 	"composite name"=""
 	"composite file"="softGlueZynq_GateDly_bare_label.adl;P=$(P),H=$(H),N=3"
 }
-rectangle {
-	object {
-		x=5
-		y=780
-		width=482
-		height=99
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
-}
 composite {
 	object {
 		x=506
@@ -344,19 +350,6 @@ composite {
 	"composite name"=""
 	"composite file"="softGlueZynq_GateDly_bare_label.adl;P=$(P),H=$(H),N=2"
 }
-rectangle {
-	object {
-		x=500
-		y=675
-		width=482
-		height=99
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
-}
 composite {
 	object {
 		x=506
@@ -366,19 +359,6 @@ composite {
 	}
 	"composite name"=""
 	"composite file"="softGlueZynq_GateDly_bare_label.adl;P=$(P),H=$(H),N=4"
-}
-rectangle {
-	object {
-		x=500
-		y=780
-		width=482
-		height=99
-	}
-	"basic attribute" {
-		clr=7
-		fill="outline"
-		width=2
-	}
 }
 composite {
 	object {
@@ -477,4 +457,24 @@ polyline {
 		(525,617)
 		(525,633)
 	}
+}
+composite {
+	object {
+		x=505
+		y=175
+		width=472
+		height=178
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=2"
+}
+composite {
+	object {
+		x=505
+		y=425
+		width=472
+		height=178
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_UpDnCntr_bare_label.adl;P=$(P),H=$(H),N=4"
 }

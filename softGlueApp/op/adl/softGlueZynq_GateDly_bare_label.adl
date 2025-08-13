@@ -1,7 +1,7 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_GateDly_bare_label.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_GateDly_bare_label.adl"
+	version=030111
 }
 display {
 	object {
@@ -95,7 +95,7 @@ display {
 		height=16
 	}
 	control {
-		chan="$(P)$(H)DivByN-$(N)_desc"
+		chan="$(P)$(H)GateDly-$(N)_desc"
 		clr=14
 		bclr=2
 	}

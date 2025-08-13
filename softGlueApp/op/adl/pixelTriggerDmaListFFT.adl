@@ -1,21 +1,21 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/Db/pixelTriggerDmaListFFT.adl"
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/pixelTriggerDmaListFFT.adl"
 	version=030111
 }
 display {
 	object {
-		x=393
-		y=530
+		x=656
+		y=239
 		width=830
-		height=497
+		height=560
 	}
 	clr=14
 	bclr=2
 	cmap=""
 	gridSpacing=5
 	gridOn=0
-	snapToGrid=0
+	snapToGrid=1
 }
 "color map" {
 	ncolors=65
@@ -87,83 +87,48 @@ display {
 		1a7309,
 	}
 }
-composite {
-	object {
-		x=10
-		y=0
-		width=400
-		height=231
-	}
-	"composite name"=""
-	children {
-		"cartesian plot" {
-			object {
-				x=10
-				y=15
-				width=400
-				height=200
-			}
-			plotcom {
-				ylabel="F(s1)"
-				clr=14
-				bclr=0
-			}
-			style="line"
-			count="$(P)pixelTrigFFT:t.NELM"
-			trace[0] {
-				xdata="$(P)pixelTrigFFT:t"
-				ydata="$(P)pixelTrigFFT:s1"
-				data_clr=14
-				yaxis=0
-			}
-			x_axis {
-				rangeStyle="auto-scale"
-			}
-			y1_axis {
-				rangeStyle="auto-scale"
-			}
-			y2_axis {
-				rangeStyle="auto-scale"
-			}
-			countPvName="$(P)pixelTrigFFT:t.NELM"
-			eraseMode="if zero"
-		}
-		text {
-			object {
-				x=10
-				y=0
-				width=400
-				height=13
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="$(P)pixelTrigFFT:s1"
-			align="horiz. centered"
-		}
-		text {
-			object {
-				x=10
-				y=218
-				width=400
-				height=13
-			}
-			"basic attribute" {
-				clr=14
-			}
-			textix="$(P)pixelTrigFFT:t"
-			align="horiz. centered"
-		}
-	}
-}
 "cartesian plot" {
 	object {
 		x=420
-		y=15
+		y=40
+		width=400
+		height=200
+	}
+	plotcom {
+		xlabel="frequency (Hz)"
+		ylabel="F(s3)"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	count="$(P)pixelTrigFFT:t.NELM"
+	trace[0] {
+		xdata="$(P)pixelTrigFFT:t"
+		ydata="$(P)pixelTrigFFT:s3"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	y2_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="$(P)pixelTrigFFT:t.NELM"
+	eraseMode="if zero"
+}
+"cartesian plot" {
+	object {
+		x=10
+		y=310
 		width=400
 		height=201
 	}
 	plotcom {
+		xlabel="frequency (Hz)"
 		ylabel="F(s2)"
 		clr=14
 		bclr=0
@@ -190,96 +155,26 @@ composite {
 }
 text {
 	object {
-		x=420
-		y=0
-		width=400
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(P)pixelTrigFFT:s2"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=420
-		y=219
-		width=400
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(P)pixelTrigFFT:t"
-	align="horiz. centered"
-}
-"cartesian plot" {
-	object {
 		x=10
-		y=265
-		width=400
-		height=200
-	}
-	plotcom {
-		ylabel="F(s3)"
-		clr=14
-		bclr=0
-	}
-	style="line"
-	count="$(P)pixelTrigFFT:t.NELM"
-	trace[0] {
-		xdata="$(P)pixelTrigFFT:t"
-		ydata="$(P)pixelTrigFFT:s1"
-		data_clr=14
-		yaxis=0
-	}
-	x_axis {
-		rangeStyle="auto-scale"
-	}
-	y1_axis {
-		rangeStyle="auto-scale"
-	}
-	y2_axis {
-		rangeStyle="auto-scale"
-	}
-	countPvName="$(P)pixelTrigFFT:t.NELM"
-	eraseMode="if zero"
-}
-text {
-	object {
-		x=10
-		y=250
-		width=400
-		height=13
+		y=285
+		width=30
+		height=20
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="$(P)pixelTrigFFT:s3"
-	align="horiz. centered"
-}
-text {
-	object {
-		x=10
-		y=468
-		width=400
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="$(P)pixelTrigFFT:t"
+	textix="s2"
 	align="horiz. centered"
 }
 "cartesian plot" {
 	object {
 		x=420
-		y=265
+		y=310
 		width=400
 		height=200
 	}
 	plotcom {
+		xlabel="frequency (Hz)"
 		ylabel="F(s4)"
 		clr=14
 		bclr=0
@@ -304,29 +199,152 @@ text {
 	countPvName="$(P)pixelTrigFFT:t.NELM"
 	eraseMode="if zero"
 }
+"cartesian plot" {
+	object {
+		x=10
+		y=40
+		width=400
+		height=200
+	}
+	plotcom {
+		xlabel="frequency (Hz)"
+		ylabel="F(s1)"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	count="$(P)pixelTrigFFT:t.NELM"
+	trace[0] {
+		xdata="$(P)pixelTrigFFT:t"
+		ydata="$(P)pixelTrigFFT:s1"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	y2_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="$(P)pixelTrigFFT:t.NELM"
+	eraseMode="if zero"
+}
+"text update" {
+	object {
+		x=40
+		y=15
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s1name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=40
+		y=285
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s2name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=15
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s3name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=285
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s4name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
 text {
 	object {
-		x=420
-		y=250
-		width=400
-		height=13
+		x=10
+		y=540
+		width=800
+		height=14
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="$(P)pixelTrigFFT:s4"
+	textix="Note: this display is filled by the caputRecorder macro 'readPixelTriggerFFT'"
 	align="horiz. centered"
 }
 text {
 	object {
 		x=420
-		y=468
-		width=400
-		height=13
+		y=285
+		width=30
+		height=20
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="$(P)pixelTrigFFT:t"
+	textix="s4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=420
+		y=15
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=10
+		y=15
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s3"
 	align="horiz. centered"
 }

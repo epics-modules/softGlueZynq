@@ -1,14 +1,14 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_ScalToStream_bare.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/softGlueZynq_ScalToStream_bare.adl"
+	version=030111
 }
 display {
 	object {
-		x=486
-		y=745
+		x=690
+		y=504
 		width=460
-		height=125
+		height=150
 	}
 	clr=14
 	bclr=2
@@ -90,9 +90,9 @@ display {
 rectangle {
 	object {
 		x=175
-		y=6
+		y=0
 		width=102
-		height=117
+		height=150
 	}
 	"basic attribute" {
 		clr=14
@@ -140,145 +140,6 @@ composite {
 	"composite name"=""
 	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_FULL"
 }
-polyline {
-	object {
-		x=276
-		y=110
-		width=17
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(292,111)
-		(277,111)
-	}
-}
-text {
-	object {
-		x=210
-		y=105
-		width=60
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="CHADVDONE"
-	align="horiz. centered"
-}
-composite {
-	object {
-		x=291
-		y=97
-		width=157
-		height=26
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_ADVDONE"
-}
-text {
-	object {
-		x=226
-		y=21
-		width=45
-		height=13
-	}
-	"basic attribute" {
-		clr=14
-	}
-	textix="FIFO CT"
-	align="horiz. centered"
-}
-polyline {
-	object {
-		x=274
-		y=25
-		width=17
-		height=2
-	}
-	"basic attribute" {
-		clr=14
-		fill="outline"
-		width=2
-	}
-	points {
-		(290,26)
-		(275,26)
-	}
-}
-"text update" {
-	object {
-		x=292
-		y=17
-		width=100
-		height=20
-	}
-	monitor {
-		chan="$(P)$(H)scalToStream-$(N)_FIFO"
-		clr=54
-		bclr=2
-	}
-	align="horiz. right"
-	limits {
-	}
-}
-composite {
-	object {
-		x=288
-		y=15
-		width=106
-		height=24
-	}
-	"composite name"=""
-	children {
-		polyline {
-			object {
-				x=288
-				y=15
-				width=106
-				height=24
-			}
-			"basic attribute" {
-				clr=10
-				fill="outline"
-				width=2
-			}
-			"dynamic attribute" {
-				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
-			}
-			points {
-				(289,38)
-				(289,16)
-				(393,16)
-			}
-		}
-		polyline {
-			object {
-				x=288
-				y=15
-				width=106
-				height=24
-			}
-			"basic attribute" {
-				clr=0
-				fill="outline"
-				width=2
-			}
-			"dynamic attribute" {
-				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
-			}
-			points {
-				(393,16)
-				(393,38)
-				(289,38)
-			}
-		}
-	}
-}
 composite {
 	object {
 		x=4
@@ -318,67 +179,6 @@ polyline {
 		(159,25)
 	}
 }
-composite {
-	object {
-		x=12
-		y=46
-		width=207
-		height=26
-	}
-	"composite name"=""
-	children {
-		composite {
-			object {
-				x=12
-				y=46
-				width=155
-				height=26
-			}
-			"composite name"=""
-			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_CHADV"
-		}
-		composite {
-			object {
-				x=166
-				y=55
-				width=53
-				height=13
-			}
-			"composite name"=""
-			children {
-				text {
-					object {
-						x=179
-						y=55
-						width=40
-						height=13
-					}
-					"basic attribute" {
-						clr=14
-					}
-					textix="CHADV"
-				}
-				polyline {
-					object {
-						x=166
-						y=59
-						width=10
-						height=2
-					}
-					"basic attribute" {
-						clr=14
-						fill="outline"
-						width=2
-					}
-					points {
-						(175,60)
-						(167,60)
-					}
-				}
-			}
-		}
-	}
-}
 oval {
 	object {
 		x=166
@@ -395,7 +195,7 @@ oval {
 composite {
 	object {
 		x=179
-		y=35
+		y=4
 		width=93
 		height=14
 	}
@@ -404,7 +204,7 @@ composite {
 		text {
 			object {
 				x=185
-				y=38
+				y=7
 				width=83
 				height=10
 			}
@@ -416,7 +216,7 @@ composite {
 		rectangle {
 			object {
 				x=179
-				y=35
+				y=4
 				width=93
 				height=14
 			}
@@ -430,7 +230,7 @@ composite {
 polyline {
 	object {
 		x=122
-		y=87
+		y=120
 		width=55
 		height=3
 	}
@@ -440,14 +240,14 @@ polyline {
 		width=2
 	}
 	points {
-		(176,89)
-		(123,88)
+		(176,122)
+		(123,121)
 	}
 }
 "text entry" {
 	object {
 		x=58
-		y=80
+		y=113
 		width=80
 		height=20
 	}
@@ -463,7 +263,7 @@ polyline {
 text {
 	object {
 		x=183
-		y=83
+		y=116
 		width=50
 		height=10
 	}
@@ -472,4 +272,432 @@ text {
 	}
 	textix="DMA WORDS"
 	align="horiz. centered"
+}
+composite {
+	object {
+		x=4
+		y=34
+		width=215
+		height=26
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=4
+				y=34
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_CHADV"
+		}
+		text {
+			object {
+				x=179
+				y=43
+				width=40
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="CHADV"
+		}
+		polyline {
+			object {
+				x=158
+				y=47
+				width=17
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(174,48)
+				(159,48)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=226
+		y=15
+		width=168
+		height=24
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=288
+				y=15
+				width=106
+				height=24
+			}
+			"composite name"=""
+			children {
+				polyline {
+					object {
+						x=288
+						y=15
+						width=106
+						height=24
+					}
+					"basic attribute" {
+						clr=10
+						fill="outline"
+						width=2
+					}
+					"dynamic attribute" {
+						chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+					}
+					points {
+						(289,38)
+						(289,16)
+						(393,16)
+					}
+				}
+				polyline {
+					object {
+						x=288
+						y=15
+						width=106
+						height=24
+					}
+					"basic attribute" {
+						clr=0
+						fill="outline"
+						width=2
+					}
+					"dynamic attribute" {
+						chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+					}
+					points {
+						(393,16)
+						(393,38)
+						(289,38)
+					}
+				}
+			}
+		}
+		text {
+			object {
+				x=226
+				y=21
+				width=45
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="FIFO CT"
+			align="horiz. centered"
+		}
+		polyline {
+			object {
+				x=274
+				y=25
+				width=17
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(290,26)
+				(275,26)
+			}
+		}
+		"text update" {
+			object {
+				x=292
+				y=17
+				width=100
+				height=20
+			}
+			monitor {
+				chan="$(P)$(H)scalToStream-$(N)_FIFO"
+				clr=54
+				bclr=2
+			}
+			align="horiz. right"
+			limits {
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=288
+		y=40
+		width=106
+		height=24
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=288
+				y=40
+				width=106
+				height=24
+			}
+			"basic attribute" {
+				clr=10
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(289,63)
+				(289,41)
+				(393,41)
+			}
+		}
+		polyline {
+			object {
+				x=288
+				y=40
+				width=106
+				height=24
+			}
+			"basic attribute" {
+				clr=0
+				fill="outline"
+				width=2
+			}
+			"dynamic attribute" {
+				chan="$(P)$(H)UpCntr-$(N)_COUNTS"
+			}
+			points {
+				(393,41)
+				(393,63)
+				(289,63)
+			}
+		}
+	}
+}
+text {
+	object {
+		x=220
+		y=46
+		width=55
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FIFO2 CT"
+	align="horiz. centered"
+}
+polyline {
+	object {
+		x=274
+		y=50
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(290,51)
+		(275,51)
+	}
+}
+"text update" {
+	object {
+		x=292
+		y=42
+		width=100
+		height=20
+	}
+	monitor {
+		chan="$(P)$(H)scalToStream-$(N)_FIFO2"
+		clr=54
+		bclr=2
+	}
+	align="horiz. right"
+	limits {
+	}
+}
+polyline {
+	object {
+		x=276
+		y=108
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,109)
+		(277,109)
+	}
+}
+text {
+	object {
+		x=210
+		y=103
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="CHADVDONE"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=95
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_ADVDONE"
+}
+polyline {
+	object {
+		x=276
+		y=133
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(292,134)
+		(277,134)
+	}
+}
+text {
+	object {
+		x=210
+		y=128
+		width=60
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="IMTRIGDONE"
+	align="horiz. centered"
+}
+composite {
+	object {
+		x=291
+		y=120
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_IMDONE"
+}
+composite {
+	object {
+		x=4
+		y=56
+		width=225
+		height=26
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=4
+				y=56
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_IMTRIG"
+		}
+		text {
+			object {
+				x=179
+				y=65
+				width=50
+				height=13
+			}
+			"basic attribute" {
+				clr=14
+			}
+			textix="IM TRIG"
+		}
+		polyline {
+			object {
+				x=158
+				y=69
+				width=17
+				height=2
+			}
+			"basic attribute" {
+				clr=14
+				fill="outline"
+				width=2
+			}
+			points {
+				(174,70)
+				(159,70)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=4
+		y=78
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=scalToStream-$(N)_FLUSH"
+}
+text {
+	object {
+		x=179
+		y=87
+		width=50
+		height=13
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="FLUSH"
+}
+polyline {
+	object {
+		x=158
+		y=91
+		width=17
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(174,92)
+		(159,92)
+	}
 }

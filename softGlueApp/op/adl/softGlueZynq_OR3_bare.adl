@@ -1,0 +1,301 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_OR3_bare.adl"
+	version=030111
+}
+display {
+	object {
+		x=1879
+		y=338
+		width=513
+		height=163
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=0
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+arc {
+	object {
+		x=144
+		y=2
+		width=25
+		height=105
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	begin=19520
+	path=7360
+}
+composite {
+	object {
+		x=0
+		y=0
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=OR3-$(N)_IN1"
+}
+polyline {
+	object {
+		x=154
+		y=50
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(166,51)
+		(155,51)
+	}
+}
+polyline {
+	object {
+		x=154
+		y=15
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(166,16)
+		(155,16)
+	}
+}
+polyline {
+	object {
+		x=209
+		y=49
+		width=25
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(233,50)
+		(210,50)
+	}
+}
+composite {
+	object {
+		x=163
+		y=8
+		width=50
+		height=95
+	}
+	"composite name"=""
+	children {
+		polyline {
+			object {
+				x=163
+				y=8
+				width=46
+				height=43
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			points {
+				(164,9)
+				(168,9)
+				(175,9)
+				(182,12)
+				(188,17)
+				(195,24)
+				(202,38)
+				(208,50)
+			}
+		}
+		polyline {
+			object {
+				x=164
+				y=53
+				width=46
+				height=43
+			}
+			"basic attribute" {
+				clr=14
+				width=2
+			}
+			points {
+				(165,95)
+				(169,95)
+				(176,95)
+				(183,92)
+				(189,87)
+				(196,80)
+				(203,66)
+				(209,54)
+			}
+		}
+	}
+}
+composite {
+	object {
+		x=228
+		y=35
+		width=157
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Output.adl;P=$(P),H=$(H),SIG=OR3-$(N)_OUT"
+}
+text {
+	object {
+		x=172
+		y=49
+		width=25
+		height=15
+	}
+	"basic attribute" {
+		clr=53
+	}
+	textix="OR3-$(N)"
+}
+composite {
+	object {
+		x=0
+		y=75
+		width=155
+		height=26
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=OR3-$(N)_IN3"
+}
+composite {
+	object {
+		x=2147483647
+		y=2147483647
+		width=1
+		height=1
+	}
+	"composite name"=""
+	children {
+	}
+}
+composite {
+	object {
+		x=0
+		y=35
+		width=155
+		height=26
+	}
+	"composite name"=""
+	children {
+		composite {
+			object {
+				x=0
+				y=35
+				width=155
+				height=26
+			}
+			"composite name"=""
+			"composite file"="softGlueZynq_Input.adl;P=$(P),H=$(H),SIG=OR3-$(N)_IN2"
+		}
+	}
+}
+polyline {
+	object {
+		x=153
+		y=87
+		width=13
+		height=2
+	}
+	"basic attribute" {
+		clr=14
+		fill="outline"
+		width=2
+	}
+	points {
+		(165,88)
+		(154,88)
+	}
+}

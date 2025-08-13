@@ -1,0 +1,350 @@
+
+file {
+	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/acquireDmaListFFT.adl"
+	version=030111
+}
+display {
+	object {
+		x=249
+		y=168
+		width=830
+		height=560
+	}
+	clr=14
+	bclr=2
+	cmap=""
+	gridSpacing=5
+	gridOn=0
+	snapToGrid=1
+}
+"color map" {
+	ncolors=65
+	colors {
+		ffffff,
+		ececec,
+		dadada,
+		c8c8c8,
+		bbbbbb,
+		aeaeae,
+		9e9e9e,
+		919191,
+		858585,
+		787878,
+		696969,
+		5a5a5a,
+		464646,
+		2d2d2d,
+		000000,
+		00d800,
+		1ebb00,
+		339900,
+		2d7f00,
+		216c00,
+		fd0000,
+		de1309,
+		be190b,
+		a01207,
+		820400,
+		5893ff,
+		597ee1,
+		4b6ec7,
+		3a5eab,
+		27548d,
+		fbf34a,
+		f9da3c,
+		eeb62b,
+		e19015,
+		cd6100,
+		ffb0ff,
+		d67fe2,
+		ae4ebc,
+		8b1a96,
+		610a75,
+		a4aaff,
+		8793e2,
+		6a73c1,
+		4d52a4,
+		343386,
+		c7bb6d,
+		b79d5c,
+		a47e3c,
+		7d5627,
+		58340f,
+		99ffff,
+		73dfff,
+		4ea5f9,
+		2a63e4,
+		0a00b8,
+		ebf1b5,
+		d4db9d,
+		bbc187,
+		a6a462,
+		8b8239,
+		73ff6b,
+		52da3b,
+		3cb420,
+		289315,
+		1a7309,
+	}
+}
+"cartesian plot" {
+	object {
+		x=420
+		y=40
+		width=400
+		height=200
+	}
+	plotcom {
+		xlabel="frequency (Hz)"
+		ylabel="F(s3)"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	count="$(P)acquireFFT:t.NELM"
+	trace[0] {
+		xdata="$(P)acquireFFT:t"
+		ydata="$(P)acquireFFT:s3"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	y2_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="$(P)acquireFFT:t.NELM"
+	eraseMode="if zero"
+}
+"cartesian plot" {
+	object {
+		x=10
+		y=310
+		width=400
+		height=201
+	}
+	plotcom {
+		xlabel="frequency (Hz)"
+		ylabel="F(s2)"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	count="$(P)acquireFFT:t.NELM"
+	trace[0] {
+		xdata="$(P)acquireFFT:t"
+		ydata="$(P)acquireFFT:s2"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	y2_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="$(P)acquireFFT:t.NELM"
+	eraseMode="if zero"
+}
+text {
+	object {
+		x=10
+		y=285
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s2"
+	align="horiz. centered"
+}
+"cartesian plot" {
+	object {
+		x=420
+		y=310
+		width=400
+		height=200
+	}
+	plotcom {
+		xlabel="frequency (Hz)"
+		ylabel="F(s4)"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	count="$(P)acquireFFT:t.NELM"
+	trace[0] {
+		xdata="$(P)acquireFFT:t"
+		ydata="$(P)acquireFFT:s4"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	y2_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="$(P)acquireFFT:t.NELM"
+	eraseMode="if zero"
+}
+"cartesian plot" {
+	object {
+		x=10
+		y=40
+		width=400
+		height=200
+	}
+	plotcom {
+		xlabel="frequency (Hz)"
+		ylabel="F(s1)"
+		clr=14
+		bclr=0
+	}
+	style="line"
+	count="$(P)acquireFFT:t.NELM"
+	trace[0] {
+		xdata="$(P)acquireFFT:t"
+		ydata="$(P)acquireFFT:s1"
+		data_clr=14
+		yaxis=0
+	}
+	x_axis {
+		rangeStyle="auto-scale"
+	}
+	y1_axis {
+		rangeStyle="auto-scale"
+	}
+	y2_axis {
+		rangeStyle="auto-scale"
+	}
+	countPvName="$(P)acquireFFT:t.NELM"
+	eraseMode="if zero"
+}
+"text update" {
+	object {
+		x=40
+		y=15
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s1name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=40
+		y=285
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s2name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=15
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s3name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=450
+		y=285
+		width=370
+		height=20
+	}
+	monitor {
+		chan="$(P)$(Q)s4name"
+		clr=54
+		bclr=2
+	}
+	align="horiz. centered"
+	limits {
+	}
+}
+text {
+	object {
+		x=10
+		y=540
+		width=800
+		height=14
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="Note: this display is filled by the caputRecorder macro 'readAcquireFFT'"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=420
+		y=285
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s4"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=420
+		y=15
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s3"
+	align="horiz. centered"
+}
+text {
+	object {
+		x=10
+		y=15
+		width=30
+		height=20
+	}
+	"basic attribute" {
+		clr=14
+	}
+	textix="s3"
+	align="horiz. centered"
+}

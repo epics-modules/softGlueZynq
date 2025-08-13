@@ -1,14 +1,14 @@
 
 file {
 	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynq/softGlueApp/op/adl/softGlueZynq_HistScal_bare_label.adl"
-	version=030107
+	version=030111
 }
 display {
 	object {
 		x=588
 		y=443
 		width=420
-		height=160
+		height=204
 	}
 	clr=14
 	bclr=2
@@ -95,7 +95,7 @@ display {
 		height=16
 	}
 	control {
-		chan="$(P)$(H)DFF-$(N)_desc"
+		chan="$(P)$(H)HistScal-$(N)_desc"
 		clr=14
 		bclr=2
 	}
@@ -108,7 +108,7 @@ composite {
 		x=3
 		y=16
 		width=285
-		height=140
+		height=184
 	}
 	"composite name"=""
 	"composite file"="softGlueZynq_HistScal_bare.adl;P=$(P),H=$(H),N=$(N)"

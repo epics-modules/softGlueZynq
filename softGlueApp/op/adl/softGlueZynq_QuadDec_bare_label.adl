@@ -1,7 +1,7 @@
 
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps/support/softGlueZynqZynq/softGlueZynqApp/op/adl/softGlueZynq_QuadDec_bare_label.adl"
-	version=030107
+	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/softGlueZynq_QuadDec_bare_label.adl"
+	version=030111
 }
 display {
 	object {
@@ -90,7 +90,7 @@ display {
 composite {
 	object {
 		x=10
-		y=25
+		y=17
 		width=438
 		height=95
 	}
@@ -100,7 +100,7 @@ composite {
 "text entry" {
 	object {
 		x=10
-		y=8
+		y=0
 		width=440
 		height=16
 	}

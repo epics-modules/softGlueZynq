@@ -7,101 +7,13 @@
             <x>2</x>
             <y>50</y>
             <width>890</width>
-            <height>950</height>
+            <height>1010</height>
         </rect>
     </property>
     <property name="styleSheet">
         <string>
 
 QWidget#centralWidget {background: rgba(218, 218, 218, 255);}
-
-caTable {
-       font: 10pt;
-       background: cornsilk;
-       alternate-background-color: wheat;
-}
-
-caLineEdit {
-     border-radius: 1px;
-     background: lightyellow;
-     color: black;
- }
-
-caTextEntry {
-    color: rgb(127, 0, 63);
-    background-color: cornsilk;
-    selection-color: #0a214c;
-    selection-background-color: wheat;
-    border: 1px groove black;
-    border-radius: 1px;
-    padding: 1px;
-}
-
-caTextEntry:focus {
-    padding: 0px;
-    border: 2px groove darkred;
-    border-radius: 1px;
-}
-
-QPushButton {
-      border-color: #00b;
-      border-radius: 2px;
-      padding: 3px;
-      border-width: 1px;
-
-	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-						   stop:0   rgba(224, 239, 255, 255),
-						   stop:0.5 rgba(199, 215, 230, 255),
-						   stop:1   rgba(184, 214, 236, 255));
-}
-QPushButton:hover {
-	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-						stop:0   rgba(201, 226, 255, 255),
-						stop:0.5 rgba(177, 204, 230, 255),
-						stop:1   rgba(163, 205, 236, 255));
-}
-QPushButton:pressed {
-	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-						stop:0   rgba(174, 219, 255, 255),
-						stop:0.5 rgba(165, 199, 230, 255),
-						stop:1   rgba(134, 188, 236, 255));
-}
-
-QPushButton:disabled {
-	background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1,
-						stop:0   rgba(174, 219, 255, 255),
-						stop:0.5 rgba(165, 199, 230, 255),
-						stop:1   rgba(134, 188, 236, 255));
-}
-
-caChoice {
-      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                  stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                  stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-}
-
-caChoice &gt; QPushButton {
-      text-align: left;
-      padding: 1px;
-}
-
-caSlider::groove:horizontal {
-border: 1px solid #bbb;
-background: lightgrey;
-height: 20px;
-border-radius: 4px;
-}
-
-caSlider::handle:horizontal {
-background: red;
-border: 1px solid #777;
-width: 13px;
-margin-top: -2px;
-margin-bottom: -2px;
-border-radius: 2px;
-}
-
-
 
 </string>
     </property>
@@ -208,7 +120,7 @@ border-radius: 2px;
                 <enum>Solid</enum>
             </property>
             <property name="xyPairs">
-                <string>888,1;</string>
+                <string>1,1;888,1;</string>
             </property>
         </widget>
         <widget class="caMessageButton" name="caMessageButton_0">
@@ -503,96 +415,6 @@ border-radius: 2px;
                 <enum>caMenu::Static</enum>
             </property>
         </widget>
-        <widget class="caLabel" name="caLabel_3">
-            <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>Events</string>
-            </property>
-            <property name="fontScaleMode">
-                <enum>ESimpleLabel::WidthAndHeight</enum>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>675</x>
-                    <y>45</y>
-                    <width>60</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="alignment">
-                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-        </widget>
-        <widget class="caLineEdit" name="caLineEdit_0">
-            <property name="geometry">
-                <rect>
-                    <x>745</x>
-                    <y>45</y>
-                    <width>110</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="fontScaleMode">
-                <enum>caLineEdit::WidthAndHeight</enum>
-            </property>
-            <property name="channel">
-                <string>$(P)$(Q)pixelTriggerDma.VALH</string>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>10</red>
-                    <green>0</green>
-                    <blue>184</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="255">
-                    <red>218</red>
-                    <green>218</green>
-                    <blue>218</blue>
-                </color>
-            </property>
-            <property name="limitsMode">
-                <enum>caLineEdit::Channel</enum>
-            </property>
-            <property name="limitsMode">
-                <enum>caLineEdit::Channel</enum>
-            </property>
-            <property name="precisionMode">
-                <enum>caLineEdit::Channel</enum>
-            </property>
-            <property name="minValue">
-                <double>0.0</double>
-            </property>
-            <property name="maxValue">
-                <double>1.0</double>
-            </property>
-            <property name="alignment">
-                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-            <property name="formatType">
-                <enum>decimal</enum>
-            </property>
-            <property name="colorMode">
-                <enum>caLineEdit::Static</enum>
-            </property>
-        </widget>
         <widget class="caMenu" name="caMenu_1">
             <property name="geometry">
                 <rect>
@@ -674,7 +496,7 @@ border-radius: 2px;
                 <enum>decimal</enum>
             </property>
         </widget>
-        <widget class="caLabel" name="caLabel_4">
+        <widget class="caLabel" name="caLabel_3">
             <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
             </property>
@@ -770,7 +592,7 @@ border-radius: 2px;
                     <enum>decimal</enum>
                 </property>
             </widget>
-            <widget class="caLabel" name="caLabel_5">
+            <widget class="caLabel" name="caLabel_4">
                 <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
                 </property>
@@ -837,7 +659,7 @@ border-radius: 2px;
                 <enum>caMenu::Static</enum>
             </property>
         </widget>
-        <widget class="caLabel" name="caLabel_6">
+        <widget class="caLabel" name="caLabel_5">
             <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
             </property>
@@ -933,7 +755,7 @@ border-radius: 2px;
                     <enum>decimal</enum>
                 </property>
             </widget>
-            <widget class="caLabel" name="caLabel_7">
+            <widget class="caLabel" name="caLabel_6">
                 <property name="frameShape">
                     <enum>QFrame::NoFrame</enum>
                 </property>
@@ -970,12 +792,1333 @@ border-radius: 2px;
                 </property>
             </widget>
         </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
+            <property name="geometry">
+                <rect>
+                    <x>750</x>
+                    <y>985</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Less</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>pixelTriggerDma.adl</string>
+            </property>
+            <property name="files">
+                <string>pixelTriggerDma.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),Q=$(Q),H=$(H)</string>
+            </property>
+            <property name="removeParent">
+                <string>true</string>
+            </property>
+        </widget>
+        <widget class="caCartesianPlot" name="caCartesianPlot_0">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>575</y>
+                    <width>400</width>
+                    <height>200</height>
+                </rect>
+            </property>
+            <property name="scaleColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="Style_1">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_2">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_3">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="symbol_1">
+                <enum>caCartesianPlot::NoSymbol</enum>
+            </property>
+            <property name="symbol_2">
+                <enum>caCartesianPlot::Rect</enum>
+            </property>
+            <property name="symbol_3">
+                <enum>caCartesianPlot::Triangle</enum>
+            </property>
+            <property name="color_1">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="channels_1">
+                <string>;$(P)$(Q)pixelTriggerDma.VALE</string>
+            </property>
+            <property name="XaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="XaxisLimits">
+                <string>0;1</string>
+            </property>
+            <property name="YaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="YaxisLimits">
+                <string>0;1</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_7">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>s5</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>655</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caCartesianPlot" name="caCartesianPlot_1">
+            <property name="geometry">
+                <rect>
+                    <x>475</x>
+                    <y>575</y>
+                    <width>400</width>
+                    <height>200</height>
+                </rect>
+            </property>
+            <property name="scaleColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="Style_1">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_2">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_3">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="symbol_1">
+                <enum>caCartesianPlot::NoSymbol</enum>
+            </property>
+            <property name="symbol_2">
+                <enum>caCartesianPlot::Rect</enum>
+            </property>
+            <property name="symbol_3">
+                <enum>caCartesianPlot::Triangle</enum>
+            </property>
+            <property name="color_1">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="channels_1">
+                <string>;$(P)$(Q)pixelTriggerDma.VALF</string>
+            </property>
+            <property name="XaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="XaxisLimits">
+                <string>0;1</string>
+            </property>
+            <property name="YaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="YaxisLimits">
+                <string>0;1</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_8">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>s6</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>455</x>
+                    <y>655</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caCartesianPlot" name="caCartesianPlot_2">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>805</y>
+                    <width>400</width>
+                    <height>200</height>
+                </rect>
+            </property>
+            <property name="scaleColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="Style_1">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_2">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_3">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="symbol_1">
+                <enum>caCartesianPlot::NoSymbol</enum>
+            </property>
+            <property name="symbol_2">
+                <enum>caCartesianPlot::Rect</enum>
+            </property>
+            <property name="symbol_3">
+                <enum>caCartesianPlot::Triangle</enum>
+            </property>
+            <property name="color_1">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="channels_1">
+                <string>;$(P)$(Q)pixelTriggerDma.VALG</string>
+            </property>
+            <property name="XaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="XaxisLimits">
+                <string>0;1</string>
+            </property>
+            <property name="YaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="YaxisLimits">
+                <string>0;1</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_9">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>s7</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>885</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caRelatedDisplay" name="caRelatedDisplay_1">
+            <property name="geometry">
+                <rect>
+                    <x>820</x>
+                    <y>985</y>
+                    <width>70</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>51</red>
+                    <green>153</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-More</string>
+            </property>
+            <property name="stackingMode">
+                <enum>Menu</enum>
+            </property>
+            <property name="labels">
+                <string>config;pixelTriggerDmaListFFT.adl</string>
+            </property>
+            <property name="files">
+                <string>pixelTriggerDma_config.adl;pixelTriggerDmaListFFT.adl</string>
+            </property>
+            <property name="args">
+                <string>P=$(P),Q=$(Q),H=$(H);P=$(P),Q=$(Q)</string>
+            </property>
+            <property name="removeParent">
+                <string>false;false</string>
+            </property>
+        </widget>
+        <widget class="caFrame" name="caFrame_3">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>345</y>
+                    <width>422</width>
+                    <height>202</height>
+                </rect>
+            </property>
+            <widget class="caCartesianPlot" name="caCartesianPlot_3">
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>0</y>
+                        <width>400</width>
+                        <height>200</height>
+                    </rect>
+                </property>
+                <property name="scaleColor">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="255">
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="Style_1">
+                    <enum>caCartesianPlot::Lines</enum>
+                </property>
+                <property name="Style_2">
+                    <enum>caCartesianPlot::Lines</enum>
+                </property>
+                <property name="Style_3">
+                    <enum>caCartesianPlot::Lines</enum>
+                </property>
+                <property name="symbol_1">
+                    <enum>caCartesianPlot::NoSymbol</enum>
+                </property>
+                <property name="symbol_2">
+                    <enum>caCartesianPlot::Rect</enum>
+                </property>
+                <property name="symbol_3">
+                    <enum>caCartesianPlot::Triangle</enum>
+                </property>
+                <property name="color_1">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="channels_1">
+                    <string>;$(P)$(Q)pixelTriggerDma.VALB</string>
+                </property>
+                <property name="XaxisScaling">
+                    <enum>caCartesianPlot::Auto</enum>
+                </property>
+                <property name="XaxisLimits">
+                    <string>0;1</string>
+                </property>
+                <property name="YaxisScaling">
+                    <enum>caCartesianPlot::Auto</enum>
+                </property>
+                <property name="YaxisLimits">
+                    <string>0;1</string>
+                </property>
+            </widget>
+            <widget class="caLabel" name="caLabel_10">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>s2</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>80</y>
+                        <width>20</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+        </widget>
+        <widget class="caCartesianPlot" name="caCartesianPlot_4">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>115</y>
+                    <width>400</width>
+                    <height>200</height>
+                </rect>
+            </property>
+            <property name="scaleColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="Style_1">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_2">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_3">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="symbol_1">
+                <enum>caCartesianPlot::NoSymbol</enum>
+            </property>
+            <property name="symbol_2">
+                <enum>caCartesianPlot::Rect</enum>
+            </property>
+            <property name="symbol_3">
+                <enum>caCartesianPlot::Triangle</enum>
+            </property>
+            <property name="color_1">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="channels_1">
+                <string>;$(P)$(Q)pixelTriggerDma.VALA</string>
+            </property>
+            <property name="XaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="XaxisLimits">
+                <string>0;1</string>
+            </property>
+            <property name="YaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="YaxisLimits">
+                <string>0;1</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_11">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>s1</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>195</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caFrame" name="caFrame_4">
+            <property name="geometry">
+                <rect>
+                    <x>455</x>
+                    <y>345</y>
+                    <width>422</width>
+                    <height>202</height>
+                </rect>
+            </property>
+            <widget class="caCartesianPlot" name="caCartesianPlot_5">
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>0</y>
+                        <width>400</width>
+                        <height>200</height>
+                    </rect>
+                </property>
+                <property name="scaleColor">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="255">
+                        <red>255</red>
+                        <green>255</green>
+                        <blue>255</blue>
+                    </color>
+                </property>
+                <property name="Style_1">
+                    <enum>caCartesianPlot::Lines</enum>
+                </property>
+                <property name="Style_2">
+                    <enum>caCartesianPlot::Lines</enum>
+                </property>
+                <property name="Style_3">
+                    <enum>caCartesianPlot::Lines</enum>
+                </property>
+                <property name="symbol_1">
+                    <enum>caCartesianPlot::NoSymbol</enum>
+                </property>
+                <property name="symbol_2">
+                    <enum>caCartesianPlot::Rect</enum>
+                </property>
+                <property name="symbol_3">
+                    <enum>caCartesianPlot::Triangle</enum>
+                </property>
+                <property name="color_1">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="channels_1">
+                    <string>;$(P)$(Q)pixelTriggerDma.VALD</string>
+                </property>
+                <property name="XaxisScaling">
+                    <enum>caCartesianPlot::Auto</enum>
+                </property>
+                <property name="XaxisLimits">
+                    <string>0;1</string>
+                </property>
+                <property name="YaxisScaling">
+                    <enum>caCartesianPlot::Auto</enum>
+                </property>
+                <property name="YaxisLimits">
+                    <string>0;1</string>
+                </property>
+            </widget>
+            <widget class="caLabel" name="caLabel_12">
+                <property name="frameShape">
+                    <enum>QFrame::NoFrame</enum>
+                </property>
+                <property name="foreground">
+                    <color alpha="255">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="background">
+                    <color alpha="0">
+                        <red>0</red>
+                        <green>0</green>
+                        <blue>0</blue>
+                    </color>
+                </property>
+                <property name="text">
+                    <string>s4</string>
+                </property>
+                <property name="fontScaleMode">
+                    <enum>ESimpleLabel::WidthAndHeight</enum>
+                </property>
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>80</y>
+                        <width>20</width>
+                        <height>20</height>
+                    </rect>
+                </property>
+                <property name="alignment">
+                    <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+            </widget>
+        </widget>
+        <widget class="caCartesianPlot" name="caCartesianPlot_6">
+            <property name="geometry">
+                <rect>
+                    <x>475</x>
+                    <y>115</y>
+                    <width>400</width>
+                    <height>200</height>
+                </rect>
+            </property>
+            <property name="scaleColor">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="Style_1">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_2">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="Style_3">
+                <enum>caCartesianPlot::Lines</enum>
+            </property>
+            <property name="symbol_1">
+                <enum>caCartesianPlot::NoSymbol</enum>
+            </property>
+            <property name="symbol_2">
+                <enum>caCartesianPlot::Rect</enum>
+            </property>
+            <property name="symbol_3">
+                <enum>caCartesianPlot::Triangle</enum>
+            </property>
+            <property name="color_1">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="channels_1">
+                <string>;$(P)$(Q)pixelTriggerDma.VALC</string>
+            </property>
+            <property name="XaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="XaxisLimits">
+                <string>0;1</string>
+            </property>
+            <property name="YaxisScaling">
+                <enum>caCartesianPlot::Auto</enum>
+            </property>
+            <property name="YaxisLimits">
+                <string>0;1</string>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_13">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>s3</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>455</x>
+                    <y>195</y>
+                    <width>20</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_0">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>95</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s1name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_1">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>325</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s2name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_2">
+            <property name="geometry">
+                <rect>
+                    <x>475</x>
+                    <y>95</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s3name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_3">
+            <property name="geometry">
+                <rect>
+                    <x>475</x>
+                    <y>325</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s4name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_4">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>555</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s5name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_5">
+            <property name="geometry">
+                <rect>
+                    <x>475</x>
+                    <y>555</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s6name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_6">
+            <property name="geometry">
+                <rect>
+                    <x>30</x>
+                    <y>785</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)s7name</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignHCenter|Qt::AlignVCenter</set>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLabel" name="caLabel_14">
+            <property name="frameShape">
+                <enum>QFrame::NoFrame</enum>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="0">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="text">
+                <string>Events</string>
+            </property>
+            <property name="fontScaleMode">
+                <enum>ESimpleLabel::WidthAndHeight</enum>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>655</x>
+                    <y>45</y>
+                    <width>140</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_7">
+            <property name="geometry">
+                <rect>
+                    <x>800</x>
+                    <y>45</y>
+                    <width>80</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)pixelTriggerDma.VALH</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>10</red>
+                    <green>0</green>
+                    <blue>184</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
         <widget class="caTextEntry" name="caTextEntry_5">
             <property name="geometry">
                 <rect>
-                    <x>780</x>
-                    <y>70</y>
-                    <width>80</width>
+                    <x>720</x>
+                    <y>985</y>
+                    <width>30</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1021,7 +2164,7 @@ border-radius: 2px;
                 <enum>decimal</enum>
             </property>
         </widget>
-        <widget class="caLabel" name="caLabel_8">
+        <widget class="caLabel" name="caLabel_15">
             <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
             </property>
@@ -1047,8 +2190,8 @@ border-radius: 2px;
             </property>
             <property name="geometry">
                 <rect>
-                    <x>725</x>
-                    <y>70</y>
+                    <x>665</x>
+                    <y>985</y>
                     <width>50</width>
                     <height>20</height>
                 </rect>
@@ -1057,354 +2200,58 @@ border-radius: 2px;
                 <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
         </widget>
-        <widget class="caRelatedDisplay" name="caRelatedDisplay_0">
+        <widget class="caTextEntry" name="caTextEntry_6">
             <property name="geometry">
                 <rect>
-                    <x>820</x>
-                    <y>930</y>
-                    <width>70</width>
+                    <x>800</x>
+                    <y>65</y>
+                    <width>80</width>
                     <height>20</height>
                 </rect>
             </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>$(P)$(Q)pixelTriggerDma.P</string>
+            </property>
             <property name="foreground">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="255">
-                    <red>51</red>
-                    <green>153</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="label">
-                <string>-Less</string>
-            </property>
-            <property name="stackingMode">
-                <enum>Menu</enum>
-            </property>
-            <property name="labels">
-                <string>pixelTriggerDma.adl</string>
-            </property>
-            <property name="files">
-                <string>pixelTriggerDma.adl</string>
-            </property>
-            <property name="args">
-                <string>P=$(P),Q=$(Q),H=$(H)</string>
-            </property>
-            <property name="removeParent">
-                <string>true</string>
-            </property>
-        </widget>
-        <widget class="caFrame" name="caFrame_3">
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>95</y>
-                    <width>867</width>
-                    <height>202</height>
-                </rect>
-            </property>
-            <widget class="caFrame" name="caFrame_4">
-                <property name="geometry">
-                    <rect>
-                        <x>0</x>
-                        <y>0</y>
-                        <width>867</width>
-                        <height>202</height>
-                    </rect>
-                </property>
-                <widget class="caCartesianPlot" name="caCartesianPlot_0">
-                    <property name="geometry">
-                        <rect>
-                            <x>20</x>
-                            <y>0</y>
-                            <width>400</width>
-                            <height>200</height>
-                        </rect>
-                    </property>
-                    <property name="scaleColor">
-                        <color alpha="255">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="foreground">
-                        <color alpha="255">
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="background">
-                        <color alpha="255">
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="color_1">
-                        <color alpha="255">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="channels_1">
-                        <string>;$(P)$(Q)pixelTriggerDma.VALA</string>
-                    </property>
-                    <property name="XaxisScaling">
-                        <enum>caCartesianPlot::Auto</enum>
-                    </property>
-                    <property name="XaxisLimits">
-                        <string>0;1</string>
-                    </property>
-                    <property name="YaxisScaling">
-                        <enum>caCartesianPlot::Auto</enum>
-                    </property>
-                    <property name="YaxisLimits">
-                        <string>0;1</string>
-                    </property>
-                    <property name="Style_1">
-                        <enum>caCartesianPlot::Dots</enum>
-                    </property>
-                    <property name="Style_2">
-                        <enum>caCartesianPlot::Dots</enum>
-                    </property>
-                    <property name="Style_3">
-                        <enum>caCartesianPlot::Dots</enum>
-                    </property>
-                    <property name="symbol_1">
-                        <enum>caCartesianPlot::NoSymbol</enum>
-                    </property>
-                    <property name="symbol_2">
-                        <enum>caCartesianPlot::Rect</enum>
-                    </property>
-                    <property name="symbol_3">
-                        <enum>caCartesianPlot::Triangle</enum>
-                    </property>
-                </widget>
-                <widget class="caLabel" name="caLabel_9">
-                    <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                    </property>
-                    <property name="foreground">
-                        <color alpha="255">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="background">
-                        <color alpha="0">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="text">
-                        <string>s1</string>
-                    </property>
-                    <property name="fontScaleMode">
-                        <enum>ESimpleLabel::WidthAndHeight</enum>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>0</x>
-                            <y>80</y>
-                            <width>20</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                    <property name="alignment">
-                        <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-                    </property>
-                </widget>
-                <widget class="caCartesianPlot" name="caCartesianPlot_1">
-                    <property name="geometry">
-                        <rect>
-                            <x>465</x>
-                            <y>0</y>
-                            <width>400</width>
-                            <height>200</height>
-                        </rect>
-                    </property>
-                    <property name="scaleColor">
-                        <color alpha="255">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="foreground">
-                        <color alpha="255">
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="background">
-                        <color alpha="255">
-                            <red>255</red>
-                            <green>255</green>
-                            <blue>255</blue>
-                        </color>
-                    </property>
-                    <property name="color_1">
-                        <color alpha="255">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="channels_1">
-                        <string>;$(P)$(Q)pixelTriggerDma.VALB</string>
-                    </property>
-                    <property name="XaxisScaling">
-                        <enum>caCartesianPlot::Auto</enum>
-                    </property>
-                    <property name="XaxisLimits">
-                        <string>0;1</string>
-                    </property>
-                    <property name="YaxisScaling">
-                        <enum>caCartesianPlot::Auto</enum>
-                    </property>
-                    <property name="YaxisLimits">
-                        <string>0;1</string>
-                    </property>
-                    <property name="Style_1">
-                        <enum>caCartesianPlot::Dots</enum>
-                    </property>
-                    <property name="Style_2">
-                        <enum>caCartesianPlot::Dots</enum>
-                    </property>
-                    <property name="Style_3">
-                        <enum>caCartesianPlot::Dots</enum>
-                    </property>
-                    <property name="symbol_1">
-                        <enum>caCartesianPlot::NoSymbol</enum>
-                    </property>
-                    <property name="symbol_2">
-                        <enum>caCartesianPlot::Rect</enum>
-                    </property>
-                    <property name="symbol_3">
-                        <enum>caCartesianPlot::Triangle</enum>
-                    </property>
-                </widget>
-                <widget class="caLabel" name="caLabel_10">
-                    <property name="frameShape">
-                        <enum>QFrame::NoFrame</enum>
-                    </property>
-                    <property name="foreground">
-                        <color alpha="255">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="background">
-                        <color alpha="0">
-                            <red>0</red>
-                            <green>0</green>
-                            <blue>0</blue>
-                        </color>
-                    </property>
-                    <property name="text">
-                        <string>s2</string>
-                    </property>
-                    <property name="fontScaleMode">
-                        <enum>ESimpleLabel::WidthAndHeight</enum>
-                    </property>
-                    <property name="geometry">
-                        <rect>
-                            <x>445</x>
-                            <y>80</y>
-                            <width>20</width>
-                            <height>20</height>
-                        </rect>
-                    </property>
-                    <property name="alignment">
-                        <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-                    </property>
-                </widget>
-            </widget>
-        </widget>
-        <widget class="caCartesianPlot" name="caCartesianPlot_2">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>305</y>
-                    <width>400</width>
-                    <height>200</height>
-                </rect>
-            </property>
-            <property name="scaleColor">
                 <color alpha="255">
                     <red>0</red>
                     <green>0</green>
                     <blue>0</blue>
                 </color>
             </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
             <property name="background">
                 <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
+                    <red>115</red>
+                    <green>223</green>
                     <blue>255</blue>
                 </color>
             </property>
-            <property name="color_1">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
             </property>
-            <property name="channels_1">
-                <string>;$(P)$(Q)pixelTriggerDma.VALC</string>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
             </property>
-            <property name="XaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
             </property>
-            <property name="XaxisLimits">
-                <string>0;1</string>
+            <property name="minValue">
+                <double>0.0</double>
             </property>
-            <property name="YaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
+            <property name="maxValue">
+                <double>1.0</double>
             </property>
-            <property name="YaxisLimits">
-                <string>0;1</string>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
             </property>
-            <property name="Style_1">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_2">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_3">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="symbol_1">
-                <enum>caCartesianPlot::NoSymbol</enum>
-            </property>
-            <property name="symbol_2">
-                <enum>caCartesianPlot::Rect</enum>
-            </property>
-            <property name="symbol_3">
-                <enum>caCartesianPlot::Triangle</enum>
+            <property name="formatType">
+                <enum>decimal</enum>
             </property>
         </widget>
-        <widget class="caLabel" name="caLabel_11">
+        <widget class="caLabel" name="caLabel_16">
             <property name="frameShape">
                 <enum>QFrame::NoFrame</enum>
             </property>
@@ -1423,444 +2270,16 @@ border-radius: 2px;
                 </color>
             </property>
             <property name="text">
-                <string>s3</string>
+                <string>Desired events</string>
             </property>
             <property name="fontScaleMode">
                 <enum>ESimpleLabel::WidthAndHeight</enum>
             </property>
             <property name="geometry">
                 <rect>
-                    <x>10</x>
-                    <y>385</y>
-                    <width>20</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="alignment">
-                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-        </widget>
-        <widget class="caCartesianPlot" name="caCartesianPlot_3">
-            <property name="geometry">
-                <rect>
-                    <x>475</x>
-                    <y>305</y>
-                    <width>400</width>
-                    <height>200</height>
-                </rect>
-            </property>
-            <property name="scaleColor">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="color_1">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="channels_1">
-                <string>;$(P)$(Q)pixelTriggerDma.VALD</string>
-            </property>
-            <property name="XaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="XaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="YaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="YaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="Style_1">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_2">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_3">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="symbol_1">
-                <enum>caCartesianPlot::NoSymbol</enum>
-            </property>
-            <property name="symbol_2">
-                <enum>caCartesianPlot::Rect</enum>
-            </property>
-            <property name="symbol_3">
-                <enum>caCartesianPlot::Triangle</enum>
-            </property>
-        </widget>
-        <widget class="caLabel" name="caLabel_12">
-            <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>s4</string>
-            </property>
-            <property name="fontScaleMode">
-                <enum>ESimpleLabel::WidthAndHeight</enum>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>455</x>
-                    <y>385</y>
-                    <width>20</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="alignment">
-                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-        </widget>
-        <widget class="caCartesianPlot" name="caCartesianPlot_4">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>515</y>
-                    <width>400</width>
-                    <height>200</height>
-                </rect>
-            </property>
-            <property name="scaleColor">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="color_1">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="channels_1">
-                <string>;$(P)$(Q)pixelTriggerDma.VALE</string>
-            </property>
-            <property name="XaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="XaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="YaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="YaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="Style_1">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_2">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_3">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="symbol_1">
-                <enum>caCartesianPlot::NoSymbol</enum>
-            </property>
-            <property name="symbol_2">
-                <enum>caCartesianPlot::Rect</enum>
-            </property>
-            <property name="symbol_3">
-                <enum>caCartesianPlot::Triangle</enum>
-            </property>
-        </widget>
-        <widget class="caLabel" name="caLabel_13">
-            <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>s5</string>
-            </property>
-            <property name="fontScaleMode">
-                <enum>ESimpleLabel::WidthAndHeight</enum>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>595</y>
-                    <width>20</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="alignment">
-                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-        </widget>
-        <widget class="caCartesianPlot" name="caCartesianPlot_5">
-            <property name="geometry">
-                <rect>
-                    <x>475</x>
-                    <y>515</y>
-                    <width>400</width>
-                    <height>200</height>
-                </rect>
-            </property>
-            <property name="scaleColor">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="color_1">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="channels_1">
-                <string>;$(P)$(Q)pixelTriggerDma.VALF</string>
-            </property>
-            <property name="XaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="XaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="YaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="YaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="Style_1">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_2">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_3">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="symbol_1">
-                <enum>caCartesianPlot::NoSymbol</enum>
-            </property>
-            <property name="symbol_2">
-                <enum>caCartesianPlot::Rect</enum>
-            </property>
-            <property name="symbol_3">
-                <enum>caCartesianPlot::Triangle</enum>
-            </property>
-        </widget>
-        <widget class="caLabel" name="caLabel_14">
-            <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>s6</string>
-            </property>
-            <property name="fontScaleMode">
-                <enum>ESimpleLabel::WidthAndHeight</enum>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>455</x>
-                    <y>595</y>
-                    <width>20</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="alignment">
-                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-        </widget>
-        <widget class="caCartesianPlot" name="caCartesianPlot_6">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>725</y>
-                    <width>400</width>
-                    <height>200</height>
-                </rect>
-            </property>
-            <property name="scaleColor">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="255">
-                    <red>255</red>
-                    <green>255</green>
-                    <blue>255</blue>
-                </color>
-            </property>
-            <property name="color_1">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="channels_1">
-                <string>;$(P)$(Q)pixelTriggerDma.VALG</string>
-            </property>
-            <property name="XaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="XaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="YaxisScaling">
-                <enum>caCartesianPlot::Auto</enum>
-            </property>
-            <property name="YaxisLimits">
-                <string>0;1</string>
-            </property>
-            <property name="Style_1">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_2">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="Style_3">
-                <enum>caCartesianPlot::Dots</enum>
-            </property>
-            <property name="symbol_1">
-                <enum>caCartesianPlot::NoSymbol</enum>
-            </property>
-            <property name="symbol_2">
-                <enum>caCartesianPlot::Rect</enum>
-            </property>
-            <property name="symbol_3">
-                <enum>caCartesianPlot::Triangle</enum>
-            </property>
-        </widget>
-        <widget class="caLabel" name="caLabel_15">
-            <property name="frameShape">
-                <enum>QFrame::NoFrame</enum>
-            </property>
-            <property name="foreground">
-                <color alpha="255">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="background">
-                <color alpha="0">
-                    <red>0</red>
-                    <green>0</green>
-                    <blue>0</blue>
-                </color>
-            </property>
-            <property name="text">
-                <string>s7</string>
-            </property>
-            <property name="fontScaleMode">
-                <enum>ESimpleLabel::WidthAndHeight</enum>
-            </property>
-            <property name="geometry">
-                <rect>
-                    <x>10</x>
-                    <y>805</y>
-                    <width>20</width>
+                    <x>655</x>
+                    <y>65</y>
+                    <width>140</width>
                     <height>20</height>
                 </rect>
             </property>
@@ -1876,41 +2295,51 @@ border-radius: 2px;
         <zorder>caLabel_2</zorder>
         <zorder>caLabel_3</zorder>
         <zorder>caLabel_4</zorder>
-        <zorder>caLabel_5</zorder>
         <zorder>caFrame_1</zorder>
+        <zorder>caLabel_5</zorder>
         <zorder>caLabel_6</zorder>
-        <zorder>caLabel_7</zorder>
         <zorder>caFrame_2</zorder>
+        <zorder>caLabel_7</zorder>
         <zorder>caLabel_8</zorder>
         <zorder>caLabel_9</zorder>
         <zorder>caLabel_10</zorder>
-        <zorder>caFrame_4</zorder>
         <zorder>caFrame_3</zorder>
         <zorder>caLabel_11</zorder>
         <zorder>caLabel_12</zorder>
+        <zorder>caFrame_4</zorder>
         <zorder>caLabel_13</zorder>
         <zorder>caLabel_14</zorder>
         <zorder>caLabel_15</zorder>
+        <zorder>caLabel_16</zorder>
         <zorder>caMessageButton_0</zorder>
         <zorder>caTextEntry_0</zorder>
         <zorder>caTextEntry_1</zorder>
         <zorder>caMessageButton_1</zorder>
         <zorder>caMenu_0</zorder>
-        <zorder>caLineEdit_0</zorder>
         <zorder>caMenu_1</zorder>
         <zorder>caTextEntry_2</zorder>
         <zorder>caTextEntry_3</zorder>
         <zorder>caMenu_2</zorder>
         <zorder>caTextEntry_4</zorder>
-        <zorder>caTextEntry_5</zorder>
         <zorder>caRelatedDisplay_0</zorder>
         <zorder>caCartesianPlot_0</zorder>
         <zorder>caCartesianPlot_1</zorder>
         <zorder>caCartesianPlot_2</zorder>
+        <zorder>caRelatedDisplay_1</zorder>
         <zorder>caCartesianPlot_3</zorder>
         <zorder>caCartesianPlot_4</zorder>
         <zorder>caCartesianPlot_5</zorder>
         <zorder>caCartesianPlot_6</zorder>
+        <zorder>caLineEdit_0</zorder>
+        <zorder>caLineEdit_1</zorder>
+        <zorder>caLineEdit_2</zorder>
+        <zorder>caLineEdit_3</zorder>
+        <zorder>caLineEdit_4</zorder>
+        <zorder>caLineEdit_5</zorder>
+        <zorder>caLineEdit_6</zorder>
+        <zorder>caLineEdit_7</zorder>
+        <zorder>caTextEntry_5</zorder>
+        <zorder>caTextEntry_6</zorder>
     </widget>
 </widget>
 </ui>
