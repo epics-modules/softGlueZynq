@@ -24,6 +24,17 @@ Table of Contents
 - [Custom Interrupt Handlers](<#Custom Interrupt Handlers>)
 - [Implementation](#Implementation)
 
+- [Overview](#overview)
+- [Installation and deployment](#installation-and-deployment)
+- [User's Manual](#users-manual)
+- [Additional FPGA components](#additional-fpga-components)
+- [Miscellaneous configuration](#miscellaneous-configuration)
+- [Saving and restoring circuits](#saving-and-restoring-circuits)
+- [Example circuits](#example-circuits)
+- [Field wiring](#field-wiring)
+- [Custom Interrupt Handlers](#custom-interrupt-handlers)
+- [Implementation](#implementation)
+
 - - - - - -
 
 Overview
