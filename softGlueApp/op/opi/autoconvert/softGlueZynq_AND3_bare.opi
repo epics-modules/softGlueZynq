@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>softGlueZynq_AND3_bare</name>
+  <x>836</x>
+  <y>227</y>
+  <width>375</width>
+  <height>75</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>0</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="AND-$(N)_IN1" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>23</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="AND-$(N)_IN2" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>165</x>
+    <y>5</y>
+    <width>22</width>
+    <height>41</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Arc" version="1.0.0">
+    <x>164</x>
+    <y>5</y>
+    <width>42</width>
+    <height>41</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <start_angle>17280</start_angle>
+    <total_angle>11520</total_angle>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>205</x>
+    <y>25</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>154</x>
+    <y>13</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>217</x>
+    <y>12</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="AND-$(N)_OUT" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>154</x>
+    <y>36</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>170</x>
+    <y>20</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>AND-$(N)</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>182</x>
+    <y>49</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="AND-$(N)_IN2" />
+    </macros>
+  </widget>
+</display>

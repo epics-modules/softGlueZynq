@@ -213,6 +213,9 @@ pattern {SIG		ADDR}
 {IF_tracker-1_LOAD		262}
 {IF_tracker-1_CLEAR		263}
 
+{IF_tracker-2_CLEAR     266}
+{IF_tracker-3_CLEAR     267}
+
 {threshTrig-1_EN     264}
 {threshTrig-1_CLK    265}
 

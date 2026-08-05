@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_4BUFFERS_bare_label</name>
+  <x>582</x>
+  <y>478</y>
+  <width>383</width>
+  <height>170</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #1</name>
+    <pv_name>$(P)$(H)BUFFER-1_desc</pv_name>
+    <width>380</width>
+    <height>16</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #2</name>
+    <y>15</y>
+    <width>383</width>
+    <height>26</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="embedded" version="2.0.0">
+      <name>embedded #3</name>
+      <y>0</y>
+      <width>155</width>
+      <height>26</height>
+      <file>softGlueZynq_Input.bob</file>
+      <macros>
+        <P>$(P)</P>
+        <H>$(H)</H>
+        <SIG>BUFFER-1_IN</SIG>
+      </macros>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #4</name>
+      <x>214</x>
+      <y>13</y>
+      <width>15</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #5</name>
+      <x>154</x>
+      <y>13</y>
+      <width>12</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>embedded #6</name>
+      <x>226</x>
+      <y>0</y>
+      <width>157</width>
+      <height>26</height>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <P>$(P)</P>
+        <H>$(H)</H>
+        <SIG>BUFFER-1_OUT</SIG>
+      </macros>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>label #7</name>
+      <x>168</x>
+      <y>9</y>
+      <width>30</width>
+      <height>10</height>
+      <foreground_color>
+        <color red="42" green="99" blue="228" />
+      </foreground_color>
+      <text>BUF-1</text>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #8</name>
+      <x>163</x>
+      <y>5</y>
+      <width>50</width>
+      <height>17</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #9</name>
+    <pv_name>$(P)$(H)BUFFER-2_desc</pv_name>
+    <y>43</y>
+    <width>380</width>
+    <height>16</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #10</name>
+    <y>58</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>BUFFER-2_IN</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #11</name>
+    <x>214</x>
+    <y>71</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #12</name>
+    <x>154</x>
+    <y>71</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #13</name>
+    <x>226</x>
+    <y>58</y>
+    <width>157</width>
+    <height>26</height>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>BUFFER-2_OUT</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #14</name>
+    <x>168</x>
+    <y>67</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>BUF-2</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #15</name>
+    <x>163</x>
+    <y>63</y>
+    <width>50</width>
+    <height>17</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #16</name>
+    <pv_name>$(P)$(H)BUFFER-3_desc</pv_name>
+    <y>86</y>
+    <width>380</width>
+    <height>16</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #17</name>
+    <y>101</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>BUFFER-3_IN</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #18</name>
+    <x>214</x>
+    <y>114</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #19</name>
+    <x>154</x>
+    <y>114</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #20</name>
+    <x>226</x>
+    <y>101</y>
+    <width>157</width>
+    <height>26</height>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>BUFFER-3_OUT</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #21</name>
+    <x>168</x>
+    <y>110</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>BUF-3</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #22</name>
+    <x>163</x>
+    <y>106</y>
+    <width>50</width>
+    <height>17</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #23</name>
+    <pv_name>$(P)$(H)BUFFER-4_desc</pv_name>
+    <y>129</y>
+    <width>380</width>
+    <height>16</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #24</name>
+    <y>144</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>BUFFER-4_IN</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #25</name>
+    <x>214</x>
+    <y>157</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #26</name>
+    <x>154</x>
+    <y>157</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #27</name>
+    <x>226</x>
+    <y>144</y>
+    <width>157</width>
+    <height>26</height>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>BUFFER-4_OUT</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #28</name>
+    <x>168</x>
+    <y>153</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>BUF-4</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #29</name>
+    <x>163</x>
+    <y>149</y>
+    <width>50</width>
+    <height>17</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+</display>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_4BUFFERS</name>
+  <x>660</x>
+  <y>326</y>
+  <width>400</width>
+  <height>204</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #1</name>
+    <width>403</width>
+    <height>25</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="255" green="255" blue="255" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #2</name>
+    <x>200</x>
+    <width>200</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>4 BUFFERS</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #3</name>
+    <x>-1</x>
+    <y>24</y>
+    <width>403</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <line_width>3</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #4</name>
+    <x>10</x>
+    <y>30</y>
+    <width>383</width>
+    <height>41</height>
+    <file>softGlueZynq_BUFFER_bare_label.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <N>1</N>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #5</name>
+    <x>10</x>
+    <width>190</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>$(P)$(H)</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #6</name>
+    <x>10</x>
+    <y>73</y>
+    <width>383</width>
+    <height>41</height>
+    <file>softGlueZynq_BUFFER_bare_label.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <N>2</N>
+    </macros>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #7</name>
+    <x>10</x>
+    <y>116</y>
+    <width>383</width>
+    <height>41</height>
+    <file>softGlueZynq_BUFFER_bare_label.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <N>3</N>
+    </macros>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #8</name>
+    <x>10</x>
+    <y>159</y>
+    <width>383</width>
+    <height>41</height>
+    <file>softGlueZynq_BUFFER_bare_label.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <N>4</N>
+    </macros>
+  </widget>
+</display>

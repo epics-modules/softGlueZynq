@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>softGlueZynq_Zygo</name>
+  <x>68</x>
+  <y>64</y>
+  <width>480</width>
+  <height>160</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+    <x>0</x>
+    <y>0</y>
+    <width>483</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="255" green="255" blue="255" />
+    </line_color>
+    <line_width>1</line_width>
+    <line_style>0</line_style>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>0</y>
+    <width>235</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>Zygo $(N)</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>0</x>
+    <y>25</y>
+    <width>485</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <line_width>3</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>10</x>
+    <y>30</y>
+    <width>467</width>
+    <height>124</height>
+    <opi_file>softGlueZynq_Zygo_bare_label.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="N" value="$(N)" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>10</x>
+    <y>0</y>
+    <width>230</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>$(P)$(H)</text>
+  </widget>
+</display>

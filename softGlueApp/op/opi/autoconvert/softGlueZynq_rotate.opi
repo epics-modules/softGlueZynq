@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>softGlueZynq_rotate</name>
+  <x>744</x>
+  <y>393</y>
+  <width>461</width>
+  <height>90</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+    <x>163</x>
+    <y>0</y>
+    <width>132</width>
+    <height>90</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="0" green="0" blue="0" />
+    </line_color>
+    <line_width>2</line_width>
+    <line_style>0</line_style>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+    <x>196</x>
+    <y>5</y>
+    <width>70</width>
+    <height>14</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="42" green="99" blue="228" />
+    </line_color>
+    <line_width>1</line_width>
+    <line_style>0</line_style>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>204</x>
+    <y>8</y>
+    <width>60</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>FOCAL_XY</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>63</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>55</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ROTATE_Z</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>53</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>59</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>Z</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>37</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>29</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ROTATE_X</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>27</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>33</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>X</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>54</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>COSx1024</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>22</x>
+    <y>53</y>
+    <width>100</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ROTATE_COS</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>123</x>
+    <y>61</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>167</x>
+    <y>29</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>SINx1024</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>22</x>
+    <y>28</y>
+    <width>100</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ROTATE_SIN</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>122</x>
+    <y>36</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+</display>

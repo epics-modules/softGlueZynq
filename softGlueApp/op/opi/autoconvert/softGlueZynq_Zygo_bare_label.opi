@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>softGlueZynq_Zygo_bare_label</name>
+  <x>743</x>
+  <y>728</y>
+  <width>467</width>
+  <height>125</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>0</x>
+    <y>0</y>
+    <width>465</width>
+    <height>16</height>
+    <pv_name>$(P)$(H)Zygo-$(N)_desc</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>19</y>
+    <width>467</width>
+    <height>105</height>
+    <opi_file>softGlueZynq_Zygo_bare.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="N" value="$(N)" />
+    </macros>
+  </widget>
+</display>

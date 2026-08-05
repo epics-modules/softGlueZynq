@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>acquireDma_config</name>
+  <x>588</x>
+  <y>413</y>
+  <width>295</width>
+  <height>255</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+    <x>0</x>
+    <y>0</y>
+    <width>296</width>
+    <height>14</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="255" green="255" blue="255" />
+    </line_color>
+    <line_width>1</line_width>
+    <line_style>0</line_style>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>10</x>
+    <y>0</y>
+    <width>275</width>
+    <height>14</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>$(P)$(Q)acquireDma</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>0</x>
+    <y>15</y>
+    <width>294</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <line_width>3</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>50</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s1</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>75</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s2</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>100</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s3</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>125</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s4</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>150</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s5</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>175</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s6</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>50</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.I</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>75</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.J</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>100</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.K</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>125</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.L</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>150</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.M</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>175</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.N</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>45</x>
+    <y>25</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>scale</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>50</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s1name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>75</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s2name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>100</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s3name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>125</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s4name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>150</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s5name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>175</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s6name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>135</x>
+    <y>25</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>name</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>200</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s7</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>200</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.O</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>200</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s7name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>15</x>
+    <y>225</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>s8</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>45</x>
+    <y>225</y>
+    <width>80</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)acquireDma.P</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>135</x>
+    <y>225</y>
+    <width>150</width>
+    <height>20</height>
+    <pv_name>$(P)$(Q)s8name</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+</display>

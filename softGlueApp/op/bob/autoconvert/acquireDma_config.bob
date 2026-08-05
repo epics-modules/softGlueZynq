@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>acquireDma_config</name>
+  <x>588</x>
+  <y>413</y>
+  <width>295</width>
+  <height>255</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #1</name>
+    <width>296</width>
+    <height>14</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="255" green="255" blue="255" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #2</name>
+    <x>10</x>
+    <width>275</width>
+    <height>14</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>$(P)$(Q)acquireDma</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #3</name>
+    <y>15</y>
+    <width>294</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <line_width>3</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #4</name>
+    <x>15</x>
+    <y>50</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s1</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #5</name>
+    <x>15</x>
+    <y>75</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s2</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #6</name>
+    <x>15</x>
+    <y>100</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s3</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #7</name>
+    <x>15</x>
+    <y>125</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s4</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #8</name>
+    <x>15</x>
+    <y>150</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s5</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #9</name>
+    <x>15</x>
+    <y>175</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s6</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #10</name>
+    <pv_name>$(P)$(Q)acquireDma.I</pv_name>
+    <x>45</x>
+    <y>50</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #11</name>
+    <pv_name>$(P)$(Q)acquireDma.J</pv_name>
+    <x>45</x>
+    <y>75</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #12</name>
+    <pv_name>$(P)$(Q)acquireDma.K</pv_name>
+    <x>45</x>
+    <y>100</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #13</name>
+    <pv_name>$(P)$(Q)acquireDma.L</pv_name>
+    <x>45</x>
+    <y>125</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #14</name>
+    <pv_name>$(P)$(Q)acquireDma.M</pv_name>
+    <x>45</x>
+    <y>150</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #15</name>
+    <pv_name>$(P)$(Q)acquireDma.N</pv_name>
+    <x>45</x>
+    <y>175</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #16</name>
+    <x>45</x>
+    <y>25</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>scale</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #17</name>
+    <pv_name>$(P)$(Q)s1name</pv_name>
+    <x>135</x>
+    <y>50</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #18</name>
+    <pv_name>$(P)$(Q)s2name</pv_name>
+    <x>135</x>
+    <y>75</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #19</name>
+    <pv_name>$(P)$(Q)s3name</pv_name>
+    <x>135</x>
+    <y>100</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #20</name>
+    <pv_name>$(P)$(Q)s4name</pv_name>
+    <x>135</x>
+    <y>125</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #21</name>
+    <pv_name>$(P)$(Q)s5name</pv_name>
+    <x>135</x>
+    <y>150</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #22</name>
+    <pv_name>$(P)$(Q)s6name</pv_name>
+    <x>135</x>
+    <y>175</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #23</name>
+    <x>135</x>
+    <y>25</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>name</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #24</name>
+    <x>15</x>
+    <y>200</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s7</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #25</name>
+    <pv_name>$(P)$(Q)acquireDma.O</pv_name>
+    <x>45</x>
+    <y>200</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #26</name>
+    <pv_name>$(P)$(Q)s7name</pv_name>
+    <x>135</x>
+    <y>200</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #27</name>
+    <x>15</x>
+    <y>225</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s8</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #28</name>
+    <pv_name>$(P)$(Q)acquireDma.P</pv_name>
+    <x>45</x>
+    <y>225</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #29</name>
+    <pv_name>$(P)$(Q)s8name</pv_name>
+    <x>135</x>
+    <y>225</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+</display>

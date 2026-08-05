@@ -1,7 +1,7 @@
-$(P)$(H)IF_tracker-1_CLOCK_Signal
-$(P)$(H)IF_tracker-1_EN_Signal
-$(P)$(H)IF_tracker-1_CLEAR_Signal
-$(P)$(H)IF_tracker-1_MISSCLR_Signal
-$(P)$(H)IF_tracker-1_LOAD_Signal
-$(P)$(H)IF_tracker-1_LDVAL
-$(P)$(H)IF_tracker-1_MISS_Signal
+$(P)$(H)IF_tracker-$(N)_CLOCK_Signal
+$(P)$(H)IF_tracker-$(N)_EN_Signal
+$(P)$(H)IF_tracker-$(N)_CLEAR_Signal
+$(P)$(H)IF_tracker-$(N)_MISSCLR_Signal
+$(P)$(H)IF_tracker-$(N)_LOAD_Signal
+$(P)$(H)IF_tracker-$(N)_LDVAL
+$(P)$(H)IF_tracker-$(N)_MISS_Signal

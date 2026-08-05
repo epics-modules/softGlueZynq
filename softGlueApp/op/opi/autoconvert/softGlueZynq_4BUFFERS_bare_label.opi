@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>softGlueZynq_4BUFFERS_bare_label</name>
+  <x>582</x>
+  <y>478</y>
+  <width>383</width>
+  <height>170</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>0</x>
+    <y>0</y>
+    <width>380</width>
+    <height>16</height>
+    <pv_name>$(P)$(H)BUFFER-1_desc</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>0</x>
+    <y>15</y>
+    <width>383</width>
+    <height>26</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>155</width>
+      <height>26</height>
+      <opi_file>softGlueZynq_Input.opi</opi_file>
+      <resize_behaviour>1</resize_behaviour>
+      <border_style>0</border_style>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+        <macro name="P" value="$(P)" />
+        <macro name="H" value="$(H)" />
+        <macro name="SIG" value="BUFFER-1_IN" />
+      </macros>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>214</x>
+      <y>13</y>
+      <width>15</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>154</x>
+      <y>13</y>
+      <width>12</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+      <x>226</x>
+      <y>0</y>
+      <width>157</width>
+      <height>26</height>
+      <opi_file>softGlueZynq_Output.opi</opi_file>
+      <resize_behaviour>1</resize_behaviour>
+      <border_style>0</border_style>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+        <macro name="P" value="$(P)" />
+        <macro name="H" value="$(H)" />
+        <macro name="SIG" value="BUFFER-1_OUT" />
+      </macros>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <x>168</x>
+      <y>9</y>
+      <width>30</width>
+      <height>10</height>
+      <foreground_color>
+        <color red="42" green="99" blue="228" />
+      </foreground_color>
+      <transparent>true</transparent>
+      <text>BUF-1</text>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>163</x>
+      <y>5</y>
+      <width>50</width>
+      <height>17</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>0</x>
+    <y>43</y>
+    <width>380</width>
+    <height>16</height>
+    <pv_name>$(P)$(H)BUFFER-2_desc</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>58</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="BUFFER-2_IN" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>214</x>
+    <y>71</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>154</x>
+    <y>71</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>226</x>
+    <y>58</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="BUFFER-2_OUT" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>67</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>BUF-2</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>163</x>
+    <y>63</y>
+    <width>50</width>
+    <height>17</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>0</x>
+    <y>86</y>
+    <width>380</width>
+    <height>16</height>
+    <pv_name>$(P)$(H)BUFFER-3_desc</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>101</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="BUFFER-3_IN" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>214</x>
+    <y>114</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>154</x>
+    <y>114</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>226</x>
+    <y>101</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="BUFFER-3_OUT" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>110</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>BUF-3</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>163</x>
+    <y>106</y>
+    <width>50</width>
+    <height>17</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>0</x>
+    <y>129</y>
+    <width>380</width>
+    <height>16</height>
+    <pv_name>$(P)$(H)BUFFER-4_desc</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>144</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="BUFFER-4_IN" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>214</x>
+    <y>157</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>154</x>
+    <y>157</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>226</x>
+    <y>144</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="BUFFER-4_OUT" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>153</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>BUF-4</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>163</x>
+    <y>149</y>
+    <width>50</width>
+    <height>17</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+</display>

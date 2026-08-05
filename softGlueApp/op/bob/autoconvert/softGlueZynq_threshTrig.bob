@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_threshTrig</name>
+  <x>868</x>
+  <y>559</y>
+  <width>493</width>
+  <height>162</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #1</name>
+    <width>493</width>
+    <height>25</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="255" green="255" blue="255" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #2</name>
+    <x>240</x>
+    <width>250</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>Threshold Trigger</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #3</name>
+    <y>25</y>
+    <width>494</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <line_width>3</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #4</name>
+    <x>10</x>
+    <y>48</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>threshTrig-1_EN</SIG>
+    </macros>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #5</name>
+    <x>10</x>
+    <y>71</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>threshTrig-1_CLK</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>163</x>
+    <y>84</y>
+    <width>13</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #7</name>
+    <x>163</x>
+    <y>61</y>
+    <width>13</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #8</name>
+    <x>173</x>
+    <y>56</y>
+    <width>132</width>
+    <height>95</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="0" green="0" blue="0" />
+    </line_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #9</name>
+    <x>172</x>
+    <y>77</y>
+    <width>11</width>
+    <height>16</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #10</name>
+    <x>302</x>
+    <y>94</y>
+    <width>19</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #11</name>
+    <x>273</x>
+    <y>90</y>
+    <width>24</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>TRIG</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #12</name>
+    <x>179</x>
+    <y>59</y>
+    <width>10</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>EN</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #13</name>
+    <pv_name>$(P)$(H)threshTrig-1_POSTHR</pv_name>
+    <x>54</x>
+    <y>105</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #14</name>
+    <x>177</x>
+    <y>109</y>
+    <width>70</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>POS THRESH</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #15</name>
+    <x>196</x>
+    <y>61</y>
+    <width>89</width>
+    <height>14</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="42" green="99" blue="228" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #16</name>
+    <x>317</x>
+    <y>81</y>
+    <width>157</width>
+    <height>26</height>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>threshTrig-1_TRIG</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #17</name>
+    <x>200</x>
+    <y>64</y>
+    <width>50</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>threshTrig-1</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #18</name>
+    <pv_name>$(P)$(H)threshTrig-1_desc</pv_name>
+    <x>10</x>
+    <y>30</y>
+    <width>470</width>
+    <height>16</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #19</name>
+    <x>10</x>
+    <width>240</width>
+    <height>25</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>$(P)$(H)</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #20</name>
+    <pv_name>$(P)$(H)threshTrig-1_NEGTHR</pv_name>
+    <x>54</x>
+    <y>128</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #21</name>
+    <x>177</x>
+    <y>130</y>
+    <width>70</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>NEG THRESH</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #22</name>
+    <x>134</x>
+    <y>113</y>
+    <width>41</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #23</name>
+    <x>134</x>
+    <y>136</y>
+    <width>41</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+</display>

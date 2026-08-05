@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>acquireDma</name>
+  <x>696</x>
+  <y>425</y>
+  <width>890</width>
+  <height>340</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #1</name>
+    <width>890</width>
+    <height>14</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="255" green="255" blue="255" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #2</name>
+    <width>890</width>
+    <height>14</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>$(P)$(Q)acquireDma</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #3</name>
+    <y>15</y>
+    <width>890</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <line_width>3</line_width>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>action_button #4</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(Q)acquireDma.D</pv_name>
+        <value>1</value>
+        <description>Write</description>
+      </action>
+    </actions>
+    <pv_name>$(P)$(Q)acquireDma.D</pv_name>
+    <text>Clear</text>
+    <x>100</x>
+    <y>40</y>
+    <width>75</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>action_button #5</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(Q)acquireDma.PROC</pv_name>
+        <value>1</value>
+        <description>Write</description>
+      </action>
+    </actions>
+    <pv_name>$(P)$(Q)acquireDma.PROC</pv_name>
+    <text>Read</text>
+    <x>25</x>
+    <y>40</y>
+    <width>75</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>combo #6</name>
+    <pv_name>$(P)$(Q)acquireDma.SCAN</pv_name>
+    <x>25</x>
+    <y>20</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="combo" version="2.0.0">
+    <name>combo #7</name>
+    <pv_name>$(P)$(Q)acquireDmaEnable</pv_name>
+    <x>265</x>
+    <y>20</y>
+    <width>150</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #8</name>
+    <x>30</x>
+    <y>115</y>
+    <width>400</width>
+    <height>200</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="253" green="0" blue="0" />
+    </line_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #9</name>
+    <x>10</x>
+    <y>195</y>
+    <width>20</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s1</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #10</name>
+    <x>475</x>
+    <y>115</y>
+    <width>400</width>
+    <height>200</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="253" green="0" blue="0" />
+    </line_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #11</name>
+    <x>455</x>
+    <y>195</y>
+    <width>20</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>s2</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>action_button #12</name>
+    <text>More</text>
+    <x>820</x>
+    <y>320</y>
+    <width>70</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="255" green="255" blue="255" />
+    </foreground_color>
+    <background_color>
+      <color red="51" green="153" blue="0" />
+    </background_color>
+    <actions>
+      <action type="open_display">
+        <file>acquireDma_more.bob</file>
+        <macros>
+          <P>$(P)</P>
+          <Q>$(Q)</Q>
+          <H>$(H)</H>
+        </macros>
+        <target>replace</target>
+        <description>acquireDma_more.adl</description>
+      </action>
+      <action type="open_display">
+        <file>acquireDmaListFFT.bob</file>
+        <macros>
+          <P>$(P)</P>
+          <Q>$(Q)</Q>
+        </macros>
+        <target>tab</target>
+        <description>acquireDmaListFFT.adl</description>
+      </action>
+      <action type="open_display">
+        <file>acquireDma_config.bob</file>
+        <macros>
+          <P>$(P)</P>
+          <Q>$(Q)</Q>
+          <H>$(H)</H>
+        </macros>
+        <target>tab</target>
+        <description>config</description>
+      </action>
+    </actions>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #13</name>
+    <pv_name>$(P)$(Q)s1name</pv_name>
+    <x>30</x>
+    <y>95</y>
+    <width>400</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #14</name>
+    <pv_name>$(P)$(Q)s2name</pv_name>
+    <x>475</x>
+    <y>95</y>
+    <width>400</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #15</name>
+    <x>245</x>
+    <y>40</y>
+    <width>225</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>label #16</name>
+      <x>0</x>
+      <y>0</y>
+      <width>140</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <text>Events</text>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="textupdate" version="2.0.0">
+      <name>textupdate #17</name>
+      <pv_name>$(P)$(Q)acquireDma.VALI</pv_name>
+      <x>145</x>
+      <y>0</y>
+      <width>80</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="10" green="0" blue="184" />
+      </foreground_color>
+      <background_color>
+        <color red="218" green="218" blue="218" />
+      </background_color>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #18</name>
+    <x>655</x>
+    <y>65</y>
+    <width>140</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>words in cbuf</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #19</name>
+    <pv_name>$(P)$(Q)acquireDma.VALJ</pv_name>
+    <x>800</x>
+    <y>65</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="action_button" version="3.0.0">
+    <name>action_button #20</name>
+    <actions>
+      <action type="write_pv">
+        <pv_name>$(P)$(Q)acquireDma.F</pv_name>
+        <value>1</value>
+        <description>Write</description>
+      </action>
+    </actions>
+    <pv_name>$(P)$(Q)acquireDma.F</pv_name>
+    <text>Clear Buffer</text>
+    <x>650</x>
+    <y>30</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #21</name>
+    <x>735</x>
+    <y>320</y>
+    <width>85</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>label #22</name>
+      <x>0</x>
+      <y>0</y>
+      <width>50</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <text>debug</text>
+      <transparent>true</transparent>
+    </widget>
+    <widget type="textentry" version="3.0.0">
+      <name>textentry #23</name>
+      <pv_name>$(P)$(Q)acquireDma.H</pv_name>
+      <x>55</x>
+      <y>0</y>
+      <width>30</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <background_color>
+        <color red="115" green="223" blue="255" />
+      </background_color>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #24</name>
+    <x>380</x>
+    <y>70</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>plotBank</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #25</name>
+    <pv_name>$(P)$(Q)acquireDma.A</pv_name>
+    <x>460</x>
+    <y>70</y>
+    <width>30</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+</display>

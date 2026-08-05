@@ -1,0 +1,1386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display typeId="org.csstudio.opibuilder.Display" version="1.0.0">
+  <name>softGlueZynq_ACQ427</name>
+  <x>587</x>
+  <y>132</y>
+  <width>667</width>
+  <height>310</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <foreground_color>
+    <color red="0" green="0" blue="0" />
+  </foreground_color>
+  <show_grid>false</show_grid>
+  <snap_to_grid>false</snap_to_grid>
+  <auto_zoom_to_fit_all>false</auto_zoom_to_fit_all>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>153</x>
+    <y>17</y>
+    <width>13</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+    <x>163</x>
+    <y>-44</y>
+    <width>132</width>
+    <height>350</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="0" green="0" blue="0" />
+    </line_color>
+    <line_width>2</line_width>
+    <line_style>0</line_style>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>12</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>INIT</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Rectangle" version="1.0.0">
+    <x>200</x>
+    <y>5</y>
+    <width>50</width>
+    <height>14</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="42" green="99" blue="228" />
+    </line_color>
+    <line_width>1</line_width>
+    <line_style>0</line_style>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>208</x>
+    <y>8</y>
+    <width>40</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ACQ427</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>4</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="DAC_INIT" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>23</x>
+    <y>118</y>
+    <width>100</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)DAC2_VAL</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>119</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>CH2</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>123</x>
+    <y>126</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+    <x>23</x>
+    <y>140</y>
+    <width>100</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)DAC3_VAL</pv_name>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>141</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>CH3</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>123</x>
+    <y>148</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>153</x>
+    <y>249</y>
+    <width>13</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>168</x>
+    <y>244</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>INIT</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>236</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="ADC_RESET" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>149</x>
+    <y>271</y>
+    <width>16</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>259</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="ADC_DISABLE" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>167</x>
+    <y>265</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>DIS</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>149</x>
+    <y>294</y>
+    <width>16</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>282</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="ADC_START_CVT" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>167</x>
+    <y>288</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>CVT</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>293</y>
+    <width>19</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>250</x>
+    <y>290</y>
+    <width>40</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>VALID</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>310</x>
+    <y>280</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="ADC_DATA_VALID" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>33</y>
+    <width>19</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>244</x>
+    <y>30</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>DAC_SPI</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>310</x>
+    <y>20</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="DAC_SPI" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>55</y>
+    <width>19</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>230</x>
+    <y>52</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>DAC_SYNC</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>310</x>
+    <y>42</y>
+    <width>157</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Output.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="DAC_SYNC" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>159</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC4</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>163</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>109</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC2</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>113</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>84</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC1</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>88</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>155</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC4</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>153</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>105</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC2</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>103</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>80</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC1</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>78</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>134</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC3</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>138</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>133</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC3</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>128</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>259</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC8</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>263</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>209</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC6</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>213</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>184</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC5</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>188</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>255</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC8</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>253</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>205</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC6</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>203</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>180</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC5</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>178</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>240</x>
+    <y>234</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>ADC7</text>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>293</x>
+    <y>238</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>312</x>
+    <y>233</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC7</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>307</x>
+    <y>228</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>157</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC4</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>155</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>107</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC2</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>105</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>82</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC1</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>80</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>135</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC3</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>130</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>257</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC8</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>255</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>207</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC6</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>205</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>182</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC5</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>180</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.TextUpdate" version="1.0.0">
+    <x>464</x>
+    <y>235</y>
+    <width>128</width>
+    <height>20</height>
+    <pv_name>$(P)$(H)ADC7</pv_name>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+    <show_units>false</show_units>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>459</x>
+    <y>230</y>
+    <width>136</width>
+    <height>24</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>23</x>
+    <y>163</y>
+    <width>175</width>
+    <height>20</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>20</height>
+      <pv_name>$(P)$(H)DAC4_VAL</pv_name>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <background_color>
+        <color red="115" green="223" blue="255" />
+      </background_color>
+      <show_units>false</show_units>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <x>145</x>
+      <y>0</y>
+      <width>30</width>
+      <height>13</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <transparent>true</transparent>
+      <text>CH4</text>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>100</x>
+      <y>7</y>
+      <width>40</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>23</x>
+    <y>56</y>
+    <width>175</width>
+    <height>20</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.TextInput" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>20</height>
+      <pv_name>$(P)$(H)DAC1_VAL</pv_name>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <background_color>
+        <color red="115" green="223" blue="255" />
+      </background_color>
+      <show_units>false</show_units>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <x>145</x>
+      <y>1</y>
+      <width>30</width>
+      <height>13</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <transparent>true</transparent>
+      <text>CH1</text>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>100</x>
+      <y>8</y>
+      <width>40</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.groupingContainer" version="1.0.0">
+    <x>0</x>
+    <y>27</y>
+    <width>197</width>
+    <height>26</height>
+    <transparent>true</transparent>
+    <show_scrollbar>false</show_scrollbar>
+    <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+      <x>149</x>
+      <y>12</y>
+      <width>16</width>
+      <height>3</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+      <x>0</x>
+      <y>0</y>
+      <width>155</width>
+      <height>26</height>
+      <opi_file>softGlueZynq_Input.opi</opi_file>
+      <resize_behaviour>1</resize_behaviour>
+      <border_style>0</border_style>
+      <macros>
+        <include_parent_macros>true</include_parent_macros>
+        <macro name="P" value="$(P)" />
+        <macro name="H" value="$(H)" />
+        <macro name="SIG" value="DAC_WRITE" />
+      </macros>
+    </widget>
+    <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+      <x>167</x>
+      <y>6</y>
+      <width>30</width>
+      <height>13</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <transparent>true</transparent>
+      <text>WRT</text>
+    </widget>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Polyline" version="1.0.0">
+    <x>149</x>
+    <y>90</y>
+    <width>16</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.linkingContainer" version="1.0.0">
+    <x>0</x>
+    <y>78</y>
+    <width>155</width>
+    <height>26</height>
+    <opi_file>softGlueZynq_Input.opi</opi_file>
+    <resize_behaviour>1</resize_behaviour>
+    <border_style>0</border_style>
+    <macros>
+      <include_parent_macros>true</include_parent_macros>
+      <macro name="P" value="$(P)" />
+      <macro name="H" value="$(H)" />
+      <macro name="SIG" value="mux32_SEL" />
+    </macros>
+  </widget>
+  <widget typeId="org.csstudio.opibuilder.widgets.Label" version="1.0.0">
+    <x>167</x>
+    <y>84</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <transparent>true</transparent>
+    <text>DAC1_MAN</text>
+  </widget>
+</display>

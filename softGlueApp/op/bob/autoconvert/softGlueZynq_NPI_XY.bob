@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_NPI_XY</name>
+  <x>754</x>
+  <y>401</y>
+  <width>461</width>
+  <height>180</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #1</name>
+    <x>163</x>
+    <width>132</width>
+    <height>180</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="0" green="0" blue="0" />
+    </line_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #2</name>
+    <x>200</x>
+    <y>5</y>
+    <width>50</width>
+    <height>14</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="42" green="99" blue="228" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #3</name>
+    <x>208</x>
+    <y>8</y>
+    <width>40</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>NPI_XY</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #4</name>
+    <x>168</x>
+    <y>22</y>
+    <width>30</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>A</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #5</name>
+    <pv_name>$(P)$(H)NPI_Y_A</pv_name>
+    <x>23</x>
+    <y>21</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>123</x>
+    <y>29</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #7</name>
+    <x>167</x>
+    <y>82</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>X_SH_HI</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #8</name>
+    <x>167</x>
+    <y>104</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>X_SH_LO</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #9</name>
+    <pv_name>$(P)$(H)NPI_X_SH</pv_name>
+    <x>23</x>
+    <y>79</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #10</name>
+    <x>123</x>
+    <y>87</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #11</name>
+    <pv_name>$(P)$(H)NPI_X_SL</pv_name>
+    <x>23</x>
+    <y>102</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #12</name>
+    <x>123</x>
+    <y>110</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #13</name>
+    <x>167</x>
+    <y>137</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>Y_SH_HI</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #14</name>
+    <x>167</x>
+    <y>159</y>
+    <width>60</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>Y_SH_LO</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #15</name>
+    <pv_name>$(P)$(H)NPI_Y_SH</pv_name>
+    <x>23</x>
+    <y>134</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #16</name>
+    <x>123</x>
+    <y>142</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #17</name>
+    <pv_name>$(P)$(H)NPI_Y_SL</pv_name>
+    <x>23</x>
+    <y>157</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #18</name>
+    <x>123</x>
+    <y>165</y>
+    <width>40</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #19</name>
+    <x>226</x>
+    <y>139</y>
+    <width>233</width>
+    <height>26</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="label" version="2.0.0">
+      <name>label #20</name>
+      <x>0</x>
+      <y>9</y>
+      <width>65</width>
+      <height>13</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <text>Y SHUTTER</text>
+      <transparent>true</transparent>
+      <horizontal_alignment>2</horizontal_alignment>
+    </widget>
+    <widget type="embedded" version="2.0.0">
+      <name>embedded #21</name>
+      <x>76</x>
+      <y>0</y>
+      <width>157</width>
+      <height>26</height>
+      <file>softGlueZynq_Output.bob</file>
+      <macros>
+        <P>$(P)</P>
+        <H>$(H)</H>
+        <SIG>NPI_Y_SO</SIG>
+      </macros>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #22</name>
+      <x>68</x>
+      <y>13</y>
+      <width>11</width>
+      <height>2</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #23</name>
+    <x>228</x>
+    <y>94</y>
+    <width>65</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>X SHUTTER</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #24</name>
+    <x>304</x>
+    <y>85</y>
+    <width>157</width>
+    <height>26</height>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>NPI_X_SO</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #25</name>
+    <x>296</x>
+    <y>98</y>
+    <width>11</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #26</name>
+    <x>293</x>
+    <y>63</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #27</name>
+    <pv_name>$(P)$(H)NPI_Y</pv_name>
+    <x>312</x>
+    <y>55</y>
+    <width>128</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #28</name>
+    <x>307</x>
+    <y>53</y>
+    <width>136</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #29</name>
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #30</name>
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #31</name>
+    <x>240</x>
+    <y>59</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>Y</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #32</name>
+    <x>293</x>
+    <y>37</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #33</name>
+    <pv_name>$(P)$(H)NPI_X</pv_name>
+    <x>312</x>
+    <y>29</y>
+    <width>128</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #34</name>
+    <x>307</x>
+    <y>27</y>
+    <width>136</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #35</name>
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #36</name>
+      <x>0</x>
+      <y>0</y>
+      <width>135</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #37</name>
+    <x>240</x>
+    <y>33</y>
+    <width>50</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>X</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>2</horizontal_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #38</name>
+    <x>171</x>
+    <y>51</y>
+    <width>80</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>averageN_N</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #39</name>
+    <pv_name>$(P)$(H)averageN_N</pv_name>
+    <x>60</x>
+    <y>48</y>
+    <width>80</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #40</name>
+    <x>142</x>
+    <y>55</y>
+    <width>24</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+</display>

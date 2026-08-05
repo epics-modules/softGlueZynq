@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_AND3_bare</name>
+  <x>836</x>
+  <y>227</y>
+  <width>375</width>
+  <height>75</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #1</name>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>AND-$(N)_IN1</SIG>
+    </macros>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #2</name>
+    <y>23</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>AND-$(N)_IN2</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #3</name>
+    <x>165</x>
+    <y>5</y>
+    <width>22</width>
+    <height>41</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="arc" version="2.0.0">
+    <name>arc #4</name>
+    <x>164</x>
+    <y>5</y>
+    <width>42</width>
+    <height>41</height>
+    <background_color>
+      <color red="0" green="0" blue="0" />
+    </background_color>
+    <transparent>true</transparent>
+    <start_angle>17280</start_angle>
+    <total_angle>11520</total_angle>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #5</name>
+    <x>205</x>
+    <y>25</y>
+    <width>15</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>154</x>
+    <y>13</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #7</name>
+    <x>217</x>
+    <y>12</y>
+    <width>157</width>
+    <height>26</height>
+    <file>softGlueZynq_Output.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>AND-$(N)_OUT</SIG>
+    </macros>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #8</name>
+    <x>154</x>
+    <y>36</y>
+    <width>12</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #9</name>
+    <x>170</x>
+    <y>20</y>
+    <width>30</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>AND-$(N)</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #10</name>
+    <x>182</x>
+    <y>49</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>AND-$(N)_IN2</SIG>
+    </macros>
+  </widget>
+</display>

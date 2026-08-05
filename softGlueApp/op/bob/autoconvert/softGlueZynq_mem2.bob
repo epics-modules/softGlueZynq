@@ -1,0 +1,561 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<display version="2.0.0">
+  <name>softGlueZynq_mem2</name>
+  <x>852</x>
+  <y>575</y>
+  <width>460</width>
+  <height>250</height>
+  <background_color>
+    <color red="218" green="218" blue="218" />
+  </background_color>
+  <grid_visible>false</grid_visible>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #1</name>
+    <x>175</x>
+    <width>102</width>
+    <height>250</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="0" green="0" blue="0" />
+    </line_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #2</name>
+    <x>185</x>
+    <y>7</y>
+    <width>83</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="42" green="99" blue="228" />
+    </foreground_color>
+    <text>mem2</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>rectangle #3</name>
+    <x>179</x>
+    <y>4</y>
+    <width>93</width>
+    <height>14</height>
+    <transparent>true</transparent>
+    <line_color>
+      <color red="42" green="99" blue="228" />
+    </line_color>
+    <line_width>1</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #4</name>
+    <x>4</x>
+    <y>14</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>mem2_CLK</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #5</name>
+    <x>179</x>
+    <y>23</y>
+    <width>40</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>CLK</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #6</name>
+    <x>158</x>
+    <y>27</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #7</name>
+    <x>288</x>
+    <y>25</y>
+    <width>106</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #8</name>
+      <x>0</x>
+      <y>0</y>
+      <width>106</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #9</name>
+      <x>0</x>
+      <y>0</y>
+      <width>106</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #10</name>
+    <x>226</x>
+    <y>31</y>
+    <width>45</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>DOUT</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #11</name>
+    <x>274</x>
+    <y>35</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #12</name>
+    <pv_name>$(P)$(H)mem2_DOUT</pv_name>
+    <x>292</x>
+    <y>27</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #13</name>
+    <x>4</x>
+    <y>58</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>mem2_WRT</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #14</name>
+    <x>179</x>
+    <y>67</y>
+    <width>40</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>WRT</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #15</name>
+    <x>158</x>
+    <y>71</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #16</name>
+    <x>119</x>
+    <y>90</y>
+    <width>55</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #17</name>
+    <pv_name>$(P)$(H)mem2_ADDRA</pv_name>
+    <x>25</x>
+    <y>83</y>
+    <width>120</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #18</name>
+    <x>180</x>
+    <y>86</y>
+    <width>40</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>ADDRA</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #19</name>
+    <x>119</x>
+    <y>112</y>
+    <width>55</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #20</name>
+    <pv_name>$(P)$(H)mem2_DINA</pv_name>
+    <x>25</x>
+    <y>105</y>
+    <width>120</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #21</name>
+    <x>180</x>
+    <y>108</y>
+    <width>40</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>DINA</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #22</name>
+    <x>4</x>
+    <y>36</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>mem2_EN</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #23</name>
+    <x>179</x>
+    <y>45</y>
+    <width>40</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>EN</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #24</name>
+    <x>158</x>
+    <y>49</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="embedded" version="2.0.0">
+    <name>embedded #25</name>
+    <x>4</x>
+    <y>155</y>
+    <width>155</width>
+    <height>26</height>
+    <file>softGlueZynq_Input.bob</file>
+    <macros>
+      <P>$(P)</P>
+      <H>$(H)</H>
+      <SIG>driveRAMx_en</SIG>
+    </macros>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #26</name>
+    <x>179</x>
+    <y>164</y>
+    <width>40</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>OUTEN</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #27</name>
+    <x>158</x>
+    <y>168</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #28</name>
+    <x>119</x>
+    <y>142</y>
+    <width>55</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #29</name>
+    <pv_name>$(P)$(H)driveRAMx_N</pv_name>
+    <x>25</x>
+    <y>135</y>
+    <width>120</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #30</name>
+    <x>180</x>
+    <y>138</y>
+    <width>40</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>N</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #31</name>
+    <x>119</x>
+    <y>212</y>
+    <width>55</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #32</name>
+    <pv_name>$(P)$(H)driveRAMx_INC</pv_name>
+    <x>25</x>
+    <y>205</y>
+    <width>120</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #33</name>
+    <x>180</x>
+    <y>208</y>
+    <width>40</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>INCVAL</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #34</name>
+    <x>25</x>
+    <y>185</y>
+    <width>205</width>
+    <height>20</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="textentry" version="3.0.0">
+      <name>textentry #35</name>
+      <pv_name>$(P)$(H)driveRAMx_START</pv_name>
+      <x>0</x>
+      <y>0</y>
+      <width>120</width>
+      <height>20</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <background_color>
+        <color red="115" green="223" blue="255" />
+      </background_color>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #36</name>
+      <x>94</x>
+      <y>7</y>
+      <width>55</width>
+      <height>3</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="label" version="2.0.0">
+      <name>label #37</name>
+      <x>155</x>
+      <y>3</y>
+      <width>50</width>
+      <height>10</height>
+      <foreground_color>
+        <color red="0" green="0" blue="0" />
+      </foreground_color>
+      <text>STARTVAL</text>
+      <transparent>true</transparent>
+    </widget>
+  </widget>
+  <widget type="textentry" version="3.0.0">
+    <name>textentry #38</name>
+    <pv_name>$(P)$(H)driveRAMx_END</pv_name>
+    <x>25</x>
+    <y>225</y>
+    <width>120</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <background_color>
+      <color red="115" green="223" blue="255" />
+    </background_color>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #39</name>
+    <x>119</x>
+    <y>232</y>
+    <width>55</width>
+    <height>3</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #40</name>
+    <x>180</x>
+    <y>228</y>
+    <width>50</width>
+    <height>10</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>ENDVAL</text>
+    <transparent>true</transparent>
+  </widget>
+  <widget type="group" version="2.0.0">
+    <name>group #41</name>
+    <x>288</x>
+    <y>55</y>
+    <width>106</width>
+    <height>24</height>
+    <style>3</style>
+    <transparent>true</transparent>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #42</name>
+      <x>0</x>
+      <y>0</y>
+      <width>106</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="105" green="105" blue="105" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+    <widget type="polyline" version="2.0.0">
+      <name>polyline #43</name>
+      <x>0</x>
+      <y>0</y>
+      <width>106</width>
+      <height>24</height>
+      <foreground_color>
+        <color red="255" green="255" blue="255" />
+      </foreground_color>
+      <line_width>2</line_width>
+    </widget>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>label #44</name>
+    <x>226</x>
+    <y>61</y>
+    <width>45</width>
+    <height>13</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <text>RDOUT</text>
+    <transparent>true</transparent>
+    <horizontal_alignment>1</horizontal_alignment>
+  </widget>
+  <widget type="polyline" version="2.0.0">
+    <name>polyline #45</name>
+    <x>274</x>
+    <y>65</y>
+    <width>17</width>
+    <height>2</height>
+    <foreground_color>
+      <color red="0" green="0" blue="0" />
+    </foreground_color>
+    <line_width>2</line_width>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>textupdate #46</name>
+    <pv_name>$(P)$(H)mem2_RDOUT</pv_name>
+    <x>292</x>
+    <y>57</y>
+    <width>100</width>
+    <height>20</height>
+    <foreground_color>
+      <color red="10" green="0" blue="184" />
+    </foreground_color>
+    <background_color>
+      <color red="218" green="218" blue="218" />
+    </background_color>
+  </widget>
+</display>
