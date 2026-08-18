@@ -50,6 +50,7 @@ socket_test6_SRCS += socket_test6.c
 
 PROD += socket_test7
 socket_test7_SRCS += socket_test7.c
+socket_test7_SYS_LIBS += pthread
 
 PROD += acquireSocketClient
 acquireSocketClient_SRCS += acquireSocketClient.c
