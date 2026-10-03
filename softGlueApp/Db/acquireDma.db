@@ -9,6 +9,10 @@ record(mbbo, "$(P)$(Q)acquireDmaMode") {
 	field(TWST, "x,y,t")
 	field(THST, "MCS")
 }
+record(longout, "$(P)$(Q)acquireTranWords") {
+	field(VAL, "100000")
+}
+
 record(aSub, "$(P)$(Q)acquireDma") {
   field(SDIS, "$(P)$(Q)acquireDmaEnable")
   field(DISV, 0)
@@ -17,7 +21,7 @@ record(aSub, "$(P)$(Q)acquireDma") {
   field(PREC, "5")
   field(FTA, "LONG")
   field(FTB, "LONG")
-  field(FTC, "LONG")
+  field(INPB, "$(P)$(Q)acquireTranWords")
   field(FTD, "LONG")
   field(FTE, "DOUBLE")
   field(FTF, "LONG")

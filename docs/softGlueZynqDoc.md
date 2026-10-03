@@ -556,8 +556,8 @@ The following components are not general purpose, but are specific to an experim
     want.
     
     So softGlueZynq has a socket server, and a 40 MB circular buffer from which
-    the server extracts acquired data, in `softGlueApp/src/acquireDmaAsub.c`.  There
-    is an example socket client, `acquireSocketClient.c`, in `softGlueApp/src`.
+    the server extracts acquired data, in `softGlueApp/src/acquireDmaAsub.c`. The
+    maintained socket client is [SGSocket](https://github.com/keenanlang/SGSocket).
 
     - - - - - -
 - Waveform generator ("block RAM")

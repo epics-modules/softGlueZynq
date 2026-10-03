@@ -1,5 +1,6 @@
 $(P)$(Q)acquireDma.A
 $(P)$(Q)acquireDma.B
+$(P)$(Q)acquireTranWords
 $(P)$(Q)acquireDma.C
 $(P)$(Q)acquireDma.SCAN
 $(P)$(Q)acquireDma.E

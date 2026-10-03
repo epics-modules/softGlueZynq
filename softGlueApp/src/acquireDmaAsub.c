@@ -12,14 +12,14 @@
  *  valc[]  plot 3
  *  vald[]  plot 4
  *  vale[]  plot 5
- *  valr[]  plot 6
+ *  valf[]  plot 6
  *  valg[]  plot 7
  *  valh[]  plot 8
  *  vali    number of events in plot arrays
  * 	valj	number of words in circular buffer
  *  a       plot bank: 0:0-7; 1:8-15; 3:16-23
+ *  b       socket transfer size in words (runtime, max acquireMaxTranWords)
  *  d       clear plot arrays
- *	e		clock rate counter1
  *  f       clear circular buffer
  *	h		debug level
  *	i		scale1
@@ -41,6 +41,7 @@
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <errno.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -52,6 +53,7 @@
 #include <dbCommon.h>
 #include <epicsThread.h>
 #include <epicsMutex.h>
+#include <epicsEvent.h>
 #include <recSup.h>
 #include <aSubRecord.h>
 #include <epicsExport.h>
@@ -68,111 +70,193 @@
 
 /* circular buffer */
 #define cirBufWords 10000000
+#define maxFlushBoundaries 64
+#define sendAllTimeout 0.5
 epicsUInt32 cirBuf[cirBufWords];
 int writeIx, readIx, bufWords;
-epicsMutexId ix_mutex; /* protect writeIx, readIx, bufWords from simultaneous access */
+epicsMutexId ix_mutex; /* protects circular-buffer and flush-boundary state */
+epicsEventId dataEvent;
+epicsUInt64 producedWords, consumedWords;
+epicsUInt64 flushBoundaries[maxFlushBoundaries];
+int flushReadIx, flushWriteIx, flushCount;
+int dataClientSock = -1;
 
-epicsUInt32 dataBuf[acquireTranWords];
+epicsUInt32 dataBuf[acquireMaxTranWords];
 int cirBufRead(int numWords, epicsUInt32 *data);
 
-int cleared, allocatedElements, *debug, *plotBank;
+int cleared, allocatedElements, *debug, *plotBank, *tranWords;
+
+typedef struct dataHeader {
+	epicsUInt32 payloadWords;
+} dataHeader;
+
+static int sendAll(int sock, const void *buffer, size_t length)
+{
+	const char *next = (const char *)buffer;
+	while (length > 0) {
+		ssize_t sent = send(sock, next, length, MSG_NOSIGNAL);
+		if (sent < 0 && errno == EINTR) continue;
+		if (sent <= 0) return -1;
+		next += sent;
+		length -= sent;
+	}
+	return 0;
+}
+
+static int sendFramedData(int sock)
+{
+	dataHeader header;
+	int reachedFlush = 0;
+	int sendWords = 0;
+	int tw;
+
+	for (;;) {
+		epicsMutexLock(ix_mutex);
+		tw = *tranWords;
+		if (tw <= 0 || tw > acquireMaxTranWords) tw = 100000;
+
+		if (flushCount > 0) {
+			epicsUInt64 wordsToFlush = flushBoundaries[flushReadIx] - consumedWords;
+			sendWords = bufWords < tw ? bufWords : tw;
+			if ((epicsUInt64)sendWords > wordsToFlush) sendWords = (int)wordsToFlush;
+			if ((epicsUInt64)sendWords == wordsToFlush) reachedFlush = 1;
+		} else if (bufWords >= tw) {
+			sendWords = tw;
+		}
+
+		if (sendWords > 0) {
+			int first = cirBufWords - readIx;
+			if (first > sendWords) first = sendWords;
+			memcpy(dataBuf, &cirBuf[readIx], first * sizeof(epicsUInt32));
+			if (first < sendWords)
+				memcpy(&dataBuf[first], cirBuf, (sendWords - first) * sizeof(epicsUInt32));
+			readIx = (readIx + sendWords) % cirBufWords;
+			bufWords -= sendWords;
+			consumedWords += sendWords;
+		}
+		if (reachedFlush) {
+			flushReadIx = (flushReadIx + 1) % maxFlushBoundaries;
+			flushCount--;
+		}
+		epicsMutexUnlock(ix_mutex);
+
+		if (sendWords > 0 || reachedFlush) break;
+		if (epicsEventWaitWithTimeout(dataEvent, sendAllTimeout) == epicsEventWaitTimeout) break;
+	}
+
+	header.payloadWords = htonl((epicsUInt32)sendWords);
+	if (sendAll(sock, &header, sizeof(header)) != 0) return -1;
+	if (sendWords > 0 && sendAll(sock, dataBuf, sendWords * sizeof(epicsUInt32)) != 0) return -1;
+	return 0;
+}
 
 // This will handle connection for each client
 void *connection_handler(void *socket_desc)
 {
-	// Get the socket descriptor
 	int sock = *(int*)socket_desc;
 	int read_size;
-	char client_message[100];
-	int i;
+	char client_message[CMD_LEN];
+	char count_message[NUM_LEN + 1];
 	ssize_t bytesSent;
-	
-	// Receive a message from client
-	for (i=0; i<strlen(client_message); i++) client_message[i] = 0;
-	while ( (read_size = recv(sock, client_message, CMD_LEN , MSG_WAITALL)) > 0 ) {
-		if (strncmp(client_message, "sendnumw", CMD_LEN) == 0) {
-			// Send the message back to client
-			if (*debug > 0) printf("connection_handler: sending bufwords = %d\n", bufWords);
-			for (i=0; i<strlen(client_message); i++) client_message[i] = 0;
-			sprintf(client_message, "%010d", bufWords);
-			bytesSent = write(sock, client_message, NUM_LEN);
-		} else if (strncmp(client_message, "senddata", CMD_LEN) == 0) {
-			if (bufWords >= acquireTranWords) {
-			if (*debug > 0) printf("connection_handler: sending %d words\n", acquireTranWords);
-				cirBufRead(acquireTranWords, dataBuf);
-				bytesSent = write(sock, dataBuf, acquireTranWords*4);
-				if (bytesSent == -1) printf("connection_handler: write failed");
-				if (*debug > 0) printf("bytesSent = %d\n", (int)bytesSent);
+
+	free(socket_desc);
+	while ((read_size = recv(sock, client_message, CMD_LEN, MSG_WAITALL)) == CMD_LEN) {
+		if (memcmp(client_message, "sendalld", CMD_LEN) == 0) {
+			epicsMutexLock(ix_mutex);
+			if (dataClientSock < 0) dataClientSock = sock;
+			if (dataClientSock != sock) {
+				epicsMutexUnlock(ix_mutex);
+				break;
+			}
+			epicsMutexUnlock(ix_mutex);
+			if (sendFramedData(sock) != 0) break;
+		} else if (memcmp(client_message, "sendnumw", CMD_LEN) == 0) {
+			epicsMutexLock(ix_mutex);
+			snprintf(count_message, sizeof(count_message), "%010d", bufWords);
+			epicsMutexUnlock(ix_mutex);
+			if (sendAll(sock, count_message, NUM_LEN) != 0) break;
+		} else if (memcmp(client_message, "senddata", CMD_LEN) == 0) {
+			int tw = *tranWords;
+			int sendWords;
+			if (tw <= 0 || tw > acquireMaxTranWords) tw = 100000;
+			epicsMutexLock(ix_mutex);
+			if (dataClientSock < 0) dataClientSock = sock;
+			if (dataClientSock != sock) {
+				epicsMutexUnlock(ix_mutex);
+				break;
+			}
+			sendWords = bufWords < tw ? bufWords : tw;
+			epicsMutexUnlock(ix_mutex);
+			if (sendWords > 0 && cirBufRead(sendWords, dataBuf) == 0) {
+				bytesSent = sendAll(sock, dataBuf, sendWords * sizeof(epicsUInt32));
+				if (bytesSent != 0) break;
 			}
 		}
 	}
-	
-	if (read_size == 0) {
-		printf("connection_handler: Client disconnected\n");
-		fflush(stdout);
-	} else if (read_size == -1) {
-		perror("connection_handler: recv failed");
-	}
-	
-	// Free the socket pointer
-	free(socket_desc);
-	
+
+	if (read_size < 0) perror("connection_handler: recv failed");
+	epicsMutexLock(ix_mutex);
+	if (dataClientSock == sock) dataClientSock = -1;
+	epicsMutexUnlock(ix_mutex);
+	close(sock);
 	return 0;
 }
-void *makeSocket() {
-	int socket_desc, new_socket, c, *new_sock;
+
+void *makeSocket(void *unused) {
+	int socket_desc, new_socket;
+	int reuse = 1;
 	struct sockaddr_in server, client;
-	
-	// Create socket
+	(void)unused;
+
 	socket_desc = socket(AF_INET, SOCK_STREAM, 0);
-	if (socket_desc == -1) {
-		printf("makeSocket: Could not create socket");
-	}
-	
-	// Prepare the sockaddr_in structure
-	server.sin_family = AF_INET;
-	server.sin_addr.s_addr = INADDR_ANY;
-	server.sin_port = htons( 8888 );
-	
-	// Bind
-	if (bind(socket_desc,(struct sockaddr *)&server, sizeof(server)) < 0) {
-		puts("makeSocket: bind failed");
+	if (socket_desc < 0) {
+		perror("makeSocket: socket failed");
 		return (void *)1;
 	}
-	puts("makeSocket: bind done");
-	
-	// Listen
-	listen(socket_desc , 3);
-	
-	// Accept and incoming connection
-	puts("Waiting for incoming connections...");
-	c = sizeof(struct sockaddr_in);
-	while ((new_socket = accept(socket_desc, (struct sockaddr *)&client, (socklen_t*)&c))) {
-		puts("makeSocket: Connection accepted");
-		
-		// Reply to the client
-		//message = "Hello Client , I have received your connection. And now I will assign a handler for you\n";
-		//write(new_socket, message, strlen(message));
-		
-		pthread_t sniffer_thread;
-		new_sock = malloc(4);
-		*new_sock = new_socket;
-		
-		if (pthread_create(&sniffer_thread, NULL,  connection_handler, (void*) new_sock) < 0) {
-			perror("makeSocket: could not create thread");
-			return (void *)1;
+	setsockopt(socket_desc, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse));
+	memset(&server, 0, sizeof(server));
+	server.sin_family = AF_INET;
+	server.sin_addr.s_addr = INADDR_ANY;
+	server.sin_port = htons(8888);
+
+	if (bind(socket_desc, (struct sockaddr *)&server, sizeof(server)) < 0) {
+		perror("makeSocket: bind failed");
+		close(socket_desc);
+		return (void *)1;
+	}
+	if (listen(socket_desc, 3) < 0) {
+		perror("makeSocket: listen failed");
+		close(socket_desc);
+		return (void *)1;
+	}
+	puts("makeSocket: waiting for incoming connections");
+
+	for (;;) {
+		socklen_t clientLength = sizeof(client);
+		int *new_sock;
+		pthread_t handlerThread;
+		new_socket = accept(socket_desc, (struct sockaddr *)&client, &clientLength);
+		if (new_socket < 0) {
+			if (errno == EINTR) continue;
+			perror("makeSocket: accept failed");
+			break;
 		}
-		
-		// Now join the thread , so that we dont terminate before the thread
-		// pthread_join( sniffer_thread , NULL);
-		puts("makeSocket: Handler assigned");
+		new_sock = malloc(sizeof(*new_sock));
+		if (!new_sock) {
+			close(new_socket);
+			continue;
+		}
+		*new_sock = new_socket;
+		if (pthread_create(&handlerThread, NULL, connection_handler, new_sock) != 0) {
+			perror("makeSocket: could not create thread");
+			free(new_sock);
+			close(new_socket);
+			continue;
+		}
+		pthread_detach(handlerThread);
 	}
-	
-	if (new_socket<0) {
-		perror("makeSocket: accept failed");
-		return (void *)0;
-	}
-	
+
+	close(socket_desc);
 	return (void *)0;
 }
 
@@ -183,6 +267,7 @@ void *makeSocket() {
 static struct channel_buffer *rx_proxy_interface_p;
 static int rx_proxy_fd;
 
+
 enum eType {event8, event24};
 enum eType eventType;
 
@@ -190,7 +275,14 @@ void cirBufInit() {
 	writeIx = 0;
 	readIx = 0;
 	bufWords = 0;
+	producedWords = 0;
+	consumedWords = 0;
+	flushReadIx = 0;
+	flushWriteIx = 0;
+	flushCount = 0;
+	dataClientSock = -1;
 	ix_mutex = epicsMutexCreate();
+	dataEvent = epicsEventCreate(epicsEventEmpty);
 }
 
 int cirBufWrite(int numWords, epicsUInt32 *data) {
@@ -202,22 +294,17 @@ int cirBufWrite(int numWords, epicsUInt32 *data) {
 		epicsMutexUnlock(ix_mutex);
 		return(-1);
 	}
-	if ((writeIx + numWords) > (cirBufWords-1)) {
-		// Write until end of buffer; write remaining items from beginning of buffer
-		// Want writeIx + numWords1 = cirBufWords-1
-		numWords1 =  (cirBufWords-1) - writeIx;
-		numWords2 = numWords - numWords1;
-		if (numWords1 > 0) memcpy(&(cirBuf[writeIx]), data, numWords1*4);
-		memcpy((void*)&(cirBuf[0]), (void*)&(data[numWords1]), numWords2*4);
-		writeIx = numWords2;
-	} else {
-		// Just write
-		memcpy((void*)&(cirBuf[writeIx]), (void*)data, numWords*4);
-		writeIx += numWords;
-	}
+	numWords1 = cirBufWords - writeIx;
+	if (numWords1 > numWords) numWords1 = numWords;
+	numWords2 = numWords - numWords1;
+	if (numWords1 > 0) memcpy(&cirBuf[writeIx], data, numWords1 * sizeof(epicsUInt32));
+	if (numWords2 > 0) memcpy(cirBuf, &data[numWords1], numWords2 * sizeof(epicsUInt32));
+	writeIx = (writeIx + numWords) % cirBufWords;
 	bufWords += numWords;
+	producedWords += numWords;
 	if (*debug > 0) printf("cirBufWrite: writeIx = %d, bufWords = %d\n", writeIx, bufWords);
 	epicsMutexUnlock(ix_mutex);
+	epicsEventSignal(dataEvent);
 	return(0);
 }
 
@@ -229,17 +316,19 @@ int cirBufRead(int numWords, epicsUInt32 *data) {
 		epicsMutexUnlock(ix_mutex);
 		return(-1);
 	}
-	if ((readIx + numWords) > (cirBufWords-1)) {
-		numWords1 =  (cirBufWords-1) - readIx;
-		numWords2 = numWords - numWords1;
-		if (numWords1 > 0) memcpy(data, &(cirBuf[readIx]), numWords1*4);
-		memcpy(&(data[numWords1]), cirBuf, numWords2*4);
-		readIx = numWords2;
-	} else {
-		memcpy(data, &(cirBuf[readIx]), numWords*4);
-		readIx += numWords;
-	}
+	numWords1 = cirBufWords - readIx;
+	if (numWords1 > numWords) numWords1 = numWords;
+	numWords2 = numWords - numWords1;
+	if (numWords1 > 0) memcpy(data, &cirBuf[readIx], numWords1 * sizeof(epicsUInt32));
+	if (numWords2 > 0) memcpy(&data[numWords1], cirBuf, numWords2 * sizeof(epicsUInt32));
+	readIx = (readIx + numWords) % cirBufWords;
 	bufWords -= numWords;
+	consumedWords += numWords;
+	/* Legacy reads cannot report flushes, so discard boundaries they cross. */
+	while (flushCount > 0 && flushBoundaries[flushReadIx] <= consumedWords) {
+		flushReadIx = (flushReadIx + 1) % maxFlushBoundaries;
+		flushCount--;
+	}
 	if (*debug > 0) printf("cirBufRead: readIx = %d, bufWords = %d\n", readIx, bufWords);
 	epicsMutexUnlock(ix_mutex);
 	return(0);
@@ -255,6 +344,7 @@ static long acquireDma_init(aSubRecord *pasub) {
 	numEvents = (epicsUInt32 *)pasub->vali;
 	numCBwords = (epicsUInt32 *)pasub->valj;
 	plotBank = (epicsInt32 *)pasub->a;
+	tranWords = (epicsInt32 *)pasub->b;
 	debug = (epicsInt32 *)pasub->h;
 
 	plot1 = (float *)pasub->vala;
@@ -277,7 +367,7 @@ static long acquireDma_init(aSubRecord *pasub) {
 
 	cleared = 1;
 	allocatedElements = pasub->nova;
-
+	cirBufInit();
 
 	pthread_t socket_thread;
 	if (pthread_create(&socket_thread, NULL,  makeSocket, (void*)0) < 0) {
@@ -319,6 +409,11 @@ static long acquireDma_do(aSubRecord *pasub) {
 		writeIx = 0;
 		readIx = 0;
 		bufWords = 0;
+		producedWords = 0;
+		consumedWords = 0;
+		flushReadIx = 0;
+		flushWriteIx = 0;
+		flushCount = 0;
 		*numCBwords = bufWords;
 		epicsMutexUnlock(ix_mutex);
 		*clearCircBuf = 0;
@@ -351,7 +446,7 @@ void acquireDmaRoutine(softGlueIntRoutineData *IRData) {
 	epicsUInt32 risingMask = IRData->risingMask;
 	epicsUInt32 wentHigh = IRData->wentHigh;
 
-	epicsUInt32 j;
+	int j;
 	epicsTimeStamp  timeStart, timeEnd;
 	double dmaTime;
 	int buffer_id = 0;
@@ -359,6 +454,9 @@ void acquireDmaRoutine(softGlueIntRoutineData *IRData) {
 	epicsUInt32 dma_words;
 	epicsUInt32 *data, uL;
 	int rep, maxReps=50; // for testing, maxReps=1. For efficiency, maxReps=50;
+
+	epicsUInt32 validWords;
+	int sawFlush;
 
 	dma_words = *acquireDmaWords;
 	dma_bytes = dma_words*4;
@@ -371,22 +469,16 @@ void acquireDmaRoutine(softGlueIntRoutineData *IRData) {
 
 	/* do DMA */
 	rx_proxy_fd = open("/dev/dma_proxy_rx", O_RDWR);
-	if (rx_proxy_fd < 1) {
+	if (rx_proxy_fd < 0) {
 		printf("acquireDmaRoutine: Unable to open DMA proxy device file for RX\n");
 		return;
 	}
-	if (*debug > 0) {
-		printf("acquireDmaRoutine: Opened /dev/dma_proxy_rx\n");
-	}
 	rx_proxy_interface_p = (struct channel_buffer *)mmap(NULL, sizeof(struct channel_buffer),
 			PROT_READ | PROT_WRITE, MAP_SHARED, rx_proxy_fd, 0);
-
-    if (rx_proxy_interface_p == MAP_FAILED) {
-       	printf("acquireDmaRoutine: Failed to mmap for RX\n");
-       	return;
-    }
-	if (*debug > 0) {
-		printf("acquireDmaRoutine: mmap succeeded.\n");
+	if (rx_proxy_interface_p == MAP_FAILED) {
+		printf("acquireDmaRoutine: Failed to mmap for RX\n");
+		close(rx_proxy_fd);
+		return;
 	}
 
 	rx_proxy_interface_p->length = dma_bytes;
@@ -402,29 +494,78 @@ void acquireDmaRoutine(softGlueIntRoutineData *IRData) {
 			//sleep(30);
 		}
 		ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id);
+		if (rx_proxy_interface_p->status != PROXY_NO_ERROR) {
+			printf("acquireDmaRoutine: Proxy rx transfer error (status=%d)\n", rx_proxy_interface_p->status);
+			munmap(rx_proxy_interface_p, sizeof(struct channel_buffer));
+			close(rx_proxy_fd);
+			return;
+		}
 		if (*debug>0) {
-			if (rx_proxy_interface_p->status != PROXY_NO_ERROR) {
-				printf("acquireDmaRoutine: Proxy rx transfer error\n");
-			} else {
-				printf("acquireDmaRoutine: ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id) returned X.\n");
-			}
+			printf("acquireDmaRoutine: ioctl(rx_proxy_fd, FINISH_XFER, &buffer_id) returned.\n");
 		}
 
 		data = (epicsUInt32 *)(rx_proxy_interface_p->buffer);
 		epicsTimeGetCurrent(&timeEnd);
 		dmaTime += epicsTimeDiffInSeconds(&timeEnd, &timeStart);
 
-		/* write data to circular buffer for transfer out via socket */
-		cirBufWrite(dma_words, data);
+		if (*debug>=3) {
+			int k;
+			for (k=0; k<(int)dma_words; k++) {
+				printf("acquireDmaRoutine: pre-compact data[%d]=%x\n", k, data[k]);
+			}
+		}
+
+		// compact out flush events (bits 31:30 = 01) anywhere
+		// in the buffer. event24 (11) is 24 words; all
+		// others are 8 words.
+		{
+			int rp = 0, wp = 0, esz;
+			sawFlush = 0;
+			while (rp + 8 <= (int)dma_words) {
+				esz = ((data[rp] & 0xc0000000) == 0xc0000000) ? 24 : 8;
+				if (rp + esz > (int)dma_words) break;
+				if ((data[rp] & 0xc0000000) == 0x40000000) {
+					sawFlush = 1;
+				} else {
+					if (wp != rp)
+						memmove(&data[wp], &data[rp], esz * sizeof(epicsUInt32));
+					wp += esz;
+				}
+				rp += esz;
+			}
+			validWords = wp;
+		}
+
+		/* Queue real data before publishing its flush boundary. */
+		if (cirBufWrite(validWords, data) == 0) {
+			if (sawFlush) {
+				epicsMutexLock(ix_mutex);
+				if (flushCount < maxFlushBoundaries) {
+					flushBoundaries[flushWriteIx] = producedWords;
+					flushWriteIx = (flushWriteIx + 1) % maxFlushBoundaries;
+					flushCount++;
+				} else {
+					printf("acquireDmaRoutine: flush-boundary queue full\n");
+				}
+				epicsMutexUnlock(ix_mutex);
+				epicsEventSignal(dataEvent);
+			}
+			if (*debug > 0) printf("acquireDmaRoutine: wrote %d to cirBuf.\n", validWords);
+		} else {
+			if (*debug > 0) printf("acquireDmaRoutine: cirBufWrite failed (buffer full). bufWords=%d\n", bufWords);
+		}
 		*numCBwords = bufWords;
-		if (*debug > 0) printf("acquireDmaRoutine: wrote %d to cirBuf.\n", dma_words);
 
 		/* split event data into arrays for plotting */
-		for (j=0; j<dma_words; ) {
-			if (*debug>=3) printf("acquireDmaRoutine: *numEvents=%d, j=%d, data[j]=%x\n", *numEvents, j, data[j]);
+		for (j=0; j<validWords; ) {
+			/* if (*debug>=3) {
+				for (int k=0; k<8; k++) {
+					printf("acquireDmaRoutine: *numEvents=%d, j=%d, data[j]=%x\n", *numEvents, j+k, data[j+k]);
+				}
+			} */
 			/* Find a valid event */
-			while (!(data[j] & 0x80000000) && (j<=dma_words)) j++;
-			if (j>dma_words) {
+			while ((j < (int)validWords) && !(data[j] & 0x80000000)) j++;
+			if (j >= (int)validWords) {
 				if (*debug>=10) printf("acquireDmaRoutine: stop at j=%d, data[j]=%d\n", j, data[j]);
 				break;
 			}
@@ -468,8 +609,9 @@ void acquireDmaRoutine(softGlueIntRoutineData *IRData) {
 				}
 			}
 			if (eventType == event24) {
-				// Skip partial events
-				if (j+24 >= dma_words) break;
+				// Skip partial events. j has already advanced 8 past the
+				// event start (bank 0), so we need 16 more words for banks 1+2.
+				if (j + 16 > (int)validWords) break;
 			 	if (*plotBank == 1) {
 					// The Asub record doesn't have enough fields to plot all 24
 					// input values. *plotBank selects 0-7, 8-15, or 16-23.
@@ -531,7 +673,6 @@ void acquireDmaRoutine(softGlueIntRoutineData *IRData) {
 done:
 	if (*debug>1 && rep>1) printf("acquireDmaRoutine: reps=%d, DMA time/rep=%f\n", rep, dmaTime/rep);
 	if (*debug>=10) printf("acquireDmaRoutine: done binning this buffer.\n");
-	/* For now, just open and close every time */
 	munmap(rx_proxy_interface_p, sizeof(struct channel_buffer));
 	close(rx_proxy_fd);
 }
@@ -559,8 +700,6 @@ int acquireDmaPrepare(const char *componentName, epicsUInt32 risingMask, int fif
 	 * also have been programmed to execute in response to this value of risingMask.
 	 */
 	softGlueZynqRegisterInterruptRoutine(risingMask, 0, acquireDmaRoutine, NULL);
-
-	ix_mutex = epicsMutexCreate();
 
 	return(0);
 }

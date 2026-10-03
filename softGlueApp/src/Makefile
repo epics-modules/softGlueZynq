@@ -51,9 +51,6 @@ socket_test6_SRCS += socket_test6.c
 PROD += socket_test7
 socket_test7_SRCS += socket_test7.c
 
-PROD += acquireSocketClient
-acquireSocketClient_SRCS += acquireSocketClient.c
-
 include $(TOP)/configure/RULES
 #----------------------------------------
 #  ADD RULES AFTER THIS LINE
