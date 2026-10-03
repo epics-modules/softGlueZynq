@@ -1,0 +1,9 @@
+# Reapply clock settings serially after configMenu finishes loading a circuit.
+record(calcout, "$(P)$(H)clock$(Q)configMenuLoadDone") {
+	field(SDIS, "$(P)$(CONFIG)Menu:isSaveOp")
+	field(DISV, "1")
+	field(INPA, "$(P)$(CONFIG)Menu:busy CP")
+	field(CALC, "A")
+	field(OOPT, "Transition To Zero")
+	field(OUT, "$(P)$(H)clock$(Q)initWrite.PROC PP")
+}
