@@ -22,15 +22,6 @@ pattern {SIG		ADDR}
 {GateDly-3_WIDTH	50}
 {GateDly-4_DLY		51}
 {GateDly-4_WIDTH	52}
-{pixelTrig-1_PRETRIG	53}
-{pixelTrig-1_PRESET		54}
-{pixelTrig-2_PRETRIG	55}
-{pixelTrig-2_PRESET		56}
-#{pixelTrig-1_ACQTIME	57}
-#{pixelTrig-2_ACQTIME	58}
-#{pixelTrig-1_PREPIX		59}
-#{pixelTrig-2_PREPIX		60}
-
 {plsTrn-1_NPULSES   58}
 {plsTrn-1_WIDTH 	59}
 {plsTrn-1_PERIOD 	60}
@@ -58,12 +49,6 @@ pattern {SIG     	ADDR}
 {DnCntr-3_COUNTS	10}
 {DnCntr-4_COUNTS	11}
 
-{pixelTrig-1_POS1 	   12}
-{pixelTrig-1_POS2 	   13}
-{pixelTrig-2_POS1 	   14}
-{pixelTrig-2_POS2 	   15}
-{pixelTrig-3_POS1 	   16}
-{pixelTrig-3_POS2 	   17}
 {aQuadB_INVAL         18}
 {aQuadB_SENTVAL       19}
 #{HistScal-1_S06 	   18}
@@ -78,9 +63,5 @@ pattern {SIG     	ADDR}
 #{HistScal-1_S14 	   26}
 {scalToStream-1_FIFO   26}
 {FreqCntr-1_COUNTS 	   27}
-{pixelTrig-1_PIXEL		28}
-{pixelTrig-1_COUNTS		29}
-{pixelTrig-2_PIXEL		30}
-{pixelTrig-2_COUNTS		31}
 }
 

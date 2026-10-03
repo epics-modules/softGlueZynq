@@ -180,29 +180,8 @@ pattern {SIG		ADDR}
 #{FO23 			  253}
 #{FO24 			  254}
 
-# pixel trigger removed to make room for ADC
-# {pixelTrig-1_A1			255}
-# {pixelTrig-1_B1			256}
-# {pixelTrig-1_A2			257}
-# {pixelTrig-1_B2			258}
-# {pixelTrig-1_CLOCK		259}
-# {pixelTrig-1_MISSCLR	260}
-# {pixelTrig-1_EN			261}
-# {pixelTrig-1_LOAD		262}
-# {pixelTrig-1_CLEAR		263}
-{ADC_RSTN			255}
-{ADC_EN			    256}
-
-
-{pixelTrig-2_A1			264}
-{pixelTrig-2_B1			265}
-{pixelTrig-2_A2			266}
-{pixelTrig-2_B2			267}
-{pixelTrig-2_CLOCK		268}
-{pixelTrig-2_MISSCLR	269}
-{pixelTrig-2_EN			270}
-{pixelTrig-2_LOAD		271}
-{pixelTrig-2_CLEAR		272}
+#{ADC_RSTN			255}
+#{ADC_EN			    256}
 
 {scalToStream-1_CHADV	273}
 {HistScal-1_DET2		274}
@@ -303,25 +282,14 @@ pattern {SIG   	ADDR}
 #{FI20			71}
 #{FI21			72}
 #{FI22			73}
-{scalToStream-1_TIP			72}
-{scalToStream-1_need			73}
 #{FI23			74}
 #{FI24			75}
 
-{pixelTrig-1_TRIG	76}
-{pixelTrig-1_MISS	77}
-{pixelTrig-2_TRIG	78}
-{pixelTrig-2_MISS	79}
-
 {scalersToFIFO-1_WRTCK	80}
-# enabled (room in FIFO) combined trigger out
-{PixelTrig_ENTRIG		81}
 {Scaler-1_Q				82}
 {Scaler-1_CNTG			83}
-#{PixelFIFO-1_FIFO50		83}
 {scalToStream-1_ADVDONE	84}
 
-#{PixelFIFO-1_ADVDONE	85}
 {VAR_CLOCK	85}
 
 #{FI25			86}
@@ -336,20 +304,12 @@ pattern {SIG   	ADDR}
 #{FI34			95}
 #{FI35			96}
 #{scalToStream-1_traninprog	93}
-#{scalToStream-1_need8	94}
-#{scalToStream-1_need24	95}
 #{scalToStream-1_room	96}
 #{FI36			97}
 
 {plsTrn-1_Q			97}
 
 {scalToStream-1_FULL 98}
-
-# debug (ENQ is DFF_5 Q)
-#{PixelTrig_ENQ	98}
-#{PixelFIFO-1_ROOM	99}
-# raw combined trigger out
-{PixelTrig_TRIG		99}
 
 }
 
@@ -484,7 +444,6 @@ pattern {SIG N}
 {HistScal-1 80}
 {HW_OR-1 80}
 {HW_OR-2 80}
-{PixelFIFO-1 80}
 {scalToStream-1 80}
 
 {GateDly-1 80}
@@ -492,8 +451,6 @@ pattern {SIG N}
 {GateDly-3 80}
 {GateDly-4 80}
 {FreqCntr-1 80}
-{pixelTrig-1 80}
-{pixelTrig-2 80}
 }
 
 # pinout:

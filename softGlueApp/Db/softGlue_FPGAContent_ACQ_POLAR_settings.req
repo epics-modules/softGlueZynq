@@ -48,12 +48,8 @@ file GateDly_settings.req P=$(P),H=$(H),N=3
 file GateDly_settings.req P=$(P),H=$(H),N=4
 #file HistScal_settings.req P=$(P),H=$(H),N=1
 file IF_tracker_settings.req P=$(P),H=$(H),N=1
-$(P)$(H)IF_tracker-1_LDMASK
-$(P)$(H)IF_tracker-1_MISSIDX
 $(P)$(H)IF_tracker-2_CLEAR_Signal
-$(P)$(H)IF_tracker-2_LOAD_Signal
 $(P)$(H)IF_tracker-3_CLEAR_Signal
-$(P)$(H)IF_tracker-3_LOAD_Signal
 file ScalToStream8and16_settings.req P=$(P),H=$(H),N=1
 $(P)$(H)scalToStream-1_IMDONE_Signal
 #file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
@@ -66,14 +62,20 @@ file scaleOffsetLimit_settings.req P=$(P),H=$(H),N=2
 
 file threshTrig_settings.req P=$(P),H=$(H),N=1
 
-$(P)$(H)FOCAL_Y_A
+# $(P)$(H)FOCAL_Y_A
 $(P)$(H)averageN_N
-$(P)$(H)FOCAL_X_SH
-$(P)$(H)FOCAL_X_SL
-$(P)$(H)FOCAL_Y_SH
-$(P)$(H)FOCAL_Y_SL
-$(P)$(H)FOCAL_X_SO_Signal
-$(P)$(H)FOCAL_Y_SO_Signal
+# $(P)$(H)FOCAL_X_SH
+# $(P)$(H)FOCAL_X_SL
+# $(P)$(H)FOCAL_Y_SH
+# $(P)$(H)FOCAL_Y_SL
+# $(P)$(H)FOCAL_X_SO_Signal
+# $(P)$(H)FOCAL_Y_SO_Signal
+
+$(P)$(H)SAMPLE_XOFF
+$(P)$(H)SAMPLE_YOFF
+$(P)$(H)SAMPLE_POFF
+$(P)$(H)SAMPLE_MASK
+
 # hard-wired OR gates
 #$(P)$(H)HW_OR-1_OUT_Signal
 #$(P)$(H)HW_OR-2_OUT_Signal

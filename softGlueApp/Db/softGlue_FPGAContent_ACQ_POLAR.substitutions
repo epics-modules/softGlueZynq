@@ -195,9 +195,7 @@ pattern {SIG		ADDR}
 {IF_tracker-1_CLEAR		263}
 
 {IF_tracker-2_CLEAR     266}
-{IF_tracker-2_LOAD      268}
 {IF_tracker-3_CLEAR     267}
-{IF_tracker-3_LOAD      269}
 
 {threshTrig-1_EN     264}
 {threshTrig-1_CLK    265}
@@ -347,6 +345,9 @@ pattern {SIG   	ADDR}
 #{scalToStream-1_traninprog	93}
 #{scalToStream-1_room	96}
 #{FI36			97}
+
+
+{driveRAMx_done			97}
 
 {scalToStream-1_FULL 98}
 

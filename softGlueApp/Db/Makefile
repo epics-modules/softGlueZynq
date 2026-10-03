@@ -20,6 +20,7 @@ DB += softGlue_FPGAContent_BCDALAB.db
 DB += softGlue_FPGAContent_qudis.db
 DB += softGlue_FPGAContent_NPI.db
 DB += softGlue_FPGAContent_ACQ.db
+DB += softGlue_FPGAContent_ACQ_POLAR.db
 #DB += softGlue_FPGAContent_zygo.db
 DB += softGlue_FPGAContent_ACQ2206.db
 DB += softGlue_FPGARegisters.db
@@ -30,6 +31,7 @@ DB += softGlue_FPGARegisters_ACQ2206.db
 DB += softGlue_FPGARegisters64_ACQ2206.db
 DB += softGlue_FPGARegisters64_NPI.db
 DB += softGlue_FPGARegisters64_ACQ.db
+DB += softGlue_FPGARegisters64_ACQ_POLAR.db
 #DB += softGlue_FPGARegisters_zygo.db
 DB += softGlue_FPGAInt.db
 

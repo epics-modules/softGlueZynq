@@ -1,4 +1,4 @@
-$(P)$(H)SOL-2_S
-$(P)$(H)SOL-2_O
-$(P)$(H)SOL-2_H
-$(P)$(H)SOL-2_L
+$(P)$(H)SOL-$(N)_S
+$(P)$(H)SOL-$(N)_O
+$(P)$(H)SOL-$(N)_H
+$(P)$(H)SOL-$(N)_L

@@ -26,7 +26,6 @@ pattern {SIG					ADDR}
 #{PID_READBK					84}
 #{ADC_SHIFTLEN					84}
 {IF_tracker-1_LDVAL				85}
-{IF_tracker-1_LDMASK				86}
 #{DAC3_VAL						89}
 #{DAC4_VAL						90}
 {PID_K1							89}
@@ -43,11 +42,11 @@ pattern {SIG					ADDR}
 # Might need to find a register for this. Not sure if anyone needs it. NPI
 # currently uses FOCAL_Y_A for both X and Y expressions.
 #{FOCAL_X_A						96}
-{FOCAL_Y_A						96}
-{FOCAL_Y_SH						97}
-{FOCAL_Y_SL						98}
-{FOCAL_X_SH						99}
-{FOCAL_X_SL						100}
+# {FOCAL_Y_A						96}
+# {FOCAL_Y_SH						97}
+# {FOCAL_Y_SL						98}
+# {FOCAL_X_SH						99}
+# {FOCAL_X_SL						100}
 {averageN_N						101}
 {SOL-1_S						102}
 {SOL-1_O						103}
@@ -63,16 +62,18 @@ pattern {SIG					ADDR}
 {ROTATE_SIN  	113}
 {ROTATE_COS  	114}
 
-{IF_tracker-1_MISSIDX	115}
-
 {threshTrig-1_POSTHR 116}
 {threshTrig-1_NEGTHR 117}
 
+{SAMPLE_MASK			118}
+{SAMPLE_XOFF			88}
+{SAMPLE_YOFF			96}
+{SAMPLE_POFF			115}
 
 {driveRAMx_N			119}
 {driveRAMx_END			120}
 {driveRAMx_INC			121}
-{driveRAMx_START		122}
+{driveRAMx_START	    122}
 {mem2_DINA				123}
 {mem2_ADDRA				124}
 {driveRAM_N				125}
@@ -126,7 +127,8 @@ pattern {SIG     	ADDR}
 {IF_tracker-1_IN2		29}
 {IF_tracker-1_IN3		30}
 {IF_tracker-1_IN4		31}
-{FOCAL_X 	   				32}
+# {FOCAL_X 	   			32}
+{SAMPLE_X 	   			32}
 {SOL-1					33}
 {SOL-2					34}
 {scalToStream-1_FIFO2   35}
@@ -146,15 +148,14 @@ pattern {SIG     	ADDR}
 {IF_tracker-3_IN3		46}
 {IF_tracker-3_IN4		47}
 {IF_tracker-3_IN5		48}
-{FOCAL_Y 	   			49}
+# {FOCAL_Y 	   			49}
+{SAMPLE_Y 	   			49}
 {ROTATE_X 	   			50}
 {ROTATE_Z 	   			51}
-{IF_tracker-1_MISSCOUNT	52}
-# 61 connected to scalersToStream:in20
+{SAMPLE_DX              53}
+{SAMPLE_PITCH           54}
 {mem2_RDOUT				61}
-# 62 connected to scalersToStream:in19
 {mem2_DOUT				62}
-# 63 connected to scalersToStream:in18
 {mem_DOUT				63}
 }
 
