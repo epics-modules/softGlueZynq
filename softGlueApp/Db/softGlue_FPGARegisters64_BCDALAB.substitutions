@@ -1,0 +1,89 @@
+file "softGlue_Register.db"
+{
+pattern {SIG		ADDR}
+{DnCntr-1_PRESET	   64}
+{DnCntr-2_PRESET	   65}
+{DnCntr-3_PRESET	   66}
+{DnCntr-4_PRESET	   67}
+{DivByN-1_N		   68}
+{DivByN-2_N		   69}
+{DivByN-3_N		   70}
+{DivByN-4_N		   71}
+{UpDnCntr-1_PRESET	   72}
+{UpDnCntr-2_PRESET	   73}
+{UpDnCntr-3_PRESET	   74}
+{UpDnCntr-4_PRESET	   75}
+{Scaler-1_PRESET	   76}
+{GateDly-1_DLY		   77}
+{GateDly-1_WIDTH	   78}
+{GateDly-2_DLY		   79}
+{GateDly-2_WIDTH	   80}
+{GateDly-3_DLY		   81}
+{GateDly-3_WIDTH	   82}
+{GateDly-4_DLY		   83}
+{GateDly-4_WIDTH	   84}
+{pixelTrig-1_PRETRIG	   85}
+{pixelTrig-1_PRESET	   86}
+{pixelTrig-2_PRETRIG	   87}
+{pixelTrig-2_PRESET	   88}
+{plsTrn-1_NPULSES          90}
+{plsTrn-1_WIDTH 	   91}
+{plsTrn-1_PERIOD 	   92}
+{scalToStream-1_DMAWORDS   93}
+# See softGlue_config.db for input to this PV
+{config-1		   94}
+{averageN_N		   95}
+}
+
+file "softGlue_InRegister.db"
+{
+pattern {SIG     	ADDR}
+{UpCntr-1_COUNTS	0}
+{UpCntr-2_COUNTS	1}
+{UpCntr-3_COUNTS	2}
+{UpCntr-4_COUNTS	3}
+{UpDnCntr-1_COUNTS	4}
+{UpDnCntr-2_COUNTS	5}
+{UpDnCntr-3_COUNTS	6}
+{UpDnCntr-4_COUNTS	7}
+
+{DnCntr-1_COUNTS	8}
+{DnCntr-2_COUNTS	9}
+{DnCntr-3_COUNTS	10}
+{DnCntr-4_COUNTS	11}
+
+{pixelTrig-1_POS1 	   12}
+{pixelTrig-1_POS2 	   13}
+{pixelTrig-2_POS1 	   14}
+{pixelTrig-2_POS2 	   15}
+{pixelTrig-3_POS1 	   16}
+{pixelTrig-3_POS2 	   17}
+{aQuadB_INVAL         18}
+{aQuadB_SENTVAL       19}
+#{HistScal-1_S06 	   18}
+#{HistScal-1_S07 	   19}
+#{HistScal-1_S08 	   20}
+{ISN_x_X 	   20}
+#{HistScal-1_S09 	   21}
+#{HistScal-1_S10 	   22}
+#{HistScal-1_S11 	   23}
+#{HistScal-1_S12 	   24}
+#{HistScal-1_S13 	   25}
+#{HistScal-1_S14 	   26}
+{scalToStream-1_FIFO   26}
+{FreqCntr-1_COUNTS 	   27}
+{pixelTrig-1_PIXEL		28}
+{pixelTrig-1_COUNTS		29}
+{pixelTrig-2_PIXEL		30}
+{pixelTrig-2_COUNTS		31}
+
+{ADC1		32}
+{ADC2		33}
+{ADC3		34}
+{ADC4		35}
+{ADC5		36}
+{ADC6		37}
+{ADC7		38}
+{ADC8		39}
+}
+

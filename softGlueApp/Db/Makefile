@@ -24,6 +24,7 @@ DB += softGlue_FPGAContent_ACQ.db
 DB += softGlue_FPGAContent_ACQ2206.db
 DB += softGlue_FPGARegisters.db
 DB += softGlue_FPGARegisters_BCDALAB.db
+DB += softGlue_FPGARegisters64_BCDALAB.db
 DB += softGlue_FPGARegisters_qudis.db
 DB += softGlue_FPGARegisters_ACQ2206.db
 DB += softGlue_FPGARegisters64_ACQ2206.db

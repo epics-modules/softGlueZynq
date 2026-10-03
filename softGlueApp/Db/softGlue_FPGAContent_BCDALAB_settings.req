@@ -47,12 +47,17 @@ file GateDly_settings.req P=$(P),H=$(H),N=2
 file GateDly_settings.req P=$(P),H=$(H),N=3
 file GateDly_settings.req P=$(P),H=$(H),N=4
 file HistScal_settings.req P=$(P),H=$(H),N=1
-file PixelTrig_settings.req P=$(P),H=$(H),N=1
+# BCDALAB does not instantiate pixelTrig-1's nine input-signal records.
+$(P)$(H)pixelTrig-1_PRESET
+$(P)$(H)pixelTrig-1_PRETRIG
+$(P)$(H)pixelTrig-1_TRIG_Signal
+$(P)$(H)pixelTrig-1_MISS_Signal
 file PixelTrig_settings.req P=$(P),H=$(H),N=2
 $(P)$(H)PixelTrig_TRIG_Signal
 $(P)$(H)PixelTrig_ENTRIG_Signal
 #file PixelFIFO_settings.req P=$(P),H=$(H),N=1
-file ScalToStream_settings.req P=$(P),H=$(H),N=1
+#file ScalToStream_settings.req P=$(P),H=$(H),N=1
+file ScalToStream8and16_settings.req P=$(P),H=$(H),N=1
 file ScalersToFIFO_settings.req P=$(P),H=$(H),N=1
 file FreqCntr_settings.req P=$(P),H=$(H),N=1
 file scaler16_settings.req P=$(P),H=$(H),N=1

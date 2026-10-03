@@ -180,15 +180,19 @@ pattern {SIG		ADDR}
 #{FO23 			  253}
 #{FO24 			  254}
 
-{pixelTrig-1_A1			255}
-{pixelTrig-1_B1			256}
-{pixelTrig-1_A2			257}
-{pixelTrig-1_B2			258}
-{pixelTrig-1_CLOCK		259}
-{pixelTrig-1_MISSCLR	260}
-{pixelTrig-1_EN			261}
-{pixelTrig-1_LOAD		262}
-{pixelTrig-1_CLEAR		263}
+# pixel trigger removed to make room for ADC
+# {pixelTrig-1_A1			255}
+# {pixelTrig-1_B1			256}
+# {pixelTrig-1_A2			257}
+# {pixelTrig-1_B2			258}
+# {pixelTrig-1_CLOCK		259}
+# {pixelTrig-1_MISSCLR	260}
+# {pixelTrig-1_EN			261}
+# {pixelTrig-1_LOAD		262}
+# {pixelTrig-1_CLEAR		263}
+{ADC_RSTN			255}
+{ADC_EN			    256}
+
 
 {pixelTrig-2_A1			264}
 {pixelTrig-2_B1			265}
