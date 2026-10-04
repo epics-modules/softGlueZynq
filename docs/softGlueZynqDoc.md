@@ -5,8 +5,8 @@ nav_order: 2
 ---
 
 
-The synApps softGlueZynq module (R2-0)
-======================================
+The synApps softGlueZynq module
+===============================
 
 - - - - - -
 
@@ -16,6 +16,8 @@ Table of Contents
 - [Overview](#overview)
 - [Installation and deployment](#installation-and-deployment)
 - [User's Manual](#users-manual)
+- [Reporting current signal connections](#reporting-current-signal-connections)
+- [Generating MEDM displays from YAML](#generating-medm-displays-from-yaml)
 - [Additional FPGA components](#additional-fpga-components)
 - [Miscellaneous configuration](#miscellaneous-configuration)
 - [Saving and restoring circuits](#saving-and-restoring-circuits)
@@ -214,6 +216,51 @@ Therefore, in this documentation, "input" and "output" will normally be from the
     `softGlueZynqMenu.adl` is the top softGlueZynq display, which serves mostly to call up other displays. The menu labelled `READ PERIOD` specifies the period at which the values of all signals are sampled for display to the user. `#SIGS IN USE`shows the number of signal names you have defined.
     
     > Most softGlueZynq displays are not interrupt driven. (That would be a disaster, because inevitably some signals will change state at high frequency.) So, the states of inputs and outputs must be sampled periodically, for display to the user. We've found that it's confusing for users if the poll period is greater than around 1 second. We've also found that polling everything at .1 second uses around 2 percent of the MicroZed's CPU.
+
+#### Reporting current signal connections
+
+The `utils/softglue_connections.py` utility reports how a running IOC's softGlue signals are connected. It reads PV names ending in `_Signal` from a `dbl-all.txt` file, queries their live values and descriptions through Channel Access, and groups each named signal into drivers, loads, and inverted loads. It also reports constants, pulse values whose text ends in `!`, blank connections, and warnings such as multiple drivers or loads without a driver.
+
+The utility requires Python 3.9 or newer and [pyepics](https://pyepics.github.io/pyepics/):
+
+```sh
+python3 -m pip install pyepics
+```
+
+Generate `dbl-all.txt` from the IOC so that it matches the records currently loaded, then run, for example:
+
+```sh
+python3 utils/softglue_connections.py --dbl-all dbl-all.txt
+python3 utils/softglue_connections.py --dbl-all dbl-all.txt --with-states
+python3 utils/softglue_connections.py --dbl-all dbl-all.txt \
+    --print-blank-drivers --print-blank-loads
+python3 utils/softglue_connections.py --dbl-all dbl-all.txt \
+    --format json > softglue-connections.json
+```
+
+`--with-states` also reads companion `_BI` records when they exist. FI records are treated as drivers and FO records as loads; other records are classified from descriptions beginning with `OUT` or `IN`. The command exits with an error if a required PV cannot be read, rather than producing a misleading partial report. An IOC-local wrapper can call this utility from the support module if that is more convenient than running it directly.
+
+#### Generating MEDM displays from YAML
+
+`utils/generate_softglue_screen.py` generates a top-level MEDM ADL display and its bare component display from a YAML description. The generator requires Python 3.10 or newer and [PyYAML](https://pyyaml.org/):
+
+```sh
+python3 -m pip install PyYAML
+python3 utils/generate_softglue_screen.py \
+    softGlueApp/op/yaml/IF_tracker.yaml \
+    --output-dir softGlueApp/op/adl
+```
+
+For a YAML module whose `file_stem` is `IF_tracker`, the output files are:
+
+```text
+softGlueZynq_IF_tracker.adl
+softGlueZynq_IF_tracker_bare.adl
+```
+
+The YAML `module` section controls the display and PV-name stems, optional instance numbering, description field, block label, and exact-PV mode. Ordered `inputs` and `outputs` may be signals or registers. Signal pins can be inverted and input signals can be marked as clocks; register pins support display formats and optional widths. A `layout` section can override layout defaults.
+
+The utility writes ADL only; conversion to UI, EDL, OPI, or BOB formats is a separate step. Generator version 1.5.0 sizes displays from their actual content, centers titles across the display, and accounts for MEDM's external-composite bounds.
     
     - - - - - -
 - AND
@@ -470,6 +517,21 @@ Additional FPGA components
 
 The following components are not general purpose, but are specific to an experiment type or a measurement technique. Components in this category are not guaranteed to be compatible with previous or future versions of themselves. These are custom components, and they will evolve with user requirements.
 
+<a id="if-tracker"></a>
+
+- IF tracker
+
+    The IF tracker decodes six quadrature A/B encoder inputs and maintains one 32-bit position counter for each axis. On each rising edge of `CLOCK`, the component compares the current A/B state with the state sampled on the previous clock. A valid quadrature transition increments or decrements the corresponding position according to its direction. Counting occurs only while `EN` is asserted.
+
+    `LOAD` writes `LDVAL` to selected position counters. Bits 0 through 5 of `LDMASK` select axes 1 through 6 respectively; counters whose mask bits are clear retain their current values. `CLEAR` sets all six position counters to zero. The control priority is `LOAD`, then `CLEAR`, then normal encoder counting, so an asserted load takes precedence over clear or encoder transitions.
+
+    `IN1` through `IN6` display the six current position counters. The HDL also supports taking simultaneous snapshots of all six positions on the falling edge of an internal `takeSnap` input.
+
+    A transition in which both A and B change between samples cannot be a valid quadrature step and is counted as a missed encoder transition. Miss detection and `MISSCLR` are evaluated on detected rising edges of `CLOCK`, independently of `EN`. Each axis has an independent 32-bit miss counter. The counters saturate at `0xFFFFFFFF` rather than wrapping, and `MISSCLR` clears all six counters. `MISSIDX` selects which axis counter is shown in `MISSCOUNT`: values 0 through 5 select axes 1 through 6; values 6 and 7 are invalid. `MISSCOUNT` is a readback and is not autosaved.
+
+    > **TODO:** Document how `takeSnap` and the six snapshot outputs are connected and used in each system-level FPGA design.
+
+    - - - - - -
 - 16 Input Gated Scaler
     
     ![](SGscaler16.jpg)![](scaler16m_more.jpg)
@@ -544,9 +606,14 @@ The following components are not general purpose, but are specific to an experim
     
     After the last data-acquisition has been seen, there will be acquired data
     left in the FIFO. These data can be sent to EPICS by sending a positive-going
-    pulse to the "FLUSH" input.
+    pulse to the "FLUSH" input. The DMA reader removes the FPGA flush event from
+    normal data and records its position as a socket-stream boundary. The
+    `sendalld` protocol may return a short frame followed by a zero-length frame
+    when that boundary is reached.
 
     - - - - - -
+<a id="socket-server"></a>
+
 - Socket server
 
     Because the data-acquisition system can acquire
@@ -554,10 +621,43 @@ The following components are not general purpose, but are specific to an experim
     acquire data for only around 4 minutes. Microscope scans are longer than that,
     and anyway users want data written via a socket server because that's what they
     want.
-    
-    So softGlueZynq has a socket server, and a 40 MB circular buffer from which
-    the server extracts acquired data, in `softGlueApp/src/acquireDmaAsub.c`. The
-    maintained socket client is [SGSocket](https://github.com/keenanlang/SGSocket).
+
+    softGlueZynq therefore provides a TCP socket server on port 8888 and a
+    10,000,000-word (40 MB) circular buffer in
+    `softGlueApp/src/acquireDmaAsub.c`. Commands sent to the server are exactly
+    eight bytes long.
+
+    `sendalld` is the preferred interface. Each request returns a four-byte
+    unsigned payload-word count in network byte order, followed by that many raw
+    32-bit DMA words. Only the count header is converted to network byte order;
+    clients must account for the native byte order of the target when interpreting
+    payload words. A frame can be shorter than the configured maximum. A
+    zero-length frame can indicate an FPGA flush boundary, but it can also be
+    returned when the server's approximately 0.5-second wait expires without new
+    data, so zero length alone is not a unique end-of-acquisition marker.
+
+    Two legacy commands remain available. `sendnumw` returns a ten-character,
+    zero-padded ASCII count of words currently buffered. `senddata` returns up to
+    the configured number of words as unframed binary data, and sends no payload
+    if no words are available. New clients should use `sendalld`. Only one client
+    at a time may consume data through `sendalld` or `senddata`; additional data
+    consumers are disconnected. Socket writes handle partial writes and
+    interrupted system calls.
+
+    The autosaved `$(P)$(Q)acquireTranWords` PV controls the maximum words sent by
+    one data response. Its default is 100,000 words and its valid implementation
+    range is 1 through 1,000,000 words. Zero, negative, or larger values fall back
+    to 100,000 words. The server reads the PV at run time, so changing it does not
+    require an IOC restart. For example:
+
+    ```sh
+    caget <P><Q>acquireTranWords
+    caput <P><Q>acquireTranWords 250000
+    ```
+
+    The maintained socket client is
+    [SGSocket](https://github.com/keenanlang/SGSocket). The old example client is
+    no longer included in this module.
 
     - - - - - -
 - Waveform generator ("block RAM")
@@ -670,11 +770,16 @@ If you have autosave R5-1 or higher, you can use configMenu to save and restore 
     ```
     dbLoadRecords("$(AUTOSAVE)/asApp/Db/configMenu.db","P=zzz:,CONFIG=SG")
     ```
-> 3. Add the following line to `st.cmd`: 
+> 3. If clock settings are included in the circuit, load the clock/configMenu
+> helper with macros matching the `clockConfig.db` and configMenu instances:
     ```
-    create_manual_set("SGMenu.req","P=zzz:,CONFIG=SG")
+    dbLoadRecords("$(SOFTGLUEZYNQ)/db/clockConfig_configMenu.db", "P=zzz:,H=SG:,Q=1,CONFIG=SG")
     ```
-> 4. Add an MEDM related-display entry to bring up the configMenu.adl display. 
+> 4. Add the following line to `st.cmd`:
+    ```
+    create_manual_set("SGMenu.req","P=zzz:,H=SG:,CONFIG=SG")
+    ```
+> 5. Add an MEDM related-display entry to bring up the configMenu.adl display.
     ```
     label="SGMenu"
     name="configMenu.adl"
@@ -682,6 +787,8 @@ If you have autosave R5-1 or higher, you can use configMenu to save and restore 
     ```
 
 softGlueZynq includes configMenu files (\*.cfg) for standard example circuits in the iocBoot/iocsoftGlueZynq directory. In actual use, these .cfg files would be placed in your application's iocBoot/ioczzz/autosave directory. For more information on configMenu, see the autosave documentation.
+
+Clock configuration contains several related settings that must be applied to the hardware in a controlled order. `clockConfig_configMenu.db` watches the configMenu busy state and, when a load operation finishes, processes `$(P)$(H)clock$(Q)initWrite` to reapply those settings serially. `$(P)$(CONFIG)Menu:isSaveOp` disables this action during save operations. Without this helper, a restored circuit can leave a clock at the wrong frequency even though the desired-frequency PVs contain the saved values.
 
 - - - - - -
 
