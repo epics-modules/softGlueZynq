@@ -1,14 +1,13 @@
-
 file {
-	name="/net/s100dserv/xorApps/zed/epics/synApps_6_2_1_zynq/support/softGlueZynq-R2-0-4/softGlueApp/op/adl/softGlueZynq_IF_tracker.adl"
+	name="softGlueZynq_IF_tracker.adl"
 	version=030111
 }
 display {
 	object {
-		x=662
-		y=390
-		width=460
-		height=250
+		x=0
+		y=0
+		width=418
+		height=280
 	}
 	clr=14
 	bclr=2
@@ -91,61 +90,80 @@ rectangle {
 	object {
 		x=0
 		y=0
-		width=460
-		height=25
+		width=418
+		height=28
 	}
 	"basic attribute" {
 		clr=0
+		fill="solid"
+		width=1
 	}
 }
 text {
 	object {
-		x=170
-		y=0
-		width=290
+		x=0
+		y=1
+		width=418
 		height=25
 	}
 	"basic attribute" {
 		clr=14
 	}
-	textix="IF tracker $(N)"
+	textix="IF_tracker $(N)"
 	align="horiz. centered"
-}
-polyline {
-	object {
-		x=0
-		y=25
-		width=459
-		height=3
-	}
-	"basic attribute" {
-		clr=54
-		width=3
-	}
-	points {
-		(1,26)
-		(457,26)
-	}
-}
-composite {
-	object {
-		x=0
-		y=30
-		width=450
-		height=219
-	}
-	"composite name"=""
-	"composite file"="softGlueZynq_IF_tracker_bare_label.adl;P=$(P),H=$(H),N=$(N)"
 }
 text {
 	object {
 		x=10
-		y=0
-		width=160
+		y=1
+		width=129
 		height=25
 	}
 	"basic attribute" {
 		clr=14
 	}
 	textix="$(P)$(H)"
+}
+polyline {
+	object {
+		x=1
+		y=26
+		width=415
+		height=2
+	}
+	"basic attribute" {
+		clr=54
+		fill="outline"
+		width=3
+	}
+	points {
+		(1,26)
+		(415,26)
+	}
+}
+"text entry" {
+	object {
+		x=4
+		y=33
+		width=410
+		height=16
+	}
+	control {
+		chan="$(P)$(H)IF_tracker-$(N)_desc"
+		clr=14
+		bclr=2
+	}
+	format="string"
+	limits {
+	}
+}
+composite {
+	object {
+		x=4
+		y=54
+		width=410
+		height=224
+	}
+	"composite name"=""
+	"composite file"="softGlueZynq_IF_tracker_bare.adl;P=$(P),H=$(H),N=$(N)"
 }

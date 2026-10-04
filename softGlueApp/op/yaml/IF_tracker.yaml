@@ -1,0 +1,84 @@
+module:
+  name: IF_tracker
+  file_stem: IF_tracker
+  pv_stem: IF_tracker
+  block_label: IF_tracker
+  numbered: true
+  description: true
+
+inputs:
+  - type: signal
+    pv: CLOCK
+    label: CK
+    clock: true
+
+  - type: signal
+    pv: EN
+    label: EN
+
+  - type: signal
+    pv: CLEAR
+    label: CLEAR
+
+  - type: signal
+    pv: MISSCLR
+    label: MISSCLR
+
+  - type: signal
+    pv: LOAD
+    label: LOAD
+
+  - type: register
+    pv: LDVAL
+    label: LOADVAL
+    format: decimal
+
+  - type: register
+    pv: LDMASK
+    label: LDMASK
+    format: hexadecimal
+
+  - type: register
+    pv: MISSIDX
+    label: MISSIDX
+    format: decimal
+
+outputs:
+  - type: register
+    pv: IN1
+    label: IN 1
+    format: decimal
+
+  - type: register
+    pv: IN2
+    label: IN 2
+    format: decimal
+
+  - type: register
+    pv: IN3
+    label: IN 3
+    format: decimal
+
+  - type: register
+    pv: IN4
+    label: IN 4
+    format: decimal
+
+  - type: register
+    pv: IN5
+    label: IN 5
+    format: decimal
+
+  - type: register
+    pv: IN6
+    label: IN 6
+    format: decimal
+
+#   - type: signal
+#     pv: MISS
+#     label: MISS
+
+  - type: register
+    pv: MISSCOUNT
+    label: MISSCOUNT
+    format: decimal
