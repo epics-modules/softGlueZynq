@@ -261,8 +261,9 @@ softGlueZynq_IF_tracker_bare.adl
 The YAML `module` section controls the display and PV-name stems, optional instance numbering, description field, block label, and exact-PV mode. Ordered `inputs` and `outputs` may be signals or registers. Signal pins can be inverted and input signals can be marked as clocks; register pins support display formats and optional widths. A `layout` section can override layout defaults.
 
 The utility writes ADL only; conversion to UI, EDL, OPI, or BOB formats is a separate step. Generator version 1.5.0 sizes displays from their actual content, centers titles across the display, and accounts for MEDM's external-composite bounds.
-    
-    - - - - - -
+
+- - - - - -
+
 - AND
     
     ![](AND.gif)
