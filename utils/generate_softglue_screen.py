@@ -21,7 +21,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
-GENERATOR_VERSION = "1.3.0"
+GENERATOR_VERSION = "1.5.0"
 
 try:
     import yaml
@@ -131,7 +131,8 @@ class Module:
 
 @dataclass(frozen=True)
 class Layout:
-    min_width: int = 460
+    # Zero means no enforced minimum; natural content width plus margins is used.
+    min_width: int = 0
     margin: int = 4
     gap: int = 16
     signal_widget_width: int = 156
@@ -325,18 +326,22 @@ def estimate_text_width(text: str, layout: Layout) -> int:
     return int(math.ceil(len(text) * layout.char_width))
 
 
+def calculate_side_width(pins: Sequence[Pin], layout: Layout) -> int:
+    """Return the width required by widgets that actually exist on one side."""
+    widths = [
+        pin.width or layout.register_width
+        for pin in pins
+        if pin.kind == "register"
+    ]
+    if any(pin.kind == "signal" for pin in pins):
+        widths.append(layout.signal_widget_width)
+    return max(widths, default=0)
+
+
 def calculate_geometry(module: Module, layout: Layout) -> Geometry:
     all_pins = (*module.inputs, *module.outputs)
-    left_reg_width = max(
-        [pin.width or layout.register_width for pin in module.inputs if pin.kind == "register"]
-        or [layout.register_width]
-    )
-    right_reg_width = max(
-        [pin.width or layout.register_width for pin in module.outputs if pin.kind == "register"]
-        or [layout.register_width]
-    )
-    left_width = max(layout.signal_widget_width, left_reg_width)
-    right_width = max(layout.signal_widget_width, right_reg_width)
+    left_width = calculate_side_width(module.inputs, layout)
+    right_width = calculate_side_width(module.outputs, layout)
 
     # A clock marker occupies the first 10 pixels inside the left half of the
     # component body. Reserve that extra space when sizing labels.
@@ -725,27 +730,29 @@ def render_main(module: Module, layout: Layout, geometry: Geometry, filename: st
 
     prefix_width = min(175, max(120, geometry.width // 3))
     title = f"{module.name} $(N)" if module.numbered else module.name
-    pieces.append(text(10, 1, prefix_width - 10, layout.title_height - 3, "$(P)$(H)", clr=14))
+    # Center the module title across the complete screen. The prefix remains
+    # independently left-aligned and does not bias the title to the right.
     pieces.append(
         text(
-            prefix_width,
+            0,
             1,
-            geometry.width - prefix_width,
+            geometry.width,
             layout.title_height - 3,
             title,
             align="horiz. centered",
             clr=14,
         )
     )
+    pieces.append(text(10, 1, prefix_width - 10, layout.title_height - 3, "$(P)$(H)", clr=14))
     pieces.append(polyline([(1, layout.title_height - 2), (geometry.width - 3, layout.title_height - 2)], clr=54, line_width=3))
 
     content_y = layout.title_height + 2
     if module.description:
         pieces.append(
             text_entry(
-                10,
+                layout.margin,
                 content_y + 3,
-                geometry.width - 20,
+                geometry.width - 2 * layout.margin,
                 16,
                 f"{pv_root(module, include_prefix=True)}_desc",
                 fmt="string",
@@ -755,12 +762,24 @@ def render_main(module: Module, layout: Layout, geometry: Geometry, filename: st
         content_y += layout.description_height
 
     macros = "P=$(P),H=$(H)" + (",N=$(N)" if module.numbered else "")
+
+    # MEDM normalizes an external composite to the bounding box of the objects
+    # inside the referenced display; blank outer space from the bare display is
+    # not retained. Place that normalized bounding box at the same coordinates
+    # used by the standalone bare screen so the module stays centered.
+    content_left = geometry.left_x if geometry.left_width else geometry.block_x
+    content_right = (
+        geometry.right_x + geometry.right_width
+        if geometry.right_width
+        else geometry.block_x + geometry.block_width
+    )
+    content_width = content_right - content_left
     pieces.append(
         composite_file(
-            0,
-            content_y,
-            geometry.width,
-            geometry.bare_height,
+            content_left,
+            content_y + geometry.block_y,
+            content_width,
+            geometry.block_height,
             f"{bare_filename};{macros}",
         )
     )
