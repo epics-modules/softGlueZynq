@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Release Notes
-nav_order: 3
+nav_order: 4
 ---
 
 
@@ -38,6 +38,7 @@ Release R3-1
 
 - Added `softglue_connections.py` for reporting live drivers, loads, inversions, constants, pulse values ending in `!`, and wiring warnings from a running IOC.
 - Added a YAML-to-MEDM screen generator and updated it to version 1.5.0 with content-driven sizing, centered titles, and corrected external-composite placement.
+- Added APS-specific SD-card preparation and `userConfig` generation scripts under `utils/`.
 - Added IF tracker YAML input and updated ADL/UI displays for load mask, miss index, and miss count.
 
 ### Compatibility notes

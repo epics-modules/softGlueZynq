@@ -8,8 +8,7 @@ softGlueZynq is an EPICS synApps support module for building and connecting digi
 - [Release notes](https://epics-modules.github.io/softGlueZynq/softGlueZynqReleaseNotes.html)
 - [DMA socket acquisition](https://epics-modules.github.io/softGlueZynq/softGlueZynqDoc.html#socket-server)
 - [Saving circuits and restoring clock settings](https://epics-modules.github.io/softGlueZynq/softGlueZynqDoc.html#saving-and-restoring-circuits)
-- [Reporting current signal connections](https://epics-modules.github.io/softGlueZynq/softGlueZynqDoc.html#reporting-current-signal-connections)
-- [Generating MEDM displays from YAML](https://epics-modules.github.io/softGlueZynq/softGlueZynqDoc.html#generating-medm-displays-from-yaml)
+- [Utilities](https://epics-modules.github.io/softGlueZynq/utilities.html)
 - [SGSocket client](https://github.com/keenanlang/SGSocket)
 
 For general synApps information, see [APS synApps](https://www.aps.anl.gov/BCDA/synApps).

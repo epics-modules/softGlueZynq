@@ -16,8 +16,6 @@ Table of Contents
 - [Overview](#overview)
 - [Installation and deployment](#installation-and-deployment)
 - [User's Manual](#users-manual)
-- [Reporting current signal connections](#reporting-current-signal-connections)
-- [Generating MEDM displays from YAML](#generating-medm-displays-from-yaml)
 - [Additional FPGA components](#additional-fpga-components)
 - [Miscellaneous configuration](#miscellaneous-configuration)
 - [Saving and restoring circuits](#saving-and-restoring-circuits)
@@ -105,7 +103,7 @@ In this version of softGlueZynq, the FPGA is programmed with the following circu
 - One seven-input multichannel scaler. (This is actually just the pixelTrigger acquisition system operating in "list" mode.)
 - 36 field-input bits (24 LVCMOS, 12 LVDS)
 - 24 field-output bits (LVCMOS)
-- One 10 MHz clock signal (Clock frequencies can be changed at run time. See [Miscellaneous configuration](<#Miscellaneous configuration>) below.)
+- One 10 MHz clock signal (Clock frequencies can be changed at run time. See [Miscellaneous configuration](#miscellaneous-configuration) below.)
 - One 20 MHz clock signal
 - One 50 MHz clock signal
 - One variable frequency clock signal
@@ -217,50 +215,7 @@ Therefore, in this documentation, "input" and "output" will normally be from the
     
     > Most softGlueZynq displays are not interrupt driven. (That would be a disaster, because inevitably some signals will change state at high frequency.) So, the states of inputs and outputs must be sampled periodically, for display to the user. We've found that it's confusing for users if the poll period is greater than around 1 second. We've also found that polling everything at .1 second uses around 2 percent of the MicroZed's CPU.
 
-#### Reporting current signal connections
-
-The `utils/softglue_connections.py` utility reports how a running IOC's softGlue signals are connected. It reads PV names ending in `_Signal` from a `dbl-all.txt` file, queries their live values and descriptions through Channel Access, and groups each named signal into drivers, loads, and inverted loads. It also reports constants, pulse values whose text ends in `!`, blank connections, and warnings such as multiple drivers or loads without a driver.
-
-The utility requires Python 3.9 or newer and [pyepics](https://pyepics.github.io/pyepics/):
-
-```sh
-python3 -m pip install pyepics
-```
-
-Generate `dbl-all.txt` from the IOC so that it matches the records currently loaded, then run, for example:
-
-```sh
-python3 utils/softglue_connections.py --dbl-all dbl-all.txt
-python3 utils/softglue_connections.py --dbl-all dbl-all.txt --with-states
-python3 utils/softglue_connections.py --dbl-all dbl-all.txt \
-    --print-blank-drivers --print-blank-loads
-python3 utils/softglue_connections.py --dbl-all dbl-all.txt \
-    --format json > softglue-connections.json
-```
-
-`--with-states` also reads companion `_BI` records when they exist. FI records are treated as drivers and FO records as loads; other records are classified from descriptions beginning with `OUT` or `IN`. The command exits with an error if a required PV cannot be read, rather than producing a misleading partial report. An IOC-local wrapper can call this utility from the support module if that is more convenient than running it directly.
-
-#### Generating MEDM displays from YAML
-
-`utils/generate_softglue_screen.py` generates a top-level MEDM ADL display and its bare component display from a YAML description. The generator requires Python 3.10 or newer and [PyYAML](https://pyyaml.org/):
-
-```sh
-python3 -m pip install PyYAML
-python3 utils/generate_softglue_screen.py \
-    softGlueApp/op/yaml/IF_tracker.yaml \
-    --output-dir softGlueApp/op/adl
-```
-
-For a YAML module whose `file_stem` is `IF_tracker`, the output files are:
-
-```text
-softGlueZynq_IF_tracker.adl
-softGlueZynq_IF_tracker_bare.adl
-```
-
-The YAML `module` section controls the display and PV-name stems, optional instance numbering, description field, block label, and exact-PV mode. Ordered `inputs` and `outputs` may be signals or registers. Signal pins can be inverted and input signals can be marked as clocks; register pins support display formats and optional widths. A `layout` section can override layout defaults.
-
-The utility writes ADL only; conversion to UI, EDL, OPI, or BOB formats is a separate step. Generator version 1.5.0 sizes displays from their actual content, centers titles across the display, and accounts for MEDM's external-composite bounds.
+Command-line tools for reporting live signal connections, generating MEDM displays, and preparing APS MicroZed systems are documented on the separate [Utilities](utilities.md) page.
 
 - - - - - -
 
@@ -430,7 +385,7 @@ The utility writes ADL only; conversion to UI, EDL, OPI, or BOB formats is a sep
     
     The rising edge of the input signal `IN` will appear at `OUT` after `DLY` periods of the clock `>`. If `WIDTH` is nonzero, it specifies the width in clock periods of the output pulse. If `WIDTH==0`, the width of the input signal will be used.
     
-    There is a faster version of this component, with 4 ns time resolution, connected directly to field I/O, and clocked by a dedicated 250 MHz clock. The fast versions are controlled by the same DLY and WIDTH registers as the normal (softGlue-bus-connected) versions, but they only use the lower 16 bits of those registers. fastGate&Delays 1-4 are hard wired to field inputs FI1-4, respectively. By default, the outputs are not connected to field outputs. You can change this by selecting "Configure" from the softGlueZynqMenu display. See [Miscellaneous configuration](<#Miscellaneous configuration>) below.
+    There is a faster version of this component, with 4 ns time resolution, connected directly to field I/O, and clocked by a dedicated 250 MHz clock. The fast versions are controlled by the same DLY and WIDTH registers as the normal (softGlue-bus-connected) versions, but they only use the lower 16 bits of those registers. fastGate&Delays 1-4 are hard wired to field inputs FI1-4, respectively. By default, the outputs are not connected to field outputs. You can change this by selecting "Configure" from the softGlueZynqMenu display. See [Miscellaneous configuration](#miscellaneous-configuration) below.
     
     - - - - - -
 - Frequency Counter
@@ -446,8 +401,7 @@ The utility writes ADL only; conversion to UI, EDL, OPI, or BOB formats is a sep
     
     10, 20, and 50 MHz clocks, and one clock whose frequency can be varied with roughly .1 MHz resolution, are available to softGlueZynq circuitry as free standing outputs.
     
-    > All clock frequencies can be changed at run time. See [Miscellaneous configuration](#Miscellaneous
-    > configuration) below.
+    > All clock frequencies can be changed at run time. See [Miscellaneous configuration](#miscellaneous-configuration) below.
     
     - - - - - -
 - Field I/O

@@ -1,0 +1,146 @@
+#!/bin/bash
+
+set -e
+
+LOOKUP_FILE="/home/beams/BCDA1/zynq/PetaLinux/IP_MAC_addresses.txt"
+
+# Prompt for output path if not given
+OUTFILE="$1"
+[[ -z "$OUTFILE" ]] && read -e -p "Enter path to write userConfig file (e.g., ./userConfig): " OUTFILE
+
+# Ask how to get configuration info
+echo
+echo "How would you like to get the MAC and IOC info?"
+echo "1) Manually enter values"
+echo "2) Lookup from file: $LOOKUP_FILE"
+read -p "Enter choice [1 or 2]: " METHOD
+
+if [[ "$METHOD" == "2" ]]; then
+  if [[ ! -f "$LOOKUP_FILE" ]]; then
+    echo "Lookup file not found: $LOOKUP_FILE"
+    exit 1
+  fi
+
+  # read -p "Enter HOSTNAME to search (e.g. mz-bm01): " HOSTNAME
+  # MATCH_LINE=$(grep -E "^$HOSTNAME\s" "$LOOKUP_FILE")
+
+  # if [[ -z "$MATCH_LINE" ]]; then
+  #   echo "Error: Hostname not found in file."
+  #   exit 1
+  # fi
+
+  while true; do
+  read -p "Enter HOSTNAME to search (e.g. mz-bm01): " HOSTNAME
+    if [[ -z "$HOSTNAME" ]]; then
+      echo "Hostname cannot be empty."
+      continue
+    fi
+
+    mapfile -t MATCHES < <(awk -v host="$HOSTNAME" '$1 == host { print }' "$LOOKUP_FILE")
+    if [[ ${#MATCHES[@]} -eq 0 ]]; then
+      echo "Hostname not found in file. Try again."
+    elif [[ ${#MATCHES[@]} -gt 1 ]]; then
+      echo "Hostname has multiple entries in the lookup file; enter values manually."
+      exit 1
+    else
+      MATCH_LINE=${MATCHES[0]}
+      break
+    fi
+  done
+
+  MAC=$(awk '{print $2}' <<< "$MATCH_LINE")
+  IOCDIR=$(awk '{print $6}' <<< "$MATCH_LINE")
+else
+  [[ -z "$MAC" ]] && read -p "Enter MAC address (e.g. 00:19:B3:02:13:F8): " MAC
+  [[ -z "$HOSTNAME" ]] && read -p "Enter HOSTNAME (e.g. mz-20idd01): " HOSTNAME
+  [[ -z "$IOCDIR" ]] && read -e -p "Enter IOCDIR (full path, e.g. /net/.../iocBoot/...): " IOCDIR
+fi
+
+if [[ -z "$OUTFILE" || -z "$MAC" || -z "$HOSTNAME" || -z "$IOCDIR" ]]; then
+  echo "Output path, MAC address, hostname, and IOC directory are required."
+  exit 1
+fi
+if [[ ! "$MAC" =~ ^([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}$ ]]; then
+  echo "MAC address must contain six colon-separated hexadecimal bytes."
+  exit 1
+fi
+if [[ ! "$HOSTNAME" =~ ^[A-Za-z0-9][A-Za-z0-9.-]*$ ]]; then
+  echo "Hostname contains invalid characters."
+  exit 1
+fi
+if [[ ! "$IOCDIR" =~ ^[A-Za-z0-9_./:+-]+$ ]]; then
+  echo "IOC directory contains unsupported shell characters."
+  exit 1
+fi
+
+# Derive missing values if not passed via args
+if [[ ! "$IOCDIR" =~ ^/net/[^/]+(/[^/]+)*/xorApps(/|$) ]]; then
+  echo "IOC directory must be an APS /net/.../xorApps path."
+  exit 1
+fi
+IOCLOCAL="${IOCLOCAL:-${BASH_REMATCH[0]%/}}"
+IOCSERVER_DIR="${IOCSERVER_DIR:-$(echo "$IOCDIR" | sed -n 's|^/net/\([^/]*\).*|\1|p')}"
+IOCSERVER="${IOCSERVER:-${IOCSERVER_DIR}.xray.aps.anl.gov}"
+if [[ ! "$IOCLOCAL" =~ ^[A-Za-z0-9_./:+-]+$ ]]; then
+  echo "IOC local path contains unsupported shell characters."
+  exit 1
+fi
+if [[ ! "$IOCSERVER" =~ ^[A-Za-z0-9][A-Za-z0-9.-]*$ ]]; then
+  echo "IOC server contains invalid characters."
+  exit 1
+fi
+
+# Write the userConfig file
+cat > "$OUTFILE" <<EOF
+#!/bin/sh
+export MAC=$MAC
+export SLEEP_AFTER_MAC=10
+export HOSTNAME=$HOSTNAME
+
+export USERNAME=vw5
+export USERUID=106
+export USERGROUP=vw
+export USERGID=74
+export USERPASSWORD=pwd
+export ROOTPASSWORD=pwd
+export TIMEZONEFILE=/APSshare/zynq/timezone
+
+export TZ=CST6C
+
+export SHARESERVER=aquila
+export SHAREMOUNT=/APSshare
+export SHARELOCAL=/APSshare
+export IOCSERVER=$IOCSERVER
+export IOCMOUNT=/xorApps
+export IOCLOCAL=$IOCLOCAL
+
+export IOCDIR=$IOCDIR
+alias iocgo="cd \$IOCDIR"
+
+export AUTOSTART=YES
+
+export SSHAUTHKEYFILE=/APSshare/zynq/authorized_keys
+
+export PROCSERVEXE=/APSshare/zynq/procServ_2023.1
+export PROCSERVARGS="--logfile=procServ.log --logstamp=%y%m%d-%H%M%S%t --noautorestart -i ^D^C 20000 ./run"
+EOF
+
+# Also copy userConfig to the top-level IOC directory if it exists
+TOP_IOC_DIR=$(realpath -m "$IOCDIR/../..")
+if [ -d "$TOP_IOC_DIR" ]; then
+  if cp "$OUTFILE" "$TOP_IOC_DIR/"; then
+    echo "Copied userConfig to $TOP_IOC_DIR"
+  else
+    echo "Warning: Could not copy userConfig to $TOP_IOC_DIR."
+  fi
+else
+  echo "Warning: Top-level IOC directory '$TOP_IOC_DIR' does not exist. Skipping copy."
+fi
+
+# Show result
+echo
+echo "Generated userConfig:"
+echo "----- START of $OUTFILE -----"
+cat "$OUTFILE"
+echo "------ END of $OUTFILE ------"
+

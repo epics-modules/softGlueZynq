@@ -1,0 +1,263 @@
+#!/bin/bash
+
+SCRIPT_SOURCE_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Require correct user and host
+if [[ "$(id -un)" != "bcda1" ]] || [[ "$(hostname)" != "bcpc10-ln.xray.aps.anl.gov" ]]; then
+  echo "This script can only be run by user 'bcda1' on host 'bcpc10-ln'."
+  exit 1
+fi
+
+set -e  # Exit on any error
+
+# Identify every physical disk backing the root filesystem and exclude it.
+ROOT_SOURCE=$(findmnt -n -o SOURCE /)
+mapfile -t ROOT_DISKS < <(lsblk -s -n -o NAME,TYPE "$ROOT_SOURCE" | while read -r name type; do
+  [[ "$type" == "disk" ]] && echo "$name"
+done)
+
+echo "System root is on: $ROOT_SOURCE"
+if [[ ${#ROOT_DISKS[@]} -gt 0 ]]; then
+  echo "Excluded root disk(s): ${ROOT_DISKS[*]}"
+else
+  echo "Unable to identify the physical root disk; refusing to continue."
+  exit 1
+fi
+
+# List all /dev/sdX devices excluding disks that back the root filesystem.
+echo "Available block devices:"
+lsblk -d -o NAME,SIZE,MODEL
+echo
+
+mapfile -t CANDIDATES < <(lsblk -ndo NAME | grep -E '^sd' | while read -r name; do
+  if [[ ! " ${ROOT_DISKS[*]} " =~ " $name " ]]; then
+    echo "$name"
+  fi
+done)
+
+if [[ ${#CANDIDATES[@]} -eq 0 ]]; then
+  echo "No candidate SD card devices found."
+  exit 1
+fi
+
+echo "Detected candidate devices:"
+for dev in "${CANDIDATES[@]}"; do
+  echo "  /dev/$dev"
+done
+
+read -rp "Enter the device name of the SD card (e.g., sdb): " SDDEV
+
+VALID_DEVICE=false
+for candidate in "${CANDIDATES[@]}"; do
+  if [[ "$SDDEV" == "$candidate" ]]; then
+    VALID_DEVICE=true
+    break
+  fi
+done
+if [[ "$VALID_DEVICE" != true || ! -b "/dev/$SDDEV" ]]; then
+  echo "Invalid device name or device not found in candidate list."
+  exit 1
+fi
+
+DEVICE="/dev/$SDDEV"
+MNT1="/tmp/mnt/SD1"
+MNT2="/tmp/mnt/SD2"
+
+# Refuse to overwrite or hide mounts left behind by an earlier run.
+for mountpoint in "$MNT1" "$MNT2"; do
+  if mountpoint -q "$mountpoint"; then
+    echo "Mount point $mountpoint is already in use; unmount it before continuing."
+    exit 1
+  fi
+done
+
+read -rp "This will ERASE ALL DATA on $DEVICE. Are you sure? [y/N]: " CONFIRM
+if [[ "$CONFIRM" != "y" && "$CONFIRM" != "Y" ]]; then
+  echo "Aborted."
+  exit 1
+fi
+
+echo "Preparing $DEVICE..."
+
+# Unmount every mount of the selected disk or any of its child partitions.
+mapfile -t TARGET_DEVICES < <(lsblk -ln -o PATH "$DEVICE")
+for target in "${TARGET_DEVICES[@]}"; do
+  mapfile -t MOUNTPOINTS < <(findmnt -rn -S "$target" -o TARGET || true)
+  for mountpoint in "${MOUNTPOINTS[@]}"; do
+    echo "Unmounting $target from $mountpoint..."
+    sudo umount "$mountpoint"
+  done
+done
+for target in "${TARGET_DEVICES[@]}"; do
+  if findmnt -rn -S "$target" >/dev/null; then
+    echo "Unable to unmount every filesystem on $target; refusing to repartition."
+    exit 1
+  fi
+done
+
+# # Build fdisk command script dynamically to delete all existing partitions
+# FDISK_CMDS=""
+# 
+# EXISTING_PARTS=($(lsblk -ln -o NAME "$DEVICE" | grep -E "^${SDDEV}[0-9]+" || true))
+# for part in "${EXISTING_PARTS[@]}"; do
+#   FDISK_CMDS+="d\n"  # omit the number, just use 'd' for default (last partition)
+# done
+# 
+# # EXISTING_PARTS=($(lsblk -ln -o NAME "$DEVICE" | grep -E "^${SDDEV}[0-9]+" || true))
+# # for part in "${EXISTING_PARTS[@]}"; do
+# #   NUM=${part#$SDDEV}
+# #   FDISK_CMDS+="d\n$NUM\n"
+# # done
+# 
+# # Append partition creation commands
+# FDISK_CMDS+="n\np\n1\n2048\n21111221\n"
+# FDISK_CMDS+="n\np\n2\n21111222\n\n"
+# FDISK_CMDS+="w\n"
+
+FDISK_CMDS=$(cat <<EOF
+o
+n
+p
+1
+2048
+21111221
+n
+p
+2
+21111222
+
+w
+EOF
+)
+
+# Run fdisk with the generated input
+echo -e "$FDISK_CMDS" | sudo fdisk "$DEVICE"
+
+# Notify the kernel and wait for the new partition devices.
+sudo partprobe "$DEVICE"
+sudo udevadm settle
+for part in "${DEVICE}1" "${DEVICE}2"; do
+  for _ in {1..20}; do
+    [[ -b "$part" ]] && break
+    sleep 0.25
+  done
+  if [[ ! -b "$part" ]]; then
+    echo "Partition device $part did not appear; refusing to format."
+    exit 1
+  fi
+done
+
+# Format new partitions
+sudo mkfs -t vfat "${DEVICE}1"
+sudo mkfs -t ext4 -F "${DEVICE}2"
+
+# Create mount points
+sudo mkdir -p "$MNT1" "$MNT2"
+
+# Mount with proper permissions
+sudo mount -o uid=$(id -u),gid=$(id -g) "${DEVICE}1" "$MNT1"
+sudo mount "${DEVICE}2" "$MNT2"
+
+# Prompt for file copy
+read -p "Do you want to copy files to the SD card? [y/N]: " COPY_CONFIRM
+COPY_CONFIRM=${COPY_CONFIRM,,}
+
+if [[ "$COPY_CONFIRM" == "y" || "$COPY_CONFIRM" == "yes" ]]; then
+  DEFAULT_SRC=~bcda1/PetaLinuxBootFiles_MZ_script
+  read -e -p "Enter source file path or press enter [default: $DEFAULT_SRC]: " SRC_PATH
+  SRC_PATH="${SRC_PATH:-$DEFAULT_SRC}"
+
+  FILES=("BOOT.BIN" "boot.scr" "image.ub" "rootfs.tar.gz" "system.dtb")
+  # FILES=("BOOT.BIN" "boot.scr" "image.ub" "system.dtb")
+
+  for FILE in "${FILES[@]}"; do
+    SRC_FILE="$SRC_PATH/$FILE"
+    if [[ -f "$SRC_FILE" ]]; then
+	  echo "Copying $FILE..."
+      cp "$SRC_FILE" "$MNT1"
+    else
+      echo "Warning: $FILE not found in $SRC_PATH — skipping"
+    fi
+  done
+
+  read -e -p "Enter the Vivado project directory: " VIVADO_DIR
+  if [[ ! -d "$VIVADO_DIR" ]]; then
+    echo "Error: Vivado project directory '$VIVADO_DIR' does not exist."
+    exit 1
+  fi
+  VIVADO_DIR="$(realpath "$VIVADO_DIR")"
+  printf 'VIVADO_PROJECT_DIR=%s\n' "$VIVADO_DIR" > "$MNT1/hardware-build"
+
+  if [[ -f "$MNT1/rootfs.tar.gz" ]]; then
+    echo "Extracting rootfs.tar.gz..."
+    sudo tar xf "$MNT1/rootfs.tar.gz" -C "$MNT2"
+  else
+    echo "Warning: rootfs.tar.gz not found in $MNT1 — skipping extraction"
+  fi
+else
+  echo "Skipping file copy."
+fi
+
+# userConfig
+read -p "Do you want to generate userConfig file? [y/N]: " USERCFG_CONFIRM
+USERCFG_CONFIRM=${USERCFG_CONFIRM,,}
+
+if [[ "$USERCFG_CONFIRM" == "y" || "$USERCFG_CONFIRM" == "yes" ]]; then
+  # USERCFG_SRC="$SRC_PATH/userConfig"
+  # if [[ ! -f "$USERCFG_SRC" ]]; then
+  #   echo "Error: userConfig file not found at $USERCFG_SRC. Skipping."
+  # else
+  #   echo "Copying userConfig to SD card..."
+   # cp "$USERCFG_SRC" "$MNT1/userConfig"
+
+  # # Prompt for variables
+  # read -p "Enter MAC address (e.g. 00:19:B3:02:13:F8): " MAC
+  # read -p "Enter HOSTNAME (e.g. mz-20idd01): " HOSTNAME
+  # read -e -p "Enter IOCDIR (full path, e.g. /net/s20iddata/xorApps/.../iocBoot/ioc20iddMZ1): " IOCDIR
+
+  # # Derive IOCLOCAL as path up to and including 'xorApps'
+  # IOCLOCAL=$(echo "$IOCDIR" | grep -oE '^(.*/xorApps)')
+
+  # # Derive IOCSERVER as the directory after /net/, plus suffix
+  # IOCSERVER_DIR=$(echo "$IOCDIR" | sed -n 's|^/net/\([^/]*\).*|\1|p')
+  # IOCSERVER="${IOCSERVER_DIR}.xray.aps.anl.gov"
+
+  # echo "Generating userConfig..."
+
+  # Call the generator installed beside this script.
+  "$SCRIPT_SOURCE_DIR/generate_userConfig" "$MNT1/userConfig"
+  echo "userConfig updated successfully."
+
+    # # Use sed to replace export lines in place
+    # sed -i \
+    #   -e "s|^export MAC=.*|export MAC=$MAC|" \
+    #   -e "s|^export HOSTNAME=.*|export HOSTNAME=$HOSTNAME|" \
+    #   -e "s|^export IOCSERVER=.*|export IOCSERVER=$IOCSERVER|" \
+    #   -e "s|^export IOCLOCAL=.*|export IOCLOCAL=$IOCLOCAL|" \
+    #   -e "s|^export IOCDIR=.*|export IOCDIR=$IOCDIR|" \
+    #   "$MNT1/userConfig"
+
+  # fi
+else
+  echo "Skipping userConfig preparation."
+fi
+
+if [[ -f "$MNT1/userConfig" ]]; then
+  echo "Contents of generated userConfig:"
+  echo
+  echo "----- START of userConfig -----"
+  cat "$MNT1/userConfig"
+  echo "------ END of userConfig ------"
+  echo
+fi
+
+sync
+
+# # Unmount
+# echo "Unmounting $MNT1..."
+# sudo umount "$MNT1"
+# echo "Unmounting $MNT2..."
+# sudo umount "$MNT2"
+
+echo
+echo "SD card at $DEVICE prepared successfully."
