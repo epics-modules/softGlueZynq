@@ -163,7 +163,7 @@ read -p "Do you want to copy files to the SD card? [y/N]: " COPY_CONFIRM
 COPY_CONFIRM=${COPY_CONFIRM,,}
 
 if [[ "$COPY_CONFIRM" == "y" || "$COPY_CONFIRM" == "yes" ]]; then
-  DEFAULT_SRC=~bcda1/PetaLinuxBootFiles_MZ_script
+  DEFAULT_SRC="$SCRIPT_SOURCE_DIR/../bootFiles/BCDALAB_r64"
   read -e -p "Enter source file path or press enter [default: $DEFAULT_SRC]: " SRC_PATH
   SRC_PATH="${SRC_PATH:-$DEFAULT_SRC}"
 
