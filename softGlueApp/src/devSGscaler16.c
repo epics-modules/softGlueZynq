@@ -93,15 +93,15 @@ STATIC long scaler_done(scalerRecord *psr);
 
 SCALERDSET devSGscaler16 = {
 	7, 
-	scaler_report,
-	scaler_init,
-	scaler_init_record,
-	scaler_get_ioint_info,
-	scaler_reset,
-	scaler_read,
-	scaler_write_preset,
-	scaler_arm,
-	scaler_done
+	(DEVSUPFUN)scaler_report,
+	(DEVSUPFUN)scaler_init,
+	(DEVSUPFUN)scaler_init_record,
+	(DEVSUPFUN)scaler_get_ioint_info,
+	(DEVSUPFUN)scaler_reset,
+	(DEVSUPFUN)scaler_read,
+	(DEVSUPFUN)scaler_write_preset,
+	(DEVSUPFUN)scaler_arm,
+	(DEVSUPFUN)scaler_done
 };
 epicsExportAddress(dset, devSGscaler16);
 
@@ -151,8 +151,9 @@ STATIC int scaler_shutdown()
 /**************************************************
 * scalerISR()
 ***************************************************/
-STATIC void scalerISR()
+STATIC void scalerISR(softGlueIntRoutineData *IRData)
 {
+	(void)IRData;
 	Debug(5, "%s", "scalerISR: entry\n");
 	int card = 0;
 	

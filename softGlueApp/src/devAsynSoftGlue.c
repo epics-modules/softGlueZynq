@@ -109,7 +109,7 @@ typedef struct commonDset {
 	DEVSUPFUN	process;
 } commonDset;
 
-commonDset asynSoftGlue = {5,report,init,initSoWrite, 0, processCommon};
+commonDset asynSoftGlue = {5,(DEVSUPFUN)report,(DEVSUPFUN)init,(DEVSUPFUN)initSoWrite, 0, (DEVSUPFUN)processCommon};
 epicsExportAddress(dset, asynSoftGlue);
 
 /* signal name/number stuff */
@@ -792,7 +792,7 @@ typedef struct boDevPvt {
 	stringoutRecord *pso;
 	int portInfoNum;
 } boDevPvt;
-commonDset softGlueShow = {5,0,initShowDevSup,initBo,0,processBo};
+commonDset softGlueShow = {5,0,(DEVSUPFUN)initShowDevSup,(DEVSUPFUN)initBo,0,(DEVSUPFUN)processBo};
 epicsExportAddress(dset, softGlueShow);
 
 static int sameSigName(char *s1, char *s2) {
@@ -958,7 +958,7 @@ static long processBo(boRecord *pbo) {
 /*** begin non-asyn device support for signal-count record, which is a longout record ***/
 /****************************************************************************************/
 
-commonDset softGlueSigNum = {5,0,0,initLo,0,processLo};
+commonDset softGlueSigNum = {5,0,0,(DEVSUPFUN)initLo,0,(DEVSUPFUN)processLo};
 epicsExportAddress(dset, softGlueSigNum);
 
 static long initLo(longoutRecord *plo) {
