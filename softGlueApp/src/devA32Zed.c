@@ -96,7 +96,9 @@ static long init_li(), read_li();
 static long init_lo(), write_lo();
 static long init_mbbi(), read_mbbi();
 static long init_mbbo(), write_mbbo();
-static long checkCard(), write_card(), read_card();
+static long checkCard(short card);
+static long write_card(short card, unsigned short reg, unsigned long mask, unsigned long value);
+static long read_card(short card, unsigned short reg, unsigned long mask, unsigned long *value);
 static long get_bi_int_info();
 
 static long initWfRecord(struct waveformRecord*);
@@ -159,7 +161,7 @@ A32ZED_DSET devMbbiA32Zed = {5, NULL, NULL, init_mbbi, NULL, read_mbbi,  NULL};
 A32ZED_DSET devMbboA32Zed = {5, NULL, NULL, init_mbbo, NULL, write_mbbo, NULL};
 
 // read 
-A32ZED_DSET devWaveformA32Zed = { 6, NULL, NULL, initWfRecord, NULL, readWf,  NULL};
+A32ZED_DSET devWaveformA32Zed = { 6, NULL, NULL, (DEVSUPFUN)initWfRecord, NULL, (DEVSUPFUN)readWf,  NULL};
 
 epicsExportAddress(dset, devAiA32Zed);
 epicsExportAddress(dset, devAoA32Zed);
@@ -1233,11 +1235,7 @@ struct longoutRecord *plo;
  * Raw read a bitfield from the card
  *
  **************************************************************************/
-static long read_card(card, reg, mask, value)
-short           card;  
-unsigned short  reg;
-unsigned long   mask;   /* created in init_bo() */
-unsigned long  *value; /* the value to return from the card */
+static long read_card(short card, unsigned short reg, unsigned long mask, unsigned long *value)
 {
   if (checkCard(card) == ERROR)
     return(ERROR);
@@ -1257,11 +1255,7 @@ unsigned long  *value; /* the value to return from the card */
  * Write a bitfield to the card retaining the states of the other bits
  *
  **************************************************************************/
-static long write_card(card, reg, mask, value)
-short           card;
-unsigned short  reg;
-unsigned long   mask;
-unsigned long   value;
+static long write_card(short card, unsigned short reg, unsigned long mask, unsigned long value)
 {
   if (checkCard(card) == ERROR)
     return(ERROR);
@@ -1311,8 +1305,7 @@ struct waveformRecord   *pwf;
  * Make sure card number is valid
  *
  **************************************************************************/
-static long checkCard(card)
-short   card;
+static long checkCard(short card)
 {
   if ((card >= MAX_NUM_CARDS) || (cards[card].base == NULL))
     return(ERROR);
