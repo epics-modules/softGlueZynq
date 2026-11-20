@@ -29,26 +29,26 @@ LIB_LIBS += seq pv
 
 LIB_LIBS += $(EPICS_BASE_IOC_LIBS)
 
-# socket server test code
-PROD += socket_test1
+# Standalone Linux socket examples; the hardware library is Linux-only too.
+PROD_Linux += socket_test1
 socket_test1_SRCS += socket_test1.c
 
-PROD += socket_test2
+PROD_Linux += socket_test2
 socket_test2_SRCS += socket_test2.c
 
-PROD += socket_test3
+PROD_Linux += socket_test3
 socket_test3_SRCS += socket_test3.c
 
-PROD += socket_test4
+PROD_Linux += socket_test4
 socket_test4_SRCS += socket_test4.c
 
-PROD += socket_test5
+PROD_Linux += socket_test5
 socket_test5_SRCS += socket_test5.c
 
-PROD += socket_test6
+PROD_Linux += socket_test6
 socket_test6_SRCS += socket_test6.c
 
-PROD += socket_test7
+PROD_Linux += socket_test7
 socket_test7_SRCS += socket_test7.c
 
 include $(TOP)/configure/RULES
